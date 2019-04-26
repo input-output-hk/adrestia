@@ -1,75 +1,21 @@
 # Wallet Backend Weekly Report 
 
 <p align="right">
-  <strong>Week 15</strong>: 2019/04/08 →  2019/04/12
+  <strong>Week 16</strong>: 2019/04/15 →  2019/04/19
 </p>
 
 # Non-Technical Summary
 
-Continuing the effort to re-implement the transaction creation, signing and
-submission as three separate steps and getting to the end of it. The team made
-progresses towards a more stable implementation by reviewing and adjusting the
-initial drafts we made last week. While some are focusing on the primitives 
-for signing, others have implemented necessary API definitions and extended the 
-wallet model to discover transactions as we absorb blocks. We've worked on 
-additional tests for the wallet model to account for the transaction history.
-
-Meanwhile, we've also made significant progress regarding coin selection and
-fee adjustment and finalized porting those modules from the old code base after
-another round of review and additional testing. 
-
-As the next release approach, we are benchmarking restoration of wallets on
-mainnet and testnet to get a baseline for the forthcoming release and the
-subsequent ones. As we'll add feature to the wallet model, we want to ensure
-the wallet backend can thrive. 
-
-> _NOTE_
->
-> This week was quite disrupted by the imminent IOHK summit and departures to Miami.
+Most of the team was busy in Miami for the annual summit. One member stayed
+behind working on finalizing the coin selection interface as well as creating a
+first draft of a new fee calculation algorithm accounting for random and
+sequential address derivation.
 
 # Overview 
 
-- Extended API definition to support transaction creation and listing (actual
-  handlers yet to come).
+- Finalized some testing and polished the coin selection implementation
 
-- Extended testing suite of the wallet model to test tracking of known transactions
-  (either incoming or outgoing transactions).
-
-- Finalize restoration code and chain syncer, with progress reporting.
-
-- Added automated nightly (in buildkite) recovery benchmark (in time and memory
-  usage, for the sequential derivation scheme) against testnet and mainnet. So
-  far, results are good:
-
-    |                              | Testnet  | Mainnet  |
-    | ---                          | ---      | ---      |
-    | First unstable epoch         | 39       | 113      |
-    | Time to first unstable epoch | ~10s     | ~ 35s    |
-    | Total time                   | ~18s     | ~ 45s    |
-    | Memory Usage                 | < 100 Mb | < 100 Mb |
-
-  Machine: _i7-7700HQ 2.8GHz, 32Gb DDR4 2.4MHz, SSD PCIe Read 3500 Mb/s - Write 2700 Mb/s_
-  
-  We've also started working on more intense benchmarks with "special schemes"
-  such that one which will "recognize" half of the address on the blockchain and
-  really stress out the wallet implementation when dealing with BIG wallets (like
-  exchanges).
-
-- Extend database interface to support manipulation of wallet metadata. Also reviewed
-  database tests / properties to be more consistent and readable overall.
-
-- More negative and roundtrip tests for CLI & API types.
-
-- Review networking layer interface, removing unneeded abstractions and making errors
-  more granular.
-
-- Port coin selection adjustment for fee from the legacy code, with extra testing and
-  verifications.
-
-- Re-implement a transaction signer / builder, still abstracted over the address scheme
-  to allow easily creating transactions from any scheme.
-
-- First API integration test scenarios (wallet creation/restoration).
+- Looking into computing fee estimates for transactions (natural follow-up from the coin selection work)
 
 # User Stories 
 
@@ -155,5 +101,3 @@ the wallet backend can thrive.
 ```
 [...............................................................................] 0% (0/24)
 ```
-
-# Known Issues / Debts
