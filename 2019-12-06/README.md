@@ -6,7 +6,15 @@
 
 # Non-Technical Summary
 
-- TODO
+Rewards finally landed into cardano-wallet! Next to the wallet available
+balance and total balance is now reported the wallet reward balance, magically
+increasing when delegating ADA to a productive pool leader.
+
+Meanwhile, we have added a special "reward-credentials" command to the
+command-line to enable pool operators to also use cardano-wallet (and by
+extension Daedalus) to track their own rewards and setup their stake pool using
+their existing wallet. Step-by-step guides are now available on the Cardano
+Foundation pool registry wiki (https://github.com/cardano-foundation/incentivized-testnet-stakepool-registry/wiki).
 
 # Overview
 
