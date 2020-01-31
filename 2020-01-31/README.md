@@ -11,7 +11,7 @@
 
 1/3 of the team was on holidays this week which influenced our velocity a bit. Nevertheless, we managed to make progress on several items.  
   
-Beginning of the week new wallet increment 'v2020-01-27' has been released. The changes included listing stake pools by desirability and introducing saturation indicator for each stake pool. The release also introduced new endpoint allowing users to force re-sync wallet without the need to delete and restore it again, which might be useful for resolving potential syncing issues.  
+Beginning of the week new wallet increment `v2020-01-27` has been released. The changes included listing stake pools by desirability and introducing saturation indicator for each stake pool. The release also introduced new endpoint allowing users to force re-sync wallet without the need to delete and restore it again, which might be useful for resolving potential syncing issues.  
   
 On development side we completed implementation of network parameters endpoint allowing users to fetch blockchain parameters for particular epoch. We have also started and advanced implementation of CLI utilities for key derivation as well as more detailed reporting of the delegation to show current and future delegation targets for particular wallet.
 
@@ -32,6 +32,8 @@ cardano-wallet                                                                  
 - Completed (WB-47) Expose blockchain parameters via new endpoint - [#51](https://github.com/input-output-hk/cardano-wallet/milestone/51)
 
 - Finished house-keeping tasks in the integration test scenarios.
+
+- Upgraded to Jörmungandr 0.8.9
 
 - Made progress in implementation of:
   - Command-line utils for key derivation
