@@ -96,7 +96,7 @@ cardano-wallet                                                                  
 > So that I can better inform users about their current and next delegation settings.
 
 ```
-[=========================>----------------------------------------------------] 33% (1/3)
+[===========================================>----------------------------------] 50% (1/2)
 ```
 
 <p align="right">
