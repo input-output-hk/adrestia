@@ -37,16 +37,10 @@
 
 ## :ballot_box_with_check: Actions
 
-- Encourage pilot/co-pilot to share their plan with the rest of the team *before* they actually start working.
-
-- Turning slack off for a period also help gaining focus.
-
-- Often hard to identify upfront that a vocal conversation is needed. Yet, a lot of conversations happening in DM could instead happen in thread on the main channel for the benefits of other team members.
-
-- Reach out to Jeremy / Jonathan about getting more permissions to set up JIRA templates and workflow correctly. 
-
-- HerculesCI is not required and can be ignored (we are still experimenting). Also, Hydra could be ignore on PR and only triggered on master builds.
-
-- Find a way to get more insights from the logs upon test failures and report it directly on GH. In particular, the last request/response we did and more informative assertion failures. Also, we could make use of GH checks API to report directly in GH some CI failures like hlint or stylish-haskell.
-
-- Prepare a clear set of questions and see with the iohk monitoring team whether they could help us tackle these.
+- [ ] Encourage pilot/co-pilot to share their plan with the rest of the team *before* they actually start working.
+- [ ] Turning slack off for a period also help gaining focus.
+- [ ] Often hard to identify upfront that a vocal conversation is needed. Yet, a lot of conversations happening in DM could instead happen in thread on the main channel for the benefits of other team members.
+- [ ] Reach out to Jeremy / Jonathan about getting more permissions to set up JIRA templates and workflow correctly. 
+- [ ] HerculesCI is not required and can be ignored (we are still experimenting). Also, Hydra could be ignore on PR and only triggered on master builds.
+- [ ] Find a way to get more insights from the logs upon test failures and report it directly on GH. In particular, the last request/response we did and more informative assertion failures. Also, we could make use of GH checks API to report directly in GH some CI failures like hlint or stylish-haskell.
+- [ ] Prepare a clear set of questions and see with the iohk monitoring team whether they could help us tackle these.
