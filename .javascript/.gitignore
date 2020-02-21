@@ -1,0 +1,9 @@
+.idea
+node_modules
+dist
+/.nyc_output
+/coverage
+tsconfig.tsbuildinfo
+yarn-error.log
+src/generated_packages/TypeScript/index.ts
+result*
