@@ -60,7 +60,7 @@ Name / Link                 | Description                                       
 [cardano-coin-selection]    | Coin selection and fee balancing algorithms       | :construction:     | :construction:
 [cardano-addresses]         | Addresses and mnemonic manipulation & derivations | :construction:     | :construction:
 [cardano-transactions]      | Transaction construction and signing              | :construction:     | :construction:
-[cardano-binary]            | Binary serialization of on-chain data types       | :construction:     | :construction:
+[cardano-serialization-lib] | Binary serialization of on-chain data types       | :construction:     | :construction:
 [bech32]                    | Human-friendly Bech32 address encoding            | :heavy_check_mark: | :x:
 [utxo-wallet-specification] | Formal specification for a UTxO wallet | N/A  | N/A
 
@@ -85,7 +85,7 @@ name / link        | description
 [cardano-coin-selection]: https://github.com/input-output-hk/cardano-coin-selection
 [cardano-addresses]: https://github.com/input-output-hk/cardano-addresses
 [cardano-transactions]: https://github.com/input-output-hk/cardano-transactions
-[cardano-binary]: https://github.com/input-output-hk/cardano-binary
+[cardano-serialization-lib]: https://github.com/Emurgo/cardano-serialization-lib 
 [bech32]: https://github.com/input-output-hk/bech32
 [utxo-wallet-specification]: https://github.com/input-output-hk/utxo-wallet-specification
 [cardano-launcher]: https://github.com/input-output-hk/cardano-launcher
