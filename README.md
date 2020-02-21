@@ -6,7 +6,7 @@ applications and Cardano core node by pushing out higher level interfaces to
 interact with the Cardano blockchain.
 
 This repository acts as a catalog of projects that fall under the scope of
-Adrestia. The [wiki](https://github.com/input-output-hk/adrestia.wiki) summarizes also
+Adrestia. The [wiki](https://github.com/input-output-hk/adrestia/wiki) summarizes also
 the project's development practices and workflow.
 
 # Architecture Overview
