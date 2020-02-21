@@ -83,4 +83,4 @@ name / link        | description
 [cardano-binary]: https://github.com/input-output-hk/cardano-binary
 [bech32]: https://github.com/input-output-hk/bech32
 [cardano-launcher]: https://github.com/input-output-hk/cardano-launcher
-[cardano-js]: [https://github.com/input-output-hk/cardano-js]
+[cardano-js]: https://github.com/input-output-hk/cardano-js
