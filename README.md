@@ -55,13 +55,16 @@ name / link       | description                                    | Byron      
 
 # Libraries
 
-Name / Link              | Description                                       | Haskell            | JavaScript
----                      | ---                                               | ---                | ---
-[cardano-coin-selection] | Coin selection and fee balancing algorithms       | :construction:     | :construction:
-[cardano-addresses]      | Addresses and mnemonic manipulation & derivations | :construction:     | :construction:
-[cardano-transactions]   | Transaction construction and signing              | :construction:     | :construction:
-[cardano-binary]         | Binary serialization of on-chain data types       | :construction:     | :construction:
-[bech32]                 | Human-friendly Bech32 address encoding            | :heavy_check_mark: | :x:
+Name / Link                 | Description                                       | Haskell            | JavaScript
+---                         | ---                                               | ---                | ---
+[cardano-coin-selection]    | Coin selection and fee balancing algorithms       | :construction:     | :construction:
+[cardano-addresses]         | Addresses and mnemonic manipulation & derivations | :construction:     | :construction:
+[cardano-transactions]      | Transaction construction and signing              | :construction:     | :construction:
+[cardano-binary]            | Binary serialization of on-chain data types       | :construction:     | :construction:
+[bech32]                    | Human-friendly Bech32 address encoding            | :heavy_check_mark: | :x:
+[utxo-wallet-specification] | Formal specification for a UTxO wallet | N/A  | N/A
+
+
 
 # Internal
 
@@ -72,6 +75,8 @@ name / link        | description
 ---                | ---
 [cardano-launcher] | Shelley cardano-node and cardano-wallet launcher for NodeJS applications
 [cardano-js]       | (experimental) Cardano primitives for ECMAScript applications
+[cardano-js-sdk]   | (experimental) Cardano SDK for ECMAScript applications
+[persistent]       | Fork of the persistent Haskell library maintained for cardano-wallet
 
 
 [cardano-wallet]: https://github.com/input-output-hk/cardano-wallet
@@ -82,5 +87,11 @@ name / link        | description
 [cardano-transactions]: https://github.com/input-output-hk/cardano-transactions
 [cardano-binary]: https://github.com/input-output-hk/cardano-binary
 [bech32]: https://github.com/input-output-hk/bech32
+[utxo-wallet-specification]: https://github.com/input-output-hk/utxo-wallet-specification
 [cardano-launcher]: https://github.com/input-output-hk/cardano-launcher
 [cardano-js]: https://github.com/input-output-hk/cardano-js
+[cardano-js-sdk]: https://github.com/input-output-hk/cardano-js-sdk
+[persistent]: https://github.com/input-output-hk/persistent
+
+
+
