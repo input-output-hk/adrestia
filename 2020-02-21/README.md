@@ -6,7 +6,13 @@
 
 # Non-Technical Summary
 
-TODO.
+The team is starting to extract, document and expose in a more developer-friendly 
+way various components of its internal architecture. This work takes place as part 
+of the _Adrestia_ project (see also: https://github.com/input-output-hk/adrestia/).
+
+Meanwhile, we are upgrading many dependencies  in order to leverage more from the
+Haskell eco-system, but also and mainly in order to finalize the integration with
+the latest release of `cardano-node`.
 
 # Overview
 
