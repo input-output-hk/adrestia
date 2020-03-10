@@ -12,7 +12,7 @@ The team's process is derived from [extreme programming][xp] and adapted for rem
     - Acceptance Criteria (A/C) written in [Gherkin](http://docs.behat.org/en/v2.5/guides/1.gherkin.html) 
     - Possible extra information or documents 
 - Items in the backlog are sorted by priority. 
-- When picked, U/S are estimated in terms of number of _sprints_. A story estimated to more than 3 sprints should be broken down into smaller stories. 
+- When picked, U/S are estimated in terms of number of _weeks_. A story estimated to more than 3 weeks should be broken down into smaller stories. 
 
 <details>
     <summary>example</summary>
@@ -36,16 +36,16 @@ The team's process is derived from [extreme programming][xp] and adapted for rem
 
 ## Iterations
 
-- The project is divided into weekly iterations called _sprints_.
-- Releases happen at the beginning of every sprints, Monday or Tuesday.
-- Every 3 sprints, the team does 1 week of recovery time (See [Recovery Week](#recovery-week) below).
+- The project is divided into weekly iterations.
+- Releases happen at the beginning of every week, Monday or Tuesday.
+- Every 3 weeks, the team does 1 week of recovery time (See [Recovery Week](#recovery-week) below).
 - User stories are assigned to and owned by a single member of the team (a.k.a the pilot). Pilots are seconded by a Co-pilot as follows:
 
     | Mission | Role | 
     | --- | --- | 
     | Clarify product requirements as needed with the product owner(s) | Pilot |
     | Break U/S into tasks (small, sizeable, chunks of work) | Pilot |
-    | Estimate U/S in terms of # of sprints | Pilot |
+    | Estimate U/S in terms of # of weeks | Pilot |
     | Implement each task of a U/S | Pilot |
     | Challenge the task division and review it | Co-Pilot |
     | Primary reviewer of the development tasks | Co-Pilot | 
@@ -69,14 +69,14 @@ The team's process is derived from [extreme programming][xp] and adapted for rem
 
 ## Recovery Week
 
-- Sprinters can't run all the time. During sprints, we often accumulate technical debts (e.g. `TODO` or `FIXME`).
+- Sprinters can't run all the time. During sprint weeks, we often accumulate technical debts (e.g. `TODO` or `FIXME`).
 - During recovery weeks, the team has a dedicated moment to tackle some of the technical debts. This includes:
     - Reviewing and extending code documentation
     - Refactoring some potentially entangled parts of the code
     - Re-organizing modules and folder achitecture
     - Fix small `TODOs` or `FIXMEs`, or, turn them into U/S 
     - Identify areas of the source code which needs improvement
-- Recovery weeks happen instead of a sprint, and start with a retrospective meeting about the last 3 sprints.
+- Recovery weeks happen instead of a sprint, and start with a retrospective meeting about the last 3 weeks/sprints.
 
 
 ## Coding
@@ -121,7 +121,7 @@ The team's process is derived from [extreme programming][xp] and adapted for rem
     - To do a retrospective on past U/S and estimations. 
     - To assign new U/S to team members
     - To discuss important matters or change in the process 
-- Every 3 sprints, the Wednesday meeting becomes a monthly retrospective where the team can discuss what went well, what didn't and take actions to improve things (see also https://www.retrospected.com/)
+- Every 3 weeks, the Wednesday meeting becomes a monthly retrospective where the team can discuss what went well, what didn't and take actions to improve things (see also https://www.retrospected.com/)
 - Discussions happen on Slack in clear threads, decisions are documented on GitHub as comments on issues
 - Our GitHub wiki can be extended at any time with insights and details about the software
 - Reports and metrics about the project are available to anyone
