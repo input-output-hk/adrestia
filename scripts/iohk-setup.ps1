@@ -7,7 +7,8 @@
 # After running this script you will have a VirtualBox machine which
 # is be able to compile cardano-wallet for Windows using stack.
 #
-# It will also be run the tests for cardano-wallet and cardano-launcher.
+# It will also be able to run the tests for cardano-wallet and
+# cardano-launcher.
 #
 ############################################################################
 #
@@ -68,14 +69,7 @@
 # 5. `cd \\VBOXSRV\win_shared`
 # 6 `.\iohk-setup.ps1`
 # 7. Go back to step 1 and run the steps a second time.
-# 8. You should now be in directory to E:\w ($env:WORK_DIR).
-
-
-# 9. Run the build. This command is similar to what is run by CI:
-#
-#      stack.exe install -j 3 --local-bin-path $env:WORK_DIR --flag cardano-sl-tools:for-installer cardano-sl cardano-sl-tools cardano-sl-wallet-new
-
-
+# 8. You should now be in directory to E:\cardano-wallet ($env:WALLET_DIR).
 #
 # Note that the cardano-wallet clone is shallow.
 # If you need to change branch, then do
