@@ -16,11 +16,22 @@ COVERAGE=$(echo $COVERAGE | awk '{s+=$1}END{print s/NR}' RS=" ")
 # Round it to an integer.
 COVERAGE=$(LC_NUMERIC=C printf "%.0f" $COVERAGE)
 
+# Find the right color
+if (( $COVERAGE < 70 )); then
+  COLOR="#e74c3c"
+elif (( $COVERAGE < 80 )); then
+  COLOR="#e67e22"
+elif (( $COVERAGE < 90 )); then
+  COLOR="#f1c40f"
+else
+  COLOR="#2ecc71"
+fi
+
 cat << EOF
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="144" height="28">
   <g shape-rendering="crispEdges">
     <path fill="#555" d="M0 0h93v28H0z"/>
-    <path fill="#97ca00" d="M93 0h51v28H93z"/>
+    <path fill="$COLOR" d="M93 0h51v28H93z"/>
   </g>
   <g fill="#fff" text-anchor="middle" font-family="DejaVu Sans,Verdana,Geneva,sans-serif" font-size="100">
     <text x="465" y="175" transform="scale(.1)" textLength="690">COVERAGE</text>
