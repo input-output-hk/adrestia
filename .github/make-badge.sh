@@ -17,14 +17,14 @@ COVERAGE=$(echo $COVERAGE | awk '{s+=$1}END{print s/NR}' RS=" ")
 COVERAGE=$(LC_NUMERIC=C printf "%.0f" $COVERAGE)
 
 # Find the right color
-if (( $COVERAGE < 70 )); then
-  COLOR="#e74c3c"
-elif (( $COVERAGE < 80 )); then
-  COLOR="#e67e22"
-elif (( $COVERAGE < 90 )); then
-  COLOR="#f1c40f"
-else
+if (( $COVERAGE > 90 )); then
   COLOR="#2ecc71"
+elif (( $COVERAGE > 80 )); then
+  COLOR="#f1c40f"
+elif (( $COVERAGE > 70 )); then
+  COLOR="#e74c3c"
+else
+  COLOR="#e67e22"
 fi
 
 cat << EOF
