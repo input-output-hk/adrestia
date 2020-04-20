@@ -66,7 +66,7 @@ COLOR_RED = \033[0;31m
 COLOR_DEFAULT = \033[0m
 
 $(DESTDIR)/badge.svg: $(DESTDIR)/hpc_index.html
-	$(eval COVERAGE := $(shell cat $< | tr '\n' ' ' | sed "s/.*Program Coverage Total.*>\([0-9]\{1,2\}\)%.*>\([0-9]\{1,2\}\)%.*>\([0-9]\{1,2\}\)%.*/\1 \2 \3/"))
+	$(eval COVERAGE := $(shell cat $< | tr '\n' ' ' | sed "s/.*Program Coverage Total.*>\([0-9]\{1,3\}\)%.*>\([0-9]\{1,3\}\)%.*>\([0-9]\{1,3\}\)%.*/\1 \2 \3/"))
 	$(eval COVERAGE := $(shell echo $(COVERAGE) | awk '{s+=$$1}END{print s/NR}' RS=' '))
 	$(eval COVERAGE := $(shell LC_NUMERIC=C printf "%.0f" $(COVERAGE)))
 	$(eval COLOR := $(shell { \
