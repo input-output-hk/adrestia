@@ -1,13 +1,9 @@
 # Adrestia
 
-Adrestia is a product team working on developing tooling and client interfaces
-around Cardano. Our mission is to create an easier bridge between end-users
-applications and Cardano core node by pushing out higher level interfaces to
-interact with the Cardano blockchain.
+Adrestia is a product team working on developing tooling and client interfaces around Cardano. Our mission is to create an easier bridge between end-users applications and Cardano core node by pushing out higher level interfaces to interact with the Cardano blockchain.
 
-This repository acts as a catalog of projects that fall under the scope of
-Adrestia. The [wiki](https://github.com/input-output-hk/adrestia/wiki) summarizes also
-the project's development practices and workflow.
+This repository acts as a catalog of projects that fall under the scope of Adrestia. Checkout the [📘 Adrestia user-guide](https://input-output-hk.github.io/adrestia/) for more information!
+
 
 # Architecture Overview
 
@@ -49,22 +45,26 @@ the project's development practices and workflow.
 name / link       | description                                    | Byron              | Jörmungandr        | Shelley
 ---               | ---                                            | ---                | ---                | ---
 [cardano-wallet]  | JSON/REST API for managing UTxOs in HD wallets | :heavy_check_mark: | :heavy_check_mark: | :construction:
-[cardano-rest]    | JSON/HTTP API for browsing on-chain data       | :heavy_check_mark: | :x:                | :x:
+[cardano-rest]    | JSON/HTTP API for browsing on-chain data       | :heavy_check_mark: | :x:                | :construction:
 [cardano-graphql] | GraphQL/HTTP API for browsing on-chain data    | :heavy_check_mark: | :x:                | :construction:
 
 
 # Libraries
 
-Name / Link                 | Description                                       | Haskell            | JavaScript
----                         | ---                                               | ---                | ---
-[cardano-coin-selection]    | Coin selection and fee balancing algorithms       | :construction:     | :construction:
-[cardano-addresses]         | Addresses and mnemonic manipulation & derivations | :construction:     | :construction:
-[cardano-transactions]      | Transaction construction and signing              | :construction:     | :construction:
-[cardano-serialization-lib] | Binary serialization of on-chain data types       | :construction:     | :construction:
-[bech32]                    | Human-friendly Bech32 address encoding            | :heavy_check_mark: | :x:
-[utxo-wallet-specification] | Formal specification for a UTxO wallet | N/A  | N/A
+Name / Link                 | Description                                                              | Haskell            | JavaScript
+---                         | ---                                                                      | ---                | ---
+[bech32]                    | Human-friendly Bech32 address encoding                                   | :heavy_check_mark: | [bitcoinjs/bech32](https://github.com/bitcoinjs/bech32)
+[cardano-addresses]         | Addresses and mnemonic manipulation & derivations                        | :heavy_check_mark: | :construction:
+[cardano-coin-selection]    | Coin selection and fee balancing algorithms                              | :heavy_check_mark: | :construction:
+[cardano-launcher]          | Shelley cardano-node and cardano-wallet launcher for NodeJS applications | :x:                | :heavy_check_mark:
+[cardano-serialization-lib] | Binary serialization of on-chain data types                              | :construction:     | :construction:
+[cardano-transactions]      | Transaction construction and signing                                     | :heavy_check_mark: | :construction:
 
+# Formal Specifications 
 
+Name / Link                 | Description                                       
+---                         | ---                                               
+[utxo-wallet-specification] | Formal specification for a UTxO wallet            
 
 # Internal
 
@@ -73,7 +73,6 @@ Name / Link                 | Description                                       
 
 name / link        | description
 ---                | ---
-[cardano-launcher] | Shelley cardano-node and cardano-wallet launcher for NodeJS applications
 [cardano-js]       | (experimental) Cardano primitives for ECMAScript applications
 [cardano-js-sdk]   | (experimental) Cardano SDK for ECMAScript applications
 [persistent]       | Fork of the persistent Haskell library maintained for cardano-wallet
