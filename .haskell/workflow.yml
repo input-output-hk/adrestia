@@ -1,0 +1,69 @@
+name: Continuous Integration
+
+on:
+  push: { "branches": [ "master" ] }
+  pull_request: { "branches": [ "master" ] }
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+
+    runs-on: ${{ matrix.os }}
+    steps:
+    - name: 💽 Install OS Packages
+      uses: mstksg/get-package@v1
+      with:
+        apt-get: libgmp-dev libssl-dev
+
+    - name: 📥 Checkout repository
+      uses: actions/checkout@v1
+
+    - name: 🧰 Setup Stack
+      uses: mstksg/setup-stack@v1
+
+    - name: 🔑 Cache Key
+      id: cache_key
+      run: echo ::set-output name=key::$(md5sum stack.yaml | awk '{print $1}')
+
+    - name: 💾 Cache Dependencies
+      id: cache
+      uses: actions/cache@v1
+      with:
+        path: ~/.stack
+        key: ${{ matrix.os }}-${{ steps.cache_key.outputs.key }}
+
+    - name: 📸 Build Snapshot
+      if: steps.cache.outputs.cache-hit != 'true'
+      run: |
+        stack --no-terminal test --bench --only-snapshot
+
+    - name: ✍  Check hlint and stylish
+      run: |
+        curl -sSL https://raw.github.com/ndmitchell/hlint/master/misc/run.sh | sh -s .
+        curl -sSL https://raw.github.com/jaspervdj/stylish-haskell/master/scripts/latest.sh | sh -s $(find . -type f -name "*.hs" ! -path "*.stack-work*") -i
+        if [ -z "$(git status --porcelain)" ]; then
+            echo "No style errors detected."
+        else
+            echo "Style errors detected:"
+            git diff
+            exit 1
+        fi
+
+    - name: 🔨 Build & Test
+      run: |
+        stack --no-terminal test --bench --no-run-benchmarks --haddock --no-haddock-deps --coverage
+        wget -O Makefile https://raw.githubusercontent.com/input-output-hk/adrestia/master/.haskell/coverage/Makefile
+        mkdir -p .coverage && touch .coverage/template.overlay
+        DESTDIR=dist/coverage make report  && DESTDIR=dist/coverage make badge
+        PKG_NAME=$(cat *.cabal | grep "name:" | sed "s/name:\s*\(.*\)/\1/")
+        mkdir -p dist/haddock  && mv $(stack path --local-install-root)/doc/$PKG_NAME-*/* dist/haddock
+
+    - name: 📘 Publish Artifacts
+      if: matrix.os == 'ubuntu-latest' && github.event_name == 'push'
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: dist
+        enable_jekyll: true
