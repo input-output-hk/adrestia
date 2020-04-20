@@ -1,0 +1,5 @@
+baseURL = "https://input-output-hk.github.io/adrestia"
+languageCode = "en-us"
+title = "Adrestia User-Guide"
+
+staticDir = [ "static" ]
