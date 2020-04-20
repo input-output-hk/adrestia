@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Common Use-Cases on Adrestia User-Guide</title>
+    <link>https://input-output-hk.github.io/adrestia/docs/common-use-cases/</link>
+    <description>Recent content in Common Use-Cases on Adrestia User-Guide</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://input-output-hk.github.io/adrestia/docs/common-use-cases/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to create a wallet</title>
+      <link>https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-create-a-wallet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-create-a-wallet/</guid>
+      <description>🚧 under construction 🚧</description>
+    </item>
+    
+    <item>
+      <title>How to create an address</title>
+      <link>https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-create-an-address/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-create-an-address/</guid>
+      <description>🚧 under construction 🚧</description>
+    </item>
+    
+    <item>
+      <title>How to make a transaction</title>
+      <link>https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-make-a-transaction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-make-a-transaction/</guid>
+      <description>using cardano-wallet Assuming you have already created a wallet, you can send a transaction by using the following endpoint:
+POST /v2/byron-wallets/{walletId}/transactions
+Behind the scene, the wallet engine will select necessary inputs from the wallet, generate a change address within the wallet, sign and submit the transaction. A transaction can have multiple outputs, possibly to the same address. Note that in Byron, addresses are necessarily base58-encoded (as an enforced convention).</description>
+    </item>
+    
+  </channel>
+</rss>
