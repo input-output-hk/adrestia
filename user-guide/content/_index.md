@@ -9,16 +9,15 @@ Adrestia is a product team working on developing tooling and client interfaces a
 
 # Overview
 
-As reflected on the [roadmap][roadmap], the Cardano platform is going through the following eras of development:
+As reflected on the [roadmap][roadmap], the Cardano platform is going through the following themes of development:
 
 {{< rawhtml >}}
 <p style="text-align: center">
-BYRON → SHELLEY → GOGUEN → BASHO → VOLTAIRE 
+BYRON | SHELLEY | GOGUEN | BASHO | VOLTAIRE 
 </p>
 {{< /rawhtml >}}
 
-
-The current era is Byron, which provides the foundation for the platform. The primary purpose of Byron was to release a provably secure proof of stake consensus protocol that is energy efficient and cost effective known as [Ouroboros][ouroboros]. Specifically, Ouroboros provides security against fully-adaptive corruption in the semi-synchronous setting: the adversary can corrupt any participant of a dynamically evolving population of stakeholders at any moment as long the stakeholder distribution maintains an honest majority of stake; furthermore, the protocol tolerates an adversarially-controlled message delivery delay unknown to protocol participants.
+Themes are being developed in parallel. So far only _Byron_ , which provides the foundation for the platform has made it into the mainnet. The primary purpose of Byron was to release a provably secure proof of stake consensus protocol that is energy efficient and cost effective known as [Ouroboros][ouroboros]. _Shelley_ is the next theme to be released soon; it'll bring decentralization and delegations of assets into _Byron_.
 
 {{< hint info >}}
 An implementation of the protocol is [here][ouroboros-network] and is realized through [cardano-node][cardano-node], the core node.
