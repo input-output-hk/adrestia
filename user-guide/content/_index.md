@@ -1,0 +1,83 @@
+---
+weight: 1
+title: Overview
+---
+
+# Adrestia
+
+Adrestia is a product team working on developing tooling and client interfaces around Cardano. Our mission is to create an easier bridge between end-users applications and Cardano core node by pushing out higher level interfaces to interact with the Cardano blockchain.
+
+# Overview
+
+As reflected on the [roadmap][roadmap], the Cardano platform is going through the following eras of development:
+
+{{< rawhtml >}}
+<p style="text-align: center">
+BYRON → SHELLEY → GOGUEN → BASHO → VOLTAIRE 
+</p>
+{{< /rawhtml >}}
+
+
+The current era is Byron, which provides the foundation for the platform. The primary purpose of Byron was to release a provably secure proof of stake consensus protocol that is energy efficient and cost effective known as [Ouroboros][ouroboros]. Specifically, Ouroboros provides security against fully-adaptive corruption in the semi-synchronous setting: the adversary can corrupt any participant of a dynamically evolving population of stakeholders at any moment as long the stakeholder distribution maintains an honest majority of stake; furthermore, the protocol tolerates an adversarially-controlled message delivery delay unknown to protocol participants.
+
+{{< hint info >}}
+An implementation of the protocol is [here][ouroboros-network] and is realized through [cardano-node][cardano-node], the core node.
+
+[ouroboros-network]: https://github.com/input-output-hk/ouroboros-network
+[cardano-node]: https://github.com/input-output-hk/cardano-node
+{{< /hint >}}
+
+On top of this, Adrestia provides a set of services to interact with the Cardano blockchain:
+
+- [cardano-wallet][cardano-wallet]: HTTP Rest API for managing UTxOs, and much more.
+- [cardano-submit-api][cardano-rest]: HTTP API for submitting signed transactions.
+- [cardano-graphql][cardano-rest]: HTTP GraphQL API for exploring the blockchain.
+
+As well as several low-level libraries on various topics:
+
+- [cardano-addresses][cardano-addresses]: Addresses generation, derivation &  mnemonic manipulation.
+- [cardano-coin-selection][cardano-coin-selection]: Algorithms for coin selection and fee balancing.
+- [cardano-transactions][cardano-transactions]: Utilities for constructing and signing transactions.
+- [bech32][bech32]: Haskell implementation of the Bech32 address format (BIP 0173). 
+
+The only currently available language target is _Haskell_, although support for _JavaScript_ is being worked on and should be available soon. 
+
+{{< hint danger >}}
+**IMPORTANT NOTE**
+
+The Byron reboot era is **soon to end by early summer** when the Shelley hard fork shall occur. This **will break ALL existing** exchange integrations. Cardano-sl shall no longer be maintained or supported. **Adrestia** tooling **will support** all integrations **moving forward for Shelley**.
+{{< /hint >}}
+
+In the diagram below, components in red are non-Shelley compliant and will not be available after the hard fork, while the components in green are Shelley compliant and will be supported during and after the hard-fork.
+
+{{< rawhtml >}}
+<table style="text-align: center; color: #ffffff;">
+  <tr>
+    <td colspan=2 style="background: #e74c3c;">cardano-sl:node</td>
+    <td colspan=3 style="background: #2ecc71;">cardano-node</td>
+  </tr>
+  <tr>
+    <td rowspan=2 style="background: #e74c3c;">cardano-sl:explorer</td>
+    <td rowspan=2 style="background: #e74c3c;">cardano-sl:wallet</td>
+    <td colspan=2 style="background: #2ecc71;">cardano-db-sync</td>
+    <td rowspan=2 style="background: #2ecc71;">cardano-wallet</td>
+  </tr>
+  <tr>
+    <td style="background: #2ecc71;">cardano-rest</td>
+    <td style="background: #2ecc71;">cardano-graphql</td>
+  </tr>
+</table>
+{{< /rawhtml >}}
+
+---
+
+[roadmap]: https://cardanoroadmap.com/en/
+[ouroboros]: https://iohk.io/en/research/library/papers/ouroboros-praosan-adaptively-securesemi-synchronous-proof-of-stake-protocol/
+
+[cardano-wallet]: https://github.com/input-output-hk/cardano-wallet
+[cardano-rest]: https://github.com/input-output-hk/cardano-rest
+[cardano-graphql]: https://github.com/input-output-hk/cardano-graphql
+[cardano-coin-selection]: https://github.com/input-output-hk/cardano-coin-selection
+[cardano-addresses]: https://github.com/input-output-hk/cardano-addresses
+[cardano-transactions]: https://github.com/input-output-hk/cardano-transactions
+[bech32]: https://github.com/input-output-hk/bech32
