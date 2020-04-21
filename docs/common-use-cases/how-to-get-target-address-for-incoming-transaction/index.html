@@ -4,15 +4,25 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="🚧 under construction 🚧"><meta property="og:title" content="How to create an address" />
-<meta property="og:description" content="🚧 under construction 🚧" />
+<meta name="description" content="Once you have a wallet you can manage your funds. In order to receive a transaction you need to provide an address associated with your wallet to the sender.
+Random wallets For random wallets user needs to invoke wallet endpoint to create new address:
+POST /byron-wallets/{walletId}/addresses
+In order to list existing addresses another endpoint can be used:
+GET /wallets/{walletId}/addresses
+Sequential wallets For sequential wallets such as icarus, trezor, ledger there is no need for the user to explicitely create new addresses."><meta property="og:title" content="How to get target address for incoming transaction" />
+<meta property="og:description" content="Once you have a wallet you can manage your funds. In order to receive a transaction you need to provide an address associated with your wallet to the sender.
+Random wallets For random wallets user needs to invoke wallet endpoint to create new address:
+POST /byron-wallets/{walletId}/addresses
+In order to list existing addresses another endpoint can be used:
+GET /wallets/{walletId}/addresses
+Sequential wallets For sequential wallets such as icarus, trezor, ledger there is no need for the user to explicitely create new addresses." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-create-an-address/" />
+<meta property="og:url" content="https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-get-target-address-for-incoming-transaction/" />
 
-<title>How to create an address | Adrestia User-Guide</title>
+<title>How to get target address for incoming transaction | Adrestia User-Guide</title>
 <link rel="icon" href="/adrestia/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/adrestia/book.min.83f021283c1e52516351b697667b83494b0d5fe06eabd85a34ef59060a9ea4f0.css" integrity="sha256-g/AhKDweUlFjUbaXZnuDSUsNX&#43;Buq9haNO9ZBgqepPA=">
-<script defer src="/adrestia/en.search.min.e13463e8ac6ba6674e45234855128ae394c6fe0fd22b4b6cf8095421935cb6df.js" integrity="sha256-4TRj6KxrpmdORSNIVRKK45TG/g/SK0ts&#43;AlUIZNctt8="></script>
+<script defer src="/adrestia/en.search.min.1c700adc977ea759d86c6c393c4aafaa2ee8c2d2745937b4da7c06ed2cf0163e.js" integrity="sha256-HHAK3Jd&#43;p1nYbGw5PEqvqi7owtJ0WTe02nwG7SzwFj4="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -100,7 +110,17 @@ https://github.com/alex-shpak/hugo-book
         <li>
           
   
-    <a href="/adrestia/docs/common-use-cases/how-to-create-an-address/" class="active">How to create an address</a>
+    <a href="/adrestia/docs/common-use-cases/how-to-manage-wallets/" class="">How to manage wallets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/adrestia/docs/common-use-cases/how-to-get-target-address-for-incoming-transaction/" class="active">How to get target address for incoming transaction</a>
   
 
         </li>
@@ -229,7 +249,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/adrestia/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>How to create an address</strong>
+  <strong>How to get target address for incoming transaction</strong>
 
   <label for="toc-control">
     <img src="/adrestia/svg/toc.svg" class="book-icon" alt="Table of Contents" />
@@ -241,7 +261,12 @@ https://github.com/alex-shpak/hugo-book
     <input type="checkbox" class="hidden" id="toc-control" />
     <aside class="hidden clearfix">
       
-  <nav id="TableOfContents"></nav>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#random-wallets">Random wallets</a></li>
+    <li><a href="#listing-addresses-in-sequential-wallets">Sequential wallets</a></li>
+  </ul>
+</nav>
 
 
     </aside>
@@ -251,7 +276,15 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><p><em>🚧 under construction 🚧</em></p>
+  <article class="markdown"><p>Once you have a wallet you can manage your funds. In order to receive a transaction you need to provide an address associated with your wallet to the sender.</p>
+<h2 id="random-wallets">Random wallets</h2>
+<p>For <code>random</code> wallets user needs to invoke wallet endpoint to create new address:</p>
+<p><a href="https://input-output-hk.github.io/cardano-wallet/api/edge/#operation/createAddress"><code>POST /byron-wallets/{walletId}/addresses</code></a></p>
+<p>In order to list existing addresses another endpoint can be used:</p>
+<p><a href="https://input-output-hk.github.io/cardano-wallet/api/edge/#operation/listAddresses"><code>GET /wallets/{walletId}/addresses</code></a></p>
+<h2 id="listing-addresses-in-sequential-wallets">Sequential wallets</h2>
+<p>For sequential wallets such as <code>icarus</code>, <code>trezor</code>, <code>ledger</code> there is no need for the user to explicitely create new addresses. Unused and used addresses can be retrived via endpoint:</p>
+<p><a href="https://input-output-hk.github.io/cardano-wallet/api/edge/#operation/listAddresses"><code>GET /wallets/{walletId}/addresses</code></a></p>
 </article>
  
       
@@ -284,7 +317,12 @@ https://github.com/alex-shpak/hugo-book
     
     <aside class="book-toc">
       
-  <nav id="TableOfContents"></nav>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#random-wallets">Random wallets</a></li>
+    <li><a href="#listing-addresses-in-sequential-wallets">Sequential wallets</a></li>
+  </ul>
+</nav>
 
  
     </aside>

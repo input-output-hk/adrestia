@@ -3,6 +3,10 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-create-a-wallet/</loc>
+  </url>
+  
+  <url>
     <loc>https://input-output-hk.github.io/adrestia/</loc>
   </url>
   
@@ -19,11 +23,23 @@
   </url>
   
   <url>
+    <loc>https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-manage-wallets/</loc>
+  </url>
+  
+  <url>
     <loc>https://input-output-hk.github.io/adrestia/docs/key-concepts/addresses-byron/</loc>
   </url>
   
   <url>
+    <loc>https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-get-target-address-for-incoming-transaction/</loc>
+  </url>
+  
+  <url>
     <loc>https://input-output-hk.github.io/adrestia/docs/common-use-cases/</loc>
+  </url>
+  
+  <url>
+    <loc>https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-make-a-transaction/</loc>
   </url>
   
   <url>
@@ -44,18 +60,6 @@
   
   <url>
     <loc>https://input-output-hk.github.io/adrestia/docs/</loc>
-  </url>
-  
-  <url>
-    <loc>https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-create-a-wallet/</loc>
-  </url>
-  
-  <url>
-    <loc>https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-create-an-address/</loc>
-  </url>
-  
-  <url>
-    <loc>https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-make-a-transaction/</loc>
   </url>
   
   <url>
