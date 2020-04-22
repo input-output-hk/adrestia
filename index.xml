@@ -1,128 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Overview on Adrestia User-Guide</title>
-    <link>https://input-output-hk.github.io/adrestia/</link>
-    <description>Recent content in Overview on Adrestia User-Guide</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="https://input-output-hk.github.io/adrestia/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>How to create a wallet</title>
-      <link>https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-create-a-wallet/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-create-a-wallet/</guid>
-      <description>The easiest and most common way of managing your funds on the Cardano blockchain is through a hierarchical deterministic wallet. One can create a wallet using the following endpoint of cardano-wallet:
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Overview on Adrestia User-Guide</title><link>https://input-output-hk.github.io/adrestia/</link><description>Recent content in Overview on Adrestia User-Guide</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://input-output-hk.github.io/adrestia/index.xml" rel="self" type="application/rss+xml"/><item><title>How to create a wallet</title><link>https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-create-a-wallet/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-create-a-wallet/</guid><description>The easiest and most common way of managing your funds on the Cardano blockchain is through a hierarchical deterministic wallet. One can create a wallet using the following endpoint of cardano-wallet:
 POST /byron-wallets
 There are several wallet types available:
- random icarus trezor ledger  The basic difference between them is that for a random wallet user needs to create new address manually, whereas for sequential wallets like icarus, trezor and ledger addresses are generated automatically by the wallet.</description>
-    </item>
-    
-    <item>
-      <title>UTxO</title>
-      <link>https://input-output-hk.github.io/adrestia/docs/key-concepts/utxo/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://input-output-hk.github.io/adrestia/docs/key-concepts/utxo/</guid>
-      <description>UTxO In a UTxO-based blockchain, a Transaction is a binding between inputs and outputs.
- input #1 &amp;gt;---* *---&amp;gt; output #1 \ / input #2 &amp;gt;---*--------* / \ input #3 &amp;gt;---* *---&amp;gt; output #2 In a standard payment, outputs are a combination of:
- A value A reference (a.k.a address, a &amp;ldquo;proof&amp;rdquo; of ownership telling who owns the output).   input #1 &amp;gt;---* *---&amp;gt; (123, DdzFFzCqr...) \ / input #2 &amp;gt;---*--------* / \ input #3 &amp;gt;---* *---&amp;gt; (456, hswdEoQCp.</description>
-    </item>
-    
-    <item>
-      <title>Architecture</title>
-      <link>https://input-output-hk.github.io/adrestia/docs/architecture/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://input-output-hk.github.io/adrestia/docs/architecture/</guid>
-      <description>High-Level Diagram   mermaid.initialize({ flowchart: { useMaxWidth:true } });  erDiagram CARDANO-NODE ||--o{ CARDANO-WALLET : sends-blocks-and-receives-txs CARDANO-NODE ||--o{ CARDANO-DB-SYNC : sends-blocks CARDANO-NODE ||--o{ CARDANO-SUBMIT-API : receives-txs CARDANO-DB-SYNC ||--|| POSTGRESQL : dumps-into POSTGRESQL ||--|| CARDANO-GRAPHQL : is-queried POSTGRESQL ||--|| CARDANO-EXPLORER-API : is-queried Components cardano-node The core cardano-node, which will support Ouroboros Praos.
-Supported environments: Linux (64-bits), MacOS (64-bits), Windows (64-bits), Docker  cardano-db-sync A necessary middleware to power both cardano-rest and cardano-graphql.</description>
-    </item>
-    
-    <item>
-      <title>HD Wallets</title>
-      <link>https://input-output-hk.github.io/adrestia/docs/key-concepts/hierarchical-deterministic-wallets/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://input-output-hk.github.io/adrestia/docs/key-concepts/hierarchical-deterministic-wallets/</guid>
-      <description>Recovery Phrases Motivation We define a way for easily entering and writing down arbitrary binary seeds using a simple dictionary of known words (available in many different languages).
+random icarus trezor ledger The basic difference between them is that for a random wallet user needs to create new address manually, whereas for sequential wallets like icarus, trezor and ledger addresses are generated automatically by the wallet.</description></item><item><title>UTxO</title><link>https://input-output-hk.github.io/adrestia/docs/key-concepts/utxo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://input-output-hk.github.io/adrestia/docs/key-concepts/utxo/</guid><description>UTxO In a UTxO-based blockchain, a Transaction is a binding between inputs and outputs.
+input #1 &amp;gt;---* *---&amp;gt; output #1 \ / input #2 &amp;gt;---*--------* / \ input #3 &amp;gt;---* *---&amp;gt; output #2 In a standard payment, outputs are a combination of:
+A value A reference (a.k.a address, a &amp;ldquo;proof&amp;rdquo; of ownership telling who owns the output). input #1 &amp;gt;---* *---&amp;gt; (123, DdzFFzCqr...) \ / input #2 &amp;gt;---*--------* / \ input #3 &amp;gt;---* *---&amp;gt; (456, hswdEoQCp.</description></item><item><title>Architecture</title><link>https://input-output-hk.github.io/adrestia/docs/architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://input-output-hk.github.io/adrestia/docs/architecture/</guid><description>High-Level Diagram mermaid.initialize({ flowchart: { useMaxWidth:true } }); erDiagram CARDANO-NODE ||--o{ CARDANO-WALLET : sends-blocks-and-receives-txs CARDANO-NODE ||--o{ CARDANO-DB-SYNC : sends-blocks CARDANO-NODE ||--o{ CARDANO-SUBMIT-API : receives-txs CARDANO-DB-SYNC ||--|| POSTGRESQL : dumps-into POSTGRESQL ||--|| CARDANO-GRAPHQL : is-queried POSTGRESQL ||--|| CARDANO-EXPLORER-API : is-queried Components cardano-node The core cardano-node, which will support Ouroboros Praos.
+Supported environments: Linux (64-bits), MacOS (64-bits), Windows (64-bits), Docker cardano-db-sync A necessary middleware to power both cardano-rest and cardano-graphql.</description></item><item><title>HD Wallets</title><link>https://input-output-hk.github.io/adrestia/docs/key-concepts/hierarchical-deterministic-wallets/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://input-output-hk.github.io/adrestia/docs/key-concepts/hierarchical-deterministic-wallets/</guid><description>Recovery Phrases Motivation We define a way for easily entering and writing down arbitrary binary seeds using a simple dictionary of known words (available in many different languages).
 The motivation here is to have sentence of words easy to read and write for humans, which map uniquely back and forth to a sized binary data (harder to remember).
-Encoding The process describing how to encode recovery phrases is described in BIP-0039 section &amp;ldquo;Generating the mnemonic&amp;rdquo;.</description>
-    </item>
-    
-    <item>
-      <title>How to manage wallets</title>
-      <link>https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-manage-wallets/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-manage-wallets/</guid>
-      <description>Once you created a wallet you can manage it with cardano-wallet endpoints. There are several operations available.
+Encoding The process describing how to encode recovery phrases is described in BIP-0039 section &amp;ldquo;Generating the mnemonic&amp;rdquo;.</description></item><item><title>How to manage wallets</title><link>https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-manage-wallets/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-manage-wallets/</guid><description>Once you created a wallet you can manage it with cardano-wallet endpoints. There are several operations available.
 List all wallets GET /v2/byron-wallets
 Get specific wallet details GET /v2/byron-wallets/{walletId}
 Update wallet metadata PUT /v2/byron-wallets/{walletId}
 Update wallet passphrase PUT /v2/byron-wallets/{walletId}/passphrase
 Get wallet UTxO GET /v2/byron-wallets/{walletId}/statistics/utxos
 See more about UTxO.
-Delete wallet DELETE /v2/byron-wallets/{walletId}</description>
-    </item>
-    
-    <item>
-      <title>Addresses Format (Byron)</title>
-      <link>https://input-output-hk.github.io/adrestia/docs/key-concepts/addresses-byron/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://input-output-hk.github.io/adrestia/docs/key-concepts/addresses-byron/</guid>
-      <description>Internal Structure +-------------------------------------------------------------------------------+ | | | CBOR-Serialized Object with CRC¹ | | | +-------------------------------------------------------------------------------+ | | v +-------------------------------------------------------------------------------+ | Address Root | Address Attributes | AddrType | | | | | | Hash (224 bits) | Der. Path² + Stake + NM | PubKey | (Script) | Redeem | | | (open for extension) | (open for extension) | +-------------------------------------------------------------------------------+ | | | | +----------------------------------+ v | | Derivation Path | +---------------------------+ |----&amp;gt;| | | SHA3-256 | | | ChaChaPoly⁴ AccountIx/AddressIx | | |&amp;gt; Blake2b 224 | | +----------------------------------+ | |&amp;gt; CBOR | | | | | | -AddrType | | +----------------------------------+ | -ASD³ (~AddrType+PubKey) | | | Stake Distribution | | -Address Attributes | | | | +---------------------------+ |----&amp;gt;| BootstrapEra | (Single | Multi) | | +----------------------------------+ | | | +----------------------------------+ | | Network Magic | |----&amp;gt;| | | Addr Discr: MainNet vs TestNet | +----------------------------------+   CRC: Cyclic Redundancy Check; sort of checksum, a bit (pun intended) more reliable.</description>
-    </item>
-    
-    <item>
-      <title>How to get target address for incoming transaction</title>
-      <link>https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-get-target-address-for-incoming-transaction/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-get-target-address-for-incoming-transaction/</guid>
-      <description>Once you have a wallet you can manage your funds. In order to receive a transaction you need to provide an address associated with your wallet to the sender.
+Delete wallet DELETE /v2/byron-wallets/{walletId}</description></item><item><title>Addresses Format (Byron)</title><link>https://input-output-hk.github.io/adrestia/docs/key-concepts/addresses-byron/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://input-output-hk.github.io/adrestia/docs/key-concepts/addresses-byron/</guid><description>Internal Structure +-------------------------------------------------------------------------------+ | | | CBOR-Serialized Object with CRC¹ | | | +-------------------------------------------------------------------------------+ | | v +-------------------------------------------------------------------------------+ | Address Root | Address Attributes | AddrType | | | | | | Hash (224 bits) | Der. Path² + Stake + NM | PubKey | (Script) | Redeem | | | (open for extension) | (open for extension) | +-------------------------------------------------------------------------------+ | | | | +----------------------------------+ v | | Derivation Path | +---------------------------+ |----&amp;gt;| | | SHA3-256 | | | ChaChaPoly⁴ AccountIx/AddressIx | | |&amp;gt; Blake2b 224 | | +----------------------------------+ | |&amp;gt; CBOR | | | | | | -AddrType | | +----------------------------------+ | -ASD³ (~AddrType+PubKey) | | | Stake Distribution | | -Address Attributes | | | | +---------------------------+ |----&amp;gt;| BootstrapEra | (Single | Multi) | | +----------------------------------+ | | | +----------------------------------+ | | Network Magic | |----&amp;gt;| | | Addr Discr: MainNet vs TestNet | +----------------------------------+ CRC: Cyclic Redundancy Check; sort of checksum, a bit (pun intended) more reliable.</description></item><item><title>How to get target address for incoming transaction</title><link>https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-get-target-address-for-incoming-transaction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-get-target-address-for-incoming-transaction/</guid><description>Once you have a wallet you can manage your funds. In order to receive a transaction you need to provide an address associated with your wallet to the sender.
 Random wallets For random wallets user needs to invoke wallet endpoint to create new address:
 POST /byron-wallets/{walletId}/addresses
 In order to list existing addresses another endpoint can be used:
 GET /wallets/{walletId}/addresses
-Sequential wallets For sequential wallets such as icarus, trezor, ledger there is no need for the user to explicitely create new addresses.</description>
-    </item>
-    
-    <item>
-      <title>How to make a transaction</title>
-      <link>https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-make-a-transaction/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-make-a-transaction/</guid>
-      <description>using cardano-wallet Assuming you have already created a wallet, you can send a transaction by using the following endpoint:
+Sequential wallets For sequential wallets such as icarus, trezor, ledger there is no need for the user to explicitely create new addresses.</description></item><item><title>How to make a transaction</title><link>https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-make-a-transaction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-make-a-transaction/</guid><description>using cardano-wallet Assuming you have already created a wallet, you can send a transaction by using the following endpoint:
 POST /v2/byron-wallets/{walletId}/transactions
-Behind the scene, the wallet engine will select necessary inputs from the wallet, generate a change address within the wallet, sign and submit the transaction. A transaction can have multiple outputs, possibly to the same address. Note that in Byron, addresses are necessarily base58-encoded (as an enforced convention).</description>
-    </item>
-    
-    <item>
-      <title>API References</title>
-      <link>https://input-output-hk.github.io/adrestia/docs/api-references/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://input-output-hk.github.io/adrestia/docs/api-references/</guid>
-      <description>Components    Component Link     cardano-wallet https://input-output-hk.github.io/cardano-wallet/api/edge   cardano-submit-api https://input-output-hk.github.io/cardano-rest/submit-api/   cardano-explorer-api https://input-output-hk.github.io/cardano-rest/explorer-api/   cardano-graphql Soon available.    About cardano-wallet
-Cardano-wallet comes with a command-line interface that can be used as a quick alternative to cURL or wget to interact with a server running on localhost. Every endpoint of the API is mapped to a corresponding command which often offers a better user experience than directly interacting with the API as a human (API are for programs, command-lines are for humans).</description>
-    </item>
-    
-    <item>
-      <title>FAQ</title>
-      <link>https://input-output-hk.github.io/adrestia/docs/faq/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://input-output-hk.github.io/adrestia/docs/faq/</guid>
-      <description>I’ve noticed that other blockchains create accounts for wallets? ...  There are two sides to this question. Either, you are referring to accounts as in Ethereum accounts, or you may refer to accounts of hierarchical deterministic wallets.
-In the first scenario, assets in the form of accounts are only supported in the Shelley era of Cardano and only for a specific use-case: rewards. Rewards are indeed implicitely published on the blockchain to mitigate the risk of flooding the network at the end of every epoch with rewards payouts!</description>
-    </item>
-    
-  </channel>
-</rss>
+Behind the scene, the wallet engine will select necessary inputs from the wallet, generate a change address within the wallet, sign and submit the transaction. A transaction can have multiple outputs, possibly to the same address. Note that in Byron, addresses are necessarily base58-encoded (as an enforced convention).</description></item><item><title>API References</title><link>https://input-output-hk.github.io/adrestia/docs/api-references/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://input-output-hk.github.io/adrestia/docs/api-references/</guid><description>Components Component Link cardano-wallet https://input-output-hk.github.io/cardano-wallet/api/edge cardano-submit-api https://input-output-hk.github.io/cardano-rest/submit-api/ cardano-explorer-api https://input-output-hk.github.io/cardano-rest/explorer-api/ cardano-graphql Soon available. About cardano-wallet
+Cardano-wallet comes with a command-line interface that can be used as a quick alternative to cURL or wget to interact with a server running on localhost. Every endpoint of the API is mapped to a corresponding command which often offers a better user experience than directly interacting with the API as a human (API are for programs, command-lines are for humans).</description></item><item><title>FAQ</title><link>https://input-output-hk.github.io/adrestia/docs/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://input-output-hk.github.io/adrestia/docs/faq/</guid><description>I’ve noticed that other blockchains create accounts for wallets? ... There are two sides to this question. Either, you are referring to accounts as in Ethereum accounts, or you may refer to accounts of hierarchical deterministic wallets.
+In the first scenario, assets in the form of accounts are only supported in the Shelley era of Cardano and only for a specific use-case: rewards. Rewards are indeed implicitely published on the blockchain to mitigate the risk of flooding the network at the end of every epoch with rewards payouts!</description></item></channel></rss>
