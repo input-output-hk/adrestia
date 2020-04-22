@@ -20,7 +20,7 @@ jobs:
 
     - name: 📸 Build Static Website
       run: |
-        cd user-guide && ../hugo -t book
+        cd user-guide && ../hugo -t book --minify
 
     - name: 📘 Publish Artifacts
       if: matrix.os == 'ubuntu-latest' && github.event_name == 'push'
