@@ -30,7 +30,7 @@ On top of this, Adrestia provides a set of services to interact with the Cardano
 
 - [cardano-wallet][cardano-wallet]: HTTP Rest API for managing UTxOs, and much more.
 - [cardano-submit-api][cardano-rest]: HTTP API for submitting signed transactions.
-- [cardano-graphql][cardano-rest]: HTTP GraphQL API for exploring the blockchain.
+- [cardano-graphql][cardano-graphql]: HTTP GraphQL API for exploring the blockchain.
 
 As well as several low-level libraries on various topics:
 
