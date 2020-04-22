@@ -3,3 +3,6 @@ languageCode = "en-us"
 title = "Adrestia User-Guide"
 
 staticDir = [ "static" ]
+
+[markup.goldmark.renderer]
+  unsafe = true
