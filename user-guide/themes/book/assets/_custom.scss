@@ -5,3 +5,11 @@
 article.markdown > p  {
   text-align: justify;
 }
+
+ul#book-search-results {
+  color: #16a085;
+}
+
+ul#book-search-results li a::before {
+  content: '🔍 ';
+}
