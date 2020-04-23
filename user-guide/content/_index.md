@@ -11,11 +11,9 @@ Adrestia is a product team working on developing tooling and client interfaces a
 
 As reflected on the [roadmap][roadmap], the Cardano platform is going through the following themes of development:
 
-{{< rawhtml >}}
 <p style="text-align: center">
 BYRON | SHELLEY | GOGUEN | BASHO | VOLTAIRE 
 </p>
-{{< /rawhtml >}}
 
 Themes are being developed in parallel. So far only _Byron_ , which provides the foundation for the platform has made it into the mainnet. The primary purpose of Byron was to release a provably secure proof of stake consensus protocol that is energy efficient and cost effective known as [Ouroboros][ouroboros]. _Shelley_ is the next theme to be released soon; it'll bring decentralization and delegations of assets into _Byron_.
 
@@ -49,7 +47,6 @@ The Byron reboot era is **soon to end by early summer** when the Shelley hard fo
 
 In the diagram below, components in red are non-Shelley compliant and will not be available after the hard fork, while the components in green are Shelley compliant and will be supported during and after the hard-fork.
 
-{{< rawhtml >}}
 <table style="text-align: center; color: #ffffff;">
   <tr>
     <td colspan=2 style="background: #e74c3c;">cardano-sl:node</td>
@@ -66,7 +63,6 @@ In the diagram below, components in red are non-Shelley compliant and will not b
     <td style="background: #2ecc71;">cardano-graphql</td>
   </tr>
 </table>
-{{< /rawhtml >}}
 
 ---
 
