@@ -1,8 +1,14 @@
 baseURL = "https://input-output-hk.github.io/adrestia"
 languageCode = "en-us"
 title = "Adrestia User-Guide"
+enableGitInfo = true
 
 staticDir = [ "static" ]
+
+[params]
+  BookRepo = "https://github.com/input-output-hk/adrestia/"
+  BookEditPath = "edit/master/user-guide/content"
+  BookDateFormat = "2006-02-01"
 
 [markup.goldmark.renderer]
   unsafe = true
