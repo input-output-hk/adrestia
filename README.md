@@ -1,46 +1,16 @@
-# Adrestia
+# Overview
 
 Adrestia is a product team working on developing tooling and client interfaces around Cardano. Our mission is to create an easier bridge between end-users applications and Cardano core node by pushing out higher level interfaces to interact with the Cardano blockchain.
 
-This repository acts as a catalog of projects that fall under the scope of Adrestia. Checkout the [📘 Adrestia user-guide](https://input-output-hk.github.io/adrestia/) for more information!
+# Getting Started
 
 
-# Architecture Overview
+To get started, checkout the [📘 Adrestia user-guide](https://input-output-hk.github.io/adrestia/)! 
 
 
-```
-                                                      Adrestia
-                                              <======================>
+# Components
 
-                                                +-----------------+        Daedalus
-                                                |                 | HTTP   Exchanges
-+--------------+ node-to-node               +-->+  cardano-wallet +------> Atala Prism
-|              |                            |   |                 |        Dashboards
-| cardano-node <---+                        |   +-----------------+        ...
-|              |   |                        |
-+------^-------+   |                        |
-       |           |                        |
-       |           |                        |
-       |    +------v-------+                |   +-----------------+
-       +    |              | node-to-client |   |                 | HTTP   Explorer v2
-      ...   | cardano-node +--------------------> cardano-graphql +------> Exchanges
-       |    |              |                |   |                 |        Pool Operator Tool
-       |    +------^-------+                |   +-----------------+        ...
-       |           |                        |
-       |           |                        |
-+------v-------+   |                        |
-|              |   |                        |   +-----------------+
-| cardano-node <---+                        |   |                 | HTTP   Explorer v1
-|              |                            +--->   cardano-rest  +------> Exchanges
-+--------------+ node-to-node                   |                 |        ...
-                                                +-----------------+
-
-
-                                              <======================>
-                                                      Adrestia
-```
-
-# APIs
+## APIs
 
 name / link       | description                                    | Byron              | Jörmungandr        | Shelley
 ---               | ---                                            | ---                | ---                | ---
@@ -49,7 +19,7 @@ name / link       | description                                    | Byron      
 [cardano-graphql] | GraphQL/HTTP API for browsing on-chain data    | :heavy_check_mark: | :x:                | :construction:
 
 
-# Libraries
+## Libraries
 
 Name / Link                 | Description                                                              | Haskell            | JavaScript
 ---                         | ---                                                                      | ---                | ---
@@ -60,13 +30,13 @@ Name / Link                 | Description                                       
 [cardano-serialization-lib] | Binary serialization of on-chain data types                              | :construction:     | :construction:
 [cardano-transactions]      | Transaction construction and signing                                     | :heavy_check_mark: | :construction:
 
-# Formal Specifications 
+## Formal Specifications 
 
 Name / Link                 | Description                                       
 ---                         | ---                                               
 [utxo-wallet-specification] | Formal specification for a UTxO wallet            
 
-# Internal
+## Internal
 
 > :warning: Here be dragons. These tools are used internally by other tools and
 > does not benefit from the same care in documentation than other tools above.
@@ -92,5 +62,6 @@ name / link        | description
 [cardano-js-sdk]: https://github.com/input-output-hk/cardano-js-sdk
 [persistent]: https://github.com/input-output-hk/persistent
 
+# Contributing
 
-
+See [CONTRIBUTING.md](CONTRIBUTING.md)
