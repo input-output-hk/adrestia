@@ -1,6 +1,6 @@
 # Overview
 
-Adrestia is a product team working on developing tooling and client interfaces around Cardano. Our mission is to create an easier bridge between end-users applications and Cardano core node by pushing out higher level interfaces to interact with the Cardano blockchain.
+Adrestia is a collection of products which makes it easier to integrate with Cardano. It comes in different flavours: low-level libraries or high-level APIs. Depending on the use-cases you have and the control that you seek, you may use any of the components below.
 
 # Getting Started
 
