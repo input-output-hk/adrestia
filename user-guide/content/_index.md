@@ -5,7 +5,7 @@ title: Overview
 
 # Adrestia
 
-Adrestia is a product team working on developing tooling and client interfaces around Cardano. Our mission is to create an easier bridge between end-users applications and Cardano core node by pushing out higher level interfaces to interact with the Cardano blockchain.
+Adrestia is a collection of products which makes it easier to integrate with Cardano. It comes in different flavours: low-level libraries or high-level APIs. Depending on the use-cases you have and the control that you seek, you may use any of the components below.
 
 # Overview
 
@@ -18,7 +18,7 @@ BYRON | SHELLEY | GOGUEN | BASHO | VOLTAIRE
 Themes are being developed in parallel. So far only _Byron_ , which provides the foundation for the platform has made it into the mainnet. The primary purpose of Byron was to release a provably secure proof of stake consensus protocol that is energy efficient and cost effective known as [Ouroboros][ouroboros]. _Shelley_ is the next theme to be released soon; it'll bring decentralization and delegations of assets into _Byron_.
 
 {{< hint info >}}
-An implementation of the protocol is [here][ouroboros-network] and is realized through [cardano-node][cardano-node], the core node.
+An implementation of the protocol is [here][ouroboros-network] and is realized through [cardano-node][cardano-node], deployed as core and relay nodes to form the Cardano network.
 
 [ouroboros-network]: https://github.com/input-output-hk/ouroboros-network
 [cardano-node]: https://github.com/input-output-hk/cardano-node
@@ -26,13 +26,13 @@ An implementation of the protocol is [here][ouroboros-network] and is realized t
 
 On top of this, Adrestia provides a set of services to interact with the Cardano blockchain:
 
-- [cardano-wallet][cardano-wallet]: HTTP Rest API for managing UTxOs, and much more.
+- [cardano-wallet][cardano-wallet]: HTTP ReST API for managing UTxOs, and much more.
 - [cardano-submit-api][cardano-rest]: HTTP API for submitting signed transactions.
 - [cardano-graphql][cardano-graphql]: HTTP GraphQL API for exploring the blockchain.
 
 As well as several low-level libraries on various topics:
 
-- [cardano-addresses][cardano-addresses]: Addresses generation, derivation &  mnemonic manipulation.
+- [cardano-addresses][cardano-addresses]: Address generation, derivation &  mnemonic manipulation.
 - [cardano-coin-selection][cardano-coin-selection]: Algorithms for coin selection and fee balancing.
 - [cardano-transactions][cardano-transactions]: Utilities for constructing and signing transactions.
 - [bech32][bech32]: Haskell implementation of the Bech32 address format (BIP 0173). 
