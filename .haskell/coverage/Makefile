@@ -115,5 +115,6 @@ $(WORKDIR)/draft.overlay: $(HPC_ROOT)/combined/custom/custom.tix
 	stack exec hpc -- draft --hpcdir=$(HPC_DIR) --srcdir=$(SRC_DIR) $< | sed "s/module \".*:/module \"/g" > $@
 
 $(HPC_ROOT)/combined/custom/custom.tix:
-	stack test --no-terminal --coverage --haddock --no-haddock-deps
+	stack clean
+	stack test --no-terminal --coverage
 	stack hpc report --all
