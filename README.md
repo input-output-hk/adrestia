@@ -1,6 +1,6 @@
 # Overview
 
-Adrestia is a collection of products which makes it easier to integrate with Cardano. It comes in different flavours: low-level libraries or high-level APIs. Depending on the use-cases you have and the control that you seek, you may use any of the components below.
+Adrestia is a collection of products which makes it easier to integrate with Cardano. It comes in different flavours: SDK or high-level APIs. Depending on the use-cases you have and the control that you seek, you may use any of the components below.
 
 # Getting Started
 
@@ -19,7 +19,7 @@ name / link       | description                                    | Byron      
 [cardano-graphql] | GraphQL/HTTP API for browsing on-chain data    | :heavy_check_mark: | :x:                | :construction:
 
 
-## Libraries
+## SDK
 
 Name / Link                 | Description                                                              | Haskell            | JavaScript
 ---                         | ---                                                                      | ---                | ---

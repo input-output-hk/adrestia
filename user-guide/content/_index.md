@@ -5,7 +5,7 @@ title: Overview
 
 # Adrestia
 
-Adrestia is a collection of products which makes it easier to integrate with Cardano. It comes in different flavours: low-level libraries or high-level APIs. Depending on the use-cases you have and the control that you seek, you may use any of the components below.
+Adrestia is a collection of products which makes it easier to integrate with Cardano. It comes in different flavours: SDK or high-level APIs. Depending on the use-cases you have and the control that you seek, you may use any of the components below.
 
 # Overview
 
@@ -30,7 +30,7 @@ On top of this, Adrestia provides a set of services to interact with the Cardano
 - [cardano-submit-api][cardano-rest]: HTTP API for submitting signed transactions.
 - [cardano-graphql][cardano-graphql]: HTTP GraphQL API for exploring the blockchain.
 
-As well as several low-level libraries on various topics:
+As well as an SDK split into several low-level libraries on various topics:
 
 - [cardano-addresses][cardano-addresses]: Address generation, derivation &  mnemonic manipulation.
 - [cardano-coin-selection][cardano-coin-selection]: Algorithms for coin selection and fee balancing.
