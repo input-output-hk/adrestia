@@ -12,13 +12,11 @@ Update wallet metadata PUT /v2/byron-wallets/{walletId}
 Update wallet passphrase PUT /v2/byron-wallets/{walletId}/passphrase
 Get wallet UTxO GET /v2/byron-wallets/{walletId}/statistics/utxos
 See more about UTxO.
-Delete wallet DELETE /v2/byron-wallets/{walletId}</description></item><item><title>How to get target address for incoming transaction</title><link>https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-get-target-address-for-incoming-transaction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-get-target-address-for-incoming-transaction/</guid><description>Difficulty: beginner
+Delete wallet DELETE /v2/byron-wallets/{walletId}</description></item><item><title>How to "create" addresses</title><link>https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-create-addresses/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-create-addresses/</guid><description>using cardano-wallet Difficulty: beginner
 Requires:
 📦 cardano-wallet &amp;gt;= v2020-04-01 Once you have a wallet you can manage your funds. In order to receive a transaction you need to provide an address associated with your wallet to the sender.
-Random wallets For random wallets user needs to invoke the following wallet endpoint to create new addresses:
-POST /byron-wallets/{walletId}/addresses
-In order to list existing addresses another endpoint can be used:
-GET /byron-wallets/{walletId}/addresses</description></item><item><title>How to make a transaction</title><link>https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-make-a-transaction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-make-a-transaction/</guid><description>using cardano-wallet Difficulty: beginner
+Random wallets (Legacy Byron) Address creation is only allowed for wallets using random derivation. These are the legacy wallets from cardano-sl.
+For random wallets user needs to invoke the following wallet endpoint to create new addresses:</description></item><item><title>How to make a transaction</title><link>https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-make-a-transaction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://input-output-hk.github.io/adrestia/docs/common-use-cases/how-to-make-a-transaction/</guid><description>using cardano-wallet Difficulty: beginner
 Requires:
 📦 cardano-wallet &amp;gt;= v2020-04-01 Assuming you have already created a wallet, you can send a transaction by using the following endpoint:
 POST /v2/byron-wallets/{walletId}/transactions
