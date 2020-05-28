@@ -36,6 +36,8 @@
 
 SHELL = bash
 
+UPSTREAM ?= https://raw.githubusercontent.com/input-output-hk/adrestia/master/.haskell/coverage/Makefile
+
 WORKDIR ?= .coverage
 DESTDIR ?= dist/coverage
 
@@ -43,7 +45,7 @@ HPC_DIR  = $(shell stack path --dist-dir)/hpc
 HPC_ROOT = $(shell stack path --local-hpc-root)
 SRC_DIR  = .
 
-.PHONY: badge clean draft report
+.PHONY: badge clean draft report upgrade
 
 ### Phony
 
@@ -60,6 +62,14 @@ draft: $(WORKDIR)/draft.overlay
 
 report: $(DESTDIR)/hpc_index.html
 	@echo -e "Report generated at: $<"
+
+upgrade:
+	$(eval TMP := $(shell mktemp))
+	wget $(UPSTREAM) -O $(TMP)
+	@mkdir -p .old
+	@cp Makefile .old/Makefile
+	@mv $(TMP) Makefile
+	@echo "Up-to-date. Old Makefile saved in '.old/Makefile'."
 
 ### Recipes
 COLOR_RED = \033[0;31m
@@ -92,7 +102,7 @@ $(DESTDIR)/badge.svg: $(DESTDIR)/hpc_index.html
 	@echo '</svg>' >> $@
 
 $(DESTDIR)/hpc_index.html: $(WORKDIR)/overlay.tix
-	stack hpc report --all --destdir $(DESTDIR) $<
+	stack hpc report --all --destdir $(DESTDIR) *.tix $<
 
 $(WORKDIR)/template.overlay:
 	@echo -e "$(COLOR_RED)"
@@ -117,4 +127,4 @@ $(WORKDIR)/draft.overlay: $(HPC_ROOT)/combined/custom/custom.tix
 $(HPC_ROOT)/combined/custom/custom.tix:
 	stack clean && rm -f *.tix
 	stack test --no-terminal --coverage
-	stack hpc report --all
+	stack hpc report --all *.tix
