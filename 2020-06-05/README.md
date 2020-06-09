@@ -73,16 +73,15 @@
 
   ```console
   $ cardano-address recovery-phrase generate --size 15 \
-  | cardano-address key from-recovery-phrase Shelley \
-  > root.prv
+    | cardano-address key from-recovery-phrase Shelley > root.prv
   
   $ cat root.prv | cardano-address key child 1852H/1815H/0H/2/0 > stake.prv
   $ cat root.prv | cardano-address key child 1852H/1815H/0H/0/0 > addr.prv
 
   $ cat addr.prv \
-  | cardano-address key public \
-  | cardano-address address payment --network-tag 0 \
-  | cardano-address address delegation $(cat stake.prv | cardano-address key public) \
+    | cardano-address key public \
+    | cardano-address address payment --network-tag 0 \
+    | cardano-address address delegation $(cat stake.prv | cardano-address key public) \
   addr1qpj2d4dqzds5p3mmlu95v9pex2d72cdvyjh2u3dtj4yqesv27k...
 
   $ cardano-address address inspect <<< "addr1qpj2d4dqzds5p3mmlu95v9pex2d72cdvyjh2u3dtj4yqesv27k..."
