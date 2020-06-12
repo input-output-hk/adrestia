@@ -49,17 +49,15 @@ Choosing the right component
 
 .. mermaid::
 
-   sequenceDiagram
-      participant Alice
-      participant Bob
-      Alice->John: Hello John, how are you?
-      loop Healthcheck
-          John->John: Fight against hypochondria
-      end
-      Note right of John: Rational thoughts <br/>prevail...
-      John-->Alice: Great!
-      John->Bob: How about you?
-      Bob-->John: Jolly good!
+   erDiagram
+      CARDANO-NODE ||--o{ CARDANO-WALLET : sends-blocks-and-receives-txs
+      CARDANO-NODE ||--o{ CARDANO-DB-SYNC : sends-blocks
+      CARDANO-NODE ||--o{ CARDANO-SUBMIT-API : receives-txs
+
+      CARDANO-DB-SYNC ||--|| POSTGRESQL : dumps-into
+
+      POSTGRESQL ||--|| CARDANO-GRAPHQL : is-queried
+      POSTGRESQL ||--|| CARDANO-EXPLORER-API : is-queried
 
 .. _cardano-node: https://github.com/input-output-hk/cardano-node
 .. _cardano-db-sync: https://github.com/input-output-hk/cardano-db-sync
