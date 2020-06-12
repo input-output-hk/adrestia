@@ -57,15 +57,15 @@ Internal
 
 :warning: Here be dragons. These tools are used internally by other tools and does not benefit from the same care in documentation than other tools above.
 
-+----------------+----------------------------------------------------------------------+
-|  name / link   |                             description                              |
-+================+======================================================================+
-| cardano-js     | (experimental) Cardano primitives for ECMAScript applications        |
-+----------------+----------------------------------------------------------------------+
-| cardano-js-sdk | (experimental) Cardano SDK for ECMAScript applications               |
-+----------------+----------------------------------------------------------------------+
-| persistent     | Fork of the persistent Haskell library maintained for cardano-wallet |
-+----------------+----------------------------------------------------------------------+
++-------------------+----------------------------------------------------------------------+
+|    name / link    |                             description                              |
++===================+======================================================================+
+| `cardano-js`_     | (experimental) Cardano primitives for ECMAScript applications        |
++-------------------+----------------------------------------------------------------------+
+| `cardano-js-sdk`_ | (experimental) Cardano SDK for ECMAScript applications               |
++-------------------+----------------------------------------------------------------------+
+| `persistent`_     | Fork of the persistent Haskell library maintained for cardano-wallet |
++-------------------+----------------------------------------------------------------------+
 
 .. _Adrestia user-guide: https://input-output-hk.github.io/adrestia/
 .. _cardano-wallet: https://github.com/input-output-hk/cardano-wallet
