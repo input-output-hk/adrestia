@@ -25,11 +25,7 @@ known as [Ouroboros][ouroboros]. *Shelley* is the next theme to be
 released soon; it’ll bring decentralization and delegations of assets
 into *Byron*.
 
-{{< hint info >}} An implementation of the protocol is `here`_ and is
-realized through `cardano-node`_, deployed as core and relay nodes to
-form the Cardano network.
-
-{{< /hint >}}
+.. note:: An implementation of the protocol is `here <http://example.com>`__ and is realized through `cardano-node <http://example.com>`__, deployed as core and relay nodes to form the Cardano network.
 
 On top of this, Adrestia provides a set of services to interact with the
 Cardano blockchain:
@@ -57,13 +53,7 @@ The only currently available language target is *Haskell*, although
 support for *JavaScript* is being worked on and should be available
 soon.
 
-{{< hint danger >}} **IMPORTANT NOTE**
-
-The Byron reboot era is **soon to end by early summer** when the Shelley
-hard fork shall occur. This **will break ALL existing** exchange
-integrations. Cardano-sl shall no longer be maintained or supported.
-**Adrestia** tooling **will support** all integrations **moving forward
-for Shelley**. {{< /hint >}}
+.. note:: **IMPORTANT NOTE** The Byron reboot era is **soon to end by early summer** when the Shelley hard fork shall occur. This **will break ALL existing** exchange integrations. Cardano-sl shall no longer be maintained or supported. **Adrestia** tooling **will support** all integrations **moving forward for Shelley**.
 
 In the diagram below, components in red are non-Shelley compliant and
 will not be available after the hard fork, while the components in green
