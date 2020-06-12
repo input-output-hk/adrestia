@@ -9,8 +9,11 @@ Getting Started
 
 To get started, checkout the 📘 `Adrestia user-guide`_!
 
+APIs
+----
+
 +--------------------+------------------------------------------------+--------------------------------------+------------------------------------------+--------------------------------+
-|    Name / Link     |                  Description                   |                Byron                 |               Jörmungandr                |            Shelley             |
+|    Name / Link     |                  Description                   |                Byron                 |                   Jörm                   |             Shell              |
 +====================+================================================+======================================+==========================================+================================+
 | `cardano-wallet`_  | JSON/REST API for managing UTxOs in HD wallets | .. image:: doc/icon/check-circle.svg | .. image:: doc/icon/check-circle.svg     | .. image:: doc/icon/hammer.svg |
 +--------------------+------------------------------------------------+--------------------------------------+------------------------------------------+--------------------------------+
@@ -19,7 +22,9 @@ To get started, checkout the 📘 `Adrestia user-guide`_!
 | `cardano-graphql`_ | GraphQL/HTTP API for browsing on-chain data    | .. image:: doc/icon/check-circle.svg | .. image:: doc/icon/dash-circle-fill.svg | .. image:: doc/icon/hammer.svg |
 +--------------------+------------------------------------------------+--------------------------------------+------------------------------------------+--------------------------------+
 
-:warning: Here be dragons. These tools are used internally by other tools and does not benefit from the same care in documentation than other tools above.
+
+SDKs
+----
 
 +------------------------------+--------------------------------------------------------------------------+------------------------------------------+------------------------------------------+
 |         Name / Link          |                               Description                                |                 Haskell                  |                Javascript                |
@@ -37,6 +42,31 @@ To get started, checkout the 📘 `Adrestia user-guide`_!
 | `cardano-transactions`_      | Transaction construction and signing                                     | .. image:: doc/icon/check-circle.svg     | .. image:: doc/icon/hammer.svg           |
 +------------------------------+--------------------------------------------------------------------------+------------------------------------------+------------------------------------------+
 
+Formal Specifications
+---------------------
+
++------------------------------+----------------------------------------+
+|         name / link          |              description               |
++==============================+========================================+
+| `utxo-wallet-specification`_ | Formal specification for a UTxO wallet |
++------------------------------+----------------------------------------+
+
+
+Internal
+--------
+
+:warning: Here be dragons. These tools are used internally by other tools and does not benefit from the same care in documentation than other tools above.
+
++----------------+----------------------------------------------------------------------+
+|  name / link   |                             description                              |
++================+======================================================================+
+| cardano-js     | (experimental) Cardano primitives for ECMAScript applications        |
++----------------+----------------------------------------------------------------------+
+| cardano-js-sdk | (experimental) Cardano SDK for ECMAScript applications               |
++----------------+----------------------------------------------------------------------+
+| persistent     | Fork of the persistent Haskell library maintained for cardano-wallet |
++----------------+----------------------------------------------------------------------+
+
 .. _Adrestia user-guide: https://input-output-hk.github.io/adrestia/
 .. _cardano-wallet: https://github.com/input-output-hk/cardano-wallet
 .. _cardano-rest: https://github.com/input-output-hk/cardano-addresses
@@ -50,6 +80,7 @@ To get started, checkout the 📘 `Adrestia user-guide`_!
 .. _cardano-serialization-lib: https://github.com/input-output-hk/cardano-serialization-lib
 .. _cardano-transactions: https://github.com/input-output-hk/cardano-transactions
 
+.. _utxo-wallet-specification: https://github.com/input-output-hk/utxo-wallet-specification
 
 .. toctree::
    :maxdepth: 3
