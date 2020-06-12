@@ -79,7 +79,7 @@ hard-fork.
     </tr>
   </table>
 
-  .. toctree::
+.. toctree::
    :maxdepth: 3
    :titlesonly:
    :hidden:
