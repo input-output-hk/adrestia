@@ -6,18 +6,6 @@ Cardano Architecture
 High-Level Diagram
 ******************
 
-.. mermaid::
-
-   erDiagram
-      CARDANO-NODE ||--o{ CARDANO-WALLET : sends-blocks-and-receives-txs
-      CARDANO-NODE ||--o{ CARDANO-DB-SYNC : sends-blocks
-      CARDANO-NODE ||--o{ CARDANO-SUBMIT-API : receives-txs
-
-      CARDANO-DB-SYNC ||--|| POSTGRESQL : dumps-into
-
-      POSTGRESQL ||--|| CARDANO-GRAPHQL : is-queried
-      POSTGRESQL ||--|| CARDANO-EXPLORER-API : is-queried
-
 Components
 ==========
 
@@ -61,22 +49,17 @@ Choosing the right component
 
 .. mermaid::
 
-   graph TD
-      QMakeTx{Do you need to <br/> make transactions?} 
-      QManageUTxO{Do you want to <br/>implement your own wallet?}
-      QAlreadyIntegrated{Do you already have<br/>an integration with<br/>cardano-sl?}
-
-      GraphQL{cardano-graphql}
-      Rest{cardano-rest}
-      SDK{SDK}
-      Wallet{cardano-wallet}
-
-      QMakeTx-->|yes| QManageUTxO
-      QMakeTx-->|no| QAlreadyIntegrated
-      QAlreadyIntegrated-->|yes| Rest
-      QAlreadyIntegrated-->|no| GraphQL
-      QManageUTxO-->|yes| SDK
-      QManageUTxO-->|no| Wallet
+   sequenceDiagram
+      participant Alice
+      participant Bob
+      Alice->John: Hello John, how are you?
+      loop Healthcheck
+          John->John: Fight against hypochondria
+      end
+      Note right of John: Rational thoughts <br/>prevail...
+      John-->Alice: Great!
+      John->Bob: How about you?
+      Bob-->John: Jolly good!
 
 .. _cardano-node: https://github.com/input-output-hk/cardano-node
 .. _cardano-db-sync: https://github.com/input-output-hk/cardano-db-sync
