@@ -78,3 +78,10 @@ hard-fork.
       <td style="background: #2ecc71;">cardano-graphql</td>
     </tr>
   </table>
+
+  .. toctree::
+   :maxdepth: 3
+   :titlesonly:
+   :hidden:
+
+   architecture
