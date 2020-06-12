@@ -13,11 +13,9 @@ Overview
 As reflected on the [roadmap][roadmap], the Cardano platform is going
 through the following themes of development:
 
-.. raw:: html
+.. class:: center
 
-  <p style="text-align: center">
-  BYRON \| SHELLEY \| GOGUEN \| BASHO \| VOLTAIRE
-  </p>
+BYRON | SHELLEY | GOGUEN | BASHO | VOLTAIRE
 
 Themes are being developed in parallel. So far only *Byron* , which
 provides the foundation for the platform has made it into the mainnet.
