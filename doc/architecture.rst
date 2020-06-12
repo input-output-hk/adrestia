@@ -2,15 +2,16 @@ High-Level Diagram
 ==================
 
 .. mermaid::
+
    erDiagram
-     CARDANO-NODE ||--o{ CARDANO-WALLET : sends-blocks-and-receives-txs
-     CARDANO-NODE ||--o{ CARDANO-DB-SYNC : sends-blocks
-     CARDANO-NODE ||--o{ CARDANO-SUBMIT-API : receives-txs
+      CARDANO-NODE ||--o{ CARDANO-WALLET : sends-blocks-and-receives-txs
+      CARDANO-NODE ||--o{ CARDANO-DB-SYNC : sends-blocks
+      CARDANO-NODE ||--o{ CARDANO-SUBMIT-API : receives-txs
 
-     CARDANO-DB-SYNC ||--|| POSTGRESQL : dumps-into
+      CARDANO-DB-SYNC ||--|| POSTGRESQL : dumps-into
 
-     POSTGRESQL ||--|| CARDANO-GRAPHQL : is-queried
-     POSTGRESQL ||--|| CARDANO-EXPLORER-API : is-queried
+      POSTGRESQL ||--|| CARDANO-GRAPHQL : is-queried
+      POSTGRESQL ||--|| CARDANO-EXPLORER-API : is-queried
 
 Components
 ----------
@@ -47,7 +48,9 @@ HTTP GraphQL API for Cardano. A more flexible alternative for blockchain explora
 
 Choosing the right component
 ----------------------------
+
 .. mermaid::
+
    graph TD
    QMakeTx{Do you need to <br/> make transactions?} 
    QManageUTxO{Do you want to <br/>implement your own wallet?}
