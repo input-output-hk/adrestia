@@ -85,10 +85,3 @@ Internal
 .. _cardano-js: https://github.com/input-output-hk/cardano-js
 .. _cardano-js-sdk: https://github.com/input-output-hk/cardano-js-sdk
 .. _persistent: https://github.com/input-output-hk/persistent
-
-.. toctree::
-   :maxdepth: 3
-   :titlesonly:
-   :hidden:
-
-   doc/architecture
