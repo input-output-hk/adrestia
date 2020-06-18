@@ -7,4 +7,4 @@ Adrestia Index
    :titlesonly:
    :hidden:
 
-   doc/architecture
+   architecture
