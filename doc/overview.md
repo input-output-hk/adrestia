@@ -8,12 +8,10 @@ BYRON | SHELLEY | GOGUEN | BASHO | VOLTAIRE
 
 Themes are being developed in parallel. So far only _Byron_ , which provides the foundation for the platform has made it into the mainnet. The primary purpose of Byron was to release a provably secure proof of stake consensus protocol that is energy efficient and cost effective known as [Ouroboros][ouroboros]. _Shelley_ is the next theme to be released soon; it'll bring decentralization and delegations of assets into _Byron_.
 
-{{< hint info >}}
-An implementation of the protocol is [here][ouroboros-network] and is realized through [cardano-node][cardano-node], deployed as core and relay nodes to form the Cardano network.
+> **HINT**:  An implementation of the protocol is [here][ouroboros-network] and is realized through [cardano-node][cardano-node], deployed as core and relay nodes to form the Cardano network.
 
 [ouroboros-network]: https://github.com/input-output-hk/ouroboros-network
 [cardano-node]: https://github.com/input-output-hk/cardano-node
-{{< /hint >}}
 
 On top of this, Adrestia provides a set of services to interact with the Cardano blockchain:
 
@@ -30,15 +28,7 @@ As well as an SDK split into several low-level libraries on various topics:
 
 The only currently available language target is _Haskell_, although support for _JavaScript_ is being worked on and should be available soon. 
 
-<Warning>
-*bar*
-</Warning>
-
-{{< hint danger >}}
-**IMPORTANT NOTE**
-
-The Byron reboot era is **soon to end by early summer** when the Shelley hard fork shall occur. This **will break ALL existing** exchange integrations. Cardano-sl shall no longer be maintained or supported. **Adrestia** tooling **will support** all integrations **moving forward for Shelley**.
-{{< /hint >}}
+> **IMPORTANT NOTE**: The Byron reboot era is **soon to end by early summer** when the Shelley hard fork shall occur. This **will break ALL existing** exchange integrations. Cardano-sl shall no longer be maintained or supported. **Adrestia** tooling **will support** all integrations **moving forward for Shelley**.
 
 In the diagram below, components in red are non-Shelley compliant and will not be available after the hard fork, while the components in green are Shelley compliant and will be supported during and after the hard-fork.
 
