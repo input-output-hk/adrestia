@@ -55,8 +55,6 @@ In the diagram below, components in red are non-Shelley compliant and will not b
   </tr>
 </table>
 
----
-
 [roadmap]: https://cardanoroadmap.com/en/
 [ouroboros]: https://iohk.io/en/research/library/papers/ouroboros-praosan-adaptively-securesemi-synchronous-proof-of-stake-protocol/
 
