@@ -9,7 +9,7 @@ Adrestia is a collection of products which makes it easier to integrate with Car
    :titlesonly:
    :hidden:
 
-   overview
+   ../README
    architecture
    installation
    common-use-cases/index
@@ -17,4 +17,3 @@ Adrestia is a collection of products which makes it easier to integrate with Car
    migrating-from-sl
    api-references
    faq
-   ../README
