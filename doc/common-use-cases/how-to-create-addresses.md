@@ -2,15 +2,10 @@
 title: How to "create" addresses
 ================================
 
-{{<tabs>}}
-
-{{<tab "using cardano-wallet">}}
-{{<hint warning>}}
-**Difficulty:** beginner
+> **Difficulty:**:  beginner
 
 **Requires:**
 - 📦 cardano-wallet >= `v2020-04-01`
-{{</hint>}}
 
 Once you have a wallet you can manage your funds. In order to receive a transaction you need to provide an address associated with your wallet to the sender.
 
@@ -27,14 +22,13 @@ In order to list existing addresses another endpoint can be used.
 [`GET /byron-wallets/{walletId}/addresses`](https://input-output-hk.github.io/cardano-wallet/api/edge/#operation/listByronAddresses)
 
 
-{{<hint info>}}
+> **INFO**:  
 Alternatively, these endpoints can also be reached from the command-line:
 
 ```
 $ cardano-wallet address create WALLET_ID
 $ cardano-wallet address list WALLET_ID
 ```
-{{</hint>}}
 
 ## Sequential wallets (Icarus & Shelley) {#listing-addresses-in-sequential-wallets}
 
@@ -45,19 +39,9 @@ Therefore, address management is entirely done by the server and users aren't al
 [`GET /byron-wallets/{walletId}/addresses`](https://input-output-hk.github.io/cardano-wallet/api/edge/#operation/listByronAddresses) 
 
 This list automatically expands when new addresses become available so that there's always `address_pool_gap` consecutive unused addresses available (where `address_pool_gap` can be configured when a wallet is first restored / created).
-{{</tab>}}
 
-{{<hint info>}}
-Alternatively, this endpoint can also be reached from the command-line:
+> **HINT**:  Alternatively, this endpoint can also be reached from the command-line:
 
 ```
 $ cardano-wallet address list WALLET_ID
 ```
-{{</hint>}}
-
-
-{{<tab "using cardano-addresses">}}
-Coming soon.
-{{</tab>}}
-
-{{</tabs>}}
