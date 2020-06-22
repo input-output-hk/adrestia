@@ -23,4 +23,4 @@ The basic difference between them is that for a `random` wallet user needs to [c
 
 Note also that you can have many wallets being operated by a single `cardano-wallet` server.
 
-See more on [HD wallets](../key-concepts/hierarchical-deterministic-wallets.md) and [addresses](../key-concepts/adresses-byron.md).
+See more on [HD wallets](../key-concepts/hierarchical-deterministic-wallets.md) and [addresses](../key-concepts/addresses-byron.md).

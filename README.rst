@@ -10,11 +10,11 @@ APIs
 +--------------------+------------------------------------------------+--------------------------------------+------------------------------------------+--------------------------------+
 |    Name / Link     |                  Description                   |                Byron                 |                   Jörm                   |             Shell              |
 +====================+================================================+======================================+==========================================+================================+
-| `cardano-wallet`_  | JSON/REST API for managing UTxOs in HD wallets | .. image:: doc/icon/check-circle.svg | .. image:: doc/icon/check-circle.svg     | .. image:: doc/icon/hammer.svg |
+| `cardano-wallet`_  | JSON/REST API for managing UTxOs in HD wallets | .. image:: icon/check-circle.svg | .. image:: icon/check-circle.svg     | .. image:: icon/hammer.svg |
 +--------------------+------------------------------------------------+--------------------------------------+------------------------------------------+--------------------------------+
-| `cardano-rest`_    | JSON/HTTP API for browsing on-chain data       | .. image:: doc/icon/check-circle.svg | .. image:: doc/icon/dash-circle-fill.svg | .. image:: doc/icon/hammer.svg |
+| `cardano-rest`_    | JSON/HTTP API for browsing on-chain data       | .. image:: icon/check-circle.svg | .. image:: icon/dash-circle-fill.svg | .. image:: icon/hammer.svg |
 +--------------------+------------------------------------------------+--------------------------------------+------------------------------------------+--------------------------------+
-| `cardano-graphql`_ | GraphQL/HTTP API for browsing on-chain data    | .. image:: doc/icon/check-circle.svg | .. image:: doc/icon/dash-circle-fill.svg | .. image:: doc/icon/hammer.svg |
+| `cardano-graphql`_ | GraphQL/HTTP API for browsing on-chain data    | .. image:: icon/check-circle.svg | .. image:: icon/dash-circle-fill.svg | .. image:: icon/hammer.svg |
 +--------------------+------------------------------------------------+--------------------------------------+------------------------------------------+--------------------------------+
 
 
@@ -24,17 +24,17 @@ SDKs
 +------------------------------+--------------------------------------------------------------------------+------------------------------------------+------------------------------------------+
 |         Name / Link          |                               Description                                |                 Haskell                  |                Javascript                |
 +==============================+==========================================================================+==========================================+==========================================+
-| `beck32`_                    | Human-friendly Bech32 address encoding                                   | .. image:: doc/icon/check-circle.svg     | `bitcoinjs/bech32`_                      |
+| `beck32`_                    | Human-friendly Bech32 address encoding                                   | .. image:: icon/check-circle.svg     | `bitcoinjs/bech32`_                      |
 +------------------------------+--------------------------------------------------------------------------+------------------------------------------+------------------------------------------+
-| `cardano-addresses`_         | Addresses and mnemonic manipulation & derivations                        | .. image:: doc/icon/check-circle.svg     | .. image:: doc/icon/hammer.svg           |
+| `cardano-addresses`_         | Addresses and mnemonic manipulation & derivations                        | .. image:: icon/check-circle.svg     | .. image:: icon/hammer.svg           |
 +------------------------------+--------------------------------------------------------------------------+------------------------------------------+------------------------------------------+
-| `cardano-coin-selection`_    | Coin selection and fee balancing algorithms                              | .. image:: doc/icon/check-circle.svg     | .. image:: doc/icon/hammer.svg           |
+| `cardano-coin-selection`_    | Coin selection and fee balancing algorithms                              | .. image:: icon/check-circle.svg     | .. image:: icon/hammer.svg           |
 +------------------------------+--------------------------------------------------------------------------+------------------------------------------+------------------------------------------+
-| `cardano-launcher`_          | Shelley cardano-node and cardano-wallet launcher for NodeJS applications | .. image:: doc/icon/dash-circle-fill.svg | .. image:: doc/icon/dash-circle-fill.svg |
+| `cardano-launcher`_          | Shelley cardano-node and cardano-wallet launcher for NodeJS applications | .. image:: icon/dash-circle-fill.svg | .. image:: icon/dash-circle-fill.svg |
 +------------------------------+--------------------------------------------------------------------------+------------------------------------------+------------------------------------------+
-| `cardano-serialization-lib`_ | Binary serialization of on-chain data types                              | .. image:: doc/icon/hammer.svg           | .. image:: doc/icon/hammer.svg           |
+| `cardano-serialization-lib`_ | Binary serialization of on-chain data types                              | .. image:: icon/hammer.svg           | .. image:: icon/hammer.svg           |
 +------------------------------+--------------------------------------------------------------------------+------------------------------------------+------------------------------------------+
-| `cardano-transactions`_      | Transaction construction and signing                                     | .. image:: doc/icon/check-circle.svg     | .. image:: doc/icon/hammer.svg           |
+| `cardano-transactions`_      | Transaction construction and signing                                     | .. image:: icon/check-circle.svg     | .. image:: icon/hammer.svg           |
 +------------------------------+--------------------------------------------------------------------------+------------------------------------------+------------------------------------------+
 
 Formal Specifications
