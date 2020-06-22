@@ -1,6 +1,5 @@
-================================
-title: How to "create" addresses
-================================
+How to "create" addresses
+=========================
 
 > **Difficulty:**:  beginner
 

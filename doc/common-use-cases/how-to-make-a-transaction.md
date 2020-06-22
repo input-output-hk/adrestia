@@ -1,16 +1,10 @@
-=========================
 How to make a transaction
 =========================
 
-{{<tabs>}}
-
-{{<tab "using cardano-wallet">}}
-{{<hint warning>}}
-**Difficulty:** beginner
+> **Difficulty:**: beginner
 
 **Requires:**
 - 📦 cardano-wallet >= `v2020-04-01`
-{{</hint>}}
 
 Assuming you have already created a wallet, you can send a transaction by using the following endpoint:
 
@@ -26,19 +20,13 @@ Which returns a list of all transactions for this particular wallet. Optional ra
 
 [`DELETE /v2/byron-wallets/{walletId}/transactions/{transactionId}`](https://input-output-hk.github.io/cardano-wallet/api/edge/#operation/deleteByronTransaction)
 
-For more information about transactions lifecycle, have a look at this [wiki page](https://github.com/input-output-hk/cardano-wallet/wiki/About-Transactions-Lifecycle).
-{{</tab>}}
+For more information about transactions lifecycle, have a look at this [wiki page](https://github.com/input-output-hk/cardano-wallet/wiki/About-Transactions-Lifecycle)
 
-
-{{<tab "using cardano-transactions">}}
-
-{{<hint warning>}}
-**Difficulty:** advanced
+> **Difficulty:** advanced
 
 **Requires:**
 - 📦 cardano-transactions >= `1.0.0`
 - 📦 cardano-submit-api >= `2.0.0` OR cardano-wallet >= `v2020-04-01`
-{{</hint>}}
 
 Alternatively, `cardano-wallet` and `cardano-submit-api` allows clients to submit already signed and serialized transactions as a raw bytes blob. This can be done by submitting such serialized data as an `application/octet-stream` to either of:
 
@@ -48,6 +36,3 @@ Alternatively, `cardano-wallet` and `cardano-submit-api` allows clients to submi
 In this scenario, the server engine will verify that the transaction is structurally well-formed and forward it to its associated node. If the transaction belongs to a known wallet, it will eventually show up in the wallet your wallet.
 
 Such transactions can be constructed from raw data using either [cardano-transactions library or command-line interface](https://github.com/input-output-hk/cardano-transactions). Examples and documentation excerpts are available on the corresponding Github repository.
-{{</tab>}}
-
-{{</tabs>}}
