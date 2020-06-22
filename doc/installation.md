@@ -1,7 +1,6 @@
----
-weight: 3
-title: Installation Instructions
----
+=========================
+Installation Instructions
+=========================
 
 ## Using Docker (recommended)
 

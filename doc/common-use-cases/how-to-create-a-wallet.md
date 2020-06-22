@@ -1,7 +1,6 @@
----
-weight: 1
-title: How to create a wallet
----
+======================
+How to create a wallet
+======================
 
 {{<hint warning>}}
 **Difficulty:** beginner

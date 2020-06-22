@@ -1,7 +1,6 @@
----
-weight: 999
-title: FAQ
----
+===
+FAQ
+===
 
 {{<expand "Why aren't my unused addresses imported when I restore a wallet?" "...">}}
 

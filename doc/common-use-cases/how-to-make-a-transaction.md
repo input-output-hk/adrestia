@@ -1,7 +1,7 @@
----
-weight: 4
-title: How to make a transaction
----
+=========================
+How to make a transaction
+=========================
+
 {{<tabs>}}
 
 {{<tab "using cardano-wallet">}}

@@ -1,7 +1,4 @@
----
-weight: 998
-title: API References
----
+# API References
 
 ## Components
 

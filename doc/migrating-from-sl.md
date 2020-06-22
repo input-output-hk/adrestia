@@ -1,7 +1,6 @@
----
-weight: 5
-title: Migrating From SL
---- 
+=================
+Migrating From SL
+=================
 
 ## I am using _explorer_ from _cardano-sl_, what should I do?
 
