@@ -1,7 +1,6 @@
----
-weight: 1
-title: UTxO
----
+====
+UTxO
+====
 
 ## UTxO 
 

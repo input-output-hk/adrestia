@@ -1,7 +1,6 @@
----
-weight: 2
-title: HD Wallets
----
+==========
+HD Wallets
+==========
 
 ## Recovery Phrases
 

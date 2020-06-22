@@ -1,7 +1,6 @@
----
-weight: 2
-title: How to manage wallets
----
+=====================
+How to manage wallets
+=====================
 
 {{<hint warning>}}
 **Difficulty:** beginner
