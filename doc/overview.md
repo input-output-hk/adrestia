@@ -30,8 +30,9 @@ As well as an SDK split into several low-level libraries on various topics:
 
 The only currently available language target is _Haskell_, although support for _JavaScript_ is being worked on and should be available soon. 
 
->[!WARNING]
->This is a warning
+<Warning>
+*bar*
+</Warning>
 
 {{< hint danger >}}
 **IMPORTANT NOTE**
