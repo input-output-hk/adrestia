@@ -39,7 +39,7 @@ HTTP GraphQL API for Cardano. A more flexible alternative for blockchain explora
 
 ## Choosing the right component
 
-![Choosing the right component](choosing-the-right-component.svg)
+![Choosing the right component](choosing-the-right-component.png)
 
 ## Notes
 
