@@ -11,3 +11,4 @@ Adrestia is a collection of products which makes it easier to integrate with Car
 
    architecture
    overview
+   ../README
