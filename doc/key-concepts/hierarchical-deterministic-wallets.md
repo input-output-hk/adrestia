@@ -62,9 +62,7 @@ We note {{< katex >}}CKD_{pub}{{</katex>}} the derivation of a public child key 
 i <  2^{31}: CKD_{pub}((A^P, c^P), i) → (A_i, c_i)
 {{</katex>}}
 
-{{<hint info>}}
-This is only possible for so-called "soft" derivation indexes, smaller than {{<katex>}}2^{31}{{</katex>}}.
-{{</hint>}}
+> **HINT** This is only possible for so-called "soft" derivation indexes, smaller than {{<katex>}}2^{31}{{</katex>}}.
 
 We note {{<katex>}}N{{</katex>}} the public key corresponding to a private key such that:
 
@@ -97,10 +95,8 @@ m / purpose_H / coin\_type_H / account_H / account\_type / address\_index
   - `0` if the {{<katex>}}account\_type{{</katex>}} is `2`
   - Anything between 0 and 2<sup>31 otherwise
 
-{{<hint warning>}}
-In the _Byron_ era, sequential wallets used in Yoroi (a.k.a Icarus wallets) have been using `purpose = 44_H` according to standard BIP-44 wallets. 
-The _Shelley_ era introduces however an extension to BIP-44, and therefore, uses a different `purpose` number.
-{{</hint>}}
+> **WARNING**  In the _Byron_ era, sequential wallets used in Yoroi (a.k.a Icarus wallets) have been using `purpose = 44_H` according to standard BIP-44 wallets. 
+> The _Shelley_ era introduces however an extension to BIP-44, and therefore, uses a different `purpose` number.
 
 ### Account Discovery
 
@@ -163,10 +159,9 @@ seed to an extended private key (abbrev. XPrv) composed of:
 > - [BIP 0039](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki)
 > - [RFC 8032](https://tools.ietf.org/html/rfc8032#section-5.1.5)
 
-### Pseudo-code
+## Pseudo-code
 
-{{<tabs "pseudo-code">}}
-{{<tab Byron>}}
+### Byron 
 ```js
 function generateMasterKey(seed) {
     return hashRepeatedly(seed, 1);
@@ -199,8 +194,7 @@ function tweakBits(data) {
     return data;
 }
 ```
-{{</tab>}}
-{{<tab Icarus>}}
+### Icarus
 
 _Icarus_ master key generation style supports setting an extra password as an arbitrary 
 byte array of any size. This password acts as a second factor applied to cryptographic key 
@@ -236,8 +230,9 @@ function tweakBits(data) {
 
 > For a detailed analysis of the cryptographic choices and the above requirements, 
 > have a look at: [Wallet Cryptography and Encoding](https://github.com/input-output-hk/chain-wallet-libs/blob/master/doc/CRYPTO.md#master-key-generation-to-cryptographic-key)
-{{</tab>}}
-{{<tab Ledger>}}
+
+### Ledger
+
 ```js
 function generateMasterKey(seed, password) {
     let data = PBKDF2
@@ -284,5 +279,3 @@ function tweakBits(data) {
     return data;
 }
 ```
-{{</tab>}}
-{{</tabs>}}
