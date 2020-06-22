@@ -9,6 +9,12 @@ Adrestia is a collection of products which makes it easier to integrate with Car
    :titlesonly:
    :hidden:
 
-   architecture
    overview
+   architecture
+   installation
+   common-use-cases/index
+   key-concepts/index
+   migrating-from-sl
+   api-references
+   faq
    ../README
