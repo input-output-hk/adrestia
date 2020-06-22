@@ -41,7 +41,7 @@ A new `V2` API is now available on [cardano-wallet][cardano-wallet]. In a simila
 
 There are some variations between the `V2` and `V1` APIs of course, but they follow a very similar approach and are still very resource-centric (a.k.a ReST). _cardano-wallet_ is however a quite large component, that covers multiple networks and node backends. If you're coming from sl, you're most likely interested in _cardano-wallet-byron_ at the moment which is integrated with a Byron-reboot OBFT _cardano-node_. Follow setup instructions on _cardano-wallet_'s README and Wiki.
 
-The API documentation is available in [API References]({{< ref "api-references.md" >}}). Note that only the _Legacy_ sub-part of the API matters at this stage. The _Shelley_ part is not available on the Byron integration but can be looked up as a reference for future integration.
+The API documentation is available in [API References](api-references.md). Note that only the _Legacy_ sub-part of the API matters at this stage. The _Shelley_ part is not available on the Byron integration but can be looked up as a reference for future integration.
 
 > **WARNING**  _cardano-sl_ had the concept of "accounts" inside wallets. This concepts is now entirely gone. If you need multiple accounts, use multiple wallets.
 
@@ -49,11 +49,7 @@ The API documentation is available in [API References]({{< ref "api-references.m
 
 You are going to have a harder time migrating to _cardano-wallet_. The gaps between `V0` and `V2` are obviously bigger, but everything from the previous section applies. **Good luck**.
 
----
-
-<p style="text-align: right">
-  More questions? Have a look at the <a href="{{< ref "faq.md" >}}">FAQ</a> or else, reach out on <a href="https://github.com/input-output-hk/adrestia/issues/new/choose">Github</a>!
-</p>
+More questions? Have a look at the [FAQ](faq.md) or else, reach out on [Github](https://github.com/input-output-hk/adrestia/issues/new/choose)!
 
 [cardano-rest]: https://github.com/input-output-hk/cardano-rest
 [cardano-wallet]: https://github.com/input-output-hk/cardano-wallet

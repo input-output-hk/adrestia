@@ -68,7 +68,8 @@ participant.
 
 ## FAQ
 
-{{<expand "Where does the money come from? How do I make the first transaction?" "..." >}}
+### Where does the money come from? How do I make the first transaction?
+
 When bootstrapping a blockchain, some initial funds can be distributed among
 an initial set of stakeholders. This is usually the result of an **I**nitial
 **C**oin **O**ffering or, an agreement between multiple parties. In practice
@@ -80,9 +81,9 @@ insert in every block minted (resp. mined) called a **coinbase** transaction.
 This transaction has no inputs but follows specific rules fixed by the
 protocol and is used as an incentive to encourage participants to engage in
 the protocol.
-{{</expand>}}
 
-{{<expand "What is the difference between an address and a public key?" "..." >}}
+### What is the difference between an address and a public key?
+
 In a very simple system that would only support payment transactions, public key
 could be substituted for addresses. In practice, addresses are meant to hold some
 extra pieces of information that are useful for other aspects of the protocol.
@@ -99,11 +100,10 @@ refer to a particular script rather than a public key.
 In a nutshell, a public key is a piece of information that enables a stakeholder to
 prove one owns a particular UTxO. Whereas an address is a data-structure which contain various
 pieces of information, for example, a (reference to a) public key. 
-{{</expand>}}
 
-{{<expand "What are Cardano addresses made of?" "...">}}
+### What are Cardano addresses made of?
+
 See:
 
 - [About Address Format - Byron](https://github.com/input-output-hk/cardano-wallet/wiki/About-Address-Format---Byron)
 - [About Address Format - Shelley](https://github.com/input-output-hk/implementation-decisions/blob/master/text/0001-address.md)
-{{</expand>}}
