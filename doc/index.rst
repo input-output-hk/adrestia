@@ -1,7 +1,3 @@
-========
-Adrestia
-========
-
 .. include:: ../README.rst
 
 .. toctree::
