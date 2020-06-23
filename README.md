@@ -2,15 +2,15 @@
 
 Adrestia is a collection of products which makes it easier to integrate with Cardano. It comes in different flavours: SDK or high-level APIs. Depending on the use-cases you have and the control that you seek, you may use any of the components below.
 
-# Getting Started
+## Getting Started
 
 
 To get started, checkout the [📘 Adrestia user-guide](https://input-output-hk.github.io/adrestia/)! 
 
 
-# Components
+## Components
 
-## APIs
+### APIs
 
 name / link       | description                                    | Byron              | Jörmungandr        | Shelley
 ---               | ---                                            | ---                | ---                | ---
@@ -19,7 +19,7 @@ name / link       | description                                    | Byron      
 [cardano-graphql] | GraphQL/HTTP API for browsing on-chain data    | :heavy_check_mark: | :x:                | :construction:
 
 
-## SDK
+### SDK
 
 Name / Link                 | Description                                                              | Haskell            | JavaScript
 ---                         | ---                                                                      | ---                | ---
@@ -30,13 +30,13 @@ Name / Link                 | Description                                       
 [cardano-serialization-lib] | Binary serialization of on-chain data types                              | :construction:     | :construction:
 [cardano-transactions]      | Transaction construction and signing                                     | :heavy_check_mark: | :construction:
 
-## Formal Specifications 
+### Formal Specifications 
 
 Name / Link                 | Description                                       
 ---                         | ---                                               
 [utxo-wallet-specification] | Formal specification for a UTxO wallet            
 
-## Internal
+### Internal
 
 > :warning: Here be dragons. These tools are used internally by other tools and
 > does not benefit from the same care in documentation than other tools above.
@@ -62,6 +62,6 @@ name / link        | description
 [cardano-js-sdk]: https://github.com/input-output-hk/cardano-js-sdk
 [persistent]: https://github.com/input-output-hk/persistent
 
-# Contributing
+## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md)
