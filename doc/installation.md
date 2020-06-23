@@ -65,12 +65,12 @@ If you feel brave enough and want to compile everything from sources, please ref
 
 Repository                           | Releases                            | Linux | MacOS | Windows
 -------------------------------------|-------------------------------------|-------|-------|--------
-[cardano-node][cardano-node]         | [releases][release-cardano-node]    | .. image:: ../icon/check-circle.svg     | .. image:: ../icon/check-circle.svg     | .. image:: ../icon/check-circle.svg 
-[cardano-db-sync][cardano-db-sync]   | [releases][release-cardano-db-sync] | .. image:: ../icon/check-circle.svg     | .. image:: ../icon/check-circle.svg     | .. image:: ../icon/dash-circle-fill.svg
-[cardano-submit-api][cardano-rest]   | [releases][release-cardano-rest]    | .. image:: ../icon/check-circle.svg     | .. image:: ../icon/check-circle.svg     | .. image:: ../icon/dash-circle-fill.svg
-[cardano-explorer-api][cardano-rest] | [releases][release-cardano-rest]    | .. image:: ../icon/check-circle.svg     | .. image:: ../icon/check-circle.svg     | .. image:: ../icon/dash-circle-fill.svg
-[cardano-graphql][cardano-graphql]   | [releases][release-cardano-graphql] | .. image:: ../icon/check-circle.svg     | .. image:: ../icon/check-circle.svg     | .. image:: ../icon/dash-circle-fill.svg
-[cardano-wallet][cardano-wallet]     | [releases][release-cardano-wallet]  | .. image:: ../icon/check-circle.svg     | .. image:: ../icon/check-circle.svg     | .. image:: ../icon/check-circle.svg 
+[cardano-node][cardano-node]         | [releases][release-cardano-node]    | ✔️     | ✔️     | ✔️ 
+[cardano-db-sync][cardano-db-sync]   | [releases][release-cardano-db-sync] | ✔️     | ✔️     | ❌
+[cardano-submit-api][cardano-rest]   | [releases][release-cardano-rest]    | ✔️     | ✔️     | ❌
+[cardano-explorer-api][cardano-rest] | [releases][release-cardano-rest]    | ✔️     | ✔️     | ❌
+[cardano-graphql][cardano-graphql]   | [releases][release-cardano-graphql] | ✔️     | ✔️     | ❌
+[cardano-wallet][cardano-wallet]     | [releases][release-cardano-wallet]  | ✔️     | ✔️     | ✔️
 
 [cardano-node]: https://github.com/input-output-hk/cardano-node
 [cardano-db-sync]: https://github.com/input-output-hk/cardano-db-sync
