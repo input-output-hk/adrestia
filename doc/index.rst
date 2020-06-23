@@ -1,3 +1,6 @@
+========
+Adrestia
+========
 
 .. toctree::
    :maxdepth: 3
