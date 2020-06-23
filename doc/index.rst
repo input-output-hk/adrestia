@@ -1,3 +1,7 @@
+========
+Adrestia
+========
+
 .. include:: ../README.md
 
 .. toctree::
