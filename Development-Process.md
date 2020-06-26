@@ -12,7 +12,7 @@ The team's process is derived from [extreme programming][xp] and adapted for rem
     - Acceptance Criteria (A/C) written in [Gherkin](http://docs.behat.org/en/v2.5/guides/1.gherkin.html) 
     - Possible extra information or documents 
 - Items in the backlog are sorted by priority. 
-- When picked, U/S are estimated in terms of number of _weeks_. A story estimated to more than 3 weeks should be broken down into smaller stories. 
+- U/S are estimated upfront, by the team via blind-voting and using a 3-value scale: small, large or uncertain. 
 
 <details>
     <summary>example</summary>
@@ -38,7 +38,6 @@ The team's process is derived from [extreme programming][xp] and adapted for rem
 
 - The project is divided into weekly iterations.
 - Releases happen at the beginning of every week, Monday or Tuesday.
-- Every 3 weeks, the team does 1 week of recovery time (See [Recovery Week](#recovery-week) below).
 - User stories are assigned to and owned by a single member of the team (a.k.a the pilot). Pilots are seconded by a Co-pilot as follows:
 
     | Mission | Role | 
@@ -56,6 +55,7 @@ The team's process is derived from [extreme programming][xp] and adapted for rem
 - Tasks and Pull Requests have a dedicated GitHub template:
     - [Task Template](https://github.com/input-output-hk/adrestia/blob/master/.github/ISSUE_TEMPLATE/task.md)
     - [PR Template](https://github.com/input-output-hk/adrestia/blob/master/.github/PULL_REQUEST_TEMPLATE.md)
+
 - Tasks move across the [following board](https://github.com/orgs/input-output-hk/projects/13) (see Task template for transitions)
 
 ```
@@ -67,17 +67,25 @@ The team's process is derived from [extreme programming][xp] and adapted for rem
 |_____________|  |_____________|  |_____________|  |_____________|
 ```
 
-## Recovery Week
+- Pull requests are labelled with one of the following labels:
+    - `RESOLVING_ISSUE`: when changes are tackling a known issue.
+    - `IMPROVING_CODE`: when changes are improving an existing functionality or, the source code itself.
+    - `ADDING_FEATURES`: when changes are implementing a new feature.
 
-- Sprinters can't run all the time. During sprint weeks, we often accumulate technical debts (e.g. `TODO` or `FIXME`).
-- During recovery weeks, the team has a dedicated moment to tackle some of the technical debts. This includes:
+  This helps generating an automated changelog for each release.
+
+
+## Technical Debt
+
+- During sprint weeks, we often accumulate technical debts (e.g. `TODO` or `FIXME`). Example of tasks falling under the "technical debt" umbrella:
     - Reviewing and extending code documentation
     - Refactoring some potentially entangled parts of the code
     - Re-organizing modules and folder achitecture
     - Fix small `TODOs` or `FIXMEs`, or, turn them into U/S 
     - Identify areas of the source code which needs improvement
-- Recovery weeks happen instead of a sprint, and start with a retrospective meeting about the last 3 weeks/sprints.
 
+- To be tackled efficiently, technical debts need to be mentioned and documented in ticket, so that it can be estimated, scoped, discussed and prioritized.
+- During the iteration planning meeting happening every week, the team will select the equivalent of 1-day work of technical debt to be tackled. 
 
 ## Coding
 
@@ -107,11 +115,11 @@ The team's process is derived from [extreme programming][xp] and adapted for rem
 
 - When a potential bug is found, a [Bug ticket](https://github.com/input-output-hk/adrestia/blob/master/.github/ISSUE_TEMPLATE/bug.md) is created with a label `BUG?` 
 - Corresponding sections of the ticket are filled-in (context, reproduction path, expected behavior...)
-- The bug is added to the relevant bug board on the project in in "Needs Triage"
+- The bug is added to the relevant bug board on the project in in "Needs Triage" as well as the standard task board, in "Backlog". 
 - The ticket is discussed on Slack with the team to confirm that it's indeed a bug.
-- Once confirmed, the label `BUG?` is changed to `BUG:CONFIRMED` and the bug is given a priority (either low or high).
+- Once confirmed, the label `BUG?` is changed to `BUG:CONFIRMED` and the bug is given a priority (either low or high) by moving it to the relevant column of the bug board.
 - If dispelled, the bug ticket is closed without further ado.  
-- When resolved, the bugs moved to the "QA" section of the bugs board.
+- When resolved, the bugs moved to the "QA" section of the standard board.
 
 ## Communication
 
