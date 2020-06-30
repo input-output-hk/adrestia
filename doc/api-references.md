@@ -24,17 +24,12 @@ The command line also provides some useful helpers like a command to generate mn
 
 ## Libraries
 
-+--------------------------+-------------------------------------------------------------------+-----------------------------------------+
-|         Library          |                              Haskell                              |               JavaScript                |
-+==========================+===================================================================+=========================================+
-| [cardano-addresses]      | https://input-output-hk.github.io/cardano-addresses/haddock/      | _Soon available._                       |
-+--------------------------+-------------------------------------------------------------------+-----------------------------------------+
-| [cardano-transactions]   | https://input-output-hk.github.io/cardano-transactions/haddock/   | _Soon available._                       |
-+--------------------------+-------------------------------------------------------------------+-----------------------------------------+
-| [cardano-coin-selection] | https://input-output-hk.github.io/cardano-coin-selection/haddock/ | _Soon available._                       |
-+--------------------------+-------------------------------------------------------------------+-----------------------------------------+
-| [bech32]                 | https://input-output-hk.github.io/bech32/haddock/                 | See https://github.com/bitcoinjs/bech32 |
-+--------------------------+-------------------------------------------------------------------+-----------------------------------------+
+| Library                                                                             | Haskell                                                           | JavaScript                              |
+|-------------------------------------------------------------------------------------|-------------------------------------------------------------------|-----------------------------------------|
+| [cardano-addresses](https://github.com/input-output-hk/cardano-addresses)           | <https://input-output-hk.github.io/cardano-addresses/haddock/>      | _Soon available._                       |
+| [cardano-transactions](https://github.com/input-output-hk/cardano-transactions)     | <https://input-output-hk.github.io/cardano-transactions/haddock/>   | _Soon available._                       |
+| [cardano-coin-selection](https://github.com/input-output-hk/cardano-coin-selection) | <https://input-output-hk.github.io/cardano-coin-selection/haddock/> | _Soon available._                       |
+| [bech32](https://github.com/input-output-hk/bech32)                                 | <https://input-output-hk.github.io/bech32/haddock/>                 | See <https://github.com/bitcoinjs/bech32> |
 
 About cardano-transactions
 --------------------------
@@ -45,8 +40,3 @@ Check out the repository's documentation and examples to see example usage.
 [cardano-wallet]: https://github.com/input-output-hk/cardano-wallet
 [cardano-rest]: https://github.com/input-output-hk/cardano-rest
 [cardano-graphql]: https://github.com/input-output-hk/cardano-graphql
-
-[cardano-coin-selection]: https://github.com/input-output-hk/cardano-coin-selection
-[cardano-addresses]: https://github.com/input-output-hk/cardano-addresses
-[cardano-transactions]: https://github.com/input-output-hk/cardano-transactions
-[bech32]: https://github.com/input-output-hk/bech32
