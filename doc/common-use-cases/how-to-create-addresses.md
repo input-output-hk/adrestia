@@ -29,7 +29,7 @@ $ cardano-wallet address create WALLET_ID
 $ cardano-wallet address list WALLET_ID
 ```
 
-## Sequential wallets (Icarus & Shelley) <a name="listing-addresses-in-sequential-wallets"></a>
+## Sequential wallets (Icarus & Shelley)
 
 Since Icarus, wallets use sequential derivation which must satisfy very specific rules: a wallet is not allowed to use addresses beyond a certain limit before previously generated addresses have been used. This means that, at a given point in a time, a wallet has both a minimum and a maximum number of possible unused addresses. By default, the maximum number of consecutive unused addresses is set to `20`.
 
