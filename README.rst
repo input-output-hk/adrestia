@@ -4,10 +4,10 @@ Depending on the use-cases you have and the control that you seek, you
 may use any of the components below.
 
 Components
-----------
+==========
 
 APIs
-~~~~
+----
 
 +--------------------+--------------+--------------+--------------+----------------+
 |    name / link     | description  |    Byron     | Jörmungandr  |    Shelley     |
@@ -33,7 +33,7 @@ APIs
 +--------------------+--------------+--------------+--------------+----------------+
 
 SDK
-~~~
+---
 
 +------------------------------+----------------+----------------+---------------------+
 |         Name / Link          |  Description   |    Haskell     |     JavaScript      |
@@ -71,7 +71,7 @@ SDK
 +------------------------------+----------------+----------------+---------------------+
 
 Formal Specifications
-~~~~~~~~~~~~~~~~~~~~~
+---------------------
 
 +------------------------------+-------------------------------------------------+
 |         Name / Link          |                   Description                   |
@@ -80,10 +80,11 @@ Formal Specifications
 +------------------------------+-------------------------------------------------+
 
 Internal
-~~~~~~~~
+--------
 
 .. warning::
     Here be dragons. These tools are used internally by other tools and does not benefit from the same care in documentation thanother tools above.
+
 
 +-------------------+--------------------------------------------------+
 |    name / link    |                   description                    |
