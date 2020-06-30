@@ -5,7 +5,7 @@ Adrestia is a collection of products which makes it easier to integrate with Car
 ## Getting Started
 
 
-To get started, checkout the [📘 Adrestia user-guide](https://input-output-hk.github.io/adrestia/)! 
+To get started, checkout the [📘 Adrestia user-guide](https://input-output-hk.github.io/adrestia/)!
 
 
 ## Components
@@ -30,16 +30,16 @@ Name / Link                 | Description                                       
 [cardano-serialization-lib] | Binary serialization of on-chain data types                              | :construction:     | :construction:
 [cardano-transactions]      | Transaction construction and signing                                     | :heavy_check_mark: | :construction:
 
-### Formal Specifications 
+### Formal Specifications
 
-Name / Link                 | Description                                       
----                         | ---                                               
-[utxo-wallet-specification] | Formal specification for a UTxO wallet            
+Name / Link                 | Description
+---                         | ---
+[utxo-wallet-specification] | Formal specification for a UTxO wallet
 
 ### Internal
 
-> :warning: Here be dragons. These tools are used internally by other tools and
-> does not benefit from the same care in documentation than other tools above.
+    :bulb: Here be dragons. These tools are used internally by other tools and
+    does not benefit from the same care in documentation than other tools above.
 
 name / link        | description
 ---                | ---
@@ -54,7 +54,7 @@ name / link        | description
 [cardano-coin-selection]: https://github.com/input-output-hk/cardano-coin-selection
 [cardano-addresses]: https://github.com/input-output-hk/cardano-addresses
 [cardano-transactions]: https://github.com/input-output-hk/cardano-transactions
-[cardano-serialization-lib]: https://github.com/Emurgo/cardano-serialization-lib 
+[cardano-serialization-lib]: https://github.com/Emurgo/cardano-serialization-lib
 [bech32]: https://github.com/input-output-hk/bech32
 [utxo-wallet-specification]: https://github.com/input-output-hk/utxo-wallet-specification
 [cardano-launcher]: https://github.com/input-output-hk/cardano-launcher
