@@ -38,7 +38,7 @@ SDK
 +------------------------------+----------------+----------------+---------------------+
 |         Name / Link          |  Description   |    Haskell     |     JavaScript      |
 +==============================+================+================+=====================+
-| `bech32`_                    | Human-friendly | **COMPLETE**   | `bitcoinjs/bech32`_ |
+| `bech32`_                    | Human-friendly | **COMPLETE**   | `bitcoinjs bech32`_ |
 |                              | Bech32 address |                |                     |
 |                              | encoding       |                |                     |
 +------------------------------+----------------+----------------+---------------------+
@@ -102,7 +102,8 @@ Internal
 .. _cardano-wallet: https://github.com/input-output-hk/cardano-wallet
 .. _cardano-rest: https://github.com/input-output-hk/cardano-rest
 .. _cardano-graphql: https://github.com/input-output-hk/cardano-graphql
-.. _bech32: https://github.com/bitcoinjs/bech32
+.. _bech32: https://github.com/input-output-hk/bech32
+.. _bitcoinjs bech32: https://github.com/bitcoinjs/bech32
 .. _cardano-addresses: https://github.com/input-output-hk/cardano-addresses
 .. _cardano-coin-selection: https://github.com/input-output-hk/cardano-coin-selection
 .. _cardano-launcher: https://github.com/input-output-hk/cardano-launcher
