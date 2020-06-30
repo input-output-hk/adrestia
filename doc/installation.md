@@ -5,14 +5,14 @@ Installation Instructions
 
 Docker images are continuously built and deployed on [dockerhub](https://hub.docker.com/u/inputoutput) under specific tags. Using docker provides **the fastest** and **easiest** user experience for setting up the Cardano stack. You should prefer this solution over building from sources unless you have really good reasons not to. The following images are available for each component of the Adrestia architecture:
 
-| Repository                                                           | Tags                                  | Documentation               |
-|----------------------------------------------------------------------|---------------------------------------|-----------------------------|
-| [inputoutput/cardano-node][inputoutput-cardano-node]                 | `master`, `MAJ.MIN.PATCH`, `latest`   | [link][doc-cardano-node]    |
-| [inputoutput/cardano-db-sync][inputoutput-cardano-db-sync]           | `master`, `MAJ.MIN.PATCH`, `latest`   | [link][doc-cardano-db-sync] |
-| [inputoutput/cardano-graphql][inputoutput-cardano-graphql]           | `master`, `MAJ.MIN.PATCH`, `latest`   | [link][doc-cardano-graphql] |
-| [inputoutput/cardano-explorer-api][inputoutput-cardano-explorer-api] | `master`, `MAJ.MIN.PATCH`, `latest`   | [link][doc-cardano-rest]    |
-| [inputoutput/cardano-submit-api][inputoutput-cardano-submit-api]     | `master`, `MAJ.MIN.PATCH`, `latest`   | [link][doc-cardano-rest]    |
-| [inputoutput/cardano-wallet][inputoutput-cardano-wallet]             | `byron`, `YYYY.MM.DD-byron`, `latest` | [link][doc-cardano-wallet]  |
+| Repository                                                                                                    | Tags                                  | Documentation                                                                                |
+|---------------------------------------------------------------------------------------------------------------|---------------------------------------|----------------------------------------------------------------------------------------------|
+| [inputoutput/cardano-node](https://hub.docker.com/r/inputoutput/cardano-node)                                 | `master`, `MAJ.MIN.PATCH`, `latest`   | [link](https://github.com/input-output-hk/cardano-node/blob/master/nix/docker.nix#L1-L25)    |
+| [inputoutput/cardano-db-sync](https://hub.docker.com/r/inputoutput/cardano-db-syncnputoutput-cardano-db-sync) | `master`, `MAJ.MIN.PATCH`, `latest`   | [link](https://github.com/input-output-hk/cardano-db-sync/blob/master/nix/docker.nix#L1-L35) |
+| [inputoutput/cardano-graphql](https://hub.docker.com/r/inputoutput/cardano-graphql)                           | `master`, `MAJ.MIN.PATCH`, `latest`   | [link](https://github.com/input-output-hk/cardano-graphql/wiki/Docker)                       |
+| [inputoutput/cardano-explorer-api](https://hub.docker.com/r/inputoutput/cardano-explorer-api)                 | `master`, `MAJ.MIN.PATCH`, `latest`   | [link](https://github.com/input-output-hk/cardano-rest/wiki/Docker)                          |
+| [inputoutput/cardano-submit-api](https://hub.docker.com/r/inputoutput/cardano-submit-api)                     | `master`, `MAJ.MIN.PATCH`, `latest`   | [link](https://github.com/input-output-hk/cardano-rest/wiki/Docker)                          |
+| [inputoutput/cardano-wallet](https://hub.docker.com/r/inputoutput/cardano-wallet)                             | `byron`, `YYYY.MM.DD-byron`, `latest` | [link](https://github.com/input-output-hk/cardano-wallet/wiki/Docker)                        |
 
 ### Semantic
 
@@ -63,42 +63,11 @@ run offline (e.g. 'mnemonic generate').
 
 If you feel brave enough and want to compile everything from sources, please refer to each repository's documentation. As a pre-requisite, you may want to install and configure [Nix](https://nixos.org/), [stack](https://docs.haskellstack.org/en/stable/README/) or [cabal](https://www.haskell.org/cabal/) depending on your weapon of choice. Build instructions are available on each repository's main README.
 
-Repository                           | Releases                            | Linux | MacOS | Windows
--------------------------------------|-------------------------------------|-------|-------|--------
-[cardano-node][cardano-node]         | [releases][release-cardano-node]    | ✔️     | ✔️     | ✔️ 
-[cardano-db-sync][cardano-db-sync]   | [releases][release-cardano-db-sync] | ✔️     | ✔️     | ❌
-[cardano-submit-api][cardano-rest]   | [releases][release-cardano-rest]    | ✔️     | ✔️     | ❌
-[cardano-explorer-api][cardano-rest] | [releases][release-cardano-rest]    | ✔️     | ✔️     | ❌
-[cardano-graphql][cardano-graphql]   | [releases][release-cardano-graphql] | ✔️     | ✔️     | ❌
-[cardano-wallet][cardano-wallet]     | [releases][release-cardano-wallet]  | ✔️     | ✔️     | ✔️
-
-[cardano-node]: https://github.com/input-output-hk/cardano-node
-[cardano-db-sync]: https://github.com/input-output-hk/cardano-db-sync
-[cardano-rest]: https://github.com/input-output-hk/cardano-rest
-[cardano-graphql]: https://github.com/input-output-hk/cardano-graphql
-[cardano-wallet]: https://github.com/input-output-hk/cardano-wallet
-
-[release-cardano-node]: https://github.com/input-output-hk/cardano-node/releases
-[release-cardano-db-sync]: https://github.com/input-output-hk/cardano-db-sync/releases
-[release-cardano-rest]: https://github.com/input-output-hk/cardano-rest/releases
-[release-cardano-graphql]: https://github.com/input-output-hk/cardano-graphql/releases
-[release-cardano-wallet]: https://github.com/input-output-hk/cardano-wallet/releases
-
-[cardano-node]: https://github.com/input-output-hk/cardano-node
-[cardano-db-sync]: https://github.com/input-output-hk/cardano-db-sync
-[cardano-explorer-api]: https://github.com/input-output-hk/cardano-rest
-[cardano-submit-api]: https://github.com/input-output-hk/cardano-rest
-[cardano-graphql]: https://github.com/input-output-hk/cardano-graphql
-[cardano-wallet]: https://github.com/input-output-hk/cardano-wallet
-
-[doc-cardano-node]: https://github.com/input-output-hk/cardano-node/blob/master/nix/docker.nix#L1-L25
-[doc-cardano-db-sync]: https://github.com/input-output-hk/cardano-db-sync/blob/master/nix/docker.nix#L1-L35
-[doc-cardano-rest]: https://github.com/input-output-hk/cardano-rest/wiki/Docker
-[doc-cardano-graphql]: https://github.com/input-output-hk/cardano-graphql/wiki/Docker
-[doc-cardano-wallet]: https://github.com/input-output-hk/cardano-wallet/wiki/Docker
-[inputoutput-cardano-node]: https://hub.docker.com/r/inputoutput/cardano-node
-[inputoutput-cardano-db-sync]: https://hub.docker.com/r/inputoutput/cardano-db-sync
-[inputoutput-cardano-graphql]: https://hub.docker.com/r/inputoutput/cardano-graphql
-[inputoutput-cardano-submit-api]: https://hub.docker.com/r/inputoutput/cardano-submit-api
-[inputoutput-cardano-explorer-api]: https://hub.docker.com/r/inputoutput/cardano-explorer-api
-[inputoutput-cardano-wallet]: https://hub.docker.com/r/inputoutput/cardano-wallet
+Repository                                                              | Releases                                                                | Linux | MacOS | Windows
+------------------------------------------------------------------------|-------------------------------------------------------------------------|-------|-------|--------
+[cardano-node](https://github.com/input-output-hk/cardano-node)         | [releases](https://github.com/input-output-hk/cardano-node/releases)    | ✔️     | ✔️     | ✔️
+[cardano-db-sync](https://github.com/input-output-hk/cardano-db-sync)   | [releases](https://github.com/input-output-hk/cardano-db-sync/releases) | ✔️     | ✔️     | ❌
+[cardano-submit-api](https://github.com/input-output-hk/cardano-rest)   | [releases](https://github.com/input-output-hk/cardano-rest/releases)    | ✔️     | ✔️     | ❌
+[cardano-explorer-api](https://github.com/input-output-hk/cardano-rest) | [releases](https://github.com/input-output-hk/cardano-rest/releases)    | ✔️     | ✔️     | ❌
+[cardano-graphql](https://github.com/input-output-hk/cardano-graphql)   | [releases](https://github.com/input-output-hk/cardano-graphql/releases) | ✔️     | ✔️     | ❌
+[cardano-wallet](https://github.com/input-output-hk/cardano-wallet)     | [releases](https://github.com/input-output-hk/cardano-wallet/releases)  | ✔️     | ✔️     | ✔️
