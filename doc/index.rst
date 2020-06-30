@@ -1,5 +1,5 @@
 ========
-Adrestia
+adrestia
 ========
 
 .. include:: ../README.rst
