@@ -36,7 +36,8 @@ The command line also provides some useful helpers like a command to generate mn
 | [bech32][bech32]                                 | https://input-output-hk.github.io/bech32/haddock/                 | See https://github.com/bitcoinjs/bech32 |
 +--------------------------------------------------+-------------------------------------------------------------------+-----------------------------------------+
 
-> **HINT**:  _About cardano-transactions_
+About cardano-transactions
+--------------------------
 
 In addition to the low-level library, cardano-transactions also provides a command-line interface (`cardano-tx`) to construct transactions directly in the terminal.
 Check out the repository's documentation and examples to see example usage.
