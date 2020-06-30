@@ -7,7 +7,7 @@ The API from the old explorer has been ported identically to _cardano-submit-api
 
 The setup is here a bit different. With _cardano-sl_, the explorer is mounted directly on the core node as one monolith and can be turned on and off. Now, these components have been split off one another and are using an extra middleware to communicate. So the "infrastructure" is slightly more complex but enables greater flexibility and robustness.
 
-> **INFORMATION** It is possible to automatically migrate an existing blockchain database from _cardano-sl_ into its new format compatible with _cardano-node_. For this, have a look at the [db-converter][db-converter] and in particular, the `convert` command:
+> **INFORMATION**: It is possible to automatically migrate an existing blockchain database from _cardano-sl_ into its new format compatible with _cardano-node_. For this, have a look at the [db-converter][db-converter] and in particular, the `convert` command:
 
 ```
 $ db-converter convert --help
@@ -20,7 +20,7 @@ Available options:
   --epochSlots WORD64      Slots per epoch
 ```
 
-> **INFORMATION** On Byron, the number of slots per epoch is fixed to `21600`.
+> **INFORMATION**: On Byron, the number of slots per epoch is fixed to `21600`.
 
 This can save you an hour of time downloading the blockchain from the network!
 
@@ -43,7 +43,7 @@ There are some variations between the `V2` and `V1` APIs of course, but they fol
 
 The API documentation is available in [API References](api-references.md). Note that only the _Legacy_ sub-part of the API matters at this stage. The _Shelley_ part is not available on the Byron integration but can be looked up as a reference for future integration.
 
-> **WARNING** _cardano-sl_ had the concept of "accounts" inside wallets. This concepts is now entirely gone. If you need multiple accounts, use multiple wallets.
+> **WARNING**: _cardano-sl_ had the concept of "accounts" inside wallets. This concepts is now entirely gone. If you need multiple accounts, use multiple wallets.
 
 ## I am using _wallet V0_ from _cardano-sl_, what should I do?
 
