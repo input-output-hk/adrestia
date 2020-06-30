@@ -82,8 +82,8 @@ Formal Specifications
 Internal
 ~~~~~~~~
 
-:: warning: 
-   Here be dragons. These tools are used internally by other tools and does not benefit from the same care in documentation thanother tools above.
+.. warning::
+    Here be dragons. These tools are used internally by other tools and does not benefit from the same care in documentation thanother tools above.
 
 +-------------------+--------------------------------------------------+
 |    name / link    |                   description                    |
