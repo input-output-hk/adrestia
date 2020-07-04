@@ -21,14 +21,15 @@ name / link       | description                                    | Byron      
 
 ## SDK
 
-Name / Link                 | Description                                                              | Haskell            | JavaScript
----                         | ---                                                                      | ---                | ---
-[bech32]                    | Human-friendly Bech32 address encoding                                   | :heavy_check_mark: | [bitcoinjs/bech32](https://github.com/bitcoinjs/bech32)
-[cardano-addresses]         | Addresses and mnemonic manipulation & derivations                        | :heavy_check_mark: | :construction:
-[cardano-coin-selection]    | Coin selection and fee balancing algorithms                              | :heavy_check_mark: | :construction:
-[cardano-launcher]          | Shelley cardano-node and cardano-wallet launcher for NodeJS applications | :x:                | :heavy_check_mark:
-[cardano-serialization-lib] | Binary serialization of on-chain data types                              | :construction:     | :construction:
-[cardano-transactions]      | Transaction construction and signing                                     | :heavy_check_mark: | :construction:
+Name / Link                    | Description                                                              | Haskell            | JavaScript
+---                            | ---                                                                      | ---                | ---
+[bech32]                       | Human-friendly Bech32 address encoding                                   | :heavy_check_mark: | [bitcoinjs/bech32](https://github.com/bitcoinjs/bech32)
+[cardano-addresses]            | Addresses and mnemonic manipulation & derivations                        | :heavy_check_mark: | :construction:
+[cardano-coin-selection]       | Coin selection and fee balancing algorithms                              | :heavy_check_mark: | :construction:
+[cardano-launcher]             | Shelley cardano-node and cardano-wallet launcher for NodeJS applications | :x:                | :heavy_check_mark:
+[cardano-serialization-lib]    | Binary serialization of on-chain data types                              | :construction:     | :construction:
+[react-native-haskell-shelley] | Mobile bindings for [cardano-serialization-lib] w/ react-native support  | :construction:     | :construction:
+[cardano-transactions]         | Transaction construction and signing                                     | :heavy_check_mark: | :construction:
 
 ## Formal Specifications 
 
@@ -55,6 +56,7 @@ name / link        | description
 [cardano-addresses]: https://github.com/input-output-hk/cardano-addresses
 [cardano-transactions]: https://github.com/input-output-hk/cardano-transactions
 [cardano-serialization-lib]: https://github.com/Emurgo/cardano-serialization-lib 
+[react-native-haskell-shelley]: https://github.com/Emurgo/react-native-haskell-shelley
 [bech32]: https://github.com/input-output-hk/bech32
 [utxo-wallet-specification]: https://github.com/input-output-hk/utxo-wallet-specification
 [cardano-launcher]: https://github.com/input-output-hk/cardano-launcher
