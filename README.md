@@ -21,15 +21,27 @@ name / link       | description                                    | Byron      
 
 ## SDK
 
+### Haskell SDKs (+JS support)
+
 Name / Link                    | Description                                                              | Haskell            | JavaScript
 ---                            | ---                                                                      | ---                | ---
 [bech32]                       | Human-friendly Bech32 address encoding                                   | :heavy_check_mark: | [bitcoinjs/bech32](https://github.com/bitcoinjs/bech32)
 [cardano-addresses]            | Addresses and mnemonic manipulation & derivations                        | :heavy_check_mark: | :construction:
 [cardano-coin-selection]       | Coin selection and fee balancing algorithms                              | :heavy_check_mark: | :construction:
-[cardano-launcher]             | Shelley cardano-node and cardano-wallet launcher for NodeJS applications | :x:                | :heavy_check_mark:
+[cardano-transactions]         | Transaction construction and signing                                     | :heavy_check_mark: | :construction:
+
+### Rust SDKs (+JS support)
+
+Name / Link                    | Description                                                              | Rust               | JavaScript
+---                            | ---                                                                      | ---                | ---
 [cardano-serialization-lib]    | Binary serialization of on-chain data types                              | :construction:     | :construction:
 [react-native-haskell-shelley] | Mobile bindings for [cardano-serialization-lib] w/ react-native support  | :construction:     | :construction:
-[cardano-transactions]         | Transaction construction and signing                                     | :heavy_check_mark: | :construction:
+
+### Pure JS SDKs
+
+Name / Link                    | Description
+---                            | ---
+[cardano-launcher]             | Shelley cardano-node and cardano-wallet launcher for NodeJS applications
 
 ## Formal Specifications 
 
