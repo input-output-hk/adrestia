@@ -1,12 +1,13 @@
 ========
-Adrestia
+adrestia
 ========
+
+.. include:: ../README.rst
 
 .. toctree::
    :maxdepth: 3
    :titlesonly:
 
-   ../README
    architecture
    installation
    common-use-cases/index
