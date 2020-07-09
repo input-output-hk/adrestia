@@ -39,10 +39,10 @@ Name / Link              | Description                                       | B
 
 ## Rust SDKs (+WebAssembly support)
 
-Name / Link                    | Description                                           | Byron | Jörmungandr | Shelley
----                            | ---                                                   | ---   | ---         | ---
-[cardano-serialization-lib]    | Binary serialization of on-chain data types           | N/A   | N/A         | :construction:
-[react-native-haskell-shelley] | React Native bindings for [cardano-serialization-lib] | N/A   | N/A         | :construction:
+Name / Link                    | Description                                           | Byron              | Jörmungandr        | Shelley
+---                            | ---                                                   | ---                | ---                | ---
+[cardano-serialization-lib]    | Binary serialization of on-chain data types           | :heavy_check_mark: | N/A                | :construction:
+[react-native-haskell-shelley] | React Native bindings for [cardano-serialization-lib] | :construction:     | N/A                | :construction:
 
 ## JavaScript SDKs
 
