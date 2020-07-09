@@ -19,9 +19,7 @@ name / link       | description                                    | Byron      
 [cardano-graphql] | GraphQL/HTTP API for browsing on-chain data    | :heavy_check_mark: | :x:                | :construction:
 
 
-## SDK
-
-### Haskell SDKs (+JS support)
+## Haskell SDKs (+JS support)
 
 Name / Link                    | Description                                                              | Haskell            | JavaScript
 ---                            | ---                                                                      | ---                | ---
@@ -30,14 +28,14 @@ Name / Link                    | Description                                    
 [cardano-coin-selection]       | Coin selection and fee balancing algorithms                              | :heavy_check_mark: | :construction:
 [cardano-transactions]         | Transaction construction and signing                                     | :heavy_check_mark: | :construction:
 
-### Rust SDKs (+JS support)
+## Rust SDKs (+JS support)
 
 Name / Link                    | Description                                                              | Rust               | JavaScript
 ---                            | ---                                                                      | ---                | ---
 [cardano-serialization-lib]    | Binary serialization of on-chain data types                              | :construction:     | :construction:
 [react-native-haskell-shelley] | React Native bindings for [cardano-serialization-lib]                    | :construction:     | :construction:
 
-### Pure JS SDKs
+## Pure JS SDKs
 
 Name / Link                    | Description
 ---                            | ---
