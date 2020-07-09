@@ -35,7 +35,7 @@ Name / Link                    | Description                                    
 Name / Link                    | Description                                                              | Rust               | JavaScript
 ---                            | ---                                                                      | ---                | ---
 [cardano-serialization-lib]    | Binary serialization of on-chain data types                              | :construction:     | :construction:
-[react-native-haskell-shelley] | Mobile bindings for [cardano-serialization-lib] w/ react-native support  | :construction:     | :construction:
+[react-native-haskell-shelley] | React Native bindings for [cardano-serialization-lib]                    | :construction:     | :construction:
 
 ### Pure JS SDKs
 
