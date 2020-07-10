@@ -1,3 +1,9 @@
+.. raw:: html
+
+   <p align="center">
+       <a href='https://cardano.readthedocs.io/projects/adrestia/en/latest/?badge=latest'><img src='https://readthedocs.org/projects/cardano-adrestia/badge/?version=latest' alt='Documentation Status' /></a>
+   </p>
+
 Adrestia is a collection of products which makes it easier to integrate
 with Cardano. It comes in different flavours: SDK or high-level APIs.
 Depending on the use-cases you have and the control that you seek, you
