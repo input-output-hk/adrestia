@@ -6,6 +6,7 @@ adrestia
 
 .. toctree::
    :maxdepth: 3
+   :caption: Understanding Adrestia
    :titlesonly:
 
    architecture
