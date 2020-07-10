@@ -1,7 +1,5 @@
----
-weight: 3
-title: Addresses Format (Byron)
----
+Addresses Format (Byron)
+========================
 
 ## Internal Structure
 
