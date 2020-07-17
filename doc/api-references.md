@@ -1,7 +1,7 @@
 API References
 ==============
 
-## Components
+## Componentss
 
 
 * [cardano-wallet](https://input-output-hk.github.io/cardano-wallet/api/edge)
