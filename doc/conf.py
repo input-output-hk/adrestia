@@ -95,14 +95,10 @@ html_theme_options = {
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 
-html_logo = "https://cardano.readthedocs.io/en/latest/_static/cardano-logo.png"
+html_logo = ".sphinx/cardano-logo.png"
 
 html_context = {
   "display_github": True, # Add 'Edit on Github' link instead of 'View page source'
-  "github_user": "input-output-hk",
-  "github_repo": "cardano-node",
-  "github_version": "master",
-  "conf_py_path": "/",
   "source_suffix": source_suffix,
 }
 
