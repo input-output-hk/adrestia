@@ -1,4 +1,5 @@
-## API reference 
+## API reference
+
 
 ### Components
 
