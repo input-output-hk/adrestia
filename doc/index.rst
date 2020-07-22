@@ -21,6 +21,7 @@ adrestia
    key-concepts/index
    migrating-from-sl
    api-references
+   api-reference
    faq
 
 .. toctree::
