@@ -40,7 +40,7 @@ This is a HTTP REST API recommended for third-party wallets and small exchanges 
 
 cardano-rest is made of two HTTP APIs used to retrieve transactions, addresses, and time periods (epochs and slots) from the [cardano-db-sync](https://github.com/input-output-hk/cardano-db-sync) component and submit an already serialized transaction to the network using [cardano-explorer-api](https://github.com/input-output-hk/cardano-rest) & [cardano-submit-api](https://github.com/input-output-hk/cardano-rest) respectively. The [cardano-submit-api](https://github.com/input-output-hk/cardano-rest) uses the same API as the [cardano-sl:explorer](https://cardanodocs.com/technical/explorer/api/), to ease migration from already integrated clients. New integration should however look into [cardano-graphql](https://github.com/input-output-hk/cardano-graphql).
 
-**Supported environments**
+**Supported environmentss**
 -   Linux (64-bit)
 -   MacOS (64-bit)
 -   Docker
