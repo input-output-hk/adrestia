@@ -24,7 +24,7 @@ name / link       | description                                    | Byron      
 Name / Link            | Description                                          | Byron              | Jörmungandr        | Shelley
 ---                    | ---                                                  | ---                | ---                | ---
 [bech32]               | Human-friendly Bech32 address encoding               | N/A                | :heavy_check_mark: | :heavy_check_mark:
-[cardano-wallet]       | Command-line for interacting with cardano-wallet API | :heavy_check_mark: | :heavy_check_mark: | :construction:
+[cardano-wallet]       | Command-line for interacting with cardano-wallet API | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 [cardano-addresses]    | Addresses and mnemonic manipulation & derivations    | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 [cardano-transactions] | Transaction construction and signing                 | :heavy_check_mark: | :x:                | :construction:
 
@@ -41,7 +41,7 @@ Name / Link              | Description                                       | B
 
 Name / Link                    | Description                                           | Byron | Jörmungandr | Shelley
 ---                            | ---                                                   | ---   | ---         | ---
-[cardano-serialization-lib]    | Binary serialization of on-chain data types           | N/A   | N/A         | :construction:
+[cardano-serialization-lib]    | Binary serialization of on-chain data types           | N/A   | N/A         | :heavy_check_mark:
 [react-native-haskell-shelley] | React Native bindings for [cardano-serialization-lib] | N/A   | N/A         | :construction:
 
 ## JavaScript SDKs
