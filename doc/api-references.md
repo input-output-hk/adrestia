@@ -1,42 +1,146 @@
-API References
-==============
-
 ## Components
 
+### APIs
 
-* [cardano-wallet](https://input-output-hk.github.io/cardano-wallet/api/edge)
-* [cardano-submit-api](https://input-output-hk.github.io/cardano-rest/submit-api/)
-* [cardano-explorer-api](https://input-output-hk.github.io/cardano-rest/explorer-api/)
-* [cardano-graphql](https://input-output-hk.github.io/cardano-graphql/)
++--------------------+--------------+--------------+--------------+----------------+
+|        name        | description  |    Byron     | Jörmungandr  |    Shelley     |
++====================+==============+==============+==============+================+
+| cardano-wallet     | JSON/REST    | **COMPLETE** |  **COMPLETE**| **IN PROGRESS**|
+|                    | API for      |              |              |                |
+|                    | managing     |              |              |                |
+|                    | UTxOs in HD  |              |              |                |
+|                    | wallets      |              |              |                |
++--------------------+--------------+--------------+--------------+----------------+
+| cardano-rest       | JSON/HTTP    | **COMPLETE** |    **X**     | **IN PROGRESS**|
+|                    | API for      |              |              |                |
+|                    | browsing     |              |              |                |
+|                    | on-chain     |              |              |                |
+|                    | data         |              |              |                |
++--------------------+--------------+--------------+--------------+----------------+
+| cardano-graphql    | GraphQL/HTTP | **COMPLETE** |    **X**     | **IN PROGRESS**|
+|                    | API for      |              |              |                |
+|                    | browsing     |              |              |                |
+|                    | on-chain     |              |              |                |
+|                    | data         |              |              |                |
++--------------------+--------------+--------------+--------------+----------------+
 
-> **HINT**:  _About cardano-wallet_
+### API Links
 
-Cardano-wallet comes with a command-line interface that can be used as a quick alternative to cURL or wget to interact with a server running on localhost. Every endpoint of the API is mapped to a corresponding command which often offers a better user experience than directly interacting with the API as a human (API are for programs, command-lines are for humans).
+-   [cardano-wallet](https://github.com/input-output-hk/cardano-wallet)
+-   [cardano-rest](https://github.com/input-output-hk/cardano-rest)
+-   [cardano-graphql](https://github.com/input-output-hk/cardano-graphql)
 
-For example, restoring a wallet goes normally through `POST /byron-wallets`, or can be done interactively with
+### CLIs
 
-```
-$ cardano-wallet wallet create MyWallet
-```
++----------------------+--------------------+--------------+--------------+-----------------+
+|        name          |    description     |    Byron     | Jörmungandr  |    Shelley      |
++======================+====================+==============+==============+=================+
+| bech32               | Human-friendly     | **N/A**      | **COMPLETE** |   **COMPLETE**  |
+|                      | Bech32 addres      |              |              |                 |
+|                      | encoding           |              |              |                 |
++----------------------+--------------------+--------------+--------------+-----------------+
+| cardano-wallet       | Command-line for   | **COMPLETE** | **COMPLETE** | **IN PROGRESS** |
+|                      | interacting with   |              |              |                 |
+|                      | cardano-wallet     |              |              |                 |
+|                      | API                |              |              |                 |
++----------------------+--------------------+--------------+--------------+-----------------+
+| cardano-addresses    | Addresses and      | **COMPLETE** | **COMPLETE** |   **COMPLETE**  |
+|                      | mnemonic           |              |              |                 |
+|                      | manipulation and   |              |              |                 |
+|                      | derivations        |              |              |                 |
++----------------------+--------------------+--------------+--------------+-----------------+
+| cardano-transactions | Transaction-       |              |              |                 | 
+|                      | construction       | **COMPLETE** |    **X**     | **IN PROGRESS** |
+|                      | and signing        |              |              |                 |
++----------------------+--------------------+--------------+--------------+-----------------+
 
-The command line also provides some useful helpers like a command to generate mnemonic sentences, or doing key derivation. For more details, see the wallet command-line user manual.
+### CLI Links
 
+-   [bech32](https://github.com/input-output-hk/bech32)
+-   [cardano-wallet](https://github.com/input-output-hk/cardano-wallet)
+-   [cardano-addresses](https://github.com/input-output-hk/cardano-addresses)
+-   [cardano-transactions](https://github.com/input-output-hk/cardano-transactions)
 
-## Libraries
+### Haskell SDKs
 
-| Library                                                                             | Haskell                                                           | JavaScript                              |
-|-------------------------------------------------------------------------------------|-------------------------------------------------------------------|-----------------------------------------|
-| [cardano-addresses](https://github.com/input-output-hk/cardano-addresses)           | <https://input-output-hk.github.io/cardano-addresses/haddock/>      | _Soon available._                       |
-| [cardano-transactions](https://github.com/input-output-hk/cardano-transactions)     | <https://input-output-hk.github.io/cardano-transactions/haddock/>   | _Soon available._                       |
-| [cardano-coin-selection](https://github.com/input-output-hk/cardano-coin-selection) | <https://input-output-hk.github.io/cardano-coin-selection/haddock/> | _Soon available._                       |
-| [bech32](https://github.com/input-output-hk/bech32)                                 | <https://input-output-hk.github.io/bech32/haddock/>                 | See <https://github.com/bitcoinjs/bech32> |
++-------------------------+--------------------+--------------+--------------+-----------------+
+|          name           |    description     |    Byron     | Jörmungandr  |    Shelley      |
++=========================+====================+==============+==============+=================+
+| bech32                  | Human-friendly     | **N/A**      | **COMPLETE** |  **COMPLETE**   |
+|                         | Bech32 address     |              |              |                 |
+|                         | encoding           |              |              |                 |
++-------------------------+--------------------+--------------+--------------+-----------------+
+| cardano-coin-selection  | Coin selection     | **COMPLETE** | **COMPLETE** |  **COMPLETE**   |
+|                         | and fee balancing  |              |              |                 |
+|                         | algorithms         |              |              |                 |
++-------------------------+--------------------+--------------+--------------+-----------------+
+| cardano-addresses       | Addresses and      | **COMPLETE** | **COMPLETE** |  **COMPLETE**   |
+|                         | mnemonic           |              |              |                 |
+|                         | manipulation and   |              |              |                 |
+|                         | derivations        |              |              |                 |
++-------------------------+--------------------+--------------+--------------+-----------------+
+| cardano-transactions    | Transaction        |              |              |                 |
+|                         | construction       | **COMPLETE** |    **X**     | **IN PROGRESS** |
+|                         | and signing        |              |              |                 |
++-------------------------+--------------------+--------------+--------------+-----------------+
 
-About cardano-transactions
---------------------------
+### Haskell SDKs links
 
-In addition to the low-level library, cardano-transactions also provides a command-line interface (`cardano-tx`) to construct transactions directly in the terminal.
-Check out the repository's documentation and examples to see example usage.
+-   [bech32](https://github.com/input-output-hk/bech32)
+-   [cardano-coin-selection](https://github.com/input-output-hk/cardano-coin-selection)
+-   [cardano-addresses](https://github.com/input-output-hk/cardano-addresses)
+-   [cardano-transactions](https://github.com/input-output-hk/cardano-transactions)
 
-[cardano-wallet]: https://github.com/input-output-hk/cardano-wallet
-[cardano-rest]: https://github.com/input-output-hk/cardano-rest
-[cardano-graphql]: https://github.com/input-output-hk/cardano-graphql
+### Rust SDKs (+WebAssembly support)
+
++--------------------------------+---------------------------+--------------+-------------+-----------------+
+|        name                    |    description            |    Byron     | Jörmungandr |    Shelley      |
++================================+===========================+==============+=============+=================+
+| cardano-serialization-lib      | Binary serialization of   |   **N/A**    |  **N/A**    | **IN PROGRESS** |
+|                                | on-chain data types       |              |             |                 |
++--------------------------------+---------------------------+--------------+-------------+-----------------+
+| react-native-haskell-shelley   | React Native bindings for |   **N/A**    |  **N/A**    | **IN PROGRESS** |
+|                                | cardano-serialization-lib |              |             |                 |
++--------------------------------+---------------------------+--------------+-------------+-----------------+
+
+### Rust SDKS Links
+
+-   [cardano-serialization-lib](https://github.com/Emurgo/cardano-serialization-lib)
+-   [react-native-haskell-shelley](https://github.com/Emurgo/react-native-haskell-shelley)
+
+### Formal Specifications
+
++----------------------------+---------------------------+
+|          name              |      description          |
++============================+===========================+
+| utxo-wallet-specification  | Formal specification for a|
+|                            | UTxO wallet               |
++----------------------------+---------------------------+
+
+### Formal Specifications Link
+
+-   [utxo-wallet-specification](https://github.com/input-output-hk/utxo-wallet-specification)
+
+### Internal
+
+These tools are used internally by other tools, so they're not as well documented as the tools listed above.
+
++-----------------+-----------------------------+
+|        name     |    description              |  
++=================+=============================+
+| cardano-js      | (experimental) Cardano      |   
+|                 | primitives for ECMAScript   |
+|                 | applications                |
++-----------------+-----------------------------+
+| cardano-js-sdk  | React Native bindings for   |   
+|                 | cardano-serialization-lib   |      
+|-----------------+-----------------------------+
+| persistent      | Fork of the persistent      |
+|                 | Haskell library maintained  | 
+|                 | for cardano-wallet          |
++-----------------+-----------------------------+
+
+### Contributing 
+
+See [CONTRIBUTING.md](https://github.com/input-output-hk/adrestia/blob/master/CONTRIBUTING.md)
+

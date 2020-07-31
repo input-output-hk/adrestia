@@ -11,31 +11,48 @@ Architecture
 
 The core [cardano-node][cardano-node], which will support Ouroboros Praos.
 
-> **HINT**:  Supported environments: Linux (64-bits), MacOS (64-bits), Windows (64-bits), Docker
+**Supported environments**
+-   Linux (64-bit)
+-   MacOS (64-bit)
+-   Windows (64-bit)
+-   Docker
 
-### [cardano-db-sync][cardano-db-sync]
+### [cardano-db-sync](https://github.com/input-output-hk/cardano-db-sync)
 
 A necessary middleware to power both [cardano-rest][cardano-rest] and [cardano-graphql][cardano-graphql]. This middleware stores blockchain data fetched from [cardano-node][cardano-node] in an intermediate database to enable higher-level interfaces for blockchain exploration.
 
-> **HINT**:  Supported environments: Linux (64-bits), MacOS (64-bits), Docker
+**Supported environments**
+-   Linux (64-bit)
+-   MacOS (64-bit)
+-   Docker
 
-### [cardano-wallet][cardano-wallet]
+### [cardano-wallet](https://github.com/input-output-hk/cardano-wallet)
 
-[cardano-wallet][cardano-wallet] An HTTP REST API is recommended for 3rd party wallets and small exchanges who do not want to manage UTxOs for transactions themselves. Use it to send and receive payments from hierarchical deterministic wallets on the Cardano blockchain via HTTP REST or a command-line interface.
+This is a HTTP REST API recommended for third-party wallets and small exchanges that do not want to manage UTxOs for transactions themselves. Use this API to send and receive payments from hierarchical deterministic wallets on the Cardano blockchain via HTTP REST or a command-line interface.
 
-> **HINT**:  Supported environments: Linux (64-bits), MacOS (64-bits), Windows (64-bits), Docker
+**Supported environments**
+-   Linux (64-bit)
+-   MacOS (64-bit)
+-   Windows (64-bit)
+-   Docker
 
-### [cardano-rest][cardano-rest]
+### [cardano-rest](https://github.com/input-output-hk/cardano-rest)
 
-[cardano-rest][cardano-rest] is made of two HTTP APIs that are used to retrieve transactions, addresses, and time periods (epochs and slots) from the [cardano-db-sync][cardano-db-sync] component and submit an already serialized transaction to the network using [cardano-explorer-api][cardano-rest] & [cardano-submit-api][cardano-rest] respectively. The [cardano-submit-api][cardano-rest] uses the same API as the [cardano-sl:explorer][cardano-sl-explorer] to ease migration from already integrated clients. New integration should however look into [cardano-graphql][cardano-graphql].
+cardano-rest is made of two HTTP APIs used to retrieve transactions, addresses, and time periods (epochs and slots) from the [cardano-db-sync](https://github.com/input-output-hk/cardano-db-sync) component and submit an already serialized transaction to the network using [cardano-explorer-api](https://github.com/input-output-hk/cardano-rest) & [cardano-submit-api](https://github.com/input-output-hk/cardano-rest) respectively. The [cardano-submit-api](https://github.com/input-output-hk/cardano-rest) uses the same API as the [cardano-sl:explorer](https://cardanodocs.com/technical/explorer/api/), to ease migration from already integrated clients. New integration should however look into [cardano-graphql](https://github.com/input-output-hk/cardano-graphql).
 
-> **HINT**:  Supported environments: Linux (64-bits), MacOS (64-bits), Docker
+**Supported environmentss**
+-   Linux (64-bit)
+-   MacOS (64-bit)
+-   Docker
 
-### [cardano-graphql][cardano-graphql] 
+### [cardano-graphql](https://github.com/input-output-hk/cardano-graphql)
 
-HTTP GraphQL API for Cardano. A more flexible alternative for blockchain exploration than [cardano-rest][cardano-rest]. 
+HTTP GraphQL API for Cardano. This is a more flexible alternative for blockchain exploration than [cardano-rest](https://github.com/input-output-hk/cardano-rest).
 
-> **HINT**:  Supported environments: Linux (64-bits), MacOS (64-bits), Docker
+**Supported environments**
+-   Linux (64-bit)
+-   MacOS (64-bit)
+-   Docker
 
 ## Choosing the right component
 
@@ -44,11 +61,3 @@ HTTP GraphQL API for Cardano. A more flexible alternative for blockchain explora
 ## Notes
 
 See also [input-output-hk/adrestia][adrestia].
-
-[adrestia]: https://github.com/input-output-hk/adrestia
-[cardano-graphql]: https://github.com/input-output-hk/cardano-graphql
-[cardano-db-sync]: https://github.com/input-output-hk/cardano-db-sync
-[cardano-node]: https://github.com/input-output-hk/cardano-node
-[cardano-rest]: https://github.com/input-output-hk/cardano-rest
-[cardano-sl-explorer]: https://cardanodocs.com/technical/explorer/api/
-[cardano-wallet]: https://github.com/input-output-hk/cardano-wallet

@@ -20,5 +20,5 @@ adrestia
    common-use-cases/index
    key-concepts/index
    migrating-from-sl
-   api-references
+   api-reference
    faq

@@ -5,15 +5,15 @@ HD Wallets
 
 ### Motivation
 
-We define a way for easily entering and writing down arbitrary binary seeds using a simple dictionary of known words (available in many different languages).
+Recovery phrases (or backup, or seed phrases) are unique and randomly generated sets of 12 words that enable the user to recover their wallet at anytime. 
 
-The motivation here is to have sentence of words easy to read and write for humans, which map uniquely back and forth to a sized binary data (harder to remember).
+Seed phrases map to binary data that in turns generates the wallet's private key. Since binary data would be impossible to memorize by a human, programmers use easy-to-read, understandable language to create binary seeds using a simple dictionary of known words. This is available in multiple languages.
 
 ### Encoding
 
-The process describing how to encode recovery phrases is described in [BIP-0039](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki) section "Generating the mnemonic". Below is a reformulation of this specification.
+The process describing the encoding of recovery phrases is described in [BIP-0039](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki), in the "Generating the mnemonic" section. Below is a reformulation of this specification.
 
-We call _Entropy_ an arbitrary sequence of bytes that has been generated through high quality randomness methods. The allowed size of _Entropy_ is 96-256 bits and is necessarily a multiple of 32 bits (4 bytes). 
+We call _Entropy_ an arbitrary sequence of bytes that has been generated through high quality randomization methods. The allowed size of _Entropy_ is 96-256 bits, and is necessarily a multiple of 32 bits (4 bytes). 
 
 A checksum is appended to the initial entropy by taking the first `ENT / 32` bits of the `SHA256` hash of it, where `ENT` designates the _Entropy_ size in bits. 
 
@@ -38,11 +38,11 @@ Cardano uses the same dictionaries as defined in [BIP-0039](https://github.com/b
 
 ### Motivation 
 
-In Cardano, hierarchical deterministic (abbrev. HD) wallets are similar to those described in [BIP-0032](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki#motivation).
+In Cardano, hierarchical deterministic (HD) wallets are similar to those described in [BIP-0032](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki#motivation).
 
-Deterministic wallets and elliptic curve mathematics permit schemes where one can calculate a wallet public keys without revealing its private keys. This permits for example a webshop business to let its webserver generate fresh addresses (public key hashes) for each order or for each customer, without giving the webserver access to the corresponding private keys (which are required for spending the received funds).  However, deterministic wallets typically consist of a single "chain" of keypairs. The fact that there is only one chain means that sharing a wallet happens on an all-or-nothing basis. 
+Deterministic wallets and elliptic curve mathematics permit schemes where one can calculate a wallet's public keys without revealing its private keys. This allows for example a webshop business to let its webserver generate fresh addresses (public key hashes) for each order or for each customer, without giving the web server access to the corresponding private keys (which are required for spending the received funds). However, deterministic wallets typically consist of a single "chain" of keypairs. The fact that there is only one chain means that sharing a wallet happens on an all-or-nothing basis. 
 
-However, in some cases one only wants some (public) keys to be shared and recoverable. In the example of a webshop, the webserver does not need access to all public keys of the merchant's wallet; only to those addresses which are used to receive customer's payments, and not for example the change addresses that are generated when the merchant spends money. Hierarchical deterministic wallets allow such selective sharing by supporting multiple keypair chains, derived from a single root. 
+However, in some cases one only wants some (public) keys to be shared and recoverable. In the example of a web shop, the web server does not need access to all public keys of the merchant's wallet; only to those addresses which are used to receive customer's payments, and not for example the change addresses that are generated when the merchant spends money. Hierarchical deterministic wallets allow such selective sharing by supporting multiple keypair chains, derived from a single root. 
 
 ### Notation
 
@@ -95,28 +95,28 @@ m / purpose_H / coin\_type_H / account_H / account\_type / address\_index
   - `0` if the {{<katex>}}account\_type{{</katex>}} is `2`
   - Anything between 0 and 2<sup>31 otherwise
 
-> **WARNING**  In the _Byron_ era, sequential wallets used in Yoroi (a.k.a Icarus wallets) have been using `purpose = 44_H` according to standard BIP-44 wallets. 
-> The _Shelley_ era introduces however an extension to BIP-44, and therefore, uses a different `purpose` number.
+> **WARNING**  In the _Byron_ era, sequential wallets used in Yoroi (also known as Icarus wallets) have been using `purpose = 44_H` according to standard BIP-44 wallets. 
+> The _Shelley_ era introduces an extension to BIP-44, and therefore uses a different `purpose` number.
 
 ### Account Discovery
 
 > What follows is taken from the "Account Discovery" section from [BIP-0044](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki#account-discovery)
 
-When the master seed is imported from an external source the software should start to discover the accounts in the following manner:
+When the master seed is imported from an external source, the software should start to discover the accounts in the following manner:
 
--    derive the first account's node (index = 0)
--    derive the external chain node of this account
--    scan addresses of the external chain; respect the gap limit described below
--    if no transactions are found on the external chain, stop discovery
--    if there are some transactions, increase the account index and go to step 1
+-    Derive the first account's node (index = 0)
+-    Derive the external chain node of this account
+-    Scan addresses of the external chain; respect the gap limit described below
+-    If no transactions are found on the external chain, stop discovery
+-    If there are some transactions, increase the account index and go to step 1
 
-For the algorithm to be successful, software should disallow creation of new accounts if previous one has no transaction history.
+For the algorithm to be successful, software should disallow the creation of a new accounts if the previous one has no transaction history.
 
-Please note that the algorithm works with the transaction history, not account balances, so you can have an account with 0 total coins and the algorithm will still continue with discovery.
+Please note that the algorithm works with the transaction history, not account balances, so you can have an account with 0 total coins and the algorithm will still continue with the discovery.
 
 ### Address gap limit
 
-Address gap limit is currently set to 20. If the software hits 20 unused addresses in a row, it expects there are no used addresses beyond this point and stops searching the address chain. We scan just the external chains, because internal chains receive only coins that come from the associated external chains.
+Address gap limit is currently set to 20. If the software hits 20 unused addresses in a row, it assumes that there are no used addresses beyond this point and stops searching the address chain. We scan just the external chains, because internal chains receive only coins that come from the associated external chains.
 
 Wallet software should warn when the user is trying to exceed the gap limit on an external chain by generating a new address. 
 
@@ -125,8 +125,7 @@ Wallet software should warn when the user is trying to exceed the gap limit on a
 
 ### History
 
-Throughout the years, Cardano has been using different styles of HD wallets. 
-We categorize these wallets in the following terms:
+Cardano has used different styles of HD wallets, which cane be categorized as:
 
 Wallet Style | Compatible Products
 ---          | ---
@@ -134,18 +133,18 @@ Byron        | Daedalus, Yoroi
 Icarus       | Yoroi, Trezor
 Ledger       | Ledger
 
-Each wallet is based on Ed25519 elliptic curves though differs in subtle ways 
-highlighted in the next sections.
+Each wallet is based on Ed25519 elliptic curves, though there are subtle differences, 
+which are highlighted in the next sections.
 
 ### Overview
 
-The master key generation is the mean by which on turns an initial entropy into 
-a secure cryptographic key. Child keys can be derived from a master key to produce
-an HD structure as outlined above. Child key derivation is explored in next sections.
+The master key generation turns an initial entropy into  a secure cryptographic key. 
+Child keys can be derived from a master key to produce a HD structure as outlined above.
+Child key derivation is explored in next sections.
 
-In Cardano, the master key generation is different depending on which style of wallet
-one is considering. In each case however, the generation is a function from an initial
-seed to an extended private key (abbrev. XPrv) composed of:
+In Cardano, the master key generation is different, depending on the style of wallet. 
+In each case however, the generation is a function from an initial seed to an extended private key
+(XPrv) composed of:
 
 - 64 bytes: an extended Ed25519 secret key composed of:
     - 32 bytes: Ed25519 curve scalar from which few bits have been tweaked (see below)
@@ -199,7 +198,7 @@ function tweakBits(data) {
 _Icarus_ master key generation style supports setting an extra password as an arbitrary 
 byte array of any size. This password acts as a second factor applied to cryptographic key 
 retrieval. When the seed comes from an encoded recovery phrase, the password can therefore
-be used to add extra protection in case where the recovery phrase were to be exposed.
+be used to add extra protection in cases where the recovery phrase might be exposed.
 
 ```js
 function generateMasterKey(seed, password) {
