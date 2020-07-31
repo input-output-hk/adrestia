@@ -14,9 +14,9 @@ To get started, checkout the [📘 Adrestia user-guide](https://input-output-hk.
 
 name / link       | description                                    | Byron              | Jörmungandr        | Shelley
 ---               | ---                                            | ---                | ---                | ---
-[cardano-wallet]  | JSON/REST API for managing UTxOs in HD wallets | :heavy_check_mark: | :heavy_check_mark: | :construction:
-[cardano-rest]    | JSON/HTTP API for browsing on-chain data       | :heavy_check_mark: | :x:                | :construction:
-[cardano-graphql] | GraphQL/HTTP API for browsing on-chain data    | :heavy_check_mark: | :x:                | :construction:
+[cardano-wallet]  | JSON/REST API for managing UTxOs in HD wallets | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
+[cardano-rest]    | JSON/HTTP API for browsing on-chain data       | :heavy_check_mark: | :x:                | :heavy_check_mark:
+[cardano-graphql] | GraphQL/HTTP API for browsing on-chain data    | :heavy_check_mark: | :x:                | :heavy_check_mark:
 
 
 ## CLIs
@@ -63,8 +63,6 @@ Name / Link                 | Description
 
 name / link        | description
 ---                | ---
-[cardano-js]       | (experimental) Cardano primitives for ECMAScript applications
-[cardano-js-sdk]   | (experimental) Cardano SDK for ECMAScript applications
 [persistent]       | Fork of the persistent Haskell library maintained for cardano-wallet
 
 
@@ -79,8 +77,6 @@ name / link        | description
 [bech32]: https://github.com/input-output-hk/bech32
 [utxo-wallet-specification]: https://github.com/input-output-hk/utxo-wallet-specification
 [cardano-launcher]: https://github.com/input-output-hk/cardano-launcher
-[cardano-js]: https://github.com/input-output-hk/cardano-js
-[cardano-js-sdk]: https://github.com/input-output-hk/cardano-js-sdk
 [persistent]: https://github.com/input-output-hk/persistent
 
 # Contributing
