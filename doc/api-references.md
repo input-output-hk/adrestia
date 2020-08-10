@@ -2,27 +2,27 @@
 
 ### APIs
 
-+--------------------+--------------+--------------+--------------+----------------+
-|        name        | description  |    Byron     | Jörmungandr  |    Shelley     |
-+====================+==============+==============+==============+================+
-| cardano-wallet     | JSON/REST    | **COMPLETE** |  **COMPLETE**| **IN PROGRESS**|
-|                    | API for      |              |              |                |
-|                    | managing     |              |              |                |
-|                    | UTxOs in HD  |              |              |                |
-|                    | wallets      |              |              |                |
-+--------------------+--------------+--------------+--------------+----------------+
-| cardano-rest       | JSON/HTTP    | **COMPLETE** |    **X**     | **IN PROGRESS**|
-|                    | API for      |              |              |                |
-|                    | browsing     |              |              |                |
-|                    | on-chain     |              |              |                |
-|                    | data         |              |              |                |
-+--------------------+--------------+--------------+--------------+----------------+
-| cardano-graphql    | GraphQL/HTTP | **COMPLETE** |    **X**     | **IN PROGRESS**|
-|                    | API for      |              |              |                |
-|                    | browsing     |              |              |                |
-|                    | on-chain     |              |              |                |
-|                    | data         |              |              |                |
-+--------------------+--------------+--------------+--------------+----------------+
++-----------------+--------------+--------------+--------------+-----------------+
+|      name       | description  |    Byron     | Jörmungandr  |     Shelley     |
++=================+==============+==============+==============+=================+
+| cardano-wallet  | JSON/REST    | **COMPLETE** | **COMPLETE** | **IN PROGRESS** |
+|                 | API for      |              |              |                 |
+|                 | managing     |              |              |                 |
+|                 | UTxOs in HD  |              |              |                 |
+|                 | wallets      |              |              |                 |
++-----------------+--------------+--------------+--------------+-----------------+
+| cardano-rest    | JSON/HTTP    | **COMPLETE** | **X**        | **IN PROGRESS** |
+|                 | API for      |              |              |                 |
+|                 | browsing     |              |              |                 |
+|                 | on-chain     |              |              |                 |
+|                 | data         |              |              |                 |
++-----------------+--------------+--------------+--------------+-----------------+
+| cardano-graphql | GraphQL/HTTP | **COMPLETE** | **X**        | **IN PROGRESS** |
+|                 | API for      |              |              |                 |
+|                 | browsing     |              |              |                 |
+|                 | on-chain     |              |              |                 |
+|                 | data         |              |              |                 |
++-----------------+--------------+--------------+--------------+-----------------+
 
 ### API Links
 
@@ -32,27 +32,27 @@
 
 ### CLIs
 
-+----------------------+--------------------+--------------+--------------+-----------------+
-|        name          |    description     |    Byron     | Jörmungandr  |    Shelley      |
-+======================+====================+==============+==============+=================+
-| bech32               | Human-friendly     | **N/A**      | **COMPLETE** |   **COMPLETE**  |
-|                      | Bech32 addres      |              |              |                 |
-|                      | encoding           |              |              |                 |
-+----------------------+--------------------+--------------+--------------+-----------------+
-| cardano-wallet       | Command-line for   | **COMPLETE** | **COMPLETE** | **IN PROGRESS** |
-|                      | interacting with   |              |              |                 |
-|                      | cardano-wallet     |              |              |                 |
-|                      | API                |              |              |                 |
-+----------------------+--------------------+--------------+--------------+-----------------+
-| cardano-addresses    | Addresses and      | **COMPLETE** | **COMPLETE** |   **COMPLETE**  |
-|                      | mnemonic           |              |              |                 |
-|                      | manipulation and   |              |              |                 |
-|                      | derivations        |              |              |                 |
-+----------------------+--------------------+--------------+--------------+-----------------+
-| cardano-transactions | Transaction-       |              |              |                 | 
-|                      | construction       | **COMPLETE** |    **X**     | **IN PROGRESS** |
-|                      | and signing        |              |              |                 |
-+----------------------+--------------------+--------------+--------------+-----------------+
++----------------------+------------------+--------------+--------------+-----------------+
+|         name         |   description    |    Byron     | Jörmungandr  |     Shelley     |
++======================+==================+==============+==============+=================+
+| bech32               | Human-friendly   | **N/A**      | **COMPLETE** | **COMPLETE**    |
+|                      | Bech32 addres    |              |              |                 |
+|                      | encoding         |              |              |                 |
++----------------------+------------------+--------------+--------------+-----------------+
+| cardano-wallet       | Command-line for | **COMPLETE** | **COMPLETE** | **IN PROGRESS** |
+|                      | interacting with |              |              |                 |
+|                      | cardano-wallet   |              |              |                 |
+|                      | API              |              |              |                 |
++----------------------+------------------+--------------+--------------+-----------------+
+| cardano-addresses    | Addresses and    | **COMPLETE** | **COMPLETE** | **COMPLETE**    |
+|                      | mnemonic         |              |              |                 |
+|                      | manipulation and |              |              |                 |
+|                      | derivations      |              |              |                 |
++----------------------+------------------+--------------+--------------+-----------------+
+| cardano-transactions | Transaction-     |              |              |                 |
+|                      | construction     | **COMPLETE** | **X**        | **IN PROGRESS** |
+|                      | and signing      |              |              |                 |
++----------------------+------------------+--------------+--------------+-----------------+
 
 ### CLI Links
 
@@ -63,26 +63,26 @@
 
 ### Haskell SDKs
 
-+-------------------------+--------------------+--------------+--------------+-----------------+
-|          name           |    description     |    Byron     | Jörmungandr  |    Shelley      |
-+=========================+====================+==============+==============+=================+
-| bech32                  | Human-friendly     | **N/A**      | **COMPLETE** |  **COMPLETE**   |
-|                         | Bech32 address     |              |              |                 |
-|                         | encoding           |              |              |                 |
-+-------------------------+--------------------+--------------+--------------+-----------------+
-| cardano-coin-selection  | Coin selection     | **COMPLETE** | **COMPLETE** |  **COMPLETE**   |
-|                         | and fee balancing  |              |              |                 |
-|                         | algorithms         |              |              |                 |
-+-------------------------+--------------------+--------------+--------------+-----------------+
-| cardano-addresses       | Addresses and      | **COMPLETE** | **COMPLETE** |  **COMPLETE**   |
-|                         | mnemonic           |              |              |                 |
-|                         | manipulation and   |              |              |                 |
-|                         | derivations        |              |              |                 |
-+-------------------------+--------------------+--------------+--------------+-----------------+
-| cardano-transactions    | Transaction        |              |              |                 |
-|                         | construction       | **COMPLETE** |    **X**     | **IN PROGRESS** |
-|                         | and signing        |              |              |                 |
-+-------------------------+--------------------+--------------+--------------+-----------------+
++------------------------+-------------------+--------------+--------------+-----------------+
+|          name          |    description    |    Byron     | Jörmungandr  |     Shelley     |
++========================+===================+==============+==============+=================+
+| bech32                 | Human-friendly    | **N/A**      | **COMPLETE** | **COMPLETE**    |
+|                        | Bech32 address    |              |              |                 |
+|                        | encoding          |              |              |                 |
++------------------------+-------------------+--------------+--------------+-----------------+
+| cardano-coin-selection | Coin selection    | **COMPLETE** | **COMPLETE** | **COMPLETE**    |
+|                        | and fee balancing |              |              |                 |
+|                        | algorithms        |              |              |                 |
++------------------------+-------------------+--------------+--------------+-----------------+
+| cardano-addresses      | Addresses and     | **COMPLETE** | **COMPLETE** | **COMPLETE**    |
+|                        | mnemonic          |              |              |                 |
+|                        | manipulation and  |              |              |                 |
+|                        | derivations       |              |              |                 |
++------------------------+-------------------+--------------+--------------+-----------------+
+| cardano-transactions   | Transaction       |              |              |                 |
+|                        | construction      | **COMPLETE** | **X**        | **IN PROGRESS** |
+|                        | and signing       |              |              |                 |
++------------------------+-------------------+--------------+--------------+-----------------+
 
 ### Haskell SDKs links
 
@@ -93,15 +93,15 @@
 
 ### Rust SDKs (+WebAssembly support)
 
-+--------------------------------+---------------------------+--------------+-------------+-----------------+
-|        name                    |    description            |    Byron     | Jörmungandr |    Shelley      |
-+================================+===========================+==============+=============+=================+
-| cardano-serialization-lib      | Binary serialization of   |   **N/A**    |  **N/A**    | **IN PROGRESS** |
-|                                | on-chain data types       |              |             |                 |
-+--------------------------------+---------------------------+--------------+-------------+-----------------+
-| react-native-haskell-shelley   | React Native bindings for |   **N/A**    |  **N/A**    | **IN PROGRESS** |
-|                                | cardano-serialization-lib |              |             |                 |
-+--------------------------------+---------------------------+--------------+-------------+-----------------+
++------------------------------+---------------------------+---------+-------------+-----------------+
+|             name             |        description        |  Byron  | Jörmungandr |     Shelley     |
++==============================+===========================+=========+=============+=================+
+| cardano-serialization-lib    | Binary serialization of   | **N/A** | **N/A**     | **IN PROGRESS** |
+|                              | on-chain data types       |         |             |                 |
++------------------------------+---------------------------+---------+-------------+-----------------+
+| react-native-haskell-shelley | React Native bindings for | **N/A** | **N/A**     | **IN PROGRESS** |
+|                              | cardano-serialization-lib |         |             |                 |
++------------------------------+---------------------------+---------+-------------+-----------------+
 
 ### Rust SDKS Links
 
@@ -110,12 +110,12 @@
 
 ### Formal Specifications
 
-+----------------------------+---------------------------+
-|          name              |      description          |
-+============================+===========================+
-| utxo-wallet-specification  | Formal specification for a|
-|                            | UTxO wallet               |
-+----------------------------+---------------------------+
++---------------------------+----------------------------+
+|           name            |        description         |
++===========================+============================+
+| utxo-wallet-specification | Formal specification for a |
+|                           | UTxO wallet                |
++---------------------------+----------------------------+
 
 ### Formal Specifications Link
 
@@ -125,20 +125,20 @@
 
 These tools are used internally by other tools, so they're not as well documented as the tools listed above.
 
-+-----------------+-----------------------------+
-|        name     |    description              |  
-+=================+=============================+
-| cardano-js      | (experimental) Cardano      |   
-|                 | primitives for ECMAScript   |
-|                 | applications                |
-+-----------------+-----------------------------+
-| cardano-js-sdk  | React Native bindings for   |   
-|                 | cardano-serialization-lib   |      
-|-----------------+-----------------------------+
-| persistent      | Fork of the persistent      |
-|                 | Haskell library maintained  | 
-|                 | for cardano-wallet          |
-+-----------------+-----------------------------+
++--------------------------------------------------+----------------------------+
+|                       name                       |        description         |
++==================================================+============================+
+| cardano-js                                       | (experimental) Cardano     |
+|                                                  | primitives for ECMAScript  |
+|                                                  | applications               |
++--------------------------------------------------+----------------------------+
+| cardano-js-sdk                                   | React Native bindings for  |
+|                                                  | cardano-serialization-lib  |
+| -----------------+-----------------------------+ |                            |
+| persistent                                       | Fork of the persistent     |
+|                                                  | Haskell library maintained |
+|                                                  | for cardano-wallet         |
++--------------------------------------------------+----------------------------+
 
 ### Contributing 
 

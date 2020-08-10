@@ -3,17 +3,17 @@
 
 ### Components
 
-+-------------------------+--------------------------------------------------------------+
-|        Component        |                     Api link                                 |
-+=========================+==============================================================+
-| cardano-wallet          | https://input-output-hk.github.io/cardano-wallet/edge        | 
-+-------------------------+--------------------------------------------------------------+
-| cardano-submit-api      | https://input-output-hk.github.io/cardano-rest/submit-api/   |  
-+-------------------------+--------------------------------------------------------------+
-| cardano-explorer-api    | https://input-output-hk.github.io/cardano-rest/explorer-api/ | 
-+-------------------------+--------------------------------------------------------------+
-| cardano-graphql         |                    Available soon                            |
-+-------------------------+--------------------------------------------------------------+
++----------------------+--------------------------------------------------------------+
+|      Component       |                           Api link                           |
++======================+==============================================================+
+| cardano-wallet       | https://input-output-hk.github.io/cardano-wallet/edge        |
++----------------------+--------------------------------------------------------------+
+| cardano-submit-api   | https://input-output-hk.github.io/cardano-rest/submit-api/   |
++----------------------+--------------------------------------------------------------+
+| cardano-explorer-api | https://input-output-hk.github.io/cardano-rest/explorer-api/ |
++----------------------+--------------------------------------------------------------+
+| cardano-graphql      | Available soon                                               |
++----------------------+--------------------------------------------------------------+
 
 **About cardano-wallet**
 
@@ -28,19 +28,19 @@ The CLI also provides some useful helpers, such as a command to generate mnemoni
 
 ### Libraries
 
-+-------------------------+------------------------------------------------------------------+----------------|
-|       Library           |                     Haskell                                      | Javascript     |
-+=========================+==================================================================+----------------|
-| cardano-addresses       | https://input-output-hk.github.io/cardano-addresses/haddock      | Available soon |
-+-------------------------+------------------------------------------------------------------+----------------|
-| cardano-transactions    | https://input-output-hk.github.io/cardano-transactions/haddock   | Available soon |
-+-------------------------+------------------------------------------------------------------+----------------|
-| cardano-coin-selection  | https://input-output-hk.github.io/cardano-coin-selection/haddock | Available soon |
-+-------------------------+------------------------------------------------------------------+----------------|
-| bech32                  | https://input-output-hk.github.io/bech32/haddock                 |See https://    |
-|                         |                                                                  | github.com/    ||                         |                                                                  | bitcoinjs/     |
-|                         |                                                                  | bech32         |
-+-------------------------+------------------------------------------------------------------+----------------|
+| +-------------------------+------------------------------------------------------------------+---------------- |                                                                  |                | | | |            |
+| Library                                                                                                        | Haskell                                                          | Javascript     | | | |            |
+| +=========================+==================================================================+---------------- |                                                                  |                | | | |            |
+| cardano-addresses                                                                                              | https://input-output-hk.github.io/cardano-addresses/haddock      | Available soon | | | |            |
+| +-------------------------+------------------------------------------------------------------+---------------- |                                                                  |                | | | |            |
+| cardano-transactions                                                                                           | https://input-output-hk.github.io/cardano-transactions/haddock   | Available soon | | | |            |
+| +-------------------------+------------------------------------------------------------------+---------------- |                                                                  |                | | | |            |
+| cardano-coin-selection                                                                                         | https://input-output-hk.github.io/cardano-coin-selection/haddock | Available soon | | | |            |
+| +-------------------------+------------------------------------------------------------------+---------------- |                                                                  |                | | | |            |
+| bech32                                                                                                         | https://input-output-hk.github.io/bech32/haddock                 | See https://   | | | |            |
+|                                                                                                                |                                                                  | github.com/    | | | | bitcoinjs/ |
+|                                                                                                                |                                                                  | bech32         | | | |            |
+| +-------------------------+------------------------------------------------------------------+---------------- |                                                                  |                | | | |            |
 
 **About cardano-transactions**
 

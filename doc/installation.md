@@ -8,8 +8,8 @@ Docker images are continuously built and deployed on [dockerhub](https://hub.doc
 
 The following images are available for each component of the Adrestia architecture:
 
-| Repository                                                                                                    | Tags                                  | Documentation                                                                                |
-|---------------------------------------------------------------------------------------------------------------|---------------------------------------|----------------------------------------------------------------------------------------------|
+|                                                  Repository                                                   |                 Tags                  |                                        Documentation                                         |
+| ------------------------------------------------------------------------------------------------------------- | ------------------------------------- | -------------------------------------------------------------------------------------------- |
 | [inputoutput/cardano-node](https://hub.docker.com/r/inputoutput/cardano-node)                                 | `master`, `MAJ.MIN.PATCH`, `latest`   | [link](https://github.com/input-output-hk/cardano-node/blob/master/nix/docker.nix#L1-L25)    |
 | [inputoutput/cardano-db-sync](https://hub.docker.com/r/inputoutput/cardano-db-syncnputoutput-cardano-db-sync) | `master`, `MAJ.MIN.PATCH`, `latest`   | [link](https://github.com/input-output-hk/cardano-db-sync/blob/master/nix/docker.nix#L1-L35) |
 | [inputoutput/cardano-graphql](https://hub.docker.com/r/inputoutput/cardano-graphql)                           | `master`, `MAJ.MIN.PATCH`, `latest`   | [link](https://github.com/input-output-hk/cardano-graphql/wiki/Docker)                       |
@@ -19,12 +19,12 @@ The following images are available for each component of the Adrestia architectu
 
 ### Semantic
 
-| Tag                                   | Semantic                                                                                                                                                                                                                                                                                                                                            |
-|---------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|                  Tag                  |                                                                                                                                                                     Semantic                                                                                                                                                                     |
+| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `latest`                              | Points to the latest __stable__ image for the corresponding component. This is also the tag to which `docker` defaults when pulling without an explicit tag. These typically points to latest known release that happens at the end of an iteration cycle. Depending on the project / component, the iteration cycle may vary from 1 to 2 weeks. |
-| `MAJ.MIN.PATCH` or `YYYY.MM.DD-byron` | Must match actual releases of the corresponding component. Refer to each of the component's release notes to know which release tags are available.                                                                                                                                                                                                          |
-| `master`                              | Points to the very tip of the development branch. This is therefore __not recommended__ for production but can be useful to try out features before they are officially released.                                                                                                                                                                   |
-| `byron`                               | A special tag pointing to the very tip of the development branch on `cardano-wallet`. `cardano-wallet` does support both `jörmungandr` and `cardano-node` at the same time, but corresponding images are packaged separately. The `byron` tag therefore points to a version of `cardano-wallet` compatible with cardano-node in OBFT mode.          |
+| `MAJ.MIN.PATCH` or `YYYY.MM.DD-byron` | Must match actual releases of the corresponding component. Refer to each of the component's release notes to know which release tags are available.                                                                                                                                                                                              |
+| `master`                              | Points to the very tip of the development branch. This is therefore __not recommended__ for production but can be useful to try out features before they are officially released.                                                                                                                                                                |
+| `byron`                               | A special tag pointing to the very tip of the development branch on `cardano-wallet`. `cardano-wallet` does support both `jörmungandr` and `cardano-node` at the same time, but corresponding images are packaged separately. The `byron` tag therefore points to a version of `cardano-wallet` compatible with cardano-node in OBFT mode.       |
 
 ### Examples
 
@@ -66,11 +66,11 @@ run offline (e.g. 'mnemonic generate').
 
 If you want to compile everything from sources, refer to each repository's documentation. As a pre-requisite, you may want to install and configure [Nix](https://nixos.org/), [stack](https://docs.haskellstack.org/en/stable/README/) or [cabal](https://www.haskell.org/cabal/) depending on your preferences. Build instructions are available on each repository's main README.
 
-Repository                                                              | Releases                                                                | Linux | MacOS | Windows
-------------------------------------------------------------------------|-------------------------------------------------------------------------|-------|-------|--------
-[cardano-node](https://github.com/input-output-hk/cardano-node)         | [releases](https://github.com/input-output-hk/cardano-node/releases)    | ✔️     | ✔️     | ✔️
-[cardano-db-sync](https://github.com/input-output-hk/cardano-db-sync)   | [releases](https://github.com/input-output-hk/cardano-db-sync/releases) | ✔️     | ✔️     | ❌
-[cardano-submit-api](https://github.com/input-output-hk/cardano-rest)   | [releases](https://github.com/input-output-hk/cardano-rest/releases)    | ✔️     | ✔️     | ❌
-[cardano-explorer-api](https://github.com/input-output-hk/cardano-rest) | [releases](https://github.com/input-output-hk/cardano-rest/releases)    | ✔️     | ✔️     | ❌
-[cardano-graphql](https://github.com/input-output-hk/cardano-graphql)   | [releases](https://github.com/input-output-hk/cardano-graphql/releases) | ✔️     | ✔️     | ❌
-[cardano-wallet](https://github.com/input-output-hk/cardano-wallet)     | [releases](https://github.com/input-output-hk/cardano-wallet/releases)  | ✔️     | ✔️     | ✔️
+                              Repository                                |                                Releases                                 | Linux | MacOS | Windows
+----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----- | ----- | -------
+[cardano-node](https://github.com/input-output-hk/cardano-node)         | [releases](https://github.com/input-output-hk/cardano-node/releases)    | ✔️    | ✔️    | ✔️
+[cardano-db-sync](https://github.com/input-output-hk/cardano-db-sync)   | [releases](https://github.com/input-output-hk/cardano-db-sync/releases) | ✔️    | ✔️    | ❌
+[cardano-submit-api](https://github.com/input-output-hk/cardano-rest)   | [releases](https://github.com/input-output-hk/cardano-rest/releases)    | ✔️    | ✔️    | ❌
+[cardano-explorer-api](https://github.com/input-output-hk/cardano-rest) | [releases](https://github.com/input-output-hk/cardano-rest/releases)    | ✔️    | ✔️    | ❌
+[cardano-graphql](https://github.com/input-output-hk/cardano-graphql)   | [releases](https://github.com/input-output-hk/cardano-graphql/releases) | ✔️    | ✔️    | ❌
+[cardano-wallet](https://github.com/input-output-hk/cardano-wallet)     | [releases](https://github.com/input-output-hk/cardano-wallet/releases)  | ✔️    | ✔️    | ✔️
