@@ -15,66 +15,66 @@ Components
 APIs
 ----
 
-+--------------------+--------------+-------------+-------------+----------------+
-|    name / link     | description  |    Byron    | Jörmungandr |    Shelley     |
-+====================+==============+=============+=============+================+
-| `cardano-wallet`_  | JSON/REST    |   **DONE**  |   **DONE**  | **IN PROGRESS**|
-|                    | API for      |             |             |                |
-|                    | managing     |             |             |                |
-|                    | UTxOs in HD  |             |             |                |
-|                    | wallets      |             |             |                |
-+--------------------+--------------+-------------+-------------+----------------+
-| `cardano-rest`_    | JSON/HTTP    |   **DONE**  |    **X**    | **IN PROGRESS**|
-|                    | API for      |             |             |                |
-|                    | browsing     |             |             |                |
-|                    | on-chain     |             |             |                |
-|                    | data         |             |             |                |
-+--------------------+--------------+-------------+-------------+----------------+
-| `cardano-graphql`_ |              |   **DONE**  |    **X**    | **IN PROGRESS**|
-|                    | GraphQL/HTTP |             |             |                |
-|                    | API for      |             |             |                |
-|                    | browsing     |             |             |                |
-|                    | on-chain     |             |             |                |
-|                    | data         |             |             |                |
-+--------------------+--------------+-------------+-------------+----------------+
++--------------------+--------------+----------+-------------+-----------------+
+|    name / link     | description  |  Byron   | Jörmungandr |     Shelley     |
++====================+==============+==========+=============+=================+
+| `cardano-wallet`_  | JSON/REST    | **DONE** | **DONE**    | **IN PROGRESS** |
+|                    | API for      |          |             |                 |
+|                    | managing     |          |             |                 |
+|                    | UTxOs in HD  |          |             |                 |
+|                    | wallets      |          |             |                 |
++--------------------+--------------+----------+-------------+-----------------+
+| `cardano-rest`_    | JSON/HTTP    | **DONE** | **X**       | **IN PROGRESS** |
+|                    | API for      |          |             |                 |
+|                    | browsing     |          |             |                 |
+|                    | on-chain     |          |             |                 |
+|                    | data         |          |             |                 |
++--------------------+--------------+----------+-------------+-----------------+
+| `cardano-graphql`_ |              | **DONE** | **X**       | **IN PROGRESS** |
+|                    | GraphQL/HTTP |          |             |                 |
+|                    | API for      |          |             |                 |
+|                    | browsing     |          |             |                 |
+|                    | on-chain     |          |             |                 |
+|                    | data         |          |             |                 |
++--------------------+--------------+----------+-------------+-----------------+
 
 SDK
 ---
 
-+------------------------------+----------------+----------------+---------------------+
-|         Name / Link          |  Description   |    Haskell     |     JavaScript      |
-+==============================+================+================+=====================+
-| `bech32`_                    | Human-friendly |   **DONE**     | `bitcoinjs bech32`_ |
-|                              | Bech32 address |                |                     |
-|                              | encoding       |                |                     |
-+------------------------------+----------------+----------------+---------------------+
-| `cardano-addresses`_         | Addresses and  |   **DONE**     |   **IN PROGRESS**   |
-|                              | mnemonic       |                |                     |
-|                              | manipulation & |                |                     |
-|                              | derivations    |                |                     |
-+------------------------------+----------------+----------------+---------------------+
-| `cardano-coin-selection`_    | Coin selection |   **DONE**     |   **IN PROGRESS**   |
-|                              | and fee        |                |                     |
-|                              | balancing      |                |                     |
-|                              | algorithms     |                |                     |
-+------------------------------+----------------+----------------+---------------------+
-| `cardano-launcher`_          | Shelley        |   **X**        |       **DONE**      |
-|                              | cardano-node   |                |                     |
-|                              | and            |                |                     |
-|                              | cardano-wallet |                |                     |
-|                              | launcher for   |                |                     |
-|                              | NodeJS         |                |                     |
-|                              | applications   |                |                     |
-+------------------------------+----------------+----------------+---------------------+
-| `cardano-serialization-lib`_ | Binary         | **IN PROGRESS**|   **IN PROGRESS**   |
-|                              | serialization  |                |                     |
-|                              | of on-chain    |                |                     |
-|                              | data types     |                |                     |
-+------------------------------+----------------+----------------+---------------------+
-| `cardano-transactions`_      | Transaction    |   **DONE**     |   **IN PROGRESS**   |
-|                              | construction   |                |                     |
-|                              | and signing    |                |                     |
-+------------------------------+----------------+----------------+---------------------+
++------------------------------+----------------+-----------------+---------------------+
+|         Name / Link          |  Description   |     Haskell     |     JavaScript      |
++==============================+================+=================+=====================+
+| `bech32`_                    | Human-friendly | **DONE**        | `bitcoinjs bech32`_ |
+|                              | Bech32 address |                 |                     |
+|                              | encoding       |                 |                     |
++------------------------------+----------------+-----------------+---------------------+
+| `cardano-addresses`_         | Addresses and  | **DONE**        | **IN PROGRESS**     |
+|                              | mnemonic       |                 |                     |
+|                              | manipulation & |                 |                     |
+|                              | derivations    |                 |                     |
++------------------------------+----------------+-----------------+---------------------+
+| `cardano-coin-selection`_    | Coin selection | **DONE**        | **IN PROGRESS**     |
+|                              | and fee        |                 |                     |
+|                              | balancing      |                 |                     |
+|                              | algorithms     |                 |                     |
++------------------------------+----------------+-----------------+---------------------+
+| `cardano-launcher`_          | Shelley        | **X**           | **DONE**            |
+|                              | cardano-node   |                 |                     |
+|                              | and            |                 |                     |
+|                              | cardano-wallet |                 |                     |
+|                              | launcher for   |                 |                     |
+|                              | NodeJS         |                 |                     |
+|                              | applications   |                 |                     |
++------------------------------+----------------+-----------------+---------------------+
+| `cardano-serialization-lib`_ | Binary         | **IN PROGRESS** | **IN PROGRESS**     |
+|                              | serialization  |                 |                     |
+|                              | of on-chain    |                 |                     |
+|                              | data types     |                 |                     |
++------------------------------+----------------+-----------------+---------------------+
+| `cardano-transactions`_      | Transaction    | **DONE**        | **IN PROGRESS**     |
+|                              | construction   |                 |                     |
+|                              | and signing    |                 |                     |
++------------------------------+----------------+-----------------+---------------------+
 
 Formal Specifications
 ---------------------
