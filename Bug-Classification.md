@@ -1,4 +1,4 @@
-Bugs are categorized according to two criteria: **severity** and **priority**. Each criteria is declined in three levels: low, medium and high. Each development repository must therefore use appropriate labels to classify defects:
+Bugs are categorized according to two criteria: **severity** and **priority**. Each criterion is separated into three levels: low, medium and high. Each development repository should use the following labels to classify defects:
 
 - `BUG`
 - `SEVERITY:LOW` 
@@ -12,24 +12,23 @@ A `BUG` label should be present on every reported defect, as well as one `SEVERI
 
 ### Severity
 
-Indicates how is the impact on the system and what the threat is regarding its core functionality. The severity is assessed by the engineering team working on the system.
+Indicates the impact on the system and how severely its core functionality is affected. The severity is assessed by the engineering team working on the system.
 
 Severity | Description / Example
 --- |     ---
-Low | Small defects which does not prevent any crucial functionality to work. Could be a typo in a message, some uninformative error or some bearable performance degradation. 
-Medium | Visible impact on a core functionality or some important performance degradation. 
-High | A core functionality of the system isn't unresponsive or returning invalid data.
-
+Low | Small defects which do not prevent any crucial functionals from working. Could be a typo in a message, some uninformative error or some bearable performance degradation. 
+Medium | Visible impact on a core function or significant performance degradation.
+High | A core function of the system isn't responsive or is returning invalid data.
 
 ### Priority
 
-Indicates which issues should be addressed first because of their impact for the business. The priority is set by the product team based on business requirements.
+Indicates which issues should be addressed first because of their impact on the business. The priority is set by the product team based on business requirements.
 
 Priority | Description / Example
 --- | --- 
-Low | Would eventually require attention if times allow it.
+Low | Would eventually require attention if time allows it.
 Medium | A bug that needs to be addressed after ongoing stories and tasks.
-High | Require immediate attention. 
+High | Requires immediate attention.
 
 --- 
 
