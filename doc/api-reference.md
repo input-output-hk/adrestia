@@ -1,6 +1,5 @@
 ## API reference
 
-
 ### Components
 
 | id                     | name                                                               |
@@ -19,7 +18,6 @@ For example, restoring a wallet goes normally through POST /byron-wallets, or ca
 `$ cardano-wallet wallet create MyWallet`
 
 The CLI also provides some useful helpers, such as a command to generate mnemonic sentences, or doing key derivation. For more details, see the wallet command-line user manual.
-
 
 ### Libraries
 
