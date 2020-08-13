@@ -8,7 +8,7 @@ Bugs are categorized according to two criteria: **severity** and **priority**. E
 - `PRIORITY:MEDIUM`
 - `PRIORITY:HIGH`
 
-A `BUG` label should be present on every reported defect, as well as one `SEVERITY:...` and one `PRIORITY:...` depending on its classification. This way, one can easily search for all bugs, or bugs belonging to a certain sub-category.
+A `BUG` label should be present on every reported defect, as well as one `SEVERITY:...` label and one `PRIORITY:...` label depending on its classification. This way, one can easily search for all bugs, or bugs belonging to a certain sub-category.
 
 ### Severity
 
@@ -18,13 +18,13 @@ Indicates the impact on the system and how severely its core functionality is af
 
 ##### Role
 
-Inform the team and external partners about the severity of a defect to help drive decisions such as setting priorities or delaying a release.
+Informs the team and external partners about the severity of a defect to help drive decisions such as setting priorities or delaying a release.
 
 ##### Levels
 
 Severity | Description / Example
 --- |     ---
-Low | Small defects which do not prevent any crucial functionality from working. Could be a typo in a message, some uninformative error or some bearable performance degradation. 
+Low | Small defects that do not prevent any crucial functionality from working. Could be a typo in a message, some uninformative error or some bearable performance degradation. 
 Medium | Visible impact on a core function or significant performance degradation.
 High | A core function of the system isn't responsive or is returning invalid data.
 
@@ -32,7 +32,7 @@ High | A core function of the system isn't responsive or is returning invalid da
 
 ##### Definition
 
-Indicates which issues should be addressed first because of their impact on the business. The priority is set by the product team based on business requirements. High severity defects will most likely tend to have a higher priority but some low severity issue may have an important impact on the user experience and have therefore a high priority. 
+Indicates which issues should be addressed first because of their impact on the business. The priority is set by the product team based on business requirements. High severity defects will _mostly_ tend to have a higher priority, but some low severity defects may have an important impact on the user experience and therefore have a high priority.
 
 ##### Role
 
