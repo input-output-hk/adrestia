@@ -18,7 +18,7 @@ Indicates the impact on the system and how severely its core functionality is af
 
 ##### Role
 
-Inform the team and external partners about the severity of a defect to help driving decisions such as, setting priorities or delaying a release.
+Inform the team and external partners about the severity of a defect to help drive decisions such as setting priorities or delaying a release.
 
 ##### Levels
 
