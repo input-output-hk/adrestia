@@ -58,7 +58,7 @@ For deriving new keys from parent keys, we use the same approach as defined in [
    (a - b)^2 = a^2 - 2ab + b^2
 ```
 
-We note :math:`a^2 + b^2 = c^2` {{<katex>}}CKD_{priv}{{</katex>}} the derivation of a private child key from a parent private key such that:
+We note {{<katex>}}CKD_{priv}{{</katex>}} the derivation of a private child key from a parent private key such that:
 
 {{<katex>}}
 CKD_{prv}((k^P, c^P), i) → (k_i, c_i)
