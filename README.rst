@@ -105,6 +105,18 @@ Internal
 |                   | maintained for cardano-wallet                    |
 +-------------------+--------------------------------------------------+
 
+Building the Documentation
+--------------------------
+
+This documentation may be built with Sphinx:
+
+```bash
+python -m pip install --upgrade --no-cache-dir pip
+python -m pip install --upgrade --no-cache-dir Pygments==2.3.1 setuptools==41.0.1 docutils==0.14 mock==1.0.1 pillow==5.4.1 alabaster>=0.7,<0.8,!=0.7.5 commonmark==0.8.1 recommonmark==0.5.0 sphinx<2 sphinx-rtd-theme<0.5 readthedocs-sphinx-ext<1.1
+python -m pip install --exists-action=w --no-cache-dir -r doc/.sphinx/requirements.txt
+sphinx-build -T -E -b readthedocs -d _build/doctrees-readthedocs -D language=en . _build/html 
+```
+
 .. _cardano-wallet: https://github.com/input-output-hk/cardano-wallet
 .. _cardano-rest: https://github.com/input-output-hk/cardano-rest
 .. _cardano-graphql: https://github.com/input-output-hk/cardano-graphql
