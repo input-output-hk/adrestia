@@ -43,7 +43,7 @@ A new `V2` API is now available on [cardano-wallet](https://github.com/input-out
 
 There are some variations between the `V2` and `V1` APIs, but both APIs follow a very similar approach and are still very resource-centric (a.k.a ReST). _cardano-wallet_ is a large component that covers multiple networks and node backends. If you're coming from sl, you're most likely interested in _cardano-wallet-byron_ at the moment, since it is integrated with a Byron-reboot OBFT _cardano-node_. Follow the setup instructions on _cardano-wallet_'s README and Wiki.
 
-The API documentation is available in [API References](api-references.md). Note that only the _Legacy_ sub-part of the API matters at this stage. The _Shelley_ part is not available on the Byron integration but can be looked up as a reference for future integration.
+The API documentation is available in [API References](api-reference.md). Note that only the _Legacy_ sub-part of the API matters at this stage. The _Shelley_ part is not available on the Byron integration but can be looked up as a reference for future integration.
 
 > **WARNING**: _cardano-sl_ had the concept of "accounts" inside wallets. This concepts is now entirely gone. If you need multiple accounts, use multiple wallets.
 
