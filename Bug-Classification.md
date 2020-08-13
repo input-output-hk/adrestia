@@ -12,17 +12,29 @@ A `BUG` label should be present on every reported defect, as well as one `SEVERI
 
 ### Severity
 
+##### Definition
+
 Indicates the impact on the system and how severely its core functionality is affected. The severity is assessed by the engineering team working on the system.
+
+##### Role
+
+Inform the team and external partners about the severity of a defect to help driving decisions such as, setting priorities or delaying a release.
+
+##### Examples
 
 Severity | Description / Example
 --- |     ---
-Low | Small defects which do not prevent any crucial functionals from working. Could be a typo in a message, some uninformative error or some bearable performance degradation. 
+Low | Small defects which do not prevent any crucial functionality from working. Could be a typo in a message, some uninformative error or some bearable performance degradation. 
 Medium | Visible impact on a core function or significant performance degradation.
 High | A core function of the system isn't responsive or is returning invalid data.
 
 ### Priority
 
+##### Definition
+
 Indicates which issues should be addressed first because of their impact on the business. The priority is set by the product team based on business requirements.
+
+##### Role
 
 Priority | Description / Example
 --- | --- 
