@@ -50,19 +50,16 @@ Conceptually, HD derivation can be seen as a tree with many branches, where keys
 
 For deriving new keys from parent keys, we use the same approach as defined in [BIP32-Ed25519: Hierarchical Deterministic Keys over a Non-linear Keyspace](/adrestia/user-guide/Ed25519_BIP.pdf).
 
-```eval_rst 
-.. math::
 
-   (a + b)^2 = a^2 + 2ab + b^2
-
-   (a - b)^2 = a^2 - 2ab + b^2
-```
 
 We note {{<katex>}}CKD_{priv}{{</katex>}} the derivation of a private child key from a parent private key such that:
 
-{{<katex>}}
+```eval_rst 
+.. math::
+
 CKD_{prv}((k^P, c^P), i) → (k_i, c_i)
-{{</katex>}}
+
+```
 
 We note {{< katex >}}CKD_{pub}{{</katex>}} the derivation of a public child key from a parent public key such that:
 
