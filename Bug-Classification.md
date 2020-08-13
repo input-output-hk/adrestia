@@ -20,7 +20,7 @@ Indicates the impact on the system and how severely its core functionality is af
 
 Inform the team and external partners about the severity of a defect to help driving decisions such as, setting priorities or delaying a release.
 
-##### Examples
+##### Levels
 
 Severity | Description / Example
 --- |     ---
@@ -32,9 +32,13 @@ High | A core function of the system isn't responsive or is returning invalid da
 
 ##### Definition
 
-Indicates which issues should be addressed first because of their impact on the business. The priority is set by the product team based on business requirements.
+Indicates which issues should be addressed first because of their impact on the business. The priority is set by the product team based on business requirements. High severity defects will most likely tend to have a higher priority but some low severity issue may have an important impact on the user experience and have therefore a high priority. 
 
 ##### Role
+
+Organizing issue resolution in a way that is meaningful for the business. 
+
+##### Levels
 
 Priority | Description / Example
 --- | --- 
