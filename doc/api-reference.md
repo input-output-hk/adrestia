@@ -2,12 +2,12 @@
 
 ### Components
 
-| id                     | name                                                               |
-|------------------------|--------------------------------------------------------------------|
-| cardano\-wallet        | https://input\-output\-hk\.github\.io/cardano\-wallet/edge         |
-| cardano\-submit\-api   | https://input\-output\-hk\.github\.io/cardano\-rest/submit\-api/   |
-| cardano\-explorer\-api | https://input\-output\-hk\.github\.io/cardano\-rest/explorer\-api/ |
-| cardano\-graphql       | Available soon                                                     |
+|           id           |                                                                name                                                                |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| cardano\-wallet        | [https://input\-output\-hk\.github\.io/cardano\-wallet/edge](https://input-output-hk.github.io/cardano-wallet/edge)                |
+| cardano\-submit\-api   | [https://input\-output\-hk\.github\.io/cardano\-rest/submit\-api/](https://input-output-hk.github.io/cardano-rest/submit-api/)     |
+| cardano\-explorer\-api | [https://input\-output\-hk\.github\.io/cardano\-rest/explorer\-api/](https://input-output-hk.github.io/cardano-rest/explorer-api/) |
+| cardano\-graphql       | Available soon                                                                                                                     |
 
 **About cardano-wallet**
 
@@ -21,12 +21,12 @@ The CLI also provides some useful helpers, such as a command to generate mnemoni
 
 ### Libraries
 
-| Library                  | Haskell                                                                 | JavaScript                               |
-|--------------------------|-------------------------------------------------------------------------|------------------------------------------|
-| cardano\-addresses       | https://input\-output\-hk\.github\.io/cardano\-addresses/haddock/       | Soon available\.                         |
-| cardano\-transactions    | https://input\-output\-hk\.github\.io/cardano\-transactions/haddock/    | Soon available\.                         |
-| cardano\-coin\-selection | https://input\-output\-hk\.github\.io/cardano\-coin\-selection/haddock/ | Soon available\.                         |
-| bech32                   | https://input\-output\-hk\.github\.io/bech32/haddock/                   | See https://github\.com/bitcoinjs/bech32 |
+|         Library          |                                                                   Haskell                                                                    |                     JavaScript                     |
+| ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
+| cardano\-addresses       | [https://input\-output\-hk\.github\.io/cardano\-addresses/haddock/](https://input-output-hk.github.io/cardano-addresses/haddock/)            | Soon available\.                                   |
+| cardano\-transactions    | [https://input\-output\-hk\.github\.io/cardano\-transactions/haddock/](https://input-output-hk.github.io/cardano-transactions/haddock/)      | Soon available\.                                   |
+| cardano\-coin\-selection | [https://input\-output\-hk\.github\.io/cardano\-coin\-selection/haddock/](https://input-output-hk.github.io/cardano-coin-selection/haddock/) | Soon available\.                                   |
+| bech32                   | [https://input\-output\-hk\.github\.io/bech32/haddock/](https://input-output-hk.github.io/bech32/haddock/                                    | [See bech32](https://github\.com/bitcoinjs/bech32) |
 
 **About cardano-transactions**
 
