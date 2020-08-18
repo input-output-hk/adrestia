@@ -9,30 +9,6 @@
 #
 #   b) In a continuous integration setup, to generate reports possibly using the
 #   overlay generated in a).
-#
-#
-# Usage:
-#
-#     a) WORKDIR=.coverage make draft
-#
-#     This will compile and test an existing Haskell project with stack, and create a draft
-#     overlay report in $WORKDIR. This overlay provides 100% coverage for files tested in the
-#     Haskell package.
-#     One would typically use the draft as a baseline and produce a `template.overlay` from it
-#     to discard some part of the source code from the coverage report. In particular, one may
-#     discard automatically generated instances (like `Show` or `Eq`) or, terms that never get
-#     evaluated to WHNF (like `Proxy`) because they only carry information at the type-level.
-#
-#     b) DESTDIR=dist/coverage WORKDIR=.coverage make report
-#
-#     Generates an HPC report for the project, using '$WORKDIR/template.overlay' as a coverage
-#     overlay. Fails if the file doesn't exists. The report is generated as HTML in $DESTDIR.
-#
-#     b) DESTDIR=dist/coverage make badge
-#
-#     Generates an SVG badge from a given coverage report. The badge can be hosted and shown
-#     on a project front README and is made using the average coverage between top-level definitions,
-#     expressions and alternatives.
 
 SHELL = bash
 
@@ -41,27 +17,27 @@ UPSTREAM ?= https://raw.githubusercontent.com/input-output-hk/adrestia/master/.h
 WORKDIR ?= .coverage
 DESTDIR ?= dist/coverage
 
+PKGS = $(shell stack query locals | sed "s@^\s\s.*@@" | sed "s@:@@" | tr '\n' ' ' | sed "s@\s\+@ @g")
+OVERLAYS = $(shell echo $(PKGS) | sed "s@\([^ ]*\)@$(WORKDIR)/\1.overlay@g")
+
 HPC_DIR  = $(shell stack path --dist-dir)/hpc
 HPC_ROOT = $(shell stack path --local-hpc-root)
-SRC_DIR  = .
 
-.PHONY: badge clean draft report upgrade
+.PHONY: badge clean report upgrade
 
 ### Phony
 
 badge: $(DESTDIR)/badge.svg
 	@echo -e "Coverage badge generated at: $<"
 
-clean:
-	stack clean
-	rm -rf $(WORKDIR)/{draft.overlay,overlay.tix}
-	rm -rf $(HPC_ROOT)/*
-
-draft: $(WORKDIR)/draft.overlay
-	@echo -e "Draft overlay generated at: $<"
-
 report: $(DESTDIR)/hpc_index.html
 	@echo -e "Report generated at: $<"
+
+clean:
+	stack clean
+	find . -name *.tix -delete
+	rm -rf $(HPC_ROOT)/combined/custom/custom.tix
+	rm -rf $(DESTDIR)/{hpc_index.html,badge.svg}
 
 upgrade:
 	$(eval TMP := $(shell mktemp))
@@ -72,8 +48,6 @@ upgrade:
 	@echo "Up-to-date. Old Makefile saved in '.old/Makefile'."
 
 ### Recipes
-COLOR_RED = \033[0;31m
-COLOR_DEFAULT = \033[0m
 
 $(DESTDIR)/badge.svg: $(DESTDIR)/hpc_index.html
 	$(eval COVERAGE := $(shell cat $< | tr '\n' ' ' | sed "s/.*Program Coverage Total.*>\([0-9]\{1,3\}\)%.*>\([0-9]\{1,3\}\)%.*>\([0-9]\{1,3\}\)%.*/\1 \2 \3/"))
@@ -101,30 +75,27 @@ $(DESTDIR)/badge.svg: $(DESTDIR)/hpc_index.html
 	@echo '</g>' >> $@
 	@echo '</svg>' >> $@
 
-$(DESTDIR)/hpc_index.html: $(WORKDIR)/overlay.tix
-	stack hpc report --all --destdir $(DESTDIR) *.tix $<
-
-$(WORKDIR)/template.overlay:
-	@echo -e "$(COLOR_RED)"
-	@echo -e "No overlay template found."
-	@echo -e "Make sure to create an overlay template at: $(COLOR_DEFAULT)$@ $(COLOR_RED)"
-	@echo -e "See also $(COLOR_DEFAULT)'make draft'$(COLOR_RED) as an example of overlay with 100%$(WORKDIR)."
-	@echo -e "$(COLOR_DEFAULT)"
-	exit 1
-
-$(WORKDIR)/overlay.tix: $(WORKDIR)/template.overlay $(HPC_ROOT)/combined/custom/custom.tix
-	$(eval PKG_NAME := $(shell cat *.cabal | grep "name:" | sed "s/name:\s*\(.*\)/\1/"))
-	$(eval PKG_HASH := $(shell ls $(HPC_DIR) | grep $(PKG_NAME) | sed "s/$(PKG_NAME)-[0-9]*-\([0-9A-Za-z]*\)/\1/g"))
-	$(eval TMP := $(shell mktemp))
-	cat $< | sed "s/module \"/module \"$(PKG_HASH)\//g" > $(TMP)
-	stack exec hpc -- overlay --hpcdir=$(HPC_DIR) --srcdir=$(SRC_DIR) $(TMP) > $@
-	@rm -rf $(TMP)
-
-$(WORKDIR)/draft.overlay: $(HPC_ROOT)/combined/custom/custom.tix
-	mkdir -p $(WORKDIR)
-	stack exec hpc -- draft --hpcdir=$(HPC_DIR) --srcdir=$(SRC_DIR) $< | sed "s/module \".*:/module \"/g" > $@
+$(DESTDIR)/hpc_index.html: $(HPC_ROOT)/combined/custom/custom.tix
+	$(eval TMP := $(shell mktemp -d))
+	for PKG in $(PKGS); do \
+		OVERLAY=$(WORKDIR)/$$PKG.overlay; \
+		if [ -f $$OVERLAY ]; then \
+			HPC=$$(find $(HPC_ROOT)/combined/custom/* -type d -regex ".*$$PKG-[0-9.]+-.*"); \
+			CABAL=$$(find . -name $$PKG.cabal); \
+			PKG_HASH=$$(basename $$HPC); \
+			PKG_SRC=$$(dirname $$CABAL); \
+			cat $$OVERLAY | sed "s/module \"/module \"$$PKG_HASH\//g" > $(TMP)/$$PKG.overlay; \
+			stack exec hpc -- overlay --hpcdir=$(HPC_DIR) --srcdir=$$PKG_SRC $(TMP)/$$PKG.overlay > $(WORKDIR)/$$PKG.overlay.tix; \
+		fi; \
+	done
+	@rm -r $(TMP)
+	stack hpc report --all --destdir $(DESTDIR) $(WORKDIR)/*.tix $<
 
 $(HPC_ROOT)/combined/custom/custom.tix:
-	stack clean && rm -f *.tix
 	stack test --no-terminal --coverage
-	stack hpc report --all *.tix
+	for PKG in $(PKGS); do \
+		CABAL=$$(find . -name $$PKG.cabal); \
+		PKG_SRC=$$(dirname $$CABAL); \
+		[ ! -f $$PKG_SRC/*.tix ] || mv $$PKG_SRC/*.tix $(WORKDIR); \
+	done
+	stack hpc report --all $(WORKDIR)/*.tix
