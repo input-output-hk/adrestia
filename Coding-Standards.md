@@ -22,6 +22,7 @@ Each proposal should start with a section justifying the standard with rational 
     * [Avoid wildcards when pattern-matching on sum types](#avoid-wildcards-when-pattern-matching-on-sum-types)
     * [Prefer pattern-matching to equality testing on sum types](#prefer-pattern-matching-to-equality-testing-on-sum-types)
     * [Prefer named constants over magic numbers](#prefer-named-constants-over-magic-numbers)
+    * [Don't spit back invalid values in errors](#dont-spit-back-invalid-values-in-errors)
 
 * [QuickCheck](#quickcheck)
     * [See your property fail](#see-your-property-fail)
@@ -826,6 +827,38 @@ prefer pattern matching over equality testing for values of that type.
           Ascending -> id  
           Descending -> reverse
   ```
+</details>
+
+## [PROPOSED] Don't spit back malformed values in errors from user inputs.
+
+When failing to parse user inputs, error message should not contain the malformed input. Instead, the error message should contain hints or examples of well-formed values expected by the parser. It is acceptable to show a raw input value if it is known to be within acceptable boundaries (e.g. parsing a `Word32` into a more refined type, there is little chance that the `Word32` will be inadequate to display). 
+
+> **Why**
+>
+> Spitting back what the user has just entered is generally not very helpful. Users can generally easily replay what they've entered and see for themselves. More importantly, an input that didn't parse successfully may be arbitrary long or improper for display; since it failed to parse, we have actually not much control or knowledge about it. 
+
+<details>
+  <summary>See examples</summary>
+
+```hs
+-- BAD
+err = 
+    "Invalid value: " <> show v <> ". Please provide a valid value."
+
+-- GOOD
+err = 
+    "EpochNo value is out of bounds (" <> 
+    show (minBound @Word31) <> 
+    ", " <> 
+    show (maxBound @Word31) <>
+    ")."
+
+-- GOOD
+err = 
+    "Unable to decode FeePolicy: \
+    \Linear equation not in expected format: a + bx + cy \
+    \where 'a', 'b', and 'c' are numbers"
+```
 </details>
 
 # QuickCheck
