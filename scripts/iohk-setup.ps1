@@ -209,7 +209,7 @@ $env:WORK_DIR = "$drive\w"
 # See https://github.com/haskell/cabal/issues/5386
 $env:TMP = "$drive\tmp"
 
-$env:PATH = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";$drive\stack;$Env:Programfiles\7-Zip;$Env:Programfiles\Git\cmd;$Env:Programfiles\chocolatey\bin;$env:WORK_DIR"
+$env:PATH = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";$drive\stack;$Env:Programfiles\7-Zip;$Env:Programfiles\Git\cmd;$Env:Programfiles\chocolatey\bin;$drive\libsodium\libsodium-win64\bin;$env:WORK_DIR"
 
 [System.Environment]::SetEnvironmentVariable("STACK_ROOT", "$env:STACK_ROOT", "Machine")
 [System.Environment]::SetEnvironmentVariable("STACK_WORK", "$env:STACK_WORK", "Machine")
