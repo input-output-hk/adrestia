@@ -45,21 +45,15 @@
 # But if you have an OEM license for Windows on your computer, which
 # you aren't otherwise using because Linux is installed, you can find
 # it with:
-# 
+#
 #     sudo strings /sys/firmware/acpi/tables/MSDM
 #
 # Enter this key in Control Panel, "Activation settings" and "Change product key".
 #
 #
-# Configuration
-# -------------
-#
-# None yet.
-#
-#
 # Installation
 # ------------
-# 
+#
 # 1. Click Start
 # 2. Type Powershell, but don't press enter
 # 3. Right-click on the Powershell item, then
@@ -148,7 +142,7 @@ iex "$downloads\colemak\Colemak2_amd64.msi /quiet /norestart"
 
 
 ############################################################################
-# OpenSSL, xz
+# OpenSSL, xz, libsodium
 
 if (Test-Path "$downloads\Win64OpenSSL.exe") {
   Write-Output "openssl already downloaded"
@@ -166,19 +160,36 @@ if (Test-Path "$downloads\xz-windows.zip") {
 7z x "$downloads\xz-windows.zip" "-o$drive\xz" -aos
 
 
-############################################################################
-# Rocksdb -- just in case building legacy cardano-sl
-
-# Pre-built rocksdb for Haskell
-git.exe clone https://github.com/facebook/rocksdb.git --branch v4.13.5 --depth 1
-
-if (Test-Path "$downloads\rocksdb.zip") {
-  Write-Output "rocksdb binaries are already download"
+# Install libsodium stable binary release for mingw32.
+# Note that this is *not* the IOHK fork.
+if (Test-Path "$downloads\libsodium-mingw.tar.gz") {
+  Write-Output "libsodium already downloaded"
 } else {
-  curl.exe -L 'https://s3.eu-central-1.amazonaws.com/ci-static/serokell-rocksdb-haskell-325427fc709183c8fdf777ad5ea09f8d92bf8585.zip' -o "$downloads\rocksdb.zip"
+  curl.exe -L https://download.libsodium.org/libsodium/releases/libsodium-1.0.18-stable-mingw.tar.gz -o "$downloads\libsodium-mingw.tar.gz"
 }
-7z x "$downloads\rocksdb.zip" "-o$env:WORK_DIR" -aos
+7z x -aoa "$downloads\libsodium-mingw.tar.gz" "-o$drive\libsodium"
+7z x -aoa "$drive\libsodium\libsodium-mingw.tar" "-o$drive\libsodium"
 
+$libsodiumpc = @"
+prefix=$drive/libsodium/libsodium-win64
+exec_prefix=$drive/libsodium/libsodium-win64
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libsodium
+Version: 1.0.18
+Description: A modern and easy-to-use crypto library
+
+Libs: -L${libdir} -lsodium
+Libs.private:  -pthread
+Cflags: -I${includedir}
+"@
+$libsodiumpc | Out-File -FilePath "$drive\tools\msys64\usr\lib\pkgconfig\libsodium.pc" -Encoding ASCII
+
+############################################################################
+# Install pkg-config in msys2 environment which is used by stack
+
+msys2 pacman -Sy --no-config pkg-config
 
 ############################################################################
 # Install and configure stack
@@ -218,20 +229,22 @@ ghc-options:
 
 $stackConfig = @"
 system-ghc: true
+skip-msys: true
 local-programs-path: "$drive\\s\\programs"
 local-bin-path: "$drive\\s\\bin"
 extra-include-dirs:
  - "$drive\\OpenSSL-Win64-v102\\include"
  - "$drive\\xz\\include"
+ - "$drive\\libsodium\\libsodium-win64\\include"
  - "$drive\\w\\rocksdb\\include"
 extra-lib-dirs:
  - "$drive\\OpenSSL-Win64-v102"
+ - "$drive\\libsodium\\libsodium-win64\\lib"
  - "$drive\\xz\\bin_x86-64"
  - "$drive\\w"
 $stackConfigGhc
 "@
 $stackConfig | Out-File -FilePath "$env:STACK_ROOT\config.yaml" -Encoding ASCII
-
 
 ############################################################################
 # git clone
