@@ -189,7 +189,7 @@ $libsodiumpc | Out-File -FilePath "$drive\tools\msys64\usr\lib\pkgconfig\libsodi
 ############################################################################
 # Install pkg-config in msys2 environment which is used by stack
 
-msys2 pacman -Sy --no-config pkg-config
+msys2 pacman -Sy --noconfirm pkg-config
 
 ############################################################################
 # Install and configure stack
