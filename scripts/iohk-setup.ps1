@@ -106,7 +106,7 @@ choco install -y vim
 choco install -y msys2
 
 # Phyx installers
-choco install -y ghc
+choco install -y ghc --version=8.6.5
 choco install -y cabal
 
 # NPM and stuff
