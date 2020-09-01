@@ -224,23 +224,23 @@ newtype Bar = Bar Integer
 ```hs
 -- BAD
 instance FromCBOR Block where
-  fromCBOR = Block <$> decodeBlock
+    fromCBOR = Block <$> decodeBlock
 
 
 
 newtype BlockHeader = BlockHeader
-  { getBlockHeader :: Primitive.BlockHeader
-  } deriving Eq
+    { getBlockHeader :: Primitive.BlockHeader
+    } deriving Eq
 ```
 
 ```hs
 -- GOOD
 instance FromCBOR Block where
-  fromCBOR = Block <$> decodeBlock
+    fromCBOR = Block <$> decodeBlock
 
 newtype BlockHeader = BlockHeader
-  { getBlockHeader :: Primitive.BlockHeader
-  } deriving Eq
+    { getBlockHeader :: Primitive.BlockHeader
+    } deriving Eq
 ```
 
 </details>
