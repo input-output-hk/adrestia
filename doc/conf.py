@@ -3,9 +3,7 @@
 import sys
 import os
 import sphinx_rtd_theme
-import recommonmark
 
-from recommonmark.transform import AutoStructify
 from os.path import abspath, join, dirname
 
 sys.path.insert(0, abspath(join(dirname(__file__))))
@@ -36,10 +34,9 @@ master_doc = 'index'
 # ones.
 
 extensions = [
+    "myst_parser",
     "sphinx_rtd_theme",
-    'recommonmark',
-    'sphinx_markdown_tables',
-    'sphinxemoji.sphinxemoji',
+    "sphinxemoji.sphinxemoji",
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
     "sphinx.ext.intersphinx",
@@ -108,11 +105,12 @@ html_context = {
 myst_admonition_enable = True
 
 def setup(app):
-    app.add_config_value('recommonmark_config', {
-            'enable_auto_doc_ref': False,
-            'enable_auto_toc_tree': False,
-            }, True)
-    app.add_transform(AutoStructify)
+    # app.add_config_value('recommonmark_config', {
+    #         'enable_auto_doc_ref': False,
+    #         'enable_auto_toc_tree': False,
+    #         }, True)
+    # app.add_transform(AutoStructify)
+    pass
 
 mathjax_config = {
     'extensions': ['tex2jax.js'],
