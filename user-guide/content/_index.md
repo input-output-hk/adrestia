@@ -15,10 +15,10 @@ As reflected on the [roadmap][roadmap], the Cardano platform is going through th
 BYRON | SHELLEY | GOGUEN | BASHO | VOLTAIRE 
 </p>
 
-Themes are being developed in parallel. So far only _Byron_ , which provides the foundation for the platform has made it into the mainnet. The primary purpose of Byron was to release a provably secure proof of stake consensus protocol that is energy efficient and cost effective known as [Ouroboros][ouroboros]. _Shelley_ is the next theme to be released soon; it'll bring decentralization and delegations of assets into _Byron_.
+Themes are being developed in parallel. So far only _Byron_ , which provides the foundation for the platform, has made it into the mainnet. The primary purpose of Byron was to release an energy-efficient, cost-effective, provably secure proof of stake consensus protocol known as [Ouroboros][ouroboros]. _Shelley_ is the next theme to be released; it'll bring decentralization and delegation of assets into _Byron_.
 
 {{< hint info >}}
-An implementation of the protocol is [here][ouroboros-network] and is realized through [cardano-node][cardano-node], deployed as core and relay nodes to form the Cardano network.
+An implementation of the protocol, realized through [cardano-node][cardano-node], can be found [here][ouroboros-network]. It is deployed as core and relay nodes to form the Cardano network.
 
 [ouroboros-network]: https://github.com/input-output-hk/ouroboros-network
 [cardano-node]: https://github.com/input-output-hk/cardano-node
@@ -30,7 +30,7 @@ On top of this, Adrestia provides a set of services to interact with the Cardano
 - [cardano-submit-api][cardano-rest]: HTTP API for submitting signed transactions.
 - [cardano-graphql][cardano-graphql]: HTTP GraphQL API for exploring the blockchain.
 
-As well as an SDK split into several low-level libraries on various topics:
+It also provides an SDK, split into several low-level libraries on various topics:
 
 - [cardano-addresses][cardano-addresses]: Address generation, derivation &  mnemonic manipulation.
 - [cardano-coin-selection][cardano-coin-selection]: Algorithms for coin selection and fee balancing.
@@ -42,10 +42,10 @@ The only currently available language target is _Haskell_, although support for 
 {{< hint danger >}}
 **IMPORTANT NOTE**
 
-The Byron reboot era is **soon to end by early summer** when the Shelley hard fork shall occur. This **will break ALL existing** exchange integrations. Cardano-sl shall no longer be maintained or supported. **Adrestia** tooling **will support** all integrations **moving forward for Shelley**.
+The Byron reboot era **will end by early summer** when the Shelley hard fork occurs. This **will break ALL existing** exchange integrations. Cardano-sl will no longer be maintained or supported. **Adrestia** tooling **will support** all integrations **moving forward for Shelley**.
 {{< /hint >}}
 
-In the diagram below, components in red are non-Shelley compliant and will not be available after the hard fork, while the components in green are Shelley compliant and will be supported during and after the hard-fork.
+In the diagram below, components in red are non-Shelley compliant and will _not_ be available after the hard fork. The components in green are Shelley-compliant and _will_ be supported during _and_ after the hard-fork.
 
 <table style="text-align: center; color: #ffffff;">
   <tr>
