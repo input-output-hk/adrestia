@@ -1,5 +1,7 @@
-Addresses Format (Byron)
-========================
+---
+weight: 3
+title: Addresses Format (Byron)
+---
 
 ## Internal Structure
 
@@ -41,30 +43,31 @@ Addresses Format (Byron)
 
 ```
 
-1. [Cyclic Redundancy Check](https://computer.howstuffworks.com/encryption7.htm)(CRC). This
-is a more reliable type of checksum operation.
+1. CRC: [Cyclic Redundancy Check](https://computer.howstuffworks.com/encryption7.htm);
+  sort of checksum, a bit (pun intended) more reliable.
 
-2. Address Spending Data (ASD); This is data bound to an address. It's
-  an extensible object with payload that identifies one of the three elements:  
-    - A Public Key (payload is a PublicKey)  
-    - A Script (payload is a script and its version)  
-    - A Redeem Key (payload is a RedeemPublicKey)  
+2. ASD: Address Spending Data; Some data that are bound to an address. It's
+  an extensible object with payload which identifies one of the three elements:  
+    - A Public Key (Payload is thereby a PublicKey)  
+    - A Script (Payload is thereby a script and its version)  
+    - A Redeem Key (Payload is thereby a RedeemPublicKey)  
 
-3. Derivation Path: There's no derivation path for Redeem or Scripts addresses.
+3. Derivation Path: Note that there's no derivation path for Redeem nor
+  Scripts addresses!
 
 4. ChaChaPoly: Authenticated Encryption with Associated Data; See [RFC
-  7539](https://datatracker.ietf.org/doc/rfc7539) Used to cipher
+  7539](https://datatracker.ietf.org/doc/rfc7539) We use it as a way to cipher
   the derivation path using a passphrase (the root public key).
 
 ## Example 1: Yoroi Address - Byron Mainnet
 
-This is an arbitrary Yoroi base58-encoded address of the Byron mainNet:
+Let's take an arbitrary Yoroi base58-encoded address of the Byron mainNet:
 
 ```
 Ae2tdPwUPEZFRbyhz3cpfC2CumGzNkFBN2L42rcUc2yjQpEkxDbkPodpMAi
 ```
 
-This address could be represented as a raw bytestring by decoding from
+Now, this address could be represented as a raw bytestring by decoding from
 base58:
 
 ```
@@ -75,7 +78,8 @@ base58:
 ```
 
 In this representation, bytes are in a structured format called [CBOR](https://tools.ietf.org/html/rfc7049).
-Some bytes are actually tags carrying a particular semantic, and some are values. Re-shuffling the bytes as follows makes things a bit clearer:
+Some bytes are actually tags which carry a particular semantic, and some are values.
+We can re-shuffle the bytes as follows to make things a bit clearer:
 
 ```
 82                        # array (2)            
@@ -84,12 +88,12 @@ Some bytes are actually tags carrying a particular semantic, and some are values
    1A 9026DA5B            # unsigned(2418465371) [CRC]
 ```
 
-A Byron address is formed with two top-level elements:
+So, a Byron address is basically formed of two top-level elements:
 
 - A tagged bytestring; `24` means that the bytes represent another CBOR-encoded structure.
 - A CRC of the inner tagged bytestring
 
-Interpreting the inner bytestring as a CBOR structure produces this result:
+Now, if we also interpret the inner bytestring as a CBOR structure, we obtain:
 
 ```
 83                        # array(3)       
@@ -99,19 +103,20 @@ Interpreting the inner bytestring as a CBOR structure produces this result:
 ```
 
 An address type of `0` refers to a spending address for which the address root
-contains a hash of a public spending key. This address payload has no attribute,
-as the initial address was a Yoroi's address on MainNet, which follows a BIP-44
-derivation scheme so it does not require any attributes. 
+contains a hash of a public spending key. This address payload has no attribute
+for the initial address was a Yoroi's address on MainNet which follows a BIP-44
+derivation scheme and therefore, does not require any attributes. 
 
 ## Example 2: Daedalus Address - Byron TestNet
 
-This is arbitrary Daedalus base58-encoded address of a Byron testNet:
+Let's take an arbitrary Daedalus base58-encoded address of a Byron testNet:
 
 ```
 37btjrVyb4KEB2STADSsj3MYSAdj52X5FrFWpw2r7Wmj2GDzXjFRsHWuZqrw7zSkwopv8Ci3VWeg6bisU9dgJxW5hb2MZYeduNKbQJrqz3zVBsu9nT
 ```
 
-This address could be represented as a raw bytestring by decoding from base58:
+Now, this address could be represented as a raw bytestring by decoding from
+base58:
 
 ```
 0X82 0XD8 0X18 0X58 0X49 0X83 0X58 0X1C 0X9C 0X70 0X85 0X38 0XA7 0X63 0XFF 0X27 
@@ -123,8 +128,8 @@ This address could be represented as a raw bytestring by decoding from base58:
 ```
 
 In this representation, bytes are in a structured format called [CBOR](https://tools.ietf.org/html/rfc7049).
-Some bytes are actually tags carrying a particular semantic, and some are values.
-Re-shuffling the bytes as follows makes things a bit clearer:
+Some bytes are actually tags which carry a particular semantic, and some are values.
+We can re-shuffle the bytes as follows to make things a bit clearer:
 
 ```
 82                         # array(2)              
@@ -133,12 +138,12 @@ Re-shuffling the bytes as follows makes things a bit clearer:
    1A 6979126C             # unsigned(1769542252)  [CRC]
 ```
 
-A Byron address is formed with two top-level elements:
+So, a Byron address is basically formed of two top-level elements:
 
 - A tagged bytestring; `24` means that the bytes represent another CBOR-encoded structure.
 - A CRC of the inner tagged bytestring
 
-Interpreting the inner bytestring as a CBOR structure produces this result:
+Now, if we also interpret the inner bytestring as a CBOR structure, we obtain:
 
 ```
 83                                      # array(3)
@@ -152,7 +157,7 @@ Interpreting the inner bytestring as a CBOR structure produces this result:
 ```
 
 An address type of `0` refers to a spending address for which the address root
-contains a hash of a public spending key. We can see that this address has 2 attributes, which
-are identified by two tags: `01` for the derivation path, and `02` for the network magic. 
-The derivation path is an encrypted bytestring that holds two derivation indexes (for the account
-and address paths). 
+contains a hash of a public spending key. In addition, we can see that this
+address has 2 attributes identified by two tags `01` for the derivation path,
+and `02` for the network magic. The derivation path is an encrypted bytestring
+which holds two derivation indexes for the account and address paths. 

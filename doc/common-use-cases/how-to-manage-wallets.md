@@ -1,10 +1,14 @@
-How to manage wallets
-=====================
+---
+weight: 2
+title: How to manage wallets
+---
 
-> **Difficulty:** beginner
+{{<hint warning>}}
+**Difficulty:** beginner
 
 **Requires:**
 - 📦 cardano-wallet >= `v2020-04-01`
+{{</hint>}}
 
 Once you created a wallet you can manage it with `cardano-wallet` endpoints. There are several operations available.
 
@@ -23,7 +27,7 @@ Once you created a wallet you can manage it with `cardano-wallet` endpoints. The
 ### Get wallet UTxO
 [`GET /v2/byron-wallets/{walletId}/statistics/utxos`](https://input-output-hk.github.io/cardano-wallet/api/edge/#operation/getByronUTxOsStatistics)
 
-See more about [UTxO](../key-concepts/utxo.md).
+See more about [UTxO]({{< ref "utxo.md" >}}).
 
 ### Delete wallet
 [`DELETE /v2/byron-wallets/{walletId}`](https://input-output-hk.github.io/cardano-wallet/api/edge/#operation/deleteByronWallet)

@@ -105,6 +105,8 @@ html_context = {
 
 # -- Custom Document processing ----------------------------------------------
 
+myst_admonition_enable = True
+
 def setup(app):
     app.add_config_value('recommonmark_config', {
             'enable_auto_doc_ref': False,
