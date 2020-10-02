@@ -12,7 +12,7 @@ The team's process is derived from [extreme programming][xp] and adapted for rem
     - Acceptance Criteria (A/C) written in [Gherkin](http://docs.behat.org/en/v2.5/guides/1.gherkin.html) 
     - Possible extra information or documents 
 - Items in the backlog are sorted by priority. 
-- U/S are estimated upfront, by the team via blind-voting and using a 3-value scale: small, large or uncertain. 
+- U/S are estimated upfront, by the team via blind-voting and using a 4-value scale: small, medium, large or uncertain. 
 
 <details>
     <summary>example</summary>
@@ -113,11 +113,11 @@ The team's process is derived from [extreme programming][xp] and adapted for rem
 
 ## Bugs
 
-- When a potential bug is found, a [Bug ticket](https://github.com/input-output-hk/adrestia/blob/master/.github/ISSUE_TEMPLATE/bug.md) is created with a label `BUG?` 
+- When a potential bug is found, a [Bug ticket](https://github.com/input-output-hk/adrestia/blob/master/.github/ISSUE_TEMPLATE/bug.md) is created with a label `BUG`
+- Bug is assigned `severity` by the creator according to [classification guide](https://github.com/input-output-hk/adrestia/wiki/Bug-Classification) 
+- In case of uncertainty the ticket is discussed on Slack with the team to confirm that it's indeed a bug. 
+- Bug is assigned `priority` by Team Lead or Product Manager according to [classification guide](https://github.com/input-output-hk/adrestia/wiki/Bug-Classification) 
 - Corresponding sections of the ticket are filled-in (context, reproduction path, expected behavior...)
-- The bug is added to the relevant bug board on the project in in "Needs Triage" as well as the standard task board, in "Backlog". 
-- The ticket is discussed on Slack with the team to confirm that it's indeed a bug.
-- Once confirmed, the label `BUG?` is changed to `BUG:CONFIRMED` and the bug is given a priority (either low or high) by moving it to the relevant column of the bug board.
 - If dispelled, the bug ticket is closed without further ado.  
 - When resolved, the bugs moved to the "QA" section of the standard board.
 
