@@ -12,7 +12,7 @@ if [[ -z "${VERSION}" ]]; then
   exit 1
 fi
 
-echo Downloading and running $PACKAGE...
+echo Downloading and running $PACKAGE-$VERSION...
 
 URL=https://github.com/$REPOSITORY/releases/download/$VERSION/$PACKAGE-$VERSION-$PLATFORM.tar.gz
 TEMP=$(mktemp --directory .$PACKAGE-XXXXX)
@@ -21,8 +21,6 @@ cleanup(){
     rm -r $TEMP
 }
 trap cleanup EXIT
-
-echo $URL
 
 curl --progress-bar --location -o$TEMP/$PACKAGE.tar.gz $URL
 tar -xzf $TEMP/$PACKAGE.tar.gz -C$TEMP
