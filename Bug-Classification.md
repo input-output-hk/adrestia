@@ -11,12 +11,10 @@ The Jira issue `Severity / Probability Score` field show how bad the defect is.
 
 Severity | Description / Example
 --- |     ---
-None | 
-1 | 
-2 | Small defects that do not prevent any crucial functionality from working. Could be a typo in a message, some uninformative error or some bearable performance degradation. 
-3 | Visible impact on a core function or significant performance degradation.
-4 | A core function of the system isn't responsive or is returning invalid data.
-5 |
+1 | A core function of the system isn't responsive or is returning invalid data.
+2 | Visible impact on a core function or significant performance degradation.
+3 | Small defects that do not prevent any crucial functionality from working. Could some uninformative error or some bearable performance degradation. 
+4 | Defect that won’t result in any noticeable disruption of the system, e.g. typo in a message.
 
 
 ### 2. Priority
@@ -32,11 +30,11 @@ not necessarily always the case.
 
 Priority | Description / Example
 --- | --- 
-Lowest |
+Highest | Requires immediate attention. Critical issue that needs to be fixed ASAP and released as hotfix.
+High | Needs to be addressed as soon as possible, probably within current sprint.
+Medium | A bug that needs to be addressed after ongoing stories and tasks. For instance can be planned for next sprint.
 Low | Would eventually require attention if time allows it.
-Medium | A bug that needs to be addressed after ongoing stories and tasks.
-High | Requires immediate attention.
-Highest |
+
 
 --- 
 
