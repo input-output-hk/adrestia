@@ -1,50 +1,42 @@
-Bugs are categorized according to two criteria: **severity** and **priority**. Each criterion is separated into three levels: low, medium and high. Each development repository should use the following labels to classify defects:
+Our software defects are tracked with Jira issues. Here is [the list of unresolved bugs](https://jira.iohk.io/issues?jql=project%3DADP%20and%20type%20%3D%20Bug%20and%20resolution%20%3D%20Unresolved%20ORDER%20BY%20priority%20DESC%2C%20created) in the Adrestia project.
 
-- `BUG`
-- `SEVERITY:LOW` 
-- `SEVERITY:MEDIUM`
-- `SEVERITY:HIGH`
-- `PRIORITY:LOW`
-- `PRIORITY:MEDIUM`
-- `PRIORITY:HIGH`
+We classify bugs by two criteria, which are related but not exactly
+the same thing.
 
-A `BUG` label should be present on every reported defect, as well as one `SEVERITY:...` label and one `PRIORITY:...` label depending on its classification. This way, one can easily search for all bugs, or bugs belonging to a certain sub-category.
+### 1. Severity
 
-### Severity
+Indicates the impact on users and how much functionality is affected. The severity is assessed by the engineering and QA team working on the system.
 
-##### Definition
-
-Indicates the impact on the system and how severely its core functionality is affected. The severity is assessed by the engineering team working on the system.
-
-##### Role
-
-Informs the team and external partners about the severity of a defect to help drive decisions such as setting priorities or delaying a release.
-
-##### Levels
+The Jira issue `Severity / Probability Score` field show how bad the defect is.
 
 Severity | Description / Example
 --- |     ---
-Low | Small defects that do not prevent any crucial functionality from working. Could be a typo in a message, some uninformative error or some bearable performance degradation. 
-Medium | Visible impact on a core function or significant performance degradation.
-High | A core function of the system isn't responsive or is returning invalid data.
+None | 
+1 | 
+2 | Small defects that do not prevent any crucial functionality from working. Could be a typo in a message, some uninformative error or some bearable performance degradation. 
+3 | Visible impact on a core function or significant performance degradation.
+4 | A core function of the system isn't responsive or is returning invalid data.
+5 |
 
-### Priority
 
-##### Definition
+### 2. Priority
 
-Indicates which issues should be addressed first because of their impact on the business. The priority is set by the product team based on business requirements. High severity defects will _mostly_ tend to have a higher priority, but some low severity defects may have an important impact on the user experience and therefore have a high priority.
+Priority defines which issues should be addressed first.
 
-##### Role
+The priority value is set by the product team based on business
+requirements, the severity of the defect, estimated time to fix it,
+and other factors such as impact on the user experience.
 
-Organizing issue resolution in a way that is meaningful for the business. 
-
-##### Levels
+High severity defects will tend to have a higher priority, but this is
+not necessarily always the case.
 
 Priority | Description / Example
 --- | --- 
+Lowest |
 Low | Would eventually require attention if time allows it.
 Medium | A bug that needs to be addressed after ongoing stories and tasks.
 High | Requires immediate attention.
+Highest |
 
 --- 
 
