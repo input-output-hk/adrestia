@@ -7,7 +7,7 @@ the same thing.
 
 Indicates the impact on users and how much functionality is affected. The severity is assessed by the engineering and QA team working on the system.
 
-The Jira issue `Severity / Probability Score` field show how bad the defect is.
+The Jira issue `Severity / Probability Score` field shows how bad the defect is.
 
 Severity | Description / Example
 --- |     ---
