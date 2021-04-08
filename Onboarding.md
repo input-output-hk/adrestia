@@ -10,6 +10,7 @@ The process for new team member on-boarding.
   - `#adrestia-releases`
   - (more TBA)
 - [ ] Team member is added to [LastPass shared folder](./Passwords).
+- [ ] Team member is invited to weekly planning meeting and daily Hello call.
 
 ## Checklist (team member)
 
