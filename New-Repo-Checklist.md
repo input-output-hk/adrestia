@@ -20,7 +20,7 @@ subdirectories of another project.
 Multiple repos are more work to maintain (e.g. CI), and it's more
 stuff to keep track of.
 
-Ensure that you have a good reason to creaate a separate repo.
+Ensure that you have a good reason to create a separate repo.
 
 ### 1. Decide which GitHub organization owns the repo
 
@@ -28,6 +28,10 @@ In general, **DON'T** use your private GitHub account to own
 repos/forks which are dependencies of IOHK repos. Unless this fork is
 temporary, prefer [input-output-hk][]. If you leave, we don't want our
 project repos to disappear.
+
+However, to state the obvious, **DON'T** add repos which are likely to
+harm to harm the reputation of IOHK or mislead the public. Ask first,
+if in doubt.
 
 ### 2. Decide whether the repo should be private
 
@@ -55,12 +59,13 @@ may need IT to help with this change.
      **DON'T** invite individual developers (except your own user), unless for exceptional circumstances. Consider using the [Adrestia Guests][] team.
      
      Invite teams according to this scheme:
-      - [Adrestia][] - Triage (the umbrella group)
-      - [Adrestia Admins][] - Admin
-      - [Adrestia Maintainers][] - Maintainers (most developers are in this group).
-      - [Adrestia Guests][] - Write
-      - [devops][] - Admin (for setting up CI things)
-      - [release][] - Write (for editing release notes and making releases)
+     
+      * [Adrestia][] - Triage (the umbrella group)
+      * [Adrestia Admins][] - Admin
+      * [Adrestia Maintainers][] - Maintainers (most developers are in this group).
+      * [Adrestia Guests][] - Write
+      * [devops][] - Admin (for setting up CI things)
+      * [release][] - Write (for editing release notes and making releases)
       
 - [ ] Name of `master` branch - it really doesn't matter, but consistency is nice.
 
@@ -74,10 +79,11 @@ may need IT to help with this change.
 
 - [ ] CI: if using Buildkite, set up a [pipeline](https://buildkite.com/input-output-hk) and webhook.
 
-- [ ] CI: if using Hydra open a PR to add a [jobset](https://github.com/input-output-hk/ci-ops/blob/master/jobsets/default.nix)
+- [ ] CI: if using Hydra open a PR to add a [jobset](https://github.com/input-output-hk/ci-ops/blob/master/jobsets/default.nix).
 
 - [ ] CI: if your CI requires secrets such as auth tokens, ensure that
-      all secrets are also stored in LastPass (see [Passwords](./Passwords)).
+      all secrets are also stored in our shared LastPass folder (see
+      [Passwords](./Passwords)).
 
 - [ ] If this repo is splitting off an existing repo, I believe we
       have a doc somewhere about how to do that.
