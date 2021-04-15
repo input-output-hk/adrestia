@@ -85,6 +85,5 @@ may need IT to help with this change.
   all secrets are also stored in our shared LastPass folder (see
   [Passwords](./Passwords)).
 
-- [ ] If this repo is splitting off an existing repo, I believe we
-  have a doc somewhere about how to do that.
+- [ ] If this repo is splitting off an existing repo, see [this document from our wiki](https://github.com/input-output-hk/cardano-coin-selection/blob/master/information/repository-creation-process.md).
       
