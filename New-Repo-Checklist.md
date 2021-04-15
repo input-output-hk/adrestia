@@ -54,18 +54,18 @@ may need IT to help with this change.
 
 - [ ] Ensure appropriate access to the repo in _Settings_ → _Manage access_.
 
-     **DO** use GitHub [Input Output organization teams][teams] to manage access levels.
-  
-     **DON'T** invite individual developers (except your own user), unless for exceptional circumstances. Consider using the [Adrestia Guests][] team.
-     
-     Invite teams according to this scheme:
-     
-      * [Adrestia][] - Triage (the umbrella group)
-      * [Adrestia Admins][] - Admin
-      * [Adrestia Maintainers][] - Maintainers (most developers are in this group).
-      * [Adrestia Guests][] - Write
-      * [devops][] - Admin (for setting up CI things)
-      * [release][] - Write (for editing release notes and making releases)
+  **DO** use GitHub [Input Output organization teams][teams] to manage access levels.
+
+  **DON'T** invite individual developers (except your own user), unless for exceptional circumstances. Consider using the [Adrestia Guests][] team.
+
+  Invite teams according to this scheme:
+
+  * [Adrestia][] - Triage (the umbrella group)
+  * [Adrestia Admins][] - Admin
+  * [Adrestia Maintainers][] - Maintainers (most developers are in this group).
+  * [Adrestia Guests][] - Write
+  * [devops][] - Admin (for setting up CI things)
+  * [release][] - Write (for editing release notes and making releases)
       
 - [ ] Name of `master` branch - it really doesn't matter, but consistency is nice.
 
@@ -73,7 +73,7 @@ may need IT to help with this change.
 
 - [ ] Add Autolink references for jira:
 
-      ADP-123  →  https://jira.iohk.io/browse/ADP-123
+  ADP-123  →  https://jira.iohk.io/browse/ADP-123
 
 - [ ] Remember to customize the "About" text and URL if applicable.
 
@@ -82,9 +82,9 @@ may need IT to help with this change.
 - [ ] CI: if using Hydra open a PR to add a [jobset](https://github.com/input-output-hk/ci-ops/blob/master/jobsets/default.nix).
 
 - [ ] CI: if your CI requires secrets such as auth tokens, ensure that
-      all secrets are also stored in our shared LastPass folder (see
-      [Passwords](./Passwords)).
+  all secrets are also stored in our shared LastPass folder (see
+  [Passwords](./Passwords)).
 
 - [ ] If this repo is splitting off an existing repo, I believe we
-      have a doc somewhere about how to do that.
+  have a doc somewhere about how to do that.
       
