@@ -1,6 +1,6 @@
 # How To Contribute
 
-Wants to contribute to _Adrestia_? Your help is welcome :heart:
+Want to contribute to _Adrestia_? Your help is welcome :heart:
 
 - Should you have [ideas](https://github.com/input-output-hk/adrestia/issues/new?template=idea.md) or [questions](https://github.com/input-output-hk/adrestia/issues/new?template=question.md), open a ticket and let us know!
 
