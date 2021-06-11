@@ -5,56 +5,57 @@ Adrestia is a collection of products which makes it easier to integrate with Car
 # Getting Started
 
 
-To get started, checkout the [📘 Adrestia user-guide](https://input-output-hk.github.io/adrestia/)! 
+To get started, checkout the [📘 Adrestia user-guide](https://input-output-hk.github.io/adrestia/)!
 
 
 # Components
 
 ## APIs
 
-name / link       | description                                    | Byron              | Jörmungandr        | Shelley
----               | ---                                            | ---                | ---                | ---
-[cardano-wallet]  | JSON/REST API for managing UTxOs in HD wallets | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
-[cardano-rest]    | JSON/HTTP API for browsing on-chain data       | :heavy_check_mark: | :x:                | :heavy_check_mark:
-[cardano-graphql] | GraphQL/HTTP API for browsing on-chain data    | :heavy_check_mark: | :x:                | :heavy_check_mark:
-
+name / link       | description                                    | Byron | Jörm | Shelley | Mary  | Alonzo |
+---               | ---                                            | ---   | ---  | ---     | ---   | ---    |
+[cardano-wallet]  | JSON/REST API for managing UTxOs in HD wallets | ✔     | ✔    | ✔       | ❌     | 🚧     |
+[cardano-graphql] | GraphQL/HTTP API for browsing on-chain data    | ✔     | ❌    | ✔       | ✔     | 🚧     |
+[cardano-rosetta] | Implementation of [Rosetta][] spec for Cardano |       |      | ✔       | ✔     | 🚧     |
+~[cardano-rest]~  | _Deprecated_                                   | ✔     | ❌    | ✔       | ❌     | ❌     |
 
 ## CLIs
 
-Name / Link            | Description                                          | Byron              | Jörmungandr        | Shelley
----                    | ---                                                  | ---                | ---                | ---
-[bech32]               | Human-friendly Bech32 address encoding               | N/A                | :heavy_check_mark: | :heavy_check_mark:
-[cardano-wallet]       | Command-line for interacting with cardano-wallet API | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
-[cardano-addresses]    | Addresses and mnemonic manipulation & derivations    | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
-[cardano-transactions] | Transaction construction and signing                 | :heavy_check_mark: | :x:                | :construction:
+Name / Link            | Description                                          | Byron | Jörm | Shelley | Mary  | Alonzo |
+---                    | ---                                                  | ---   | ---  | --      | ---   | ---    |
+[bech32]               | Human-friendly Bech32 address encoding               | N/A   | ✔    | ✔       | ✔     | ✔     |
+[cardano-wallet]       | Command-line for interacting with cardano-wallet API | ✔     | ✔    | ✔       | ✔     | 🚧     |
+[cardano-addresses]    | Addresses and mnemonic manipulation & derivations    | ✔     | ✔    | ✔       | ✔     | 🚧     |
+[cardano-transactions] | _Deprecated_                                         | ✔     | ❌   | ❌       | ❌     | ❌     |
 
-## Haskell SDKs 
+## Haskell SDKs
 
-Name / Link              | Description                                       | Byron              | Jörmungandr        | Shelley
----                      | ---                                               | ---                | ---                | ---
-[bech32]                 | Human-friendly Bech32 address encoding            | N/A                | :heavy_check_mark: | :heavy_check_mark:
-[cardano-addresses]      | Addresses and mnemonic manipulation & derivations | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
-[cardano-coin-selection] | Coin selection and fee balancing algorithms       | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
-[cardano-transactions]   | Transaction construction and signing              | :heavy_check_mark: | :x:                | :construction:
+Name / Link              | Description                                       | Byron | Jörm | Shelley | Mary  | Alonzo |
+---                      | ---                                               | ---   | ---  | ---     | ---   | ---    |
+[bech32]                 | Human-friendly Bech32 address encoding            | N/A   | ✔    | ✔       | ✔     | ✔     |
+[cardano-addresses]      | Addresses and mnemonic manipulation & derivations | ✔     | ✔    | ✔       | ✔     | 🚧     |
+[cardano-coin-selection] | _Deprecated_                                      | ✔     | ✔    | ✔       | ❌     | ❌     |
+[cardano-transactions]   | _Deprecated_                                      | ✔     | ❌   | ❌       | ❌     | ❌     |
 
 ## Rust SDKs (+WebAssembly support)
 
 Name / Link                    | Description                                           | Byron | Jörmungandr | Shelley
 ---                            | ---                                                   | ---   | ---         | ---
-[cardano-serialization-lib]    | Binary serialization of on-chain data types           | N/A   | N/A         | :heavy_check_mark:
-[react-native-haskell-shelley] | React Native bindings for [cardano-serialization-lib] | N/A   | N/A         | :construction:
+[cardano-serialization-lib]    | Binary serialization of on-chain data types           | N/A   | N/A         | ✔
+[react-native-haskell-shelley] | React Native bindings for [cardano-serialization-lib] | N/A   | N/A         | 🚧
 
 ## JavaScript SDKs
 
-Name / Link        | Description                                              | Byron              | Jörmungandr        | Shelley
----                | ---                                                      | ---                | ---                | ---
-[cardano-launcher] | node and cardano-wallet launcher for NodeJS applications | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
+Name / Link         | Description                                              | Byron | Jörm | Shelley | Mary  | Alonzo |
+---                 | ---                                                      | ---   | ---  | ---     | ---   | ---    |
+[cardano-launcher]  | node and cardano-wallet launcher for NodeJS applications | ✔     | ✔    | ✔       | ✔     | 🚧     |
+[cardano-addresses] | Address validation and inspection                        | ✔     | ✔    | ✔       | ✔     | 🚧     |
 
-## Formal Specifications 
+## Formal Specifications
 
-Name / Link                 | Description                                       
----                         | ---                                               
-[utxo-wallet-specification] | Formal specification for a UTxO wallet            
+Name / Link                 | Description
+---                         | ---
+[utxo-wallet-specification] | Formal specification for a UTxO wallet
 
 ## Internal
 
@@ -72,11 +73,12 @@ name / link        | description
 [cardano-coin-selection]: https://github.com/input-output-hk/cardano-coin-selection
 [cardano-addresses]: https://github.com/input-output-hk/cardano-addresses
 [cardano-transactions]: https://github.com/input-output-hk/cardano-transactions
-[cardano-serialization-lib]: https://github.com/Emurgo/cardano-serialization-lib 
+[cardano-serialization-lib]: https://github.com/Emurgo/cardano-serialization-lib
 [react-native-haskell-shelley]: https://github.com/Emurgo/react-native-haskell-shelley
 [bech32]: https://github.com/input-output-hk/bech32
 [utxo-wallet-specification]: https://github.com/input-output-hk/utxo-wallet-specification
 [cardano-launcher]: https://github.com/input-output-hk/cardano-launcher
+[cardano-rosetta]: https://github.com/input-output-hk/cardano-rosetta
 [persistent]: https://github.com/input-output-hk/persistent
 
 # Contributing
