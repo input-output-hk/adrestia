@@ -22,7 +22,7 @@ The process for new team member on-boarding.
   - [Adrestia Dashboard](https://jira.iohk.io/secure/Dashboard.jspa?selectPageId=12600)
   - [ADP Backlog](https://jira.iohk.io/secure/RapidBoard.jspa?rapidView=191&projectKey=ADP&view=planning.nodetail&versions=visible&epics=visible&issueLimit=100)
   - [ADP Active sprints](https://jira.iohk.io/secure/RapidBoard.jspa?rapidView=191&projectKey=ADP) (swimlanes)
-- [ ] Skim the ramp-up docs.
+- [ ] Skim the [ramp-up docs](https://github.com/input-output-hk/adrestia/wiki/Onboarding#ramp-up-docs).
 - [ ] Ensure that you can do the following things in Jira:
 
   - Backlog view:
