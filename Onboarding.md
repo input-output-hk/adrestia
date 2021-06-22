@@ -48,9 +48,19 @@ The process for new team member on-boarding.
 
 ## Ramp-up docs
 
-Here's some docs to skim:
+Essential reading list for new team members.
 
-- [cardano-wallet Wiki](https://github.com/input-output-hk/cardano-wallet/wiki) - Technical docs
-- [adrestia Wiki](https://github.com/input-output-hk/adrestia/wiki) - Project and development process docs (this Wiki)
-- [Adrestia Web Site](https://input-output-hk.github.io/adrestia/) - WIP general documentation of the Adrestia umbrella project.
-- [Effluence](https://input-output.atlassian.net/wiki/spaces/AD/overview)
+- [Building](https://github.com/input-output-hk/cardano-wallet/wiki/Building).
+    A quick guide to building the wallet from source.
+- [Testing](https://github.com/input-output-hk/cardano-wallet/wiki/Testing).
+    A introduction on how to run tests for the wallet, once you've built it. 
+- [Development Process](https://github.com/input-output-hk/cardano-wallet/wiki/Development-Process).
+    Our team's development process and methodology.
+- [Team Coding Standards](https://github.com/input-output-hk/adrestia/wiki/Coding-Standards).
+    We strive to follow these shared standards for all newly-written code.
+- [Code Review Guidelines](https://github.com/input-output-hk/adrestia/wiki/Code-Review-Guidelines).
+    We're always trying to improve our code review process. This document contains a few of the principles we've collected along the way. It's not complete, and we hope you can help to make it even better!
+- [Adrestia Project Page](https://input-output-hk.github.io/adrestia/).
+   General documentation about the Adrestia umbrella project, and what it is.
+- [Adrestia Team Page on Effluence](https://input-output.atlassian.net/wiki/spaces/AD/overview).
+   A breakdown of our team membership structure, and our different responsibilities.
