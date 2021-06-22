@@ -53,7 +53,7 @@ Essential reading list for new team members.
 - [Building](https://github.com/input-output-hk/cardano-wallet/wiki/Building).
     A quick guide to building the wallet from source.
 - [Testing](https://github.com/input-output-hk/cardano-wallet/wiki/Testing).
-    A introduction on how to run tests for the wallet, once you've built it. 
+    An introduction on how to run tests for the wallet, once you've built it. 
 - [Development Process](https://github.com/input-output-hk/cardano-wallet/wiki/Development-Process).
     Our team's development process and methodology.
 - [Team Coding Standards](https://github.com/input-output-hk/adrestia/wiki/Coding-Standards).
