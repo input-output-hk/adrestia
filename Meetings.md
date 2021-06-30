@@ -10,9 +10,9 @@ Meetings... everyone loves them. Here is the weekly list of meetings for our Adr
 
 ## Iteration Planning
 
-- Whole team
-- Fortnightly on Wednesdays 0700-0800 UTC.
-- [Google Meet Link][link-iteration-planning]
+- **Participants**:    Whole team
+- **When**:            Fortnightly on Wednesdays 0700-0800 UTC.
+- **Conference link**: [Google Meet][link-iteration-planning]
 
 This meeting occurs every fortnight and marks the end of the current sprint and start of a new sprint.
 
@@ -34,9 +34,9 @@ Please make sure that your Jira tickets are up to date before this meeting.
 
 ## Mid-sprint planning
 
-- Whole team
-- Fortnightly on Wednesdays 0700-0800 UTC.
-- [Google Meet Link][link-iteration-planning]
+- **Participants**:    Whole team
+- **When**:            Fortnightly on Wednesdays 0700-0800 UTC.
+- **Conference link**: [Google Meet][link-iteration-planning]
 
 This meeting occurs every fortnight at the mid-point of a sprint.
 
@@ -56,9 +56,9 @@ Please make sure that your Jira tickets are up to date before this meeting.
 
 ## Adrestia/Node/Daedalus
 
-- Representatives from Adrestia, Daedalus and Node teams (usually the tech lead), product managers.
-- Weekly on Tuesdays 0930-1000 Central European Time - Amsterdam (GMT+02:00)
-- [Google Meet link][link-adrestia-node-daedalus]
+- **Participants**:    Representatives from Adrestia, Daedalus and Node teams (usually the tech lead), product managers.
+- **When**:            Weekly on Tuesdays 0930-1000 Central European Time - Amsterdam (GMT+02:00)
+- **Conference link**: [Google Meet][link-adrestia-node-daedalus]
 
 Dedicated time to discuss Frontend requests for the Backend (or vice-versa) and keep development of both ends in sync.
 
@@ -71,18 +71,18 @@ The idea would be to prevent interruptions during the week and instead, gather q
 
 ## Adrestia planning
 
-- Tech lead, product manager, project manager.
-- Weekly on Tuesdays 0900-1000 Western European Time - Lisbon (GMT+01:00)
-- [Google Meet Link][link-adrestia-planning]
+- **Participants**:    Tech lead, product manager, project manager.
+- **When**:            Weekly on Tuesdays 0900-1000 Western European Time - Lisbon (GMT+01:00)
+- **Conference link**: [Google Meet][link-adrestia-planning]
 
 This is a planning meeting before the weekly planning meeting.
 
 
 ## Problem Management
 
-- Technical services, representatives from QA, representatives from product teams, managers.
-- Weekly on Thursdays 1330-1400 UTC.
-- [Google Meet Link][link-problem-management]
+- **Participants**:    Technical services, representatives from QA, representatives from product teams, managers.
+- **When**:            Weekly on Thursdays 1330-1400 UTC.
+- **Conference link**: [Google Meet][link-problem-management]
 
 Weekly problem management meeting to review, discuss, and prioritize trending problems experienced by our users.
 
@@ -95,9 +95,9 @@ Topics include:
 
 ## Dev Meeting
 
-- Developers and QA Developers
-- Weekly on Fridays 0800-0830 UTC.
-- [Jitsi Meet Link][link-dev-meeting]
+- **Participants**:    Developers and QA Developers
+- **When**:            Weekly on Fridays 0800-0830 UTC.
+- **Conference link**: [Jitsi Meet][link-dev-meeting]
 
 Weekly meeting slot to discuss dev issues and share knowledge.
 
@@ -109,9 +109,9 @@ Weekly meeting slot to discuss dev issues and share knowledge.
 
 ## Hello
 
-- Anyone in the team.
-- Daily at 0745-0800 UTC, unless conflicting with another meeting.
-- [Jitsi Meet Link][link-hello]
+- **Participants**:    Anyone in the team.
+- **When**:            Daily at 0745-0800 UTC, unless conflicting with another meeting.
+- **Conference link**: [Jitsi Meet][link-hello]
 
 This is a quick call where you can drop in and say hello and let us know how you're going. It's completely optional, and there's no obligation to talk about work.
 
