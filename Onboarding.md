@@ -62,5 +62,5 @@ Essential reading list for new team members.
     We're always trying to improve our code review process. This document contains a few of the principles we've collected along the way. It's not complete, and we hope you can help to make it even better!
 - [Adrestia Project Page](https://input-output-hk.github.io/adrestia/).
    General documentation about the Adrestia umbrella project, and what it is.
-- [Adrestia Team Page on Effluence](https://input-output.atlassian.net/wiki/spaces/AD/overview).
+- [Adrestia Team Page on Confluence](https://input-output.atlassian.net/wiki/spaces/AD/overview).
    A breakdown of our team membership structure, and our different responsibilities.
