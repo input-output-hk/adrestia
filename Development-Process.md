@@ -148,6 +148,7 @@ The team's process is derived from [extreme programming][xp] and adapted for rem
 - [Release It!](https://www.amazon.com/Release-Design-Deploy-Production-Ready-Software/dp/1680502395/)
 - [Thinking With Types](https://leanpub.com/thinking-with-types/)
 - [Git](https://www.amazon.com/Version-Control-Git-collaborative-development/dp/1449316387/)
+- [Algebra-Driven Design](https://leanpub.com/algebra-driven-design)
 
 #### Guides
 
