@@ -154,7 +154,7 @@ The team's process is derived from [extreme programming][xp] and adapted for rem
 - http://www.extremeprogramming.org
 - https://try.github.io/
 - https://12factor.net/
-
+- https://documentation.divio.com/
 
 [styleguide]: https://github.com/input-output-hk/adrestia/wiki/Coding-Standards
 [xp]: http://www.extremeprogramming.org
