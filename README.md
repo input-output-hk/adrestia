@@ -32,7 +32,7 @@ Name / Link            | Description                                          | 
 
 Name / Link              | Description                                       | Byron | Jörm | Shelley | Mary  | Alonzo |
 ---                      | ---                                               | ---   | ---  | ---     | ---   | ---    |
-[bech32]                 | Human-friendly Bech32 address encoding            | N/A   | ✔    | ✔       | ✔     | ✔     |
+[bech32]                 | Human-friendly Bech32 address encoding            |       | ✔    | ✔       | ✔     | ✔     |
 [cardano-addresses]      | Addresses and mnemonic manipulation & derivations | ✔     | ✔    | ✔       | ✔     | 🚧     |
 [cardano-coin-selection] | _Deprecated_                                      | ✔     | ✔    | ✔       | ❌     | ❌     |
 [cardano-transactions]   | _Deprecated_                                      | ✔     | ❌   | ❌       | ❌     | ❌     |
@@ -77,6 +77,7 @@ name / link        | description
 [react-native-haskell-shelley]: https://github.com/Emurgo/react-native-haskell-shelley
 [bech32]: https://github.com/input-output-hk/bech32
 [utxo-wallet-specification]: https://github.com/input-output-hk/utxo-wallet-specification
+[rosetta]: https://www.rosetta-api.org/
 [cardano-launcher]: https://github.com/input-output-hk/cardano-launcher
 [cardano-rosetta]: https://github.com/input-output-hk/cardano-rosetta
 [persistent]: https://github.com/input-output-hk/persistent
