@@ -1,3 +1,10 @@
+---
+tags: [draft]
+tags: [qa]
+---
+
+# Issue Tracking
+
 We use the Jira [ADP project](https://input-output.atlassian.net/issues/)
 to record development tasks.
 

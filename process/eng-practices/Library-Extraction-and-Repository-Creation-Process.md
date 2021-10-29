@@ -1,9 +1,15 @@
-# Introduction
+---
+order: 5
+---
+
+# Extracting New Libraries From Existing Repositories
+
+## Introduction
 
 This article documents the process that we used to create the
 `cardano-coin-selection` repository.
 
-# Contents
+## Contents
 
 * [Overview](#overview)
 * [Background](#background)
@@ -14,7 +20,7 @@ This article documents the process that we used to create the
   * [Step 4: Filter Commit History](#step-4-filter-commit-history)
   * [Step 5: Verify Commit History](#step-5-verify-commit-history)
 
-# Overview
+## Overview
 
 The `cardano-coin-selection` repository was created by taking a clone of the
 pre-existing `cardano-wallet` repository and *filtering out* a *relevant
@@ -22,7 +28,7 @@ subset* of the version control history.
 
 This article provides a record of the steps we used to perform this operation.
 
-# Background
+## Background
 
 Filtering the version control history of a repository is non-trivial.
 
@@ -44,7 +50,7 @@ In general, we'd like to keep commits for both:
  * all files of interest; and
  * all ancestors of files that are of interest.
 
-## Example
+### Example
 
 For example, suppose that the module `Cardano.Wallet.Primitive.Types` includes
 content from files that once existed at the following paths:
@@ -56,17 +62,17 @@ content from files that once existed at the following paths:
 
 We'd ideally like to keep commits relating to all of those paths.
 
-# Process
+## Process
 
 Here is a record of the steps we used to create the `cardano-coin-selection`
 repository.
 
-## Step 1: Clone Source Repository
+### Step 1: Clone Source Repository
 
 We start with a fresh clone of the source repository (in our case, the
 `cardano-wallet` repository).
 
-## Step 2: Remove Irrelevant Files
+### Step 2: Remove Irrelevant Files
 
 In this step, we identify the files that we want to keep, and remove all files
 that are irrelevant.
@@ -85,7 +91,7 @@ A safe way to achieve this is to *iteratively* remove files that we're not
 interested in, while confirming that it is still possible to build the
 remaining subset, repeating the process until all unwanted files are deleted.
 
-### Example
+#### Example
 
 Suppose that we want to keep file `src/ImportantModule.hs`, but that it imports
 functions defined in the following modules:
@@ -106,7 +112,7 @@ If we wish to keep `src/ImportantModule.hs`, we should therefore also keep:
  * `src/Foo.hs`
  * `src/Bar.hs`
 
-## Step 3: Identify Content Ancestors
+### Step 3: Identify Content Ancestors
 
 In this step, we identify the historic ancestors of all files that we want to
 keep.
@@ -130,7 +136,7 @@ Run the script from the root of the repository, as follows:
 find-paths.sh | sort -u > files-to-keep
 ```
 
-## Step 4: Filter Commit History
+### Step 4: Filter Commit History
 
 In this step, we *filter* the version control history, removing all commits
 that are unrelated to the list of files identified in the previous step.
@@ -141,7 +147,7 @@ Run the following command, using the `git-filter-repo` tool:
 git filter-repo --paths-from-file files-to-keep
 ```
 
-## Step 5: Verify Commit History
+### Step 5: Verify Commit History
 
 In this step, we verify that we have retained all relevant parts of the
 history.

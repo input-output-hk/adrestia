@@ -1,4 +1,11 @@
-**Status**: Draft - Review and Comments please.
+---
+order: 6
+tags: [draft]
+---
+
+# New Repo Checklist
+
+**Status**: #draft - Review and Comments please.
 
 Policy and checklist for creating a new repo on GitHub.
 
@@ -66,7 +73,7 @@ may need IT to help with this change.
   * [Adrestia Guests][] - Write
   * [devops][] - Admin (for setting up CI things)
   * [release][] - Write (for editing release notes and making releases)
-      
+
 - [ ] Name of `master` branch - it really doesn't matter, but consistency is nice.
 
 - [ ] Switch off features such as Issues/Wiki/Project/Pages unless you actually need them.
@@ -74,7 +81,7 @@ may need IT to help with this change.
 - [ ] Add Autolink references for jira:
 
   ADP-123  →  https://jira.iohk.io/browse/ADP-123
-  
+
   ([see the GitHub documentation for more information](https://docs.github.com/en/github/administering-a-repository/configuring-autolinks-to-reference-external-resources))
 
 - [ ] Remember to customize the "About" text and URL if applicable.
@@ -88,4 +95,3 @@ may need IT to help with this change.
   [Passwords](./Passwords)).
 
 - [ ] If this repo is splitting off an existing repo, see [this document from our wiki](https://github.com/input-output-hk/cardano-coin-selection/blob/master/information/repository-creation-process.md).
-      

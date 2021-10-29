@@ -1,0 +1,21 @@
+# For documentation and available settings, see
+# https://github.com/srid/emanote/blob/master/default/index.yaml
+
+page:
+  siteTitle: Adrestia Process Docs
+  siteName: process
+
+template:
+  theme: indigo
+  iconUrl: static/favicon.png
+  urlStrategy: pretty
+  sidebar:
+    collapsed: false
+  # name: /templates/layouts/note
+  # layout:
+  #   note:
+  #     containerClass: container mx-auto max-w-screen-md
+
+pandoc:
+  rewriteClass:
+    prose: max-w-prose mx-auto

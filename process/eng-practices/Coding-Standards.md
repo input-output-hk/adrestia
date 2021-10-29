@@ -1,10 +1,16 @@
-# Foreword
+---
+order: 2
+---
 
-This file contains agreed-upon coding standards and best practices, as well as proposals for changes or new standards. Proposals are prefixed with `[PROPOSAL]` and are voted on by the Adrestia team through polls on Slack. To be accepted, a practice should be voted with majority + 1, with neutral votes counting as positive votes. 
+# Coding Standards
+
+## Foreword
+
+This file contains agreed-upon coding standards and best practices, as well as proposals for changes or new standards. Proposals are prefixed with `[PROPOSAL]` and are voted on by the Adrestia team through polls on Slack. To be accepted, a practice should be voted with majority + 1, with neutral votes counting as positive votes.
 
 Each proposal should start with a section justifying the standard with rational arguments. When it makes sense, we should also provide examples of good and bad practices to make the point clearer.
 
-# Summary
+## Summary
 
 * [Code Formatting](#code-formatting)
     * [Editor configuration via `.editorconfig`](#editor-configuration-via-editorconfig)
@@ -37,17 +43,17 @@ Each proposal should start with a section justifying the standard with rational 
     * [Test files are separated and self-contained](#test-files-are-separated-and-self-contained)
     * [Unit test files names match their corresponding module](#unit-test-files-names-match-their-corresponding-module)
 
-# Code Formatting
+## Code Formatting
 
-## Editor Configuration via `.editorconfig`
+### Editor Configuration via `.editorconfig`
 
 A `.editorconfig` (see https://editorconfig.org/) at the root of the project specifies for various filetype:
 
 - Line length
 - Indentation style (spaces vs tabs)
-- Encoding 
+- Encoding
 
-This file should be parsed and enforced by any contributor's editor. 
+This file should be parsed and enforced by any contributor's editor.
 
 > *Why*
 >
@@ -55,7 +61,7 @@ This file should be parsed and enforced by any contributor's editor.
 > easily written and supported by any decent editor out there. Agreeing on such rules prevent our version control
 > system to go crazy because people use different encoding or indentation style. It makes the overall code more consistent.
 
-## Limit line length to 80 characters
+### Limit line length to 80 characters
 
 Source code, including comments, should **not** exceed 80 characters in length, unless in exceptional situations.
 
@@ -67,11 +73,11 @@ Source code, including comments, should **not** exceed 80 characters in length, 
 
 <details><summary>See Examples and Exceptions</summary>
 
-### Examples
+#### Examples
 
 If you find yourself exceeding 80 characters, there are several strategies you can use.
 
-#### Strategy #1: Wrap code
+##### Strategy 1: Wrap code
 
 By inserting carriage returns in the right place, we can often reveal the underlying structure of an expression. Haskell allows you to break up long expressions so that they occur over multiple lines. For example:
 
@@ -106,7 +112,7 @@ Another example of wrapping:
             (checkCoverage prop_2_6_2)
 ```
 
-#### Strategy #2: Place comments on their own line instead of attempting to align them vertically
+##### Strategy 2: Place comments on their own line instead of attempting to align them vertically
 
 ```Haskell
 -- BAD
@@ -132,13 +138,13 @@ mkMagicalBlock
   -> Block
 ```
 
-#### Strategy #3: Break up long string literals
+##### Strategy 3: Break up long string literals
 
 Haskell provides convenient support for multi-line string literals:
 
 ```Haskell
 -- BAD
-errorAccountFundsCompletelyExhausted = "The funds in this account have been completely spent, and its balance is now zero. Either add more funds to this account or use a different account for this transaction." 
+errorAccountFundsCompletelyExhausted = "The funds in this account have been completely spent, and its balance is now zero. Either add more funds to this account or use a different account for this transaction."
 ```
 ```Haskell
 -- GOOD
@@ -162,17 +168,17 @@ spec = do
     \only very limited amounts of oxygen." $ do
 ```
 
-#### Strategy #4: Reduce nesting
+##### Strategy 4: Reduce nesting
 
 If your function contains so many levels of nesting that it's hard to keep things within 80 characters (even with careful use of wrapping), consider breaking your function up into smaller parts.
 
-### Exceptions
+#### Exceptions
 
 Sometimes, it's **impossible** to adhere to this rule.
 
 Here is a list of allowed exceptions:
 
-#### Exception #1: URLs in comments
+##### Exception 1: URLs in comments
 
 According to the standard, URLs can be extremely long. In some situations, we need to place URLs in source code comments. If a URL is longer than 80 characters, then place it on its own line:
 
@@ -183,7 +189,7 @@ According to the standard, URLs can be extremely long. In some situations, we ne
 
 </details>
 
-## Use only a single blank line between top-level definitions
+### Use only a single blank line between top-level definitions
 
 A source code file **should not** contain multiple consecutive blank lines.
 
@@ -245,13 +251,13 @@ newtype BlockHeader = BlockHeader
 
 </details>
 
-## Avoid Variable-Length Indentation
+### Avoid Variable-Length Indentation
 
 Variables, arguments, fields and tokens in general shouldn't be aligned based
 on the length of a previous token. Rather, tokens should go over a new line and
-be indented one-level extra when it makes sense, or not be aligned at all. 
+be indented one-level extra when it makes sense, or not be aligned at all.
 
-> *Why* 
+> *Why*
 >
 > Haskellers have a tendency to over-align everything vertically for the sake
 > of readability. In practice, this is much more of an habit than a real gain
@@ -273,21 +279,21 @@ data AddressPool address = AddressPool
 
 -- GOOD
 data AddressPool address = AddressPool
-    { _addresses 
+    { _addresses
         :: !(Map address Word32)
-    , _gap 
+    , _gap
         :: !AddressPoolGap
     }
 
 -- GOOD
 deriveAccountPrivateKey
-    :: PassPhrase               
-    -> EncryptedSecretKey       
-    -> Word32                   
-    -> Maybe EncryptedSecretKey 
-deriveAccountPrivateKey passPhrase masterEncPrvKey accountIx = 
+    :: PassPhrase
+    -> EncryptedSecretKey
+    -> Word32
+    -> Maybe EncryptedSecretKey
+deriveAccountPrivateKey passPhrase masterEncPrvKey accountIx =
 
--- BAD 
+-- BAD
 myFunction :: Word64 -> Maybe String
 myFunction w = let res = Wrap w in
                case someOp res of
@@ -302,7 +308,7 @@ myFunction :: Int
                         (Map Word32 ([String], Set ByteString)))
 
 -- BAD
-data MyRecord = MyRecord 
+data MyRecord = MyRecord
     { _myRecordLongNameField :: !String
     , _myRecordShort         :: ![Int]
     }
@@ -310,27 +316,27 @@ data MyRecord = MyRecord
 </details>
 
 
-## Stylish-Haskell is used to format grouped imports & language pragmas
+### Stylish-Haskell is used to format grouped imports & language pragmas
 
 Contributors' editors should pick up and enforce the rules defined by the `.stylish-haskell.yaml`
 configuration file at the root of the project. Also, in order to maximize readability, imports
-should be grouped into three groups, separated by a blank newline. 
+should be grouped into three groups, separated by a blank newline.
 
 - Prelude import
 - Explicit imports
 - Qualified imports
 
 > **Why**
-> 
-> It is rather annoying and time-consuming to align import lines or statement
-> as we code and it's much simpler to leave that to our editor. Yet, we do want 
-> to enforce some common formatting such that everyone gets to be aligned (pun
-> intended). 
 >
-> We can use Stylish-Haskell with various set of rules, yet, the same arguments 
-> from 'Avoid Variable-Length Indentation' applies when it comes to automatic 
+> It is rather annoying and time-consuming to align import lines or statement
+> as we code and it's much simpler to leave that to our editor. Yet, we do want
+> to enforce some common formatting such that everyone gets to be aligned (pun
+> intended).
+>
+> We can use Stylish-Haskell with various set of rules, yet, the same arguments
+> from 'Avoid Variable-Length Indentation' applies when it comes to automatic
 > formatting. Imports are a real pain with git and Haskell when they are vertically
-> aligned based on the imported module's name. 
+> aligned based on the imported module's name.
 
 <details>
     <summary>See examples</summary>
@@ -394,7 +400,7 @@ steps:
       align: false
       remove_redundant: true
       style: vertical
-```  
+```
 
 <details>
   <summary>See example</summary>
@@ -439,9 +445,9 @@ steps:
   ```
 </details>
 
-# Haskell Practices
+## Haskell Practices
 
-## Favor `newtype` and tagged type over type-aliases
+### Favor `newtype` and tagged type over type-aliases
 
 Instead of writing type aliases, one should favor wrapping up values in newtype
 when it makes sense, or, have them wrapped into a tagged type with a phantom
@@ -455,7 +461,7 @@ robustness.
 > things a bit better for the reader, they have a tendency to spread through
 > the code-base transforming those sweet help spot into traps. We can't define
 > proper instances on type aliases, and we treat them as different type whereas
-> they are behind the scene, just another one. 
+> they are behind the scene, just another one.
 
 <details>
   <summary>See examples</summary>
@@ -463,7 +469,7 @@ robustness.
   ```hs
   -- GOOD
   newtype HardenedIndex = HardenedIndex { getHardenedIndex :: Word32 }
-  deriveAccount :: HardenedIndex -> XPrv -> XPrv 
+  deriveAccount :: HardenedIndex -> XPrv -> XPrv
 
   -- GOOD
   data Scheme = Seq | Rnd
@@ -475,23 +481,23 @@ robustness.
   startNode :: Tagged "nodeId" -> IO ()
 
   -- BAD
-  type HardenedIndex = Word32 
-  deriveAccount :: HardenedIndex -> XPrv -> XPrv 
+  type HardenedIndex = Word32
+  deriveAccount :: HardenedIndex -> XPrv -> XPrv
   ```
 </details>
 
-## Language extensions are specified on top of each module
+### Language extensions are specified on top of each module
 
-Haskell's language extension are specified on top of each module. 
+Haskell's language extension are specified on top of each module.
 
 > **Why**
 >
-> Having a lot of default extensions enabled across the whole project can sometimes lead to cryptic 
-> errors where GHC would interpret things differently because of the enabled extensions. Yet, it's 
-> sometimes hard to distinguish by simply looking at the module themselves. 
+> Having a lot of default extensions enabled across the whole project can sometimes lead to cryptic
+> errors where GHC would interpret things differently because of the enabled extensions. Yet, it's
+> sometimes hard to distinguish by simply looking at the module themselves.
 >
 > Also, being more explicit on extensions used by a module can help speeding up compile-time of such simple modules
-> that don't need to be pull in a lot of extra complexity. 
+> that don't need to be pull in a lot of extra complexity.
 
 <details>
   <summary>See examples</summary>
@@ -500,7 +506,7 @@ Haskell's language extension are specified on top of each module.
   -- GOOD
   {-# LANGUAGE DataKinds #-}
   {-# LANGUAGE GeneralizedNewtypeDeriving #-}
-  {-# LANGUAGE DerivingStrategies #-} 
+  {-# LANGUAGE DerivingStrategies #-}
 
   module Cardano.Wallet where
 
@@ -512,7 +518,7 @@ Haskell's language extension are specified on top of each module.
   ```
 </details>
 
-## HLint is used for hints and general code style
+### HLint is used for hints and general code style
 
 Contributors' editors should pick up and enforce the rules defined by the
 .hlint.yaml configuration file at the root of the project. File should be
@@ -520,10 +526,10 @@ committed without warnings or errors. When it make senses, developer may ignore
 lints at a function site using a proper annotation:
 
 > **Why**
-> 
+>
 > Linters are common practices in software development and help maintaining consistency across a large codebase with
-> many developers. Hlint is de de-facto linter in Haskell and comes with a lot of different rules and features that 
-> are _most of the time_ rather relevant and convey good practices, agreed upon and shared across the team. 
+> many developers. Hlint is de de-facto linter in Haskell and comes with a lot of different rules and features that
+> are _most of the time_ rather relevant and convey good practices, agreed upon and shared across the team.
 
 e.g.
 
@@ -557,13 +563,13 @@ As a start, we'll use the following built-in rules from `hlint` with the followi
 - ignore: {name: "Redundant do"} # Just an annoying hlint built-in, GHC may remove redundant do if he wants
 ```
 
-## We use explicit imports by default, and favor qualified imports for ambiguous functions
+### We use explicit imports by default, and favor qualified imports for ambiguous functions
 
 Apart from the chosen prelude, there should be no implicit imports. Instead,
 every function or class used from a given module should be listed explicitly.
 In case where a function name is ambiguous or requires context, a qualified
 import should be used instead (this is mainly the case for modules coming from
-`containers`, `bytestring` and `aeson`). 
+`containers`, `bytestring` and `aeson`).
 
 > **Why**
 >
@@ -571,7 +577,7 @@ import should be used instead (this is mainly the case for modules coming from
 > foreign code (and every code becomes quite hostile after a while, even if we
 > originally wrote it), it can be hard to understand where functions and
 > abstractions are pulled from. On the other hand, fully qualified imports can
-> become verbose and a real impediment to readability. 
+> become verbose and a real impediment to readability.
 
 <details>
   <summary>See examples</summary>
@@ -585,50 +591,50 @@ import should be used instead (this is mainly the case for modules coming from
       ( ByteString )
   import Data.Map.Strict
       ( Map )
-  import Data.Aeson 
+  import Data.Aeson
       ( FromJSON (..), ToJSON (..) )
-  
-  
+
+
   -- GOOD
   import qualified Data.Map.Strict as Map
   import qualified Data.ByteString as BS
-  
+
   isSubsetOf :: UTxO -> UTxO -> Bool
   isSubsetOf (UTxO a) (UTxO b) =
       a `Map.isSubmapOf` b
-  
+
   (magic, filetype, version) =
       ( BS.take 8 bytes
       , BS.take 4 $ BS.drop 8 bytes
       , BS.take 4 $ BS.drop 12 bytes
       )
-  
-  
+
+
   -- BAD
   import Options.Applicative
-  
-  
+
+
   -- BAD
   import qualified Data.Aeson as Aeson
-  
+
   instance Aeson.FromJSON MyType where
       -- ...
-  
-  
+
+
   -- BAD
-  import Data.Map.Strict 
+  import Data.Map.Strict
     ( filter )
-  import Data.Set 
+  import Data.Set
     ( member )
-  
+
   restrictedTo :: UTxO -> Set TxOut ->  UTxO
   restrictedTo (UTxO utxo) outs =
       UTxO $ filter (`member` outs) utxo
-  ```   
+  ```
 </details>
 
 
-## All modules begin with a helpful documentation comment
+### All modules begin with a helpful documentation comment
 
 The comments might answer the question _why?_ They _might_:
 1. Explain the relation to other modules
@@ -644,7 +650,7 @@ We should keep an eye out out-of-date comments. For instance when creating and r
 > In the legacy code-base, it was common to have multiple functions with the same or similar names, in different modules.
 > Try seaching for `applyBlocks` or `switchToFork`. What is the difference between `DB.Spec.Update.switchToFork` and `DB.AcidState.switchToFork`?
 >
-> Having a comment at the top of each module would be an easy-to-follow rule to better document this. It is also very appropriate for 
+> Having a comment at the top of each module would be an easy-to-follow rule to better document this. It is also very appropriate for
 > generated [haddock docs](https://input-output-hk.github.io/cardano-wallet/haddock/).
 >
 > If we re-design a module and forget to update the comment, the comment is no longer useful.
@@ -679,7 +685,7 @@ We should keep an eye out out-of-date comments. For instance when creating and r
 
 </details>
 
-## Prefer named constants over magic numbers
+### Prefer named constants over magic numbers
 
 > **Why**
 >
@@ -692,7 +698,7 @@ We should keep an eye out out-of-date comments. For instance when creating and r
 <details>
   <summary>See examples</summary>
 
-### BAD
+#### BAD
 ```hs
 humanReadableCharIsValid :: Char -> Bool
 humanReadableCharIsValid c = c >= chr 33 && c <= chr 126
@@ -708,7 +714,7 @@ instance Arbitrary HumanReadableChar where
     arbitrary = HumanReadableChar <$>
         choose (chr 33, chr 126)
 ```
-### GOOD
+#### GOOD
 ```hs
 -- | The lower bound of the set of characters permitted to appear within the
 --   human-readable part of a Bech32 string.
@@ -749,7 +755,7 @@ instance Arbitrary HumanReadableChar where
 
 </details>
 
-## Avoid wildcards when pattern-matching on sum types
+### Avoid wildcards when pattern-matching on sum types
 
 When pattern-matching on sum types or finite structures, we should avoid
 the use of the wildcard `_` as much as possible, and instead favor explicit
@@ -760,8 +766,8 @@ of the new branches.
 > **Why**
 >
 > When pattern-matching on sum types it is tempting to handle a few similar cases
-> using a wildcard `_`. However, this often leads to undesirable behavior when 
-> adding new branches to an ADT. Compilers won't trigger any warnings and, as 
+> using a wildcard `_`. However, this often leads to undesirable behavior when
+> adding new branches to an ADT. Compilers won't trigger any warnings and, as
 > developers, we might miss some necessary logic updates in existing pattern
 > matches.
 
@@ -787,7 +793,7 @@ of the new branches.
   ```
 </details>
 
-## Prefer pattern-matching to equality testing on sum types.
+### Prefer pattern-matching to equality testing on sum types.
 
 For expressions that evaluate differently depending on a value of a sum type,
 prefer pattern matching over equality testing for values of that type.
@@ -810,85 +816,85 @@ prefer pattern matching over equality testing for values of that type.
   <summary>See examples</summary>
 
   ```hs
-  data SortOrder = Ascending | Descending   
-      deriving Eq   
-  
+  data SortOrder = Ascending | Descending
+      deriving Eq
+
   -- BAD
   sortWithOrder' :: Ord a => SortOrder -> [a] -> [a]
-  sortWithOrder' order = f . sort   
-    where   
+  sortWithOrder' order = f . sort
+    where
       f = if order == Ascending then id else reverse
-  
-  -- GOOD   
-  sortWithOrder :: Ord a => SortOrder -> [a] -> [a] 
+
+  -- GOOD
+  sortWithOrder :: Ord a => SortOrder -> [a] -> [a]
   sortWithOrder order = f . sort
-    where   
-      f = case order of 
-          Ascending -> id  
+    where
+      f = case order of
+          Ascending -> id
           Descending -> reverse
   ```
 </details>
 
-## [PROPOSED] Don't spit back malformed values in errors from user inputs.
+### [PROPOSED] Don't spit back malformed values in errors from user inputs.
 
-When failing to parse user inputs, error message should not contain the malformed input. Instead, the error message should contain hints or examples of well-formed values expected by the parser. It is acceptable to show a raw input value if it is known to be within acceptable boundaries (e.g. parsing a `Word32` into a more refined type, there is little chance that the `Word32` will be inadequate to display). 
+When failing to parse user inputs, error message should not contain the malformed input. Instead, the error message should contain hints or examples of well-formed values expected by the parser. It is acceptable to show a raw input value if it is known to be within acceptable boundaries (e.g. parsing a `Word32` into a more refined type, there is little chance that the `Word32` will be inadequate to display).
 
 > **Why**
 >
-> Spitting back what the user has just entered is generally not very helpful. Users can generally easily replay what they've entered and see for themselves. More importantly, an input that didn't parse successfully may be arbitrary long or improper for display; since it failed to parse, we have actually not much control or knowledge about it. 
+> Spitting back what the user has just entered is generally not very helpful. Users can generally easily replay what they've entered and see for themselves. More importantly, an input that didn't parse successfully may be arbitrary long or improper for display; since it failed to parse, we have actually not much control or knowledge about it.
 
 <details>
   <summary>See examples</summary>
 
 ```hs
 -- BAD
-err = 
+err =
     "Invalid value: " <> show v <> ". Please provide a valid value."
 
 -- GOOD
-err = 
-    "EpochNo value is out of bounds (" <> 
-    show (minBound @Word31) <> 
-    ", " <> 
+err =
+    "EpochNo value is out of bounds (" <>
+    show (minBound @Word31) <>
+    ", " <>
     show (maxBound @Word31) <>
     ")."
 
 -- GOOD
-err = 
+err =
     "Unable to decode FeePolicy: \
     \Linear equation not in expected format: a + bx + cy \
     \where 'a', 'b', and 'c' are numbers"
 ```
 </details>
 
-# QuickCheck
+## QuickCheck
 
-## See your property fail
+### See your property fail
 
 This is a general practice in TDD (**T**est **D**riven **D**evelopment) but
 even more important in property-based testing.  You want to see _how_ your
 property fails and whether, as a developer, you have enough information to
-understand the reason of the failure and debug it. 
+understand the reason of the failure and debug it.
 
 > **Why**
-> 
+>
 > It is really easy to write all sort of properties which, once they fail, give
 > close to no details about the reason why they failed. Yet, as with any tests,
 > one wants to understand what happens. It is therefore important to see
 > properties failing at least once to see whether the level of details is
 > sufficient, as well as the efficiency of the shrinkers.
 
-## Define properties as separate functions
+### Define properties as separate functions
 
 It is often tempting to write properties inlined with `hspec` other combinators
-instead of having them as separate functions. However, we recommend writing 
+instead of having them as separate functions. However, we recommend writing
 properties as separate functions, prefixed with a `prop_` prefix to clearly
 identify them.
 
 > **Why**
 >
 > It makes for more readable test files where the set of properties can be easily
-> identified by looking at the top-level exported spec. But more importantly, it 
+> identified by looking at the top-level exported spec. But more importantly, it
 > allows for re-using the property with some regression test cases coming from past
 > failures. Having a separate function makes it easy to simply apply counter examples
 > yielded by QuickCheck as arguments!
@@ -937,19 +943,19 @@ it "Eventually converge for decreasing functions" $ do
 
 </details>
 
-## Provide readable counter-examples on failures
+### Provide readable counter-examples on failures
 
 Use [counterexample](https://hackage.haskell.org/package/QuickCheck-2.13.2/docs/Test-QuickCheck.html#v:counterexample) to display human-readable
 counter examples when a test fails; in particular, for data-types which have a [Buildable](https://hackage.haskell.org/package/fmt-0.6.1.2/docs/Fmt.html#t:Buildable) instances
-that are typically hard to read through their standard `Show` instance. For monadic properties, this can be used via [monitor](https://hackage.haskell.org/package/QuickCheck-2.13.2/docs/Test-QuickCheck-Monadic.html#v:monitor). 
+that are typically hard to read through their standard `Show` instance. For monadic properties, this can be used via [monitor](https://hackage.haskell.org/package/QuickCheck-2.13.2/docs/Test-QuickCheck-Monadic.html#v:monitor).
 
 > **Why**
 >
-> Some property-based tests can use complex combinations of inputs that can be hard to decipher 
+> Some property-based tests can use complex combinations of inputs that can be hard to decipher
 > when printed out to the console using only the stock `Show` instance. On the other hand, we
 > want to keep using the stock `Show` instance in order to be able to easily copy-paste failing
-> cases and turn them into regression tests. QuickCheck however provides a good set of tools to 
-> display counter examples on failures to ease debbugging. 
+> cases and turn them into regression tests. QuickCheck however provides a good set of tools to
+> display counter examples on failures to ease debbugging.
 
 <details>
   <summary>See examples</summary>
@@ -962,7 +968,7 @@ property (Bech32.decode corruptedString `shouldSatisfy` isLeft)
         , "         char #1: " <> show char1
         , "         char #2: " <> show char2
         , " original string: " <> show originalString
-        , "corrupted string: " <> show corruptedString 
+        , "corrupted string: " <> show corruptedString
         ]
 
 property (bs' === Just expected)
@@ -977,7 +983,7 @@ property (bs' === Just expected)
 ```
 </details>
 
-## Tag interesting cases in complex properties
+### Tag interesting cases in complex properties
 
 Quickcheck provides good tooling for labelling (see [label](https://hackage.haskell.org/package/QuickCheck-2.13.2/docs/Test-QuickCheck.html#v:label) and classifying (see [classify](https://hackage.haskell.org/package/QuickCheck-2.13.2/docs/Test-QuickCheck.html#v:classify))
 inputs or results of a property. These should be used in properties dealing with several classes of values.
@@ -1018,7 +1024,7 @@ prop_sync s0 = monadicIO $ do
 --    7.195% switched to a longer chain
 --    6.773% rewinded without switch
 --    0.880% rolled back full k
---   
+--
 --   57.516% Intersection hit rate GREAT (75% - 100%)
 --   32.183% Intersection hit rate GOOD  (50% - 75%)
 --   10.292% Intersection hit rate POOR  (10% - 50%)
@@ -1071,10 +1077,10 @@ prop_accuracy r = withMaxSuccess 1000 $ monadicIO $ do
 ```
 </details>
 
-## Write properties to assert the validity of complex generators (and shrinkers)
+### Write properties to assert the validity of complex generators (and shrinkers)
 
-Arbitrary generators, and in particular complex ones, should be tested independently 
-to make sure they yield correct values. This also includes shrinkers associated with 
+Arbitrary generators, and in particular complex ones, should be tested independently
+to make sure they yield correct values. This also includes shrinkers associated with
 the generator which can often break some invariants enforced by the generator itself.
 
 > **Why**
@@ -1091,9 +1097,9 @@ the generator which can often break some invariants enforced by the generator it
 ```hs
 --| Checks that generated mock node test cases are valid
 prop_MockNodeGenerator :: S -> Property
-prop_MockNodeGenerator (S n0 ops _ _) = 
+prop_MockNodeGenerator (S n0 ops _ _) =
     prop_continuous .&&. prop_uniqueIds
-  where 
+  where
     prop_continuous :: Property
     prop_continuous =
         conjoin (follow <$> scanl (flip applyNodeOp) n0 (concat ops))
@@ -1101,7 +1107,7 @@ prop_MockNodeGenerator (S n0 ops _ _) =
     prop_uniqueIds :: Property
     prop_uniqueIds =
         length (nub bids) === length bids
-            & counterexample ("Non-unique ID: " ++ show bids) 
+            & counterexample ("Non-unique ID: " ++ show bids)
       where
         bids = concat [map mockBlockId bs | NodeAddBlocks bs <- concat ops]
 
@@ -1114,12 +1120,12 @@ prop_nonSingletonRangeGenerator = property $ \(nsr :: NonSingletonRange Int) ->
 ```
 </details>
 
-## Use `checkCoverage` to measure coverage requirements
+### Use `checkCoverage` to measure coverage requirements
 
 Using [label](https://hackage.haskell.org/package/QuickCheck-2.13.2/docs/Test-QuickCheck.html#v:label) or [classify](https://hackage.haskell.org/package/QuickCheck-2.13.2/docs/Test-QuickCheck.html#v:classify)
-instruments QuickCheck to gather some metrics about a particular properties and print out results in the console. However, 
-it also possible to _enforce_ that some collected values stay above a certain threshold using [checkCoverage](https://hackage.haskell.org/package/QuickCheck-2.13.2/docs/Test-QuickCheck.html#v:checkCoverage). 
-When used, QuickCheck will run the property as many times as necessary until a particular coverage requirement is satisfied, with a certain confidence. 
+instruments QuickCheck to gather some metrics about a particular properties and print out results in the console. However,
+it also possible to _enforce_ that some collected values stay above a certain threshold using [checkCoverage](https://hackage.haskell.org/package/QuickCheck-2.13.2/docs/Test-QuickCheck.html#v:checkCoverage).
+When used, QuickCheck will run the property as many times as necessary until a particular coverage requirement is satisfied, with a certain confidence.
 
 > **Why**
 >
@@ -1128,9 +1134,9 @@ When used, QuickCheck will run the property as many times as necessary until a p
 > for someone to accidentally make a generator worse for an existing property
 > without noticing it. Therefore, by enforcing clear coverage requirements with
 > `checkCoverage`, one can make a property fail if the coverage drops below an
-> acceptable threshold. For example, a property can measure the proportion of 
+> acceptable threshold. For example, a property can measure the proportion of
 > empty lists its generator yield and require that at least 50% of all generated
-> list are not empty. 
+> list are not empty.
 
 <details>
     <summary>See examples</summary>
@@ -1140,7 +1146,7 @@ prop_rangeIsValid :: Property
 prop_rangeIsValid = property $ \(r :: Range Integer) ->
     rangeIsValid r .&&.  all rangeIsValid (shrink r)
         & cover 10 (rangeIsFinite r) "finite range" $
-        & checkCoverage 
+        & checkCoverage
 
 spec :: Spec
 spec = do
@@ -1149,7 +1155,7 @@ spec = do
             checkCoverageWith lowerConfidence prop_shuffleCanShuffle
         it "shuffle is non-deterministic" $
             checkCoverageWith lowerConfidence prop_shuffleNotDeterministic
-        it "sort (shuffled xs) == sort xs" $ 
+        it "sort (shuffled xs) == sort xs" $
             checkCoverageWith lowerConfidence prop_shufflePreserveElements
   where
     lowerConfidence :: Confidence
@@ -1158,7 +1164,7 @@ spec = do
 </details>
 
 
-## Avoid `liftIO` in monadic properties
+### Avoid `liftIO` in monadic properties
 
 When running monadic properties in IO, it is often required to lift a
 particular IO action.  Unfortunately, the `PropertyM` monad in which the
@@ -1170,7 +1176,7 @@ in order to lift operation in the property monad.
 >
 > This is very important if the property also contains calls to `monitor`, `label`, `counterexample`
 > and so forth... Using `liftIO` actually breaks the abstraction boundary of the property monad which
-> then makes the reporting with these combinator ineffective. Using `run` however correctly inserts 
+> then makes the reporting with these combinator ineffective. Using `run` however correctly inserts
 > monadic operations and preserve reporting and measures done during the property.
 
 <details>
@@ -1201,33 +1207,33 @@ prop_createWalletTwice db (key@(PrimaryKey wid), cp, meta) =
 ```
 </details>
 
-# Testing
+## Testing
 
-## Test files are separated and self-contained
+### Test files are separated and self-contained
 
 Test files do not import other test files. Arbitrary instances are not shared
 across test files and are defined locally. If we do observe a recurring pattern
 in tests (like for instance, testing roundtrips), we may consider making this a
-library that test can import. 
+library that test can import.
 
 > **Why**
-> 
+>
 > It is really easy to make the testing code more complex than the actual code
-> it's initially testing. Limiting the interaction between test modules helps 
-> keeping a good maintainability and a rather low overhead when it comes to 
-> extend, modify, read or comprehend some tests. Also, in many cases, we do 
+> it's initially testing. Limiting the interaction between test modules helps
+> keeping a good maintainability and a rather low overhead when it comes to
+> extend, modify, read or comprehend some tests. Also, in many cases, we do
 > actually want to have different arbitrary generators for different test cases
 > so sharing instances is risky and cumbersome.
 
-## Unit test files names match their corresponding module
+### Unit test files names match their corresponding module
 
 Every module from a library has a corresponding test file, within the same
 folder architecture, and, sharing a same name prefix. Test files are postfixed
-with 'Spec' to distinguish them from their corresponding sources. 
+with 'Spec' to distinguish them from their corresponding sources.
 
-> **Why** 
+> **Why**
 >
-> It is much easier to find the corresponding test to a module if they share 
+> It is much easier to find the corresponding test to a module if they share
 > a same name. Also, this gives consistency and a clear pattern for naming
 > tests in order to avoid chaos.
 
