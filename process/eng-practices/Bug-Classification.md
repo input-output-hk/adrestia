@@ -5,7 +5,7 @@ tags: [qa]
 
 # Bug Classification
 
-Our software defects are tracked with Jira issues. Here is [the list of unresolved bugs](https://jira.iohk.io/issues?jql=project%3DADP%20and%20type%20%3D%20Bug%20and%20resolution%20%3D%20Unresolved%20ORDER%20BY%20priority%20DESC%2C%20created) in the Adrestia project.
+Our software defects are tracked with Jira issues. Here is [the list of unresolved bugs](https://input-output.atlassian.net/issues?jql=project%3DADP%20and%20type%20%3D%20Bug%20and%20resolution%20%3D%20Unresolved%20ORDER%20BY%20priority%20DESC%2C%20created) in the Adrestia project.
 
 We classify bugs by two criteria, which are related but not exactly
 the same thing.

@@ -18,3 +18,9 @@ tag:draft
 tag:incomplete
 ```
 
+## Documents to write
+
+- [[Estimation-Process]]
+- [[Communication-Conventions]]
+- [[Emacs]]
+- [[Nix]]

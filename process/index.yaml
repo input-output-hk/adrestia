@@ -19,3 +19,4 @@ template:
 pandoc:
   rewriteClass:
     prose: max-w-prose mx-auto
+    greenery: bg-green-100 text-green-700 font-bold text-3xl

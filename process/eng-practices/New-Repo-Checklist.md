@@ -80,7 +80,7 @@ may need IT to help with this change.
 
 - [ ] Add Autolink references for jira:
 
-  ADP-123  →  https://jira.iohk.io/browse/ADP-123
+  ADP-123  →  https://input-output.atlassian.net/browse/ADP-123
 
   ([see the GitHub documentation for more information](https://docs.github.com/en/github/administering-a-repository/configuring-autolinks-to-reference-external-resources))
 
