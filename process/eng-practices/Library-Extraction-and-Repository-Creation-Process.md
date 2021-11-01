@@ -19,6 +19,7 @@ This article documents the process that we used to create the
   * [Step 3: Identify Content Ancestors](#step-3-identify-content-ancestors)
   * [Step 4: Filter Commit History](#step-4-filter-commit-history)
   * [Step 5: Verify Commit History](#step-5-verify-commit-history)
+  * [Step 6: Push to GitHub](#step-6-push-to-github)
 
 ## Overview
 
@@ -121,19 +122,17 @@ We generate a list of path names for *all current files*, as well as path names
 for *all historical ancestor files*, using the following script:
 
 `find-paths.sh`:
-```sh
-for x in $(git ls-tree -r master --name-only)
-do
-    git log --follow --name-status -- $x \
-        | egrep R[0-9]+ \
-        | awk '{print $2; print $3}' \
-        | sort -u
-done
+```bash
+#!/usr/bin/env bash
+git ls-tree -r master --name-only | while read -r file; do
+    git log --follow --name-status -- "$file" \
+        | awk '/^R[0-9]+/ { print $2; print $3 } {}'
+done | sort -u
 ```
 
 Run the script from the root of the repository, as follows:
-```sh
-find-paths.sh | sort -u > files-to-keep
+```shell-session
+$ find-paths.sh > files-to-keep
 ```
 
 ### Step 4: Filter Commit History
@@ -143,8 +142,8 @@ that are unrelated to the list of files identified in the previous step.
 
 Run the following command, using the `git-filter-repo` tool:
 
-```sh
-git filter-repo --paths-from-file files-to-keep
+```shell-session
+$ git filter-repo --paths-from-file files-to-keep
 ```
 
 ### Step 5: Verify Commit History
@@ -153,8 +152,17 @@ In this step, we verify that we have retained all relevant parts of the
 history.
 
 Re-run the `find-paths` script from the root of the repository, as follows:
-```sh
-find-paths.sh | sort -u > files-kept
+```shell-session
+$ find-paths.sh > files-kept
 ```
 
 The content of `files-kept` should be **identical** to `files-to-keep`.
+
+### Step 6: Push to GitHub
+
+First follow the [[New-Repo-Checklist]] to create a repo on GitHub. Then:
+
+```shell-session
+$ git remote set-url origin git@github.com:input-output-hk/newrepo.git
+$ git push --force -u origin master
+```

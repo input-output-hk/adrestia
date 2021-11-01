@@ -30,5 +30,6 @@ being re-organised and updated.
 
 [Document Tree](-/all){class="h-32 p-4 border-4 bg-white rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline"}
 
+[Tasks](-/tasks){class="h-32 p-4 border-4 bg-white rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline"}
 :::
 :::

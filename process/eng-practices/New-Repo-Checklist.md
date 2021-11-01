@@ -1,11 +1,8 @@
 ---
 order: 6
-tags: [draft]
 ---
 
 # New Repo Checklist
-
-**Status**: #draft - Review and Comments please.
 
 Policy and checklist for creating a new repo on GitHub.
 
@@ -59,7 +56,7 @@ may need IT to help with this change.
 
 ### 4. Checklist for adding a new repo
 
-- [ ] Ensure appropriate access to the repo in _Settings_ → _Manage access_.
+- Ensure appropriate access to the repo in _Settings_ → _Manage access_.
 
   **DO** use GitHub [Input Output organization teams][teams] to manage access levels.
 
@@ -74,24 +71,24 @@ may need IT to help with this change.
   * [devops][] - Admin (for setting up CI things)
   * [release][] - Write (for editing release notes and making releases)
 
-- [ ] Name of `master` branch - it really doesn't matter, but consistency is nice.
+- Name of `master` branch - it really doesn't matter, but consistency is nice.
 
-- [ ] Switch off features such as Issues/Wiki/Project/Pages unless you actually need them.
+- Switch off features such as Issues/Wiki/Project/Pages unless you actually need them.
 
-- [ ] Add Autolink references for jira:
+- Add Autolink references for jira:
 
   ADP-123  →  https://input-output.atlassian.net/browse/ADP-123
 
   ([see the GitHub documentation for more information](https://docs.github.com/en/github/administering-a-repository/configuring-autolinks-to-reference-external-resources))
 
-- [ ] Remember to customize the "About" text and URL if applicable.
+- Remember to customize the "About" text and URL if applicable.
 
-- [ ] CI: if using Buildkite, set up a [pipeline](https://buildkite.com/input-output-hk) and webhook.
+- CI: if using Buildkite, set up a [pipeline](https://buildkite.com/input-output-hk) and webhook.
 
-- [ ] CI: if using Hydra open a PR to add a [jobset](https://github.com/input-output-hk/ci-ops/blob/master/jobsets/default.nix).
+- CI: if using Hydra open a PR to add a [jobset](https://github.com/input-output-hk/ci-ops/blob/master/jobsets/default.nix).
 
-- [ ] CI: if your CI requires secrets such as auth tokens, ensure that
+- CI: if your CI requires secrets such as auth tokens, ensure that
   all secrets are also stored in our shared LastPass folder (see
-  [Passwords](./Passwords)).
+  [Passwords]).
 
-- [ ] If this repo is splitting off an existing repo, see [this document from our wiki](https://github.com/input-output-hk/cardano-coin-selection/blob/master/information/repository-creation-process.md).
+- If this repo is splitting off an existing repo, see [[Library-Extraction-and-Repository-Creation-Process]].
