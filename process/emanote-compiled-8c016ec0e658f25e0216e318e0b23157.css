@@ -175,13 +175,13 @@ h1, h2, p, h3 {
 h1, p, h2 {
   margin: 0;
 }
+h1, p {
+  margin: 0;
+}
 h1, p, h2, h3, h4, pre {
   margin: 0;
 }
 h1, p, pre {
-  margin: 0;
-}
-h1, p {
   margin: 0;
 }
 input {
@@ -382,6 +382,10 @@ ul {
   --tw-border-opacity: 1;
   border-color: rgba(217, 119, 6, var(--tw-border-opacity));
 }
+.hover\:border-indigo-400:hover {
+  --tw-border-opacity: 1;
+  border-color: rgba(129, 140, 248, var(--tw-border-opacity));
+}
 .border-indigo-200 {
   --tw-border-opacity: 1;
   border-color: rgba(199, 210, 254, var(--tw-border-opacity));
@@ -401,15 +405,14 @@ ul {
   --tw-border-opacity: 1;
   border-color: rgba(156, 163, 175, var(--tw-border-opacity));
 }
-.hover\:border-indigo-400:hover {
-  --tw-border-opacity: 1;
-  border-color: rgba(129, 140, 248, var(--tw-border-opacity));
-}
 .rounded {
   border-radius: 0.25rem;
 }
 .rounded-md {
   border-radius: 0.375rem;
+}
+.rounded-lg {
+  border-radius: 0.5rem;
 }
 .rounded-t-xl {
   border-top-left-radius: 0.75rem;
@@ -674,9 +677,6 @@ ul {
 }
 .max-w-md {
   max-width: 28rem;
-}
-.max-w-prose {
-  max-width: 65ch;
 }
 .max-w-xs {
   max-width: 20rem;
@@ -958,9 +958,6 @@ ul {
   }
   .md\:mb-8 {
     margin-bottom: 2rem;
-  }
-  .md\:mt-4 {
-    margin-top: 1rem;
   }
   .md\:sticky {
     position: sticky;
