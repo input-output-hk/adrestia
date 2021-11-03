@@ -1,6 +1,6 @@
 ---
 order: 4
-tags: [qa]
+tags: [quality]
 ---
 
 # Bug Classification

@@ -1,46 +1,44 @@
 ---
-tags: [draft]
-tags: [qa]
+tags: [draft, quality, process]
 ---
 
 # Issue Tracking
 
-We use the Jira [ADP project](https://input-output.atlassian.net/issues/)
-to record development tasks.
+We primarily use [[Jira]] for issue tracking.
 
-## Account setup
-
-Authentication to jira is done through SSO with your
-[`@iohk.io` Google Account](https://accounts.google.com).
-
-## No anonymous access to Jira
-
-Be aware that there is no anonymous access to IOHK Jira, so the
-general public will not be aware of the contents of tickets, nor can
-they open Jira tickets.
-
-This is good in one sense because the information in bug trackers is
-raw and unfiltered, and sometimes doesn't provide a complete picture
-of the issue. But on the other hand, the community can't see
-information about bugs that might affect them, or planned features.
-
-With this in mind, please provide enough extra information in your
-GitHub pull requests and commit messages so that the issue can be
-understood, without referring to Jira.
-
-## go-jira
-
-Developers are strongly recommended to use the
-[go-jira](https://github.com/go-jira/jira) CLI for querying Jira. It
-is faster to use than the web interface for searching, and can be
-scripted to fit our needs.
-
-## *TODO*
-
-:::{.highlight-block}
-Incomplete docs.
+:::{.highlight-block .max-w-xs}
+**Sorry!** 😺
 :::
 
-- [ ] Move issue tracking info from [[Development-Process]] into this page, and update for Jira.
+This is so that:
 
-- [ ] Finalise and paste in new urgent issue handling process document.
+- We can link our tickets with tickets in other projects.
+- Project managers are more easily able to understand project status by looking at Jira.
+- We can link our development task tickets with user story tickets.
+
+## Bug tracking
+
+- When a potential bug is found, a jira ticket with type "Bug" is created.
+- The bug is assigned a _Severity / Probability Score_ by the creator according to [[Bug-Classification]]
+- Bug is assigned _Priority_ by Team Lead or Product Manager according to [[Bug-Classification]].
+- In case of uncertainty, the ticket is discussed with the team to confirm that it is indeed a bug, and how severe it is.
+- Corresponding sections of the ticket are filled in (context, reproduction path, expected behavior...)
+- If the bug turns out to be invalid, the ticket is closed with a note giving the reason.
+- When resolved, the bug is moved to the "QA" column of the sprint board.
+
+## Bug reports from non-IOHK GitHub users
+
+If the bug report is valid, create a corresponding Jira ticket and
+link it on the GitHub issue description, so that it can be planned for
+a development sprint.
+
+In the [cardano-wallet](https://github.com/input-output-hk/cardano-wallet/issues/new/choose) repo, there is a special GitHub template for [bug reports](https://github.com/input-output-hk/cardano-wallet/blob/master/.github/ISSUE_TEMPLATE/bug_report.yml).
+
+## CI Failures
+
+As a special exception, [CI failures](https://github.com/input-output-hk/cardano-wallet/blob/master/.github/ISSUE_TEMPLATE/failing_test.yml) **are** always tracked in GitHub,
+because it is easier to link them from GitHub PR comments.
+
+## TODO
+
+- [ ] Finalise and paste in new [[Urgent-Issue-Handling]] document.

@@ -122,7 +122,7 @@ We generate a list of path names for *all current files*, as well as path names
 for *all historical ancestor files*, using the following script:
 
 `find-paths.sh`:
-```bash
+```shell
 #!/usr/bin/env bash
 git ls-tree -r master --name-only | while read -r file; do
     git log --follow --name-status -- "$file" \

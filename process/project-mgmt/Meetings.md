@@ -3,7 +3,7 @@ Meetings... everyone loves them. Here is the weekly list of meetings for our Adr
 | Weekday   | Meetings              |
 |:----------|:----------------------|
 | Monday    | [Hello](#hello)             |
-| Tuesday   | [Hello](#hello), [Adrestia/Node/Daedalus](#adrestia-node-daedalus) |
+| Tuesday   | [Hello](#hello), [Adrestia/Node/Daedalus](#adrestia-node-daedalus), [Adrestia Planning](#adrestia-planning) |
 | Wednesday | [Iteration Planning](#iteration-planning)/[Mid-sprint planning](#mid-sprint-planning) |
 | Thursday  | [Hello](#hello), [Problem Management](#problem-management) |
 | Friday    | [Hello](#hello), [Dev meeting](#dev-meeting) |
@@ -26,7 +26,7 @@ Please make sure that your Jira tickets are up to date before this meeting.
 - Estimate new user stories as a team. The list of user stories to estimate will be advised before the meeting.
 
 ### Extra Information
- 
+
 - [Active Sprint in Jira (swimlanes)][swimlanes]
 - [Sprint Backlog in Jira][backlog]
 - [Pointing Poker Session 66716 (for estimations)][pointingpoker]
@@ -50,8 +50,8 @@ Please make sure that your Jira tickets are up to date before this meeting.
 - Estimate new user stories as a team. The list of user stories to estimate will be advised before the meeting.
 
 ### Extra Information
- 
-- [Active Sprint in Jira (swimlanes)][swimlanes]
+
+- [Active Sprint in Jira (swimlanes)][board]
 - [Pointing Poker Session 66716 (for estimations)][pointingpoker]
 
 ## Adrestia/Node/Daedalus
@@ -86,7 +86,7 @@ This is a planning meeting before the weekly planning meeting.
 
 Weekly problem management meeting to review, discuss, and prioritize trending problems experienced by our users.
 
-Topics include: 
+Topics include:
 
  - Daedalus
  - SPO
@@ -104,7 +104,7 @@ Weekly meeting slot to discuss dev issues and share knowledge.
 ### Agenda
 
 - Raise your agenda items at the start of the meeting.
-- If we don't have anything else to talk about, here is a list of possibilities: https://trello.com/b/B1cFGHHB/adrestia-hello-dev-meeting-topics
+- If we don't have anything else to talk about, here is a list of possibilities: [Trello Board][]
 
 
 ## Hello
@@ -118,34 +118,16 @@ This is a quick call where you can drop in and say hello and let us know how you
 
 ## References
 
-[swimlanes]: https://jira.iohk.io/secure/RapidBoard.jspa?rapidView=191&projectKey=ADP
-[backlog]: https://jira.iohk.io/secure/RapidBoard.jspa?rapidView=191&projectKey=ADP&view=planning.nodetail&versions=visible&epics=visible&issueLimit=100
+[board]: https://input-output.atlassian.net/jira/software/c/projects/ADP/boards/231
+[backlog]: https://input-output.atlassian.net/jira/software/c/projects/ADP/boards/231/backlog?issueLimit=1000
 [pointingpoker]: https://www.pointingpoker.com/66716
 
-The meeting links are PGP-encrypted down here so that we don't get
-randoms trying to join our calls.
 
-```
------BEGIN PGP MESSAGE-----
+[link-problem-management]: https://meet.google.com
+[link-iteration-planning]: https://meet.google.com
+[link-adrestia-node-daedalus]: https://meet.google.com
+[link-dev-meeting]: https://meet.google.com
+[link-hello]: https://meet.google.com
 
-hQIMA6ImDdhs9V8CAQ/9Fd8xL9mYzUWgWWmKHl+GSe3gCE229dtyJ5Rm9aSqf8Py
-SbeDY5eFP2PIuOi/qy9BIhK72mu1K9VLg8HAc0QCy43XtEulLtF4Z4jTsLtBvTzN
-THy1Z+2mdXDmoUJntbPDy7ZGlRTI2z8rUzFXTVULjkY1N/BaFuDj2pIttXaxGqmp
-nLyx319vTfImYXgHvCfUBcMhjYuPXrhPhMDK3WJaV9yLJ2EY8EoC43UbqcmVilvK
-+AexjJtq1M0eAGiMDSVm/a+H0OsZVUjMMgPZXYH0GkKFU3dX9UzyuIcHVkjasiwC
-ousHIRzL2UA7HFQMQjQJr24JJYkFQfxoPKUVLnBAborBvCf6dWN1Zz01cP+7JVXR
-9arDT4JxphsV6f1kam6vmKB4OO46bNPPeM4ucptqNvZ65tCD87jKFJ5dozwGepxj
-Wh5OJG6ZUzb+aMEyLK/UnbXa5ngsljG3TXr/haWhKXQ5f/QaNxIS7cMcBALODMWc
-se6OhYFSD+gN9DdaV1g8TpZM2uYUh5CozIXTNENZgeFy+XsowP2GR/jQ6dO7hLJ8
-F6SKaCbvfrgGOAzQ1xp/8KTdnbRRtewW4EjHQZyY6Y3GDCONSdJJp7RsvaPu0MyB
-jj9EI/I/gMUts5oiA/AxGB4JJsbmi7e7BRY6X4XY38Oj8iQ4nGrroaz7uCsBzdPS
-wGgBHf22/cqbYJtrKWF4v2HAF62q8GJ1HJM76pINy8u+QrrfE9LC6bvU8IvFSm8e
-ZwKKcxzU+ovaR/nvV7xYQGsGi03BSu6RP1DhGdbGN0WNtTB18w8FQqz5HkZqgeQx
-QKVDKxC/1wLC+IavS3TgnndXWSn+nX31fVaEpNrmRUatVKYSAiviUFB8GNnVoTyd
-snEkOsH2HBmspuHkut65CWa+pLUT9H428rz4zkQpg1z5NOKnfFhnmF6Q2rzRIhX8
-PHxLvuUe8r1cpFF7PpnDXtfJ0WiJgVUWmzqGtwzKmJ8IE40O4Q9TRBlnAhsAysvZ
-g8OjhTXM/i/kf+6stXJ/vbBpLeNNvRq3swJsA84vWWj0qg8mXDVVcULPDekJEV1j
-VJM2sqGxbnFrNA==
-=RbW8
------END PGP MESSAGE-----
-```
+[Trello Board]: https://trello.com/b/B1cFGHHB/adrestia-hello-dev-meeting-topics
+[agenda-adrestia-node-daedalus]: https://docs.google.com
