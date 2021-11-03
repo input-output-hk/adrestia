@@ -4,14 +4,14 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Bug Classification – Adrestia Process Docs
+    Estimation Process – Adrestia Process Docs
   </title>
   
     
       <meta property='og:description' content />
       <meta property='og:site_name' content='Adrestia Process Docs' />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Bug Classification' />
+      <meta property='og:title' content='Estimation Process' />
     
     
       <base href='/adrestia/process/' />
@@ -101,8 +101,8 @@
             </li>
           
             <li class='inline-flex items-center'>
-              <a class='px-1 font-bold' href='eng-practices'>
-                Engineering Practices
+              <a class='px-1 font-bold' href='project-mgmt'>
+                Project Management
               </a>
               <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
                 <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
@@ -320,7 +320,11 @@
     
       <!-- Variable bindings for this tree-->
   
-  
+    
+      
+    
+    
+
 
 
   
@@ -333,12 +337,12 @@
     
     
       <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
-      
+    
   
-    <a class='font-bold text-indigo-600 hover:underline truncate' title='Bug Classification' href='eng-practices/Bug-Classification'>
+    <a class='hover:underline truncate' title='Bug Classification' href='eng-practices/Bug-Classification'>
       Bug Classification
     </a>
     
@@ -472,11 +476,7 @@
     
       <!-- Variable bindings for this tree-->
   
-    
-      
-    
-    
-
+  
 
 
   
@@ -489,12 +489,12 @@
     
     
       <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'>
         </path>
       </svg>
-    
+      
   
-    <a class='hover:underline truncate' title='Estimation Process' href='project-mgmt/Estimation-Process'>
+    <a class='font-bold text-indigo-600 hover:underline truncate' title='Estimation Process' href='project-mgmt/Estimation-Process'>
       Estimation Process
     </a>
     
@@ -794,74 +794,42 @@
           <main class='px-4 py-4'>
             <h1 class='flex items-end justify-center mb-4 p-3 bg-indigo-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Bug Classification
+    Estimation Process
   </a>
 </h1>
             <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
-  
-    <p class='mb-3'>
-      Our software defects are tracked with Jira issues. Here is <a href='https://input-output.atlassian.net/issues?jql=project%3DADP%20and%20type%20%3D%20Bug%20and%20resolution%20%3D%20Unresolved%20ORDER%20BY%20priority%20DESC%2C%20created' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>the list of unresolved bugs</a> in the Adrestia project.
-    </p>
-  
-    <p class='mb-3'>
-      We classify bugs by two criteria, which are related but not exactly the same thing.
-    </p>
-  <h3 id='1-severity' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>1. Severity</h3>
-    <p class='mb-3'>
-      Indicates the impact on users and how much functionality is affected. The severity is assessed by the engineering and QA team working on the system.
-    </p>
-  
-    <p class='mb-3'>
-      The Jira issue <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Severity / Probability Score</code> field shows how bad the defect is.
-    </p>
-  <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Severity</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Description / Example</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>1</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>A core function of the system isn’t responsive or is returning invalid data.</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>2</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Visible impact on a core function or significant performance degradation.</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>3</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Small defects that do not prevent any crucial functionality from working. Could some uninformative error or some bearable performance degradation.</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>4</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Defect that won’t result in any noticeable disruption of the system, e.g. typo in a message.</td></tr></tbody></table><h3 id='2-priority' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>2. Priority</h3>
-    <p class='mb-3'>
-      Priority defines which issues should be addressed first.
-    </p>
-  
-    <p class='mb-3'>
-      The priority value is set by the product team based on business requirements, the severity of the defect, estimated time to fix it, and other factors such as impact on the user experience.
-    </p>
-  
-    <p class='mb-3'>
-      High severity defects will tend to have a higher priority, but this is not necessarily always the case.
-    </p>
-  <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Priority</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Description / Example</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Highest</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Requires immediate attention. Critical issue that needs to be fixed ASAP and released as hotfix.</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>High</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Needs to be addressed as soon as possible, probably within current sprint.</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Medium</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>A bug that needs to be addressed after ongoing stories and tasks. For instance can be planned for next sprint.</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Low</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Would eventually require attention if time allows it.</td></tr></tbody></table><hr class='mb-3' />
-    <blockquote class='py-0.5 px-4 mb-3 italic border-l-4 bg-gray-50 text-gray-600 border-gray-400 quote'>
-      
-    <p class='mb-3'>
-      Resources:
-    </p>
-  
-    <ul class='my-3 ml-6 space-y-1 list-disc'>
-      
-        <li>
-          <a href='https://www.lambdatest.com/blog/bug-severity-vs-priority-in-testing-with-examples/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>https://www.lambdatest.com/blog/bug-severity-vs-priority-in-testing-with-examples/</a>
-        </li>
-      
-        <li>
-          <a href='https://www.atlassian.com/incident-management/kpis/severity-levels' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>https://www.atlassian.com/incident-management/kpis/severity-levels</a>
-        </li>
-      
-    </ul>
-  
-    </blockquote>
-  
+  <h2 id='ticket-must-be-ready-before-estimation' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Ticket must be ready before estimation</h2><h2 id='timeboxed-tasks-for-estimaation' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Timeboxed tasks for estimaation</h2><h2 id='estimates-come-with-confidence-intervals' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Estimates come with confidence intervals</h2><h2 id='points-and-velocity' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Points and Velocity</h2><h2 id='team-estimation' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Team Estimation</h2><h2 id='task-dependencies-recorded-in-ticket' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Task dependencies recorded in ticket</h2><h2 id='put-remaining-time-on-ticket' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Put Remaining time on ticket</h2>
   <!-- What goes in this file will appear below the note body-->
 </article>
             <div class='flex flex-col lg:flex-row lg:space-x-2'>
               
               
+  <div class='flex-1 p-4 mt-8 bg-gray-100 rounded'>
+    <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
+    <ul class='space-y-1'>
+      
+        <li>
+          <a class='text-indigo-600 font-bold hover:bg-indigo-50' href='todo'>
+            Documents in progress
+          </a>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-indigo-200 hover:border-indigo-500'>
+      <div><a href='project-mgmt/Estimation-Process' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Estimation Process</a></div>
+    </div>
+  
+</div>
+          
+        </li>
+      
+    </ul>
+  </div>
+
             </div>
             
   <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
-    
-      <a title='Tag' class='px-1 bg-gray-100 rounded hover:bg-gray-50 hover:text-indigo-500' href='-/tags/qa'>
-        <!-- DoNotFormat -->
-        #qa
-        <!-- DoNotFormat -->
-      </a>
     
   </section>
 

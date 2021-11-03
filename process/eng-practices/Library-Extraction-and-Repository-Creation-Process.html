@@ -17,11 +17,12 @@
       <base href='/adrestia/process/' />
       <link href='static/favicon.png' rel='icon' />
     
-    <meta name='generator' content='Emanote' />
+    <link href='https://cdn.jsdelivr.net/npm/prismjs@1.25.0/themes/prism-tomorrow.css' rel='stylesheet' />
+<script src='https://cdn.jsdelivr.net/combine/npm/prismjs@1.25.0/prism.min.js,npm/prismjs@1.25.0/plugins/autoloader/prism-autoloader.min.js'></script>
 
   
   <!-- CSSSTART -->
-	<link rel="stylesheet" href="emanote-compiled-04f6cdb77e085c7890119f67e92e8432.css" />
+	<link rel="stylesheet" href="emanote-compiled-375f81ef4d19c80a4f65cf01bcb51174.css" />
   <!-- CSSEND -->
 
   <!-- Heist error element -->
@@ -493,6 +494,45 @@
       </svg>
     
   
+    <a class='hover:underline truncate' title='Estimation Process' href='project-mgmt/Estimation-Process'>
+      Estimation Process
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+  
+    
+      
+    
+    
+
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-2 space-x-2 justify-left'>
+    
+    
+      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
     <a class='hover:underline truncate' title='Issue Tracking' href='project-mgmt/Issue-Tracking'>
       Issue Tracking
     </a>
@@ -798,6 +838,10 @@
           <a href='#step-5-verify-commit-history' class='text-indigo-600 font-bold hover:underline'>Step 5: Verify Commit History</a>
         </li>
       
+        <li>
+          <a href='#step-6-push-to-github' class='text-indigo-600 font-bold hover:underline'>Step 6: Push to GitHub</a>
+        </li>
+      
     </ul>
   
         </li>
@@ -963,17 +1007,15 @@
     <p class='mb-3'>
       <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>find-paths.sh</code>:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='sh language-sh'>for x in $(git ls-tree -r master --name-only)
-do
-    git log --follow --name-status -- $x \
-        | egrep R[0-9]+ \
-        | awk '{print $2; print $3}' \
-        | sort -u
-done</code></pre></div>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='bash language-bash'>#!/usr/bin/env bash
+git ls-tree -r master --name-only | while read -r file; do
+    git log --follow --name-status -- "$file" \
+        | awk '/^R[0-9]+/ { print $2; print $3 } {}'
+done | sort -u</code></pre></div>
     <p class='mb-3'>
       Run the script from the root of the repository, as follows:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='sh language-sh'>find-paths.sh | sort -u &gt; files-to-keep</code></pre></div><h3 id='step-4-filter-commit-history' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Step 4: Filter Commit History</h3>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='shell-session language-shell-session'>$ find-paths.sh &gt; files-to-keep</code></pre></div><h3 id='step-4-filter-commit-history' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Step 4: Filter Commit History</h3>
     <p class='mb-3'>
       In this step, we <em>filter</em> the version control history, removing all commits that are unrelated to the list of files identified in the previous step.
     </p>
@@ -981,7 +1023,7 @@ done</code></pre></div>
     <p class='mb-3'>
       Run the following command, using the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>git-filter-repo</code> tool:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='sh language-sh'>git filter-repo --paths-from-file files-to-keep</code></pre></div><h3 id='step-5-verify-commit-history' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Step 5: Verify Commit History</h3>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='shell-session language-shell-session'>$ git filter-repo --paths-from-file files-to-keep</code></pre></div><h3 id='step-5-verify-commit-history' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Step 5: Verify Commit History</h3>
     <p class='mb-3'>
       In this step, we verify that we have retained all relevant parts of the history.
     </p>
@@ -989,16 +1031,43 @@ done</code></pre></div>
     <p class='mb-3'>
       Re-run the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>find-paths</code> script from the root of the repository, as follows:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='sh language-sh'>find-paths.sh | sort -u &gt; files-kept</code></pre></div>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='shell-session language-shell-session'>$ find-paths.sh &gt; files-kept</code></pre></div>
     <p class='mb-3'>
       The content of <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>files-kept</code> should be <strong>identical</strong> to <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>files-to-keep</code>.
     </p>
-  
+  <h3 id='step-6-push-to-github' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Step 6: Push to GitHub</h3>
+    <p class='mb-3'>
+      First follow the <a href='eng-practices/New-Repo-Checklist' class='text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>New Repo Checklist</a> to create a repo on GitHub. Then:
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='shell-session language-shell-session'>$ git remote set-url origin git@github.com:input-output-hk/newrepo.git
+$ git push --force -u origin master</code></pre></div>
   <!-- What goes in this file will appear below the note body-->
 </article>
             <div class='flex flex-col lg:flex-row lg:space-x-2'>
               
               
+  <div class='flex-1 p-4 mt-8 bg-gray-100 rounded'>
+    <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
+    <ul class='space-y-1'>
+      
+        <li>
+          <a class='text-indigo-600 font-bold hover:bg-indigo-50' href='eng-practices/New-Repo-Checklist'>
+            New Repo Checklist
+          </a>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-indigo-200 hover:border-indigo-500'>
+      <div><p>If this repo is splitting off an existing repo, see <a href='eng-practices/Library-Extraction-and-Repository-Creation-Process' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Extracting New Libraries From Existing Repositories</a>.</p></div>
+    </div>
+  
+</div>
+          
+        </li>
+      
+    </ul>
+  </div>
+
             </div>
             
   <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
@@ -1010,31 +1079,41 @@ done</code></pre></div>
         </div>
       </div>
       <footer class='flex items-center justify-center mt-2 mb-8 space-x-4 text-center text-gray-800'>
+  
   <div>
-    <a href=''>
-      <svg xmlns='http://www.w3.org/2000/svg' class='w-4 h-4 flex-shrink-0 inline' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+    <a href='' title='Go to Home page'>
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-5 h-5 hover:text-indigo-700' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6'></path>
       </svg>
     </a>
   </div>
   <div>
-    Generated by <a class='font-bold' href='https://note.ema.srid.ca/'>Emanote</a>
-    
-      
-        <span class='font-mono text-sm tracking-tighter' title='And rendered with /templates/layouts/book'>
-          0.3.11.0
-        </span>
-      
-    
-  </div>
-  <div>
     <a href='-/all' title='View Index'>
-      <svg style='width: 1rem;' class='hover:text-indigo-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+      <svg class='w-5 h-5 hover:text-indigo-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
         <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4'>
         </path>
       </svg>
     </a>
-
+  </div>
+  <div>
+    <a href='https://note.ema.srid.ca' target='_blank' title='Generated by Emanote 0.3.12.1'>
+      <img class='w-5 h-5 hover:text-indigo-700' src='_emanote-static/emanote-logo.svg' />
+    </a>
+  </div>
+  <div>
+    <a href='-/tags' title='View tags'>
+      <svg class='w-5 h-5 hover:text-indigo-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
+        </path>
+      </svg>
+    </a>
+  </div>
+  <div>
+    <a href='-/tasks' title='View tasks'>
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-5 h-5 hover:text-indigo-700' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z'></path>
+      </svg>
+    </a>
   </div>
 </footer>
     </div>
