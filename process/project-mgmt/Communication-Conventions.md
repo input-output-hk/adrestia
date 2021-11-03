@@ -1,3 +1,7 @@
+---
+tags: [ needs/writing ]
+---
+
 # Communication conventions
 
 These are not rules.

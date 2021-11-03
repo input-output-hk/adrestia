@@ -1,7 +1,5 @@
 ---
 order: -7
-template:
-  name: /templates/layouts/note
 ---
 
 # Resources

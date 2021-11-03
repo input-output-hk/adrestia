@@ -1,5 +1,8 @@
 ---
-tags: [process]
+tags:
+  - process
+  - needs/review
+  - needs/expansion
 ---
 
 # Urgent issue handling process

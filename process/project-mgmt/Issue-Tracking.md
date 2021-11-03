@@ -1,5 +1,5 @@
 ---
-tags: [draft, quality, process]
+tags: [quality, process]
 ---
 
 # Issue Tracking

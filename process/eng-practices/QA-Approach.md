@@ -1,10 +1,15 @@
 ---
+tags: [ needs/cleanup ]
 pandoc:
   rewriteClass:
     figure: rounded bg-indigo-100 m-4 px-4 py-1 italic
 ---
 
 # QA Approach
+
+:::{.highlight-block .max-w-xs}
+This is a blog entry draft.
+:::
 
 "Can you write a blog post about the QA process that Adrestia has?". When I saw this question on my slack I thought something is not right there. It took me several minutes but I finally got it. That's right, there is no such thing as "QA process" in Adrestia, because QA (i.e. Quality Assurance) is there on every level of the Process we follow. Top to bottom. What derives from this fact is also a simple, yet powerful, principle: QA is responsibility of everyone.
 

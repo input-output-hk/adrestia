@@ -1,3 +1,7 @@
+---
+tags: [ needs/review ]
+---
+
 # Conference Guidelines
 
 Team members are encouraged to present talks about our software to local meetup
