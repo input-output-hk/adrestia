@@ -2,7 +2,9 @@
 order: -9
 ---
 
-# Engineering Practices
+# Code
+
+What does our code look like? Conventions, guidelines, …
 
 ```query
 path:./*

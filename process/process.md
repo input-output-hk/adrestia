@@ -2,7 +2,9 @@
 order: -8
 ---
 
-# Project Management
+# Process
+
+How do we arrive at our code?
 
 The team's process is derived from [extreme programming][xp] and [scrum][scrum], adapted for use by a distributed teams. It can be summarized as follows:
 
