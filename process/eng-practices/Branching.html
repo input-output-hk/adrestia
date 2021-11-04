@@ -4,14 +4,14 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Co-Pilot Process – Adrestia Process Docs
+    Git Branching Scheme – Adrestia Process Docs
   </title>
   
     
       <meta property='og:description' content />
       <meta property='og:site_name' content='Adrestia Process Docs' />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Co-Pilot Process' />
+      <meta property='og:title' content='Git Branching Scheme' />
     
     
       <base href='/adrestia/process/' />
@@ -102,8 +102,8 @@
             </li>
           
             <li class='inline-flex items-center'>
-              <a class='px-1 font-bold' href='project-mgmt'>
-                Project Management
+              <a class='px-1 font-bold' href='eng-practices'>
+                Engineering Practices
               </a>
               <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
                 <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
@@ -360,11 +360,7 @@
     
       <!-- Variable bindings for this tree-->
   
-    
-      
-    
-    
-
+  
 
 
   
@@ -377,12 +373,12 @@
     
     
       <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'>
         </path>
       </svg>
-    
+      
   
-    <a class='hover:underline truncate' title='Git Branching Scheme' href='eng-practices/Branching'>
+    <a class='font-bold text-indigo-600 hover:underline truncate' title='Git Branching Scheme' href='eng-practices/Branching'>
       Git Branching Scheme
     </a>
     
@@ -711,7 +707,11 @@
     
       <!-- Variable bindings for this tree-->
   
-  
+    
+      
+    
+    
+
 
 
   
@@ -724,12 +724,12 @@
     
     
       <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
-      
+    
   
-    <a class='font-bold text-indigo-600 hover:underline truncate' title='Co-Pilot Process' href='project-mgmt/Co-Pilot'>
+    <a class='hover:underline truncate' title='Co-Pilot Process' href='project-mgmt/Co-Pilot'>
       Co-Pilot Process
     </a>
     
@@ -1380,56 +1380,40 @@
           <main class='px-4 py-4'>
             <h1 class='flex items-end justify-center mb-4 p-3 bg-indigo-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Co-Pilot Process
+    Git Branching Scheme
   </a>
 </h1>
             <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
   
     <p class='mb-3'>
-      User stories are assigned to and owned by a single member of the team (a.k.a the <em>Pilot</em>), and seconded by a <em>Co-Pilot</em>.
+      Use these names for your Git branches.
+    </p>
+  <h2 id='topic-branches' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Topic branches</h2>
+    <p class='mb-3'>
+      Use the format <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>user/issue/topic</code>.
+    </p>
+  <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Part</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Meaning</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Example</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Optional</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><em>user</em></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Your GitHub username</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>rvl</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>If branch is a shared effort and <em>issue</em> is provided.</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><em>issue</em></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Jira issue key or GitHub issue number</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>ADP-123</code>, <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>1234</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>If <em>username</em> and/or <em>issue</em> are provided.</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><em>topic</em></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Some description of the branch</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>add-foo</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>If <em>issue</em> is provided.</td></tr></tbody></table><h2 id='release-branches' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Release branches</h2>
+    <p class='mb-3'>
+      We release from the mainline branch, and therefore don’t use release branches.
     </p>
   
     <p class='mb-3'>
-      The roles work as follows:
+      This lowers maintenance overheads, but requires that we always keep <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>master</code> in a releaseable state.
     </p>
-  <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Mission</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Role</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Clarify product requirements as needed with the product owner(s)</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Pilot</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Break U/S into tasks (small, sizeable, chunks of work)</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Pilot</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Estimate U/S in terms of # of weeks</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Pilot</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Implement each task of a U/S</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Pilot</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Challenge the task division and review it</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Co-Pilot</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Primary reviewer of the development tasks</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Co-Pilot</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Call for assistance from peers when needed</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Co-Pilot</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Challenge implementation decisions and technical choices</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Co-Pilot</td></tr></tbody></table>
+  <h2 id='mainline-branch' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Mainline branch</h2>
+    <p class='mb-3'>
+      Mainline branch is <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>master</code> - for consistency.
+    </p>
+  
   <!-- What goes in this file will appear below the note body-->
 </article>
             <div class='flex flex-col lg:flex-row lg:space-x-2'>
               
               
-  <div class='flex-1 p-4 mt-8 bg-gray-100 rounded'>
-    <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
-    <ul class='space-y-1'>
-      
-        <li>
-          <a class='text-indigo-600 font-bold hover:bg-indigo-50' href='project-mgmt'>
-            Project Management
-          </a>
-          
-            <div class='mb-4 overflow-auto text-sm text-gray-500'>
-  
-    <div class='pl-2 mt-2 border-l-2 border-indigo-200 hover:border-indigo-500'>
-      <div><p>User stories are assigned to and owned by a single member of the team (a.k.a the Pilot). Pilots are seconded by a <a href='project-mgmt/Co-Pilot' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Co-Pilot Process</a>.</p></div>
-    </div>
-  
-</div>
-          
-        </li>
-      
-    </ul>
-  </div>
-
             </div>
             
   <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
-    
-      <a title='Tag' class='px-1 bg-gray-100 rounded hover:bg-gray-50 hover:text-indigo-500' href='-/tags/needs/expansion'>
-        <!-- DoNotFormat -->
-        #needs/expansion
-        <!-- DoNotFormat -->
-      </a>
     
   </section>
 

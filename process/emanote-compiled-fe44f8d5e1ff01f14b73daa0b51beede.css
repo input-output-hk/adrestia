@@ -144,6 +144,9 @@ h1, h2 {
   font-size: inherit;
   font-weight: inherit;
 }
+h1, p, h2 {
+  margin: 0;
+}
 h1, p, h2, pre, h3, blockquote {
   margin: 0;
 }
@@ -170,9 +173,6 @@ h1, dl, dd, p {
   margin: 0;
 }
 h1, h2, p, h3 {
-  margin: 0;
-}
-h1, p, h2 {
   margin: 0;
 }
 h1, p {
@@ -342,13 +342,13 @@ ul {
   --tw-bg-opacity: 1;
   background-color: rgba(165, 180, 252, var(--tw-bg-opacity));
 }
-.bg-gray-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgba(55, 65, 81, var(--tw-bg-opacity));
-}
 .hover\:bg-indigo-50:hover {
   --tw-bg-opacity: 1;
   background-color: rgba(238, 242, 255, var(--tw-bg-opacity));
+}
+.bg-gray-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(55, 65, 81, var(--tw-bg-opacity));
 }
 .checked\:bg-indigo-600:checked {
   --tw-bg-opacity: 1;
@@ -382,10 +382,6 @@ ul {
   --tw-border-opacity: 1;
   border-color: rgba(217, 119, 6, var(--tw-border-opacity));
 }
-.hover\:border-indigo-400:hover {
-  --tw-border-opacity: 1;
-  border-color: rgba(129, 140, 248, var(--tw-border-opacity));
-}
 .border-indigo-200 {
   --tw-border-opacity: 1;
   border-color: rgba(199, 210, 254, var(--tw-border-opacity));
@@ -393,6 +389,10 @@ ul {
 .hover\:border-indigo-500:hover {
   --tw-border-opacity: 1;
   border-color: rgba(99, 102, 241, var(--tw-border-opacity));
+}
+.hover\:border-indigo-400:hover {
+  --tw-border-opacity: 1;
+  border-color: rgba(129, 140, 248, var(--tw-border-opacity));
 }
 .checked\:border-transparent:checked {
   border-color: transparent;

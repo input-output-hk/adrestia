@@ -23,7 +23,7 @@
 
   
   <!-- CSSSTART -->
-	<link rel="stylesheet" href="emanote-compiled-8c016ec0e658f25e0216e318e0b23157.css" />
+	<link rel="stylesheet" href="emanote-compiled-fe44f8d5e1ff01f14b73daa0b51beede.css" />
   <!-- CSSEND -->
 
   <!-- Heist error element -->
@@ -345,6 +345,45 @@
   
     <a class='hover:underline truncate' title='Exception Handling Guidelines' href='eng-practices/Exception-Handling'>
       Exception Handling Guidelines
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+  
+    
+      
+    
+    
+
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-2 space-x-2 justify-left'>
+    
+    
+      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
+    <a class='hover:underline truncate' title='Git Branching Scheme' href='eng-practices/Branching'>
+      Git Branching Scheme
     </a>
     
       
@@ -1348,37 +1387,141 @@
   <!-- What goes in this file will appear on top of note body-->
   
     <p class='mb-3'>
-      These are not rules.
+      Staying in touch is difficult when working remotely within a global organaisation.
     </p>
   
-    <ul class='my-3 ml-6 space-y-1 list-disc'>
+    <p class='mb-3'>
+      We tend to suffer from the problems of not enough communication <em>and</em> too much communication, both at the same time! The actual issue is low quality of communication, and the use of inappropriate mediums of communication.
+    </p>
+  <h2 id='goals' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Goals</h2>
+    <ul class='my-3 ml-6 space-y-1 list-decimal list-inside'>
       
         <li>
-          Discussions happen on Slack in clear threads, decisions are documented on GitHub as comments on issues
+          When a team member needs help they are able to ask and get a reply reasonably soon.
         </li>
       
         <li>
-          Our GitHub wiki can be extended at any time with insights and details about the software
+          Team members must be able to work on their tasks without being bothered by irrelevant messages.
+        </li>
+      
+        <li>
+          Team members don’t feel alone with their work - they can see who else “around” at the moment.
+        </li>
+      
+        <li>
+          Popup notifications, red dots, etc, are only shown for truly important messages.
+        </li>
+      
+        <li>
+          Team members control how and when they are notified of messages.
+        </li>
+      
+        <li>
+          Team members have a shared medium to discuss frankly the topics which matter - privately and without intrusion or judgement.
+        </li>
+      
+        <li>
+          People from other teams have a way of contacting the team and escalating urgent issues.
         </li>
       
     </ul>
-  <h2 id='when-to-use-slack' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>When to use Slack</h2><h2 id='private-matrix-server-for-team' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Private matrix Server for team</h2>
+  <h2 id='solution' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Solution</h2>
     <p class='mb-3'>
-      Web interface is here: <a href='https://element.adrestia.iohkdev.io' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>https://element.adrestia.iohkdev.io</a>
+      We will use a private Matrix server for team chats, in place of the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#adrestia-secret-fort</code> slack channel, which will be archived.
     </p>
   
     <p class='mb-3'>
-      You can also use other matrix clients.
+      Team members are asked to review messages from Slack once per day. They may choose to use Slack more frequently, but this is up to them.
     </p>
-  <h3 id='when-to-be-online' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>When to be online</h3><h3 id='when-to-ping' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>When to ping</h3>
+  <h3 id='matrix' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Matrix</h3>
     <p class='mb-3'>
-      Use of <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>@</code>
+      The Matrix server is <a href='https://matrix.adrestia.iohkdev.io/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>adrestia.iohkdev.io</a>.
     </p>
-  <h3 id='concentration-time' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Concentration time</h3><h2 id='when-to-use-calls' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>When to use calls</h2><h2 id='links' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Links</h2>
+  
+    <p class='mb-3'>
+      You can use any Matrix client to connect, or the <a href='https://element.adrestia.iohkdev.io/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Element Web</a> client.
+    </p>
+  <h4 id='authentication' class='mt-6 mb-2 text-2xl font-bold text-gray-700'>Authentication</h4>
+    <p class='mb-3'>
+      Any user with an active <a href='https://accounts.google.com' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>iohk.io Google Account</a> can log in.
+    </p>
+  
+    <p class='mb-3'>
+      Some people have username/password accounts. These were created manually with the Matrix Synapse user admin API.
+    </p>
+  
+    <p class='mb-3'>
+      Example usernames:
+    </p>
+  
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          <a href='https://matrix.to/#/@rvl:adrestia.iohkdev.io' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>@rvl:adrestia.iohkdev.io</a>
+          IOHK Google account: <a href='https://element.adrestia.iohkdev.io/#/user/@rodney.lorrimar:adrestia.iohkdev.io' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>@rodney.lorrimar:adrestia.iohkdev.io</a>
+        </li>
+      
+        <li>
+          Username/password account: <a href='https://element.adrestia.iohkdev.io/#/user/@rvl:adrestia.iohkdev.io' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>@rvl:adrestia.iohkdev.io</a>
+        </li>
+      
+    </ul>
+  <h4 id='rooms' class='mt-6 mb-2 text-2xl font-bold text-gray-700'>Rooms</h4>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          <a href='https://element.adrestia.iohkdev.io/#/room/#dev:adrestia.iohkdev.io' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>#dev:adrestia.iohkdev.io</a> (invite only) - Development discussion
+        </li>
+      
+        <li>
+          <a href='https://element.adrestia.iohkdev.io/#/room/#testing:adrestia.iohkdev.io' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>#testing:adrestia.iohkdev.io</a> - Used for experimenting with Matrix chat.
+        </li>
+      
+    </ul>
+  <h4 id='when-to-be-online' class='mt-6 mb-2 text-2xl font-bold text-gray-700'>When to be online</h4>
+    <p class='mb-3'>
+      Team members are very much encouraged to be online with Matrix while they are at work on their computer, and offline otherwise.
+    </p>
+  <h4 id='concentration-time' class='mt-6 mb-2 text-2xl font-bold text-gray-700'>Concentration time</h4>
+    <p class='mb-3'>
+      Sometimes complete silence is necessary for your task. In that case you can switch off Matrix as well. But most times it shouldn’t be bothersome because of the small number of users, and the notification controls which matrix clients provide.
+    </p>
+  <h4 id='when-to-ping' class='mt-6 mb-2 text-2xl font-bold text-gray-700'>When to ping</h4>
+    <p class='mb-3'>
+      Use the ping <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>@username:adrestia.iohkdev.io</code> in a channel to get someone’s attention.
+    </p>
+  
+    <p class='mb-3'>
+      This usually results in a more prominent notification, depending on their client settings.
+    </p>
+  <h3 id='when-to-use-calls' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>When to use calls</h3>
+    <p class='mb-3'>
+      Often it’s easier to explain something or talk a problem through by video or audio calls. If you’re finding it difficult to understand or explain something by text chat, then start up a call, and save yourself some time.
+    </p>
+  <h3 id='when-to-write-a-document' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>When to write a document</h3>
+    <p class='mb-3'>
+      Write a <a href='eng-practices/Documentation' class='text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>document</a> if the information or question that you are trying to convey is too big or complex for a chat room.
+    </p>
+  
+    <p class='mb-3'>
+      If something has been discussed that will probably be useful in future, you can help everyone by transferring it into a <a href='eng-practices/Documentation' class='text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>document</a>. It’s quite difficult to find information by searching chat room archives.
+    </p>
+  
+    <p class='mb-3'>
+      If a design decision has been reached, record it as a document in the project source code repository.
+    </p>
+  
+    <p class='mb-3'>
+      If a process or practices decision has been reached, record it in the <a href='' class='text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Adrestia docs</a> repository.
+    </p>
+  <h3 id='when-to-use-pair-programming' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>When to use pair programming</h3>
+    <p class='mb-3'>
+      See <span title='Link is broken'><s>[[Mob-Development]]</s>❌</span>.
+    </p>
+  <h2 id='future-goals' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Future Goals</h2>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          It would be really good if there were a “standing” video call session always running which team members can easily join and leave at any time. Matrix “widgets” might be suitable for this purpose.
         </li>
       
     </ul>
@@ -1432,6 +1575,12 @@
       <a title='Tag' class='px-1 bg-gray-100 rounded hover:bg-gray-50 hover:text-indigo-500' href='-/tags/needs/writing'>
         <!-- DoNotFormat -->
         #needs/writing
+        <!-- DoNotFormat -->
+      </a>
+    
+      <a title='Tag' class='px-1 bg-gray-100 rounded hover:bg-gray-50 hover:text-indigo-500' href='-/tags/needs/review'>
+        <!-- DoNotFormat -->
+        #needs/review
         <!-- DoNotFormat -->
       </a>
     
