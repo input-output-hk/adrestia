@@ -111,9 +111,18 @@ convert to LaTeX only once you're certain that you need it.
 [CommonMark]: https://commonmark.org/
 [gfm]: https://github.github.com/gfm/
 
+## Documentation Tools
+
 Avoid using proprietary software for writing and publishing documentation. Some
 of these systems may look all nice and flashy, but they will usually bite us in
 the future.
+
+### Collaborative Editing
+
+Use [md.adrestia.iohkdev.io](https://md.adrestia.iohkdev.io/) for
+collaborative editing of Markdown documents and as a scratch pad. It
+is a private instance of [Hedgedoc](https://hedgedoc.org), which is
+the same software that runs [HackMD](https://hackmd.io/).
 
 ### Effluence
 
@@ -193,3 +202,21 @@ These todo items will appear in the [Task Index](/-/tasks).
 - Use headings to divide your document into logical sections.
 
 - Apply the _IOHK Style Guide_ where applicable.
+
+## Emanote Resources
+
+- [Emanote website](https://note.ema.srid.ca/)
+  - [Default `index.yaml`](https://github.com/srid/emanote/blob/master/default/index.yaml)
+  - [YAML config demo](https://note.ema.srid.ca/demo)
+ - YAML multiline help page
+ - [Commonmark Spec](https://commonmark.org)
+ - Markdown Table Generator
+ - [commonmark-hs](https://github.com/jgm/commonmark-hs) - The Markdown parser used by Emanote.
+   - Fenced divs extension
+   - [Attributes extension](https://github.com/jgm/commonmark-hs/blob/master/commonmark-extensions/test/attributes.md)
+ - [Pandoc](https://pandoc.org) - Document conversion tool which supports Markdown.
+ - [Tailwind CSS Framework](https://tailwindcss.com) - The CSS framework used for Emanote.
+
+## More things to write
+
+- [ ] Documentation versioning policy
