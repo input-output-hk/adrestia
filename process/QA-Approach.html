@@ -4,27 +4,26 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Architecture – Adrestia Process Docs
+    QA Approach – Adrestia Process Docs
   </title>
   
     
       <meta property='og:description' content />
       <meta property='og:site_name' content='Adrestia Process Docs' />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Architecture' />
+      <meta property='og:title' content='QA Approach' />
     
     
       <base href='/adrestia/' />
       <link href='static/favicon.png' rel='icon' />
     
-    <script src='https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js'></script>
-<script>
-  mermaid.initialize({startOnLoad:false});
-  mermaid.init(undefined,document.querySelectorAll(".mermaid"));
-</script>
+    <link href='static/adrestia.css' rel='stylesheet' />
+<link href='https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-tomorrow.css' rel='stylesheet' />
+<script src='https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/prism.min.js,npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js'></script>
+
   
   <!-- CSSSTART -->
-	<link rel="stylesheet" href="emanote-compiled-76ac1999a0a0661db923fa7e3d2202d5.css" />
+	<link rel="stylesheet" href="emanote-compiled-820baac742dc107dfaccf057e16d4beb.css" />
   <!-- CSSEND -->
 
   <!-- Heist error element -->
@@ -103,8 +102,8 @@
             </li>
           
             <li class='inline-flex items-center'>
-              <a class='px-1 font-bold' href='eng-practices'>
-                Engineering Practices
+              <a class='px-1 font-bold' href='process'>
+                Process
               </a>
               <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
                 <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
@@ -191,8 +190,8 @@
       </svg>
       
   
-    <a class='font-bold hover:underline truncate' title='Engineering Practices' href='eng-practices'>
-      Engineering Practices
+    <a class='font-bold hover:underline truncate' title='Code' href='code'>
+      Code
     </a>
     
       
@@ -205,7 +204,11 @@
     
       <!-- Variable bindings for this tree-->
   
-  
+    
+      
+    
+    
+
 
 
   
@@ -218,12 +221,12 @@
     
     
       <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
-      
+    
   
-    <a class='font-bold text-indigo-600 hover:underline truncate' title='Architecture' href='eng-practices/Architecture'>
+    <a class='hover:underline truncate' title='Architecture' href='code/Architecture'>
       Architecture
     </a>
     
@@ -262,46 +265,7 @@
       </svg>
     
   
-    <a class='hover:underline truncate' title='Definition of “Done”' href='eng-practices/Definition-of-Done'>
-      Definition of “Done”
-    </a>
-    
-      
-  </div>
-
-  <!-- Node's children forest, displayed only on active trees
-    TODO: Use <details> to toggle visibility?
-  -->
-  
-    
-  
-</div>
-    
-      <!-- Variable bindings for this tree-->
-  
-    
-      
-    
-    
-
-
-
-  
-
-
-<!-- Rendering of this tree -->
-<div class='pl-2'>
-  <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    
-    
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
-        </path>
-      </svg>
-    
-  
-    <a class='hover:underline truncate' title='Documentation Guidelines' href='eng-practices/Documentation'>
+    <a class='hover:underline truncate' title='Documentation Guidelines' href='code/Documentation'>
       Documentation Guidelines
     </a>
     
@@ -340,7 +304,7 @@
       </svg>
     
   
-    <a class='hover:underline truncate' title='Exceptions in Haskell' href='eng-practices/Exceptions-Haskell'>
+    <a class='hover:underline truncate' title='Exceptions in Haskell' href='code/Exceptions-Haskell'>
       Exceptions in Haskell
     </a>
     
@@ -379,8 +343,8 @@
       </svg>
     
   
-    <a class='hover:underline truncate' title='Git Branching Scheme' href='eng-practices/Branching'>
-      Git Branching Scheme
+    <a class='hover:underline truncate' title='Mob Programming' href='code/Mob-Programming'>
+      Mob Programming
     </a>
     
       
@@ -418,124 +382,7 @@
       </svg>
     
   
-    <a class='hover:underline truncate' title='Mob Development' href='eng-practices/Mob-Development'>
-      Mob Development
-    </a>
-    
-      
-  </div>
-
-  <!-- Node's children forest, displayed only on active trees
-    TODO: Use <details> to toggle visibility?
-  -->
-  
-    
-  
-</div>
-    
-      <!-- Variable bindings for this tree-->
-  
-    
-      
-    
-    
-
-
-
-  
-
-
-<!-- Rendering of this tree -->
-<div class='pl-2'>
-  <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    
-    
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
-        </path>
-      </svg>
-    
-  
-    <a class='hover:underline truncate' title='QA Approach' href='eng-practices/QA-Approach'>
-      QA Approach
-    </a>
-    
-      
-  </div>
-
-  <!-- Node's children forest, displayed only on active trees
-    TODO: Use <details> to toggle visibility?
-  -->
-  
-    
-  
-</div>
-    
-      <!-- Variable bindings for this tree-->
-  
-    
-      
-    
-    
-
-
-
-  
-
-
-<!-- Rendering of this tree -->
-<div class='pl-2'>
-  <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    
-    
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
-        </path>
-      </svg>
-    
-  
-    <a class='hover:underline truncate' title='Development Process' href='eng-practices/Development-Process'>
-      Development Process
-    </a>
-    
-      
-  </div>
-
-  <!-- Node's children forest, displayed only on active trees
-    TODO: Use <details> to toggle visibility?
-  -->
-  
-    
-  
-</div>
-    
-      <!-- Variable bindings for this tree-->
-  
-    
-      
-    
-    
-
-
-
-  
-
-
-<!-- Rendering of this tree -->
-<div class='pl-2'>
-  <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    
-    
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
-        </path>
-      </svg>
-    
-  
-    <a class='hover:underline truncate' title='Coding Standards' href='eng-practices/Coding-Standards'>
+    <a class='hover:underline truncate' title='Coding Standards' href='code/Coding-Standards'>
       Coding Standards
     </a>
     
@@ -574,85 +421,7 @@
       </svg>
     
   
-    <a class='hover:underline truncate' title='Code Review Guidelines' href='eng-practices/Code-Review-Guidelines'>
-      Code Review Guidelines
-    </a>
-    
-      
-  </div>
-
-  <!-- Node's children forest, displayed only on active trees
-    TODO: Use <details> to toggle visibility?
-  -->
-  
-    
-  
-</div>
-    
-      <!-- Variable bindings for this tree-->
-  
-    
-      
-    
-    
-
-
-
-  
-
-
-<!-- Rendering of this tree -->
-<div class='pl-2'>
-  <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    
-    
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
-        </path>
-      </svg>
-    
-  
-    <a class='hover:underline truncate' title='Bug Classification' href='eng-practices/Bug-Classification'>
-      Bug Classification
-    </a>
-    
-      
-  </div>
-
-  <!-- Node's children forest, displayed only on active trees
-    TODO: Use <details> to toggle visibility?
-  -->
-  
-    
-  
-</div>
-    
-      <!-- Variable bindings for this tree-->
-  
-    
-      
-    
-    
-
-
-
-  
-
-
-<!-- Rendering of this tree -->
-<div class='pl-2'>
-  <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    
-    
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
-        </path>
-      </svg>
-    
-  
-    <a class='hover:underline truncate' title='Extracting New Libraries From Existing Repositories' href='eng-practices/Library-Extraction-and-Repository-Creation-Process'>
+    <a class='hover:underline truncate' title='Extracting New Libraries From Existing Repositories' href='code/Library-Extraction-and-Repository-Creation-Process'>
       Extracting New Libraries From Existing Repositories
     </a>
     
@@ -691,7 +460,7 @@
       </svg>
     
   
-    <a class='hover:underline truncate' title='New Repo Checklist' href='eng-practices/New-Repo-Checklist'>
+    <a class='hover:underline truncate' title='New Repo Checklist' href='code/New-Repo-Checklist'>
       New Repo Checklist
     </a>
     
@@ -733,8 +502,8 @@
       </svg>
       
   
-    <a class='font-bold hover:underline truncate' title='Project Management' href='project-mgmt'>
-      Project Management
+    <a class='font-bold hover:underline truncate' title='Process' href='process'>
+      Process
     </a>
     
       
@@ -769,7 +538,7 @@
       </svg>
     
   
-    <a class='hover:underline truncate' title='Co-Pilot Process' href='project-mgmt/Co-Pilot'>
+    <a class='hover:underline truncate' title='Co-Pilot Process' href='process/Co-Pilot'>
       Co-Pilot Process
     </a>
     
@@ -808,7 +577,7 @@
       </svg>
     
   
-    <a class='hover:underline truncate' title='Communication conventions' href='project-mgmt/Communication-Conventions'>
+    <a class='hover:underline truncate' title='Communication conventions' href='process/Communication-Conventions'>
       Communication conventions
     </a>
     
@@ -847,7 +616,7 @@
       </svg>
     
   
-    <a class='hover:underline truncate' title='Conference Guidelines' href='project-mgmt/Conference-Talks'>
+    <a class='hover:underline truncate' title='Conference Guidelines' href='process/Conference-Talks'>
       Conference Guidelines
     </a>
     
@@ -886,8 +655,86 @@
       </svg>
     
   
-    <a class='hover:underline truncate' title='Estimation Process' href='project-mgmt/Estimation-Process'>
+    <a class='hover:underline truncate' title='Definition of “Done”' href='process/Definition-of-Done'>
+      Definition of “Done”
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+  
+    
+      
+    
+    
+
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-2 space-x-2 justify-left'>
+    
+    
+      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
+    <a class='hover:underline truncate' title='Estimation Process' href='process/Estimation-Process'>
       Estimation Process
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+  
+    
+      
+    
+    
+
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-2 space-x-2 justify-left'>
+    
+    
+      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
+    <a class='hover:underline truncate' title='Git Branching Scheme' href='process/Branching'>
+      Git Branching Scheme
     </a>
     
       
@@ -925,7 +772,7 @@
       </svg>
       
   
-    <a class='font-bold hover:underline truncate' title='Issue Tracking' href='project-mgmt/Issue-Tracking'>
+    <a class='font-bold hover:underline truncate' title='Issue Tracking' href='process/Issue-Tracking'>
       Issue Tracking
     </a>
     
@@ -961,7 +808,7 @@
       </svg>
     
   
-    <a class='hover:underline truncate' title='Jira' href='project-mgmt/Issue-Tracking/Jira'>
+    <a class='hover:underline truncate' title='Jira' href='process/Issue-Tracking/Jira'>
       Jira
     </a>
     
@@ -1000,7 +847,7 @@
       </svg>
     
   
-    <a class='hover:underline truncate' title='Urgent issue handling process' href='project-mgmt/Issue-Tracking/Urgent-Issue-Handling'>
+    <a class='hover:underline truncate' title='Urgent issue handling process' href='process/Issue-Tracking/Urgent-Issue-Handling'>
       Urgent issue handling process
     </a>
     
@@ -1042,8 +889,160 @@
       </svg>
     
   
-    <a class='hover:underline truncate' title='Meetings' href='project-mgmt/Meetings'>
+    <a class='hover:underline truncate' title='Meetings' href='process/Meetings'>
       Meetings
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+  
+  
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-2 space-x-2 justify-left'>
+    
+    
+      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'>
+        </path>
+      </svg>
+      
+  
+    <a class='font-bold text-indigo-600 hover:underline truncate' title='QA Approach' href='process/QA-Approach'>
+      QA Approach
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+  
+    
+      
+    
+    
+
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-2 space-x-2 justify-left'>
+    
+    
+      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
+    <a class='hover:underline truncate' title='Development Process' href='process/Development-Process'>
+      Development Process
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+  
+    
+      
+    
+    
+
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-2 space-x-2 justify-left'>
+    
+    
+      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
+    <a class='hover:underline truncate' title='Code Review Guidelines' href='process/Code-Review-Guidelines'>
+      Code Review Guidelines
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+  
+    
+      
+    
+    
+
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-2 space-x-2 justify-left'>
+    
+    
+      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
+    <a class='hover:underline truncate' title='Bug Classification' href='process/Bug-Classification'>
+      Bug Classification
     </a>
     
       
@@ -1420,136 +1419,306 @@
           <main class='px-4 py-4'>
             <h1 class='flex items-end justify-center mb-4 p-3 bg-indigo-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Architecture
+    QA Approach
   </a>
 </h1>
             <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
-  
+  <div class='px-3 py-1 mb-3 rounded bg-indigo-100 hover:border-indigo-400 hover:shadow border-t-8 border-indigo-200 max-w-xs'>
     <p class='mb-3'>
-      Adrestia is a collection of products which makes it easier to integrate with Cardano.
+      This is a blog entry draft.
+    </p>
+  </div>
+    <p class='mb-3'>
+      “Can you write a blog post about the QA process that Adrestia has?”. When I saw this question on my slack I thought something is not right there. It took me several minutes but I finally got it. That’s right, there is no such thing as “QA process” in Adrestia, because QA (i.e. Quality Assurance) is there on every level of the Process we follow. Top to bottom. What derives from this fact is also a simple, yet powerful, principle: QA is responsibility of everyone.
     </p>
   
     <p class='mb-3'>
-      It comes in different flavours: SDK or high-level APIs. Depending on the use-cases you have and the control that you seek, you may use any of the components below.
+      I know, that’s a huge cliche. People who push Agile often say QA is everyone’s responsibility - which usually means no one really takes that responsibility. QA is not easy and maybe not everyone likes it. More importantly QA is not only about testing but even if it was, testing in Adrestia is actually super fun!
     </p>
-  <h2 id='cardano-network-protocol' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Cardano Network Protocol</h2>
+  
     <p class='mb-3'>
-      An implementation of the protocol is <a href='https://github.com/input-output-hk/ouroboros-network' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>here</a> and is realized through <a href='https://github.com/input-output-hk/cardano-node' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-node</a>, deployed as core and relay nodes to form the Cardano network.
+      How does it play in real life? Let me try to present QA aspects of work in Adrestia team.
     </p>
-  <h2 id='services' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Services</h2>
+  <h2 id='the-team' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>The Team</h2>
     <p class='mb-3'>
-      Service applications for integrating with Cardano.
+      Anyone working in the software development, especially in QA related role, is well aware of the waterfall-y sins, that occur (more often we’d like to admit) on the teams which call themselves Agile, Scrum, Extreme etc. The most common one is something I like to call <em>handover to QA approach</em>. I suppose it is pretty self-explanatory, but let me elaborate. It’s sort of mindset/stance where a feature/story/deliverable increment of product is no longer my business when I finish coding it. I jump to another story and just let the other one be <em>QA-ed</em>. I might fix an issue when QAs find it, no problem, but man it’s already in QA, so give me a break, I added unit tests, ok?:). Well, in Adrestia it’s quite the opposite. Yes, stories are moved into <em>QA column</em> after they are <em>coded</em> but it is not for testing, but for <a href='#qa-review' class='text-indigo-600 font-bold hover:underline'>QA review</a> and that’s very different. I’ll explain later.
+    </p>
+  
+    <p class='mb-3'>
+      Adrestia is fairly small team. It consists of 8 people including Software Engineers, Product Manager and a QA Engineer (soon more than one!). Considering the number of <a href='code/Architecture' class='text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>products</a> the team is responsible for, this is really not a lot. Additionally, we are distributed among 3 continents which brings own challenges in terms of communication and availability.
+    </p>
+  <div class='rounded bg-indigo-100 m-4 px-4 py-1 italic'>
+    <p class='mb-3'>
+      <img class='inline mb-3' src='images/albi-2019-team.jpg' alt='[[albi-2019-team.jpg]]' style='width: inherit;' /><br />Part of the team during training in Albi, France in 2019. One of the few occasions we can meet in person.
+    </p>
+  </div>
+    <p class='mb-3'>
+      Can you imagine <em>handover to QA approach in</em> such environment and additionally where dev:qa ratio is 6:1? That would be a recipe for disaster! Off course everyone on the team has their primary role, but even if you don’t have a <em>QA</em> in your position’s name it doesn’t mean QA is not your business. It is, and we are all well aware of that! Plus the person with actual <em>QA</em> next to his name additionally needs makes sure that <em>everyone’s responsibility</em> thing actually happens.
+    </p>
+  
+    <p class='mb-3'>
+      How? Let’s move on to the process.
+    </p>
+  <h2 id='the-process' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>The Process</h2>
+    <p class='mb-3'>
+      Adrestia’s <a href='https://github.com/input-output-hk/adrestia/wiki/Development-Process' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>development process</a> is heavily inspired by <a href='http://www.extremeprogramming.org/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>extreme programming</a> principles. That’s nothing really revolutionary. Product backlog, stories estimation, acceptance criteria, weekly iterations and retrospective. All those elements are in place. Let’s focus on those elements that, in my opinion, further contribute to increasing QA.
+    </p>
+  <h3 id='estimation' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Estimation</h3>
+    <p class='mb-3'>
+      Our User Stories are described following Role-Feature-Reason template using <a href='https://docs.behat.org/en/v2.5/guides/1.gherkin.html' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>given-when-then formula</a>. Each story must have clear acceptance criteria stating when it is considered to be done.
+    </p>
+  
+    <p class='mb-3'>
+      We discuss and estimate stories from the backlog during our weekly <em>Iteration Planning Meeting</em>. Each story is discussed up-front to make sure the team has common understanding what it is about. It is opportunity to ask for precisions and clarify possible disambiguations. It is also the first chance to discuss how the story can be possibly tested. What are the areas we need to focus on when testing? Do we need any specific tests for that? These are the questions we discuss from the very beginning. <strong>What comes from this is that the testing effort is also included in the estimation!</strong>
+    </p>
+  
+    <p class='mb-3'>
+      The stories are then estimated via blind-voting in a 4-value scale: <em>small</em>, <em>medium</em>, <em>large</em>, <em>uncertain</em>. The last value is an indicator that something is unclear. Maybe we need to gather more requirements, or perhaps the story is too big and needs to be broken down into smaller chunks. We try to gain consensus around the estimation value. It is an indicator that the story is well understood, and we have all possible information in terms of requirements.
+    </p>
+  <h3 id='pilot--co-pilot' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Pilot / Co-pilot</h3>
+    <p class='mb-3'>
+      Once estimated user stories are assigned to and owned by single team member (a.k.a Pilot) who is seconded by Co-pilot. Pilots are responsible for clarifying requirements further, breaking stories into tasks in GitHub and implementation. Co-pilots are basically there to “watch Pilot’s back”. They are primary reviewers. First, for their architectural decisions which are gathered inside the tasks and then code. They are also their primary challengers against whom they can <em>test</em> their ideas. That doesn’t mean other team members won’t weigh in. Hailing the rule of <a href='http://www.extremeprogramming.org/rules/collective.html' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>collective ownership</a> everyone is free and encouraged to contribute, but it is the Pilot (or Tech Lead) who makes the final call. The crucial thing here is that the Pilot is never left alone and has an assigned person to consult with from the very start. That is really beneficial.
+    </p>
+  <h3 id='coding-standards-and-code-reviews' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Coding standards and code reviews</h3>
+    <p class='mb-3'>
+      Once the story is broken down into tasks in GitHub with the clear plan on how to approach it technically, the coding begins. We follow <a href='https://github.com/input-output-hk/adrestia/wiki/Coding-Standards' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>coding standards</a> that was mutually agreed upon. The benefit is that we have roughly the same <em>coding style</em> across our code base. Therefore even when somebody changes context (even between different repositories) he may expect that there will be no unfamiliar obscurities and can focus solely on the task. The standard is obviously not set in stone. Modifications happen, usually followed by slack discussions and voting.
+    </p>
+  
+    <p class='mb-3'>
+      All our repos are on GitHub, so we use PRs to deliver changes to the code base. Each PR is reviewed, primarily by the Co-pilot, but often by other team members too. Review is done according to our <a href='https://github.com/input-output-hk/adrestia/wiki/Code-Review-Guidelines' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>guidelines</a> and it is all about feedback. What is important it is often not only about reviewing the code alone but literally pulling the branch and playing with it. Every PR needs to be reviewed and approved by at least one team member.
+    </p>
+  <h3 id='testing' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Testing</h3>
+    <p class='mb-3'>
+      In a nutshell we have one simple rule. Every new code needs to be tested. Period.
+    </p>
+  
+    <p class='mb-3'>
+      Ideally tests, whether they are <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>property</code>, <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>unit</code> or <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>integration</code>, are created before (or along with) production code. That gives us opportunity to see the test fail first and passes after the implementation. It is a common <a href='https://en.wikipedia.org/wiki/Test-driven_development' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>TDD</a> practice that we also try to follow.
+    </p>
+  
+    <p class='mb-3'>
+      Having said that every new story must be covered with test before it comes to QA review and it is a responsibility of Software Engineer to make sure it is.
+    </p>
+  
+    <p class='mb-3'>
+      The presence and accuracy of tests is verified initially already during code review. No need to mention that PR before gets merged into <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>master</code>, needs to pass all existing and new tests in CI environment, and believe me, there are a lot of <a href='#tests' class='text-indigo-600 font-bold hover:underline'>tests</a> there on different levels of the system.
+    </p>
+  
+    <p class='mb-3'>
+      There is also one important aspect to be noticed. <strong>Tests actually become integral part of the deliverables</strong>. They are held in the same repository as the product, and they must pass before anything gets merged or released.
+    </p>
+  <h3 id='qa-review' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>QA review</h3>
+    <p class='mb-3'>
+      Now we hit the infamous <em>handover to QA</em> part. But have you noticed the task is already well covered in all kind of tests? So what happens now? Well, it is the final review from the QA standpoint. Here we make sure:
     </p>
   
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          <a href='https://github.com/input-output-hk/cardano-wallet' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-wallet</a>: HTTP REST API for managing UTxOs, and much more.
+          we fullfiled all acceptance criteria,
         </li>
       
         <li>
-          <a href='https://github.com/input-output-hk/cardano-graphql' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-graphql</a>: HTTP GraphQL API for exploring the blockchain.
+          existing tests are enough and sufficient,
         </li>
       
         <li>
-          <a href='https://github.com/input-output-hk/cardano-rosetta' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-rosetta</a>: <a href='https://www.rosetta-api.org/docs/1.4.4/welcome.html' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Rosetta</a> implementation for Cardano.
+          we don’t miss anything from documentation side,
         </li>
       
         <li>
-          <a href='https://github.com/input-output-hk/cardano-node/tree/master/cardano-submit-api' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-submit-api</a>: HTTP API for submitting signed transactions.
+          generally we don’t miss anything from the QA or product perspective.
+        </li>
+      
+        <li>
+          it actually works!
         </li>
       
     </ul>
-  <h2 id='software-libraries' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Software Libraries</h2>
+  
+    <p class='mb-3'>
+      Here, in principle the task is either <em>accepted</em> or <em>moved back to in progress</em> with additional comments clarifying what may be missing. In practice QA would often implement additional tests, polish the documentation or simply fix minor issues here and there to make the deliverable shine as it suppose to.
+    </p>
+  
+    <p class='mb-3'>
+      At this stage it is also final opportunity to actually explore the given feature end-to-end on sets of environments other than CI. In case of <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> we might want to take it on journey to <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>testnet</code> or <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>mainnet</code> to see how new feature plays there.
+    </p>
+  <h3 id='bugs' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Bugs</h3>
+    <p class='mb-3'>
+      “The only one who never makes mistakes is the one who never does anything” Napoleon Bonaparte once said. Well, that’s true and that’s the reason bugs sometimes happen to us too. Luckily we know how to handle them.
+    </p>
+  
+    <p class='mb-3'>
+      Every bug becomes a ticket in GitHub. It is described with clear reproduction path, actual and expected outcome with any additional information that may be useful (logs, screenshots etc.) and classified according to our <a href='https://github.com/input-output-hk/adrestia/wiki/Bug-Classification' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>classification guidelines</a>. We use <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>severity</code> for defining impact on the system and <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>priority</code> for indicating the importance from product standpoint.
+    </p>
+  
+    <p class='mb-3'>
+      Important to note every bug fix, similarly to new feature code, starts with the automated tests that reproduces it. Again, following TDD rule, test fails first and passes after the fix.
+    </p>
+  
+    <p class='mb-3'>
+      Moving on bug fixes follow the same procedure: code review and QA review/re-test.
+    </p>
+  <h3 id='technical-debt' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Technical debt</h3>
+    <p class='mb-3'>
+      Technical debt is a reality in the software development whether we like it or not. The important thing is to acknowledge it a tackle systematically. That’s what we do.
+    </p>
+  
+    <p class='mb-3'>
+      Technical debts are first often pinpointed in the source code with <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>TODO</code> and <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>FIXME</code> keywords, and then they end up as actual user stories in our backlog. From that point they undergo the same process as <em>normal</em> user stories from estimation all the way down to QA review.
+    </p>
+  <h3 id='process-refinement' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Process refinement</h3>
+    <p class='mb-3'>
+      The process we follow is obviously not set in stone and may be tailored to the needs of the team and circumstances over time. Good opportunity for that is Team Retrospective meeting we held every once in a while.
+    </p>
+  
+    <p class='mb-3'>
+      Retrospective is actually very powerful tool, sadly often underestimated. We do make use of it. It gives opportunity to collectively reflect on things and discuss what can be improved. As an outcome we want to have a list of actionable items, which often… no surprise… end up in the backlog as tasks. Whether it is a process improvement, internal documentation update or perhaps a decision we want to spend the whole week for tackling bugs and technical debts.
+    </p>
+  <h2 id='tests' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Tests</h2>
+    <p class='mb-3'>
+      Ok, we dealt with the process focusing especially on its QA elements. Here I’d like to concentrate on explaining what kind of tests we have and why, and also shed some light on how they are executed in CI. I’ll be using <a href='https://github.com/input-output-hk/cardano-wallet' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-wallet</a> as an example.
+    </p>
+  <h3 id='types-and-levels-of-tests' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Types and levels of tests</h3>
+    <p class='mb-3'>
+      Obviously we value automated tests over manual. Actually, when it comes to <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> we only have 6 manual scenarios that are executed as part of every <a href='https://github.com/input-output-hk/cardano-wallet/wiki/Release-Checklist' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>release checklist</a>.
+    </p>
+  
+    <p class='mb-3'>
+      All automated tests are executed in CI environment in the following circumstances:
+    </p>
+  
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          <a href='https://github.com/input-output-hk/cardano-addresses' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-addresses</a>: Address generation, derivation & mnemonic manipulation.
+          on every PR merge (most of the functional suite)
         </li>
       
         <li>
-          <a href='https://github.com/input-output-hk/cardano-coin-selection' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-coin-selection</a>: Algorithms for coin selection and fee balancing.
-        </li>
-      
-        <li>
-          <a href='https://github.com/input-output-hk/cardano-transactions' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-transactions</a>: Utilities for constructing and signing transactions.
-        </li>
-      
-        <li>
-          <a href='https://github.com/input-output-hk/bech32' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>bech32</a>: Haskell implementation of the Bech32 address format (BIP 0173).
+          every night (full functional suite + full non-functional suite)
         </li>
       
     </ul>
-  <h2 id='high-level-diagram' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>High-Level Diagram</h2><div class='py-0.5 mb-3 text-sm'><pre><code class='mermaid language-mermaid'>%%{init: {'theme': 'forest', "flowchart" : { "curve" : "basis" } } }%%
-erDiagram
-  CARDANO-NODE ||--|{ CARDANO-SUBMIT-API : depends-on
-  CARDANO-NODE ||--|{ CARDANO-WALLET : depends-on
-  CARDANO-NODE ||--|{ CARDANO-DB-SYNC : depends-on
-
-  CARDANO-DB-SYNC ||--|| POSTGRESQL : dumps-into
-  POSTGRESQL ||--|| SMASH : is-queried
-  POSTGRESQL ||--|| CARDANO-GRAPHQL : is-queried
-  POSTGRESQL ||--|| CARDANO-ROSETTA : is-queried
-
-  CARDANO-GRAPHQL ||--|{ EXPLORER : depends-on
-
-  SMASH ||--|{ CARDANO-WALLET: connects-to
-  CARDANO-WALLET ||--|{ DAEDALUS : depends-on</code></pre></div><h2 id='components' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Components</h2><h3 id='cardano-node' class='mt-6 mb-2 text-3xl font-bold text-gray-700'><a href='https://github.com/input-output-hk/cardano-node' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-node</a></h3>
-    <p class='mb-3'>
-      The core <a href='https://github.com/input-output-hk/cardano-node' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-node</a>, which participates in the Cardano network, and maintains the state of the Cardano blockchain ledger.
-    </p>
   
     <p class='mb-3'>
-      {{<span xmlhtmlRaw><hint info></span>}} Supported environments: Linux (64-bits), MacOS (64-bits), Windows (64-bits), Docker {{&lt; /hint &gt;}}
-    </p>
-  <h3 id='cardano-wallet' class='mt-6 mb-2 text-3xl font-bold text-gray-700'><a href='https://github.com/input-output-hk/cardano-wallet' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-wallet</a></h3>
-    <p class='mb-3'>
-      <a href='https://github.com/input-output-hk/cardano-wallet' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-wallet</a> An HTTP REST API is recommended for 3rd party wallets and small exchanges who do not want to manage UTxOs for transactions themselves. Use it to send and receive payments from hierarchical deterministic wallets on the Cardano blockchain via HTTP REST or a command-line interface.
+      <strong>Functional suite</strong> consists of:
     </p>
   
-    <p class='mb-3'>
-      {{<span xmlhtmlRaw><hint info></span>}} Supported environments: Linux (64-bits), MacOS (64-bits), Windows (64-bits), Docker {{&lt; /hint &gt;}}
-    </p>
-  <h3 id='cardano-db-sync' class='mt-6 mb-2 text-3xl font-bold text-gray-700'><a href='https://github.com/input-output-hk/cardano-db-sync' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-db-sync</a></h3>
-    <p class='mb-3'>
-      This application stores blockchain data fetched from <a href='https://github.com/input-output-hk/cardano-node' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-node</a> in a PostgreSQL database to enable higher-level interfaces for blockchain exploration. It powers <a href='https://github.com/input-output-hk/cardano-graphql' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-graphql</a>.
-    </p>
-  
-    <p class='mb-3'>
-      {{<span xmlhtmlRaw><hint info></span>}} Supported environments: Linux (64-bits), MacOS (64-bits), Docker {{&lt; /hint &gt;}}
-    </p>
-  <h3 id='cardano-graphql' class='mt-6 mb-2 text-3xl font-bold text-gray-700'><a href='https://github.com/input-output-hk/cardano-graphql' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-graphql</a></h3>
-    <p class='mb-3'>
-      A GraphQL API for Cardano, which also serves as the backend of <a href='https://explorer.cardano.org/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Cardano Explorer</a>.
-    </p>
-  
-    <p class='mb-3'>
-      {{<span xmlhtmlRaw><hint info></span>}} Supported environments: Linux (64-bits), MacOS (64-bits), Docker {{&lt; /hint &gt;}}
-    </p>
-  <h3 id='cardano-submit-api' class='mt-6 mb-2 text-3xl font-bold text-gray-700'><a href='https://github.com/input-output-hk/cardano-node/tree/master/cardano-submit-api' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-submit-api</a></h3>
-    <p class='mb-3'>
-      A small HTTP API for submitting transactions to a local <a href='https://github.com/input-output-hk/cardano-node' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-node</a>.
-    </p>
-  
-    <p class='mb-3'>
-      The transaction must be fully signed and CBOR-encoded. This could be done by <a href='https://docs.cardano.org/projects/cardano-node/en/latest/reference/cardano-node-cli-reference.html' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-cli</a>, for example.
-    </p>
-  <h3 id='cardano-rosetta' class='mt-6 mb-2 text-3xl font-bold text-gray-700'><a href='https://github.com/input-output-hk/cardano-rosetta' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-rosetta</a></h3>
-    <p class='mb-3'>
-      <a href='https://github.com/input-output-hk/cardano-rosetta' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Cardano-rosetta</a> is an implementation of the <a href='https://www.rosetta-api.org/docs/1.4.4/welcome.html' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Rosetta</a> specification for Cardano. Rosetta is an open-source specification and set of tools that makes integrating with blockchains simpler, faster, and more reliable.
-    </p>
-  <h2 id='components-1' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Components</h2><h3 id='apis' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>APIs</h3><table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>name / link</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>description</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Byron</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Jörm</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Shelley</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Mary</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Alonzo</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><a href='https://github.com/input-output-hk/cardano-wallet' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-wallet</a></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>JSON/REST API for managing UTxOs in HD wallets</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>❌</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>🚧</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><a href='https://github.com/input-output-hk/cardano-graphql' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-graphql</a></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>GraphQL/HTTP API for browsing on-chain data</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>❌</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>🚧</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><a href='https://github.com/input-output-hk/cardano-rosetta' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-rosetta</a></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Implementation of <a href='https://www.rosetta-api.org/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Rosetta</a> spec for Cardano</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>🚧</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>~<a href='https://github.com/input-output-hk/cardano-rest' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-rest</a>~</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><em>Deprecated</em></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>❌</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>❌</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>❌</td></tr></tbody></table><h3 id='clis' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>CLIs</h3><table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Name / Link</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Description</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Byron</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Jörm</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Shelley</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Mary</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Alonzo</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><a href='https://github.com/input-output-hk/bech32' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>bech32</a></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Human-friendly Bech32 address encoding</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>N/A</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><a href='https://github.com/input-output-hk/cardano-wallet' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-wallet</a></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Command-line for interacting with cardano-wallet API</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>🚧</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><a href='https://github.com/input-output-hk/cardano-addresses' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-addresses</a></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Addresses and mnemonic manipulation & derivations</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>🚧</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><a href='https://github.com/input-output-hk/cardano-transactions' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-transactions</a></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><em>Deprecated</em></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>❌</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>❌</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>❌</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>❌</td></tr></tbody></table><h3 id='haskell-sdks' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Haskell SDKs</h3><table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Name / Link</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Description</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Byron</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Jörm</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Shelley</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Mary</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Alonzo</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><a href='https://github.com/input-output-hk/bech32' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>bech32</a></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Human-friendly Bech32 address encoding</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><a href='https://github.com/input-output-hk/cardano-addresses' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-addresses</a></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Addresses and mnemonic manipulation & derivations</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>🚧</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><a href='https://github.com/input-output-hk/cardano-coin-selection' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-coin-selection</a></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><em>Deprecated</em></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>❌</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>❌</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><a href='https://github.com/input-output-hk/cardano-transactions' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-transactions</a></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><em>Deprecated</em></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>❌</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>❌</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>❌</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>❌</td></tr></tbody></table><h3 id='rust-sdks-webassembly-support' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Rust SDKs (+WebAssembly support)</h3><table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Name / Link</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Description</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Byron</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Jörmungandr</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Shelley</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><a href='https://github.com/Emurgo/cardano-serialization-lib' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-serialization-lib</a></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Binary serialization of on-chain data types</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>N/A</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>N/A</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><a href='https://github.com/Emurgo/react-native-haskell-shelley' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>react-native-haskell-shelley</a></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>React Native bindings for <a href='https://github.com/Emurgo/cardano-serialization-lib' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-serialization-lib</a></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>N/A</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>N/A</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>🚧</td></tr></tbody></table><h3 id='javascript-sdks' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>JavaScript SDKs</h3><table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Name / Link</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Description</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Byron</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Jörm</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Shelley</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Mary</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Alonzo</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><a href='https://github.com/input-output-hk/cardano-launcher' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-launcher</a></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>node and cardano-wallet launcher for NodeJS applications</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>🚧</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><a href='https://github.com/input-output-hk/cardano-addresses' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-addresses</a></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Address validation and inspection</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>✔</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>🚧</td></tr></tbody></table><h3 id='formal-specifications' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Formal Specifications</h3><table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Name / Link</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Description</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><a href='https://github.com/input-output-hk/utxo-wallet-specification' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>utxo-wallet-specification</a></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Formal specification for a UTxO wallet</td></tr></tbody></table><h3 id='internal' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Internal</h3>
-    <blockquote class='py-0.5 px-4 mb-3 italic border-l-4 bg-gray-50 text-gray-600 border-gray-400 quote'>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
       
+        <li>
+          low level unit and property tests that operate on a method level.
+        </li>
+      
+        <li>
+          integration level tests verifying a few components being integrated.
+        </li>
+      
+        <li>
+          system level tests (which we actually also call integration tests) that test against fully integrated system along with it’s <em>third party</em> integrated backends, which in case of <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> is either <a href='https://github.com/input-output-hk/cardano-node' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-node</a> or <a href='https://github.com/input-output-hk/jormungandr' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>jormungandr</a>. We run tests for both of them.
+        </li>
+      
+    </ul>
+  
     <p class='mb-3'>
-      <span class='emoji' data-emoji='warning' style='font-family: emoji'>⚠️</span> Here be dragons. These tools are used internally by other tools and does not benefit from the same care in documentation than other tools above.
+      <strong>Non-functional suite</strong> basically consist of performance benchmarks and database migration tests. They are:
     </p>
   
-    </blockquote>
-  <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>name / link</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>description</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><a href='https://github.com/input-output-hk/persistent' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>persistent</a></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Fork of the persistent Haskell library maintained for cardano-wallet</td></tr></tbody></table><h1 id='contributing' class='pb-2 mb-2 text-5xl font-bold text-center'>Contributing</h1>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          restoration benchmarks - measuring restoration along with a few wallet API operations on real <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>testnet</code> and <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>mainnet</code> environments
+        </li>
+      
+        <li>
+          latency benchmarks - measuring latency of most wallet operations on the API level on a private blockchain.
+        </li>
+      
+        <li>
+          database benchmarks - measuring performance of operations on database level.
+        </li>
+      
+        <li>
+          database migration tests - verifying that recent changes made to the system survive upgrade from the last 3 wallet versions.
+        </li>
+      
+    </ul>
+  
     <p class='mb-3'>
-      See <span title='Link is broken'><s>[CONTRIBUTING.md](CONTRIBUTING.md)</s>❌</span>
+      Important to note that the whole functional suite is executed against all 3 operating systems <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> supports: Linux, Windows and MacOS. Also integration tests are executed in a full-blown private blockchain with very similar settings <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>mainnet</code> has.
+    </p>
+  <h3 id='code-smart-test-smart' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Code smart, test smart</h3>
+    <p class='mb-3'>
+      The number of tests there is in <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> is quite substantial. If one would consider counting in the examples from the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>property based</code> tests I wouldn’t be surprised if we were actually talking millions. The number of integration tests alone varies between 600-700 which is quite a lot.
+    </p>
+  
+    <p class='mb-3'>
+      When you reach this number in your test suite you become to have all sorts of new challenges like increasing execution time and maintenance effort, more false positives, especially on the integration level.
+    </p>
+  
+    <p class='mb-3'>
+      The approach we have in mind when adding new tests is around for a while. The <a href='https://martinfowler.com/articles/practical-test-pyramid.html' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>“Test Pyramid”</a> - a metaphor that tells us to group software tests into buckets of different granularity. It also gives an idea of how many tests we should have in each of these group.
+    </p>
+  <div class='rounded bg-indigo-100 m-4 px-4 py-1 italic'>
+    <p class='mb-3'>
+      <img class='inline mb-3' src='images/test-pyramid.png' alt='[[test-pyramid.png]]' style='width: inherit;' /><br />Test pyramid - <a href='https://www.theseus.fi/bitstream/handle/10024/125095/Nghi%20Thesis%20FINAL%204.pdf' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>source</a>.
+    </p>
+  </div>
+    <p class='mb-3'>
+      Implementing this approach starts with the code. Basically you can code things in a way that you need to integrate bunch of components to test it sufficiently, or you can be more granular allowing more tests to be performed at a unit level.
+    </p>
+  <h3 id='visibility-of-results' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Visibility of results</h3>
+    <p class='mb-3'>
+      There is no use in having a lot of tests if you have no visibility of the results. In Adrestia we like to know what is the status of tests in or repos.
+    </p>
+  <h4 id='badges' class='mt-6 mb-2 text-2xl font-bold text-gray-700'>Badges</h4>
+    <p class='mb-3'>
+      Badges are very simple way to achieve visibility, and we like to use them. Pinned to repository it gives you clear picture of areas with possible problems and you can drill down from there to investigate further.
+    </p>
+  <div class='rounded bg-indigo-100 m-4 px-4 py-1 italic'>
+    <p class='mb-3'>
+      <img class='inline mb-3' src='images/badges.png' alt='[[badges.png]]' style='width: inherit;' /><br />Badges on cardano-wallet repository.
+    </p>
+  </div><h4 id='code-coverage' class='mt-6 mb-2 text-2xl font-bold text-gray-700'>Code coverage</h4>
+    <p class='mb-3'>
+      May be a bit controversial to some. Off course, you can have 100% coverage and have really lousy tests. But still it is a good indicator of the areas in the code base that need more attention.
+    </p>
+  
+    <p class='mb-3'>
+      As for <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code>, code coverage will be back soon.
+    </p>
+  <h4 id='visualize' class='mt-6 mb-2 text-2xl font-bold text-gray-700'>Visualize</h4>
+    <p class='mb-3'>
+      If there is an opportunity to visualize results of our tests we’ll go for it. Good example in <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> are benchmarks. Raw numbers gathered by benchmarking scripts are not very convenient to analyze.
+    </p>
+  
+    <p class='mb-3'>
+      So why not have nice charts that show how performance shapes overtime? Any potential deteriorations are much easier to spot and act upon in <a href='http://cardano-wallet-benchmarks.herokuapp.com/mainnet-restoration' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>benchmark app</a>.
+    </p>
+  <div class='rounded bg-indigo-100 m-4 px-4 py-1 italic'>
+    <p class='mb-3'>
+      <img class='inline mb-3' src='images/benchmark-chart.png' alt='[[benchmark-chart.png]]' style='width: inherit;' /><br />Recent performance improvements in wallet restoration time visible in <a href='http://cardano-wallet-benchmarks.herokuapp.com/mainnet-restoration?typeofwallet=all&typeofmeasurement=restorationtime' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>benchmark app</a>.
+    </p>
+  </div><h3 id='exploration' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Exploration</h3>
+    <p class='mb-3'>
+      Having a lot of automated tests gives good level of confidence, but it will never be 100%. You cannot automate everything. The more complex your software is the more obscure ways users will find to take advantage of it.
+    </p>
+  
+    <p class='mb-3'>
+      Exploratory tests are often underestimated or misunderstood, but they are a real deal. QA (or Software) Engineer does not have to wait until <em>QA review</em> to start toying with the system. Reality is that we often don’t have the full requirements, and even if we have they might change. One way or another it’s good to be involved as soon as possible.
+    </p>
+  
+    <p class='mb-3'>
+      “An effective tester can always obtain valuable information by exploration, even if the sole purpose of exploring is to gather information for a more detailed test strategy.”
+    </p>
+  
+    <p class='mb-3'>
+      Above citation from Micheal Bolton’s <a href='https://www.developsense.com/articles/2005-01-TestingWithoutAMap.pdf' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Testing Without a Map</a> says it all. And this is also important part of Adrestia QA approach.
+    </p>
+  <h2 id='summary' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Summary</h2>
+    <p class='mb-3'>
+      Hopefully I was able to give some insights into how Adrestia team approaches QA. If you reached to this point, here’s a medal -&gt; 🏅.
     </p>
   
   <!-- What goes in this file will appear below the note body-->
@@ -1562,29 +1731,14 @@ erDiagram
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-indigo-600 font-bold hover:bg-indigo-50' href='eng-practices/QA-Approach'>
-            QA Approach
+          <a class='text-indigo-600 font-bold hover:bg-indigo-50' href='process/Definition-of-Done'>
+            Definition of “Done”
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-indigo-200 hover:border-indigo-500'>
-      <div><p>Adrestia is fairly small team. It consists of 8 people including Software Engineers, Product Manager and a QA Engineer (soon more than one!). Considering the number of <a href='eng-practices/Architecture' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>products</a> the team is responsible for, this is really not a lot. Additionally, we are distributed among 3 continents which brings own challenges in terms of communication and availability.</p></div>
-    </div>
-  
-</div>
-          
-        </li>
-      
-        <li>
-          <a class='text-indigo-600 font-bold hover:bg-indigo-50' href=''>
-            Adrestia Process Docs
-          </a>
-          
-            <div class='mb-4 overflow-auto text-sm text-gray-500'>
-  
-    <div class='pl-2 mt-2 border-l-2 border-indigo-200 hover:border-indigo-500'>
-      <div><a href='eng-practices/Architecture' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Architecture</a></div>
+      <div>Ticket has been checked by our <a href='process/QA-Approach' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>QA engineer</a> for adherence to standards and definitions of done.</div>
     </div>
   
 </div>

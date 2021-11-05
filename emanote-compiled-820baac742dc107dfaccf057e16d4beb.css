@@ -87,11 +87,11 @@ button, input {
   line-height: inherit;
   color: inherit;
 }
-code {
+code, pre {
   font-size: 1em;
   font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
 }
-code, pre {
+code {
   font-size: 1em;
   font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
 }
@@ -112,60 +112,6 @@ h1, h2, h3 {
   font-size: inherit;
   font-weight: inherit;
 }
-h1, p, h2, h3, h4 {
-  margin: 0;
-}
-h1, h2, h3, h4 {
-  font-size: inherit;
-  font-weight: inherit;
-}
-h1, p, h2, h3, pre {
-  margin: 0;
-}
-hr {
-  height: 0;
-  color: inherit;
-  border-top-width: 1px;
-}
-h1, p, h3, hr, blockquote {
-  margin: 0;
-}
-h1, h3 {
-  font-size: inherit;
-  font-weight: inherit;
-}
-h1, p, h2, pre {
-  margin: 0;
-}
-h1, h2 {
-  font-size: inherit;
-  font-weight: inherit;
-}
-h1, p, h3 {
-  margin: 0;
-}
-h1, h2, p {
-  margin: 0;
-}
-h1, p, h2 {
-  margin: 0;
-}
-h1, p, h2, pre, h3, blockquote {
-  margin: 0;
-}
-h1, h2, p, h3, h4, pre {
-  margin: 0;
-}
-h1, h2, p, h3, hr {
-  margin: 0;
-}
-h1, h2, p, h3, blockquote, h4, h5, pre {
-  margin: 0;
-}
-h1, h2, h3, h4, h5 {
-  font-size: inherit;
-  font-weight: inherit;
-}
 h1, h2, p, h3, pre {
   margin: 0;
 }
@@ -178,13 +124,67 @@ h1, dl, dd, p {
 h1, h2, p, h3 {
   margin: 0;
 }
+h1, p, h2 {
+  margin: 0;
+}
+h1, h2 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+h1, p, h3 {
+  margin: 0;
+}
+h1, h3 {
+  font-size: inherit;
+  font-weight: inherit;
+}
 h1, p {
   margin: 0;
+}
+h1, p, h2, h3, pre {
+  margin: 0;
+}
+h1, p, h2, pre, h3, blockquote {
+  margin: 0;
+}
+h1, h2, p, h3, h4, pre {
+  margin: 0;
+}
+h1, h2, h3, h4 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+h1, p, h2, pre {
+  margin: 0;
+}
+h1, h2, p, h3, blockquote, h4, h5, pre {
+  margin: 0;
+}
+h1, h2, h3, h4, h5 {
+  font-size: inherit;
+  font-weight: inherit;
 }
 h1, p, h2, h3, h4, pre {
   margin: 0;
 }
 h1, p, pre {
+  margin: 0;
+}
+h1, p, h2, h3, h4 {
+  margin: 0;
+}
+hr {
+  height: 0;
+  color: inherit;
+  border-top-width: 1px;
+}
+h1, p, h3, hr, blockquote {
+  margin: 0;
+}
+h1, h2, p {
+  margin: 0;
+}
+h1, h2, p, h3, hr {
   margin: 0;
 }
 input {
@@ -393,20 +393,20 @@ ul {
   --tw-border-opacity: 1;
   border-color: rgba(99, 102, 241, var(--tw-border-opacity));
 }
-.hover\:border-indigo-400:hover {
-  --tw-border-opacity: 1;
-  border-color: rgba(129, 140, 248, var(--tw-border-opacity));
-}
-.checked\:border-transparent:checked {
-  border-color: transparent;
-}
 .border-gray-300 {
   --tw-border-opacity: 1;
   border-color: rgba(209, 213, 219, var(--tw-border-opacity));
 }
+.checked\:border-transparent:checked {
+  border-color: transparent;
+}
 .border-gray-400 {
   --tw-border-opacity: 1;
   border-color: rgba(156, 163, 175, var(--tw-border-opacity));
+}
+.hover\:border-indigo-400:hover {
+  --tw-border-opacity: 1;
+  border-color: rgba(129, 140, 248, var(--tw-border-opacity));
 }
 .rounded {
   border-radius: 0.25rem;
