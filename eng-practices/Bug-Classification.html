@@ -4,14 +4,14 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Adrestia Process Docs
+    Bug Classification – Adrestia Process Docs
   </title>
   
     
       <meta property='og:description' content />
       <meta property='og:site_name' content='Adrestia Process Docs' />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Adrestia Process Docs' />
+      <meta property='og:title' content='Bug Classification' />
     
     
       <base href='/adrestia/process/' />
@@ -90,6 +90,26 @@
             
           
         </li>
+        
+          
+            <li class='inline-flex items-center'>
+              <a class='px-1 font-bold' href=''>
+                Adrestia Process Docs
+              </a>
+              <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
+                <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
+              </svg>
+            </li>
+          
+            <li class='inline-flex items-center'>
+              <a class='px-1 font-bold' href='eng-practices'>
+                Engineering Practices
+              </a>
+              <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
+                <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
+              </svg>
+            </li>
+          
         
       </ul>
     </div>
@@ -574,11 +594,7 @@
     
       <!-- Variable bindings for this tree-->
   
-    
-      
-    
-    
-
+  
 
 
   
@@ -591,12 +607,12 @@
     
     
       <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'>
         </path>
       </svg>
-    
+      
   
-    <a class='hover:underline truncate' title='Bug Classification' href='eng-practices/Bug-Classification'>
+    <a class='font-bold text-indigo-600 hover:underline truncate' title='Bug Classification' href='eng-practices/Bug-Classification'>
       Bug Classification
     </a>
     
@@ -1403,107 +1419,59 @@
           <main class='px-4 py-4'>
             <h1 class='flex items-end justify-center mb-4 p-3 bg-indigo-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Adrestia Process Docs
+    Bug Classification
   </a>
 </h1>
             <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
-  <div class='px-3 py-1 rounded shadow bg-yellow-100 mx-2 transform -skew-y-1 scale-95 hover:scale-100 hover:border-yellow-400 hover:shadow-lg border-t-8 border-yellow-200 mb-8 mt-8 max-w-md mx-auto'>
+  
     <p class='mb-3'>
-      <strong>Under Construction!</strong>
+      Our software defects are tracked with Jira issues. Here is <a href='https://input-output.atlassian.net/issues?jql=project%3DADP%20and%20type%20%3D%20Bug%20and%20resolution%20%3D%20Unresolved%20ORDER%20BY%20priority%20DESC%2C%20created' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>the list of unresolved bugs</a> in the Adrestia project.
     </p>
   
     <p class='mb-3'>
-      These docs have just moved from the wiki and are in the process of being re-organised and updated.
+      We classify bugs by two criteria, which are related but not exactly the same thing.
     </p>
-  </div><div class='rounded-t-xl bg-gradient-to-b from-indigo-100 to-indigo-400 bg-white p-8 mb-4'><div class='grid grid-cols-2 gap-4 p-3 bg-indigo-500 md:grid-cols-3'>
+  <h3 id='1-severity' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>1. Severity</h3>
     <p class='mb-3'>
-      <a href='eng-practices' class='h-32 p-4 border-4 bg-white rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Eng. Practices</a>
-    </p>
-  
-    <p class='mb-3'>
-      <a href='project-mgmt' class='h-32 p-4 border-4 bg-white rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Project Mgmt.</a>
+      Indicates the impact on users and how much functionality is affected. The severity is assessed by the engineering and QA team working on the system.
     </p>
   
     <p class='mb-3'>
-      <a href='resources' class='h-32 p-4 border-4 bg-white rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Resources</a>
+      The Jira issue <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Severity / Probability Score</code> field shows how bad the defect is.
+    </p>
+  <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Severity</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Description / Example</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>1</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>A core function of the system isn’t responsive or is returning invalid data.</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>2</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Visible impact on a core function or significant performance degradation.</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>3</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Small defects that do not prevent any crucial functionality from working. Could some uninformative error or some bearable performance degradation.</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>4</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Defect that won’t result in any noticeable disruption of the system, e.g. typo in a message.</td></tr></tbody></table><h3 id='2-priority' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>2. Priority</h3>
+    <p class='mb-3'>
+      Priority defines which issues should be addressed first.
     </p>
   
     <p class='mb-3'>
-      <a href='-/tags' class='h-32 p-4 border-4 bg-indigo-100 rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline text-indigo-600 font-bold hover:underline'>Tags</a>
+      The priority value is set by the product team based on business requirements, the severity of the defect, estimated time to fix it, and other factors such as impact on the user experience.
     </p>
   
     <p class='mb-3'>
-      <a href='-/all' class='h-32 p-4 border-4 bg-indigo-100 rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline text-indigo-600 font-bold hover:underline'>Index</a>
+      High severity defects will tend to have a higher priority, but this is not necessarily always the case.
     </p>
-  
+  <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Priority</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Description / Example</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Highest</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Requires immediate attention. Critical issue that needs to be fixed ASAP and released as hotfix.</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>High</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Needs to be addressed as soon as possible, probably within current sprint.</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Medium</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>A bug that needs to be addressed after ongoing stories and tasks. For instance can be planned for next sprint.</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Low</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Would eventually require attention if time allows it.</td></tr></tbody></table><hr class='mb-3' />
+    <blockquote class='py-0.5 px-4 mb-3 italic border-l-4 bg-gray-50 text-gray-600 border-gray-400 quote'>
+      
     <p class='mb-3'>
-      <a href='-/tasks' class='h-32 p-4 border-4 bg-indigo-100 rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline text-indigo-600 font-bold hover:underline'>Docs TODO List</a>
-    </p>
-  </div></div><h2 id='what-is-adrestia' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>What is Adrestia?</h2>
-    <p class='mb-3'>
-      Adrestia is a process, a suite of products, and a team within IOHK.
-    </p>
-  <h3 id='process' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Process</h3>
-    <p class='mb-3'>
-      Our vision is to produce a set of orthogonal and self-contained services and APIs to support Cardano applications such as wallets and explorer applications.
-    </p>
-  
-    <p class='mb-3'>
-      These services are developed in a usable, reliable, extensible, and maintainable way. These are our processes and practices.
-    </p>
-  
-    <p class='mb-3'>
-      See:
+      Resources:
     </p>
   
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          <a href='eng-practices' class='text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Engineering Practices</a>
+          <a href='https://www.lambdatest.com/blog/bug-severity-vs-priority-in-testing-with-examples/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>https://www.lambdatest.com/blog/bug-severity-vs-priority-in-testing-with-examples/</a>
         </li>
       
         <li>
-          <a href='project-mgmt' class='text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Project Management</a>
+          <a href='https://www.atlassian.com/incident-management/kpis/severity-levels' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>https://www.atlassian.com/incident-management/kpis/severity-levels</a>
         </li>
       
     </ul>
-  <h3 id='products' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Products</h3>
-    <p class='mb-3'>
-      Our flagship product is <a href='https://github.com/orgs/input-output-hk/cardano-wallet' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Cardano Wallet</a>, which is a HTTP service for sending and receiving payments on the Cardano blockchain.
-    </p>
   
-    <p class='mb-3'>
-      <a href='https://github.com/orgs/input-output-hk/cardano-wallet' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Cardano Wallet</a> is a application which can be used on its own, but usually it will be used as the backend service of other applications such as a desktop wallet app, in a web shop, or at a cryptocurrency exchange.
-    </p>
-  
-    <p class='mb-3'>
-      Underlying the service applications are several Haskell packages which developers can use to create new applications based on Cardano.
-    </p>
-  
-    <p class='mb-3'>
-      See:
-    </p>
-  
-    <ul class='my-3 ml-6 space-y-1 list-disc'>
-      
-        <li>
-          <a href='eng-practices/Architecture' class='text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Architecture</a>
-        </li>
-      
-        <li>
-          <span title='Link is broken'><s>[[User-Guide]]</s>❌</span>
-        </li>
-      
-    </ul>
-  <h3 id='team' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Team</h3>
-    <p class='mb-3'>
-      Adrestia are also the <a href='https://github.com/orgs/input-output-hk/teams/adrestia/members' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>engineering team</a> whose goal is to bring Cardano to users and developers through our products.
-    </p>
-  
-    <p class='mb-3'>
-      We work with the Cardano community and alongside other teams in IOHK.
-    </p>
+    </blockquote>
   
   <!-- What goes in this file will appear below the note body-->
 </article>
@@ -1515,14 +1483,18 @@
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-indigo-600 font-bold hover:bg-indigo-50' href='project-mgmt/Communication-Conventions'>
-            Communication conventions
+          <a class='text-indigo-600 font-bold hover:bg-indigo-50' href='project-mgmt/Issue-Tracking'>
+            Issue Tracking
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-indigo-200 hover:border-indigo-500'>
-      <div><p>If a process or practices decision has been reached, record it in the <a href='' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Adrestia docs</a> repository.</p></div>
+      <div>Bug is assigned <em>Priority</em> by Team Lead or Product Manager according to <a href='eng-practices/Bug-Classification' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Bug Classification</a>.</div>
+    </div>
+  
+    <div class='pl-2 mt-2 border-l-2 border-indigo-200 hover:border-indigo-500'>
+      <div>The bug is assigned a <em>Severity / Probability Score</em> by the creator according to <a href='eng-practices/Bug-Classification' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Bug Classification</a></div>
     </div>
   
 </div>
@@ -1535,6 +1507,12 @@
             </div>
             
   <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
+    
+      <a title='Tag' class='px-1 bg-gray-100 rounded hover:bg-gray-50 hover:text-indigo-500' href='-/tags/quality'>
+        <!-- DoNotFormat -->
+        #quality
+        <!-- DoNotFormat -->
+      </a>
     
   </section>
 

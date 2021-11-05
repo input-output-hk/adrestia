@@ -4,14 +4,14 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Adrestia Process Docs
+    Extracting New Libraries From Existing Repositories – Adrestia Process Docs
   </title>
   
     
       <meta property='og:description' content />
       <meta property='og:site_name' content='Adrestia Process Docs' />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Adrestia Process Docs' />
+      <meta property='og:title' content='Extracting New Libraries From Existing Repositories' />
     
     
       <base href='/adrestia/process/' />
@@ -90,6 +90,26 @@
             
           
         </li>
+        
+          
+            <li class='inline-flex items-center'>
+              <a class='px-1 font-bold' href=''>
+                Adrestia Process Docs
+              </a>
+              <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
+                <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
+              </svg>
+            </li>
+          
+            <li class='inline-flex items-center'>
+              <a class='px-1 font-bold' href='eng-practices'>
+                Engineering Practices
+              </a>
+              <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
+                <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
+              </svg>
+            </li>
+          
         
       </ul>
     </div>
@@ -613,11 +633,7 @@
     
       <!-- Variable bindings for this tree-->
   
-    
-      
-    
-    
-
+  
 
 
   
@@ -630,12 +646,12 @@
     
     
       <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'>
         </path>
       </svg>
-    
+      
   
-    <a class='hover:underline truncate' title='Extracting New Libraries From Existing Repositories' href='eng-practices/Library-Extraction-and-Repository-Creation-Process'>
+    <a class='font-bold text-indigo-600 hover:underline truncate' title='Extracting New Libraries From Existing Repositories' href='eng-practices/Library-Extraction-and-Repository-Creation-Process'>
       Extracting New Libraries From Existing Repositories
     </a>
     
@@ -1403,108 +1419,253 @@
           <main class='px-4 py-4'>
             <h1 class='flex items-end justify-center mb-4 p-3 bg-indigo-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Adrestia Process Docs
+    Extracting New Libraries From Existing Repositories
   </a>
 </h1>
             <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
-  <div class='px-3 py-1 rounded shadow bg-yellow-100 mx-2 transform -skew-y-1 scale-95 hover:scale-100 hover:border-yellow-400 hover:shadow-lg border-t-8 border-yellow-200 mb-8 mt-8 max-w-md mx-auto'>
+  <h2 id='introduction' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Introduction</h2>
     <p class='mb-3'>
-      <strong>Under Construction!</strong>
+      This article documents the process that we used to create the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-coin-selection</code> repository.
+    </p>
+  <h2 id='contents' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Contents</h2>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          <a href='#overview' class='text-indigo-600 font-bold hover:underline'>Overview</a>
+        </li>
+      
+        <li>
+          <a href='#background' class='text-indigo-600 font-bold hover:underline'>Background</a>
+        </li>
+      
+        <li>
+          <a href='#process' class='text-indigo-600 font-bold hover:underline'>Process</a>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          <a href='#step-1-clone-source-repository' class='text-indigo-600 font-bold hover:underline'>Step 1: Clone Source Repository</a>
+        </li>
+      
+        <li>
+          <a href='#step-2-remove-irrelevant-files' class='text-indigo-600 font-bold hover:underline'>Step 2: Remove Irrelevant Files</a>
+        </li>
+      
+        <li>
+          <a href='#step-3-identify-content-ancestors' class='text-indigo-600 font-bold hover:underline'>Step 3: Identify Content Ancestors</a>
+        </li>
+      
+        <li>
+          <a href='#step-4-filter-commit-history' class='text-indigo-600 font-bold hover:underline'>Step 4: Filter Commit History</a>
+        </li>
+      
+        <li>
+          <a href='#step-5-verify-commit-history' class='text-indigo-600 font-bold hover:underline'>Step 5: Verify Commit History</a>
+        </li>
+      
+        <li>
+          <a href='#step-6-push-to-github' class='text-indigo-600 font-bold hover:underline'>Step 6: Push to GitHub</a>
+        </li>
+      
+    </ul>
+  
+        </li>
+      
+    </ul>
+  <h2 id='overview' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Overview</h2>
+    <p class='mb-3'>
+      The <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-coin-selection</code> repository was created by taking a clone of the pre-existing <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> repository and <em>filtering out</em> a <em>relevant subset</em> of the version control history.
     </p>
   
     <p class='mb-3'>
-      These docs have just moved from the wiki and are in the process of being re-organised and updated.
+      This article provides a record of the steps we used to perform this operation.
     </p>
-  </div><div class='rounded-t-xl bg-gradient-to-b from-indigo-100 to-indigo-400 bg-white p-8 mb-4'><div class='grid grid-cols-2 gap-4 p-3 bg-indigo-500 md:grid-cols-3'>
+  <h2 id='background' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Background</h2>
     <p class='mb-3'>
-      <a href='eng-practices' class='h-32 p-4 border-4 bg-white rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Eng. Practices</a>
-    </p>
-  
-    <p class='mb-3'>
-      <a href='project-mgmt' class='h-32 p-4 border-4 bg-white rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Project Mgmt.</a>
+      Filtering the version control history of a repository is non-trivial.
     </p>
   
     <p class='mb-3'>
-      <a href='resources' class='h-32 p-4 border-4 bg-white rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Resources</a>
+      One issue is that files in a repository are often renamed several times over the course of their history, and other files are composed of content from multiple ancestor files.
     </p>
   
     <p class='mb-3'>
-      <a href='-/tags' class='h-32 p-4 border-4 bg-indigo-100 rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline text-indigo-600 font-bold hover:underline'>Tags</a>
+      Assuming that we’d like to generate a <em>new</em> repository from a <em>subset</em> of the files in some source repository, we have to find a way to retain the history of not just the subset of files that we’re interested in, but <em>also</em> the histories of all files that served as <em>content ancestors</em> for that subset of files.
     </p>
   
     <p class='mb-3'>
-      <a href='-/all' class='h-32 p-4 border-4 bg-indigo-100 rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline text-indigo-600 font-bold hover:underline'>Index</a>
+      If we just naively filter for commits that affect the subset of files we’re interested in, we run the risk of losing those commits that affect older versions of files that existed at different paths.
     </p>
   
     <p class='mb-3'>
-      <a href='-/tasks' class='h-32 p-4 border-4 bg-indigo-100 rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline text-indigo-600 font-bold hover:underline'>Docs TODO List</a>
-    </p>
-  </div></div><h2 id='what-is-adrestia' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>What is Adrestia?</h2>
-    <p class='mb-3'>
-      Adrestia is a process, a suite of products, and a team within IOHK.
-    </p>
-  <h3 id='process' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Process</h3>
-    <p class='mb-3'>
-      Our vision is to produce a set of orthogonal and self-contained services and APIs to support Cardano applications such as wallets and explorer applications.
-    </p>
-  
-    <p class='mb-3'>
-      These services are developed in a usable, reliable, extensible, and maintainable way. These are our processes and practices.
-    </p>
-  
-    <p class='mb-3'>
-      See:
+      In general, we’d like to keep commits for both:
     </p>
   
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          <a href='eng-practices' class='text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Engineering Practices</a>
+          all files of interest; and
         </li>
       
         <li>
-          <a href='project-mgmt' class='text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Project Management</a>
+          all ancestors of files that are of interest.
         </li>
       
     </ul>
-  <h3 id='products' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Products</h3>
+  <h3 id='example' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Example</h3>
     <p class='mb-3'>
-      Our flagship product is <a href='https://github.com/orgs/input-output-hk/cardano-wallet' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Cardano Wallet</a>, which is a HTTP service for sending and receiving payments on the Cardano blockchain.
-    </p>
-  
-    <p class='mb-3'>
-      <a href='https://github.com/orgs/input-output-hk/cardano-wallet' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Cardano Wallet</a> is a application which can be used on its own, but usually it will be used as the backend service of other applications such as a desktop wallet app, in a web shop, or at a cryptocurrency exchange.
-    </p>
-  
-    <p class='mb-3'>
-      Underlying the service applications are several Haskell packages which developers can use to create new applications based on Cardano.
-    </p>
-  
-    <p class='mb-3'>
-      See:
+      For example, suppose that the module <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Cardano.Wallet.Primitive.Types</code> includes content from files that once existed at the following paths:
     </p>
   
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          <a href='eng-practices/Architecture' class='text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Architecture</a>
+          <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>lib/core/src/Cardano/Wallet/Types.hs</code>
         </li>
       
         <li>
-          <span title='Link is broken'><s>[[User-Guide]]</s>❌</span>
+          <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>lib/core/src/Cardano/Wallet/Primitive/Types.hs</code>
+        </li>
+      
+        <li>
+          <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>src/Cardano/Wallet/Primitive.hs</code>
+        </li>
+      
+        <li>
+          <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>src/Cardano/Wallet/Primitive/Types.hs</code>
         </li>
       
     </ul>
-  <h3 id='team' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Team</h3>
+  
     <p class='mb-3'>
-      Adrestia are also the <a href='https://github.com/orgs/input-output-hk/teams/adrestia/members' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>engineering team</a> whose goal is to bring Cardano to users and developers through our products.
+      We’d ideally like to keep commits relating to all of those paths.
+    </p>
+  <h2 id='process' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Process</h2>
+    <p class='mb-3'>
+      Here is a record of the steps we used to create the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-coin-selection</code> repository.
+    </p>
+  <h3 id='step-1-clone-source-repository' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Step 1: Clone Source Repository</h3>
+    <p class='mb-3'>
+      We start with a fresh clone of the source repository (in our case, the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> repository).
+    </p>
+  <h3 id='step-2-remove-irrelevant-files' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Step 2: Remove Irrelevant Files</h3>
+    <p class='mb-3'>
+      In this step, we identify the files that we want to keep, and remove all files that are irrelevant.
     </p>
   
     <p class='mb-3'>
-      We work with the Cardano community and alongside other teams in IOHK.
+      To achieve this, we make a <em>single commit</em> to the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>master</code> branch that removes all unwanted files from the repository. The result of applying this commit should be precisely the set of files we want to keep.
     </p>
   
+    <p class='mb-3'>
+      Note that in the case of Haskell modules, we need to be somewhat careful, and avoid deleting any modules that define functions imported by the modules we want to keep. To avoid deleting too much, we need to determine the <em>transitive closure</em> of module dependencies required by the modules that we’re interested in.
+    </p>
+  
+    <p class='mb-3'>
+      A safe way to achieve this is to <em>iteratively</em> remove files that we’re not interested in, while confirming that it is still possible to build the remaining subset, repeating the process until all unwanted files are deleted.
+    </p>
+  <h4 id='example-1' class='mt-6 mb-2 text-2xl font-bold text-gray-700'>Example</h4>
+    <p class='mb-3'>
+      Suppose that we want to keep file <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>src/ImportantModule.hs</code>, but that it imports functions defined in the following modules:
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>src/Wibble.hs</code>
+        </li>
+      
+        <li>
+          <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>src/Wobble.hs</code>
+        </li>
+      
+    </ul>
+  
+    <p class='mb-3'>
+      Furthermore, suppose that <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>src/Wibble.hs</code> imports functions from the following modules:
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>src/Foo.hs</code>
+        </li>
+      
+        <li>
+          <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>src/Bar.hs</code>
+        </li>
+      
+    </ul>
+  
+    <p class='mb-3'>
+      If we wish to keep <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>src/ImportantModule.hs</code>, we should therefore also keep:
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>src/Wibble.hs</code>
+        </li>
+      
+        <li>
+          <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>src/Wobble.hs</code>
+        </li>
+      
+        <li>
+          <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>src/Foo.hs</code>
+        </li>
+      
+        <li>
+          <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>src/Bar.hs</code>
+        </li>
+      
+    </ul>
+  <h3 id='step-3-identify-content-ancestors' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Step 3: Identify Content Ancestors</h3>
+    <p class='mb-3'>
+      In this step, we identify the historic ancestors of all files that we want to keep.
+    </p>
+  
+    <p class='mb-3'>
+      We generate a list of path names for <em>all current files</em>, as well as path names for <em>all historical ancestor files</em>, using the following script:
+    </p>
+  
+    <p class='mb-3'>
+      <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>find-paths.sh</code>:
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='shell language-shell'>#!/usr/bin/env bash
+git ls-tree -r master --name-only | while read -r file; do
+    git log --follow --name-status -- "$file" \
+        | awk '/^R[0-9]+/ { print $2; print $3 } {}'
+done | sort -u</code></pre></div>
+    <p class='mb-3'>
+      Run the script from the root of the repository, as follows:
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='shell-session language-shell-session'>$ find-paths.sh &gt; files-to-keep</code></pre></div><h3 id='step-4-filter-commit-history' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Step 4: Filter Commit History</h3>
+    <p class='mb-3'>
+      In this step, we <em>filter</em> the version control history, removing all commits that are unrelated to the list of files identified in the previous step.
+    </p>
+  
+    <p class='mb-3'>
+      Run the following command, using the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>git-filter-repo</code> tool:
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='shell-session language-shell-session'>$ git filter-repo --paths-from-file files-to-keep</code></pre></div><h3 id='step-5-verify-commit-history' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Step 5: Verify Commit History</h3>
+    <p class='mb-3'>
+      In this step, we verify that we have retained all relevant parts of the history.
+    </p>
+  
+    <p class='mb-3'>
+      Re-run the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>find-paths</code> script from the root of the repository, as follows:
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='shell-session language-shell-session'>$ find-paths.sh &gt; files-kept</code></pre></div>
+    <p class='mb-3'>
+      The content of <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>files-kept</code> should be <strong>identical</strong> to <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>files-to-keep</code>.
+    </p>
+  <h3 id='step-6-push-to-github' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Step 6: Push to GitHub</h3>
+    <p class='mb-3'>
+      First follow the <a href='eng-practices/New-Repo-Checklist' class='text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>New Repo Checklist</a> to create a repo on GitHub. Then:
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='shell-session language-shell-session'>$ git remote set-url origin git@github.com:input-output-hk/newrepo.git
+$ git push --force -u origin master</code></pre></div>
   <!-- What goes in this file will appear below the note body-->
 </article>
             <div class='flex flex-col lg:flex-row lg:space-x-2'>
@@ -1515,14 +1676,14 @@
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-indigo-600 font-bold hover:bg-indigo-50' href='project-mgmt/Communication-Conventions'>
-            Communication conventions
+          <a class='text-indigo-600 font-bold hover:bg-indigo-50' href='eng-practices/New-Repo-Checklist'>
+            New Repo Checklist
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-indigo-200 hover:border-indigo-500'>
-      <div><p>If a process or practices decision has been reached, record it in the <a href='' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Adrestia docs</a> repository.</p></div>
+      <div><p>If this repo is splitting off an existing repo, see <a href='eng-practices/Library-Extraction-and-Repository-Creation-Process' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Extracting New Libraries From Existing Repositories</a>.</p></div>
     </div>
   
 </div>

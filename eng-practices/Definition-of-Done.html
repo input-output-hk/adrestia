@@ -4,14 +4,14 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Adrestia Process Docs
+    Definition of Done – Adrestia Process Docs
   </title>
   
     
       <meta property='og:description' content />
       <meta property='og:site_name' content='Adrestia Process Docs' />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Adrestia Process Docs' />
+      <meta property='og:title' content='Definition of “Done”' />
     
     
       <base href='/adrestia/process/' />
@@ -90,6 +90,26 @@
             
           
         </li>
+        
+          
+            <li class='inline-flex items-center'>
+              <a class='px-1 font-bold' href=''>
+                Adrestia Process Docs
+              </a>
+              <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
+                <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
+              </svg>
+            </li>
+          
+            <li class='inline-flex items-center'>
+              <a class='px-1 font-bold' href='eng-practices'>
+                Engineering Practices
+              </a>
+              <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
+                <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
+              </svg>
+            </li>
+          
         
       </ul>
     </div>
@@ -223,11 +243,7 @@
     
       <!-- Variable bindings for this tree-->
   
-    
-      
-    
-    
-
+  
 
 
   
@@ -240,12 +256,12 @@
     
     
       <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'>
         </path>
       </svg>
-    
+      
   
-    <a class='hover:underline truncate' title='Definition of “Done”' href='eng-practices/Definition-of-Done'>
+    <a class='font-bold text-indigo-600 hover:underline truncate' title='Definition of “Done”' href='eng-practices/Definition-of-Done'>
       Definition of “Done”
     </a>
     
@@ -1403,138 +1419,181 @@
           <main class='px-4 py-4'>
             <h1 class='flex items-end justify-center mb-4 p-3 bg-indigo-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Adrestia Process Docs
+    Definition of “Done”
   </a>
 </h1>
             <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
-  <div class='px-3 py-1 rounded shadow bg-yellow-100 mx-2 transform -skew-y-1 scale-95 hover:scale-100 hover:border-yellow-400 hover:shadow-lg border-t-8 border-yellow-200 mb-8 mt-8 max-w-md mx-auto'>
+  
     <p class='mb-3'>
-      <strong>Under Construction!</strong>
+      Use these checklists to determine whether the task/user story which you are reviewing is fully complete. Fully complete means releasable, and no further work required.
     </p>
   
     <p class='mb-3'>
-      These docs have just moved from the wiki and are in the process of being re-organised and updated.
+      We might consider things “done” at different levels because features are composed from many sub-units, such as <em>Task</em> issues and PRs.
     </p>
-  </div><div class='rounded-t-xl bg-gradient-to-b from-indigo-100 to-indigo-400 bg-white p-8 mb-4'><div class='grid grid-cols-2 gap-4 p-3 bg-indigo-500 md:grid-cols-3'>
+  <h2 id='github-pull-request' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>GitHub Pull Request</h2>
     <p class='mb-3'>
-      <a href='eng-practices' class='h-32 p-4 border-4 bg-white rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Eng. Practices</a>
+      A single PR often won’t complete an entire feature. There may be multiple smaller PRs necessary. We consider a PR done if the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>master</code> branch would remain “releaseable” after merging this PR.
+    </p>
+  <h3 id='ready-for-review' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Ready for review</h3>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Fields filled out correctly according to Pull Request template.
+        </li>
+      
+        <li>
+          PR is not in “draft” state.
+        </li>
+      
+        <li>
+          See also <a href='eng-practices/Code-Review-Guidelines' class='text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Code Review Guidelines</a>.
+        </li>
+      
+    </ul>
+  <h3 id='can-be-merged-into-master' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Can be merged into <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>master</code></h3>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Reviewed by someone other than the author.
+        </li>
+      
+        <li>
+          Addresses the referenced task ticket in some way.
+        </li>
+      
+        <li>
+          Automated CI passing.
+        </li>
+      
+        <li>
+          Meets <a href='eng-practices/Coding-Standards' class='text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Coding Standards</a>.
+        </li>
+      
+        <li>
+          All review comments are addressed.
+        </li>
+      
+    </ul>
+  
+    <p class='mb-3'>
+      Sometimes it may be expedient to merge a PR without all review comments and/or coding standards being addressed. This should only be done if the PR author undertakes to immediately begin correcting those issues in their next PR.
+    </p>
+  <h2 id='jira-task-issue-technical-task' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Jira <em>Task</em> issue (Technical task)</h2>
+    <p class='mb-3'>
+      The implementation of a <em>User Story</em> issue is divided into one or more <em>Task</em> issues. The technical task issues will address a smaller part of the feature.
     </p>
   
     <p class='mb-3'>
-      <a href='project-mgmt' class='h-32 p-4 border-4 bg-white rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Project Mgmt.</a>
+      Once a technical task is done, the assignee checks that it meets the necessary criteria and moves it into the “QA” column of the sprint board.
     </p>
+  <h3 id='ready-for-moving-to-qa-state' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Ready for moving to QA state</h3>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Acceptance Criteria have been fulfilled.
+        </li>
+      
+        <li>
+          Has adequate test coverage at the appropriate level(s).
+        </li>
+      
+        <li>
+          Has documentation
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          User Manual updated (if applicable)
+        </li>
+      
+        <li>
+          Design documentation added/updated (if applicable)
+        </li>
+      
+    </ul>
   
+        </li>
+      
+        <li>
+          <em>Task</em> as a whole meets <a href='eng-practices/Coding-Standards' class='text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Coding Standards</a>.
+        </li>
+      
+    </ul>
+  <h3 id='done' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Done</h3>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Ticket has been checked by our <a href='eng-practices/QA-Approach' class='text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>QA engineer</a> for adherence to standards and definitions of done.
+        </li>
+      
+    </ul>
+  <h2 id='user-story-issues' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'><em>User Story</em> issues</h2>
     <p class='mb-3'>
-      <a href='resources' class='h-32 p-4 border-4 bg-white rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Resources</a>
-    </p>
-  
-    <p class='mb-3'>
-      <a href='-/tags' class='h-32 p-4 border-4 bg-indigo-100 rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline text-indigo-600 font-bold hover:underline'>Tags</a>
-    </p>
-  
-    <p class='mb-3'>
-      <a href='-/all' class='h-32 p-4 border-4 bg-indigo-100 rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline text-indigo-600 font-bold hover:underline'>Index</a>
-    </p>
-  
-    <p class='mb-3'>
-      <a href='-/tasks' class='h-32 p-4 border-4 bg-indigo-100 rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline text-indigo-600 font-bold hover:underline'>Docs TODO List</a>
-    </p>
-  </div></div><h2 id='what-is-adrestia' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>What is Adrestia?</h2>
-    <p class='mb-3'>
-      Adrestia is a process, a suite of products, and a team within IOHK.
-    </p>
-  <h3 id='process' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Process</h3>
-    <p class='mb-3'>
-      Our vision is to produce a set of orthogonal and self-contained services and APIs to support Cardano applications such as wallets and explorer applications.
-    </p>
-  
-    <p class='mb-3'>
-      These services are developed in a usable, reliable, extensible, and maintainable way. These are our processes and practices.
-    </p>
-  
-    <p class='mb-3'>
-      See:
+      See <a href='project-mgmt' class='text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Project Management</a> for an example feature description.
     </p>
   
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          <a href='eng-practices' class='text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Engineering Practices</a>
+          There are automated functional test cases covering the A/C of the <em>User Story</em>.
         </li>
       
         <li>
-          <a href='project-mgmt' class='text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Project Management</a>
+          The U/S works coherently as a whole in the application.
         </li>
       
-    </ul>
-  <h3 id='products' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Products</h3>
-    <p class='mb-3'>
-      Our flagship product is <a href='https://github.com/orgs/input-output-hk/cardano-wallet' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Cardano Wallet</a>, which is a HTTP service for sending and receiving payments on the Cardano blockchain.
-    </p>
-  
-    <p class='mb-3'>
-      <a href='https://github.com/orgs/input-output-hk/cardano-wallet' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Cardano Wallet</a> is a application which can be used on its own, but usually it will be used as the backend service of other applications such as a desktop wallet app, in a web shop, or at a cryptocurrency exchange.
-    </p>
-  
-    <p class='mb-3'>
-      Underlying the service applications are several Haskell packages which developers can use to create new applications based on Cardano.
-    </p>
-  
-    <p class='mb-3'>
-      See:
-    </p>
-  
+        <li>
+          Non-functional requirements have also been addressed, such as:
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          <a href='eng-practices/Architecture' class='text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Architecture</a>
+          Performance
         </li>
       
         <li>
-          <span title='Link is broken'><s>[[User-Guide]]</s>❌</span>
+          Logging
+        </li>
+      
+        <li>
+          Other operational concerns
         </li>
       
     </ul>
-  <h3 id='team' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Team</h3>
-    <p class='mb-3'>
-      Adrestia are also the <a href='https://github.com/orgs/input-output-hk/teams/adrestia/members' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>engineering team</a> whose goal is to bring Cardano to users and developers through our products.
-    </p>
   
-    <p class='mb-3'>
-      We work with the Cardano community and alongside other teams in IOHK.
-    </p>
+        </li>
+      
+    </ul>
+  <h2 id='todo' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>TODO</h2>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          
+    <label class='inline-flex items-start space-x-2'>
+      <input type='checkbox' class='flex-shrink-0 w-5 h-5' />
+      <span>
+        Definition of “Ready”
+      </span>
+    </label>
+  
+        </li>
+      
+    </ul>
   
   <!-- What goes in this file will appear below the note body-->
 </article>
             <div class='flex flex-col lg:flex-row lg:space-x-2'>
               
               
-  <div class='flex-1 p-4 mt-8 bg-gray-100 rounded'>
-    <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
-    <ul class='space-y-1'>
-      
-        <li>
-          <a class='text-indigo-600 font-bold hover:bg-indigo-50' href='project-mgmt/Communication-Conventions'>
-            Communication conventions
-          </a>
-          
-            <div class='mb-4 overflow-auto text-sm text-gray-500'>
-  
-    <div class='pl-2 mt-2 border-l-2 border-indigo-200 hover:border-indigo-500'>
-      <div><p>If a process or practices decision has been reached, record it in the <a href='' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Adrestia docs</a> repository.</p></div>
-    </div>
-  
-</div>
-          
-        </li>
-      
-    </ul>
-  </div>
-
             </div>
             
   <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
+    
+      <a title='Tag' class='px-1 bg-gray-100 rounded hover:bg-gray-50 hover:text-indigo-500' href='-/tags/needs/review'>
+        <!-- DoNotFormat -->
+        #needs/review
+        <!-- DoNotFormat -->
+      </a>
     
   </section>
 

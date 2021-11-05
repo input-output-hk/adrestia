@@ -4,14 +4,14 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Adrestia Process Docs
+    Project Management – Adrestia Process Docs
   </title>
   
     
       <meta property='og:description' content />
       <meta property='og:site_name' content='Adrestia Process Docs' />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Adrestia Process Docs' />
+      <meta property='og:title' content='Project Management' />
     
     
       <base href='/adrestia/process/' />
@@ -90,6 +90,17 @@
             
           
         </li>
+        
+          
+            <li class='inline-flex items-center'>
+              <a class='px-1 font-bold' href=''>
+                Adrestia Process Docs
+              </a>
+              <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
+                <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
+              </svg>
+            </li>
+          
         
       </ul>
     </div>
@@ -694,11 +705,7 @@
             
               <!-- Variable bindings for this tree-->
   
-    
-      
-      
-    
-
+  
 
 
   
@@ -716,7 +723,7 @@
       </svg>
       
   
-    <a class='font-bold hover:underline truncate' title='Project Management' href='project-mgmt'>
+    <a class='font-bold text-indigo-600 hover:underline truncate' title='Project Management' href='project-mgmt'>
       Project Management
     </a>
     
@@ -1403,56 +1410,185 @@
           <main class='px-4 py-4'>
             <h1 class='flex items-end justify-center mb-4 p-3 bg-indigo-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Adrestia Process Docs
+    Project Management
   </a>
 </h1>
             <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
-  <div class='px-3 py-1 rounded shadow bg-yellow-100 mx-2 transform -skew-y-1 scale-95 hover:scale-100 hover:border-yellow-400 hover:shadow-lg border-t-8 border-yellow-200 mb-8 mt-8 max-w-md mx-auto'>
-    <p class='mb-3'>
-      <strong>Under Construction!</strong>
-    </p>
   
     <p class='mb-3'>
-      These docs have just moved from the wiki and are in the process of being re-organised and updated.
+      The team’s process is derived from <a href='http://www.extremeprogramming.org' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>extreme programming</a> and <a href='https://scrumguides.org/scrum-guide.html#scrum-definition' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>scrum</a>, adapted for use by a distributed teams. It can be summarized as follows:
     </p>
-  </div><div class='rounded-t-xl bg-gradient-to-b from-indigo-100 to-indigo-400 bg-white p-8 mb-4'><div class='grid grid-cols-2 gap-4 p-3 bg-indigo-500 md:grid-cols-3'>
+  <h2 id='feature-roadmap' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Feature Roadmap</h2>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Our feature roadmap is a product backlog, owned by a <em>Product Owner</em>.
+        </li>
+      
+        <li>
+          Each item is described in terms of:
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          A user story (U/S) following the Role-Feature-Reason template.
+        </li>
+      
+        <li>
+          Acceptance Criteria (A/C). Use specific language in the style of
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          <a href='https://www.rfc-editor.org/rfc/rfc2119.html' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>RFC 2119</a> “MAY/SHOULD/MUST”, or
+        </li>
+      
+        <li>
+          <a href='https://docs.behat.org/en/v2.5/guides/1.gherkin.html' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Gherkin Syntax</a>.
+        </li>
+      
+    </ul>
+  
+        </li>
+      
+        <li>
+          Possible extra information or documents.
+        </li>
+      
+    </ul>
+  
+        </li>
+      
+        <li>
+          Items in the backlog are sorted by priority.
+        </li>
+      
+        <li>
+          U/S are <a href='project-mgmt/Estimation-Process' class='text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>estimated</a> by the team, before the development proceeds.
+        </li>
+      
+    </ul>
+  <div class='px-3 py-1 mb-3 rounded bg-indigo-100 hover:border-indigo-400 hover:shadow border-t-8 border-indigo-200'><h3 id='example-feature-description' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Example Feature Description</h3><h4 id='us' class='mt-6 mb-2 text-2xl font-bold text-gray-700'>U/S</h4>
     <p class='mb-3'>
-      <a href='eng-practices' class='h-32 p-4 border-4 bg-white rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Eng. Practices</a>
+      <strong>As</strong> a stake pool operator<br /><strong>I want</strong> the pool ordering to be fair and not favor any particular pools especially during the bootstrapping era<br /><strong>So that</strong> every pool has the same chance to be selected by users in the early stages.
+    </p>
+  <h3 id='ac' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>A/C</h3>
+    <p class='mb-3'>
+      <strong>Given</strong> that stake pools can be listed via <a href='https://input-output-hk.github.io/cardano-wallet/api/edge/#operation/listStakePools' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>https://input-output-hk.github.io/cardano-wallet/api/edge/#operation/listStakePools</a><br /><strong>And</strong> they are ordered by “apparent performance”<br /><strong>When</strong> I query stake pools during the first epoch (when little information about them is available)<br /><strong>Then</strong> pools are ordered arbitrarily<br /><strong>And</strong> the order is not necessarily the same between different wallets<br /><strong>And</strong> the order is consistent between successive calls within the same wallet.
+    </p>
+  </div><h2 id='iterations' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Iterations</h2>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          
+    <p class='mb-3'>
+      The project runs in fortnightly “sprint” iterations.
     </p>
   
+        </li>
+      
+        <li>
+          
     <p class='mb-3'>
-      <a href='project-mgmt' class='h-32 p-4 border-4 bg-white rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Project Mgmt.</a>
+      One release per sprint would be ideal.
     </p>
   
+        </li>
+      
+        <li>
+          
     <p class='mb-3'>
-      <a href='resources' class='h-32 p-4 border-4 bg-white rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Resources</a>
+      User stories are assigned to and owned by a single member of the team (a.k.a the Pilot). Pilots are seconded by a <a href='project-mgmt/Co-Pilot' class='text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Co-Pilot Process</a>.
     </p>
   
+        </li>
+      
+        <li>
+          
     <p class='mb-3'>
-      <a href='-/tags' class='h-32 p-4 border-4 bg-indigo-100 rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline text-indigo-600 font-bold hover:underline'>Tags</a>
+      Tasks and Pull Requests have a dedicated GitHub template:
     </p>
   
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          <a href='https://github.com/input-output-hk/adrestia/blob/master/.github/ISSUE_TEMPLATE/task.md' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Task Template</a>
+        </li>
+      
+        <li>
+          <a href='https://github.com/input-output-hk/adrestia/blob/master/.github/PULL_REQUEST_TEMPLATE.md' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>PR Template</a>
+        </li>
+      
+    </ul>
+  
+        </li>
+      
+        <li>
+          
     <p class='mb-3'>
-      <a href='-/all' class='h-32 p-4 border-4 bg-indigo-100 rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline text-indigo-600 font-bold hover:underline'>Index</a>
+      Tasks move across the <a href='https://input-output.atlassian.net/jira/software/c/projects/ADP/boards/231' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>following board</a>.
     </p>
   
+        </li>
+      
+    </ul>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>|*************|  |*************|  |*************|  |*************|
+|    To Do    |  | In Progress |  |      QA     |  |    Done     |
+|-------------|  |-------------|  |-------------|  |-------------|
+|             |  |             |  |             |  |             |
+|     ...    -----&gt;    ...    -----&gt;    ...    -----&gt;     ...    |
+|_____________|  |_____________|  |_____________|  |_____________|</code></pre></div><h2 id='technical-debt' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Technical Debt</h2>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          
     <p class='mb-3'>
-      <a href='-/tasks' class='h-32 p-4 border-4 bg-indigo-100 rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline text-indigo-600 font-bold hover:underline'>Docs TODO List</a>
-    </p>
-  </div></div><h2 id='what-is-adrestia' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>What is Adrestia?</h2>
-    <p class='mb-3'>
-      Adrestia is a process, a suite of products, and a team within IOHK.
-    </p>
-  <h3 id='process' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Process</h3>
-    <p class='mb-3'>
-      Our vision is to produce a set of orthogonal and self-contained services and APIs to support Cardano applications such as wallets and explorer applications.
+      During sprint weeks, we often accumulate technical debts (e.g. <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>TODO</code> or <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>FIXME</code>). Example of tasks falling under the “technical debt” umbrella:
     </p>
   
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Reviewing and extending code documentation
+        </li>
+      
+        <li>
+          Refactoring some potentially entangled parts of the code
+        </li>
+      
+        <li>
+          Re-organizing modules and folder achitecture
+        </li>
+      
+        <li>
+          Fix small <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>TODOs</code> or <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>FIXMEs</code>, or, turn them into U/S
+        </li>
+      
+        <li>
+          Identify areas of the source code which needs improvement
+        </li>
+      
+    </ul>
+  
+        </li>
+      
+        <li>
+          
     <p class='mb-3'>
-      These services are developed in a usable, reliable, extensible, and maintainable way. These are our processes and practices.
+      To be tackled efficiently, technical debts need to be mentioned and documented in ticket, so that it can be estimated, scoped, discussed and prioritized.
     </p>
   
+        </li>
+      
+        <li>
+          
+    <p class='mb-3'>
+      During the iteration planning meeting happening every week, the team will select the equivalent of 1-day work of technical debt to be tackled.
+    </p>
+  
+        </li>
+      
+    </ul>
+  <h2 id='communication' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Communication</h2>
     <p class='mb-3'>
       See:
     </p>
@@ -1460,50 +1596,18 @@
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          <a href='eng-practices' class='text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Engineering Practices</a>
+          <a href='project-mgmt/Communication-Conventions' class='text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Communication conventions</a>
         </li>
       
         <li>
-          <a href='project-mgmt' class='text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Project Management</a>
+          <a href='project-mgmt/Meetings' class='text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Meetings</a>
+        </li>
+      
+        <li>
+          <a href='eng-practices/Documentation' class='text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Documentation Guidelines</a>
         </li>
       
     </ul>
-  <h3 id='products' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Products</h3>
-    <p class='mb-3'>
-      Our flagship product is <a href='https://github.com/orgs/input-output-hk/cardano-wallet' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Cardano Wallet</a>, which is a HTTP service for sending and receiving payments on the Cardano blockchain.
-    </p>
-  
-    <p class='mb-3'>
-      <a href='https://github.com/orgs/input-output-hk/cardano-wallet' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Cardano Wallet</a> is a application which can be used on its own, but usually it will be used as the backend service of other applications such as a desktop wallet app, in a web shop, or at a cryptocurrency exchange.
-    </p>
-  
-    <p class='mb-3'>
-      Underlying the service applications are several Haskell packages which developers can use to create new applications based on Cardano.
-    </p>
-  
-    <p class='mb-3'>
-      See:
-    </p>
-  
-    <ul class='my-3 ml-6 space-y-1 list-disc'>
-      
-        <li>
-          <a href='eng-practices/Architecture' class='text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Architecture</a>
-        </li>
-      
-        <li>
-          <span title='Link is broken'><s>[[User-Guide]]</s>❌</span>
-        </li>
-      
-    </ul>
-  <h3 id='team' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Team</h3>
-    <p class='mb-3'>
-      Adrestia are also the <a href='https://github.com/orgs/input-output-hk/teams/adrestia/members' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>engineering team</a> whose goal is to bring Cardano to users and developers through our products.
-    </p>
-  
-    <p class='mb-3'>
-      We work with the Cardano community and alongside other teams in IOHK.
-    </p>
   
   <!-- What goes in this file will appear below the note body-->
 </article>
@@ -1515,14 +1619,56 @@
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-indigo-600 font-bold hover:bg-indigo-50' href='project-mgmt/Communication-Conventions'>
-            Communication conventions
+          <a class='text-indigo-600 font-bold hover:bg-indigo-50' href='resources/Glossary'>
+            Glossary
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-indigo-200 hover:border-indigo-500'>
-      <div><p>If a process or practices decision has been reached, record it in the <a href='' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Adrestia docs</a> repository.</p></div>
+      <div><a href='project-mgmt' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>acceptance criteria</a></div>
+    </div>
+  
+    <div class='pl-2 mt-2 border-l-2 border-indigo-200 hover:border-indigo-500'>
+      <div><a href='project-mgmt' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>extreme programming</a></div>
+    </div>
+  
+    <div class='pl-2 mt-2 border-l-2 border-indigo-200 hover:border-indigo-500'>
+      <div><a href='project-mgmt' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>user story</a></div>
+    </div>
+  
+</div>
+          
+        </li>
+      
+        <li>
+          <a class='text-indigo-600 font-bold hover:bg-indigo-50' href='eng-practices/Definition-of-Done'>
+            Definition of “Done”
+          </a>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-indigo-200 hover:border-indigo-500'>
+      <div><p>See <a href='project-mgmt' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Project Management</a> for an example feature description.</p></div>
+    </div>
+  
+</div>
+          
+        </li>
+      
+        <li>
+          <a class='text-indigo-600 font-bold hover:bg-indigo-50' href=''>
+            Adrestia Process Docs
+          </a>
+          
+            <div class='mb-4 overflow-auto text-sm text-gray-500'>
+  
+    <div class='pl-2 mt-2 border-l-2 border-indigo-200 hover:border-indigo-500'>
+      <div><a href='project-mgmt' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Project Management</a></div>
+    </div>
+  
+    <div class='pl-2 mt-2 border-l-2 border-indigo-200 hover:border-indigo-500'>
+      <div><p><a href='project-mgmt' class='h-32 p-4 border-4 bg-white rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Project Mgmt.</a></p></div>
     </div>
   
 </div>

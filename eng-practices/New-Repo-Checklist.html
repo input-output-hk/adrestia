@@ -4,14 +4,14 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Adrestia Process Docs
+    New Repo Checklist – Adrestia Process Docs
   </title>
   
     
       <meta property='og:description' content />
       <meta property='og:site_name' content='Adrestia Process Docs' />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Adrestia Process Docs' />
+      <meta property='og:title' content='New Repo Checklist' />
     
     
       <base href='/adrestia/process/' />
@@ -90,6 +90,26 @@
             
           
         </li>
+        
+          
+            <li class='inline-flex items-center'>
+              <a class='px-1 font-bold' href=''>
+                Adrestia Process Docs
+              </a>
+              <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
+                <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
+              </svg>
+            </li>
+          
+            <li class='inline-flex items-center'>
+              <a class='px-1 font-bold' href='eng-practices'>
+                Engineering Practices
+              </a>
+              <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
+                <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
+              </svg>
+            </li>
+          
         
       </ul>
     </div>
@@ -652,11 +672,7 @@
     
       <!-- Variable bindings for this tree-->
   
-    
-      
-    
-    
-
+  
 
 
   
@@ -669,12 +685,12 @@
     
     
       <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'>
         </path>
       </svg>
-    
+      
   
-    <a class='hover:underline truncate' title='New Repo Checklist' href='eng-practices/New-Repo-Checklist'>
+    <a class='font-bold text-indigo-600 hover:underline truncate' title='New Repo Checklist' href='eng-practices/New-Repo-Checklist'>
       New Repo Checklist
     </a>
     
@@ -1403,107 +1419,171 @@
           <main class='px-4 py-4'>
             <h1 class='flex items-end justify-center mb-4 p-3 bg-indigo-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Adrestia Process Docs
+    New Repo Checklist
   </a>
 </h1>
             <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
-  <div class='px-3 py-1 rounded shadow bg-yellow-100 mx-2 transform -skew-y-1 scale-95 hover:scale-100 hover:border-yellow-400 hover:shadow-lg border-t-8 border-yellow-200 mb-8 mt-8 max-w-md mx-auto'>
+  
     <p class='mb-3'>
-      <strong>Under Construction!</strong>
+      Policy and checklist for creating a new repo on GitHub.
+    </p>
+  <h3 id='0-does-it-need-to-be-a-separate-repo' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>0. Does it need to be a separate repo?</h3>
+    <p class='mb-3'>
+      Often, you can simply use a subdirectory of an existing repo. Even Haskell packages that will be published to Hackage can be kept in subdirectories of another project.
     </p>
   
     <p class='mb-3'>
-      These docs have just moved from the wiki and are in the process of being re-organised and updated.
-    </p>
-  </div><div class='rounded-t-xl bg-gradient-to-b from-indigo-100 to-indigo-400 bg-white p-8 mb-4'><div class='grid grid-cols-2 gap-4 p-3 bg-indigo-500 md:grid-cols-3'>
-    <p class='mb-3'>
-      <a href='eng-practices' class='h-32 p-4 border-4 bg-white rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Eng. Practices</a>
+      Multiple repos are more work to maintain (e.g. CI), and it’s more stuff to keep track of.
     </p>
   
     <p class='mb-3'>
-      <a href='project-mgmt' class='h-32 p-4 border-4 bg-white rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Project Mgmt.</a>
+      Ensure that you have a good reason to create a separate repo.
+    </p>
+  <h3 id='1-decide-which-github-organization-owns-the-repo' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>1. Decide which GitHub organization owns the repo</h3>
+    <p class='mb-3'>
+      In general, <strong>DON’T</strong> use your private GitHub account to own repos/forks which are dependencies of IOHK repos. Unless this fork is temporary, prefer <a href='https://github.com/input-output-hk' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>input-output-hk</a>. If you leave, we don’t want our project repos to disappear.
     </p>
   
     <p class='mb-3'>
-      <a href='resources' class='h-32 p-4 border-4 bg-white rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Resources</a>
+      However, to state the obvious, <strong>DON’T</strong> add repos which are likely to harm to harm the reputation of IOHK or mislead the public. Ask first, if in doubt.
+    </p>
+  <h3 id='2-decide-whether-the-repo-should-be-private' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>2. Decide whether the repo should be private</h3>
+    <p class='mb-3'>
+      Usually a repo should be public, unless there is some real reason to restrict access.
     </p>
   
     <p class='mb-3'>
-      <a href='-/tags' class='h-32 p-4 border-4 bg-indigo-100 rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline text-indigo-600 font-bold hover:underline'>Tags</a>
+      <strong>DON’T</strong> create private repos under <a href='https://github.com/input-output-hk' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>input-output-hk</a>, unless you are certain that it should remain private for a while. It’s rather difficult to change a private repo to public, or even to delete the private repo that you just created.
+    </p>
+  <h3 id='3-could-an-existing-repo-just-be-moved' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>3. Could an existing repo just be moved?</h3>
+    <p class='mb-3'>
+      If doing renames, merges, etc, consider using “Transfer ownership”, “Rename”, or “Change repository visibility” in the GitHub repo settings. This is safe, because the old locations will redirect. You may need IT to help with this change.
+    </p>
+  <h3 id='4-checklist-for-adding-a-new-repo' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>4. Checklist for adding a new repo</h3>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          
+    <p class='mb-3'>
+      Ensure appropriate access to the repo in <em>Settings</em> → <em>Manage access</em>.
     </p>
   
     <p class='mb-3'>
-      <a href='-/all' class='h-32 p-4 border-4 bg-indigo-100 rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline text-indigo-600 font-bold hover:underline'>Index</a>
+      <strong>DO</strong> use GitHub <a href='https://github.com/orgs/input-output-hk/teams' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Input Output organization teams</a> to manage access levels.
     </p>
   
     <p class='mb-3'>
-      <a href='-/tasks' class='h-32 p-4 border-4 bg-indigo-100 rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline text-indigo-600 font-bold hover:underline'>Docs TODO List</a>
-    </p>
-  </div></div><h2 id='what-is-adrestia' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>What is Adrestia?</h2>
-    <p class='mb-3'>
-      Adrestia is a process, a suite of products, and a team within IOHK.
-    </p>
-  <h3 id='process' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Process</h3>
-    <p class='mb-3'>
-      Our vision is to produce a set of orthogonal and self-contained services and APIs to support Cardano applications such as wallets and explorer applications.
+      <strong>DON’T</strong> invite individual developers (except your own user), unless for exceptional circumstances. Consider using the <a href='https://github.com/orgs/input-output-hk/teams/adrestia-guests' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Adrestia Guests</a> team.
     </p>
   
     <p class='mb-3'>
-      These services are developed in a usable, reliable, extensible, and maintainable way. These are our processes and practices.
-    </p>
-  
-    <p class='mb-3'>
-      See:
+      Invite teams according to this scheme:
     </p>
   
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          <a href='eng-practices' class='text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Engineering Practices</a>
+          <a href='https://github.com/orgs/input-output-hk/teams/adrestia' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Adrestia</a> - Triage (the umbrella group)
         </li>
       
         <li>
-          <a href='project-mgmt' class='text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Project Management</a>
+          <a href='https://github.com/orgs/input-output-hk/teams/adrestia-admins' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Adrestia Admins</a> - Admin
+        </li>
+      
+        <li>
+          <a href='https://github.com/orgs/input-output-hk/teams/adrestia-maintainers' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Adrestia Maintainers</a> - Maintainers (most developers are in this group).
+        </li>
+      
+        <li>
+          <a href='https://github.com/orgs/input-output-hk/teams/adrestia-guests' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Adrestia Guests</a> - Write
+        </li>
+      
+        <li>
+          <a href='https://github.com/orgs/input-output-hk/teams/devops' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>devops</a> - Admin (for setting up CI things)
+        </li>
+      
+        <li>
+          <a href='https://github.com/orgs/input-output-hk/teams/release' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>release</a> - Write (for editing release notes and making releases)
         </li>
       
     </ul>
-  <h3 id='products' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Products</h3>
-    <p class='mb-3'>
-      Our flagship product is <a href='https://github.com/orgs/input-output-hk/cardano-wallet' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Cardano Wallet</a>, which is a HTTP service for sending and receiving payments on the Cardano blockchain.
-    </p>
   
-    <p class='mb-3'>
-      <a href='https://github.com/orgs/input-output-hk/cardano-wallet' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Cardano Wallet</a> is a application which can be used on its own, but usually it will be used as the backend service of other applications such as a desktop wallet app, in a web shop, or at a cryptocurrency exchange.
-    </p>
-  
-    <p class='mb-3'>
-      Underlying the service applications are several Haskell packages which developers can use to create new applications based on Cardano.
-    </p>
-  
-    <p class='mb-3'>
-      See:
-    </p>
-  
-    <ul class='my-3 ml-6 space-y-1 list-disc'>
-      
-        <li>
-          <a href='eng-practices/Architecture' class='text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Architecture</a>
         </li>
       
         <li>
-          <span title='Link is broken'><s>[[User-Guide]]</s>❌</span>
+          
+    <p class='mb-3'>
+      Name of <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>master</code> branch - it really doesn’t matter, but consistency is nice.
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-3'>
+      Switch off features such as Issues/Wiki/Project/Pages unless you actually need them.
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-3'>
+      Add Autolink references for jira:
+    </p>
+  
+    <p class='mb-3'>
+      ADP-123 → <a href='https://input-output.atlassian.net/browse/ADP-123' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>https://input-output.atlassian.net/browse/ADP-123</a>
+    </p>
+  
+    <p class='mb-3'>
+      (<a href='https://docs.github.com/en/github/administering-a-repository/configuring-autolinks-to-reference-external-resources' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>see the GitHub documentation for more information</a>)
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-3'>
+      Remember to customize the “About” text and URL if applicable.
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-3'>
+      CI: if using Buildkite, set up a <a href='https://buildkite.com/input-output-hk' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>pipeline</a> and webhook.
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-3'>
+      CI: if using Hydra open a PR to add a <a href='https://github.com/input-output-hk/ci-ops/blob/master/jobsets/default.nix' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>jobset</a>.
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-3'>
+      CI: if your CI requires secrets such as auth tokens, ensure that all secrets are also stored in our shared LastPass folder (see [Passwords]).
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-3'>
+      If this repo is splitting off an existing repo, see <a href='eng-practices/Library-Extraction-and-Repository-Creation-Process' class='text-indigo-600 font-bold hover:underline' data-wikilink-type='WikiLinkNormal'>Extracting New Libraries From Existing Repositories</a>.
+    </p>
+  
         </li>
       
     </ul>
-  <h3 id='team' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Team</h3>
-    <p class='mb-3'>
-      Adrestia are also the <a href='https://github.com/orgs/input-output-hk/teams/adrestia/members' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>engineering team</a> whose goal is to bring Cardano to users and developers through our products.
-    </p>
-  
-    <p class='mb-3'>
-      We work with the Cardano community and alongside other teams in IOHK.
-    </p>
   
   <!-- What goes in this file will appear below the note body-->
 </article>
@@ -1515,14 +1595,14 @@
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-indigo-600 font-bold hover:bg-indigo-50' href='project-mgmt/Communication-Conventions'>
-            Communication conventions
+          <a class='text-indigo-600 font-bold hover:bg-indigo-50' href='eng-practices/Library-Extraction-and-Repository-Creation-Process'>
+            Extracting New Libraries From Existing Repositories
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-indigo-200 hover:border-indigo-500'>
-      <div><p>If a process or practices decision has been reached, record it in the <a href='' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Adrestia docs</a> repository.</p></div>
+      <div><p>First follow the <a href='eng-practices/New-Repo-Checklist' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>New Repo Checklist</a> to create a repo on GitHub. Then:</p></div>
     </div>
   
 </div>
