@@ -13,30 +13,18 @@ jobs:
       - name: 📥 Checkout repository
         uses: actions/checkout@v2
 
-      - name: 🧰 Download Hugo
-        run: |
-          curl -L https://github.com/gohugoio/hugo/releases/download/v0.68.3/hugo_extended_0.68.3_Linux-64bit.tar.gz | tar xz
-
-      - name: 📸 Build Static Website
-        run: |
-          cd user-guide && ../hugo -t book --minify
-
-      - name: Build process docs 🔧
+      - name: Build docs 🔧
         run: |
           mkdir -p output.docker
           docker run -e LANG=C.UTF-8 -e LC_ALL=C.UTF-8 -v $PWD:/data sridca/emanote emanote --layers "/data;/data/.deploy/github" gen /data/output.docker
           cp -r output.docker output  # Ditch docker created root-owned files
           bash output/_emanote-bin/compile-css
-        working-directory: process
-
-      - name: Collect
-        run: |
-          mv process/output user-guide/public/process
+        working-directory: docs
 
       - name: Deploy to gh-pages 🚀
         if: github.event_name == 'push'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: user-guide/public
+          publish_dir: docs/output
           enable_jekyll: false

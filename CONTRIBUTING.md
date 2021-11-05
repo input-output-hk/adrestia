@@ -2,7 +2,8 @@
 
 Want to contribute to _Adrestia_? Your help is welcome :heart:
 
-- Should you have [ideas](https://github.com/input-output-hk/adrestia/issues/new?template=idea.md) or [questions](https://github.com/input-output-hk/adrestia/issues/new?template=question.md), open a ticket and let us know!
+Pull requests to extend it or make improvements are really appreciated.
 
-- Our user guide is hosted on Github [right here](https://github.com/input-output-hk/adrestia/tree/master/user-guide)!  
-  Pull requests to extend it or make improvements are really appreciated.
+Our project documentation is hosted on GitHub at
+[input-output-hk/adrestia](https://github.com/input-output-hk/adrestia), which
+includes relevant information such as review processes and style guidelines.
