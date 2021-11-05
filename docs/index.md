@@ -18,9 +18,9 @@ being re-organised and updated.
 :::{.frontbox2}
 :::{.frontbox1}
 
-[[eng-practices|Eng. Practices]]{class="h-32 p-4 border-4 bg-white rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline"}
+[[code|Code (what)]]{class="h-32 p-4 border-4 bg-white rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline"}
 
-[[project-mgmt|Project Mgmt.]]{class="h-32 p-4 border-4 bg-white rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline"}
+[[process|Process (how)]]{class="h-32 p-4 border-4 bg-white rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline"}
 
 [[resources]]{class="h-32 p-4 border-4 bg-white rounded-md flex items-center justify-center text-center text-2xl font-extrabold hover:bg-indigo-300 hover:border-yellow-600 hover:no-underline"}
 
@@ -46,8 +46,8 @@ These services are developed in a usable, reliable, extensible, and maintainable
 way. These are our processes and practices.
 
 See:
-- [[eng-practices]]
-- [[project-mgmt]]
+- [[code]]
+- [[process]]
 
 ### Products
 

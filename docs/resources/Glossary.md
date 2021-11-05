@@ -1,11 +1,11 @@
 # Glossary
 
 U/S
-:  [[project-mgmt|user story]]
+:  [[process|user story]]
 
 A/C
-:  [[project-mgmt|acceptance criteria]]
+:  [[process|acceptance criteria]]
 
 XP
-:  [[project-mgmt|extreme programming]]
+:  [[process|extreme programming]]
 
