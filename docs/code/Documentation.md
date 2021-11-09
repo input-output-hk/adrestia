@@ -1,6 +1,7 @@
 ---
-tags: [ needs/review ]
-tags: [process]
+tags:
+  - needs/review
+  - process
 ---
 
 # Documentation Guidelines
@@ -191,7 +192,7 @@ markdown checkbox (`[ ]`), so that we know to come back to it.
 - [x] This thing was done.
 - [ ] Write more documentation.
 
-These todo items will appear in the [Task Index](/-/tasks).
+These TODO items will appear in the [Task Index](-/tasks).
 
 ## Style
 
@@ -208,11 +209,11 @@ These todo items will appear in the [Task Index](/-/tasks).
 - [Emanote website](https://note.ema.srid.ca/)
   - [Default `index.yaml`](https://github.com/srid/emanote/blob/master/default/index.yaml)
   - [YAML config demo](https://note.ema.srid.ca/demo)
- - YAML multiline help page
+ - [YAML Multiline](https://yaml-multiline.info/) - Find the right syntax for your YAML multiline strings.
  - [Commonmark Spec](https://commonmark.org)
- - Markdown Table Generator
+ - [Markdown Tables Generator](https://www.tablesgenerator.com/markdown_tables)
  - [commonmark-hs](https://github.com/jgm/commonmark-hs) - The Markdown parser used by Emanote.
-   - Fenced divs extension
+   - [Fenced divs extension](https://github.com/jgm/commonmark-hs/blob/master/commonmark-extensions/test/fenced_divs.md)
    - [Attributes extension](https://github.com/jgm/commonmark-hs/blob/master/commonmark-extensions/test/attributes.md)
  - [Pandoc](https://pandoc.org) - Document conversion tool which supports Markdown.
  - [Tailwind CSS Framework](https://tailwindcss.com) - The CSS framework used for Emanote.

@@ -1,3 +1,5 @@
+# Windows
+
   - [How to run Windows](#how-to-run-windows)
       - [Setting up a Windows 10
         VirtualBox](#setting-up-a-windows-10-virtualbox)
@@ -29,7 +31,7 @@ to boot your system into Windows.
 
 ### Setting up a Windows 10 VirtualBox
 
-See the PowerShell script [`iohk-setup.ps1`](./scripts/iohk-setup.ps1)
+See the PowerShell script [`iohk-setup.ps1`](../scripts/iohk-setup.ps1)
 for a semi-automated way of getting a development and testing
 environment for Windows 10.
 
@@ -38,15 +40,13 @@ environment for Windows 10.
 GitHub (a division of Microsoft) allow you to run CI actions on Windows
 for free.
 
-Use [`runs-on:
-windows-latest`](https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on)
+Use [`runs-on: windows-latest`](https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on)
 in the pipeline file.
 
 ### Renting a Windows VM in the cloud
 
-Amazon Web Services have [Windows
-AMIs](https://aws.amazon.com/windows/resources/amis/) you can spin up.
-Windows Server 2016 is similar to Windows 10
+Amazon Web Services have [Windows AMIs](https://aws.amazon.com/windows/resources/amis/)
+that you can spin up. Windows Server 2016 is similar to Windows 10
 ([Wikipedia](https://en.wikipedia.org/wiki/Windows_Server_2016)).
 
 Ask devops for AWS credentials for the IOHK development account.
@@ -92,4 +92,4 @@ Haskell code for windows.
 
   - How to set up a WSL installation with a Powershell script?
 
-  - Does Nix work under WSL? WSL2?
+  - Does [[Nix]] work under WSL? WSL2?

@@ -34,7 +34,7 @@ How? Let's move on to the process.
 
 ## The Process
 
-Adrestia's [development process](https://github.com/input-output-hk/adrestia/wiki/Development-Process) is heavily inspired by [extreme programming](http://www.extremeprogramming.org/) principles. That's nothing really revolutionary. Product backlog, stories estimation, acceptance criteria, weekly iterations and retrospective. All those elements are in place. Let's focus on those elements that, in my opinion, further contribute to increasing QA.
+Adrestia's [[process|Development Process]] is heavily inspired by [extreme programming](http://www.extremeprogramming.org/) principles. That's nothing really revolutionary. Product backlog, stories estimation, acceptance criteria, weekly iterations and retrospective. All those elements are in place. Let's focus on those elements that, in my opinion, further contribute to increasing QA.
 
 ### Estimation
 
@@ -50,9 +50,9 @@ Once estimated user stories are assigned to and owned by single team member (a.k
 
 ### Coding standards and code reviews
 
-Once the story is broken down into tasks in GitHub with the clear plan on how to approach it technically, the coding begins. We follow [coding standards](https://github.com/input-output-hk/adrestia/wiki/Coding-Standards) that was mutually agreed upon. The benefit is that we have roughly the same _coding style_ across our code base. Therefore even when somebody changes context (even between different repositories) he may expect that there will be no unfamiliar obscurities and can focus solely on the task. The standard is obviously not set in stone. Modifications happen, usually followed by slack discussions and voting.
+Once the story is broken down into tasks in GitHub with the clear plan on how to approach it technically, the coding begins. We follow [[Coding-Standards]] that was mutually agreed upon. The benefit is that we have roughly the same _coding style_ across our code base. Therefore even when somebody changes context (even between different repositories) he may expect that there will be no unfamiliar obscurities and can focus solely on the task. The standard is obviously not set in stone. Modifications happen, usually followed by slack discussions and voting.
 
-All our repos are on GitHub, so we use PRs to deliver changes to the code base. Each PR is reviewed, primarily by the Co-pilot, but often by other team members too. Review is done according to our [guidelines](https://github.com/input-output-hk/adrestia/wiki/Code-Review-Guidelines) and it is all about feedback. What is important it is often not only about reviewing the code alone but literally pulling the branch and playing with it. Every PR needs to be reviewed and approved by at least one team member. 
+All our repos are on GitHub, so we use PRs to deliver changes to the code base. Each PR is reviewed, primarily by the Co-pilot, but often by other team members too. Review is done according to our [[Code-Review-Guidelines|guidelines]] and it is all about feedback. What is important it is often not only about reviewing the code alone but literally pulling the branch and playing with it. Every PR needs to be reviewed and approved by at least one team member. 
 
 ### Testing
 
@@ -82,9 +82,9 @@ At this stage it is also final opportunity to actually explore the given feature
 
 ### Bugs
 
-"The only one who never makes mistakes is the one who never does anything" Napoleon Bonaparte once said. Well, that's true and that's the reason bugs sometimes happen to us too. Luckily we know how to handle them. 
+"The only one who never makes mistakes is the one who never does anything," Napoleon Bonaparte once said. Well, that's true and that's the reason bugs sometimes happen to us too. Luckily we know how to handle them. 
 
-Every bug becomes a ticket in GitHub. It is described with clear reproduction path, actual and expected outcome with any additional information that may be useful (logs, screenshots etc.) and classified according to our [classification guidelines](https://github.com/input-output-hk/adrestia/wiki/Bug-Classification). We use `severity` for defining impact on the system and `priority` for indicating the importance from product standpoint.
+Every bug becomes a ticket in GitHub. It is described with clear reproduction path, actual and expected outcome with any additional information that may be useful (logs, screenshots etc.) and classified according to our [[Bug-Classification|classification guidelines]]. We use `severity` for defining impact on the system and `priority` for indicating the importance from product standpoint.
 
 Important to note every bug fix, similarly to new feature code, starts with the automated tests that reproduces it. Again, following TDD rule, test fails first and passes after the fix.
 
