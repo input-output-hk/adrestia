@@ -2,11 +2,7 @@
 tags: [ needs/cleanup ]
 page:
   headHtml: |
-    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-    <script>
-      mermaid.initialize({startOnLoad:false});
-      mermaid.init(undefined,document.querySelectorAll(".mermaid"));
-    </script>
+    <snippet var="js.mermaid" />
 ---
 
 # Architecture
