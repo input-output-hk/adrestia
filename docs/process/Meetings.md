@@ -27,7 +27,7 @@ Please make sure that your Jira tickets are up to date before this meeting.
 
 ### Extra Information
 
-- [Active Sprint in Jira (swimlanes)][swimlanes]
+- [Active Sprint in Jira (swimlanes)][board]
 - [Sprint Backlog in Jira][backlog]
 - [Pointing Poker Session 66716 (for estimations)][pointingpoker]
 
