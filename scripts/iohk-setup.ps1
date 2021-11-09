@@ -2,7 +2,7 @@
 #
 # Windows dev environment for Adrestia
 #
-# https://github.com/input-output-hk/adrestia/wiki/Windows
+# https://input-output-hk.github.io/adrestia/resources/Windows
 #
 # After running this script you will have a VirtualBox machine which
 # is be able to compile cardano-wallet for Windows using stack.
