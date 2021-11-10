@@ -51,10 +51,10 @@ See:
 
 ### Products
 
-Our flagship product is [Cardano Wallet][cardano-wallet], which is a HTTP
+Our flagship product is [[cardano-wallet]], which is a HTTP
 service for sending and receiving payments on the Cardano blockchain.
 
-[Cardano Wallet][cardano-wallet] is a application which can be used on its own,
+[[cardano-wallet]] is a application which can be used on its own,
 but usually it will be used as the backend service of other applications such as
 a desktop wallet app, in a web shop, or at a cryptocurrency exchange.
 
@@ -62,8 +62,8 @@ Underlying the service applications are several Haskell packages which
 developers can use to create new applications based on Cardano.
 
 See:
-- [[Architecture]]
-- [[User-Guide]]
+- [[Adrestia-Architecture]]
+- [[user-guide|Cardano Wallet User Guide]]
 
 ### Team
 
@@ -72,5 +72,4 @@ is to bring Cardano to users and developers through our products.
 
 We work with the Cardano community and alongside other teams in IOHK.
 
-[cardano-wallet]: https://github.com/orgs/input-output-hk/cardano-wallet
 [github-team]: https://github.com/orgs/input-output-hk/teams/adrestia/members

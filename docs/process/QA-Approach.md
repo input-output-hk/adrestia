@@ -21,7 +21,7 @@ How does it play in real life? Let me try to present QA aspects of work in Adres
 
 Anyone working in the software development, especially in QA related role, is well aware of the waterfall-y sins, that occur (more often we'd like to admit) on the teams which call themselves Agile, Scrum, Extreme etc. The most common one is something I like to call _handover to QA approach_. I suppose it is pretty self-explanatory, but let me elaborate. It's sort of mindset/stance where a feature/story/deliverable increment of product is no longer my business when I finish coding it. I jump to another story and just let the other one be _QA-ed_. I might fix an issue when QAs find it, no problem, but man it's already in QA, so give me a break, I added unit tests, ok?:). Well, in Adrestia it's quite the opposite. Yes, stories are moved into _QA column_ after they are _coded_ but it is not for testing, but for [QA review](#qa-review) and that's very different. I'll explain later.
 
-Adrestia is fairly small team. It consists of 8 people including Software Engineers, Product Manager and a QA Engineer (soon more than one!). Considering the number of [[Architecture|products]] the team is responsible for, this is really not a lot. Additionally, we are distributed among 3 continents which brings own challenges in terms of communication and availability. 
+Adrestia is fairly small team. It consists of 8 people including Software Engineers, Product Manager and a QA Engineer (soon more than one!). Considering the number of [[Adrestia-Architecture|products]] the team is responsible for, this is really not a lot. Additionally, we are distributed among 3 continents which brings own challenges in terms of communication and availability. 
 
 :::{.figure}
 ![[albi-2019-team.jpg]]  

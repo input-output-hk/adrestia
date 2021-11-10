@@ -7,7 +7,7 @@ order: -7
 - Tools
   - [[Emacs]]#
   - [[Git]]#
-  - [ ] [[Nix]]
+  - [[Nix]]
 
 - General info
   - [[Onboarding]]#
