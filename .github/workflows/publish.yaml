@@ -10,21 +10,30 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: 📥 Checkout repository
+      - name: 📥 Clone adrestia repo
         uses: actions/checkout@v2
+        with:
+          path: adrestia
+
+      - name: 📥 Clone cardano-wallet repo
+        uses: actions/checkout@v2
+        with:
+          repository: input-output-hk/cardano-wallet
+          path: cardano-wallet
 
       - name: Build docs 🔧
         run: |
+          ../scripts/splice-cardano-wallet-docs.sh $GITHUB_WORKSPACE/cardano-wallet --reflink=auto
           mkdir -p output.docker
           docker run -e LANG=C.UTF-8 -e LC_ALL=C.UTF-8 -v $PWD:/data sridca/emanote emanote --layers "/data;/data/.deploy/github" gen /data/output.docker
-          cp -r output.docker output  # Ditch docker created root-owned files
-          bash output/_emanote-bin/compile-css
-        working-directory: docs
+          cp -r output.docker ../../output  # Ditch docker created root-owned files
+          bash ../../output/_emanote-bin/compile-css
+        working-directory: adrestia/docs
 
       - name: Deploy to gh-pages 🚀
         if: github.event_name == 'push'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs/output
+          publish_dir: output
           enable_jekyll: false
