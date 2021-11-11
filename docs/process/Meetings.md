@@ -1,4 +1,6 @@
-Meetings... everyone loves them. Here is the weekly list of meetings for our Adrestia project.
+# Meetings
+
+Meetings... everyone loves them. Here is the weekly list of meetings for our project.
 
 | Weekday   | Meetings              |
 |:----------|:----------------------|
@@ -11,7 +13,7 @@ Meetings... everyone loves them. Here is the weekly list of meetings for our Adr
 ## Iteration Planning
 
 - **Participants**:    Whole team
-- **When**:            Fortnightly on Wednesdays 0700-0800 UTC.
+- **When**:            Fortnightly on Wednesdays 0800-0900 UTC.
 - **Conference link**: [Google Meet][link-iteration-planning]
 
 This meeting occurs every fortnight and marks the end of the current sprint and start of a new sprint.
@@ -35,7 +37,7 @@ Please make sure that your Jira tickets are up to date before this meeting.
 ## Mid-sprint planning
 
 - **Participants**:    Whole team
-- **When**:            Fortnightly on Wednesdays 0700-0800 UTC.
+- **When**:            Fortnightly on Wednesdays 0800-0900 UTC.
 - **Conference link**: [Google Meet][link-iteration-planning]
 
 This meeting occurs every fortnight at the mid-point of a sprint.
