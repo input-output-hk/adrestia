@@ -6,8 +6,8 @@ Our team's homeserver is [adrestia.iohkdev.io](https://matrix.adrestia.iohkdev.i
 
 You can log in immediately with your web browser, without installing any client software by visiting:
 
-:::{class=""}
-[element.adrestia.iohkdev.io](https://element.adrestia.iohkdev.io/)
+:::{.m-8}
+[element.adrestia.iohkdev.io](https://element.adrestia.iohkdev.io/){class="py-4 px-8 bg-indigo-200 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-300 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75"}
 :::
 
 ## Authentication
@@ -177,6 +177,7 @@ The following things would be nice to have in Matrix, but currently aren't imple
 1. [The Matrix Web Site][matrix.org]
 2. [Element Blog: E2E Encryption by Default & Cross-signing is here](https://element.io/blog/e2e-encryption-by-default-cross-signing-is-here/)
 3. [Matrix Implementers Guide: E2EE](https://matrix.org/docs/guides/implementing-more-advanced-e-2-ee-features-such-as-cross-signing)
+4. [Matrix and E2E Encryption (or: how not to lose your messages)](https://gerstner.it/2021/02/matrix-and-e2e-encryption-or-how-not-to-lose-your-messages/)
 
 [matrix.org]: https://matrix.org
 [synapse]: https://github.com/matrix-org/synapse

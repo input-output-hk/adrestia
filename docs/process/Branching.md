@@ -20,6 +20,11 @@ branches.
 This lowers maintenance overheads, but requires that we always keep
 `master` in a releaseable state.
 
+### Release preparation branches
+
+According to the [[Release-Checklist]], these are of the form
+`your-name/bump-release/YYYY-MM-DD`.
+
 ## Mainline branch
 
 Mainline branch is `master` - for consistency.

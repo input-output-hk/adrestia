@@ -10,6 +10,13 @@ Meetings... everyone loves them. Here is the weekly list of meetings for our pro
 | Thursday  | [Hello](#hello), [Problem Management](#problem-management) |
 | Friday    | [Hello](#hello), [Dev meeting](#dev-meeting) |
 
+:::{.highlight-block}
+💡 **Firefox Users**
+
+WebRTC calls seem to work much better in Chrome than Firefox.  
+Consider using Chrome _just_ for Google Meet and Jitsi Meet.
+:::
+
 ## Iteration Planning
 
 - **Participants**:    Whole team
