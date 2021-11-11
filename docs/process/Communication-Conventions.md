@@ -1,9 +1,3 @@
----
-tags:
-  - needs/writing
-  - needs/review
----
-
 # Communication conventions
 
 Staying in touch is difficult when working remotely within a global
@@ -31,29 +25,7 @@ We will use a private Matrix server for team chats, in place of the
 Team members are asked to review messages from Slack once per day. They may
 choose to use Slack more frequently, but this is up to them.
   
-### Matrix
-
-The Matrix server is [adrestia.iohkdev.io](https://matrix.adrestia.iohkdev.io/).
-
-You can use any Matrix client to connect, or the
-[Element Web](https://element.adrestia.iohkdev.io/) client.
-
-#### Authentication
-
-Any user with an active [iohk.io Google Account](https://accounts.google.com)
-can log in.
-
-Some people have username/password accounts. These were created manually with
-the Matrix Synapse user admin API.
-
-Example usernames:
- - IOHK Google account: [@rodney.lorrimar:adrestia.iohkdev.io](https://element.adrestia.iohkdev.io/#/user/@rodney.lorrimar:adrestia.iohkdev.io)
- - Username/password account: [@rvl:adrestia.iohkdev.io](https://element.adrestia.iohkdev.io/#/user/@rvl:adrestia.iohkdev.io)
-
-#### Rooms
-
-- [\#dev:adrestia.iohkdev.io](https://element.adrestia.iohkdev.io/#/room/#dev:adrestia.iohkdev.io) (invite only) - Development discussion
-- [\#testing:adrestia.iohkdev.io](https://element.adrestia.iohkdev.io/#/room/#testing:adrestia.iohkdev.io) - Used for experimenting with Matrix chat.
+See [[Matrix]] for information about how to use the team chat rooms.
 
 #### When to be online
 
@@ -69,8 +41,8 @@ provide.
 
 #### When to ping
 
-Use the ping `@username:adrestia.iohkdev.io` in a channel to get someone's
-attention.
+Use the ping `@username:adrestia.iohkdev.io` in a Matrix channel to get
+someone's attention.
 
 This usually results in a more prominent notification, depending on their client
 settings.
