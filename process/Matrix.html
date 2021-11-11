@@ -17,13 +17,15 @@
       <base href='/adrestia/' />
       <link href='static/favicon.png' rel='icon' />
     
-    <link href='static/adrestia.css' rel='stylesheet' />
+    <meta http-equiv='cache-control' content='private, max-age=60' />
+<meta http-equiv='Expires' content='60' />
+<link href='static/adrestia.css' rel='stylesheet' />
 <link href='https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-tomorrow.css' rel='stylesheet' />
 <script src='https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/prism.min.js,npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js'></script>
 
   
   <!-- CSSSTART -->
-	<link rel="stylesheet" href="emanote-compiled-b4bd06692a0b979dfab446b6f5c34e74.css" />
+	<link rel="stylesheet" href="emanote-compiled-7f3a41d8c7dac70894f28c1cc3b5d551.css" />
   <!-- CSSEND -->
 
   <!-- Heist error element -->
@@ -3226,9 +3228,9 @@
     <p class='mb-3'>
       You can log in immediately with your web browser, without installing any client software by visiting:
     </p>
-  <div>
+  <div class='m-8'>
     <p class='mb-3'>
-      <a href='https://element.adrestia.iohkdev.io/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>element.adrestia.iohkdev.io</a>
+      <a href='https://element.adrestia.iohkdev.io/' class='py-4 px-8 bg-indigo-200 text-white font-semibold rounded-lg shadow-md hover:bg-indigo-300 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-opacity-75 text-indigo-600 hover:underline' target='_blank' rel='noopener'>element.adrestia.iohkdev.io</a>
     </p>
   </div><h2 id='authentication' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Authentication</h2>
     <p class='mb-3'>
@@ -3491,6 +3493,10 @@
       
         <li>
           <a href='https://matrix.org/docs/guides/implementing-more-advanced-e-2-ee-features-such-as-cross-signing' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Matrix Implementers Guide: E2EE</a>
+        </li>
+      
+        <li>
+          <a href='https://gerstner.it/2021/02/matrix-and-e2e-encryption-or-how-not-to-lose-your-messages/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Matrix and E2E Encryption (or: how not to lose your messages)</a>
         </li>
       
     </ul>
