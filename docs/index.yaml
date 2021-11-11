@@ -4,6 +4,8 @@
 page:
   siteTitle: Adrestia Process Docs
   headHtml: |
+    <meta http-equiv="cache-control" content="private, max-age=60" />
+    <meta http-equiv="Expires" content="60" />
     <link href="static/adrestia.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-tomorrow.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/prism.min.js,npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js"></script>
