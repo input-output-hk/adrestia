@@ -25,7 +25,9 @@ We will use a private Matrix server for team chats, in place of the
 Team members are asked to review messages from Slack once per day. They may
 choose to use Slack more frequently, but this is up to them.
   
-See [[Matrix]] for information about how to use the team chat rooms.
+See [[Matrix]]# for information about how to use the team chat rooms.
+
+See [[Chat-Rooms]]# for a curated list of channels on Slack and Matrix.
 
 #### When to be online
 

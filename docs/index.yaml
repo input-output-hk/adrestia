@@ -2,7 +2,7 @@
 # https://github.com/srid/emanote/blob/master/default/index.yaml
 
 page:
-  siteTitle: Adrestia Process Docs
+  siteTitle: Adrestia Project Docs
   headHtml: |
     <meta http-equiv="cache-control" content="private, max-age=60" />
     <meta http-equiv="Expires" content="60" />

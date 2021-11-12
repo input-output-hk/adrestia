@@ -109,7 +109,7 @@ Ok, we dealt with the process focusing especially on its QA elements. Here I'd l
 
 ### Types and levels of tests
 
-Obviously we value automated tests over manual. Actually, when it comes to `cardano-wallet` we only have 6 manual scenarios that are executed as part of every [release checklist](https://github.com/input-output-hk/cardano-wallet/wiki/Release-Checklist).
+Obviously we value automated tests over manual. Actually, when it comes to `cardano-wallet` we only have 6 manual scenarios that are executed as part of every [[Release-Checklist]].
 
 All automated tests are executed in CI environment in the following circumstances:
  - on every PR merge (most of the functional suite)

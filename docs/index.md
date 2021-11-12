@@ -6,7 +6,7 @@ pandoc:
 
 ---
 
-# Adrestia Process Docs
+# Adrestia Project
 
 :::{.sticky-note .max-w-md .mx-auto}
 **Under Construction!**
