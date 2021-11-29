@@ -87,16 +87,21 @@ in {
             };
             # https://github.com/vector-im/element-web/blob/develop/docs/labs.md
             showLabsSettings = true;
+            # https://github.com/matrix-org/matrix-react-sdk/blob/develop/src/settings/Settings.tsx
             features = {
-              feature_spaces = true;
-              # feature_communities_v2_prototypes = true;
-              # feature_thread = true;  # seems a little broken
+              feature_spaces_metaspaces = true;
+              feature_thread = true;
               feature_pinning = true;
               feature_custom_status = true;
               feature_dnd = true;
               # feature_presence_in_room_list = true;
               # feature_maximised_widgets = true;
               feature_latex_maths = true;
+            };
+            settingDefaults = {
+              "UIFeature.communities" = false;
+              "UIFeature.shareSocial" = false;
+              "UIFeature.feedback" = false;
             };
             disable_custom_urls = true;
             permalinkPrefix = "https://${hosts.element}";
