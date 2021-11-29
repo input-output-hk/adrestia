@@ -1,0 +1,2724 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "description": "This dashboard contains PR and Issues across multiple repositories in the Organization using GitHub data source.",
+  "editable": true,
+  "gnetId": 14461,
+  "graphTooltip": 0,
+  "id": 9,
+  "iteration": 1636900905359,
+  "links": [],
+  "panels": [
+    {
+      "collapsed": false,
+      "datasource": "$datasource",
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 4,
+      "panels": [],
+      "repeat": "repository",
+      "scopedVars": {
+        "repository": {
+          "selected": true,
+          "text": "adrestia",
+          "value": "adrestia"
+        }
+      },
+      "title": "Repository $repository",
+      "type": "row"
+    },
+    {
+      "datasource": "$datasource",
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 0,
+        "y": 1
+      },
+      "id": 9,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.11",
+      "scopedVars": {
+        "repository": {
+          "selected": true,
+          "text": "adrestia",
+          "value": "adrestia"
+        }
+      },
+      "targets": [
+        {
+          "owner": "$organization",
+          "queryType": "Releases",
+          "refId": "A",
+          "repository": "$repository"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Releases",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "count"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": "$datasource",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 4,
+        "y": 1
+      },
+      "id": 15,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.11",
+      "scopedVars": {
+        "repository": {
+          "selected": true,
+          "text": "adrestia",
+          "value": "adrestia"
+        }
+      },
+      "targets": [
+        {
+          "options": {
+            "query": ""
+          },
+          "owner": "$organization",
+          "queryType": "Issues",
+          "refId": "A",
+          "repository": "$repository"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Issues Created",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "count"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": "$datasource",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 9,
+        "y": 1
+      },
+      "id": 29,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.11",
+      "scopedVars": {
+        "repository": {
+          "selected": true,
+          "text": "adrestia",
+          "value": "adrestia"
+        }
+      },
+      "targets": [
+        {
+          "options": {
+            "query": "",
+            "timeField": 1
+          },
+          "owner": "$organization",
+          "queryType": "Pull_Requests",
+          "refId": "A",
+          "repository": "$repository"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Pull Requests Created",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "count"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": "$datasource",
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              },
+              {
+                "color": "dark-orange",
+                "value": 10
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 14,
+        "y": 1
+      },
+      "id": 33,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.11",
+      "scopedVars": {
+        "repository": {
+          "selected": true,
+          "text": "adrestia",
+          "value": "adrestia"
+        }
+      },
+      "targets": [
+        {
+          "options": {
+            "query": "is:open",
+            "timeField": 0
+          },
+          "owner": "$organization",
+          "queryType": "Issues",
+          "refId": "A",
+          "repository": "$repository"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Active Issues",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "count"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": "$datasource",
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "dark-purple",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 19,
+        "y": 1
+      },
+      "id": 32,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.11",
+      "scopedVars": {
+        "repository": {
+          "selected": true,
+          "text": "adrestia",
+          "value": "adrestia"
+        }
+      },
+      "targets": [
+        {
+          "options": {
+            "query": "is:open",
+            "timeField": 3
+          },
+          "owner": "$organization",
+          "queryType": "Pull_Requests",
+          "refId": "A",
+          "repository": "$repository"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Active Pull Requests",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "count"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "collapsed": false,
+      "datasource": "$datasource",
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 4
+      },
+      "id": 34,
+      "panels": [],
+      "repeatIteration": 1636900905359,
+      "repeatPanelId": 4,
+      "scopedVars": {
+        "repository": {
+          "selected": true,
+          "text": "bech32",
+          "value": "bech32"
+        }
+      },
+      "title": "Repository $repository",
+      "type": "row"
+    },
+    {
+      "datasource": "$datasource",
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 0,
+        "y": 5
+      },
+      "id": 35,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.11",
+      "repeatIteration": 1636900905359,
+      "repeatPanelId": 9,
+      "repeatedByRow": true,
+      "scopedVars": {
+        "repository": {
+          "selected": true,
+          "text": "bech32",
+          "value": "bech32"
+        }
+      },
+      "targets": [
+        {
+          "owner": "$organization",
+          "queryType": "Releases",
+          "refId": "A",
+          "repository": "$repository"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Releases",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "count"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": "$datasource",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 4,
+        "y": 5
+      },
+      "id": 36,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.11",
+      "repeatIteration": 1636900905359,
+      "repeatPanelId": 15,
+      "repeatedByRow": true,
+      "scopedVars": {
+        "repository": {
+          "selected": true,
+          "text": "bech32",
+          "value": "bech32"
+        }
+      },
+      "targets": [
+        {
+          "options": {
+            "query": ""
+          },
+          "owner": "$organization",
+          "queryType": "Issues",
+          "refId": "A",
+          "repository": "$repository"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Issues Created",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "count"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": "$datasource",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 9,
+        "y": 5
+      },
+      "id": 37,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.11",
+      "repeatIteration": 1636900905359,
+      "repeatPanelId": 29,
+      "repeatedByRow": true,
+      "scopedVars": {
+        "repository": {
+          "selected": true,
+          "text": "bech32",
+          "value": "bech32"
+        }
+      },
+      "targets": [
+        {
+          "options": {
+            "query": "",
+            "timeField": 1
+          },
+          "owner": "$organization",
+          "queryType": "Pull_Requests",
+          "refId": "A",
+          "repository": "$repository"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Pull Requests Created",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "count"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": "$datasource",
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              },
+              {
+                "color": "dark-orange",
+                "value": 10
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 14,
+        "y": 5
+      },
+      "id": 38,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.11",
+      "repeatIteration": 1636900905359,
+      "repeatPanelId": 33,
+      "repeatedByRow": true,
+      "scopedVars": {
+        "repository": {
+          "selected": true,
+          "text": "bech32",
+          "value": "bech32"
+        }
+      },
+      "targets": [
+        {
+          "options": {
+            "query": "is:open",
+            "timeField": 0
+          },
+          "owner": "$organization",
+          "queryType": "Issues",
+          "refId": "A",
+          "repository": "$repository"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Active Issues",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "count"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": "$datasource",
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "dark-purple",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 19,
+        "y": 5
+      },
+      "id": 39,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.11",
+      "repeatIteration": 1636900905359,
+      "repeatPanelId": 32,
+      "repeatedByRow": true,
+      "scopedVars": {
+        "repository": {
+          "selected": true,
+          "text": "bech32",
+          "value": "bech32"
+        }
+      },
+      "targets": [
+        {
+          "options": {
+            "query": "is:open",
+            "timeField": 3
+          },
+          "owner": "$organization",
+          "queryType": "Pull_Requests",
+          "refId": "A",
+          "repository": "$repository"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Active Pull Requests",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "count"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "collapsed": false,
+      "datasource": "$datasource",
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 8
+      },
+      "id": 40,
+      "panels": [],
+      "repeatIteration": 1636900905359,
+      "repeatPanelId": 4,
+      "scopedVars": {
+        "repository": {
+          "selected": true,
+          "text": "cardano-addresses",
+          "value": "cardano-addresses"
+        }
+      },
+      "title": "Repository $repository",
+      "type": "row"
+    },
+    {
+      "datasource": "$datasource",
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 0,
+        "y": 9
+      },
+      "id": 41,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.11",
+      "repeatIteration": 1636900905359,
+      "repeatPanelId": 9,
+      "repeatedByRow": true,
+      "scopedVars": {
+        "repository": {
+          "selected": true,
+          "text": "cardano-addresses",
+          "value": "cardano-addresses"
+        }
+      },
+      "targets": [
+        {
+          "owner": "$organization",
+          "queryType": "Releases",
+          "refId": "A",
+          "repository": "$repository"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Releases",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "count"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": "$datasource",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 4,
+        "y": 9
+      },
+      "id": 42,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.11",
+      "repeatIteration": 1636900905359,
+      "repeatPanelId": 15,
+      "repeatedByRow": true,
+      "scopedVars": {
+        "repository": {
+          "selected": true,
+          "text": "cardano-addresses",
+          "value": "cardano-addresses"
+        }
+      },
+      "targets": [
+        {
+          "options": {
+            "query": ""
+          },
+          "owner": "$organization",
+          "queryType": "Issues",
+          "refId": "A",
+          "repository": "$repository"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Issues Created",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "count"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": "$datasource",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 9,
+        "y": 9
+      },
+      "id": 43,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.11",
+      "repeatIteration": 1636900905359,
+      "repeatPanelId": 29,
+      "repeatedByRow": true,
+      "scopedVars": {
+        "repository": {
+          "selected": true,
+          "text": "cardano-addresses",
+          "value": "cardano-addresses"
+        }
+      },
+      "targets": [
+        {
+          "options": {
+            "query": "",
+            "timeField": 1
+          },
+          "owner": "$organization",
+          "queryType": "Pull_Requests",
+          "refId": "A",
+          "repository": "$repository"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Pull Requests Created",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "count"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": "$datasource",
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              },
+              {
+                "color": "dark-orange",
+                "value": 10
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 14,
+        "y": 9
+      },
+      "id": 44,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.11",
+      "repeatIteration": 1636900905359,
+      "repeatPanelId": 33,
+      "repeatedByRow": true,
+      "scopedVars": {
+        "repository": {
+          "selected": true,
+          "text": "cardano-addresses",
+          "value": "cardano-addresses"
+        }
+      },
+      "targets": [
+        {
+          "options": {
+            "query": "is:open",
+            "timeField": 0
+          },
+          "owner": "$organization",
+          "queryType": "Issues",
+          "refId": "A",
+          "repository": "$repository"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Active Issues",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "count"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": "$datasource",
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "dark-purple",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 19,
+        "y": 9
+      },
+      "id": 45,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.11",
+      "repeatIteration": 1636900905359,
+      "repeatPanelId": 32,
+      "repeatedByRow": true,
+      "scopedVars": {
+        "repository": {
+          "selected": true,
+          "text": "cardano-addresses",
+          "value": "cardano-addresses"
+        }
+      },
+      "targets": [
+        {
+          "options": {
+            "query": "is:open",
+            "timeField": 3
+          },
+          "owner": "$organization",
+          "queryType": "Pull_Requests",
+          "refId": "A",
+          "repository": "$repository"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Active Pull Requests",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "count"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "collapsed": false,
+      "datasource": "$datasource",
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 12
+      },
+      "id": 46,
+      "panels": [],
+      "repeatIteration": 1636900905359,
+      "repeatPanelId": 4,
+      "scopedVars": {
+        "repository": {
+          "selected": true,
+          "text": "cardano-launcher",
+          "value": "cardano-launcher"
+        }
+      },
+      "title": "Repository $repository",
+      "type": "row"
+    },
+    {
+      "datasource": "$datasource",
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 0,
+        "y": 13
+      },
+      "id": 47,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.11",
+      "repeatIteration": 1636900905359,
+      "repeatPanelId": 9,
+      "repeatedByRow": true,
+      "scopedVars": {
+        "repository": {
+          "selected": true,
+          "text": "cardano-launcher",
+          "value": "cardano-launcher"
+        }
+      },
+      "targets": [
+        {
+          "owner": "$organization",
+          "queryType": "Releases",
+          "refId": "A",
+          "repository": "$repository"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Releases",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "count"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": "$datasource",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 4,
+        "y": 13
+      },
+      "id": 48,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.11",
+      "repeatIteration": 1636900905359,
+      "repeatPanelId": 15,
+      "repeatedByRow": true,
+      "scopedVars": {
+        "repository": {
+          "selected": true,
+          "text": "cardano-launcher",
+          "value": "cardano-launcher"
+        }
+      },
+      "targets": [
+        {
+          "options": {
+            "query": ""
+          },
+          "owner": "$organization",
+          "queryType": "Issues",
+          "refId": "A",
+          "repository": "$repository"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Issues Created",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "count"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": "$datasource",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 9,
+        "y": 13
+      },
+      "id": 49,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.11",
+      "repeatIteration": 1636900905359,
+      "repeatPanelId": 29,
+      "repeatedByRow": true,
+      "scopedVars": {
+        "repository": {
+          "selected": true,
+          "text": "cardano-launcher",
+          "value": "cardano-launcher"
+        }
+      },
+      "targets": [
+        {
+          "options": {
+            "query": "",
+            "timeField": 1
+          },
+          "owner": "$organization",
+          "queryType": "Pull_Requests",
+          "refId": "A",
+          "repository": "$repository"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Pull Requests Created",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "count"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": "$datasource",
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              },
+              {
+                "color": "dark-orange",
+                "value": 10
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 14,
+        "y": 13
+      },
+      "id": 50,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.11",
+      "repeatIteration": 1636900905359,
+      "repeatPanelId": 33,
+      "repeatedByRow": true,
+      "scopedVars": {
+        "repository": {
+          "selected": true,
+          "text": "cardano-launcher",
+          "value": "cardano-launcher"
+        }
+      },
+      "targets": [
+        {
+          "options": {
+            "query": "is:open",
+            "timeField": 0
+          },
+          "owner": "$organization",
+          "queryType": "Issues",
+          "refId": "A",
+          "repository": "$repository"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Active Issues",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "count"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": "$datasource",
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "dark-purple",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 19,
+        "y": 13
+      },
+      "id": 51,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.11",
+      "repeatIteration": 1636900905359,
+      "repeatPanelId": 32,
+      "repeatedByRow": true,
+      "scopedVars": {
+        "repository": {
+          "selected": true,
+          "text": "cardano-launcher",
+          "value": "cardano-launcher"
+        }
+      },
+      "targets": [
+        {
+          "options": {
+            "query": "is:open",
+            "timeField": 3
+          },
+          "owner": "$organization",
+          "queryType": "Pull_Requests",
+          "refId": "A",
+          "repository": "$repository"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Active Pull Requests",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "count"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "collapsed": false,
+      "datasource": "$datasource",
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 16
+      },
+      "id": 52,
+      "panels": [],
+      "repeatIteration": 1636900905359,
+      "repeatPanelId": 4,
+      "scopedVars": {
+        "repository": {
+          "selected": true,
+          "text": "cardano-wallet",
+          "value": "cardano-wallet"
+        }
+      },
+      "title": "Repository $repository",
+      "type": "row"
+    },
+    {
+      "datasource": "$datasource",
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 0,
+        "y": 17
+      },
+      "id": 53,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.11",
+      "repeatIteration": 1636900905359,
+      "repeatPanelId": 9,
+      "repeatedByRow": true,
+      "scopedVars": {
+        "repository": {
+          "selected": true,
+          "text": "cardano-wallet",
+          "value": "cardano-wallet"
+        }
+      },
+      "targets": [
+        {
+          "owner": "$organization",
+          "queryType": "Releases",
+          "refId": "A",
+          "repository": "$repository"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Releases",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "count"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": "$datasource",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 4,
+        "y": 17
+      },
+      "id": 54,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.11",
+      "repeatIteration": 1636900905359,
+      "repeatPanelId": 15,
+      "repeatedByRow": true,
+      "scopedVars": {
+        "repository": {
+          "selected": true,
+          "text": "cardano-wallet",
+          "value": "cardano-wallet"
+        }
+      },
+      "targets": [
+        {
+          "options": {
+            "query": ""
+          },
+          "owner": "$organization",
+          "queryType": "Issues",
+          "refId": "A",
+          "repository": "$repository"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Issues Created",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "count"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": "$datasource",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 9,
+        "y": 17
+      },
+      "id": 55,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.11",
+      "repeatIteration": 1636900905359,
+      "repeatPanelId": 29,
+      "repeatedByRow": true,
+      "scopedVars": {
+        "repository": {
+          "selected": true,
+          "text": "cardano-wallet",
+          "value": "cardano-wallet"
+        }
+      },
+      "targets": [
+        {
+          "options": {
+            "query": "",
+            "timeField": 1
+          },
+          "owner": "$organization",
+          "queryType": "Pull_Requests",
+          "refId": "A",
+          "repository": "$repository"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Pull Requests Created",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "count"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": "$datasource",
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              },
+              {
+                "color": "dark-orange",
+                "value": 10
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 14,
+        "y": 17
+      },
+      "id": 56,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.11",
+      "repeatIteration": 1636900905359,
+      "repeatPanelId": 33,
+      "repeatedByRow": true,
+      "scopedVars": {
+        "repository": {
+          "selected": true,
+          "text": "cardano-wallet",
+          "value": "cardano-wallet"
+        }
+      },
+      "targets": [
+        {
+          "options": {
+            "query": "is:open",
+            "timeField": 0
+          },
+          "owner": "$organization",
+          "queryType": "Issues",
+          "refId": "A",
+          "repository": "$repository"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Active Issues",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "count"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": "$datasource",
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "dark-purple",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 19,
+        "y": 17
+      },
+      "id": 57,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.11",
+      "repeatIteration": 1636900905359,
+      "repeatPanelId": 32,
+      "repeatedByRow": true,
+      "scopedVars": {
+        "repository": {
+          "selected": true,
+          "text": "cardano-wallet",
+          "value": "cardano-wallet"
+        }
+      },
+      "targets": [
+        {
+          "options": {
+            "query": "is:open",
+            "timeField": 3
+          },
+          "owner": "$organization",
+          "queryType": "Pull_Requests",
+          "refId": "A",
+          "repository": "$repository"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Active Pull Requests",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "count"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "collapsed": false,
+      "datasource": "$datasource",
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 20
+      },
+      "id": 58,
+      "panels": [],
+      "repeatIteration": 1636900905359,
+      "repeatPanelId": 4,
+      "scopedVars": {
+        "repository": {
+          "selected": true,
+          "text": "offchain-metadata-tools",
+          "value": "offchain-metadata-tools"
+        }
+      },
+      "title": "Repository $repository",
+      "type": "row"
+    },
+    {
+      "datasource": "$datasource",
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 0,
+        "y": 21
+      },
+      "id": 59,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.11",
+      "repeatIteration": 1636900905359,
+      "repeatPanelId": 9,
+      "repeatedByRow": true,
+      "scopedVars": {
+        "repository": {
+          "selected": true,
+          "text": "offchain-metadata-tools",
+          "value": "offchain-metadata-tools"
+        }
+      },
+      "targets": [
+        {
+          "owner": "$organization",
+          "queryType": "Releases",
+          "refId": "A",
+          "repository": "$repository"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Releases",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "count"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": "$datasource",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 4,
+        "y": 21
+      },
+      "id": 60,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.11",
+      "repeatIteration": 1636900905359,
+      "repeatPanelId": 15,
+      "repeatedByRow": true,
+      "scopedVars": {
+        "repository": {
+          "selected": true,
+          "text": "offchain-metadata-tools",
+          "value": "offchain-metadata-tools"
+        }
+      },
+      "targets": [
+        {
+          "options": {
+            "query": ""
+          },
+          "owner": "$organization",
+          "queryType": "Issues",
+          "refId": "A",
+          "repository": "$repository"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Issues Created",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "count"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": "$datasource",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 9,
+        "y": 21
+      },
+      "id": 61,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.11",
+      "repeatIteration": 1636900905359,
+      "repeatPanelId": 29,
+      "repeatedByRow": true,
+      "scopedVars": {
+        "repository": {
+          "selected": true,
+          "text": "offchain-metadata-tools",
+          "value": "offchain-metadata-tools"
+        }
+      },
+      "targets": [
+        {
+          "options": {
+            "query": "",
+            "timeField": 1
+          },
+          "owner": "$organization",
+          "queryType": "Pull_Requests",
+          "refId": "A",
+          "repository": "$repository"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Pull Requests Created",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "count"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": "$datasource",
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "dark-green",
+                "value": 1
+              },
+              {
+                "color": "dark-orange",
+                "value": 10
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 14,
+        "y": 21
+      },
+      "id": 62,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.11",
+      "repeatIteration": 1636900905359,
+      "repeatPanelId": 33,
+      "repeatedByRow": true,
+      "scopedVars": {
+        "repository": {
+          "selected": true,
+          "text": "offchain-metadata-tools",
+          "value": "offchain-metadata-tools"
+        }
+      },
+      "targets": [
+        {
+          "options": {
+            "query": "is:open",
+            "timeField": 0
+          },
+          "owner": "$organization",
+          "queryType": "Issues",
+          "refId": "A",
+          "repository": "$repository"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Active Issues",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "count"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": "$datasource",
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "dark-blue",
+                "value": null
+              },
+              {
+                "color": "dark-purple",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 19,
+        "y": 21
+      },
+      "id": 63,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.5.11",
+      "repeatIteration": 1636900905359,
+      "repeatPanelId": 32,
+      "repeatedByRow": true,
+      "scopedVars": {
+        "repository": {
+          "selected": true,
+          "text": "offchain-metadata-tools",
+          "value": "offchain-metadata-tools"
+        }
+      },
+      "targets": [
+        {
+          "options": {
+            "query": "is:open",
+            "timeField": 3
+          },
+          "owner": "$organization",
+          "queryType": "Pull_Requests",
+          "refId": "A",
+          "repository": "$repository"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Active Pull Requests",
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "reducers": [
+              "count"
+            ]
+          }
+        }
+      ],
+      "type": "stat"
+    }
+  ],
+  "refresh": false,
+  "schemaVersion": 27,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "selected": false,
+          "text": "GitHub",
+          "value": "GitHub"
+        },
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "datasource",
+        "options": [],
+        "query": "grafana-github-datasource",
+        "queryValue": "",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "type": "datasource"
+      },
+      {
+        "current": {
+          "selected": true,
+          "text": "input-output-hk",
+          "value": "input-output-hk"
+        },
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "label": "Organization",
+        "name": "organization",
+        "options": [
+          {
+            "selected": true,
+            "text": "input-output-hk",
+            "value": "input-output-hk"
+          }
+        ],
+        "query": "input-output-hk",
+        "skipUrlSync": false,
+        "type": "textbox"
+      },
+      {
+        "allValue": null,
+        "current": {
+          "selected": false,
+          "text": [
+            "adrestia",
+            "bech32",
+            "cardano-addresses",
+            "cardano-launcher",
+            "cardano-wallet",
+            "offchain-metadata-tools"
+          ],
+          "value": [
+            "adrestia",
+            "bech32",
+            "cardano-addresses",
+            "cardano-launcher",
+            "cardano-wallet",
+            "offchain-metadata-tools"
+          ]
+        },
+        "datasource": "GitHub",
+        "definition": "GitHub - Repositories",
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "includeAll": true,
+        "label": "Repository",
+        "multi": true,
+        "name": "repository",
+        "options": [],
+        "query": {
+          "owner": "$organization",
+          "queryType": "Repositories"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
+  },
+  "time": {
+    "from": "now-90d",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ]
+  },
+  "timezone": "",
+  "title": "GitHub Org",
+  "uid": "github-org",
+  "version": 2
+}

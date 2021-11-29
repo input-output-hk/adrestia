@@ -1,0 +1,9 @@
+{
+  "alert": "black",
+  "information": "blue",
+  "warning": "orange",
+  "critical": "red",
+  "page": "red",
+  "ok": "green",
+  "silenced": "gray"
+}

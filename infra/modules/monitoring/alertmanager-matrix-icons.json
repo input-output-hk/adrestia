@@ -1,0 +1,9 @@
+{
+  "alert": "🔔️",
+  "information": "ℹ️",
+  "warning": "⚠️",
+  "critical": "🚨",
+  "page": "🚨",
+  "ok": "✅",
+  "silenced": "🔕"
+}

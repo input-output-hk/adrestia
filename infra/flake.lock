@@ -1,0 +1,111 @@
+{
+  "nodes": {
+    "flake-utils": {
+      "locked": {
+        "lastModified": 1637014545,
+        "narHash": "sha256-26IZAc5yzlD9FlDT54io1oqG/bBoyka+FJk5guaX4x4=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "bba5dcc8e0b20ab664967ad83d24d64cb64ec4f4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1637917894,
+        "narHash": "sha256-mzkyjq+OW1K5XHG43zrnjJX/K1ehahVWlKjMzWX/Vvg=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "7efd99ef876c220848553ae10218685d5e5d79cb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "release-21.05",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1638174334,
+        "narHash": "sha256-PivhY8Pk73L6Y7qZQL8QpVQE8RBaC1LZRPtcTYyrTzU=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "d57f82e306a86458b06534f6e2f5f9948c30afd7",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "nixpkgsUnstable": {
+      "locked": {
+        "lastModified": 1637797352,
+        "narHash": "sha256-Bq+1aXA67gKPHDu8b7YtPi95iMqFtD8sRQDam4S5isY=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "e0eb89f3916ae5b5e8e3c45909df8c82383b622a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "pull/147315/head",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1637798660,
+        "narHash": "sha256-MrPmoGeiOjlT17j3ZQx6iab07YVnomRiBFLcOCiCYnk=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "91e6a9a6568f751bb10222a937507e7e151a035e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-21.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "home-manager": "home-manager",
+        "nixpkgs": "nixpkgs_2",
+        "nixpkgsUnstable": "nixpkgsUnstable",
+        "rvlConfig": "rvlConfig"
+      }
+    },
+    "rvlConfig": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1638174321,
+        "narHash": "sha256-BB+vRUjf4CNBT5hHhh1GdMtxi4UuCSj+jBExJsbXA0o=",
+        "ref": "master",
+        "rev": "d4a88758ced53e6912caf6619297a1e4d885bf16",
+        "revCount": 158,
+        "type": "git",
+        "url": "https://git.lorrimar.id.au/rodney/config.git"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.lorrimar.id.au/rodney/config.git"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
