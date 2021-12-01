@@ -97,7 +97,7 @@ This practice lets us share knowledge about tasks.
 
 ## Implicit acceptance criteria
 
-Every development task is subject to the [[Definition of Done]].
+Every development task is subject to the [[Definition-of-Done]].
 
 So development tasks such as testing, documentation, review, etc, must
 be included as part of the estimate.

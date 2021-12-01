@@ -86,7 +86,22 @@ To enable it, choose _Set up encryption_ in your Element settings.
 
 ### "Unable to decrypt" errors
 
-1. The sender doesn’t know you exist, because when they sent the the message their server hadn’t yet seen you were in the room.
+Not quite sure why this happens. Possible causes:
+
+1. The sender doesn't know you exist, because when they sent the the message
+   their server hadn't yet seen you were in the room.
+
+2. Lack of cross-signing ("verification" of other user's sessions).
+
+### How to send direct messages which _aren't_ E2E encrypted
+
+Under Element at least, direct messages to other users default to being E2E
+encrypted, and you can't change it.
+
+In case you need it, a workaround is:
+1. Create a new private room with encryption disabled.
+2. Invite the other user to this room.
+3. Run the command `/coverttodm` in this room.
 
 ## Other clients
 
