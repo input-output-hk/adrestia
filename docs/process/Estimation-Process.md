@@ -27,73 +27,130 @@ below the estimate. These assumptions translate to risks - because if
 they turn out to be incorrect, then they will add more time to the
 task.
 
-It's also possible to provide confidence intervals around an
-estimation to quantify the uncertainty. For example, a development
-task could be estimated to take 30 hours expected, +20 hours worst
-case, -5 hours best case. However even then, how often do we expect
-that actual time will come in longer than "worst case?"
+## Capturing uncertainty in our estimates
 
-## Story points estimates
+One common way to express an estimate for a given task is to give a single
+number: the number of remaining days of effort the task owner believes that he
+or she will require to finish that task.
 
-We accept that accurate estimation is hard, for multiple reasons, so
-instead adopt the "just in time" planning technique from XP.
+However, a single number alone is unable to capture the degree of confidence or
+uncertainty the author of an estimate has. To allow estimate authors to record
+their confidence or uncertainty, we need a bit more information.
 
-This uses unitless "story points" for estimation of each
-ticket. Possible story point values are on the Fibonacci sequence:
-1, 2, 3, 5, 8, 13.
+Therefore, we attach to each task a **pair** of estimates:
 
-The idea is that these point values represent task size in an abstract
-way. An estimate in time for a task can be calculated from the
-estimate in story points divided by the project velocity, adjusted
-according to staff availability, other factors, etc.
+- **Most-probable estimate (days)**: the number of remaining days of effort the
+  task owner believes he or she will most likely need to finish that task.
 
-The decision on whether a task is included in the next sprint is
-based on its points estimate and the project velocity.
+- **Most-pessimistic estimate (days)**: the number of remaining days of effort
+  the task owner believes he or she will need to be 90% of confident of
+  finishing that task, given a pessimistic appraisal of the situation, and
+  taking into account all of the potential things that could go wrong.
 
-This approach is clearly a **gross simplification of reality**, and so
-we need to be very careful not to produce garbage estimates.
+Note that it's impossible (in general) to predict all the things that could go
+wrong with a task. This is why estimates are estimates, and not commitments.
+Pilots and co-pilots should feel free to give estimates based on their personal
+experience. They may use their accumulated knowledge of how long similar tasks
+have taken in the past to develop new estimates.
 
-### Points
+The **deviation** between the most-probable estimate and most-pessimistic
+estimate allows the authors of each estimate to express their degree of
+uncertainty in the estimate, and it allows people viewing the estimates to gain
+insight into that uncertainty.
 
-| Points | Size                                            |
-| -----: | ----------------------------------------------- |
-|      1 |                                                 |
-|      2 |                                                 |
-|      3 |                                                 |
-|      5 |                                                 |
-|      8 |                                                 |
-|     13 |                                                 |
-|   > 13 | This ticket needs to be split up further.       |
+A very large deviation between the most-probable and most-pessimistic estimate
+tells us that the author is very uncertain in their estimate. We might use
+this information to take action, for example, by breaking up a task into
+smaller, more well-defined pieces.
 
-### Each _Task_ ticket has an estimate
+It's important to realize that:
 
-We assign an estimation to every single task ticket. If there's no
-estimate, then it can't be added to the sprint.
+- These estimates pertain to the number of days of remaining effort required to
+  perform that task **in isolation**. If two or more tasks are performed in
+  parallel, with context switching, then we need to keep the additional cost of
+  that context switching in mind.
 
-### Ticket must be ready to estimate before estimation
+- These estimates refer to a number of days **remaining**, and as such they
+  should be regularly updated as circumstances change, rather that set in stone
+  and left unchanged.
 
-If there is not enough information about a task ticket, then the
-estimation will be rubbish. So before estimation starts we need:
+## Guidelines for creating estimates
 
-1. The _Task_ ticket is linked to a _User Story_ ticket.
-2. The ticket description contains adequate information about what is
-   expected to be done.
-3. The ticket includes acceptance criteria.
-4. The ticket is sufficiently small to estimate.
-5. Task dependencies are defined with jira issue links.
+- Estimates should only be created and updated by the pilot and co-pilot
+  responsible for a given task.
 
-## Team Estimation
+- Estimates should be created only after a _Task_ ticket has entered the
+  "READY" state. This means that a task should not be estimated if either the
+  pilot or the co-pilot are unclear on what must be done.
 
-Story point estimations are done by the development team together in
-the [[Meetings|sprint planning meeting]].
+This implies that:
 
-We use the [Pointing Poker](https://www.pointingpoker.com/) tool to
-facilitate estimation sessions.
+- The _Task_ ticket should have a complete set of acceptance criteria.
 
-The team should agree on a single number. If they don't then someone
-is missing some information about the task.
+- The _Task_ ticket should have a clear design that the pilot and co-pilot are
+  capable of estimating. Justification: there are many possible designs for a
+  given set of acceptance criteria. The time to deliver a task will depend very
+  strongly on the design that is chosen.
 
-This practice lets us share knowledge about tasks.
+- The _Task_ ticket should be linked to a _User Story_ ticket, **if** it
+  pertains to a user story. (It's important to note that not all tasks must
+  have a corresponding user story. In the case of technical debt tasks or pure
+  refactoring tasks, it might not be practical to even identify a user story.)
+
+- The _Task_ ticket is sufficiently small to estimate.
+
+- Task dependencies are defined with Jira issue links.
+
+## Process for updating estimates
+
+One of the main benefits of estimation is that both project management and other
+team members can gain visibility on how much time might be required to bring
+certain tasks to completion.
+
+Since we have one project planning meeting per week, it makes sense to update
+our estimates at around the same frequency.
+
+Before each project planning meeting (currently on Wednesday), each team member
+should:
+
+- Identify the tasks he or she is currently working on, in JIRA.
+
+- Make sure that each task has an updated pair of estimates that best reflect
+  their current understanding of how much remaining time would be required to
+  bring these tasks to completion.
+
+## Interpreting estimates
+
+Estimates do not represent commitments on behalf of those who create them.
+
+The actual time required to finish tasks, when compared to initial estimates,
+can vary wildly, with some tasks taking many times longer than initially
+predicted.
+
+This factor: the actual time divided by the estimated time, is often known as
+the "blowup factor".
+
+There is some research to indicate that the "blowup factor" (actual time
+divided by estimated time) can be reasonably modelled using a log-normal
+distribution. See https://erikbern.com/2019/04/15/why-software-projects-take-longer-than-you-think-a-statistical-model.html
+
+TODO:
+
+- [ ] When we have a task with a chain of dependent tasks, devise an automated
+  method of calculating a most-probable estimate and a most-pessimistic
+  estimate for the entire chain of tasks. This method might use the log-normal
+  distribution model suggested above in order to capture the possible blowup
+  factor for the entire chain.
+
+- [ ] When we have a release that contains large numbers of tasks with
+  dependencies between them, devise an automated method of determining the most
+  likely critical paths required to deliver the release, and a method of
+  calculating a most-probable estimate and a most-pessimistic estimate for
+  delivering the entire release.
+
+In some situations, there will be one obvious critical path, but in more
+complex situations, there may be multiple contenders for the critical path, and
+the critical path may change as we make progress through a release.
 
 ## Implicit acceptance criteria
 
@@ -129,6 +186,38 @@ main task and linked.
 We have found that Jira _subtasks_ aren't especially useful. They just
 make things confusing, so avoid using them.
 
+# Other methods of estimation
+
+## Story points estimates
+
+This method uses unitless "story points" for estimation of each
+ticket. Possible story point values are on the Fibonacci sequence:
+1, 2, 3, 5, 8, 13.
+
+The idea is that these point values represent task size in an abstract
+way. An estimate in time for a task can be calculated from the
+estimate in story points divided by the project velocity, adjusted
+according to staff availability, other factors, etc.
+
+The decision on whether a task is included in the next sprint is
+based on its points estimate and the project velocity.
+
+This approach is clearly a **gross simplification of reality**, and so
+we need to be very careful not to produce garbage estimates.
+
+## Team Estimation
+
+Story point estimations are done by the development team together in
+the [[Meetings|sprint planning meeting]].
+
+This method can use the [Pointing Poker](https://www.pointingpoker.com/) tool
+to facilitate estimation sessions.
+
+The team should agree on a single number. If they don't then someone
+is missing some information about the task.
+
+This practice lets us share knowledge about tasks.
+
 ## Updating estimations
 
 By rights, the estimation of a ticket should not change once the
@@ -138,6 +227,19 @@ If the ticket actually took twice as long as the points estimate
 suggested, then the team velocity will decrease. The idea is that in
 theory the velocity figure records under-estimation tendencies of the
 team, so that future sprints may be better planned.
+
+### Points
+
+| Points | Size                                            |
+| -----: | ----------------------------------------------- |
+|      1 |                                                 |
+|      2 |                                                 |
+|      3 |                                                 |
+|      5 |                                                 |
+|      8 |                                                 |
+|     13 |                                                 |
+|   > 13 | This ticket needs to be split up further.       |
+
 
 ## TODO: Put remaining time on ticket
 
