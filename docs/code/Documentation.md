@@ -171,18 +171,21 @@ Install `emanote` locally using those instructions, or just use the [[Nix]] shel
 contained in this repo.
 
 ```shell-session
-[~/iohk/adrestia/process]$ nix develop
+[~/iohk/adrestia]$ nix develop
 
-[nix-shell:~/iohk/adrestia/process]$ emanote
-[Info] Launching Ema under: /home/rodney/iohk/adrestia/process
+rodney@tethys:~/iohk/adrestia [adp] $ emanote -L docs
+[Info] Launching Ema under: /home/rodney/iohk/adrestia
 ...
 [Info] ============================================
 [Info] Running live server at http://127.0.0.1:8000
 [Info] ============================================
-[Info#Ema.Helper.FileSystem] Monitoring /home/rodney/iohk/adp/adrestia/process for changes
-[Info#Ema.Helper.FileSystem] Monitoring /nix/store/b7bl4r7hljdy2dk14cxxbpji58x9f5iy-emanote-0.3.12.1-data/share/ghc-8.10.7/x86_64-linux-ghc-8.10.7/emanote-0.3.12.1 for changes
-
+[Info#Ema.Helper.FileSystem] Monitoring /home/rodney/iohk/adrestia/docs for changes
+[Info#Ema.Helper.FileSystem] Monitoring /nix/store/j455vnnvzkmidncllrvkv1hd1ya00dam-emanote-0.4.0.0-data/share/ghc-8.10.7/x86_64-linux-ghc-8.10.7/emanote-0.4.0.0 for changes
 ```
+
+### Adding cardano-wallet documentation layer
+
+See the [`splice-cardano-wallet-docs.sh`](https://github.com/input-output-hk/adrestia/blob/master/scripts/splice-cardano-wallet-docs.sh) script.
 
 ### TODO notes
 
