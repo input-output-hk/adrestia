@@ -210,16 +210,25 @@ These TODO items will appear in the [Task Index](-/tasks).
 ## Emanote Resources
 
 - [Emanote website](https://note.ema.srid.ca/)
-  - [Default `index.yaml`](https://github.com/srid/emanote/blob/master/default/index.yaml)
-  - [YAML config demo](https://note.ema.srid.ca/demo)
- - [YAML Multiline](https://yaml-multiline.info/) - Find the right syntax for your YAML multiline strings.
+- [Default `index.yaml`](https://github.com/srid/emanote/blob/master/default/index.yaml)
+- [YAML config demo](https://note.ema.srid.ca/demo)
+
+### YAML
+
+- [YAML Multiline](https://yaml-multiline.info/) - Find the right syntax for your YAML multiline strings.
+
+### Markdown
+
  - [Commonmark Spec](https://commonmark.org)
  - [Markdown Tables Generator](https://www.tablesgenerator.com/markdown_tables)
  - [commonmark-hs](https://github.com/jgm/commonmark-hs) - The Markdown parser used by Emanote.
    - [Fenced divs extension](https://github.com/jgm/commonmark-hs/blob/master/commonmark-extensions/test/fenced_divs.md)
    - [Attributes extension](https://github.com/jgm/commonmark-hs/blob/master/commonmark-extensions/test/attributes.md)
- - [Pandoc](https://pandoc.org) - Document conversion tool which supports Markdown.
- - [Tailwind CSS Framework](https://tailwindcss.com) - The CSS framework used for Emanote.
+
+### Tools
+
+- [Pandoc](https://pandoc.org) - Document conversion tool which supports Markdown.
+- [Tailwind CSS Framework](https://tailwindcss.com) - The CSS framework used for Emanote.
 
 ## More things to write
 

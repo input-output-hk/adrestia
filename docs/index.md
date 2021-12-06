@@ -8,13 +8,6 @@ pandoc:
 
 # Adrestia Project
 
-:::{.sticky-note .max-w-md .mx-auto}
-**Under Construction!**
-
-These docs have just moved from the wiki and are in the process of
-being re-organised and updated.
-:::
-
 :::{.frontbox2}
 :::{.frontbox1}
 
