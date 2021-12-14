@@ -10,16 +10,11 @@ rec {
 
     flake-utils.url = "github:numtide/flake-utils";
 
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-21.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-21.11";
+    nixpkgsUnstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    nixpkgsUnstable = {
-      type = "github";
-      owner = "NixOS";
-      repo = "nixpkgs";
-      ref = "pull/147315/head";
-    };
-
-    home-manager.url = "github:nix-community/home-manager/release-21.05";
+    home-manager.url = "github:nix-community/home-manager/release-21.11";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { self, nixpkgs, nixpkgsUnstable, flake-utils, rvlConfig, home-manager }: let

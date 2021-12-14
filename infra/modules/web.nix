@@ -55,5 +55,8 @@ in {
     cookie.secure = true;
   };
 
+  users.users.oauth2_proxy.group = lib.mkDefault "oauth2_proxy";
+  users.groups.oauth2_proxy = {};
+
   rodnix.key-deps.iohk_oauth2_proxy = [ "oauth2_proxy" ];
 }

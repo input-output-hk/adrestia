@@ -283,7 +283,12 @@ in {
     };
   };
 
-  users.users.grafana.extraGroups = [ "keys" ];
+  users.users.grafana = {
+    isSystemUser = true;
+    group = "grafana";
+    extraGroups = [ "keys" ];
+  };
+
   deployment.keys = lib.genAttrs keys (name: {
     destDir = "/var/lib/keys";
     user = "grafana";
