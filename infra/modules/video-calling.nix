@@ -1,9 +1,5 @@
-{ config, lib, pkgs, common, ... }: let
-  inherit (common)
-    backupJob
-    hosts;
-
-  mkTurnUri = port: transport: "turn:${hosts.jitsi}:${toString port}?transport=${transport}";
+{ config, lib, pkgs, dns, ... }: let
+  mkTurnUri = port: transport: "turn:${dns.hosts.jitsi}:${toString port}?transport=${transport}";
 
   turnPorts = with config.services.coturn; [ listening-port tls-listening-port ];
 
@@ -14,8 +10,8 @@ in {
   };
 
   services.jitsi-meet = {
-    enable = true;
-    hostName = hosts.jitsi;
+    enable = false;
+    hostName = dns.hosts.jitsi;
     # https://github.com/jitsi/jitsi-meet/blob/master/config.js
     config = {
       #enableWelcomePage = false;
@@ -40,13 +36,13 @@ in {
 
   # fixme: check auth, reload when certs are refreshed
   services.coturn = let
-    certs = config.security.acme.certs.${hosts.jitsi}.directory;
+    certs = config.security.acme.certs.${dns.hosts.jitsi}.directory;
   in {
     enable = false;
     use-auth-secret = true;
     # new nixpkgs only
     # static-auth-secret-file = config.deployment.keys.iohk_turn_shared_secret.path;
-    realm = hosts.jitsi;
+    realm = dns.hosts.jitsi;
     # no-tcp-relay = true;
     cert = "${certs}/fullchain.pem";
     pkey = "${certs}/key.pem";
@@ -59,7 +55,7 @@ in {
   #   turn_uris = lib.concatMap (port: map (mkTurnUri port) [ "udp" "tcp" ]) turnPorts;
   # };
 
-  services.borgbackup.jobs.${backupJob}.paths = [
+  services.borgbackup.jobs.${config.adp.backup.job}.paths = [
     config.services.prosody.dataDir
     "/var/lib/jitsi-meet"
   ];

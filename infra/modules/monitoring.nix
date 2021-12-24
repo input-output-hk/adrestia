@@ -1,9 +1,4 @@
-{ config, lib, pkgs, common, ... }: let
-  inherit (common)
-    domain
-    hosts
-    backupJob;
-
+{ config, lib, pkgs, dns, creds, ... }: let
   keys = [
     "iohk_oauth2_client_secret"
     "iohk_grafana_admin_password"
@@ -13,17 +8,17 @@
   grafana = config.services.grafana;
   prometheus = config.services.prometheus;
 
-  grafanaURL = "https://${hosts.monitoring}/grafana/";
+  grafanaURL = "https://${dns.hosts.monitoring}/grafana/";
 
-  alertsRoom = "#infra-alerts:${domain}";
-  alertsRoomId = "!JkJgzWQQidiYpNuYYG:${domain}";
+  alertsRoom = "#infra-alerts:${dns.zone}";
+  alertsRoomId = "!JkJgzWQQidiYpNuYYG:${dns.zone}";
 
 in {
   services.prometheus = {
     enable = true;
     extraFlags = [
       "--storage.tsdb.retention=${toString (150 * 24)}h"
-      "--web.external-url=https://${hosts.monitoring}/prometheus/"
+      "--web.external-url=https://${dns.hosts.monitoring}/prometheus/"
     ];
 
     exporters = {
@@ -52,7 +47,7 @@ in {
       localExporter = job_name: exporter: cfg: lib.recursiveUpdate {
         inherit job_name;
         static_configs = [{
-          targets = [ "${domain}:${toString exporter.port}" ];
+          targets = [ "${dns.zone}:${toString exporter.port}" ];
         }];
       } cfg;
     in [
@@ -68,7 +63,7 @@ in {
     alertmanagers = [{
       scheme = "http";
       static_configs = [{
-        targets = ["${domain}:${toString prometheus.alertmanager.port}"];
+        targets = ["${dns.zone}:${toString prometheus.alertmanager.port}"];
       }];
     }];
 
@@ -156,7 +151,7 @@ in {
   services.prometheus.alertmanager.matrix = {
     enable = true;
     homeserver = "http://[::1]:8008";
-    userId = "@alertmanager:${domain}";
+    userId = "@alertmanager:${dns.zone}";
     environmentFile = config.deployment.keys.iohk_alertmanager_matrix_token.path;
     rooms = [ alertsRoom alertsRoomId ];
     receivers = [{
@@ -185,12 +180,12 @@ in {
 
   services.nginx = {
     statusPage = true;
-    virtualHosts.${hosts.monitoring} = {
+    virtualHosts.${dns.hosts.monitoring} = {
       enableACME = true;
       forceSSL = true;
 
       locations = {
-        "/".return = "302 https://${hosts.monitoring}/grafana/";
+        "/".return = "302 https://${dns.hosts.monitoring}/grafana/";
         "/prometheus/" = {
           proxyPass = "http://${prometheus.listenAddress}:${toString prometheus.port}";
           proxyWebsockets = true;
@@ -213,7 +208,7 @@ in {
     auth.google = {
       enable = true;
       allowSignUp = false;
-      inherit (common.creds.oauth2) clientId;
+      inherit (creds.oauth2) clientId;
       clientSecretFile = config.deployment.keys.iohk_oauth2_client_secret.path;
     };
     security = {
@@ -229,8 +224,8 @@ in {
       # sudo -u postgres psql -c "ALTER USER grafana PASSWORD '...';"
       passwordFile = config.deployment.keys.iohk_grafana_admin_password.path;
     };
-    domain = hosts.monitoring;
-    rootUrl = "https://${hosts.monitoring}/grafana/";
+    domain = dns.hosts.monitoring;
+    rootUrl = "https://${dns.hosts.monitoring}/grafana/";
     extraOptions.serve_from_sub_path = "true";
     declarativePlugins = with pkgs.grafanaPlugins; [
       grafana-piechart-panel
@@ -278,7 +273,7 @@ in {
         is_default = true;
         type = "prometheus-alertmanager";
         uid = "alertmanager";
-        settings.url = "http://${domain}:${toString prometheus.alertmanager.port}";
+        settings.url = "http://${dns.zone}:${toString prometheus.alertmanager.port}";
       }];
     };
   };
@@ -303,7 +298,7 @@ in {
     wants = services;
   };
 
-  services.borgbackup.jobs.${backupJob}.paths = [ config.services.grafana.dataDir ];
+  services.borgbackup.jobs.${config.adp.backup.job}.paths = [ config.services.grafana.dataDir ];
 
   services.postgresql = with config.services.grafana.database; {
     ensureDatabases = [ name ];

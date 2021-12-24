@@ -1,5 +1,6 @@
-{ lib, pkgs, config, ... }: {
+{ pkgs, flakeInputs, ... }: {
   rodnix.enable = true;
+  rodnix.repo = toString flakeInputs.rvl.sourceInfo;
 
   services.openssh = {
     enable = true;
@@ -12,4 +13,8 @@
 
   # Install terminfo files for urxvt users.
   environment.systemPackages = [ pkgs.rxvt-unicode ];
+
+  users.users.root.openssh.authorizedKeys.keyFiles = [
+    ../pubkeys/rvl.pub
+  ];
 }

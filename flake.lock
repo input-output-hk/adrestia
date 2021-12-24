@@ -37,11 +37,11 @@
         "windicss": "windicss"
       },
       "locked": {
-        "lastModified": 1638742795,
-        "narHash": "sha256-2o0k+vNMec0d0E2EkXoqPr/ywqLt5XJUJNTOPC65w2A=",
+        "lastModified": 1639244363,
+        "narHash": "sha256-EPx/AkPdHD9k+q0vq+QSigRbv348xLHpPtbac6frV7I=",
         "owner": "srid",
         "repo": "emanote",
-        "rev": "526e81c8e297ecb7a6e94add5cc3472117138438",
+        "rev": "c0ad52735f01e4556bacbecc914cac3eb9c11e85",
         "type": "github"
       },
       "original": {
@@ -138,7 +138,7 @@
         "src": "src"
       },
       "locked": {
-        "narHash": "sha256-jykEdXB8DM85GbVIq+ofQJ+tywsS6gVRObLSzkiW7rs=",
+        "narHash": "sha256-Q8EeefS0aPJxgA7wWXsET9x3u3hF3FpdHcQ6wGaA9Xw=",
         "path": "./nix/hedgedoc-cli",
         "type": "path"
       },
@@ -182,11 +182,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1638587357,
-        "narHash": "sha256-2ySMW3QARG8BsRPmwe7clTbdCuaObromOKewykP+UJc=",
+        "lastModified": 1639161226,
+        "narHash": "sha256-75Y08ynJDTq6HHGIF+8IADBJSVip0UyWQH7jqSFnRR8=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "e34c5379866833f41e2a36f309912fa675d687c7",
+        "rev": "573095944e7c1d58d30fc679c81af63668b54056",
         "type": "github"
       },
       "original": {

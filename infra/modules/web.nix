@@ -1,20 +1,16 @@
-{ config, lib, pkgs, common, ... }: let
-  inherit (common)
-    domain
-    hosts;
-in {
+{ config, lib, pkgs, dns, ... }: {
   networking.firewall.allowedTCPPorts = [ 80 443 ];
 
   security.acme = {
     email = "mb.acme@rodney.id.au";
     acceptTerms = true;
-    certs.${domain} = {
+    certs.${dns.zone} = {
       postRun = ''
         systemctl reload nginx.service
       '' + lib.optionalString config.services.coturn.enable ''
         systemctl reload coturn.service
       '';
-      extraDomainNames = lib.attrValues hosts;
+      extraDomainNames = lib.attrValues dns.hosts;
     };
   };
 
@@ -27,7 +23,7 @@ in {
     recommendedGzipSettings = true;
     recommendedProxySettings = true;
 
-    virtualHosts.${domain} = {
+    virtualHosts.${dns.zone} = {
       enableACME = true;
       forceSSL = true;
       default = true;
@@ -46,7 +42,7 @@ in {
     email.domains = [ "iohk.io" ];
     email.addresses = lib.concatMapStringsSep "\n" (u: "${u}@iohk.io") users;
     reverseProxy = true;
-    nginx.virtualHosts = [ domain hosts.monitoring ];
+    nginx.virtualHosts = [ dns.zone dns.hosts.monitoring ];
     passAccessToken = true;
 
     keyFile = config.deployment.keys.iohk_oauth2_proxy.path;

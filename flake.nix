@@ -26,6 +26,10 @@
               (hedgedoc-cli.defaultPackage.${system}.override {
                 server = "https://md.adrestia.iohkdev.io";
               })
+              (pkgs.writeScriptBin "nixops" ''
+                echo "Wrong directory - cd infra"
+                exit 1
+              '')
             ];
           };
         };

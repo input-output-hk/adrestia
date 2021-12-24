@@ -1,9 +1,4 @@
-{ config, lib, pkgs, common, ... }: let
-
-  inherit (common)
-    domain
-    hosts
-    backupJob;
+{ config, lib, pkgs, dns, ... }: let
 
   synapseConfigKeys = [
     "iohk_oauth2_matrix"
@@ -25,12 +20,12 @@ in {
       # This host section can be placed on a different host than the rest,
       # i.e. to delegate from the host being accessible as ${config.networking.domain}
       # to another host actually running the Matrix homeserver.
-      ${domain} = {
+      ${dns.zone} = {
         locations."= /.well-known/matrix/server".extraConfig =
           let
             # use 443 instead of the default 8448 port to unite
             # the client-server and server-server port for simplicity
-            server = { "m.server" = "${hosts.matrix}:443"; };
+            server = { "m.server" = "${dns.hosts.matrix}:443"; };
           in ''
             add_header Content-Type application/json;
             return 200 '${builtins.toJSON server}';
@@ -38,9 +33,9 @@ in {
         locations."= /.well-known/matrix/client".extraConfig =
           let
             client = {
-              "m.homeserver" =  { "base_url" = "https://${hosts.matrix}"; };
+              "m.homeserver" =  { "base_url" = "https://${dns.hosts.matrix}"; };
               "m.identity_server" =  { "base_url" = "https://vector.im"; };
-              "im.vector.riot.jitsi" = { "preferredDomain" = "${hosts.jitsi}"; };
+              "im.vector.riot.jitsi" = { "preferredDomain" = "${dns.hosts.jitsi}"; };
             };
           # ACAO required to allow element-web on any URL to request this json file
           in ''
@@ -51,14 +46,14 @@ in {
       };
 
       # Reverse proxy for Matrix client-server and server-server communication
-      ${hosts.matrix} = {
+      ${dns.hosts.matrix} = {
         enableACME = true;
         forceSSL = true;
 
         # Matrix docs say do not put a Matrix Web client here!
         # So redirect to the URL for element web client.
         locations."/".extraConfig = ''
-          return 302 https://${hosts.element};
+          return 302 https://${dns.hosts.element};
         '';
 
         # forward all Matrix API calls to the synapse Matrix homeserver
@@ -74,7 +69,7 @@ in {
         };
       };
 
-      ${hosts.element} = {
+      ${dns.hosts.element} = {
         enableACME = true;
         forceSSL = true;
 
@@ -82,7 +77,7 @@ in {
           # https://github.com/vector-im/element-web/blob/develop/docs/config.md
           conf = {
             default_server_config."m.homeserver" = {
-              "base_url" = "https://${hosts.matrix}";
+              "base_url" = "https://${dns.hosts.matrix}";
               "server_name" = "Adrestia Chat";
             };
             # https://github.com/vector-im/element-web/blob/develop/docs/labs.md
@@ -104,8 +99,8 @@ in {
               "UIFeature.feedback" = false;
             };
             disable_custom_urls = true;
-            permalinkPrefix = "https://${hosts.element}";
-            jitsi.preferredDomain = hosts.jitsi;
+            permalinkPrefix = "https://${dns.hosts.element}";
+            jitsi.preferredDomain = dns.hosts.jitsi;
             # jitsi.preferredDomain = "jitsi.riot.im";
           };
         };
@@ -114,7 +109,7 @@ in {
 
   services.matrix-synapse = {
     enable = true;
-    server_name = domain;
+    server_name = dns.zone;
     # enable_registration = true;
     # registration_shared_secret = "";
     listeners = [{
@@ -128,7 +123,7 @@ in {
         compress = false;
       }];
     }];
-    public_baseurl = "https://${hosts.matrix}/";
+    public_baseurl = "https://${dns.hosts.matrix}/";
     extraConfigFiles = map (name: config.deployment.keys.${name}.path) synapseConfigKeys;
   };
 
@@ -150,7 +145,7 @@ in {
     pkgs.jq
   ];
 
-  services.borgbackup.jobs.${backupJob}.paths = [
+  services.borgbackup.jobs.${config.adp.backup.job}.paths = [
     config.services.matrix-synapse.dataDir
   ];
 }

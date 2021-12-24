@@ -1,17 +1,12 @@
-{ config, lib, pkgs, common, ... }: let
+{ config, lib, pkgs, dns, ... }: let
   hedgedoc = config.services.hedgedoc;
   cfg = hedgedoc.configuration;
-
-  inherit (common)
-    domain
-    hosts
-    backupJob;
 
   database = "hedgedoc";
   user = "hedgedoc";
 
 in {
-  services.nginx.virtualHosts.${hosts.md} = {
+  services.nginx.virtualHosts.${dns.hosts.md} = {
     enableACME = true;
     forceSSL = true;
 
@@ -65,8 +60,8 @@ in {
       # Hosting
 
       # path = "/run/hedgedoc.sock"; # optional unix domain socket
-      allowOrigin = [ "localhost" hosts.md ];
-      domain = hosts.md;
+      allowOrigin = [ "localhost" dns.hosts.md ];
+      domain = dns.hosts.md;
       urlPath = null;
       protocolUseSSL = true;
       # TODO: enable HSTS once certificates are sorted
@@ -115,7 +110,7 @@ in {
 
   deployment.keys.iohk_hedgedoc.destDir = "/var/lib/keys";
 
-  services.borgbackup.jobs.${backupJob}.paths = [ hedgedoc.workDir ];
+  services.borgbackup.jobs.${config.adp.backup.job}.paths = [ hedgedoc.workDir ];
 
   services.postgresql = {
     ensureDatabases = [ database ];
@@ -130,8 +125,7 @@ in {
   services.prometheus.scrapeConfigs = [{
     job_name = "hedgedoc";
     static_configs = [{
-      targets = [ "${domain}:${toString cfg.port}" ];
+      targets = [ "${dns.zone}:${toString cfg.port}" ];
     }];
   }];
-
 }
