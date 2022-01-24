@@ -18,8 +18,8 @@ This is the process for starting new developers on the project.
 - Ensure that you have a [[Passwords|Vaultwarden]] account associated with your `@iohk.io` e-mail address.
 - Follow the [[Jira#orientation-checklist|Jira Orientation Checklist]]
 - Skim the [ramp-up docs](#ramp-up-docs).
-- Ensure that you are able to edit Wikis. If you discover
-  something that needs documentation, add it to the Wiki.
+- Ensure that you are able to edit the [[index|Adrestia Website]]. If you discover
+  something that needs documentation, update the [[Documentation]].
 
 ## Ramp-up docs
 
