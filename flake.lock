@@ -14,11 +14,11 @@
         "pre-commit-hooks": "pre-commit-hooks"
       },
       "locked": {
-        "lastModified": 1641753633,
-        "narHash": "sha256-POXgt4uvzbfvj+2tFXVrVx08+O8/tpTNiqA4r7cUGpY=",
+        "lastModified": 1642687560,
+        "narHash": "sha256-dQwVsJ5ngKcEmi9T7RmbTUESeTi6vyxHI12LR4Hna/g=",
         "owner": "srid",
         "repo": "ema",
-        "rev": "8e6a660cb3d1582577be70004dccc2321b2854e1",
+        "rev": "29457d1bf16b44ac1b72e90bf88a2059f5ec2409",
         "type": "github"
       },
       "original": {
@@ -42,11 +42,11 @@
         "tailwind-haskell": "tailwind-haskell"
       },
       "locked": {
-        "lastModified": 1641950988,
-        "narHash": "sha256-YkTH6dATg1NfrN69cQMO/ThgFgik6LTKzNfXURy1nDo=",
+        "lastModified": 1642882997,
+        "narHash": "sha256-VGfVi65fhp1F4EllaxAntkTyLdGVMBLeDf+W410LbIg=",
         "owner": "srid",
         "repo": "emanote",
-        "rev": "3f4b6eaa105ba7cc21f7a1ec6a4192ecb3d9ee79",
+        "rev": "f2dab2102516c01dc06f125a08a2ea29738cdef8",
         "type": "github"
       },
       "original": {
@@ -305,11 +305,11 @@
         "tailwind-nix": "tailwind-nix"
       },
       "locked": {
-        "lastModified": 1641950429,
-        "narHash": "sha256-lZB3HAdZcx0FhTq7b0gmLUWrv65gPPRcKsUdkJxnHQc=",
+        "lastModified": 1641997840,
+        "narHash": "sha256-Iv3hDIG7fdEL27FZpDzJhgdNBmgr+QnQbqXD9W42RNM=",
         "owner": "srid",
         "repo": "tailwind-haskell",
-        "rev": "6f99f464bb17306d473bfabfb4850aa00c259eac",
+        "rev": "51c69972f3bdd28727f4a0473625cd05c8f7c4f3",
         "type": "github"
       },
       "original": {
