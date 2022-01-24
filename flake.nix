@@ -23,11 +23,12 @@
             name = "adp";
             nativeBuildInputs = [
               emanote.defaultPackage.${system}
+              pkgs.yq
               (hedgedoc-cli.defaultPackage.${system}.override {
                 server = "https://md.adrestia.iohkdev.io";
               })
               (pkgs.writeScriptBin "nixops" ''
-                echo "Wrong directory - cd infra"
+                echo "Sorry, wrong directory - cd infra"
                 exit 1
               '')
             ];

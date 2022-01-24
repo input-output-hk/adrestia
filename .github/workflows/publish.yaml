@@ -8,32 +8,51 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
+    env:
+      PUBLISH_DIR: _build
+      PR_NUMBER: ${{ github.event.pull_request.number }}
     steps:
-      - name: 📥 Clone adrestia repo
+      - name: '📥 Clone adrestia repo'
         uses: actions/checkout@v2
         with:
           path: adrestia
 
-      - name: 📥 Clone cardano-wallet repo
+      - name: '📥 Clone cardano-wallet repo'
         uses: actions/checkout@v2
         with:
           repository: input-output-hk/cardano-wallet
           path: cardano-wallet
 
-      - name: Build docs 🔧
+      - name: '❄ Install Nix'
+        uses: cachix/install-nix-action@v16
+        with:
+          extra_nix_config: |
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+            substituters = https://hydra.iohk.io https://cache.nixos.org/
+            trusted-public-keys = hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ= cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
+
+      - name: '❄ Install dependencies'
+        run: 'nix develop --command emanote --version'
+
+      - name: '🔧 Build docs'
         run: |
           ../scripts/splice-cardano-wallet-docs.sh $GITHUB_WORKSPACE/cardano-wallet --reflink=auto
-          mkdir -p output.docker
-          docker run -e LANG=C.UTF-8 -e LC_ALL=C.UTF-8 -v $PWD:/data sridca/emanote emanote --layers "/data;/data/.deploy/github" gen /data/output.docker
-          cp -r output.docker ../../output  # Ditch docker created root-owned files
-          bash ../../output/_emanote-bin/compile-css
-        working-directory: adrestia/docs
 
-      - name: Deploy to gh-pages 🚀
-        if: github.event_name == 'push'
+          build_dir="$PUBLISH_DIR"
+          if [ -n "$PR_NUMBER" ]; then
+            build_dir="$build_dir/_pr/$PR_NUMBER"
+            nix develop -c yq --in-place -y '.template.baseUrl|=.+"_pr/\(env.PR_NUMBER)/"' docs/.deploy/github/index.yaml
+          fi
+
+          mkdir -p "$build_dir"
+          nix develop -c emanote --layers "docs;docs/.deploy/github" gen "$build_dir"
+        working-directory: adrestia
+
+      - name: '🚀 Deploy to gh-pages'
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: output
+          publish_dir: adrestia/${{ env.PUBLISH_DIR }}
           enable_jekyll: false
