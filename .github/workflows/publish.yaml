@@ -34,10 +34,11 @@ jobs:
 
       - name: '❄ Install dependencies'
         run: 'nix develop --command emanote --version'
+        working-directory: adrestia
 
       - name: '🔧 Build docs'
         run: |
-          ../scripts/splice-cardano-wallet-docs.sh $GITHUB_WORKSPACE/cardano-wallet --reflink=auto
+          scripts/splice-cardano-wallet-docs.sh $GITHUB_WORKSPACE/cardano-wallet --reflink=auto
 
           build_dir="$PUBLISH_DIR"
           if [ -n "$PR_NUMBER" ]; then

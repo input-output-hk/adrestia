@@ -1,7 +1,13 @@
-{ lib, stdenv, jq, wget, curl, fetchFromGitHub, src, server ? null }: let
+{ lib, stdenv, jq, wget, curl, fetchFromGitHub
+, hedgedoc-cli-src ? (let lock = (builtins.fromJSON (builtins.readFile ./flake.lock)).nodes.hedgedoc-cli-src.locked; in fetchFromGitHub { inherit (lock) owner repo rev; sha256 = lock.narHash; })
+, server ? null
+ }: let
 
   pname = "hedgedoc-cli";
-  version = builtins.substring 0 8 src.lastModifiedDate; # Generate a user-friendly version number.
+  version = if src ? lastModifiedDate
+    then builtins.substring 0 8 src.lastModifiedDate # Generate a user-friendly version number.
+    else "git";
+  src = hedgedoc-cli-src;
 
 in stdenv.mkDerivation {
   name = "${pname}-${version}";
