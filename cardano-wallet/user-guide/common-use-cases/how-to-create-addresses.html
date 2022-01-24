@@ -20,13 +20,12 @@
     <meta http-equiv='cache-control' content='private, max-age=60' />
 <meta http-equiv='Expires' content='60' />
 <link href='static/adrestia.css' rel='stylesheet' />
+<script src='static/adrestia.js'></script>
 <link href='https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-tomorrow.css' rel='stylesheet' />
 <script src='https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/prism.min.js,npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js'></script>
 
   
-  <!-- CSSSTART -->
-	<link rel="stylesheet" href="emanote-compiled-3d92902e9c484a41fc6374b167641023.css" />
-  <!-- CSSEND -->
+  <link href='tailwind.css?instanceId=5e6f8d77-0d38-4536-bd97-189d35fb3c88' rel='stylesheet' type='text/css' />
 
   <!-- Heist error element -->
   <style type='text/css'>
@@ -3059,6 +3058,123 @@
   
 </div>
     
+      <!-- Variable bindings for this tree-->
+  
+    
+      
+    
+    
+
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-2 space-x-2 justify-left'>
+    
+    
+      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
+    <a class='hover:underline truncate' title='WalletId' href='cardano-wallet/design/WalletId'>
+      WalletId
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+  
+    
+      
+      
+    
+
+
+
+  
+  
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-2 space-x-2 justify-left'>
+    
+    
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-4 h-4 flex-shrink-0 inline text-gray-700' viewBox='0 0 20 20' fill='currentColor'>
+        <path fill-rule='evenodd' d='M2 6a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1H8a3 3 0 00-3 3v1.5a1.5 1.5 0 01-3 0V6z' clip-rule='evenodd'></path>
+        <path d='M6 12a2 2 0 012-2h8a2 2 0 012 2v2a2 2 0 01-2 2H2h2a2 2 0 002-2v-2z'></path>
+      </svg>
+      
+  
+    <a class='font-bold hover:underline truncate' title='Decision Records' href='cardano-wallet/design/records'>
+      Decision Records
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+      <!-- Variable bindings for this tree-->
+  
+    
+      
+    
+    
+
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-2 space-x-2 justify-left'>
+    
+    
+      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
+    <a class='hover:underline truncate' title='Nix Flake' href='cardano-wallet/design/records/2021-01-17-nix-flake'>
+      Nix Flake
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+  
+</div>
+    
+  
+</div>
+    
   
 </div>
     
@@ -3274,13 +3390,9 @@
 </h1>
             <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
-  
+  <div class='px-3 py-1 mb-3 rounded bg-indigo-100 hover:border-indigo-400 hover:shadow border-t-8 border-indigo-200'>
     <p class='mb-3'>
-      {{<span xmlhtmlRaw><tabs></span>}}
-    </p>
-  
-    <p class='mb-3'>
-      {{&lt;tab “using cardano-wallet”&gt;}} {{<span xmlhtmlRaw><hint warning></span>}} <strong>Difficulty:</strong> beginner
+      <strong>Difficulty:</strong> beginner
     </p>
   
     <p class='mb-3'>
@@ -3290,15 +3402,35 @@
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          📦 cardano-wallet &gt;= <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>v2020-04-01</code> {{<span xmlhtmlRaw></hint></span>}}
+          📦 cardano-wallet &gt;= <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>v2020-04-01</code>
         </li>
       
     </ul>
-  
+  </div>
     <p class='mb-3'>
       Once you have a wallet you can manage your funds. In order to receive a transaction you need to provide an address associated with your wallet to the sender.
     </p>
-  <h2 id='random-wallets-legacy-byron' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Random wallets (Legacy Byron)</h2>
+  <h2 id='sequential-wallets-icarus--shelley' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Sequential wallets (Icarus & Shelley)</h2>
+    <p class='mb-3'>
+      Since Icarus, wallets use sequential derivation which must satisfy very specific rules: a wallet is not allowed to use addresses beyond a certain limit before previously generated addresses have been used. This means that, at a given point in a time, a wallet has both a minimum and a maximum number of possible unused addresses. By default, the maximum number of consecutive unused addresses is set to <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>20</code>.
+    </p>
+  
+    <p class='mb-3'>
+      Therefore, address management is entirely done by the server and users aren’t allowed to fiddle with them. The list of available addresses can be fetched from the server at any time via:
+    </p>
+  
+    <p class='mb-3'>
+      <a href='https://input-output-hk.github.io/cardano-wallet/api/edge/#operation/listByronAddresses' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>GET /byron-wallets/{walletId}/addresses</code></a>
+    </p>
+  
+    <p class='mb-3'>
+      This list automatically expands when new addresses become available so that there’s always <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>address_pool_gap</code> consecutive unused addresses available (where <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>address_pool_gap</code> can be configured when a wallet is first restored / created).
+    </p>
+  <div class='px-3 py-1 mb-3 rounded bg-indigo-100 hover:border-indigo-400 hover:shadow border-t-8 border-indigo-200'>
+    <p class='mb-3'>
+      Alternatively, this endpoint can also be reached from the command-line:
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>$ cardano-wallet address list WALLET_ID</code></pre></div></div><h2 id='random-wallets-legacy-byron' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Random wallets (Legacy Byron)</h2>
     <p class='mb-3'>
       Address creation is only allowed for wallets using random derivation. These are the legacy wallets from <em>cardano-sl</em>.
     </p>
@@ -3318,48 +3450,12 @@
     <p class='mb-3'>
       <a href='https://input-output-hk.github.io/cardano-wallet/api/edge/#operation/listByronAddresses' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>GET /byron-wallets/{walletId}/addresses</code></a>
     </p>
-  
+  <div class='px-3 py-1 mb-3 rounded bg-indigo-100 hover:border-indigo-400 hover:shadow border-t-8 border-indigo-200'>
     <p class='mb-3'>
-      {{<span xmlhtmlRaw><hint info></span>}} Alternatively, these endpoints can also be reached from the command-line:
+      Alternatively, these endpoints can also be reached from the command-line:
     </p>
   <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>$ cardano-wallet address create WALLET_ID
-$ cardano-wallet address list WALLET_ID</code></pre></div>
-    <p class='mb-3'>
-      {{<span xmlhtmlRaw></hint></span>}}
-    </p>
-  <h2 id='sequential-wallets-icarus--shelley' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Sequential wallets (Icarus & Shelley)</h2>
-    <p class='mb-3'>
-      Since Icarus, wallets use sequential derivation which must satisfy very specific rules: a wallet is not allowed to use addresses beyond a certain limit before previously generated addresses have been used. This means that, at a given point in a time, a wallet has both a minimum and a maximum number of possible unused addresses. By default, the maximum number of consecutive unused addresses is set to <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>20</code>.
-    </p>
-  
-    <p class='mb-3'>
-      Therefore, address management is entirely done by the server and users aren’t allowed to fiddle with them. The list of available addresses can be fetched from the server at any time via:
-    </p>
-  
-    <p class='mb-3'>
-      <a href='https://input-output-hk.github.io/cardano-wallet/api/edge/#operation/listByronAddresses' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>GET /byron-wallets/{walletId}/addresses</code></a>
-    </p>
-  
-    <p class='mb-3'>
-      This list automatically expands when new addresses become available so that there’s always <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>address_pool_gap</code> consecutive unused addresses available (where <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>address_pool_gap</code> can be configured when a wallet is first restored / created). {{<span xmlhtmlRaw></tab></span>}}
-    </p>
-  
-    <p class='mb-3'>
-      {{<span xmlhtmlRaw><hint info></span>}} Alternatively, this endpoint can also be reached from the command-line:
-    </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>$ cardano-wallet address list WALLET_ID</code></pre></div>
-    <p class='mb-3'>
-      {{<span xmlhtmlRaw></hint></span>}}
-    </p>
-  
-    <p class='mb-3'>
-      {{&lt;tab “using cardano-addresses”&gt;}} Coming soon. {{<span xmlhtmlRaw></tab></span>}}
-    </p>
-  
-    <p class='mb-3'>
-      {{<span xmlhtmlRaw></tabs></span>}}
-    </p>
-  
+$ cardano-wallet address list WALLET_ID</code></pre></div></div>
   <!-- What goes in this file will appear below the note body-->
 </article>
             <div class='flex flex-col lg:flex-row lg:space-x-2'>
@@ -3415,7 +3511,7 @@ $ cardano-wallet address list WALLET_ID</code></pre></div>
     </a>
   </div>
   <div>
-    <a href='https://note.ema.srid.ca' target='_blank' title='Generated by Emanote 0.4.0.0'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.4.9.0'>
       <img class='w-6 h-6 hover:text-indigo-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

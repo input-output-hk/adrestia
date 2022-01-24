@@ -4,14 +4,14 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    User Guide – Adrestia Project Docs
+    Decision Records – Adrestia Project Docs
   </title>
   
     
       <meta property='og:description' content />
       <meta property='og:site_name' content='Adrestia Project Docs' />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='User Guide' />
+      <meta property='og:title' content='Decision Records' />
     
     
       <base href='/adrestia/' />
@@ -102,6 +102,15 @@
             <li class='inline-flex items-center'>
               <a class='px-1 font-bold' href='cardano-wallet'>
                 Cardano Wallet
+              </a>
+              <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
+                <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
+              </svg>
+            </li>
+          
+            <li class='inline-flex items-center'>
+              <a class='px-1 font-bold' href='cardano-wallet/design'>
+                Design Notes
               </a>
               <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
                 <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
@@ -1489,7 +1498,11 @@
     
       <!-- Variable bindings for this tree-->
   
-  
+    
+      
+      
+    
+
 
 
   
@@ -1507,7 +1520,7 @@
       </svg>
       
   
-    <a class='font-bold text-indigo-600 hover:underline truncate' title='User Guide' href='cardano-wallet/user-guide'>
+    <a class='font-bold hover:underline truncate' title='User Guide' href='cardano-wallet/user-guide'>
       User Guide
     </a>
     
@@ -3081,11 +3094,7 @@
     
       <!-- Variable bindings for this tree-->
   
-    
-      
-      
-    
-
+  
 
 
   
@@ -3103,7 +3112,7 @@
       </svg>
       
   
-    <a class='font-bold hover:underline truncate' title='Decision Records' href='cardano-wallet/design/records'>
+    <a class='font-bold text-indigo-600 hover:underline truncate' title='Decision Records' href='cardano-wallet/design/records'>
       Decision Records
     </a>
     
@@ -3367,70 +3376,35 @@
           <main class='px-4 py-4'>
             <h1 class='flex items-end justify-center mb-4 p-3 bg-indigo-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    User Guide
+    Decision Records
   </a>
 </h1>
             <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
-  
-    <ul class='my-3 ml-6 space-y-1 list-disc'>
-      
-        <li>
-          <a href='cardano-wallet/user-guide/http-api' class='text-indigo-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>API Documentation</a>
-        </li>
-      
-        <li>
-          <a href='cardano-wallet/user-guide/cli' class='text-indigo-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>Command-Line Interface</a>
-        </li>
-      
-        <li>
-          <a href='cardano-wallet/user-guide/Docker' class='text-indigo-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>Docker</a>
-        </li>
-      
-    </ul>
-  
+  <!-- TODO: DRY (same as query-default.tpl, except for date column)--><nav>
+  <div class='mb-8'>
+    <header class='pb-2 mb-2 font-semibold text-gray-600'>
+      Pages matching path './*'
+    </header>
+    
+      <div class='flex flex-wrap my-2'>
+        
+          <span class='mr-2 text-right text-gray-600'>
+            2021-01-17
+          </span>
+        
+        <a class='flex-1 text-indigo-600 mavenLinkBold border-l-2 pl-2 hover:underline' href='cardano-wallet/design/records/2021-01-17-nix-flake'>
+          Nix Flake
+        </a>
+      </div>
+    
+  </div>
+</nav>
   <!-- What goes in this file will appear below the note body-->
 </article>
             <div class='flex flex-col lg:flex-row lg:space-x-2'>
               
               
-  <div class='flex-1 p-4 mt-8 bg-gray-100 rounded'>
-    <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
-    <ul class='space-y-1'>
-      
-        <li>
-          <a class='text-indigo-600 mavenLinkBold hover:bg-indigo-50' href='cardano-wallet'>
-            Cardano Wallet
-          </a>
-          
-            <div class='mb-4 overflow-auto text-sm text-gray-500'>
-  
-    <div class='pl-2 mt-2 border-l-2 border-indigo-200 hover:border-indigo-500'>
-      <div><a href='cardano-wallet/user-guide' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>User Guide</a> - for users running <code>cardano-wallet</code>.</div>
-    </div>
-  
-</div>
-          
-        </li>
-      
-        <li>
-          <a class='text-indigo-600 mavenLinkBold hover:bg-indigo-50' href=''>
-            Adrestia Project
-          </a>
-          
-            <div class='mb-4 overflow-auto text-sm text-gray-500'>
-  
-    <div class='pl-2 mt-2 border-l-2 border-indigo-200 hover:border-indigo-500'>
-      <div><a href='cardano-wallet/user-guide' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Cardano Wallet User Guide</a></div>
-    </div>
-  
-</div>
-          
-        </li>
-      
-    </ul>
-  </div>
-
             </div>
             
   <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
