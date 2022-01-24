@@ -13,9 +13,7 @@ organisation.
 
 ## Tips
 
-1. Promptly accept your e-mail invitation to register an account under
-   [IOG Vaultwarden][Vaultwarden]. The invitations expire fairly quickly.
+1. Promptly accept your e-mail invitation to register an account under [IOG Vaultwarden][Vaultwarden]. The invitations expire fairly quickly.
 
-2. You can use the [Bitwarden browser extension](https://bitwarden.com/browser-start/)
-   with [Vaultwarden][]. Find the extension's Options menu and then set a custom base URL.
+2. You can use the [Bitwarden browser extension](https://bitwarden.com/browser-start/) with [Vaultwarden][]. Find the extension's Options menu and then set a custom base URL.
 

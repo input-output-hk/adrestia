@@ -15,11 +15,11 @@ This is the process for starting new developers on the project.
 
 - Provide GitHub user name to team lead.
 - Provide PGP key ID to team, and ensure that your public key is published on multiple keyservers.
-- Ensure that you have a [[Passwords|Vaultwarden]] account associated with your `@iohk.io` e-mail address.
 - Follow the [[Jira#orientation-checklist|Jira Orientation Checklist]]
 - Skim the [ramp-up docs](#ramp-up-docs).
 - Ensure that you are able to edit the [[index|Adrestia Website]]. If you discover
   something that needs documentation, update the [[Documentation]].
+- Ensure that you have a [[Passwords|Vaultwarden]] account associated with your `@iohk.io` e-mail address.
 
 ## Ramp-up docs
 

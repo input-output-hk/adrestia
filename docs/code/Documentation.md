@@ -163,7 +163,7 @@ of a documentation change.
 
 ## How to write documentation
 
-Follow the documentation on the [Emanote Website](https://note.ema.srid.ca/) for
+Follow the documentation on the [Emanote Website](https://emanote.srid.ca/) for
 information on how to use the publishing system. Following by example is the
 easiest way to get something done.
 
@@ -209,7 +209,7 @@ These TODO items will appear in the [Task Index](-/tasks).
 
 ## Emanote Resources
 
-- [Emanote website](https://note.ema.srid.ca/)
+- [Emanote website](https://emanote.srid.ca/)
 - [Default `index.yaml`](https://github.com/srid/emanote/blob/master/default/index.yaml)
 - [YAML config demo](https://note.ema.srid.ca/demo)
 
