@@ -15,8 +15,6 @@ jobs:
     steps:
       - name: '📥 Clone adrestia repo'
         uses: actions/checkout@v2
-        with:
-          path: adrestia
 
       - name: '📥 Clone cardano-wallet repo'
         uses: actions/checkout@v2
@@ -34,11 +32,12 @@ jobs:
 
       - name: '❄ Install dependencies'
         run: 'nix develop --command emanote --version'
-        working-directory: adrestia
 
       - name: '🔧 Build docs'
         run: |
-          scripts/splice-cardano-wallet-docs.sh $GITHUB_WORKSPACE/cardano-wallet --reflink=auto
+          cd docs
+          ../scripts/splice-cardano-wallet-docs.sh ../cardano-wallet --reflink=auto
+          cd ..
 
           build_dir="$PUBLISH_DIR"
           if [ -n "$PR_NUMBER" ]; then
@@ -48,12 +47,11 @@ jobs:
 
           mkdir -p "$build_dir"
           nix develop -c emanote --layers "docs;docs/.deploy/github" gen "$build_dir"
-        working-directory: adrestia
 
       - name: '🚀 Deploy to gh-pages'
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: adrestia/${{ env.PUBLISH_DIR }}
+          publish_dir: ${{ env.PUBLISH_DIR }}
           enable_jekyll: false
