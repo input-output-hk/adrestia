@@ -6,16 +6,16 @@ This is the process for starting new developers on the project.
 
 - Team member is added to the [Input Output](https://github.com/orgs/input-output-hk/people) organization on GitHub (you need to open an [IT Change Request](https://input-output.atlassian.net/servicedesk/customer/portal/2/group/6) for this).
 - Team member is added to the [Adrestia](https://github.com/orgs/input-output-hk/teams/adrestia) group on GitHub (you need Maintainer permissions on the team to do this).
-- Team member is added to the _Adrestia_ space on [Matrix](https://element.adrestia.iohkdev.io) and [#dev](https://element.adrestia.iohkdev.io/#/room/#dev:adrestia.iohkdev.io) channel.
+- Team member is added to the _Adrestia_ space on [Matrix](https://element.adrestia.iohkdev.io) and [\#dev](https://element.adrestia.iohkdev.io/#/room/#dev:adrestia.iohkdev.io) channel.
 - Team member is added to important [[Chat-Rooms]].
-- Team member is added to [[Passwords|LastPass shared folder]].
-- Team member is invited to weekly planning meeting and daily Hello call.
+- Team member is added to [[Passwords|Vaultwarden shared folder]].
+- Team member is invited to [[Meetings|weekly meetings]] and daily Hello call.
 
 ## Checklist - new team member
 
 - Provide GitHub user name to team lead.
 - Provide PGP key ID to team, and ensure that your public key is published on multiple keyservers.
-- Ensure that you have a [[Passwords|LastPass]] account associated with your `@iohk.io` e-mail address.
+- Ensure that you have a [[Passwords|Vaultwarden]] account associated with your `@iohk.io` e-mail address.
 - Follow the [[Jira#orientation-checklist|Jira Orientation Checklist]]
 - Skim the [ramp-up docs](#ramp-up-docs).
 - Ensure that you are able to edit Wikis. If you discover
