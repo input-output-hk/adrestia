@@ -11,6 +11,8 @@ work required.
 We might consider things "done" at different levels because features are
 composed from many sub-units, such as _Task_ issues and PRs.
 
+See also: [[Scrum]]
+
 ## GitHub Pull Request
 
 A single PR often won't complete an entire feature. There may be multiple
@@ -60,7 +62,7 @@ criteria and moves it into the "QA" column of the sprint board.
 
 ## _User Story_ issues
 
-See [[project-mgmt]] for an example feature description.
+See [[process]] for an example feature description.
 
 - There are automated functional test cases covering the A/C of the _User Story_.
 - The U/S works coherently as a whole in the application.
@@ -68,7 +70,3 @@ See [[project-mgmt]] for an example feature description.
   - Performance
   - Logging
   - Other operational concerns
-
-## TODO
-
-- [ ] Definition of "Ready"
