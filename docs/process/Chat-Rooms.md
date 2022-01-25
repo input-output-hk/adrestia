@@ -18,6 +18,7 @@ you've been invited.
   * [\#team](https://element.adrestia.iohkdev.io/#/room/#team:adrestia.iohkdev.io) - The full Adrestia team.
   * [\#matrix-testing](https://element.adrestia.iohkdev.io/#/room/#matrix-testing:adrestia.iohkdev.io) - A room for trying out features of Matrix chat rooms and client, etc.
   * [\#dev](https://element.adrestia.iohkdev.io/#/room/#dev:adrestia.iohkdev.io) - Development discussions.
+  * [\#bugs](https://element.adrestia.iohkdev.io/#/room/#bugs:adrestia.iohkdev.io) - Debugging and issue triage.
 
 [^spaces]: More information about _Spaces_:
     - https://element.io/blog/spaces-the-next-frontier/
