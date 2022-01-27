@@ -52,8 +52,8 @@ The team's process is derived from [extreme programming][xp] and [scrum][scrum],
   Pilots are seconded by a [[Co-Pilot]].
 
 - Tasks and Pull Requests have a dedicated GitHub template:
-    - [Task Template](https://github.com/input-output-hk/adrestia/blob/master/.github/ISSUE_TEMPLATE/task.md)
-    - [PR Template](https://github.com/input-output-hk/adrestia/blob/master/.github/PULL_REQUEST_TEMPLATE.md)
+    - [Issue Templates](https://github.com/input-output-hk/cardano-wallet/blob/master/.github/ISSUE_TEMPLATE/)
+    - [PR Template](https://github.com/input-output-hk/cardano-wallet/blob/master/.github/PULL_REQUEST_TEMPLATE.md)
 
 - Tasks move across the [following board](https://input-output.atlassian.net/jira/software/c/projects/ADP/boards/231).
 
