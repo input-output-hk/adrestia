@@ -4,12 +4,7 @@
 page:
   siteTitle: Adrestia Project Docs
   headHtml: |
-    <meta http-equiv="cache-control" content="private, max-age=60" />
-    <meta http-equiv="Expires" content="60" />
-    <link href="static/adrestia.css" rel="stylesheet" />
-    <script src="static/adrestia.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-tomorrow.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/prism.min.js,npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <snippet var="js.base" />
 
 template:
   theme: indigo
@@ -26,3 +21,41 @@ pandoc:
   rewriteClass:
     prose: max-w-prose mx-auto
     greenery: bg-green-100 text-green-700 font-bold text-3xl
+
+# Snippets which can be referenced using <snippet var="js.NAME" />
+# in the page.headHtml metadata
+js:
+  # Basic template
+  base: |
+    <meta name="generator" content="Emanote" />
+    <meta http-equiv="cache-control" content="private, max-age=60" />
+    <meta http-equiv="Expires" content="60" />
+    <link href="static/adrestia.css" rel="stylesheet" />
+    <script src="static/adrestia.js"></script>
+  fontawesome: |
+    <script src="https://kit.fontawesome.com/28a3011320.js" crossorigin="anonymous"></script>
+  # Diagrams using mermaid.js
+  mermaid: |
+    <!-- mermaid.js -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+      var myMermaidConfig = {
+        // lets mermaid work with emanote live-reloading
+        startOnLoad: false,
+        // permit clicks
+        securityLevel: "loose",
+        // set default theme with primary colour to tailwind blue
+        theme: "base",
+        themeVariables: {
+          primaryColor: "#e0e7ff",
+          secondaryColor: "#fffde0"
+        },
+        // d3js rounded lines in flowcharts
+        flowchart: {
+          curve: "basis",
+          htmlLabels: true
+        }
+      };
+      mermaid.initialize(myMermaidConfig);
+      mermaid.init(myMermaidConfig, document.querySelectorAll(".mermaid"));
+    </script>

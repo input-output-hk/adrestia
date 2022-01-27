@@ -3,7 +3,6 @@
 (function() {
   function fixLink(el) {
     if (el.tagName.toLowerCase() === "a") {
-      console.log("fixLink", el);
       var href = el.getAttribute("href");
       if (href && href.indexOf("#") === 0) {
         el.href = location.pathname + el.getAttribute("href");
@@ -20,3 +19,9 @@
   // Adjust href for dynamically added links - when they are clicked.
   document.addEventListener("click", function(ev) { fixLink(ev.target); });
 })();
+
+function mermaidClick(nodeId) {
+  if (nodeId) {
+    window.location.hash = "#" + nodeId;
+  }
+}

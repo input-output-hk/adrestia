@@ -1,7 +1,9 @@
 ---
 page:
   headHtml: |
+    <snippet var="js.base" />
     <snippet var="js.mermaid" />
+    <snippet var="js.fontawesome" />
 ---
 
 # Architecture
@@ -10,62 +12,84 @@ Adrestia is a collection of products which makes it easier to integrate with Car
 
 It comes in different flavours: SDK or high-level APIs. Depending on the use-cases you have and the control that you seek, you may use any of the components below.
 
-## Cardano Network Protocol
-
-An implementation of the protocol is [here][ouroboros-network] and is realized through [cardano-node][], deployed as core and relay nodes to form the Cardano network.
-
-[ouroboros-network]: https://github.com/input-output-hk/ouroboros-network
-[cardano-node]: https://github.com/input-output-hk/cardano-node
-
 ## Services
 
 Service applications for integrating with Cardano.
 
-- [cardano-wallet][]: HTTP REST API for managing UTxOs, and much more.
-- [cardano-graphql][]: HTTP GraphQL API for exploring the blockchain.
-- [cardano-rosetta][]: [Rosetta](https://www.rosetta-api.org/docs/1.4.4/welcome.html) implementation for Cardano.
-- [cardano-submit-api][cardano-submit-api]: HTTP API for submitting signed transactions.
+- [cardano-wallet]: HTTP REST API for managing UTxOs, and much more.
+- [cardano-graphql]: HTTP GraphQL API for exploring the blockchain.
+- [cardano-rosetta]: [Rosetta](https://www.rosetta-api.org/docs/1.4.4/welcome.html) implementation for Cardano.
+- [cardano-submit-api]: HTTP API for submitting signed transactions.
 
 ## Software Libraries
 
-- [cardano-addresses][]: Address generation, derivation &  mnemonic manipulation.
-- [cardano-coin-selection][cardano-coin-selection]: Algorithms for coin selection and fee balancing.
-- [cardano-transactions][cardano-transactions]: Utilities for constructing and signing transactions.
+- [cardano‑addresses]: Address generation, derivation &  mnemonic manipulation.
+- [cardano-coin-selection]: Algorithms for coin selection and fee balancing.
+- [cardano-transactions]: Utilities for constructing and signing transactions.
 - [bech32][bech32]: Haskell implementation of the Bech32 address format (BIP 0173).
 
-[cardano-addresses]: https://github.com/input-output-hk/cardano-addresses
+[cardano‑addresses]: https://github.com/input-output-hk/cardano-addresses
 [bech32]: https://github.com/input-output-hk/bech32
 
 
-## High-Level Diagram
+## High-Level Dependency Diagram
 
-```mermaid
-%%{init: {'theme': 'forest', "flowchart" : { "curve" : "basis" } } }%%
-erDiagram
-  CARDANO-NODE ||--|{ CARDANO-SUBMIT-API : depends-on
-  CARDANO-NODE ||--|{ CARDANO-WALLET : depends-on
-  CARDANO-NODE ||--|{ CARDANO-DB-SYNC : depends-on
+:::{.mermaid-container}
+```mermaid {#deps-diagram}
+flowchart TB;
+  cardano-submit-api --> cardano-node;
+  cardano-wallet     --> cardano-node;
+  cardano-db-sync    --> cardano-node;
 
-  CARDANO-DB-SYNC ||--|| POSTGRESQL : dumps-into
-  POSTGRESQL ||--|| SMASH : is-queried
-  POSTGRESQL ||--|| CARDANO-GRAPHQL : is-queried
-  POSTGRESQL ||--|| CARDANO-ROSETTA : is-queried
+  cardano-db-sync --> PostgreSQL[(PostgreSQL)];
+  SMASH --> PostgreSQL;
+  cardano-graphql --> PostgreSQL;
+  cardano-rosetta --> PostgreSQL;
 
-  CARDANO-GRAPHQL ||--|{ EXPLORER : depends-on
+  cardano-explorer[cardano-explorer fab:fa-react] --> cardano-graphql;
 
-  SMASH ||--|{ CARDANO-WALLET: connects-to
-  CARDANO-WALLET ||--|{ DAEDALUS : depends-on
+  cardano-wallet --> SMASH;
+  daedalus[Daedalus fab:fa-react] --> cardano-wallet;
+  
+  click cardano-submit-api mermaidClick;
+  click cardano-wallet mermaidClick;
+  click cardano-db-sync mermaidClick;
+  click SMASH mermaidClick;
+  click cardano-graphql mermaidClick;
+  click cardano-rosetta mermaidClick;
+  click cardano-explorer mermaidClick;
+  click PostgreSQL href "https://postgresql.org";
+  click daedalus href "https://github.com/input-output-hk/daedalus";
+
+  %% Styles for these classes are in static/adrestia.css.
+  class cardano-wallet,cardano-explorer,cardano-graphql,cardano-rosetta adrestia;
+  class cardano-node,cardano-submit-api,cardano-db-sync,SMASH cardano;
+  class daedalus daedalus;
+  class PostgreSQL other;
 ```
+:::
 
-## Components
 
-### [cardano-node][]
+## Component Synopsis
+
+### [cardano-node]
 
 The core [cardano-node][], which participates in the Cardano network, and maintains the state of the Cardano blockchain ledger.
 
-### [cardano-wallet][]
+#### Cardano Network Protocol
+
+An implementation of the protocol is [here][ouroboros-network], deployed as stake pool nodes and relay nodes to form the Cardano network.
+
+[ouroboros-network]: https://github.com/input-output-hk/ouroboros-network
+[cardano-node]: https://github.com/input-output-hk/cardano-node
+
+### [cardano-wallet]
 
 [cardano-wallet][] An HTTP REST API is recommended for 3rd party wallets and small exchanges who do not want to manage UTxOs for transactions themselves. Use it to send and receive payments from hierarchical deterministic wallets on the Cardano blockchain via HTTP REST or a command-line interface.
+
+### [cardano‑launcher]
+
+This is a small Typescript package for NodeJS applications which manages the configuration and lifetime of [cardano-wallet] and [cardano-node] processes.
 
 ### [cardano-db-sync][cardano-db-sync]
 
@@ -86,12 +110,74 @@ The transaction must be fully signed and CBOR-encoded. This could be done by [ca
 
 [Cardano-rosetta][] is an implementation of the [Rosetta](https://www.rosetta-api.org/docs/1.4.4/welcome.html) specification for Cardano. Rosetta is an open-source specification and set of tools that makes integrating with blockchains simpler, faster, and more reliable.
 
+### [SMASH][]
+
+The Stakepool Metadata Aggregation Server [for Hashes] is basically a proxy of the metadata published by stake pool owners. It improves performance of the network by taking load off the various web servers which host the actual metadata.
+
+Clients such as `cardano-wallet` must verify the integrity of metadata served by a SMASH server by comparing the metadata's content hash with that in the stake pool registration certificate.
+
+## Component Relationships: Explorer Scenario
+
+:::{.mermaid-container}
+```mermaid
+erDiagram
+  CARDANO-NODE ||--|{ CARDANO-SUBMIT-API : connects-to
+  CARDANO-NODE ||--|{ CARDANO-DB-SYNC : depends-on
+
+  CARDANO-DB-SYNC ||--|| POSTGRESQL : dumps-into
+  POSTGRESQL ||--|| SMASH : is-queried
+  POSTGRESQL ||--|| CARDANO-GRAPHQL : is-queried
+  POSTGRESQL ||--|| CARDANO-ROSETTA : is-queried
+
+  CARDANO-GRAPHQL ||--|{ EXPLORER : depends-on
+```
+:::
+
+## Component Relationships: Wallet Scenario
+
+:::{.mermaid-container}
+```mermaid {#blockchart-diagram}
+flowchart TB;
+  subgraph local system
+    Daedalus -- calls --> cardano-launcher;
+    cardano-launcher -. spawns .-> cardano-wallet;
+    cardano-launcher -. spawns .-> cardano-node;
+
+    %% by HTTP REST API
+    Daedalus -- queries --> cardano-wallet;
+
+    %% Local socket/named pipe
+    cardano-wallet -- queries --> cardano-node;
+  end
+  
+
+  subgraph Internet
+    %% HTTP API
+    cardano-wallet -- queries --> SMASH;
+
+    %% Network protocol
+    cardano-node -- syncs --> blockchain;
+  end
+  
+  class cardano-wallet adrestia;
+  class Daedalus,cardano-launcher daedalus;
+  class cardano-node,SMASH cardano;
+  class blockchain other;
+  
+  
+  click cardano-wallet mermaidClick;
+  click cardano-launcher mermaidClick;
+  click cardano-node mermaidClick;
+  click SMASH mermaidClick;
+  click Daedalus href "https://github.com/input-output-hk/daedalus";
+```
+:::
 
 ## Components
 
 ### APIs
 
-name / link       | description                                    | Byron | Jörm | Shelley | Mary  | Alonzo |
+| Name / Link       | Description                                    | Byron | Jörm | Shelley | Mary  | Alonzo |
 ---               | ---                                            | ---   | ---  | ---     | ---   | ---    |
 [cardano-wallet]  | JSON/REST API for managing UTxOs in HD wallets | ✔     | ✔    | ✔       | ❌     | 🚧     |
 [cardano-graphql] | GraphQL/HTTP API for browsing on-chain data    | ✔     | ❌    | ✔       | ✔     | 🚧     |
@@ -106,8 +192,8 @@ name / link       | description                                    | Byron | Jö
 Name / Link            | Description                                          | Byron | Jörm | Shelley | Mary  | Alonzo |
 ---                    | ---                                                  | ---   | ---  | --      | ---   | ---    |
 [bech32]               | Human-friendly Bech32 address encoding               | N/A   | ✔    | ✔       | ✔     | ✔     |
-[cardano-wallet]       | Command-line for interacting with cardano-wallet API | ✔     | ✔    | ✔       | ✔     | 🚧     |
-[cardano-addresses]    | Addresses and mnemonic manipulation & derivations    | ✔     | ✔    | ✔       | ✔     | 🚧     |
+[cardano-wallet]       | Command-line for interacting with cardano-wallet API | ✔     | ✔    | ✔       | ✔     | ✔     |
+[cardano‑addresses]    | Addresses and mnemonic manipulation & derivations    | ✔     | ✔    | ✔       | ✔     | ✔     |
 ~~[cardano-transactions]~~ | _Deprecated_                                         | ✔     | ❌   | ❌       | ❌     | ❌     |
 
 ### Haskell SDKs
@@ -115,7 +201,7 @@ Name / Link            | Description                                          | 
 Name / Link              | Description                                       | Byron | Jörm | Shelley | Mary  | Alonzo |
 ---                      | ---                                               | ---   | ---  | ---     | ---   | ---    |
 [bech32]                 | Human-friendly Bech32 address encoding            |       | ✔    | ✔       | ✔     | ✔     |
-[cardano-addresses]      | Addresses and mnemonic manipulation & derivations | ✔     | ✔    | ✔       | ✔     | 🚧     |
+[cardano‑addresses]      | Addresses and mnemonic manipulation & derivations | ✔     | ✔    | ✔       | ✔     | ✔     |
 ~~[cardano-coin-selection]~~ | _Deprecated_                                      | ✔     | ✔    | ✔       | ❌     | ❌     |
 ~~[cardano-transactions]~~   | _Deprecated_                                      | ✔     | ❌   | ❌       | ❌     | ❌     |
 
@@ -130,10 +216,10 @@ Name / Link                    | Description                                    
 
 Name / Link         | Description                                              | Byron | Jörm | Shelley | Mary  | Alonzo |
 ---                 | ---                                                      | ---   | ---  | ---     | ---   | ---    |
-[cardano-launcher]  | [Cardano-node] and [cardano-wallet] launcher for NodeJS applications | ✔     | ✔    | ✔       | ✔     | 🚧     |
-[cardano-addresses] | Address validation and inspection                        | ✔     | ✔    | ✔       | ✔     | 🚧     |
+[cardano‑launcher] | Typescript library for starting and stopping [cardano-wallet] and [cardano-node] |       | ❌     | ✔       | ✔     | ✔     |
+[cardano‑addresses] | Address validation and inspection                        | ✔     | ✔    | ✔       | ✔     | ✔     |
 
-[cardano-launcher]: https://github.com/input-output-hk/cardano-launcher
+[cardano‑launcher]: https://github.com/input-output-hk/cardano-launcher
 
 ### Formal Specifications
 
@@ -168,3 +254,4 @@ Name / Link        | Description
 [cardano-wallet]: https://github.com/input-output-hk/cardano-wallet
 [ouroboros]: https://iohk.io/en/research/library/papers/ouroboros-praosan-adaptively-securesemi-synchronous-proof-of-stake-protocol/
 [react-native-haskell-shelley]: https://github.com/Emurgo/react-native-haskell-shelley
+[smash]: https://github.com/input-output-hk/smash
