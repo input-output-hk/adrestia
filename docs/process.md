@@ -44,7 +44,7 @@ The team's process is derived from [extreme programming][xp] and [scrum][scrum],
 
 ## Iterations
 
-- The project runs in fortnightly "sprint" iterations.
+- The project runs in triweekly "sprint" iterations.
 
 - One release per sprint would be ideal.
 
