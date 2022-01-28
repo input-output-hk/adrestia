@@ -2,7 +2,6 @@
   description = "Adrestia development infrastructure";
 
   inputs = {
-    # rvl.url = path:/home/rodney/ops/config;
     rvl.url = git+https://git.lorrimar.id.au/rodney/config.git;
     rvl.inputs.nixpkgs.follows = "nixpkgs";
     rvl.inputs.nixpkgs-release.follows = "nixpkgs";
@@ -10,22 +9,7 @@
     rvl.inputs.flake-utils.follows = "flake-utils";
     rvl.inputs.home-manager.follows = "home-manager";
     rvl.inputs.customConfig.follows = "customConfig";
-    rvl.inputs.basic.follows = "basic";
-    rvl.inputs.emacs.follows = "emacs";
-    rvl.inputs.iohk-binary-cache.follows = "iohk-binary-cache";
-    rvl.inputs.mylib.follows = "mylib";
-    rvl.inputs.rodnix.follows = "rodnix";
-    rvl.inputs.scripts.follows = "scripts";
-    rvl.inputs.nixops-utils.follows = "nixops-utils";
-    # rvl.inputs.xmonad.follows = "xmonad";
 
-    # basic.url = path:/home/rodney/ops/config/basic;
-    # emacs.url = path:/home/rodney/ops/config/emacs;
-    # iohk-binary-cache.url = path:/home/rodney/ops/config/iohk-binary-cache;
-    # mylib.url = path:/home/rodney/ops/config/mylib;
-    # rodnix.url = path:/home/rodney/ops/config/rodnix;
-    # scripts.url = path:/home/rodney/ops/config/scripts;
-    # nixops-utils.url = path:/home/rodney/ops/config/nixops-utils;
     basic.url = git+https://git.lorrimar.id.au/rodney/config.git?dir=basic;
     emacs.url = git+https://git.lorrimar.id.au/rodney/config.git?dir=emacs;
     iohk-binary-cache.url = git+https://git.lorrimar.id.au/rodney/config.git?dir=iohk-binary-cache;
@@ -301,7 +285,7 @@
       };
     };
 
-    nix = pkgs.pkgsUnstable.nix;
+    nix = pkgs.pkgsUnstable.nixUnstable;
     nixops = pkgs.pkgsUnstable.nixopsUnstable;
 
     flake = {
