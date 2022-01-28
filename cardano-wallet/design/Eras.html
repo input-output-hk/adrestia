@@ -4,14 +4,14 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Docker – Adrestia Project Docs
+    Cardano Eras – Adrestia Project Docs
   </title>
   
     
       <meta property='og:description' content />
       <meta property='og:site_name' content='Adrestia Project Docs' />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Docker' />
+      <meta property='og:title' content='Cardano Eras' />
     
     
       <base href='/adrestia/' />
@@ -109,8 +109,8 @@
             </li>
           
             <li class='inline-flex items-center'>
-              <a class='px-1 font-bold' href='cardano-wallet/user-guide'>
-                User Guide
+              <a class='px-1 font-bold' href='cardano-wallet/design'>
+                Design Notes
               </a>
               <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
                 <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
@@ -1690,7 +1690,11 @@
     
       <!-- Variable bindings for this tree-->
   
-  
+    
+      
+    
+    
+
 
 
   
@@ -1703,12 +1707,12 @@
     
     
       <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
-      
+    
   
-    <a class='font-bold text-indigo-600 hover:underline truncate' title='Docker' href='cardano-wallet/user-guide/Docker'>
+    <a class='hover:underline truncate' title='Docker' href='cardano-wallet/user-guide/Docker'>
       Docker
     </a>
     
@@ -3051,11 +3055,7 @@
     
       <!-- Variable bindings for this tree-->
   
-    
-      
-    
-    
-
+  
 
 
   
@@ -3068,12 +3068,12 @@
     
     
       <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'>
         </path>
       </svg>
-    
+      
   
-    <a class='hover:underline truncate' title='Cardano Eras' href='cardano-wallet/design/Eras'>
+    <a class='font-bold text-indigo-600 hover:underline truncate' title='Cardano Eras' href='cardano-wallet/design/Eras'>
       Cardano Eras
     </a>
     
@@ -3493,88 +3493,104 @@
           <main class='px-4 py-4'>
             <h1 class='flex items-end justify-center mb-4 p-3 bg-indigo-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Docker
+    Cardano Eras
   </a>
 </h1>
             <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
   
     <p class='mb-3'>
-      Docker builds of <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> are available on <a href='https://hub.docker.com/repository/docker/inputoutput/cardano-wallet' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>DockerHub</a>.
-    </p>
-  <h2 id='downloading-the-docker-image' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Downloading the Docker image</h2>
-    <p class='mb-3'>
-      To get the latest release of <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code>, run:
-    </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>docker pull inputoutput/cardano-wallet:latest</code></pre></div><h2 id='running-the-docker-container-for-cardano-wallet' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Running the Docker container for <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code></h2>
-    <p class='mb-3'>
-      To run basic CLI commands, use:
-    </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>docker run --rm inputoutput/cardano-wallet:latest --help</code></pre></div>
-    <p class='mb-3'>
-      See <a href='cardano-wallet/user-guide/cli' class='text-indigo-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>Command-Line Interface</a> for full documentation of the CLI.
-    </p>
-  <h2 id='naming-scheme' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Naming scheme</h2>
-    <p class='mb-3'>
-      The following tags are pushed to <a href='https://hub.docker.com/repository/docker/inputoutput/cardano-wallet' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>DockerHub</a>.
-    </p>
-  <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Tag</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Network node backend</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Version</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>inputoutput/cardano-wallet</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>cardano-node</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>same as <em>latest</em></td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>inputoutput/cardano-wallet:latest</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>cardano-node</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Latest <a href='https://github.com/input-output-hk/cardano-wallet/releases' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>GitHub release</a></td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>inputoutput/cardano-wallet:dev-master</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>cardano-node</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Latest revision of <a href='https://github.com/input-output-hk/cardano-wallet/commits/master' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>master branch</a></td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>inputoutput/cardano-wallet:2020.7.28</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>cardano-node</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><a href='https://github.com/input-output-hk/cardano-wallet/releases/tag/v2020-07-28' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>v2020-07-28</a> (for example)</td></tr></tbody></table><h2 id='building-the-docker-image-locally' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Building the Docker image locally</h2>
-    <p class='mb-3'>
-      Ensure that you have Nix installed and the IOHK binary cache enabled (<a href='https://github.com/input-output-hk/iohk-nix/blob/master/docs/nix.md' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>instructions</a>).
+      A blockchain “hard fork” is a change to the block producing software such that any new blocks produced would be invalid according to the old unchanged software. Therefore, the unchanged software would not accept these blocks into its chain. If nodes running the new and modified software continue to produce blocks on top of their chain, a “fork” will result, starting at the parent block of the first incompatible block.
     </p>
   
     <p class='mb-3'>
-      Then run this command from the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> git repo:
-    </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>docker load -i $(nix build --json .#dockerImage | jq -r '.[0].outputs.out')</code></pre></div>
-    <p class='mb-3'>
-      If you have no local changes, the build should be downloaded from the <a href='https://hydra.iohk.io/job/Cardano/cardano-wallet/native.dockerImage.shelley.x86_64-linux' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>IOHK binary cache</a> then loaded into your local Docker image storage.
-    </p>
-  <h2 id='inspecting-the-contents-of-the-docker-image' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Inspecting the contents of the Docker image</h2>
-    <p class='mb-3'>
-      The default entrypoint of the image is <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>/bin/start-cardano-wallet-shelley</code>. If you need to run a shell inside the Docker image, use the bash shell as the entrypoint:
-    </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>docker run --rm -it --entrypoint bash inputoutput/cardano-wallet:latest</code></pre></div><h2 id='docker-compose' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Docker compose</h2>
-    <p class='mb-3'>
-      One can also use <a href='https://docs.docker.com/compose/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>docker-compose</a> to quickly spin up <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> together with supported block producer.
+      Cardano manages hard forks by gating the new block generation code behind a feature flag. The network agrees upon a slot at which all nodes will enable the new block generation code. After that slot, the network is said to be operating in a new “era.”
     </p>
   
     <p class='mb-3'>
-      <a href='https://github.com/input-output-hk/cardano-wallet/blob/master/docker-compose.yml' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Here</a> is exemplary <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>docker-compose.yaml</code> combining the latest versions of <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> and <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-node</code>.
+      Agreement on the slot number (epoch really) to switch to the new era happens by an on-chain voting protocol. If the voting proposal is carried, operators of nodes must ensure that their software version will be compatible with the new era, before the hard fork occurs.
+    </p>
+  <div class='gotcha'><h4 id='terminology' class='mt-6 mb-2 text-2xl font-bold text-gray-700'>Terminology</h4>
+    <p class='mb-3'>
+      One might ask why the eras listed in <a href='https://input-output-hk.github.io/cardano-node/cardano-api/lib/Cardano-Api.html' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Cardano.Api</a> don’t all appear in the <a href='https://roadmap.cardano.org/en/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Cardano Roadmap</a>.
     </p>
   
     <p class='mb-3'>
-      To give it a spin simply launch:
+      The roadmap is actually divided into <em>phases</em>, under which one or more eras (hard forks) may occur.
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>wget https://raw.githubusercontent.com/input-output-hk/cardano-wallet/master/docker-compose.yml
-NETWORK=mainnet docker-compose up</code></pre></div>
+  </div><h2 id='the-hard-fork-combinator' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>The Hard Fork Combinator</h2>
+    <p class='mb-3'>
+      The mechanism whereby the Cardano Node operates in different modes - depending on which slot it is up to - is called the “Hard Fork Combinator”.
+    </p>
+  
+    <p class='mb-3'>
+      The following <a href='https://input-output.atlassian.net/wiki/spaces/EN/pages/718962750/IOHK+Research+Engineering+Seminar' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>seminars</a> (company internal use only) are a good introduction:
+    </p>
+  <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Date</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Title</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Description</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>2020/05/15</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><a href='https://drive.google.com/file/d/1m_jKQM_gxBm0ctLqIq9NGj5_nXPI66Su/view' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Hardfork Combinator I: Reconciling The Eras</a></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>This session will explain the technology behind the fabled hardfork combinator for Cardano. As this is quite a bit of machinery, and central to Shelley, we will take the time to talk about it in two sessions, to give enough background that everyone can follow along. This first session will focus on the combinator itself, and how advanced Haskell features allow us to travel from one typed world to another. In a future session, which yet needs to be scheduled, he will present on the subtleties of treating time in the presence of a hardfork.</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>2020/06/05</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><a href='https://drive.google.com/file/d/1QIJ-VBlj-txB6K6E7DIEnY5TzaD89qQm/view' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Hard Fork Combinator II: Time for a Hard Fork</a></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>As any computer scientist, physicist, or cross-timezone remote worker can testify, time is a tricky and unforgiving beast. Cardano, as a slot-based Proof of Stake system, is inherently time-driven, so it is vital to get time right. Across the hardfork from Byron to Shelley, the way in which time is divided into slots will change, which turned out to be a massive complicating factor. In this presentation, Edsko will show us how the hard fork combinator handles time across the fork point.</td></tr></tbody></table>
+    <p class='mb-3'>
+      In a nutshell, pretty much all types in <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Cardano.Api</code> are indexed by the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Era</code>. The node will provide a <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>TimeInterpreter</code> object by the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>LocalStateQuery</code> protocol, which allows <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> to calculate what time a certain slot occurs at. Calculating the time of a given slot number is more complicated than it sounds.
+    </p>
+  <h2 id='configuration' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Configuration</h2>
+    <p class='mb-3'>
+      Both <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-node</code> and <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> have command-line parameters and/or configuration options for the hard-fork combinator.
+    </p>
+  <h3 id='genesis' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Genesis</h3>
+    <p class='mb-3'>
+      Nodes must be initialised with a genesis config. The genesis config defines the initial state of the chain. There is the Byron era genesis obviously, and some subsequent eras (Shelley and Alonzo, at the time of writing) also have their own genesis.
+    </p>
+  
+    <p class='mb-3'>
+      Only the hash of a genesis config is stored on-chain. For mainnet, the genesis hash is used as the previous block header hash for the <em>Epoch Boundary Block</em> of epoch 0.
+    </p>
+  
+    <p class='mb-3'>
+      When <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> connects to its local <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-node</code>, it must provide the Byron genesis config hash. Hashes for subsequent genesis configs are contained on-chain within the voting system update proposals.
+    </p>
+  
+    <p class='mb-3'>
+      For <em>mainnet</em>, we have hardcoded the genesis hash. It will never change. For <em>staging</em> and <em>testnet</em>, users must supply a genesis config to the <a href='cardano-wallet/user-guide/cli' class='text-indigo-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>Command-Line Interface</a>, so that its hash may be used when connecting to the local node.
+    </p>
+  <div class='gotcha'><h4 id='epoch-boundary-blocks' class='mt-6 mb-2 text-2xl font-bold text-gray-700'>Epoch Boundary Blocks</h4>
+    <p class='mb-3'>
+      Epoch Boundary Blocks (EBBs) only existed in the Byron era, prior to their abolition with the Shelley hard fork. Confusingly, they were also referred to as “genesis” blocks. The EBB is the previous block of the first block in a Byron epoch. EBBs were calculated locally on each full node of mainnet, and were never transmitted across the network between nodes.
+    </p>
+  </div><h3 id='instafork-technology' class='mt-6 mb-2 text-3xl font-bold text-gray-700'><em>Instafork</em>™ Technology</h3>
+    <p class='mb-3'>
+      Hard forking to Alonzo (the latest era, at the time of writing) by natural methods requires several epochs’ worth of network operation time to take effect. For disposable local testnets, this would delay startup and make our integration tests slower.
+    </p>
+  
+    <p class='mb-3'>
+      Therefore, <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-node</code> can be configured to hard fork itself at the start of any given epoch number, without an update proposal. It’s also possible to hard fork directly into all the eras at epoch 0. This is what we use for the integration tests <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>local-cluster</code>. The <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-node</code> configuration for this is:
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='yaml language-yaml'>TestShelleyHardForkAtEpoch: 0
+TestAllegraHardForkAtEpoch: 0
+TestMaryHardForkAtEpoch: 0
+TestAlonzoHardForkAtEpoch: 0</code></pre></div><h3 id='historical-note-cardano-mode' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Historical note: “Cardano Mode”</h3>
+    <p class='mb-3'>
+      In theory, it is possible to run <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-node</code> in a single-era mode, where the Hard Fork Combinator is completely disabled. This is called running in Byron-only or Shelley-only mode. Then there is full “Cardano Mode”, which enables the Hard Fork Combinator, thereby allowing the software to pass through eras.
+    </p>
+  
+    <p class='mb-3'>
+      For <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-cli</code>, there are <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>--byron-mode</code>, <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>--shelley-mode</code>, and <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>--cardano-mode</code> switches, to tell the network client which mode the local node is using.
+    </p>
+  
+    <p class='mb-3'>
+      Cardano Mode is the default. I’m not aware of too many people using single-era modes for anything much.
+    </p>
+  <h2 id='specifications' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Specifications</h2>
+    <p class='mb-3'>
+      Formal specifications (and the actual implementations!) for each Cardano era exist in the <a href='https://github.com/input-output-hk/cardano-ledger' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>input-output-hk/cardano-ledger</a> repo. These documents are suprisingly readable, and are our go-to source for answers about how the node operates. See the <a href='https://github.com/input-output-hk/cardano-ledger/blob/master/README.md' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>README.md</code></a> for links to PDFs and/or build instructions.
+    </p>
+  <h3 id='decentralized-update-proposals' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Decentralized Update Proposals</h3>
+    <p class='mb-3'>
+      The <a href='https://github.com/input-output-hk/decentralized-software-updates' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>input-output-hk/decentralized-software-updates</a> repo contains research materials for a <em>future</em> implementation of decentralized software updates.
+    </p>
+  
   <!-- What goes in this file will appear below the note body-->
 </article>
             <div class='flex flex-col lg:flex-row lg:space-x-2'>
               
               
-  <div class='flex-1 p-4 mt-8 bg-gray-100 rounded'>
-    <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
-    <ul class='space-y-1'>
-      
-        <li>
-          <a class='text-indigo-600 mavenLinkBold hover:bg-indigo-50' href='cardano-wallet/user-guide'>
-            User Guide
-          </a>
-          
-            <div class='mb-4 overflow-auto text-sm text-gray-500'>
-  
-    <div class='pl-2 mt-2 border-l-2 border-indigo-200 hover:border-indigo-500'>
-      <div><a href='cardano-wallet/user-guide/Docker' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Docker</a></div>
-    </div>
-  
-</div>
-          
-        </li>
-      
-    </ul>
-  </div>
-
             </div>
             
   <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>

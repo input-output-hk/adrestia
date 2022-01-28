@@ -17,7 +17,13 @@
       <base href='/adrestia/' />
       <link href='static/favicon.png' rel='icon' />
     
-    <!-- mermaid.js --><script src='https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js'></script>
+    <meta name='generator' content='Emanote' />
+<meta http-equiv='cache-control' content='private, max-age=60' />
+<meta http-equiv='Expires' content='60' />
+<link href='static/adrestia.css' rel='stylesheet' />
+<script src='static/adrestia.js'></script>
+
+<!-- mermaid.js --><script src='https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js'></script>
 <script>
   var myMermaidConfig = {
     // lets mermaid work with emanote live-reloading
@@ -41,7 +47,7 @@
 </script>
 
   
-  <link href='tailwind.css?instanceId=ddecb162-a5b9-404b-bcce-a23c1fd4aadc' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=653a2fd9-0cd8-4fe4-9dea-4e38bbd1c493' rel='stylesheet' type='text/css' />
 
   <!-- Heist error element -->
   <style type='text/css'>
@@ -3089,6 +3095,45 @@
       </svg>
     
   
+    <a class='hover:underline truncate' title='Cardano Eras' href='cardano-wallet/design/Eras'>
+      Cardano Eras
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+  
+    
+      
+    
+    
+
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-2 space-x-2 justify-left'>
+    
+    
+      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
     <a class='hover:underline truncate' title='Notes about BIP-44' href='cardano-wallet/design/Notes-about-BIP-44'>
       Notes about BIP-44
     </a>
@@ -3475,30 +3520,32 @@
 </h1>
             <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
-  <h2 id='states' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>States</h2><div class='py-0.5 mb-3 text-sm'><pre><code class='mermaid language-mermaid'>%%{init: {'theme': 'forest' } }%%
-stateDiagram
+  <div class='px-3 py-1 rounded shadow bg-yellow-100 mx-2 transform -skew-y-1 scale-95 hover:scale-100 hover:border-yellow-400 hover:shadow-lg border-t-8 border-yellow-200 mb-8 mt-8'>
+    <p class='mb-3'>
+      
+    <svg xmlns='http://www.w3.org/2000/svg' class='inline h-4 w-4 mb-1 text-gray-600 stroke-current' fill='none' viewBox='0 0 28 28'><desc>☐</desc><rect stroke-width='3' x='2' y='2' width='24' height='24' rx='3'></rect></svg>
+<span>
+  
+      This needs to be updated to include transaction resubmission by the wallet.
+    
+</span>
+
+  
+    </p>
+  </div><h2 id='states' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>States</h2><div class='mermaid-container'><div class='py-0.5 mb-3 text-sm'><pre><code class='mermaid language-mermaid'>stateDiagram
   [*] --&gt; pending: request
   [*] --&gt; in_ledger: discover
   pending --&gt; in_ledger: discover
   pending --&gt; [*]: forget
-  in_ledger --&gt; pending: rollback</code></pre></div>
-    <p class='mb-3'>
-      <span class='emoji' data-emoji='information_source' style='font-family: emoji'>ℹ️</span> About <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>forget</code>
-    </p>
-  
+  in_ledger --&gt; pending: rollback</code></pre></div></div><h3 id='state-transition-forget' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>State transition: <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>forget</code></h3>
     <p class='mb-3'>
       Importantly, a transaction, when sent, cannot be cancelled. One can only request forgetting about it in order to try spending (concurrently) the same UTxO in another transaction. But, the transaction may still show up later in a block and therefore, appear in the wallet.
     </p>
-  
-    <p class='mb-3'>
-      <span class='emoji' data-emoji='information_source' style='font-family: emoji'>ℹ️</span> About <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>discover</code>
-    </p>
-  
+  <h3 id='state-transition-discover' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>State transition: <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>discover</code></h3>
     <p class='mb-3'>
       Discovering a transaction happens regardless of a transaction being present or not as <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>pending</code>. Actually, only outgoing transactions are going through the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>pending</code> state. Incoming ones or, outgoing ones that have been forgotten may be discovered directly in blocks.
     </p>
-  <h2 id='submission' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Submission</h2><div class='py-0.5 mb-3 text-sm'><pre><code class='mermaid language-mermaid'>%%{init: {'theme': 'forest' } }%%
-sequenceDiagram
+  <h2 id='submission' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Submission</h2><div class='mermaid-container'><div class='py-0.5 mb-3 text-sm'><pre><code class='mermaid language-mermaid'>sequenceDiagram
   participant Wallet Client
   participant Wallet Server
   participant Network
@@ -3512,9 +3559,9 @@ sequenceDiagram
 
   Network -&gt;&gt; Network: Validate transaction structure
   Network --&gt;&gt; Wallet Server: (ERR) Malformed transaction
-  Network -&gt;&gt;- Wallet Server: Accepted
-
   Wallet Server --&gt;&gt; Wallet Client: 500 Internal Server Error
+
+  Network -&gt;&gt;- Wallet Server: Accepted
   Wallet Server -&gt;&gt;- Wallet Client: 202 Accepted
 
   Network -&gt;&gt; Network: Broadcast transaction to peers
@@ -3522,7 +3569,7 @@ sequenceDiagram
       Network -&gt;&gt; Network: Insert or discard transaction(s)
       Network -&gt;&gt; Wallet Server: Yield new block
       Wallet Server -&gt;&gt; Wallet Server: Discover transaction(s)
-  end</code></pre></div>
+  end</code></pre></div></div>
   <!-- What goes in this file will appear below the note body-->
 </article>
             <div class='flex flex-col lg:flex-row lg:space-x-2'>

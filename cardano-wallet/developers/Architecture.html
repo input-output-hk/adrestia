@@ -17,7 +17,13 @@
       <base href='/adrestia/' />
       <link href='static/favicon.png' rel='icon' />
     
-    <!-- mermaid.js --><script src='https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js'></script>
+    <meta name='generator' content='Emanote' />
+<meta http-equiv='cache-control' content='private, max-age=60' />
+<meta http-equiv='Expires' content='60' />
+<link href='static/adrestia.css' rel='stylesheet' />
+<script src='static/adrestia.js'></script>
+
+<!-- mermaid.js --><script src='https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js'></script>
 <script>
   var myMermaidConfig = {
     // lets mermaid work with emanote live-reloading
@@ -41,7 +47,7 @@
 </script>
 
   
-  <link href='tailwind.css?instanceId=ddecb162-a5b9-404b-bcce-a23c1fd4aadc' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=653a2fd9-0cd8-4fe4-9dea-4e38bbd1c493' rel='stylesheet' type='text/css' />
 
   <!-- Heist error element -->
   <style type='text/css'>
@@ -3089,6 +3095,45 @@
       </svg>
     
   
+    <a class='hover:underline truncate' title='Cardano Eras' href='cardano-wallet/design/Eras'>
+      Cardano Eras
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+  
+    
+      
+    
+    
+
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-2 space-x-2 justify-left'>
+    
+    
+      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
     <a class='hover:underline truncate' title='Notes about BIP-44' href='cardano-wallet/design/Notes-about-BIP-44'>
       Notes about BIP-44
     </a>
@@ -3475,14 +3520,40 @@
 </h1>
             <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='mermaid language-mermaid'>%%{init: {'theme': 'forest' } }%%
-erDiagram
-  CARDANO-NODE ||--|{ CARDANO-WALLET : depends-on
-  SMASH ||--|{ CARDANO-WALLET: connects-to
-  CARDANO-WALLET ||--|{ CARDANO-LAUNCHER : depends-on
-  CARDANO-LAUNCHER ||--|{ DAEDALUS : depends-on</code></pre></div>
+  <div class='mermaid-container'><div class='py-0.5 mb-3 text-sm'><pre><code class='mermaid language-mermaid'>flowchart TB;
+  subgraph local system
+    Daedalus -- calls --&gt; cardano-launcher;
+    cardano-launcher -. spawns .-&gt; cardano-wallet;
+    cardano-launcher -. spawns .-&gt; cardano-node;
+
+    %% by HTTP REST API
+    Daedalus -- queries --&gt; cardano-wallet;
+
+    %% Local socket/named pipe
+    cardano-wallet -- queries --&gt; cardano-node;
+  end
+
+
+  subgraph Internet
+    %% HTTP API
+    cardano-wallet -- queries --&gt; SMASH;
+
+    %% Network protocol
+    cardano-node -- syncs --&gt; blockchain;
+  end
+
+  class cardano-wallet adrestia;
+  class Daedalus,cardano-launcher daedalus;
+  class cardano-node,SMASH cardano;
+  class blockchain other;
+
+  click cardano-wallet call mermaidClick("wallet-backend");
+  click cardano-launcher mermaidClick;
+  click cardano-node call mermaidClick("node");
+  click SMASH call mermaidClick("smash");
+  click Daedalus call mermaidClick("daedalus");</code></pre></div></div>
     <p class='mb-3'>
-      This is how the software components fit together in the <a href='https://github.com/input-output-hk/daedalus' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Daedalus</a> scenario.
+      This is how the software components fit together in the <a href='#daedalus' class='text-indigo-600 mavenLinkBold hover:underline'>Daedalus</a> scenario.
     </p>
   
     <p class='mb-3'>
@@ -3494,7 +3565,7 @@ erDiagram
     </p>
   <h2 id='wallet-backend' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Wallet Backend</h2>
     <p class='mb-3'>
-      <a href='https://github.com/input-output-hk/cardano-wallet' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-wallet</a> An HTTP REST API is recommended for 3rd party wallets and small exchanges who do not want to manage UTxOs for transactions themselves. Use it to send and receive payments from hierarchical deterministic wallets on the Cardano blockchain via HTTP REST or a command-line interface.
+      <a href='https://github.com/input-output-hk/cardano-wallet' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-wallet</a> is an HTTP REST API is recommended for 3rd party wallets and small exchanges who do not want to manage UTxOs for transactions themselves. Use it to send and receive payments from hierarchical deterministic wallets on the Cardano blockchain via HTTP REST or a command-line interface.
     </p>
   <h2 id='cardano-launcher' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Cardano Launcher</h2>
     <p class='mb-3'>
