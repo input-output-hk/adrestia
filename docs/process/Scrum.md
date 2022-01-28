@@ -5,6 +5,7 @@ Your reference: [The 2020 Scrum Guide](https://scrumguides.org/scrum-guide.html)
  * [[Definition-of-Done|Our Current Definitions of Done]]
  * [[Definition-of-Ready|Our Current Definitions of Ready]]
  * [[Meetings|Sprint Ceremonies]]
+ * [[Jira]] is the tool we use for the sprint board and backlog.
 
 ## Definition of "Done"
 

@@ -8,7 +8,7 @@ hosted on the Atlassian Cloud.
 
 Make sure that you don't accidentally use the old URL which is `jira.iohk.io`.
 
-Run through the [[Jira#orientation-checklist|Orientation Checklist]] to make sure
+Run through the [Orientation Checklist](#orientation-checklist) to make sure
 that you know enough of the basics to use Jira effectively.
 
 ## Board
