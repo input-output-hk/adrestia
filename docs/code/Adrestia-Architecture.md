@@ -179,8 +179,8 @@ flowchart TB;
 
 | Name / Link       | Description                                    | Byron | Jörm | Shelley | Mary  | Alonzo |
 ---               | ---                                            | ---   | ---  | ---     | ---   | ---    |
-[cardano-wallet]  | JSON/REST API for managing UTxOs in HD wallets | ✔     | ✔    | ✔       | ❌     | 🚧     |
-[cardano-graphql] | GraphQL/HTTP API for browsing on-chain data    | ✔     | ❌    | ✔       | ✔     | 🚧     |
+[cardano-wallet]  | JSON/REST API for managing UTxOs in HD wallets | ✔     | ✔    | ✔       | ✔     | ✔     |
+[cardano-graphql] | GraphQL/HTTP API for browsing on-chain data    | ✔     | ❌    | ✔       | ✔     | ✔     |
 [cardano-rosetta] | Implementation of [Rosetta][] spec for Cardano |       |      | ✔       | ✔     | 🚧     |
 ~~[cardano-rest]~~  | _Deprecated_                                   | ✔     | ❌    | ✔       | ❌     | ❌     |
 
