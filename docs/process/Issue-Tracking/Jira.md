@@ -16,7 +16,7 @@ that you know enough of the basics to use Jira effectively.
 Here is a link to the [Adrestia Sprint Board][board].
 
 [board]: https://input-output.atlassian.net/jira/software/c/projects/ADP/boards/231
-[dashboard]: https://input-output.atlassian.net/secure/Dashboard.jspa?selectPageId=12600
+[dashboard]: https://input-output.atlassian.net/jira/dashboards/10143
 [backlog]: https://input-output.atlassian.net/jira/software/c/projects/ADP/boards/231/backlog?issueLimit=1000
 
 ## Account setup

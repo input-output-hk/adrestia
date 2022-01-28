@@ -112,7 +112,7 @@ main task and linked.
 | Link type  | Meaning of A _links_ B                                 |
 | :--------: | ------------------------------------------------------ |
 | blocks     | Issue A must be done issue B can start.                |
-| requires   | Issue A must be done before issue B can be done.       |
+| requires   | Issue B must be done before issue A can be done.       |
 | implements | Task A implements User Story B.                        |
 | duplicates | Issue A is the same as issue B, and should be closed.  |
 
