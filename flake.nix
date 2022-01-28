@@ -11,7 +11,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, flake-utils, emanote, ema }:
+  outputs = { self, nixpkgs, flake-utils, emanote }:
     flake-utils.lib.eachSystem ["x86_64-linux" "x86_64-darwin"] (system: let
       pkgs = nixpkgs.legacyPackages.${system};
 
@@ -38,5 +38,9 @@
     in
       flake);
 
-  nixConfig.bash-prompt = "\\u@\\h:\\w \[$name\] \\$ ";
+  nixConfig = {
+    bash-prompt = "\\u@\\h:\\w \[$name\] \\$ ";
+    extra-substituters = "https://adp.cachix.org";
+    extra-trusted-public-keys = "adp.cachix.org-1:3dW4Tyn1E3O9B+VMcgSXAInOt8FEvLPq+YdxM+cPwr0=";
+  };
 }
