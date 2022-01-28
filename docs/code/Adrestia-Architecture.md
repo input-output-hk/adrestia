@@ -41,10 +41,10 @@ flowchart TB;
   cardano-wallet     --> cardano-node;
   cardano-db-sync    --> cardano-node;
 
-  cardano-db-sync --> PostgreSQL[(PostgreSQL)];
-  SMASH --> PostgreSQL;
-  cardano-graphql --> PostgreSQL;
-  cardano-rosetta --> PostgreSQL;
+  cardano-db-sync-- writes --> PostgreSQL[(PostgreSQL)];
+  SMASH-- reads --> PostgreSQL;
+  cardano-graphql-- reads --> PostgreSQL;
+  cardano-rosetta-- reads --> PostgreSQL;
 
   cardano-explorer[cardano-explorer fab:fa-react] --> cardano-graphql;
 
@@ -164,12 +164,12 @@ flowchart TB;
   class cardano-node,SMASH cardano;
   class blockchain other;
   
-  
   click cardano-wallet mermaidClick;
   click cardano-launcher mermaidClick;
   click cardano-node mermaidClick;
   click SMASH mermaidClick;
   click Daedalus href "https://github.com/input-output-hk/daedalus";
+  click blockchain call mermaidClick("cardano-network-protocol");
 ```
 :::
 
