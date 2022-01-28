@@ -7,10 +7,37 @@ body {
  * I did not find a way to configure this, hence the
  * CSS styling which follows.
  */
-p code, li code {
-  background-color: rgb(243,244,246) !important;
+code.rounded {
+  background-color: rgb(243,244,246);
   color: black !important;
 }
+
 pre {
-  background-color: rgb(243,244,246) !important;
+  background-color: rgb(243,244,246);
+}
+
+/* Override the <pre> styling for mermaidjs diagrams.  :-/  */
+.mermaid-container pre {
+  background-color: transparent;
+}
+
+#deps-diagram g.adrestia > rect, #blockchart-diagram g.adrestia > rect {
+  stroke-width: 2px;
+}
+
+#deps-diagram g.cardano > rect, #blockchart-diagram g.cardano > rect {
+  fill: #E9E0FF;
+  stroke: #A47FFE;
+  stroke-width: 1px;
+}
+
+#deps-diagram g.daedalus > rect, #blockchart-diagram g.daedalus > rect {
+  fill: #DCFFEF;
+  stroke: #6FFEBD;
+}
+
+#deps-diagram g.other > rect, #blockchart-diagram g.other > rect,
+#deps-diagram g.other > path, #blockchart-diagram g.other > path {
+  fill: #f1f3fa;
+  stroke-width:1px;
 }
