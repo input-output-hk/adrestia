@@ -2,18 +2,11 @@
   description = "Adrestia Project Tools";
 
   inputs = {
-    # nixpkgs.url = github:NixOS/nixpkgs/nixos-21.11;
-    nixpkgs.url = github:NixOS/nixpkgs/d77bbfcbb650d9c219ca3286e1efb707b922d7c2;
+    nixpkgs.url = github:NixOS/nixpkgs/nixos-21.11;
     flake-utils.url = github:numtide/flake-utils;
     emanote = {
       url = github:srid/emanote;
-      inputs.ema.follows = "ema";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
-    };
-    ema = {
-      url = github:srid/ema;
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.url = github:NixOS/nixpkgs/d77bbfcbb650d9c219ca3286e1efb707b922d7c2;
       inputs.flake-utils.follows = "flake-utils";
     };
   };
