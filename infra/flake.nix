@@ -2,34 +2,31 @@
   description = "Adrestia development infrastructure";
 
   inputs = {
-    rvl.url = git+https://git.lorrimar.id.au/rodney/config.git;
-    rvl.inputs.nixpkgs.follows = "nixpkgs";
-    rvl.inputs.nixpkgs-release.follows = "nixpkgs";
-    rvl.inputs.nixpkgs-ustable.follows = "nixpkgs-unstable";
-    rvl.inputs.flake-utils.follows = "flake-utils";
-    rvl.inputs.home-manager.follows = "home-manager";
-    rvl.inputs.customConfig.follows = "customConfig";
-
-    basic.url = git+https://git.lorrimar.id.au/rodney/config.git?dir=basic;
-    emacs.url = git+https://git.lorrimar.id.au/rodney/config.git?dir=emacs;
-    iohk-binary-cache.url = git+https://git.lorrimar.id.au/rodney/config.git?dir=iohk-binary-cache;
-    mylib.url = git+https://git.lorrimar.id.au/rodney/config.git?dir=mylib;
-    rodnix.url = git+https://git.lorrimar.id.au/rodney/config.git?dir=rodnix;
-    scripts.url = git+https://git.lorrimar.id.au/rodney/config.git?dir=scripts;
-    nixops-utils.url = git+https://git.lorrimar.id.au/rodney/config.git?dir=nixops-utils;
-
-    flake-utils.url = github:numtide/flake-utils;
-
     nixpkgs.url = github:NixOS/nixpkgs/nixos-21.11;
-    nixpkgs-unstable.url = github:NixOS/nixpkgs/nixos-unstable;
-
+    nixpkgs-unstable.url = github:NixOS/nixpkgs/nixos-unstable-small;
     home-manager.url = github:nix-community/home-manager/release-21.11;
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    flake-utils.url = github:numtide/flake-utils;
+
     customConfig.url = github:input-output-hk/empty-flake;
+
+    basic.url = git+https://git.lorrimar.id.au/rodney/config.git?dir=basic;
+    basic.inputs.emacs.follows = "emacs";
+    basic.inputs.mylib.follows = "mylib";
+    basic.inputs.rodnix.follows = "rodnix";
+    emacs.url = git+https://git.lorrimar.id.au/rodney/config.git?dir=emacs;
+    emacs.inputs.mylib.follows = "mylib";
+    iohk-binary-cache.url = git+https://git.lorrimar.id.au/rodney/config.git?dir=iohk-binary-cache;
+    mylib.url = git+https://git.lorrimar.id.au/rodney/config.git?dir=mylib;
+    rodnix.url = git+https://git.lorrimar.id.au/rodney/config.git?dir=rodnix;
+    rodnix.inputs.mylib.follows = "mylib";
+    scripts.url = git+https://git.lorrimar.id.au/rodney/config.git?dir=scripts;
+    scripts.inputs.mylib.follows = "mylib";
+    nixops-utils.url = git+https://git.lorrimar.id.au/rodney/config.git?dir=nixops-utils;
   };
 
-  outputs = { self, flake-utils, rvl, mylib, ... }@inputs: let
+  outputs = { self, flake-utils, mylib, ... }@inputs: let
     inherit (nixpkgs) lib;
     nixpkgs = mylib.lib.extendNixpkgs self.libOverlay self.overlay inputs.nixpkgs;
     nixpkgs-unstable = mylib.lib.extendNixpkgs self.libOverlay self.overlay inputs.nixpkgs-unstable;
@@ -37,9 +34,9 @@
     # Inject dependencies using module arguments.
     specialArgs = {
       flakeInputs = inputs // {
-        inherit (self) nixpkgs nixpkgs-unstable;
+        inherit nixpkgs nixpkgs-unstable;
         customConfig = lib.recursiveUpdate {
-          repo = toString rvl.sourceInfo;
+          repo = toString self.sourceInfo;
         } inputs.customConfig;
       };
       dns = import ./dns.nix { inherit lib; };
@@ -69,11 +66,11 @@
     libOverlays = {
       base = final: prev: { };
       mylib = mylib.libOverlay;
-      rodnix = inputs.rodnix.libOverlay;
     };
 
     nixosModules.common = {
       imports = [
+        self.nixosModules.release-compat
         inputs.rodnix.nixosModule
         inputs.rodnix.nixopsModule
         ./modules/basics.nix
@@ -117,6 +114,11 @@
         keyCommand = [ "${toString ./scripts}/fetch.sh" name ];
         destDir = lib.mkDefault "/var/lib/keys";
       });
+    };
+
+    nixosModules.release-compat = {
+      disabledModules = [ "services/misc/nix-daemon.nix" ];
+      imports = [ "${specialArgs.flakeInputs.nixpkgs-unstable}/nixos/modules/services/misc/nix-daemon.nix" ];
     };
 
     nixosConfigurations.gce-mob-dev = lib.nixosSystem {
@@ -186,7 +188,7 @@
 
         imports = [
         # # gcloud compute --project=iohk-323702 connect-to-serial-port n-048aa26e7caa11e58b4cda214536e17f-gce-mob-dev --zone=australia-southeast1-a
-          "${rvl}/modules/hardware/serial-console.nix"
+          inputs.nixops-utils.nixosModules.serial-console
           self.nixosModules.gce-mob-dev
         ];
 
