@@ -4,14 +4,19 @@
   inputs = {
     nixpkgs.url = github:NixOS/nixpkgs/nixos-21.11;
     flake-utils.url = github:numtide/flake-utils;
+    flake-compat = {
+      url = github:edolstra/flake-compat;
+      flake = false;
+    };
     emanote = {
       url = github:srid/emanote;
-      inputs.nixpkgs.url = github:NixOS/nixpkgs/d77bbfcbb650d9c219ca3286e1efb707b922d7c2;
+      inputs.nixpkgs.url = github:NixOS/nixpkgs/d9e21f284317f85b3476c0043f4efea87a226c3a;
       inputs.flake-utils.follows = "flake-utils";
+      inputs.flake-compat.follows = "flake-compat";
     };
   };
 
-  outputs = { self, nixpkgs, flake-utils, emanote }:
+  outputs = { self, nixpkgs, flake-utils, emanote, ... }:
     flake-utils.lib.eachSystem ["x86_64-linux" "x86_64-darwin"] (system: let
       pkgs = nixpkgs.legacyPackages.${system};
 

@@ -4,6 +4,8 @@ Here are the sources for our deployment at [adrestia.iohkdev.io](https://adresti
 
 ## Getting started
 
+Ensure that you have Nix >= v2.6.0.
+
 Either use `nix develop` to get an infra shell, or enable `nix-direnv`.
 
 ## Deployment credentials
