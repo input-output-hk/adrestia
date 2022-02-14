@@ -4,14 +4,14 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Logging guidelines – Adrestia Project Docs
+    Master Key Generation – Adrestia Project Docs
   </title>
   
     
       <meta property='og:description' content />
       <meta property='og:site_name' content='Adrestia Project Docs' />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Logging guidelines' />
+      <meta property='og:title' content='Master Key Generation' />
     
     
       <base href='/adrestia/' />
@@ -23,6 +23,9 @@
 <link href='static/adrestia.css' rel='stylesheet' />
 <script src='static/adrestia.js'></script>
 
+<!-- Prism.js --><link href='https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/themes/prism-tomorrow.min.css' rel='stylesheet' />
+<script src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/prism.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.26.0/plugins/autoloader/prism-autoloader.min.js'></script>
 
   
   <link href='tailwind.css?instanceId=8916ba57-7353-42a7-81d5-3f044ec15ecf' rel='stylesheet' type='text/css' />
@@ -109,8 +112,8 @@
             </li>
           
             <li class='inline-flex items-center'>
-              <a class='px-1 font-bold' href='cardano-wallet/contributing'>
-                Contributors' Guide
+              <a class='px-1 font-bold' href='cardano-wallet/concepts'>
+                Key Concepts
               </a>
               <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
                 <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
@@ -2314,11 +2317,7 @@
     
       <!-- Variable bindings for this tree-->
   
-    
-      
-    
-    
-
+  
 
 
   
@@ -2331,12 +2330,12 @@
     
     
       <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'>
         </path>
       </svg>
-    
+      
   
-    <a class='hover:underline truncate' title='Master Key Generation' href='cardano-wallet/concepts/master-key-generation'>
+    <a class='font-bold text-indigo-600 hover:underline truncate' title='Master Key Generation' href='cardano-wallet/concepts/master-key-generation'>
       Master Key Generation
     </a>
     
@@ -2860,7 +2859,11 @@
     
       <!-- Variable bindings for this tree-->
   
-  
+    
+      
+    
+    
+
 
 
   
@@ -2873,12 +2876,12 @@
     
     
       <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
-      
+    
   
-    <a class='font-bold text-indigo-600 hover:underline truncate' title='Logging guidelines' href='cardano-wallet/contributing/Logging-Guidelines'>
+    <a class='hover:underline truncate' title='Logging guidelines' href='cardano-wallet/contributing/Logging-Guidelines'>
       Logging guidelines
     </a>
     
@@ -3688,140 +3691,32 @@
           <main class='px-4 py-4'>
             <h1 class='flex items-end justify-center mb-4 p-3 bg-indigo-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Logging guidelines
+    Master Key Generation
   </a>
 </h1>
             <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
   
     <p class='mb-3'>
-      Logs are primarily for <em>users</em> of the cardano-wallet, not its developers. Such users could be:
+      <em>Master key generation</em> is the process by which the wallet turns a <a href='cardano-wallet/concepts/recovery-phrases' class='text-indigo-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>seed</a> (<em>entropy</em>) into a secure cryptographic key. Child keys can be derived from a master key to produce a derivation tree structure as outlined in <a href='cardano-wallet/concepts/hierarchical-deterministic-wallets' class='text-indigo-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>HD Wallets</a>.
+    </p>
+  
+    <p class='mb-3'>
+      In Cardano, the master key generation algorithm is different depending on which style of wallet one is considering. In each case however, the generation is a function from an initial seed to an extended private key (<em>XPrv</em>) composed of:
     </p>
   
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          Engineers who will be running the cardano-wallet in production.
-        </li>
-      
-        <li>
-          Developers integrating cardano-wallet into their own software.
-        </li>
-      
-        <li>
-          Technical support staff who need to help solve end users’ problems.
-        </li>
-      
-    </ul>
-  
-    <p class='mb-3'>
-      Users of logging will have a reasonable understanding of how the cardano-wallet works, but won’t be familiar with the code. They need enough information to be able scan the logs and see if the application is running normally, or if they need to do some action to fix their problem.
-    </p>
-  <h2 id='logging-levels' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Logging levels</h2>
-    <p class='mb-3'>
-      The <a href='https://github.com/input-output-hk/iohk-monitoring-framework' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>iohk-monitoring-framework</a> defines a number of <a href='https://github.com/input-output-hk/iohk-monitoring-framework/blob/b0ea8317ba5a887d46969e9b3040862a10e6efb3/iohk-monitoring/src/Cardano/BM/Data/Severity.lhs#L33-L44' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>severity levels</a>:
-    </p>
-  <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><strong>Severity Level</strong></th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><strong>Meaning</strong></th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Debug</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>detailed information about values and decision flow</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Info</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>general information of events; progressing properly</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Notice</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>needs attention; something not progressing properly</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Warning</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>may continue into an error condition if continued</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Error</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>unexpected set of event or condition occurred</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Critical</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>error condition causing degrade of operation</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Alert</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>a subsystem is no longer operating correctly, likely requires manual intervention</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Emergency</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>at this point, the system can never progress without additional intervention</td></tr></tbody></table>
-    <p class='mb-3'>
-      This design was influenced by the <a href='https://en.wikipedia.org/wiki/Syslog#Severity_level' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>syslog</code> severity level</a> taxonomy.
-    </p>
-  
-    <p class='mb-3'>
-      These are probably more than we need. To keep things simple, we usually only log with the first 5:
-    </p>
-  <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><strong>Severity Level</strong></th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><strong>Meaning</strong></th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Debug</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Messages that contain information normally of use only when debugging a program.</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Info</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Informational messages.</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Notice</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Normal but significant conditions.</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Warning</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>A situation that may become an error.</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Error</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Unexpected problem.</td></tr></tbody></table><h3 id='debug' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Debug</h3>
-    <p class='mb-3'>
-      Debug logging will not be enabled by default in production. Therefore, you should not log information directly relevant to production operations at this level.
-    </p>
-  
-    <p class='mb-3'>
-      However, the technical support desk may request users enable debug logging for certain components to get more detail while trying to diagnose problems in the field.
-    </p>
-  
-    <p class='mb-3'>
-      Such logging might contain:
-    </p>
-  
+          64 bytes: an extended Ed25519 secret key composed of:
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          Information about which program decisions were made and why.
-        </li>
-      
-    </ul>
-  
-    <p class='mb-3'>
-      Don’t debug log too much rubbish because somebody will need to read it. Don’t log so much data that the program will malfunction if debug logging has been enabled.
-    </p>
-  
-    <p class='mb-3'>
-      It is useful to have debug logging of about how the wallet interacts with other systems. Examples of such logs:
-    </p>
-  
-    <ul class='my-3 ml-6 space-y-1 list-disc'>
-      
-        <li>
-          Network requests made to node backend.
+          32 bytes: Ed25519 curve scalar from which few bits have been tweaked (see below)
         </li>
       
         <li>
-          SQL query logs – log the queries but not the values.
-        </li>
-      
-    </ul>
-  
-    <p class='mb-3'>
-      Note from Alexander Diemand:
-    </p>
-  
-    <blockquote class='py-0.5 px-4 mb-3 italic border-l-4 bg-gray-50 text-gray-600 border-gray-400 quote'>
-      
-    <p class='mb-3'>
-      Another feature that might help reduce logging volume: monitoring can watch an observable and compare it to a set threshold. Once this is exceeded it can create an action: i.e. an alert message or change the severity filter of a named context or globally. So one would start up the node with logging filter set to “Warning” and only change it to “Info” when some monitored observable has exceeded its threshold
-    </p>
-  
-    <p class='mb-3'>
-      For an exchange that runs the node for ages: another monitor could also restore the severity filter to e.g. “Warning” if the observed values return into a normal behaviour range of values.
-    </p>
-  
-    </blockquote>
-  <h3 id='info' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Info</h3>
-    <p class='mb-3'>
-      Normal activity within the application. We do need to ensure that INFO logs are pertinent, and there are not pages and pages of logs per slot.
-    </p>
-  
-    <p class='mb-3'>
-      Examples:
-    </p>
-  
-    <ul class='my-3 ml-6 space-y-1 list-disc'>
-      
-        <li>
-          HTTP requests
-        </li>
-      
-        <li>
-          Wallet-related events
-    <ul class='my-3 ml-6 space-y-1 list-disc'>
-      
-        <li>
-          A block was applied
-        </li>
-      
-        <li>
-          New wallet was created
-        </li>
-      
-        <li>
-          Wallet restoration status
-        </li>
-      
-        <li>
-          Payment was sent
-        </li>
-      
-        <li>
-          Payment was received
+          32 bytes: Ed25519 binary blob used as IV for signing
         </li>
       
     </ul>
@@ -3829,331 +3724,150 @@
         </li>
       
         <li>
-          Network-related events
+          32 bytes: chain code for allowing secure child key derivation
+        </li>
+      
+    </ul>
+  <div class='info-block'><h3 id='additional-resources' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Additional resources</h3>
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          Sync state
+          <a href='https://github.com/satoshilabs/slips/blob/master/slip-0010.md' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>SLIP 0010</a>
+        </li>
+      
+        <li>
+          <a href='https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>BIP 0032</a>
+        </li>
+      
+        <li>
+          <a href='https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>BIP 0039</a>
+        </li>
+      
+        <li>
+          <a href='https://tools.ietf.org/html/rfc8032#section-5.1.5' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>RFC 8032</a>
+        </li>
+      
+        <li>
+          <a href='https://cips.cardano.org/cips/cip3/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>CIP 3 — “Wallet key generation”</a>
+        </li>
+      
+        <li>
+          <a href='https://cips.cardano.org/cips/cip1852/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>CIP 1852 — “HD (Hierarchy for Deterministic) Wallets for Cardano”</a>
         </li>
       
     </ul>
-  
-        </li>
-      
-        <li>
-          Information about the configuration, such as config file location, or how the wallet was started.
-        </li>
-      
-    </ul>
-  <h3 id='notice' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Notice</h3>
+  </div><h2 id='history' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>History</h2>
     <p class='mb-3'>
-      These are occasional messages about significant events for the program.
+      Throughout the years, Cardano has been using different styles of HD wallets. We categorize these wallets in the following terms:
     </p>
-  
+  <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Wallet Style</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Compatible Products</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Byron</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Daedalus, Yoroi</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Icarus</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Yoroi, Trezor</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Ledger</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Ledger</td></tr></tbody></table>
     <p class='mb-3'>
-      Examples:
+      Each wallet is based on Ed25519 elliptic curves though differs in subtle ways highlighted in the next sections.
     </p>
-  
-    <ul class='my-3 ml-6 space-y-1 list-disc'>
-      
-        <li>
-          The start up message, including the application version.
-        </li>
-      
-        <li>
-          What TCP port the API server is listening on.
-        </li>
-      
-        <li>
-          Normal shut down.
-        </li>
-      
-        <li>
-          Creating a new database file or migrating data.
-        </li>
-      
-    </ul>
-  <h3 id='warning' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Warning</h3>
-    <p class='mb-3'>
-      A warning situation could lead to a future error, or other undesirable behaviour. The user should be able to do something to make the warning go away.
-    </p>
-  
-    <p class='mb-3'>
-      Examples:
-    </p>
-  
-    <ul class='my-3 ml-6 space-y-1 list-disc'>
-      
-        <li>
-          NTP drift?
-        </li>
-      
-        <li>
-          Low disk space?
-        </li>
-      
-    </ul>
-  <h3 id='error' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Error</h3>
-    <p class='mb-3'>
-      This is a serious system problem. It should not happen under normal circumstances. Some action is required to rectify the situation. The wallet might well exit after logging an error message.
-    </p>
-  
-    <p class='mb-3'>
-      Examples:
-    </p>
-  
-    <ul class='my-3 ml-6 space-y-1 list-disc'>
-      
-        <li>
-          Unexpected error communicating with node backend.
-        </li>
-      
-        <li>
-          IO error writing database or other state.
-        </li>
-      
-        <li>
-          Bad user input which means that the action cannot complete.
-        </li>
-      
-        <li>
-          Unhandled exception.
-        </li>
-      
-    </ul>
-  <h2 id='mapping-of-log-levels-to-appearance' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Mapping of log levels to appearance</h2><h3 id='cli-tools' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>CLI tools</h3>
-    <p class='mb-3'>
-      Logging from the CLI should not be cluttered with timestamps and other metadata. It should just look like a normal print statements in a program. Nonetheless, using the logging framework for CLI output helps because error messages can be automatically coloured.
-    </p>
-  <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><strong>Severity</strong></th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><strong>Format</strong></th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Debug</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Hidden unless enabled by the user</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Info</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Printed normally on <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>stdout</code></td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Notice</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Printed in bold on <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>stdout</code></td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Warning</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Printed in bold colour on <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>stderr</code> prefixed by <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Warning: </code></td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Error</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Printed in bold red on <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>stderr</code> prefixed by <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>ERROR: </code></td></tr></tbody></table><h3 id='server' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Server</h3><table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><strong>Severity</strong></th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><strong>Format</strong></th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Debug</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Hidden unless enabled by the user</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>The rest</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>As per defaults for <a href='https://github.com/input-output-hk/iohk-monitoring-framework' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>iohk-monitoring-framework</a></td></tr></tbody></table>
-    <p class='mb-3'>
-      The server will support also support a log config file where the output location and format can be fully customised.
-    </p>
-  <h3 id='colour' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Colour</h3>
-    <p class='mb-3'>
-      If the log output file is not a terminal, do not output ANSI colour codes. These escape codes make it difficult to analyse log files.
-    </p>
-  <h3 id='json' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>JSON</h3>
-    <p class='mb-3'>
-      JSON (one object per line) is an OK format for log files, but it’s pretty bad for printing the terminal. For example, consider how difficult it would be to read through JSON messages within <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>journalctl -u cardano-wallet.service</code>. Therefore, log messages to <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>stdout</code>/<code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>stderr</code> should be formatted as text, unless otherwise configured by the user.
-    </p>
-  <h2 id='context' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Context</h2>
-    <p class='mb-3'>
-      Some context may be applicable to log events:
-    </p>
-  
-    <ul class='my-3 ml-6 space-y-1 list-disc'>
-      
-        <li>
-          Current slot number.
-        </li>
-      
-        <li>
-          Wallet ID.
-        </li>
-      
-        <li>
-          A request ID for the API, so that requests, their handlers, and responses can be cross-referenced.
-        </li>
-      
-    </ul>
-  <h3 id='logging-hierarchy' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Logging Hierarchy</h3>
-    <p class='mb-3'>
-      Log <em>Traces</em> can have context added such as a new name. Different subsystems of the wallet (such as network, database, api) should use <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>appendName</code> to create subtraces.
-    </p>
-  <h2 id='observables' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Observables</h2>
-    <p class='mb-3'>
-      The following are examples of things which should be easy and useful to log as micro-benchmarks (<code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>bracketObserveIO</code>).
-    </p>
-  
-    <ul class='my-3 ml-6 space-y-1 list-disc'>
-      
-        <li>
-          Time taken for API to respond to request.
-        </li>
-      
-        <li>
-          Time taken to execute SQL query.
-        </li>
-      
-        <li>
-          Time taken for node backend to respond to request.
-        </li>
-      
-    </ul>
-  <h2 id='privacy' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Privacy</h2>
-    <p class='mb-3'>
-      <a href='https://github.com/input-output-hk/iohk-monitoring-framework' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>iohk-monitoring-framework</a> provides “sensitive” variants of log functions (e.g. <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>logInfoS</code>). These allow sensitive information to be logged into separate files. Then users may send their logs to the technical support desk with a reasonable assurance of privacy.
-    </p>
-  
-    <p class='mb-3'>
-      <strong>Note</strong>: The privacy guidelines are under discussion. We are considering making it simpler and only having two classifications: “Log” or “Do Not Log”.
-    </p>
-  <h3 id='public-information' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Public information</h3>
-    <ul class='my-3 ml-6 space-y-1 list-disc'>
-      
-        <li>
-          Wallet ID.
-        </li>
-      
-        <li>
-          Dates and times that events occurred.
-        </li>
-      
-        <li>
-          Total number of addresses/transactions/UTxOs/etc.
-        </li>
-      
-        <li>
-          IP addresses of other nodes that network nodes are communicating with.
-        </li>
-      
-    </ul>
-  <h3 id='private-information' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Private information</h3>
-    <ul class='my-3 ml-6 space-y-1 list-disc'>
-      
-        <li>
-          Transaction ID.
-        </li>
-      
-        <li>
-          Address.
-        </li>
-      
-        <li>
-          Public key material.
-        </li>
-      
-        <li>
-          Quantities of Ada.
-        </li>
-      
-    </ul>
-  <h3 id='unknown' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Unknown</h3>
-    <p class='mb-3'>
-      Undecided about which category these fall into.
-    </p>
-  
-    <ul class='my-3 ml-6 space-y-1 list-disc'>
-      
-        <li>
-          Wallet name
-        </li>
-      
-    </ul>
-  <h3 id='never-log' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Never log</h3>
-    <p class='mb-3'>
-      This information should <em>never</em> be included in log messages (including DEBUG messages):
-    </p>
-  
-    <ul class='my-3 ml-6 space-y-1 list-disc'>
-      
-        <li>
-          Private key material.
-        </li>
-      
-        <li>
-          Mnemonic sentences.
-        </li>
-      
-        <li>
-          Passphrases.
-        </li>
-      
-        <li>
-          The values used or returned by SQL queries.
-        </li>
-      
-        <li>
-          Raw data sent to or received from the network backend.
-        </li>
-      
-        <li>
-          Raw, un-filtered API request or response bodies.
-        </li>
-      
-    </ul>
-  <h2 id='increasing-logging-detail' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Increasing logging detail</h2>
-    <p class='mb-3'>
-      <a href='https://github.com/input-output-hk/iohk-monitoring-framework' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>iohk-monitoring-framework</a> provides a facility for adjusting log levels at runtime on a component by component basis.
-    </p>
-  
-    <p class='mb-3'>
-      However it’s probably OK for now to change log levels by restarting cardano-wallet with different command-line options.
-    </p>
-  <h2 id='structured-logging-tutorial' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Structured logging tutorial</h2>
-    <p class='mb-3'>
-      Rather than logging unstructured text, define a type for log messages of a module.
-    </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='haskell language-haskell'>data FooMsg
-    = LogFooInit
-    | LogFooError FooError
-    | LogFooIncomingEvent Int
-    deriving (Show, Eq)</code></pre></div>
-    <p class='mb-3'>
-      Then for human-readable logs use our <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>ToText</code> class.
-    </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='haskell language-haskell'>import Data.Text.Class
-    ( ToText (..) )
+  <h2 id='pseudo-code' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Pseudo-code</h2><h3 id='byron' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Byron</h3><div class='py-0.5 mb-3 text-sm'><pre><code class='js language-js'>function generateMasterKey(seed) {
+    return hashRepeatedly(seed, 1);
+}
 
-instance ToText FooMsg where
-    toText msg = case msg of
-        LogFooInit -&gt; "The foo has started"
-        LogFooError e -&gt; "foo error: " &lt;&gt; T.pack (show e)
-        LogFooIncomingEvent -&gt; "Incoming foo event " &lt;&gt;  T.pack (show e)</code></pre></div>
+function hashRepeatedly(key, i) {
+    (iL, iR) = HMAC
+        ( hash=SHA512
+        , key=key
+        , message="Root Seed Chain " + UTF8NFKD(i)
+        );
+    
+    let prv = tweakBits(SHA512(iL));
+
+    if (prv[31] & 0b0010_0000) { 
+        return hashRepeatedly(key, i+1);
+    }
+
+    return (prv + iR);
+}
+
+function tweakBits(data) {
+    // * clear the lowest 3 bits
+    // * clear the highest bit
+    // * set the highest 2nd bit
+    data[0]  &= 0b1111_1000;
+    data[31] &= 0b0111_1111;
+    data[31] |= 0b0100_0000;
+
+    return data;
+}</code></pre></div><h3 id='icarus' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Icarus</h3>
     <p class='mb-3'>
-      Finally, define the metadata which the switchboard needs to route these traces.
+      <em>Icarus</em> master key generation style supports setting an extra password as an arbitrary byte array of any size. This password acts as a second factor applied to cryptographic key retrieval. When the seed comes from an encoded recovery phrase, the password can therefore be used to add extra protection in case where the recovery phrase were to be exposed.
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='haskell language-haskell'>import Cardano.BM.Data.LogItem
-    ( LoggerName, PrivacyAnnotation (..) )
-import Cardano.BM.Data.Severity
-    ( Severity (..) )
-import Cardano.BM.Data.Tracer
-    ( DefinePrivacyAnnotation (..), DefineSeverity (..) )
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='js language-js'>function generateMasterKey(seed, password) {
+    let data = PBKDF2
+        ( kdf=HMAC-SHA512
+        , iter=4096
+        , salt=seed
+        , password=password
+        , outputLen=96
+        );
 
--- Everything is public by default
-instance DefinePrivacyAnnotation FooMsg
+    return tweakBits(data);
+}
 
-instance DefineSeverity FooMsg
-    defineSeverity msg = case msg of
-        LogFooInit -&gt; Debug
-        LogFooError _ -&gt; Error
-        LogFooIncomingEvent -&gt; Info</code></pre></div>
+function tweakBits(data) {
+    // on the ed25519 scalar leftmost 32 bytes:
+    // * clear the lowest 3 bits
+    // * clear the highest bit
+    // * clear the 3rd highest bit
+    // * set the highest 2nd bit
+    data[0]  &= 0b1111_1000;
+    data[31] &= 0b0001_1111;
+    data[31] |= 0b0100_0000;
+
+    return data;
+}</code></pre></div><div class='info-block'><h4 id='more-info' class='mt-6 mb-2 text-2xl font-bold text-gray-700'>More info</h4>
     <p class='mb-3'>
-      To use the logging in the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>doFoo</code> function:
+      For a detailed analysis of the cryptographic choices and the above requirements, have a look at: <a href='https://github.com/input-output-hk/chain-wallet-libs/blob/master/doc/CRYPTO.md#master-key-generation-to-cryptographic-key' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Wallet Cryptography and Encoding</a>
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='haskell language-haskell'>import Cardano.BM.Trace
-    ( Trace )
-import Cardano.Wallet.Logging
-    ( logTrace )
+  </div><div class='py-0.5 mb-3 text-sm'><pre><code class='js language-js'>function generateMasterKey(seed, password) {
+    let data = PBKDF2
+        ( kdf=HMAC-SHA512
+        , iter=2048
+        , salt="mnemonic" + UTF8NFKD(password)
+        , password=UTF8NFKD(spaceSeparated(toMnemonic(seed)))
+        , outputLen=64
+        );
 
-doFoo :: Trace IO FooMsg -&gt; IO ()
-doFoo tr = do
-    logTrace tr LogFooInit
-    onFooEvent $ \ev -&gt; case ev of
-       Right n -&gt; logTrace tr $ LogFooIncomingEvent n
-       Left e -&gt; logTrace tr $ LogFooError e</code></pre></div>
-    <p class='mb-3'>
-      To convert to <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Trace m FooMsg</code> to <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Trace m Text</code> (well actually - the other way around), use <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Cardano.Wallet.Logging.transformTextTrace</code>, like so:
-    </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='haskell language-haskell'>import Control.Tracer
-    ( contramap )
-import Cardano.Wallet.Logging
-    ( transformTextTrace )
-import Foo (doFoo)
+    let cc = HMAC
+        ( hash=SHA256
+        , key="ed25519 seed"
+        , message=UTF8NFKD(1) + seed
+        );
 
-mainApp :: Trace IO Text -&gt; IO ()
-mainApp tr = doFoo (transformTextTrace tr)</code></pre></div>
-    <p class='mb-3'>
-      To convert a <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Trace m FooMsg</code> to anything else, use <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>contramap</code>.
-    </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='haskell language-haskell'>data AppMsg
-    = FooMsg FooMsg
-    | BarMsg BarMsg
-    | TextMsg Text
+    let (iL, iR) = hashRepeatedly(data);
 
-mainApp :: Trace IO AppMsg -&gt; IO ()
-mainApp tr = doFoo (contramap (fmap FooMsg) tr)</code></pre></div>
+    return (tweakBits(iL) + iR + cc);
+}
+
+function hashRepeatedly(message) {
+    let (iL, iR) = HMAC
+        ( hash=SHA512
+        , key="ed25519 seed"
+        , message=message
+        );
+    
+    if (iL[31] & 0b0010_0000) { 
+        return hashRepeatedly(iL + iR);
+    }
+
+    return (iL, iR);
+}
+
+function tweakBits(data) {
+    // * clear the lowest 3 bits
+    // * clear the highest bit
+    // * set the highest 2nd bit
+    data[0]  &= 0b1111_1000;
+    data[31] &= 0b0111_1111;
+    data[31] |= 0b0100_0000;
+
+    return data;
+}</code></pre></div>
   <!-- What goes in this file will appear below the note body-->
 </article>
             <div class='flex flex-col lg:flex-row lg:space-x-2'>
@@ -4164,14 +3878,14 @@ mainApp tr = doFoo (contramap (fmap FooMsg) tr)</code></pre></div>
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-indigo-600 mavenLinkBold hover:bg-indigo-50' href='cardano-wallet/developers'>
-            Developer Information
+          <a class='text-indigo-600 mavenLinkBold hover:bg-indigo-50' href='cardano-wallet/concepts'>
+            Key Concepts
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-indigo-200 hover:border-indigo-500'>
-      <div><a href='cardano-wallet/contributing/Logging-Guidelines' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Logging guidelines</a></div>
+      <div><a href='cardano-wallet/concepts/master-key-generation' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Master Key Generation</a></div>
     </div>
   
 </div>

@@ -4,14 +4,14 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Docker – Adrestia Project Docs
+    Specification: Light mode for cardano-wallet – Adrestia Project Docs
   </title>
   
     
       <meta property='og:description' content />
       <meta property='og:site_name' content='Adrestia Project Docs' />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Docker' />
+      <meta property='og:title' content='Specification: Light mode for cardano-wallet' />
     
     
       <base href='/adrestia/' />
@@ -23,9 +23,31 @@
 <link href='static/adrestia.css' rel='stylesheet' />
 <script src='static/adrestia.js'></script>
 
+<!-- mermaid.js --><script src='https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js'></script>
+<script>
+  var myMermaidConfig = {
+    // lets mermaid work with emanote live-reloading
+    startOnLoad: false,
+    // permit clicks
+    securityLevel: "loose",
+    // set default theme with primary colour to tailwind blue
+    theme: "base",
+    themeVariables: {
+      primaryColor: "#e0e7ff",
+      secondaryColor: "#fffde0"
+    },
+    // d3js rounded lines in flowcharts
+    flowchart: {
+      curve: "basis",
+      htmlLabels: true
+    }
+  };
+  mermaid.initialize(myMermaidConfig);
+  mermaid.init(myMermaidConfig, document.querySelectorAll(".mermaid"));
+</script>
 
   
-  <link href='tailwind.css?instanceId=8b3ed5f5-a169-4a10-b6fe-a80ed3024065' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=8916ba57-7353-42a7-81d5-3f044ec15ecf' rel='stylesheet' type='text/css' />
 
   <!-- Heist error element -->
   <style type='text/css'>
@@ -109,8 +131,17 @@
             </li>
           
             <li class='inline-flex items-center'>
-              <a class='px-1 font-bold' href='cardano-wallet/user-guide'>
-                User Guide
+              <a class='px-1 font-bold' href='cardano-wallet/design'>
+                Design Notes
+              </a>
+              <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
+                <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
+              </svg>
+            </li>
+          
+            <li class='inline-flex items-center'>
+              <a class='px-1 font-bold' href='cardano-wallet/design/specs'>
+                specs
               </a>
               <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
                 <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
@@ -742,6 +773,45 @@
   
     <a class='hover:underline truncate' title='Git Branching Scheme' href='process/Branching'>
       Git Branching Scheme
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+  
+    
+      
+    
+    
+
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-2 space-x-2 justify-left'>
+    
+    
+      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
+    <a class='hover:underline truncate' title='Github PR Conventions' href='process/Github-PR-Conventions'>
+      Github PR Conventions
     </a>
     
       
@@ -1653,6 +1723,42 @@
   
     
       
+      
+    
+
+
+
+  
+  
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-2 space-x-2 justify-left'>
+    
+    
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-4 h-4 flex-shrink-0 inline text-gray-700' viewBox='0 0 20 20' fill='currentColor'>
+        <path fill-rule='evenodd' d='M2 6a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1H8a3 3 0 00-3 3v1.5a1.5 1.5 0 01-3 0V6z' clip-rule='evenodd'></path>
+        <path d='M6 12a2 2 0 012-2h8a2 2 0 012 2v2a2 2 0 01-2 2H2h2a2 2 0 002-2v-2z'></path>
+      </svg>
+      
+  
+    <a class='font-bold hover:underline truncate' title='Installation Instructions' href='cardano-wallet/user-guide/installation'>
+      Installation Instructions
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+      <!-- Variable bindings for this tree-->
+  
+    
+      
     
     
 
@@ -1673,8 +1779,8 @@
       </svg>
     
   
-    <a class='hover:underline truncate' title='Installation Instructions' href='cardano-wallet/user-guide/installation'>
-      Installation Instructions
+    <a class='hover:underline truncate' title='Docker' href='cardano-wallet/user-guide/installation/Docker'>
+      Docker
     </a>
     
       
@@ -1690,7 +1796,11 @@
     
       <!-- Variable bindings for this tree-->
   
-  
+    
+      
+    
+    
+
 
 
   
@@ -1703,13 +1813,13 @@
     
     
       <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
         </path>
       </svg>
-      
+    
   
-    <a class='font-bold text-indigo-600 hover:underline truncate' title='Docker' href='cardano-wallet/user-guide/Docker'>
-      Docker
+    <a class='hover:underline truncate' title='Nix/NixOS' href='cardano-wallet/user-guide/installation/NixOS'>
+      Nix/NixOS
     </a>
     
       
@@ -1719,6 +1829,9 @@
     TODO: Use <details> to toggle visibility?
   -->
   
+    
+  
+</div>
     
   
 </div>
@@ -2215,6 +2328,123 @@
       </svg>
     
   
+    <a class='hover:underline truncate' title='Recovery Phrases' href='cardano-wallet/concepts/recovery-phrases'>
+      Recovery Phrases
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+  
+    
+      
+    
+    
+
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-2 space-x-2 justify-left'>
+    
+    
+      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
+    <a class='hover:underline truncate' title='Master Key Generation' href='cardano-wallet/concepts/master-key-generation'>
+      Master Key Generation
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+  
+    
+      
+    
+    
+
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-2 space-x-2 justify-left'>
+    
+    
+      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
+    <a class='hover:underline truncate' title='HD Wallets' href='cardano-wallet/concepts/hierarchical-deterministic-wallets'>
+      HD Wallets
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+  
+    
+      
+    
+    
+
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-2 space-x-2 justify-left'>
+    
+    
+      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
     <a class='hover:underline truncate' title='Address Derivation' href='cardano-wallet/concepts/address-derivation'>
       Address Derivation
     </a>
@@ -2293,123 +2523,6 @@
       </svg>
     
   
-    <a class='hover:underline truncate' title='Coin Selection' href='cardano-wallet/concepts/coin-selection'>
-      Coin Selection
-    </a>
-    
-      
-  </div>
-
-  <!-- Node's children forest, displayed only on active trees
-    TODO: Use <details> to toggle visibility?
-  -->
-  
-    
-  
-</div>
-    
-      <!-- Variable bindings for this tree-->
-  
-    
-      
-    
-    
-
-
-
-  
-
-
-<!-- Rendering of this tree -->
-<div class='pl-2'>
-  <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    
-    
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
-        </path>
-      </svg>
-    
-  
-    <a class='hover:underline truncate' title='HD Wallets' href='cardano-wallet/concepts/hierarchical-deterministic-wallets'>
-      HD Wallets
-    </a>
-    
-      
-  </div>
-
-  <!-- Node's children forest, displayed only on active trees
-    TODO: Use <details> to toggle visibility?
-  -->
-  
-    
-  
-</div>
-    
-      <!-- Variable bindings for this tree-->
-  
-    
-      
-    
-    
-
-
-
-  
-
-
-<!-- Rendering of this tree -->
-<div class='pl-2'>
-  <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    
-    
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
-        </path>
-      </svg>
-    
-  
-    <a class='hover:underline truncate' title='Transaction Lifecycle' href='cardano-wallet/concepts/transaction-lifecycle'>
-      Transaction Lifecycle
-    </a>
-    
-      
-  </div>
-
-  <!-- Node's children forest, displayed only on active trees
-    TODO: Use <details> to toggle visibility?
-  -->
-  
-    
-  
-</div>
-    
-      <!-- Variable bindings for this tree-->
-  
-    
-      
-    
-    
-
-
-
-  
-
-
-<!-- Rendering of this tree -->
-<div class='pl-2'>
-  <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    
-    
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
-        </path>
-      </svg>
-    
-  
     <a class='hover:underline truncate' title='UTxO' href='cardano-wallet/concepts/utxo'>
       UTxO
     </a>
@@ -2449,8 +2562,47 @@
       </svg>
     
   
-    <a class='hover:underline truncate' title='Wallet Cryptography and Encoding' href='cardano-wallet/concepts/cryptography-and-encoding'>
-      Wallet Cryptography and Encoding
+    <a class='hover:underline truncate' title='Coin Selection' href='cardano-wallet/concepts/coin-selection'>
+      Coin Selection
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+  
+    
+      
+    
+    
+
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-2 space-x-2 justify-left'>
+    
+    
+      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
+    <a class='hover:underline truncate' title='Transaction Lifecycle' href='cardano-wallet/concepts/transaction-lifecycle'>
+      Transaction Lifecycle
     </a>
     
       
@@ -3229,6 +3381,80 @@
       </svg>
       
   
+    <a class='font-bold hover:underline truncate' title='specs' href='cardano-wallet/design/specs'>
+      specs
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+      <!-- Variable bindings for this tree-->
+  
+  
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-2 space-x-2 justify-left'>
+    
+    
+      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'>
+        </path>
+      </svg>
+      
+  
+    <a class='font-bold text-indigo-600 hover:underline truncate' title='Specification: Light mode for cardano-wallet' href='cardano-wallet/design/specs/light-mode'>
+      Specification: Light mode for cardano-wallet
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+  
+</div>
+    
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+  
+    
+      
+      
+    
+
+
+
+  
+  
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-2 space-x-2 justify-left'>
+    
+    
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-4 h-4 flex-shrink-0 inline text-gray-700' viewBox='0 0 20 20' fill='currentColor'>
+        <path fill-rule='evenodd' d='M2 6a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1H8a3 3 0 00-3 3v1.5a1.5 1.5 0 01-3 0V6z' clip-rule='evenodd'></path>
+        <path d='M6 12a2 2 0 012-2h8a2 2 0 012 2v2a2 2 0 01-2 2H2h2a2 2 0 002-2v-2z'></path>
+      </svg>
+      
+  
     <a class='font-bold hover:underline truncate' title='Decision Records' href='cardano-wallet/design/records'>
       Decision Records
     </a>
@@ -3493,88 +3719,369 @@
           <main class='px-4 py-4'>
             <h1 class='flex items-end justify-center mb-4 p-3 bg-indigo-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Docker
+    Specification: Light mode for cardano-wallet
   </a>
 </h1>
             <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
   
     <p class='mb-3'>
-      Docker builds of <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> are available on <a href='https://hub.docker.com/repository/docker/inputoutput/cardano-wallet' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>DockerHub</a>.
-    </p>
-  <h2 id='downloading-the-docker-image' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Downloading the Docker image</h2>
-    <p class='mb-3'>
-      To get the latest release of <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code>, run:
-    </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>docker pull inputoutput/cardano-wallet:latest</code></pre></div><h2 id='running-the-docker-container-for-cardano-wallet' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Running the Docker container for <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code></h2>
-    <p class='mb-3'>
-      To run basic CLI commands, use:
-    </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>docker run --rm inputoutput/cardano-wallet:latest --help</code></pre></div>
-    <p class='mb-3'>
-      See <a href='cardano-wallet/user-guide/cli' class='text-indigo-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>Command-Line Interface</a> for full documentation of the CLI.
-    </p>
-  <h2 id='naming-scheme' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Naming scheme</h2>
-    <p class='mb-3'>
-      The following tags are pushed to <a href='https://hub.docker.com/repository/docker/inputoutput/cardano-wallet' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>DockerHub</a>.
-    </p>
-  <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Tag</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Network node backend</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Version</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>inputoutput/cardano-wallet</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>cardano-node</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>same as <em>latest</em></td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>inputoutput/cardano-wallet:latest</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>cardano-node</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Latest <a href='https://github.com/input-output-hk/cardano-wallet/releases' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>GitHub release</a></td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>inputoutput/cardano-wallet:dev-master</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>cardano-node</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Latest revision of <a href='https://github.com/input-output-hk/cardano-wallet/commits/master' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>master branch</a></td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>inputoutput/cardano-wallet:2020.7.28</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>cardano-node</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><a href='https://github.com/input-output-hk/cardano-wallet/releases/tag/v2020-07-28' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>v2020-07-28</a> (for example)</td></tr></tbody></table><h2 id='building-the-docker-image-locally' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Building the Docker image locally</h2>
-    <p class='mb-3'>
-      Ensure that you have Nix installed and the IOHK binary cache enabled (<a href='https://github.com/input-output-hk/iohk-nix/blob/master/docs/nix.md' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>instructions</a>).
+      11th Feb 2022
     </p>
   
     <p class='mb-3'>
-      Then run this command from the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> git repo:
+      Status: DRAFT
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>docker load -i $(nix build --json .#dockerImage | jq -r '.[0].outputs.out')</code></pre></div>
+  <h1 id='synopsis' class='pb-2 mb-2 text-5xl font-bold text-center'>Synopsis</h1>
     <p class='mb-3'>
-      If you have no local changes, the build should be downloaded from the <a href='https://hydra.iohk.io/job/Cardano/cardano-wallet/native.dockerImage.shelley.x86_64-linux' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>IOHK binary cache</a> then loaded into your local Docker image storage.
-    </p>
-  <h2 id='inspecting-the-contents-of-the-docker-image' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Inspecting the contents of the Docker image</h2>
-    <p class='mb-3'>
-      The default entrypoint of the image is <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>/bin/start-cardano-wallet-shelley</code>. If you need to run a shell inside the Docker image, use the bash shell as the entrypoint:
-    </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>docker run --rm -it --entrypoint bash inputoutput/cardano-wallet:latest</code></pre></div><h2 id='docker-compose' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Docker compose</h2>
-    <p class='mb-3'>
-      One can also use <a href='https://docs.docker.com/compose/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>docker-compose</a> to quickly spin up <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> together with supported block producer.
+      This document specifies a light-mode for <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code>. This mode aims to make synchronisation to the blockchain faster by trusting an off-chain source of aggregated blockchain data.
     </p>
   
     <p class='mb-3'>
-      <a href='https://github.com/input-output-hk/cardano-wallet/blob/master/docker-compose.yml' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Here</a> is exemplary <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>docker-compose.yaml</code> combining the latest versions of <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> and <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-node</code>.
+      Light wallets often employ this strategy of using a less trusted data source; for example the <a href='https://namiwallet.io' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Nami</a> wallet uses <a href='http://blockfrost.io' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Blockfrost</a> as data source. The purpose of the light-mode of <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> is to make this “trust vs speed” trade-off readily available to downstream software such as <a href='https://daedaluswallet.io' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Daedalus</a> with <em>minimal</em> changes to its downstream API.
     </p>
   
     <p class='mb-3'>
-      To give it a spin simply launch:
+      In addition, the “trust versus speed” trade-off will be partially obsoleted by <a href='https://iohk.io/en/research/library/papers/mithrilstake-based-threshold-multisignatures/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Mithril</a> technology, which aims to give us “trust <em>and</em> speed” by providing verified ledger state data as opposed to block data. The act of implementing light-mode in <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> does not only offer immediate benefits, but will, in fact, partially prepare the codebase for Mithril technology.
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>wget https://raw.githubusercontent.com/input-output-hk/cardano-wallet/master/docker-compose.yml
-NETWORK=mainnet docker-compose up</code></pre></div>
+  <h1 id='motivation' class='pb-2 mb-2 text-5xl font-bold text-center'>Motivation</h1><h2 id='background' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Background</h2>
+    <p class='mb-3'>
+      As the Cardano blockchain grows in size, retrieving and verifying blocks from the consensus network becomes increasingly time consuming. By making a “trust versus speed” trade-off, we can significantly decrease synchronization times.
+    </p>
+  <h2 id='user-visible-benefits' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>User-visible benefits</h2>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Allow users to operate their wallet without needing to wait for the node to download and validate the entire blockchain.
+        </li>
+      
+        <li>
+          Allow users to run cardano-wallet and Daedalus on systems with significantly less than 8GB of memory and less than 10GB of disk space.
+        </li>
+      
+        <li>
+          Allow users to control where they sit on the trust vs convenience spectrum, depending upon their current circumstances.
+        </li>
+      
+    </ul>
+  <h2 id='technical-benefits' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Technical benefits</h2>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          <em>Speed</em>. With light-mode, we expect synchronisation times of &lt; 1 minute for a wallet with 1’000 transactions. In contrast, synchronisation of an empty wallet currently takes ~ 50 minutes by connecting to a node — assuming that the node has already synced to the chain tip and built its ledger state, which itself takes hours.
+        </li>
+      
+        <li>
+          <em>Compatiblity</em>. Light-mode is intended to preserve the API presented to downstream software such as <a href='https://daedaluswallet.io' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Daedalus</a>, only <em>minimal</em> changes are expected.
+        </li>
+      
+        <li>
+          <em>Optionality</em>. A wallet that was started in light-mode can be restarted in full mode without resynchronization, and vice versa. (MVP: no support yet for changing the mode dynamically while the wallet is running.)
+        </li>
+      
+    </ul>
+  <h2 id='limitations' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Limitations</h2>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          <em>Trust</em>. The external data source does <em>not</em> provide the same level of protection against <em>omission</em> of transactions as the Proof-of-Stake consensus protocol.
+        </li>
+      
+        <li>
+          <em>Privacy</em>. In addition to the reduction of trust in the blockchain data, we now also reveal private information about addresses belonging to a single wallet.
+        </li>
+      
+        <li>
+          <em>Address schemes</em>. Only <em>Shelley</em> wallets with <em>sequential address discovery</em> can be supported.
+        </li>
+      
+    </ul>
+  
+    <p class='mb-3'>
+      However, these limitations are shared by all existing light wallets. In fact, some light wallets only provide <em>single-address</em> wallets, which is an additional reduction of privacy.
+    </p>
+  <h1 id='specification' class='pb-2 mb-2 text-5xl font-bold text-center'>Specification</h1><h2 id='overview' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Overview</h2>
+    <p class='mb-3'>
+      The implementation of light-mode is based on an efficient query <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Address -&gt; Transactions</code> which the blockchain data source provides. This query is useful to wallets that use <em>sequential address discovery</em> (Shelley wallets). These wallets work with a sequence of potential addresses <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>addr_0</code>, <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>addr_1</code>, <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>addr_2</code>, …. For each integer <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>n</code>, there is a deterministic procedure for generating the corresponding address <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>addr_n</code>. The wallet generates the first few addresses in this sequence and uses the above query to retrieve the corresponding transactions. When no transactions are found for <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>g</code> (“address gap”) many consecutive addresses, the procedure stops — as the wallet never puts addresses with higher indices on the chain. In other words, this iterative loop yields all transactions that belong to the wallet.
+    </p>
+  
+    <p class='mb-3'>
+      This procedure can be visualized in a flow chart:
+    </p>
+  <div class='mermaid-container'><div class='py-0.5 mb-3 text-sm'><pre><code class='mermaid language-mermaid'>flowchart TB
+  start([begin]) --&gt; init[j := 0]
+  init --&gt; query[query addr_j]
+  query --&gt; tx{transactions?}
+  tx -- no --&gt; g{happened g times?}
+  tx -- yes --&gt; add[j := j+1]
+  g -- yes ----&gt; e([end])
+  g -- no --&gt; add
+  add --&gt; query</code></pre></div></div>
+    <p class='mb-3'>
+      This procedure is implemented and demonstrated in the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>light-mode-test</code> prototype.
+    </p>
+  <h2 id='functionality' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Functionality</h2><h3 id='network-topology' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Network topology</h3>
+    <p class='mb-3'>
+      In full-node mode, <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> connects to a local <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-node</code>:
+    </p>
+  <div class='mermaid-container'><div class='py-0.5 mb-3 text-sm'><pre><code class='mermaid language-mermaid'>flowchart TB
+  subgraph local system
+    cardano-launcher -. spawns .-&gt; cardano-wallet
+    cardano-launcher -. spawns .-&gt; cardano-node
+    cardano-wallet -- ChainSync --&gt; cardano-node
+    cardano-wallet -- LocalTxSubmission --&gt; cardano-node
+    cardano-wallet -- LocalStateQuery --&gt; cardano-node
+  end
+  cardano-node -- syncs --&gt; blockchain
+  subgraph internet
+    blockchain
+  end</code></pre></div></div>
+    <p class='mb-3'>
+      In light-mode, <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> instead connects to the data source (e.g. <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-graphql</code> or <a href='http://blockfrost.io' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Blockfrost</a>) and a transaction submission service trough the internet
+    </p>
+  <div class='mermaid-container'><div class='py-0.5 mb-3 text-sm'><pre><code class='mermaid language-mermaid'>flowchart TB
+  cardano-launcher -. spawns .-&gt; cardano-wallet
+  cardano-wallet -- query\nAddressTransactions --&gt; cardano-graphql
+  cardano-wallet -- TxSubmission --&gt; cardano-submit-api
+  
+  subgraph local system
+    cardano-launcher
+    cardano-wallet
+  end
+
+  subgraph internet
+    cardano-graphql --&gt; n1[cardano-node]
+    cardano-submit-api --&gt; n2[cardano-node]
+    n1 -- syncs --&gt; blockchain
+    n2 -- syncs --&gt; blockchain
+  end</code></pre></div></div><h3 id='command-line' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Command line</h3>
+    <p class='mb-3'>
+      The <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> executable will feature a new flag <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>--light</code> which indicates that the executable is to be started in light-mode:
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>$ cardano-wallet serve --light CRED</code></pre></div>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>CRED</code> specifies how to connect to the less trusted blockchain data source. (MVP: Use <a href='http://blockfrost.io' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Blockfrost</a>; <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>CRED</code> is a filepath to the secret token.)
+        </li>
+      
+        <li>
+          The <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>--light</code> argument and the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>--node-socket</code> arguments are mutally exclusive with each other.
+        </li>
+      
+    </ul>
+  <h3 id='rest-api' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>REST API</h3>
+    <p class='mb-3'>
+      When the executable was started in light-mode:
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          The endpoints in the hierarchy <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>/v2/byron-wallets/*</code> MUST return an error. Because byron wallets use random derivation indices to generate addresses, they are significantly more challenging to make a light wallet for.
+        </li>
+      
+        <li>
+          (MVP: The endpoints in the hierarchy <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>/v2/shared-wallets/*</code> MAY return an error.)
+        </li>
+      
+        <li>
+          The <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>GET /v2/network/information</code> endpoint MAY not return <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>sync_progress</code> as a percentage quantity from [0..100].
+        </li>
+      
+    </ul>
+  <h2 id='internal' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Internal</h2>
+    <p class='mb-3'>
+      See also the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>light-mode-test</code> prototype!
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          
+    <p class='mb-3'>
+      Collect required queries on data source in a data type <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>LightLayer</code>. In this way, we can replace the data source with a mock data source and run property tests on the chain following logic. (MVP: Use <a href='http://blockfrost.io' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Blockfrost</a> for demonstration purposes.)
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-3'>
+      Provide second implementation of <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>NetworkLayer</code> using a <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>LightLayer</code>.
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          See prototype for details! Important changes:
+        </li>
+      
+        <li>
+          <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>watchTip</code> requires polling (2 seconds interval)
+        </li>
+      
+        <li>
+          <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>currentNodeEra</code> may require hard-coding known eras.
+        </li>
+      
+        <li>
+          <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>performanceEstimate</code> requires copying from ledger code.
+        </li>
+      
+        <li>
+          <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>syncProgress</code> should be ignored for MVP.
+        </li>
+      
+        <li>
+          The node-mode <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>NetworkLayer</code> does a lot of caching, we should avoid that for now and instead add a more uniform caching system later through a function <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>addCaches :: NetworkLayer -&gt; IO NetworkLayer</code>.
+        </li>
+      
+        <li>
+          <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>postTx</code> submits a transaction to a web service instead of using the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>LocalTxSubmission</code> protocol with cardano-node. This web service can be different from the blockchain data source. An example of such a service is <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-submit-api</code>.
+        </li>
+      
+    </ul>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-3'>
+      New data type
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='haskell language-haskell'>data BlockSummary m = BlockSummary
+    { from  :: ChainPoint
+    , to    :: ChainPoint
+    , query :: Address -&gt; m [Transaction]
+    }</code></pre></div>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          
+    <p class='mb-3'>
+      consumed by <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>applyBlocks</code>. Adapt <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>discoverTransactions</code> from the prototype.
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-3'>
+      produced by <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>NetworkLayer</code>. Adapt <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>lightSync</code> from the prototype.
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-3'>
+      Idea: Use an additional GADT wrapper to specialize <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>applyBlocks</code> to sequential address states:
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='haskell language-haskell'>    data BlockData m s where
+        List
+            :: NonEmpty Block
+            -&gt; BlockData m s
+        Summary
+            :: BlockSummary m
+            -&gt; BlockData m (SeqState n k)</code></pre></div>
+    <p class='mb-3'>
+      By using this type as argument to <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>applyBlocks</code>, we are guaranteed that <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>BlockSummary</code> is only used in conjunction with sequential state. Caveat: It would be better if we could avoid parametrizing the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>NetworkLayer</code> type with the address discovery state <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>s</code>.
+    </p>
+  
+        </li>
+      
+    </ul>
+  
+        </li>
+      
+    </ul>
+  <h2 id='quality-assurance' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Quality assurance</h2><h3 id='benchmarks' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Benchmarks</h3>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Compare restoration times for an empty wallet in node-mode and in light-mode. The existing nightly wallet restoration benchmark can be updated for this purpose.
+        </li>
+      
+        <li>
+          Number of requests that we make to the data source needs to be monitored / kept in check. The number of requests should scale linearly with the number of transactions and the number of addresses belonging to the wallet. If the data source supports aggregated queries, we can make a single request with a larger body.
+        </li>
+      
+    </ul>
+  <h3 id='testing' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Testing</h3>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Mock implementation of <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>LightLayer</code>.
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          We probably won’t get good value / work out of implementing a <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>LightLayer</code> that interacts with the local cluster. One could look into implementing the light-mode <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>NetworkLayer</code> in terms of the node-mode <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>NetworkLayer</code>, though.
+        </li>
+      
+    </ul>
+  
+        </li>
+      
+        <li>
+          Property tests for <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>applyBlocks</code> using <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>BlockSummary</code>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          Implement a conversion function <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>summarize :: NonEmpty Block -&gt; BlockSummary Identity</code>
+        </li>
+      
+        <li>
+          Create a list of blocks, apply <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>applyBlocks</code> to both the list directly, and to the result of <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>summarize</code> — the results should be equal.
+        </li>
+      
+    </ul>
+  
+        </li>
+      
+    </ul>
+  <h2 id='external' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>External</h2>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          
+    <p class='mb-3'>
+      <a href='https://github.com/input-output-hk/cardano-launcher' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Cardano-launcher</a> will have to be modified to not launch the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-node</code> process when the cardano-wallet is launched in light-mode.
+    </p>
+  
+        </li>
+      
+        <li>
+          
+    <p class='mb-3'>
+      Provision of the data source and of the transaction submission service is outside the scope of light-mode; we assume these services will be operated and paid for by someone. (Any light wallet assumes this.) In the MVP, we use <a href='http://blockfrost.io' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Blockfrost</a> for demonstration purposes.
+    </p>
+  
+        </li>
+      
+    </ul>
+  <h1 id='design-alternatives' class='pb-2 mb-2 text-5xl font-bold text-center'>Design alternatives</h1><h2 id='byron-wallets' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Byron wallets</h2>
+    <p class='mb-3'>
+      Byron wallets cannot be supported by the light-mode as described above, as it is based on an efficient query <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Address -&gt; Transactions</code> which Byron wallets cannot take advantage of. For these wallets, alternative designs would have to be explored. Possibilities include:
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          A third-party byron <em>address discovery service</em> which takes a byron root XPub and sends back a list of addresses belonging to that wallet. However, that involve an additional reduction in trust.
+        </li>
+      
+        <li>
+          Existing Byron wallets can be <em>partially supported</em> in light-mode as long as the database of addresses generated/discovered so far is intact, as we can still retrieve the balance and all transactions. However, in light-mode, these wallets cannot be restored and cannot receive funds from newly generated addresses. Conversion to Shelly wallets is recommended.
+        </li>
+      
+    </ul>
+  
   <!-- What goes in this file will appear below the note body-->
 </article>
             <div class='flex flex-col lg:flex-row lg:space-x-2'>
               
               
-  <div class='flex-1 p-4 mt-8 bg-gray-100 rounded'>
-    <header class='mb-2 text-xl font-semibold text-gray-500'>Links to this page</header>
-    <ul class='space-y-1'>
-      
-        <li>
-          <a class='text-indigo-600 mavenLinkBold hover:bg-indigo-50' href='cardano-wallet/user-guide'>
-            User Guide
-          </a>
-          
-            <div class='mb-4 overflow-auto text-sm text-gray-500'>
-  
-    <div class='pl-2 mt-2 border-l-2 border-indigo-200 hover:border-indigo-500'>
-      <div><a href='cardano-wallet/user-guide/Docker' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Docker</a></div>
-    </div>
-  
-</div>
-          
-        </li>
-      
-    </ul>
-  </div>
-
             </div>
             
   <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
