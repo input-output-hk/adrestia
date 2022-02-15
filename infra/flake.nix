@@ -31,13 +31,15 @@
     nixpkgs = mylib.lib.extendNixpkgs self.libOverlay self.overlay inputs.nixpkgs;
     nixpkgs-unstable = mylib.lib.extendNixpkgs self.libOverlay self.overlay inputs.nixpkgs-unstable;
 
+    customConfig = lib.recursiveUpdate {
+      repo = toString self.sourceInfo;
+    } inputs.customConfig;
+
     # Inject dependencies using module arguments.
     specialArgs = {
+      inherit customConfig;
       flakeInputs = inputs // {
-        inherit nixpkgs nixpkgs-unstable;
-        customConfig = lib.recursiveUpdate {
-          repo = toString self.sourceInfo;
-        } inputs.customConfig;
+        inherit self nixpkgs nixpkgs-unstable;
       };
       dns = import ./dns.nix { inherit lib; };
       creds = import ./creds.nix;
@@ -66,11 +68,13 @@
     libOverlays = {
       base = final: prev: { };
       mylib = mylib.libOverlay;
+      custom-config = final: prev: { inherit customConfig; };
     };
 
     nixosModules.common = {
       imports = [
         self.nixosModules.release-compat
+        self.nixosModules.keys
         inputs.rodnix.nixosModule
         inputs.rodnix.nixopsModule
         ./modules/basics.nix
@@ -78,9 +82,11 @@
       ];
       nixpkgs.overlays = [ self.overlay ];
       system.stateVersion = "21.11";
+      time.timeZone = "UTC";
     };
 
-    nixosModules.temp = {
+    # This module sets up a root filesystem for local testing builds of nixos systems.
+    nixosModules.pretend-rootfs = {
       fileSystems."/" = {
         fsType = "ext4";
         device = "/dev/disk/by-label/nixos";
@@ -93,19 +99,34 @@
       imports = [
         self.nixosModules.common
         inputs.basic.roles.hm
-        self.nixosModules.keys
-
+        # TODO: move some services over to gce-collab
         ./roles/mob-prog.nix
         ./roles/iohk-mob-dev-server.nix
       ];
 
       networking = { inherit (dns) hostName domain; };
-      time.timeZone = "UTC";
+
       # Preserve ssh host keys
       # ssh-keygen -t ed25519 -C "mob-dev_ssh_host_key" -f mob-dev_ssh_host_ed25519_key -P ""
       deployment.keys = {
         mob-dev-ssh_host_rsa_key = { destDir = "/etc/ssh"; name = "ssh_host_rsa_key"; };
         mob-dev-ssh_host_ed25519_key = { destDir = "/etc/ssh"; name = "ssh_host_ed25519_key"; };
+      };
+    };
+
+    nixosModules.gce-collab = { dns, ...}: {
+      imports = [
+        self.nixosModules.common
+        ./roles/iohk-mob-dev-server.nix
+      ];
+
+      networking = { inherit (dns) hostName domain; };
+
+      # Preserve ssh host keys
+      # ssh-keygen -t ed25519 -C "mob-dev_ssh_host_key" -f mob-dev_ssh_host_ed25519_key -P ""
+      deployment.keys = {
+        collab-ssh_host_rsa_key = { destDir = "/etc/ssh"; name = "ssh_host_rsa_key"; };
+        collab-ssh_host_ed25519_key = { destDir = "/etc/ssh"; name = "ssh_host_ed25519_key"; };
       };
     };
 
@@ -121,22 +142,32 @@
       imports = [ "${specialArgs.flakeInputs.nixpkgs-unstable}/nixos/modules/services/misc/nix-daemon.nix" ];
     };
 
-    nixosConfigurations.gce-mob-dev = lib.nixosSystem {
+    nixosModules.gce-serial-console = {
+      # gcloud compute --project=iohk-323702 connect-to-serial-port n-048aa26e7caa11e58b4cda214536e17f-gce-mob-dev --zone=australia-southeast1-a
+      deployment.gce.metadata.serial-port-enable = "TRUE";
+      imports = [ inputs.nixops-utils.nixosModules.serial-console ];
+    };
+
+    nixosConfigurations = lib.mapAttrs (name: module: lib.nixosSystem {
       inherit lib;
-      specialArgs = specialArgs // {
-        name = "gce-mob-dev";
-      };
+      specialArgs = specialArgs // { inherit name; };
       system = "x86_64-linux";
       modules = [
         inputs.nixops-utils.nixosModules.dummy-nixops
-        self.nixosModules.gce-mob-dev
-        self.nixosModules.temp
+        self.nixosModules.pretend-rootfs
+        self.nixosModules.${name}
+        module
       ];
+    }) {
+      gce-mob-dev = {};
+      gce-collab = {};
     };
 
     nixopsConfigurations.default = { gceAccessKeyFile ? null }: let
       specialArgs' = lib.recursiveUpdate specialArgs {
-        creds.gce.accessKey = lib.fileContents gceAccessKeyFile;
+        creds.gce.accessKey = if gceAccessKeyFile != null
+          then lib.fileContents gceAccessKeyFile
+          else lib.trace "Warning: `gceAccessKeyFile` nixops deployment parameter was not set." "";
       };
       hackNixopsLib = final: prev: {
         nixosSystem = final.nodelib.specialNixosSystem prev.nixosSystem specialArgs';
@@ -154,7 +185,7 @@
         storage.legacy = {};
       };
 
-      gce-mob-dev = { resources, ... }: {
+      defaults = {
         deployment.targetEnv = "gce";
         deployment.gce = {
           # credentials
@@ -162,11 +193,6 @@
 
           # instance properties
           region = "australia-southeast1-a";
-          instanceType = "e2-standard-4";
-
-          # This should be plenty for the rootfs.
-          # /nix/store is mounted with a separate disk.
-          rootDiskSize = 30;
 
           # VPC Firewall rules are controlled by tags.
           # gcloud compute --project=iohk-323702 firewall-rules create jitsi-videobridge --description="Allow incoming connections for jitsi-meet calls" --direction=INGRESS --priority=1000 --network=default --action=ALLOW --rules=tcp:4443,udp:10000 --source-ranges=0.0.0.0/0 --target-tags=iohk,adrestia
@@ -174,25 +200,36 @@
           tags = [
             "iohk"
             "adrestia"
+          ];
+        };
+        imports = [
+          self.nixosModules.gce-serial-console
+        ];
+        nixpkgs.overlays = [(self: super: (super.prefer-remote-fetch self super))];
+      };
+
+      gce-mob-dev = { resources, ... }: {
+        deployment.gce = {
+          # instance properties
+          instanceType = "e2-standard-4";
+
+          # This should be plenty for the rootfs.
+          # /nix/store is mounted with a separate disk.
+          rootDiskSize = 30;
+
+          # VPC Firewall rules are controlled by tags.
+          # This allows HTTP(s) traffic to reach the instance.
+          tags = [
             "http-server"
             "https-server"
           ];
           scheduling.automaticRestart = true;
           scheduling.onHostMaintenance = "MIGRATE";
-
-          # canIpForward = true;
-          metadata = {
-            serial-port-enable = "TRUE";
-          };
         };
 
         imports = [
-        # # gcloud compute --project=iohk-323702 connect-to-serial-port n-048aa26e7caa11e58b4cda214536e17f-gce-mob-dev --zone=australia-southeast1-a
-          inputs.nixops-utils.nixosModules.serial-console
           self.nixosModules.gce-mob-dev
         ];
-
-        nixpkgs.overlays = [(self: super: (super.prefer-remote-fetch self super))];
 
         adp.backup.s3.enable = true;
         services.s3fs.mounts.backup = with resources.s3Buckets.backup; {

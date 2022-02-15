@@ -1,6 +1,6 @@
 { pkgs, flakeInputs, ... }: {
   rodnix.enable = true;
-  rodnix.repo = toString flakeInputs.rvl.sourceInfo;
+  rodnix.repo = toString flakeInputs.self.sourceInfo;
 
   services.openssh = {
     enable = true;

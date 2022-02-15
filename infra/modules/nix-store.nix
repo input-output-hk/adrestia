@@ -1,5 +1,6 @@
 { lib, ... }: {
-
+  # Mount a separate volume on /nix/store, to avoid running out of space on the rootfs.
+  # The partition with label "nix-store" should be provisioned with nixops.
   fileSystems.nix-store = {
     mountPoint = "/nix/store";
     label = "nix-store";
@@ -11,7 +12,6 @@
   };
 
   nix = {
-    autoOptimiseStore = true;
     gc = {
       automatic = true;
       dates = "daily";
@@ -19,14 +19,12 @@
       # the specified number of days.
       options = "--delete-older-than 30d";
     };
-    extraOptions = let
+    settings = {
+      auto-optimise-store = true;
+    } // lib.mapAttrs (name: mib: mib * 1024 * 1024) {
       # Free up to 2GiB whenever there is less than 200MiB left:
-      megabytes = {
-        min-free = 200;
-        max-free = 2048;
-      };
-    in lib.concatStringsSep "\n" (lib.mapAttrsToList (name: mib: ''
-      ${name} = ${toString (mib * 1024 * 1024)}
-    '') megabytes);
+      min-free = 200;
+      max-free = 2048;
+    };
   };
 }
