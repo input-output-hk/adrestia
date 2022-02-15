@@ -325,7 +325,7 @@
     };
 
     nix = pkgs.pkgsUnstable.nixUnstable;
-    nixops = pkgs.pkgsUnstable.nixopsUnstable;
+    nixops = pkgs.nixopsUnstable;
 
     flake = {
       packages = shellScripts // lib.mapAttrs
@@ -359,6 +359,8 @@
             # Use a nixops state file local to this repo.
             export NIXOPS_STATE="$top/.state/${NIXOPS_DEPLOYMENT}.nixops";
             export BITWARDENCLI_APPDATA_DIR="$top/.state";
+
+            export NIX_PATH=nixpkgs=${toString nixpkgs}
 
             echo "NixOps: ${nixops.version}"
             echo "State file: $(realpath --relative-to="$top" $NIXOPS_STATE)"
