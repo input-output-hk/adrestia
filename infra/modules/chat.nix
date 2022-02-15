@@ -60,6 +60,10 @@ in {
         locations."~* ^(\/_matrix|\/_synapse\/client)" = {
           proxyPass = "http://[::1]:8008"; # without a trailing /
           extraConfig = ''
+            # Sometimes the CORS headers aren't set properly.
+            proxy_hide_header Access-Control-Allow-Origin;
+            add_header Access-Control-Allow-Origin * always;
+
             # Nginx by default only allows file uploads up to 1M in size
 
             # Increase client_max_body_size to match max_upload_size
@@ -84,26 +88,34 @@ in {
             showLabsSettings = true;
             # https://github.com/matrix-org/matrix-react-sdk/blob/develop/src/settings/Settings.tsx
             features = {
-              feature_spaces_metaspaces = true;
+              # feature_spaces_metaspaces = true;
               feature_thread = true;
-              feature_pinning = true;
-              feature_custom_status = true;
+              # feature_pinning = true;
+              # feature_custom_status = true;
               feature_dnd = true;
               # feature_presence_in_room_list = true;
               # feature_maximised_widgets = true;
               feature_latex_maths = true;
             };
             settingDefaults = {
-              "UIFeature.communities" = false;
+              # "UIFeature.communities" = false;
               "UIFeature.shareSocial" = false;
               "UIFeature.feedback" = false;
+              # "UIFeature.urlPreviews" = true;
+              "UIFeature.registration" = false;
             };
             disable_custom_urls = true;
             permalinkPrefix = "https://${dns.hosts.element}";
-            jitsi.preferredDomain = dns.hosts.jitsi;
-            # jitsi.preferredDomain = "jitsi.riot.im";
+            # jitsi.preferredDomain = dns.hosts.jitsi;
           };
         };
+
+        extraConfig = ''
+          add_header X-Frame-Options SAMEORIGIN;
+          add_header X-Content-Type-Options nosniff;
+          add_header X-XSS-Protection "1; mode=block";
+          add_header Content-Security-Policy "frame-ancestors 'none'";
+        '';
       };
   };
 
