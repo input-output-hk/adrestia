@@ -1,6 +1,7 @@
 ---
-title: 01-Installation
+title: Installation
 date: 2021-02-09
+order: 1
 ---
 
 Presuming nix is already installed, Nix flakes are available from Nix version 2.4 and up.

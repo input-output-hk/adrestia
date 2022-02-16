@@ -1,6 +1,7 @@
 ---
-title: 03-Create a Development Environment
+title: Create a Development Environment
 date: 2021-02-09
+order: 3
 ---
 
 ## Hacking

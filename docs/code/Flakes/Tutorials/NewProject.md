@@ -1,6 +1,7 @@
 ---
-title: 02-Create a New Flakes Project
+title: Create a New Flakes Project
 date: 2021-02-09
+order: 2
 ---
 
 ## Creating an example project
