@@ -31,3 +31,7 @@ order: 3
 ```
 
 We could then run `nix develop` and we would enter a shell with access to python.
+
+## Reference
+
+[nix develop man page](https://nixos.org/manual/nix/stable/command-ref/new-cli/nix3-develop.html)
