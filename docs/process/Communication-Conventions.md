@@ -19,7 +19,7 @@ communication, and the use of inappropriate mediums of communication.
 
 ## Solution
 
-We will use a private Matrix server for team chats, in place of the
+We will use a private Matrix homeserver for team chats, in place of the
 `#adrestia-secret-fort` slack channel, which will be archived.
 
 Team members are asked to review messages from Slack once per day. They may

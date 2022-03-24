@@ -2,6 +2,8 @@
 
 Our team's homeserver is [adrestia.iohkdev.io](https://matrix.adrestia.iohkdev.io/).
 
+All team channels are contained within the [Adrestia Space](https://matrix.to/#/#adrestia:adrestia.iohkdev.io).
+
 ## Web client
 
 You can log in immediately with your web browser, without installing any client software by visiting:
@@ -18,11 +20,13 @@ can log in.
 Some people have username/password accounts. These were created manually with
 the Matrix Synapse user admin API.
 
-Example usernames:
- - IOHK Google account: [@rodney.lorrimar:adrestia.iohkdev.io](https://element.adrestia.iohkdev.io/#/user/@rodney.lorrimar:adrestia.iohkdev.io)
- - Username/password account: [@rvl:adrestia.iohkdev.io](https://element.adrestia.iohkdev.io/#/user/@rvl:adrestia.iohkdev.io)
+| Login Type | Example username | Auth method | Who administers accounts |
+| ----------- | ---------------- | ---------| --------------------- |
+| IOHK Google | [@rodney.lorrimar:adrestia.iohkdev.io](https://element.adrestia.iohkdev.io/#/user/@rodney.lorrimar:adrestia.iohkdev.io) | SSO via [account.google.com](https://account.google.com) | GApps domain admin |
+| Homeserver account | [@rvl:adrestia.iohkdev.io](https://element.adrestia.iohkdev.io/#/user/@rvl:adrestia.iohkdev.io) | Username/Password | `root@adrestia.iohkdev.io` |
+| Matrix Federated | [@rvl:matrix.org](https://app.element.io/#/user/@rvl:matrix.org) | Username/Password | User themself |
 
-### Other homeservers
+### Federated Login
 
 If you have a user on another Matrix homeserver (e.g. [matrix.org][]), then you
 can ask to be invited into rooms on our homeserver.
