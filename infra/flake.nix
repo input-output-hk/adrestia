@@ -173,6 +173,13 @@
         nixosSystem = final.nodelib.specialNixosSystem prev.nixosSystem specialArgs';
       };
       inherit (specialArgs') dns creds;
+      gceProps = {
+        region = "australia-southeast1";
+        tags = [
+          "iohk"
+          "adrestia"
+        ];
+      };
     in {
       nixpkgs = mylib.lib.extendNixpkgs
         (nixpkgs.lib.composeExtensions self.libOverlay hackNixopsLib)
@@ -187,20 +194,11 @@
 
       defaults = {
         deployment.targetEnv = "gce";
-        deployment.gce = {
-          # credentials
-          inherit (creds.gce) project serviceAccount accessKey;
-
+        deployment.gce = creds.gce // {
           # instance properties
-          region = "australia-southeast1-a";
-
-          # VPC Firewall rules are controlled by tags.
-          # gcloud compute --project=iohk-323702 firewall-rules create jitsi-videobridge --description="Allow incoming connections for jitsi-meet calls" --direction=INGRESS --priority=1000 --network=default --action=ALLOW --rules=tcp:4443,udp:10000 --source-ranges=0.0.0.0/0 --target-tags=iohk,adrestia
-          # gcloud compute --project=iohk-323702 firewall-rules create emacs-crdt --description="Allow incoming connections for crdt.el sessions." --direction=INGRESS --priority=1000 --network=default --action=ALLOW --rules=tcp:6530-6539 --source-ranges=0.0.0.0/0 --target-tags=iohk,adrestia
-          tags = [
-            "iohk"
-            "adrestia"
-          ];
+          region = "${gceProps.region}-a";
+          inherit (gceProps) tags;
+          # network = resources.gceNetworks.adp-net;
         };
         imports = [
           self.nixosModules.gce-serial-console
@@ -208,21 +206,27 @@
         nixpkgs.overlays = [(self: super: (super.prefer-remote-fetch self super))];
       };
 
-      gce-mob-dev = { resources, ... }: {
+      gce-adp-web = { resources, ... }: {
         deployment.gce = {
+          machineName = "n-048aa26e7caa11e58b4cda214536e17f-gce-mob-dev";
+
           # instance properties
-          instanceType = "e2-standard-4";
+          instanceType = "e2-small";
 
           # This should be plenty for the rootfs.
           # /nix/store is mounted with a separate disk.
           rootDiskSize = 30;
 
           # VPC Firewall rules are controlled by tags.
-          # This allows HTTP(s) traffic to reach the instance.
           tags = [
-            "http-server"
-            "https-server"
+            # This allows HTTP(s) traffic to reach the instance.
+            "web-server"
+            # Allow jitsi videobridge traffic
+            # "jitsi-videobridge"
+            # Open ports for emacs crdt.el
+            "emacs-crdt"
           ];
+
           scheduling.automaticRestart = true;
           scheduling.onHostMaintenance = "MIGRATE";
         };
@@ -247,6 +251,41 @@
         };
       };
 
+      resources.gceNetworks.adp-net = creds.gce // {
+        name = "default";
+        firewall = {
+          web-server = {
+            targetTags = [ "web-server" ];
+            allowed.tcp = [ 80 443 ];
+          };
+
+          # Allow incoming connections for jitsi-meet calls.
+          jitsi-videobridge = {
+            targetTags = [ "jitsi-videobridge" ];
+            allowed.tcp = [ 4443 ];
+            allowed.udp = [ 10000 ];
+            # gcloud compute --project=iohk-323702 firewall-rules create jitsi-videobridge --description="Allow incoming connections for jitsi-meet calls" --direction=INGRESS --priority=1000 --network=default --action=ALLOW --rules=tcp:4443,udp:10000 --source-ranges=0.0.0.0/0 --target-tags=iohk,adrestia
+          };
+          # Allow incoming connections for crdt.el sessions.
+          emacs-crdt = {
+            # gcloud compute --project=iohk-323702 firewall-rules create emacs-crdt --description="Allow incoming connections for crdt.el sessions." --direction=INGRESS --priority=1000 --network=default --action=ALLOW --rules=tcp:6530-6539 --source-ranges=0.0.0.0/0 --target-tags=iohk,adrestia
+            targetTags = [ "emacs-crdt" ];
+            allowed.tcp = [ "6530-6539" ];
+          };
+        };
+      };
+      resources.gceStaticIPs = {
+        adp-web-ip = { resources, lib, ... }: creds.gce // {
+          inherit (resources.machines.gce-mob-dev.deployment.gce) labels;
+          inherit (gceProps) region;
+
+          # name = "${namespace.machineName}-ip";
+          name = "adp-web";
+          ipAddress = "34.151.90.232";
+          publicIPv4 = resources.gceStaticIPs.adp-web-ip.ipAddress;
+        };
+      };
+
       resources.route53HostedZones.${dns.zone} = {
         name = "${dns.zone}.";
         comment = "Adrestia dev hosted zone";
@@ -259,7 +298,8 @@
           ttl = 60;
           # fixme: how to get config.networking.publicIPv4 from nixops-gcp?
           # recordValues = [ resources.machines.gce-mob-dev.publicIpv4 ];
-          recordValues = [ dns.ipv4.gce-mob-dev ];
+          # like this?
+          recordValues = [ resources.gceStaticIPs.adp-web-ip.publicIPv4 ];
           inherit recordType domainName;
           inherit (creds.aws) accessKeyId;
         };
