@@ -66,7 +66,10 @@
     };
     libOverlay = mylib.lib.composeExtensionAttrs self.libOverlays;
     libOverlays = {
-      base = final: prev: { };
+      release-compat = final: prev: {
+        # required for self.nixosModules.release-compat which imports nix-daemon service from unstable.
+        mkRenamedOptionModuleWith = { from, to, ... }: final.mkRenamedOptionModule from to;
+      };
       mylib = mylib.libOverlay;
       custom-config = final: prev: { inherit customConfig; };
     };
