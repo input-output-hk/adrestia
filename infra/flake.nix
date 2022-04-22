@@ -8,28 +8,37 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     flake-utils.url = github:numtide/flake-utils;
-
     customConfig.url = github:input-output-hk/empty-flake;
 
-    basic.url = git+https://git.lorrimar.id.au/rodney/config.git?dir=basic;
-    basic.inputs.emacs.follows = "emacs";
-    basic.inputs.mylib.follows = "mylib";
-    basic.inputs.rodnix.follows = "rodnix";
-    emacs.url = git+https://git.lorrimar.id.au/rodney/config.git?dir=emacs;
-    emacs.inputs.mylib.follows = "mylib";
+    # Import some useful stuff from rvl's config repo
+    basic = {
+      url = git+https://git.lorrimar.id.au/rodney/config.git?dir=basic;
+      inputs.emacs.follows = "emacs";
+      inputs.mylib.follows = "mylib";
+      inputs.rodnix.follows = "rodnix";
+    };
+    emacs = {
+      url = git+https://git.lorrimar.id.au/rodney/config.git?dir=emacs;
+      inputs.mylib.follows = "mylib";
+    };
     iohk-binary-cache.url = git+https://git.lorrimar.id.au/rodney/config.git?dir=iohk-binary-cache;
     mylib.url = git+https://git.lorrimar.id.au/rodney/config.git?dir=mylib;
-    rodnix.url = git+https://git.lorrimar.id.au/rodney/config.git?dir=rodnix;
-    rodnix.inputs.mylib.follows = "mylib";
-    scripts.url = git+https://git.lorrimar.id.au/rodney/config.git?dir=scripts;
-    scripts.inputs.mylib.follows = "mylib";
+    rodnix = {
+      url = git+https://git.lorrimar.id.au/rodney/config.git?dir=rodnix;
+      inputs.mylib.follows = "mylib";
+    };
+    scripts = {
+      url = git+https://git.lorrimar.id.au/rodney/config.git?dir=scripts;
+      inputs.scripting.follows = "scripting";
+    };
+    scripting.url = git+https://git.lorrimar.id.au/rodney/config.git?dir=scripting;
     nixops-utils.url = git+https://git.lorrimar.id.au/rodney/config.git?dir=nixops-utils;
   };
 
-  outputs = { self, flake-utils, mylib, ... }@inputs: let
+  outputs = { self, flake-utils, mylib, ... }: let
     inherit (nixpkgs) lib;
-    nixpkgs = mylib.lib.extendNixpkgs self.libOverlay self.overlay inputs.nixpkgs;
-    nixpkgs-unstable = mylib.lib.extendNixpkgs self.libOverlay self.overlay inputs.nixpkgs-unstable;
+    nixpkgs = mylib.lib.extendNixpkgs self.libOverlay self.overlay self.inputs.nixpkgs;
+    nixpkgs-unstable = mylib.lib.extendNixpkgs self.libOverlay self.overlay self.inputs.nixpkgs-unstable;
 
     customConfig = lib.recursiveUpdate {
       repo = toString self.sourceInfo;
@@ -38,8 +47,8 @@
     # Inject dependencies using module arguments.
     specialArgs = {
       inherit customConfig;
-      flakeInputs = inputs // {
-        inherit self nixpkgs nixpkgs-unstable;
+      flakeInputs = self.inputs // {
+        inherit (self) nixpkgs nixpkgs-unstable;
       };
       dns = import ./dns.nix { inherit lib; };
       creds = import ./creds.nix;
@@ -52,13 +61,14 @@
       self.overlays
       (mylib.lib.applyLibOverlay self.libOverlay);
     overlays = {
-      emacs = inputs.emacs.overlay;
-      mylib = mylib.overlay;
-      rodnix = inputs.rodnix.overlay;
-      scripts = inputs.scripts.overlay;
+      emacs = self.inputs.emacs.overlay;
+      mylib = self.inputs.mylib.overlay;
+      rodnix = self.inputs.rodnix.overlay;
+      scripting = self.inputs.scripting.overlay;
+      scripts = self.inputs.scripts.overlay;
       cherry-pick-unstable = final: prev: {
-        pkgsUnstable = inputs.nixpkgs-unstable.legacyPackages.${final.system};
-        pkgsRelease = inputs.nixpkgs.legacyPackages.${final.system};
+        pkgsUnstable = self.inputs.nixpkgs-unstable.legacyPackages.${final.system};
+        pkgsRelease = self.inputs.nixpkgs.legacyPackages.${final.system};
       };
       cherry-pick-element-latest = final: prev: {
         inherit (final.pkgsUnstable) element-web;
@@ -78,8 +88,8 @@
       imports = [
         self.nixosModules.release-compat
         self.nixosModules.keys
-        inputs.rodnix.nixosModule
-        inputs.rodnix.nixopsModule
+        self.inputs.rodnix.nixosModule
+        self.inputs.rodnix.nixopsModule
         ./modules/basics.nix
         ./modules/backup.nix
       ];
@@ -101,7 +111,7 @@
     nixosModules.gce-mob-dev = { dns, ...}: {
       imports = [
         self.nixosModules.common
-        inputs.basic.roles.hm
+        self.inputs.basic.roles.hm
         # TODO: move some services over to gce-collab
         ./roles/mob-prog.nix
         ./roles/iohk-mob-dev-server.nix
@@ -156,7 +166,7 @@
       specialArgs = specialArgs // { inherit name; };
       system = "x86_64-linux";
       modules = [
-        inputs.nixops-utils.nixosModules.dummy-nixops
+        self.inputs.nixops-utils.nixosModules.dummy-nixops
         self.nixosModules.pretend-rootfs
         self.nixosModules.${name}
         module
@@ -235,6 +245,8 @@
         };
 
         imports = [
+          # gcloud compute --project=iohk-323702 connect-to-serial-port n-048aa26e7caa11e58b4cda214536e17f-gce-mob-dev --zone=australia-southeast1-a
+          self.inputs.nixops-utils.serial-console
           self.nixosModules.gce-mob-dev
         ];
 
