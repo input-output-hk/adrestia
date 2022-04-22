@@ -14,11 +14,11 @@
       },
       "locked": {
         "dir": "basic",
-        "lastModified": 1643777343,
-        "narHash": "sha256-krq3V/FuyucuygLNVAzgSZu7ALu+6CaKchY7mGCXM9s=",
+        "lastModified": 1650608484,
+        "narHash": "sha256-y9MOoZ6Vm0HFFAkq8E/3J9kUFMVtEZHfKvaM3NbZlBk=",
         "ref": "master",
-        "rev": "dad482986ea381acaf06cbd80c25adbfaecd8766",
-        "revCount": 294,
+        "rev": "9613a3d4c6276ab739b84f735c4c2bc3ba44f966",
+        "revCount": 406,
         "type": "git",
         "url": "https://git.lorrimar.id.au/rodney/config.git?dir=basic"
       },
@@ -55,11 +55,11 @@
       },
       "locked": {
         "dir": "emacs",
-        "lastModified": 1643777343,
-        "narHash": "sha256-krq3V/FuyucuygLNVAzgSZu7ALu+6CaKchY7mGCXM9s=",
+        "lastModified": 1650608484,
+        "narHash": "sha256-y9MOoZ6Vm0HFFAkq8E/3J9kUFMVtEZHfKvaM3NbZlBk=",
         "ref": "master",
-        "rev": "dad482986ea381acaf06cbd80c25adbfaecd8766",
-        "revCount": 294,
+        "rev": "9613a3d4c6276ab739b84f735c4c2bc3ba44f966",
+        "revCount": 406,
         "type": "git",
         "url": "https://git.lorrimar.id.au/rodney/config.git?dir=emacs"
       },
@@ -71,11 +71,11 @@
     },
     "emacs-overlay": {
       "locked": {
-        "lastModified": 1643770667,
-        "narHash": "sha256-vVyCvkF7IVIf8ruMQS/fqQ/ahRFPjv0nxGUSqI2z594=",
+        "lastModified": 1650598585,
+        "narHash": "sha256-g18rU53QAVwM+aeYWRflSv67z0ogA6+zMQ+TAUdhbgI=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "e267a3c53088c9ab2a77335b6740b37041fa450f",
+        "rev": "f4835cdd39c5e36ee0da62fb2fa8d8ef75f68f5f",
         "type": "github"
       },
       "original": {
@@ -86,12 +86,10 @@
     },
     "flake-utils": {
       "locked": {
-        "lastModified": 1642700792,
-        "narHash": "sha256-XqHrk7hFb+zBvRg6Ghl+AZDq03ov6OshJLiSWOoX5es=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "846b2ae0fc4cc943637d3d1def4454213e203cba",
-        "type": "github"
+        "lastModified": 0,
+        "narHash": "sha256-OWKJratjt2RW151VUlJPRALb7OU2S5s+f0vLj4o1bHM=",
+        "path": "/nix/store/6pakgwxwz07gifgrzgckj6730qmk9k1g-source",
+        "type": "path"
       },
       "original": {
         "id": "flake-utils",
@@ -100,11 +98,11 @@
     },
     "flake-utils_2": {
       "locked": {
-        "lastModified": 1642700792,
-        "narHash": "sha256-XqHrk7hFb+zBvRg6Ghl+AZDq03ov6OshJLiSWOoX5es=",
+        "lastModified": 1649676176,
+        "narHash": "sha256-OWKJratjt2RW151VUlJPRALb7OU2S5s+f0vLj4o1bHM=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "846b2ae0fc4cc943637d3d1def4454213e203cba",
+        "rev": "a4b154ebbdc88c8498a5c7b01589addc9e9cb678",
         "type": "github"
       },
       "original": {
@@ -115,12 +113,10 @@
     },
     "flake-utils_3": {
       "locked": {
-        "lastModified": 1642700792,
-        "narHash": "sha256-XqHrk7hFb+zBvRg6Ghl+AZDq03ov6OshJLiSWOoX5es=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "846b2ae0fc4cc943637d3d1def4454213e203cba",
-        "type": "github"
+        "lastModified": 0,
+        "narHash": "sha256-OWKJratjt2RW151VUlJPRALb7OU2S5s+f0vLj4o1bHM=",
+        "path": "/nix/store/6pakgwxwz07gifgrzgckj6730qmk9k1g-source",
+        "type": "path"
       },
       "original": {
         "id": "flake-utils",
@@ -134,11 +130,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1642653493,
-        "narHash": "sha256-22mGPjiHUo2Jmze4IjXCJLjeK2mbvvCztHmUyUMr4yw=",
+        "lastModified": 1650841545,
+        "narHash": "sha256-AF3fk+p/mHbdtyrI3kpms+MoMVOdGIBGJ+7LT7WWdaU=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "28b9ae40c45c5e7711c353fee1b7af734e293979",
+        "rev": "236c6ec21420e44c38ec76de4fc3335bec1859b5",
         "type": "github"
       },
       "original": {
@@ -153,12 +149,10 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1643579427,
-        "narHash": "sha256-tV4M4+Aqd/3ZjEz1Q07j89KIlkt1oFH34RzpBkUeO/0=",
-        "owner": "nix-community",
-        "repo": "home-manager",
-        "rev": "a52aed72c84a2a10102a92397339fa01fc0fe9cf",
-        "type": "github"
+        "lastModified": 0,
+        "narHash": "sha256-308c2cM4hW9AW6dSQ080ycXGyEJGkG/OwOINkYL9Mnw=",
+        "path": "/nix/store/z0iphsqsjljbm98qwzkm4a0m9scdxgrw-source",
+        "type": "path"
       },
       "original": {
         "id": "home-manager",
@@ -168,11 +162,11 @@
     "iohk-binary-cache": {
       "locked": {
         "dir": "iohk-binary-cache",
-        "lastModified": 1643777343,
-        "narHash": "sha256-krq3V/FuyucuygLNVAzgSZu7ALu+6CaKchY7mGCXM9s=",
+        "lastModified": 1650608484,
+        "narHash": "sha256-y9MOoZ6Vm0HFFAkq8E/3J9kUFMVtEZHfKvaM3NbZlBk=",
         "ref": "master",
-        "rev": "dad482986ea381acaf06cbd80c25adbfaecd8766",
-        "revCount": 294,
+        "rev": "9613a3d4c6276ab739b84f735c4c2bc3ba44f966",
+        "revCount": 406,
         "type": "git",
         "url": "https://git.lorrimar.id.au/rodney/config.git?dir=iohk-binary-cache"
       },
@@ -188,11 +182,11 @@
       },
       "locked": {
         "dir": "mylib",
-        "lastModified": 1643777343,
-        "narHash": "sha256-krq3V/FuyucuygLNVAzgSZu7ALu+6CaKchY7mGCXM9s=",
+        "lastModified": 1650608484,
+        "narHash": "sha256-y9MOoZ6Vm0HFFAkq8E/3J9kUFMVtEZHfKvaM3NbZlBk=",
         "ref": "master",
-        "rev": "dad482986ea381acaf06cbd80c25adbfaecd8766",
-        "revCount": 294,
+        "rev": "9613a3d4c6276ab739b84f735c4c2bc3ba44f966",
+        "revCount": 406,
         "type": "git",
         "url": "https://git.lorrimar.id.au/rodney/config.git?dir=mylib"
       },
@@ -205,11 +199,11 @@
     "nixops-utils": {
       "locked": {
         "dir": "nixops-utils",
-        "lastModified": 1643777343,
-        "narHash": "sha256-krq3V/FuyucuygLNVAzgSZu7ALu+6CaKchY7mGCXM9s=",
+        "lastModified": 1650608484,
+        "narHash": "sha256-y9MOoZ6Vm0HFFAkq8E/3J9kUFMVtEZHfKvaM3NbZlBk=",
         "ref": "master",
-        "rev": "dad482986ea381acaf06cbd80c25adbfaecd8766",
-        "revCount": 294,
+        "rev": "9613a3d4c6276ab739b84f735c4c2bc3ba44f966",
+        "revCount": 406,
         "type": "git",
         "url": "https://git.lorrimar.id.au/rodney/config.git?dir=nixops-utils"
       },
@@ -221,12 +215,10 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1643472818,
-        "narHash": "sha256-qzVPxKDUubYIxKRSuDl/JgzXWSmGvUVYny9SxFMfPJM=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "7f65e4abd5ecaad12d2d26e4380d1a7d8edafea7",
-        "type": "github"
+        "lastModified": 0,
+        "narHash": "sha256-70ZWAlOQ9nAZ08OU6WY7n4Ij2kOO199dLfNlvO/+pf8=",
+        "path": "/nix/store/h96rpxzp4q192r3fnwzclg3rmdg4nlqk-source",
+        "type": "path"
       },
       "original": {
         "id": "nixpkgs",
@@ -235,11 +227,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1648034513,
-        "narHash": "sha256-EMeo6i6B3aTBbAhfFYlr6OWCLcXbiePsQTDeAysnOaA=",
+        "lastModified": 1650878143,
+        "narHash": "sha256-2jY3TLNMEBBdv2ndNQuvdRwtP3T4kodujm7Qout53qM=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "7aa377336ec93fbb70150804679d222f14c5e87a",
+        "rev": "e76c8952c938d4b49e70e5e24f6d7568749c7b5d",
         "type": "github"
       },
       "original": {
@@ -251,12 +243,10 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1643472818,
-        "narHash": "sha256-qzVPxKDUubYIxKRSuDl/JgzXWSmGvUVYny9SxFMfPJM=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "7f65e4abd5ecaad12d2d26e4380d1a7d8edafea7",
-        "type": "github"
+        "lastModified": 0,
+        "narHash": "sha256-70ZWAlOQ9nAZ08OU6WY7n4Ij2kOO199dLfNlvO/+pf8=",
+        "path": "/nix/store/h96rpxzp4q192r3fnwzclg3rmdg4nlqk-source",
+        "type": "path"
       },
       "original": {
         "id": "nixpkgs",
@@ -265,11 +255,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1647992509,
-        "narHash": "sha256-AG40Nt5OWz0LBs5p457emOuwLKOvTtcv/2fUdnEN3Ws=",
+        "lastModified": 1650830814,
+        "narHash": "sha256-P7vGsHdS19eHVUJt4BeQA4JfauL2nOpEcnYKIbX76YM=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "d2caa9377539e3b5ff1272ac3aa2d15f3081069f",
+        "rev": "c254b8c915ac912ae9ee9dc74eac555ccbf33795",
         "type": "github"
       },
       "original": {
@@ -281,12 +271,10 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1643472818,
-        "narHash": "sha256-qzVPxKDUubYIxKRSuDl/JgzXWSmGvUVYny9SxFMfPJM=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "7f65e4abd5ecaad12d2d26e4380d1a7d8edafea7",
-        "type": "github"
+        "lastModified": 0,
+        "narHash": "sha256-70ZWAlOQ9nAZ08OU6WY7n4Ij2kOO199dLfNlvO/+pf8=",
+        "path": "/nix/store/h96rpxzp4q192r3fnwzclg3rmdg4nlqk-source",
+        "type": "path"
       },
       "original": {
         "id": "nixpkgs",
@@ -295,26 +283,10 @@
     },
     "nixpkgs_5": {
       "locked": {
-        "lastModified": 1643472818,
-        "narHash": "sha256-qzVPxKDUubYIxKRSuDl/JgzXWSmGvUVYny9SxFMfPJM=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "7f65e4abd5ecaad12d2d26e4380d1a7d8edafea7",
-        "type": "github"
-      },
-      "original": {
-        "id": "nixpkgs",
-        "type": "indirect"
-      }
-    },
-    "nixpkgs_6": {
-      "locked": {
-        "lastModified": 1643472818,
-        "narHash": "sha256-qzVPxKDUubYIxKRSuDl/JgzXWSmGvUVYny9SxFMfPJM=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "7f65e4abd5ecaad12d2d26e4380d1a7d8edafea7",
-        "type": "github"
+        "lastModified": 0,
+        "narHash": "sha256-70ZWAlOQ9nAZ08OU6WY7n4Ij2kOO199dLfNlvO/+pf8=",
+        "path": "/nix/store/h96rpxzp4q192r3fnwzclg3rmdg4nlqk-source",
+        "type": "path"
       },
       "original": {
         "id": "nixpkgs",
@@ -323,12 +295,10 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1643768062,
-        "narHash": "sha256-kkoZkEUGLEvMFxoqqjHlHpc6bs2aYH7FISW7WfJRVyQ=",
-        "owner": "nix-community",
-        "repo": "NUR",
-        "rev": "6b956239ed1f9ef75836dd7212b5e531f534b3b7",
-        "type": "github"
+        "lastModified": 0,
+        "narHash": "sha256-NUIcag7Mbs2WxmRZvsJL8M410JlXXAdxEJYyzJuPwpY=",
+        "path": "/nix/store/5ng2jc5hl5bjkisnjra04wqp98a8v3gq-source",
+        "type": "path"
       },
       "original": {
         "id": "nur",
@@ -340,16 +310,15 @@
         "home-manager": "home-manager_2",
         "mylib": [
           "mylib"
-        ],
-        "nixpkgs": "nixpkgs_5"
+        ]
       },
       "locked": {
         "dir": "rodnix",
-        "lastModified": 1643777343,
-        "narHash": "sha256-krq3V/FuyucuygLNVAzgSZu7ALu+6CaKchY7mGCXM9s=",
+        "lastModified": 1650608484,
+        "narHash": "sha256-y9MOoZ6Vm0HFFAkq8E/3J9kUFMVtEZHfKvaM3NbZlBk=",
         "ref": "master",
-        "rev": "dad482986ea381acaf06cbd80c25adbfaecd8766",
-        "revCount": 294,
+        "rev": "9613a3d4c6276ab739b84f735c4c2bc3ba44f966",
+        "revCount": 406,
         "type": "git",
         "url": "https://git.lorrimar.id.au/rodney/config.git?dir=rodnix"
       },
@@ -372,24 +341,42 @@
         "nixpkgs": "nixpkgs_3",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "rodnix": "rodnix",
+        "scripting": "scripting",
         "scripts": "scripts"
+      }
+    },
+    "scripting": {
+      "locked": {
+        "dir": "scripting",
+        "lastModified": 1650608484,
+        "narHash": "sha256-y9MOoZ6Vm0HFFAkq8E/3J9kUFMVtEZHfKvaM3NbZlBk=",
+        "ref": "master",
+        "rev": "9613a3d4c6276ab739b84f735c4c2bc3ba44f966",
+        "revCount": 406,
+        "type": "git",
+        "url": "https://git.lorrimar.id.au/rodney/config.git?dir=scripting"
+      },
+      "original": {
+        "dir": "scripting",
+        "type": "git",
+        "url": "https://git.lorrimar.id.au/rodney/config.git?dir=scripting"
       }
     },
     "scripts": {
       "inputs": {
         "flake-utils": "flake-utils_3",
-        "mylib": [
-          "mylib"
-        ],
-        "nixpkgs": "nixpkgs_6"
+        "nixpkgs": "nixpkgs_5",
+        "scripting": [
+          "scripting"
+        ]
       },
       "locked": {
         "dir": "scripts",
-        "lastModified": 1643777343,
-        "narHash": "sha256-krq3V/FuyucuygLNVAzgSZu7ALu+6CaKchY7mGCXM9s=",
+        "lastModified": 1650608484,
+        "narHash": "sha256-y9MOoZ6Vm0HFFAkq8E/3J9kUFMVtEZHfKvaM3NbZlBk=",
         "ref": "master",
-        "rev": "dad482986ea381acaf06cbd80c25adbfaecd8766",
-        "revCount": 294,
+        "rev": "9613a3d4c6276ab739b84f735c4c2bc3ba44f966",
+        "revCount": 406,
         "type": "git",
         "url": "https://git.lorrimar.id.au/rodney/config.git?dir=scripts"
       },
