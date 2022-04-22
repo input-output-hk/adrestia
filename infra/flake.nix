@@ -42,12 +42,13 @@
 
     customConfig = lib.recursiveUpdate {
       repo = toString self.sourceInfo;
-    } inputs.customConfig;
+    } self.inputs.customConfig;
 
     # Inject dependencies using module arguments.
     specialArgs = {
       inherit customConfig;
       flakeInputs = self.inputs // {
+        inherit self customConfig;
         inherit (self) nixpkgs nixpkgs-unstable;
       };
       dns = import ./dns.nix { inherit lib; };
@@ -55,7 +56,7 @@
     };
 
   in {
-    inherit nixpkgs;
+    inherit nixpkgs nixpkgs-unstable;
 
     overlay = mylib.lib.composeExtensionAttrs1
       self.overlays
@@ -158,7 +159,7 @@
     nixosModules.gce-serial-console = {
       # gcloud compute --project=iohk-323702 connect-to-serial-port n-048aa26e7caa11e58b4cda214536e17f-gce-mob-dev --zone=australia-southeast1-a
       deployment.gce.metadata.serial-port-enable = "TRUE";
-      imports = [ inputs.nixops-utils.nixosModules.serial-console ];
+      imports = [ self.inputs.nixops-utils.nixosModules.serial-console ];
     };
 
     nixosConfigurations = lib.mapAttrs (name: module: lib.nixosSystem {
@@ -214,6 +215,7 @@
           # network = resources.gceNetworks.adp-net;
         };
         imports = [
+          # gcloud compute --project=iohk-323702 connect-to-serial-port n-048aa26e7caa11e58b4cda214536e17f-gce-mob-dev --zone=australia-southeast1-a
           self.nixosModules.gce-serial-console
         ];
         nixpkgs.overlays = [(self: super: (super.prefer-remote-fetch self super))];
@@ -245,8 +247,6 @@
         };
 
         imports = [
-          # gcloud compute --project=iohk-323702 connect-to-serial-port n-048aa26e7caa11e58b4cda214536e17f-gce-mob-dev --zone=australia-southeast1-a
-          self.inputs.nixops-utils.serial-console
           self.nixosModules.gce-mob-dev
         ];
 
@@ -291,7 +291,7 @@
       };
       resources.gceStaticIPs = {
         adp-web-ip = { resources, lib, ... }: creds.gce // {
-          inherit (resources.machines.gce-mob-dev.deployment.gce) labels;
+          # inherit (resources.machines.gce-adp-web.deployment.gce) labels;
           inherit (gceProps) region;
 
           # name = "${namespace.machineName}-ip";
@@ -372,15 +372,10 @@
         runtimeInputs = [ pkgs.bitwarden-cli ];
         text = builtins.readFile ./scripts/fetch.sh;
       };
-      update-flake-lock = pkgs.writeShellApplication {
-        name = "update-flake-lock";
-        runtimeInputs = [ nix ];
-        text = builtins.readFile ./scripts/update-flake-lock.sh;
-      };
     };
 
     nix = pkgs.pkgsUnstable.nixUnstable;
-    nixops = pkgs.nixopsUnstable;
+    nixops = pkgs.pkgsUnstable.nixopsUnstable;
 
     flake = {
       packages = shellScripts // lib.mapAttrs

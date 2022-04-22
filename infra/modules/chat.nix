@@ -85,19 +85,19 @@ in {
               "server_name" = "Adrestia Chat";
             };
             # https://github.com/vector-im/element-web/blob/develop/docs/labs.md
-            showLabsSettings = true;
+            show_labs_settings = true;
             # https://github.com/matrix-org/matrix-react-sdk/blob/develop/src/settings/Settings.tsx
             features = {
               # feature_spaces_metaspaces = true;
               feature_thread = true;
-              # feature_pinning = true;
-              # feature_custom_status = true;
+              feature_pinning = true;
+              feature_custom_status = true;
               feature_dnd = true;
               # feature_presence_in_room_list = true;
               # feature_maximised_widgets = true;
               feature_latex_maths = true;
             };
-            settingDefaults = {
+            setting_defaults = {
               # "UIFeature.communities" = false;
               "UIFeature.shareSocial" = false;
               "UIFeature.feedback" = false;
@@ -105,7 +105,7 @@ in {
               "UIFeature.registration" = false;
             };
             disable_custom_urls = true;
-            permalinkPrefix = "https://${dns.hosts.element}";
+            permalink_prefix = "https://${dns.hosts.element}";
             # jitsi.preferredDomain = dns.hosts.jitsi;
           };
         };
