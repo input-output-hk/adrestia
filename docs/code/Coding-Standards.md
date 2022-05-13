@@ -84,32 +84,31 @@ By inserting carriage returns in the right place, we can often reveal the underl
 ```Haskell
 -- BAD
 instance Bi Block where
-  encode block = encodeListLen 3 <> encode (blockHeader block) <> encode (blockBody block) <> encode (blockExtraData block)
+    encode block = encodeListLen 3 <> encode (blockHeader block) <> encode (blockBody block) <> encode (blockExtraData block)
 ```
 ```Haskell
 -- GOOD
 instance Bi Block where
-  encode block =
-    encodeListLen 3
-      <> encode (blockHeader block)
-      <> encode (blockBody block)
-      <> encode (blockExtraData block)
+    encode block = encodeListLen 3
+        <> encode (blockHeader block)
+        <> encode (blockBody block)
+        <> encode (blockExtraData block)
 ```
 
 Another example of wrapping:
 ```hs
 -- BAD:
-    describe "Lemma 2.6 - Properties of balance" $ do
-        it "2.6.1) dom u ⋂ dom v ==> balance (u ⋃ v) = balance u + balance v" (checkCoverage prop_2_6_1)
-        it "2.6.2) balance (ins⋪ u) = balance u - balance (ins⊲ u)" (checkCoverage prop_2_6_2)
+describe "Lemma 2.6 - Properties of balance" $ do
+    it "2.6.1) dom u ⋂ dom v ==> balance (u ⋃ v) = balance u + balance v" (checkCoverage prop_2_6_1)
+    it "2.6.2) balance (ins⋪ u) = balance u - balance (ins⊲ u)" (checkCoverage prop_2_6_2)
 ```
 ```hs
 -- GOOD:
-    describe "Lemma 2.6 - Properties of balance" $ do
-        it "2.6.1) dom u ⋂ dom v ==> balance (u ⋃ v) = balance u + balance v"
-            (checkCoverage prop_2_6_1)
-        it "2.6.2) balance (ins⋪ u) = balance u - balance (ins⊲ u)"
-            (checkCoverage prop_2_6_2)
+describe "Lemma 2.6 - Properties of balance" $ do
+    it "2.6.1) dom u ⋂ dom v ==> balance (u ⋃ v) = balance u + balance v"
+        (checkCoverage prop_2_6_1)
+    it "2.6.2) balance (ins⋪ u) = balance u - balance (ins⊲ u)"
+        (checkCoverage prop_2_6_2)
 ```
 
 ##### Strategy 2: Place comments on their own line instead of attempting to align them vertically
@@ -117,25 +116,25 @@ Another example of wrapping:
 ```Haskell
 -- BAD
 mkMagicalBlock
-  :: MagicProtocolId                     -- A unique key specifying a magic protocol.
-  -> MagicType                           -- The type of magic used in this block signing.
-  -> MagicalKey                          -- The magical key used in this block signing.
-  -> Maybe Delegation.MagicalCertificate -- A magical certificate of delegation, in case the specified 'MagicalKey' does not have the right to sign this block.
-  -> Block
+    :: MagicProtocolId                     -- A unique key specifying a magic protocol.
+    -> MagicType                           -- The type of magic used in this block signing.
+    -> MagicalKey                          -- The magical key used in this block signing.
+    -> Maybe Delegation.MagicalCertificate -- A magical certificate of delegation, in case the specified 'MagicalKey' does not have the right to sign this block.
+    -> Block
 ```
 ```Haskell
 -- GOOD
 mkMagicalBlock
-  :: MagicProtocolId
-     -- ^ A unique key specifying a magic protocol.
-  -> MagicType
-     -- ^ The type of magic used in this block signing.
-  -> MagicalKey
-     -- ^ The magical key used in this block signing.
-  -> Maybe Delegation.MagicalCertificate
-     -- ^ A magical certificate of delegation, in case the specified
-     -- 'MagicalKey' does not have the right to sign this block.
-  -> Block
+    :: MagicProtocolId
+    -- ^ A unique key specifying a magic protocol.
+    -> MagicType
+    -- ^ The type of magic used in this block signing.
+    -> MagicalKey
+    -- ^ The magical key used in this block signing.
+    -> Maybe Delegation.MagicalCertificate
+    -- ^ A magical certificate of delegation, in case the specified
+    -- 'MagicalKey' does not have the right to sign this block.
+    -> Block
 ```
 
 ##### Strategy 3: Break up long string literals
@@ -149,23 +148,23 @@ errorAccountFundsCompletelyExhausted = "The funds in this account have been comp
 ```Haskell
 -- GOOD
 errorAccountFundsCompletelyExhausted =
-  "The funds in this account have been completely spent, and its balance \
-  \is now zero. Either add more funds to this account or use a different \
-  \account for this transaction."
+    "The funds in this account have been completely spent, and its balance \
+    \is now zero. Either add more funds to this account or use a different \
+    \account for this transaction."
 ```
 
 ```Haskell
 -- BAD:
 spec = do
-  scenario "only this account's balance can be retrieved while standing on one leg on the side of an extremely tall mountain, and breathing thin air with only very limited amounts of oxygen." $ do
+    scenario "Only this account's balance can be retrieved while standing on one leg on the side of an extremely tall mountain, and breathing thin air with only very limited amounts of oxygen." $ do
 ```
 ```Haskell
 -- GOOD:
 spec = do
-  scenario
-    "only this account's balance can be retrieved while standing on one leg \
-    \on the side of an extremely tall mountain, and breathing thin air with \
-    \only very limited amounts of oxygen." $ do
+    scenario
+        "Only this account's balance can be retrieved while standing on one \
+        \leg on the side of an extremely tall mountain, and breathing thin \
+        \air with only very limited amounts of oxygen." $ do
 ```
 
 ##### Strategy 4: Reduce nesting
@@ -236,7 +235,8 @@ instance FromCBOR Block where
 
 newtype BlockHeader = BlockHeader
     { getBlockHeader :: Primitive.BlockHeader
-    } deriving Eq
+    }
+    deriving Eq
 ```
 
 ```hs
@@ -246,7 +246,8 @@ instance FromCBOR Block where
 
 newtype BlockHeader = BlockHeader
     { getBlockHeader :: Primitive.BlockHeader
-    } deriving Eq
+    }
+    deriving Eq
 ```
 
 </details>
@@ -623,9 +624,9 @@ import should be used instead (this is mainly the case for modules coming from
 
   -- BAD
   import Data.Map.Strict
-    ( filter )
+      ( filter )
   import Data.Set
-    ( member )
+      ( member )
 
   restrictedTo :: UTxO -> Set TxOut ->  UTxO
   restrictedTo (UTxO utxo) outs =
@@ -777,19 +778,19 @@ of the new branches.
   ```hs
   -- GOOD
   isPositive = \case
-    InLedger -> True
-    Pending -> False
-    Invalidated -> False
+      InLedger -> True
+      Pending -> False
+      Invalidated -> False
 
   -- BAD
   isPositive = \case
-    InLedger -> True
-    _ -> False
+      InLedger -> True
+      _ -> False
 
   -- BAD
   handleErr = \case
-    ErrWalletNotFound -> {- ... -}
-    _ -> ErrUnknown
+      ErrWalletNotFound -> {- ... -}
+      _ -> ErrUnknown
   ```
 </details>
 
@@ -1041,7 +1042,6 @@ prop_rollbackPools db pairs = monadicIO $ do
 --   57% nothing to roll back
 --   43% something to roll back
 
-
 prop_accuracy r = withMaxSuccess 1000 $ monadicIO $ do
     {- ... -}
     monitor $ label $ accuracy dust balance balance'
@@ -1162,7 +1162,6 @@ spec = do
     lowerConfidence = Confidence (10^(6 :: Integer)) 0.75
 ```
 </details>
-
 
 ### Avoid `liftIO` in monadic properties
 
