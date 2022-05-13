@@ -1,5 +1,5 @@
 ---
-tags: [ needs/cleanup ]
+tags: [ needs/review ]
 pandoc:
   rewriteClass:
     figure: rounded bg-indigo-100 m-4 px-4 py-1 italic
@@ -8,20 +8,22 @@ pandoc:
 # QA Approach
 
 :::{.highlight-block .max-w-xs}
-This is a blog entry draft.
+Document history:
+ - 2nd October 2020 - Created
+ - 13th May 2022 - Small refinements
 :::
 
 "Can you write a blog post about the QA process that Adrestia has?". When I saw this question on my slack I thought something is not right there. It took me several minutes but I finally got it. That's right, there is no such thing as "QA process" in Adrestia, because QA (i.e. Quality Assurance) is there on every level of the Process we follow. Top to bottom. What derives from this fact is also a simple, yet powerful, principle: QA is responsibility of everyone.
 
-I know, that's a huge cliche. People who push Agile often say QA is everyone’s responsibility - which usually means no one really takes that responsibility. QA is not easy and maybe not everyone likes it. More importantly QA is not only about testing but even if it was, testing in Adrestia is actually super fun! 
+I know, that's a huge cliche. People who push Agile often say QA is everyone’s responsibility - which usually means no one really takes that responsibility. QA is not easy and maybe not everyone likes it. More importantly QA is not only about testing but even if it was, testing in Adrestia is actually super fun!
 
-How does it play in real life? Let me try to present QA aspects of work in Adrestia team.
+How does it play in real life? Let me try to present QA aspects of work in Adrestia Haskell team.
 
 ## The Team
 
 Anyone working in the software development, especially in QA related role, is well aware of the waterfall-y sins, that occur (more often we'd like to admit) on the teams which call themselves Agile, Scrum, Extreme etc. The most common one is something I like to call _handover to QA approach_. I suppose it is pretty self-explanatory, but let me elaborate. It's sort of mindset/stance where a feature/story/deliverable increment of product is no longer my business when I finish coding it. I jump to another story and just let the other one be _QA-ed_. I might fix an issue when QAs find it, no problem, but man it's already in QA, so give me a break, I added unit tests, ok?:). Well, in Adrestia it's quite the opposite. Yes, stories are moved into _QA column_ after they are _coded_ but it is not for testing, but for [QA review](#qa-review) and that's very different. I'll explain later.
 
-Adrestia is fairly small team. It consists of 8 people including Software Engineers, Product Manager and a QA Engineer (soon more than one!). Considering the number of [[Adrestia-Architecture|products]] the team is responsible for, this is really not a lot. Additionally, we are distributed among 3 continents which brings own challenges in terms of communication and availability. 
+Adrestia is fairly small team. It consists of 8 people including Software Engineers, Product Manager and a QA Engineer (soon more than one!). Considering the number of [[Adrestia-Architecture|products]] the team is responsible for, this is really not a lot. Additionally, we are distributed among 3 continents which brings own challenges in terms of communication and availability.
 
 :::{.figure}
 ![[albi-2019-team.jpg]]  
@@ -52,11 +54,11 @@ Once estimated user stories are assigned to and owned by single team member (a.k
 
 Once the story is broken down into tasks in GitHub with the clear plan on how to approach it technically, the coding begins. We follow [[Coding-Standards]] that was mutually agreed upon. The benefit is that we have roughly the same _coding style_ across our code base. Therefore even when somebody changes context (even between different repositories) he may expect that there will be no unfamiliar obscurities and can focus solely on the task. The standard is obviously not set in stone. Modifications happen, usually followed by slack discussions and voting.
 
-All our repos are on GitHub, so we use PRs to deliver changes to the code base. Each PR is reviewed, primarily by the Co-pilot, but often by other team members too. Review is done according to our [[Code-Review-Guidelines|guidelines]] and it is all about feedback. What is important it is often not only about reviewing the code alone but literally pulling the branch and playing with it. Every PR needs to be reviewed and approved by at least one team member. 
+All our repos are on GitHub, so we use PRs to deliver changes to the code base. Each PR is reviewed, primarily by the Co-pilot, but often by other team members too. Review is done according to our [[Code-Review-Guidelines|guidelines]] and it is all about feedback. What is important it is often not only about reviewing the code alone but literally pulling the branch and playing with it. Every PR needs to be reviewed and approved by at least one team member.
 
 ### Testing
 
-In a nutshell we have one simple rule. Every new code needs to be tested. Period. 
+In a nutshell we have one simple rule. Every new code needs to be tested. Period.
 
 Ideally tests, whether they are `property`, `unit` or `integration`, are created before (or along with) production code. That gives us opportunity to see the test fail first and passes after the implementation. It is a common [TDD](https://en.wikipedia.org/wiki/Test-driven_development) practice that we also try to follow.
 
@@ -82,7 +84,7 @@ At this stage it is also final opportunity to actually explore the given feature
 
 ### Bugs
 
-"The only one who never makes mistakes is the one who never does anything," Napoleon Bonaparte once said. Well, that's true and that's the reason bugs sometimes happen to us too. Luckily we know how to handle them. 
+"The only one who never makes mistakes is the one who never does anything," Napoleon Bonaparte once said. Well, that's true and that's the reason bugs sometimes happen to us too. Luckily we know how to handle them.
 
 Every bug becomes a ticket in GitHub. It is described with clear reproduction path, actual and expected outcome with any additional information that may be useful (logs, screenshots etc.) and classified according to our [[Bug-Classification|classification guidelines]]. We use `severity` for defining impact on the system and `priority` for indicating the importance from product standpoint.
 
@@ -100,7 +102,7 @@ Technical debts are first often pinpointed in the source code with `TODO` and `F
 
 The process we follow is obviously not set in stone and may be tailored to the needs of the team and circumstances over time. Good opportunity for that is Team Retrospective meeting we held every once in a while.
 
-Retrospective is actually very powerful tool, sadly often underestimated. We do make use of it. It gives opportunity to collectively reflect on things and discuss what can be improved. As an outcome we want to have a list of actionable items, which often... no surprise... end up in the backlog as tasks. Whether it is a process improvement, internal documentation update or perhaps a decision we want to spend the whole week for tackling bugs and technical debts. 
+Retrospective is actually very powerful tool, sadly often underestimated. We do make use of it. It gives opportunity to collectively reflect on things and discuss what can be improved. As an outcome we want to have a list of actionable items, which often... no surprise... end up in the backlog as tasks. Whether it is a process improvement, internal documentation update or perhaps a decision we want to spend the whole week for tackling bugs and technical debts.
 
 
 ## Tests
@@ -117,16 +119,15 @@ All automated tests are executed in CI environment in the following circumstance
 
 **Functional suite** consists of:
  - low level unit and property tests that operate on a method level.
- - integration level tests verifying a few components being integrated.
- - system level tests (which we actually also call integration tests) that test against fully integrated system along with it's _third party_ integrated backends, which in case of `cardano-wallet` is either [cardano-node](https://github.com/input-output-hk/cardano-node) or [jormungandr](https://github.com/input-output-hk/jormungandr). We run tests for both of them.
+ - integration tests that test `cardano-wallet` with [cardano-node](https://github.com/input-output-hk/cardano-node) in in a full-blown private blockchain with very similar settings `mainnet` has.
+ - [end-to-end tests](https://github.com/input-output-hk/cardano-wallet/tree/master/test/e2e) that run against public Cardano testnet. Those tests allow to exercise cardano-wallet on environment close to production utilizing and integrating maximally all components of the Cardano ecosystem like Stake pools, SMASH, metadata token server etc. Worth to note that light-mode that is being introduced to `cardano-wallet` is also tested there.
 
 **Non-functional suite** basically consist of performance benchmarks and database migration tests. They are:
  - restoration benchmarks - measuring restoration along with a few wallet API operations on real `testnet` and `mainnet` environments
  - latency benchmarks - measuring latency of most wallet operations on the API level on a private blockchain.
  - database benchmarks - measuring performance of operations on database level.
- - database migration tests - verifying that recent changes made to the system survive upgrade from the last 3 wallet versions.
 
-Important to note that the whole functional suite is executed against all 3 operating systems `cardano-wallet` supports: Linux, Windows and MacOS. Also integration tests are executed in a full-blown private blockchain with very similar settings `mainnet` has.
+Important to note that the whole functional suite is executed against all 3 operating systems `cardano-wallet` supports: Linux, Windows and MacOS. Cardano-wallet docker image is tested the same way as well.
 
 ### Code smart, test smart
 
@@ -158,12 +159,6 @@ Badges are very simple way to achieve visibility, and we like to use them. Pinne
 Badges on cardano-wallet repository.
 :::
 
-#### Code coverage
-
-May be a bit controversial to some. Off course, you can have 100% coverage and have really lousy tests. But still it is a good indicator of the areas in the code base that need more attention.
-
-As for `cardano-wallet`, code coverage will be back soon.
-
 #### Visualize
 
 If there is an opportunity to visualize results of our tests we'll go for it. Good example in `cardano-wallet` are benchmarks. Raw numbers gathered by benchmarking scripts are not very convenient to analyze.
@@ -182,11 +177,11 @@ Having a lot of automated tests gives good level of confidence, but it will neve
 
 Exploratory tests are often underestimated or misunderstood, but they are a real deal. QA (or Software) Engineer does not have to wait until _QA review_ to start toying with the system. Reality is that we often don't have the full requirements, and even if we have they might change. One way or another it's good to be involved as soon as possible.
 
-"An effective tester can always obtain valuable information by exploration, even if the sole purpose of exploring is to gather information for a more detailed test strategy." 
+"An effective tester can always obtain valuable information by exploration, even if the sole purpose of exploring is to gather information for a more detailed test strategy."
 
 Above citation from Micheal Bolton's [Testing Without a Map](https://www.developsense.com/articles/2005-01-TestingWithoutAMap.pdf) says it all. And this is also important part of Adrestia QA approach.
 
 
 ## Summary
 
-Hopefully I was able to give some insights into how Adrestia team approaches QA. If you reached to this point, here's a medal -> 🏅. 
+Hopefully I was able to give some insights into how Adrestia team approaches QA. If you reached to this point, here's a medal -> 🏅.
