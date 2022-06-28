@@ -37,7 +37,7 @@ Each proposal should start with a section justifying the standard with rational 
     * [Tag interesting cases in complex properties](#tag-interesting-cases-in-complex-properties)
     * [Write properties to assert the validity of complex generators](#write-properties-to-assert-the-validity-of-complex-generators-and-shrinkers)
     * [Use `checkCoverage` to measure coverage requirements](#use-checkcoverage-to-measure-coverage-requirements)
-    * [Avoid `liftIO` in monadic properties](avoid-liftio-in-monadic-properties)
+    * [Avoid `liftIO` in monadic properties](#avoid-liftio-in-monadic-properties)
 
 * [Testing](#testing)
     * [Test files are separated and self-contained](#test-files-are-separated-and-self-contained)

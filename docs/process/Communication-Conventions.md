@@ -72,7 +72,7 @@ If a process or practices decision has been reached, record it in the
 
 ### When to use pair programming
 
-See [[Mob-Development]].
+See [[Mob-Programming]].
 
 ## Future Goals
 
