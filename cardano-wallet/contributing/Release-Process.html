@@ -1,17 +1,19 @@
+<!DOCTYPE html>
 <html lang='en'>
 
 <head>
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Release Checklist – Adrestia Project Docs
+    Release Process – Adrestia Project Docs
   </title>
   
     
       <meta property='og:description' content />
       <meta property='og:site_name' content='Adrestia Project Docs' />
+      <meta property='og:image' content />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Release Checklist' />
+      <meta property='og:title' content='Release Process' />
     
     
       <base href='/adrestia/' />
@@ -25,7 +27,7 @@
 
 
   
-  <link href='tailwind.css?instanceId=baf1969c-651a-423a-8752-ea0bf7ea773f' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=c9440fb1-256d-4fed-82e5-a2109f0567b2' rel='stylesheet' type='text/css' />
 
   <!-- Heist error element -->
   <style type='text/css'>
@@ -40,15 +42,21 @@
 <style>
   @font-face {
     font-family: 'MavenPro';
-    src: url('_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf') format("truetype");
+    /* FIXME: This ought to be: ${ema:emanoteStaticLayerUrl}/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf */
+    src: url(_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf) format("truetype");
     font-display: swap;
   }
 
   body {
     font-family: 'MavenPro', sans-serif;
+    /* font-variation-settings: 'wght'300; */
   }
 
   a.mavenLinkBold {
+    font-variation-settings: 'wght'500;
+  }
+
+  strong {
     font-variation-settings: 'wght'500;
   }
 
@@ -3073,8 +3081,8 @@
       </svg>
       
   
-    <a class='font-bold text-indigo-600 hover:underline truncate' title='Release Checklist' href='cardano-wallet/contributing/Release-Checklist'>
-      Release Checklist
+    <a class='font-bold text-indigo-600 hover:underline truncate' title='Release Process' href='cardano-wallet/contributing/Release-Process'>
+      Release Process
     </a>
     
       
@@ -3805,224 +3813,24 @@
           <main class='px-4 py-4'>
             <h1 class='flex items-end justify-center mb-4 p-3 bg-indigo-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Release Checklist
+    Release Process
   </a>
 </h1>
             <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
-  <h2 id='preparing-the-release' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Preparing the release</h2>
+  
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          
-    <p class='mb-3'>
-      Make sure <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> points to correct revisions of dependencies in <a href='https://github.com/input-output-hk/cardano-wallet/blob/master/stack.yaml' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>stack.yaml</code></a> and <a href='https://github.com/input-output-hk/cardano-wallet/blob/master/cabal.project' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cabal.project</code></a>.
-    </p>
-  
-    <p class='mb-3'>
-      Verify that the content of [<code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>stack.yaml</code>][] and [<code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cabal.project</code>][] correspond to the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-node</code> version.
-    </p>
-  
-    <p class='mb-3'>
-      Verify that target repositories point to appropriate revisions for <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>persistent</code>, <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-addresses</code>, <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>bech32</code>, …)
-    </p>
-  
+          Create new page for the <code class='py-0.5 px-0.5 bg-gray-100'>Release checklist</code> on <a href='https://md.adrestia.iohkdev.io/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>https://md.adrestia.iohkdev.io/</a> by copying contents of <a href='https://md.adrestia.iohkdev.io/s/6DaaoOgOJ' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Release checklist template</a> there.
         </li>
       
         <li>
-          
-    <p class='mb-3'>
-      Fetch the tip of <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>master</code>:
-    </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='shell language-shell'>$ git checkout master
-$ git pull</code></pre></div>
+          Open a thread <code class='py-0.5 px-0.5 bg-gray-100'>cardano-wallet vYYYY-MM-DD</code> on <code class='py-0.5 px-0.5 bg-gray-100'>#adrestia-releases</code> slack channel notifying the Release Manager.
         </li>
       
         <li>
-          
-    <p class='mb-3'>
-      Create a new branch for the release:
-    </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='shell language-shell'>$ git checkout -b your-name/vYYYY-MM-DD/bump-release</code></pre></div>
-        </li>
-      
-        <li>
-          
-    <p class='mb-3'>
-      From the <strong>root</strong> of the repository, run:
-    </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='shell language-shell'>$ ./scripts/make_release.sh</code></pre></div>
-    <p class='mb-3'>
-      This will bump the version in <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>.cabal</code> and <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>.nix</code> files, and the swagger spec files, and generate release notes.
-    </p>
-  
-    <blockquote class='py-0.5 px-4 mb-3 italic border-l-4 bg-gray-50 text-gray-600 border-gray-400 quote'>
-      
-    <p class='mb-3'>
-      <span class='emoji' data-emoji='bulb' style='font-family: emoji'>💡</span> Note: If you get GitHub API rate limit errors, you can set the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>GITHUB_API_TOKEN</code> environment variable. To create a <em>personal access token</em>, go to your <a href='https://github.com/settings/tokens' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Github Settings</a>. No scope is required for this token, only public access (as it is simply used to read publicly available data from the Github API).
-    </p>
-  
-    </blockquote>
-  
-        </li>
-      
-        <li>
-          
-    <p class='mb-3'>
-      Verify that the script modified the compatibility matrix in README.md correctly.
-    </p>
-  
-        </li>
-      
-        <li>
-          
-    <p class='mb-3'>
-      Open a pull request to submit the modified files.
-    </p>
-  
-        </li>
-      
-        <li>
-          
-    <p class='mb-3'>
-      Get it merged.
-    </p>
-  
-        </li>
-      
-        <li>
-          
-    <p class='mb-3'>
-      Create and push a signed release tag on the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>HEAD</code> of <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>master</code>.
-    </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='shell language-shell'>$ git tag -s -m vYYYY-MM-DD vYYYY-MM-DD
-$ git push origin refs/tags/vYYYY-MM-DD</code></pre></div>
-    <p class='mb-3'>
-      Where <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>YYYY-MM-DD</code> should be replaced by the actual date of the release.
-    </p>
-  
-    <p class='mb-3'>
-      This will trigger a release build on CI (GitHub Actions).
-    </p>
-  
-        </li>
-      
-        <li>
-          
-    <p class='mb-3'>
-      Wait for the release build to finish and then check that build artifacts have been published on the GitHub release page.
-    </p>
-  
-        </li>
-      
-    </ul>
-  <h2 id='create-the-release-notes' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Create the release notes</h2>
-    <ul class='my-3 ml-6 space-y-1 list-disc'>
-      
-        <li>
-          
-    <p class='mb-3'>
-      Write release notes in the <a href='https://github.com/input-output-hk/cardano-wallet/releases' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>release page</a> using the previously generated release notes. Fill in the empty sections.
-    </p>
-  
-        </li>
-      
-        <li>
-          
-    <p class='mb-3'>
-      Remove items that are irrelevant to users (e.g. pure refactoring, improved testing)
-    </p>
-  
-        </li>
-      
-        <li>
-          
-    <p class='mb-3'>
-      Make sure the items that the script put in the “Unclassified” section are moved to an appropriate section (or removed).
-    </p>
-  
-        </li>
-      
-        <li>
-          
-    <p class='mb-3'>
-      You may want to polish the language of the PR titles to make it sound like actual release notes.
-    </p>
-  
-        </li>
-      
-    </ul>
-  <h2 id='verify-release-artifacts' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Verify release artifacts</h2>
-    <ul class='my-3 ml-6 space-y-1 list-disc'>
-      
-        <li>
-          
-    <p class='mb-3'>
-      Verify that the documentations have been correctly exported on <a href='https://github.com/input-output-hk/cardano-wallet/tree/gh-pages' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>gh-pages</a>
-    </p>
-  
-        </li>
-      
-        <li>
-          
-    <p class='mb-3'>
-      Make sure the <a href='cardano-wallet/user-guide/cli' class='text-indigo-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>Command-Line Interface</a> manual is up to date.
-    </p>
-  
-        </li>
-      
-    </ul>
-  <h2 id='manual-ad-hoc-verifications' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Manual ad-hoc verifications</h2>
-    <ul class='my-3 ml-6 space-y-1 list-disc'>
-      
-        <li>
-          
-    <p class='mb-3'>
-      Execute all <a href='https://github.com/input-output-hk/cardano-wallet/tree/master/test/manual' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>manual scenarios</a> on the binaries to be released.
-    </p>
-  
-        </li>
-      
-        <li>
-          
-    <p class='mb-3'>
-      Verify that sensitive fields listed in <a href='https://github.com/input-output-hk/cardano-wallet/blob/master/lib/core/src/Cardano/Wallet/Api/Server.hs#L409' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Cardano/Wallet/Api/Server</a> are still accurate and aren’t missing any new ones.
-    </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>sensitive =
-    [ "passphrase"
-    , "old_passphrase"
-    , "new_passphrase"
-    , "mnemonic_sentence"
-    , "mnemonic_second_factor"
-    ]</code></pre></div>
-        </li>
-      
-        <li>
-          
-    <p class='mb-3'>
-      Verify latest <a href='https://buildkite.com/input-output-hk/cardano-wallet-nightly' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>buildkite nightly</a> and make sure the results are fine. <a href='http://cardano-wallet-benchmarks.herokuapp.com/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Benchmark charts</a> may be helpful in analysis.
-    </p>
-  
-        </li>
-      
-    </ul>
-  <h2 id='publication' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Publication</h2>
-    <ul class='my-3 ml-6 space-y-1 list-disc'>
-      
-        <li>
-          
-    <p class='mb-3'>
-      Once everyone has signed off (i.e. Tech lead, QA & Release manager), publish the release draft.
-    </p>
-  
-        </li>
-      
-        <li>
-          
-    <p class='mb-3'>
-      Add the release to the <a href='https://github.com/input-output-hk/cardano-wallet/blob/master/nix/migration-tests.nix#L44-L61' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>automated migration tests</a> (keep only the last 10 versions). See the header of the file as to how to generate the SHA256 hashes.
-    </p>
-  
+          Follow the <code class='py-0.5 px-0.5 bg-gray-100'>Release checklist</code>. Update progress or report obstacles on the thread.
         </li>
       
     </ul>
@@ -4037,36 +3845,6 @@ $ git push origin refs/tags/vYYYY-MM-DD</code></pre></div>
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-indigo-600 mavenLinkBold hover:bg-indigo-50' href='process/QA-Approach'>
-            QA Approach
-          </a>
-          
-            <div class='mb-4 overflow-auto text-sm text-gray-500'>
-  
-    <div class='pl-2 mt-2 border-l-2 border-indigo-200 hover:border-indigo-500'>
-      <div><p>Obviously we value automated tests over manual. Actually, when it comes to <code>cardano-wallet</code> we only have 6 manual scenarios that are executed as part of every <a href='cardano-wallet/contributing/Release-Checklist' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Release Checklist</a>.</p></div>
-    </div>
-  
-</div>
-          
-        </li>
-      
-        <li>
-          <a class='text-indigo-600 mavenLinkBold hover:bg-indigo-50' href='process/Branching'>
-            Git Branching Scheme
-          </a>
-          
-            <div class='mb-4 overflow-auto text-sm text-gray-500'>
-  
-    <div class='pl-2 mt-2 border-l-2 border-indigo-200 hover:border-indigo-500'>
-      <div><p>According to the <a href='cardano-wallet/contributing/Release-Checklist' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Release Checklist</a>, these are of the form <code>your-name/bump-release/YYYY-MM-DD</code>.</p></div>
-    </div>
-  
-</div>
-          
-        </li>
-      
-        <li>
           <a class='text-indigo-600 mavenLinkBold hover:bg-indigo-50' href='cardano-wallet/developers'>
             Developer Information
           </a>
@@ -4074,7 +3852,7 @@ $ git push origin refs/tags/vYYYY-MM-DD</code></pre></div>
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-indigo-200 hover:border-indigo-500'>
-      <div><a href='cardano-wallet/contributing/Release-Checklist' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Release Checklist</a></div>
+      <div><a href='cardano-wallet/contributing/Release-Process' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Release Process</a></div>
     </div>
   
 </div>
@@ -4112,7 +3890,7 @@ $ git push origin refs/tags/vYYYY-MM-DD</code></pre></div>
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.4.10.2'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.15.1'>
       <img class='w-6 h-6 hover:text-indigo-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

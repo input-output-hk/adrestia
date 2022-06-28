@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang='en'>
 
 <head>
@@ -8,8 +9,9 @@
   </title>
   
     
-      <meta property='og:description' content />
+      <meta property='og:description' content='Let’s take an arbitrary Yoroi base58-encoded address of the Byron mainNet:' />
       <meta property='og:site_name' content='Adrestia Project Docs' />
+      <meta property='og:image' content />
       <meta property='og:type' content='website' />
       <meta property='og:title' content='Byron Address Format' />
     
@@ -25,7 +27,7 @@
 
 
   
-  <link href='tailwind.css?instanceId=baf1969c-651a-423a-8752-ea0bf7ea773f' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=c9440fb1-256d-4fed-82e5-a2109f0567b2' rel='stylesheet' type='text/css' />
 
   <!-- Heist error element -->
   <style type='text/css'>
@@ -40,15 +42,21 @@
 <style>
   @font-face {
     font-family: 'MavenPro';
-    src: url('_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf') format("truetype");
+    /* FIXME: This ought to be: ${ema:emanoteStaticLayerUrl}/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf */
+    src: url(_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf) format("truetype");
     font-display: swap;
   }
 
   body {
     font-family: 'MavenPro', sans-serif;
+    /* font-variation-settings: 'wght'300; */
   }
 
   a.mavenLinkBold {
+    font-variation-settings: 'wght'500;
+  }
+
+  strong {
     font-variation-settings: 'wght'500;
   }
 
@@ -3073,8 +3081,8 @@
       </svg>
     
   
-    <a class='hover:underline truncate' title='Release Checklist' href='cardano-wallet/contributing/Release-Checklist'>
-      Release Checklist
+    <a class='hover:underline truncate' title='Release Process' href='cardano-wallet/contributing/Release-Process'>
+      Release Process
     </a>
     
       
@@ -3906,7 +3914,7 @@
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          A tagged bytestring; <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>24</code> means that the bytes represent another CBOR-encoded structure.
+          A tagged bytestring; <code class='py-0.5 px-0.5 bg-gray-100'>24</code> means that the bytes represent another CBOR-encoded structure.
         </li>
       
         <li>
@@ -3923,7 +3931,7 @@
    A0                     # map(0)         [Address Attributes]
    00                     # unsigned(0)    [Address Type]</code></pre></div>
     <p class='mb-3'>
-      An address type of <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>0</code> refers to a spending address for which the address root contains a hash of a public spending key. This address payload has no attribute for the initial address was a Yoroi’s address on MainNet which follows a BIP-44 derivation scheme and therefore, does not require any attributes.
+      An address type of <code class='py-0.5 px-0.5 bg-gray-100'>0</code> refers to a spending address for which the address root contains a hash of a public spending key. This address payload has no attribute for the initial address was a Yoroi’s address on MainNet which follows a BIP-44 derivation scheme and therefore, does not require any attributes.
     </p>
   <h2 id='example-2-daedalus-address---byron-testnet' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Example 2: Daedalus Address - Byron TestNet</h2>
     <p class='mb-3'>
@@ -3953,7 +3961,7 @@
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          A tagged bytestring; <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>24</code> means that the bytes represent another CBOR-encoded structure.
+          A tagged bytestring; <code class='py-0.5 px-0.5 bg-gray-100'>24</code> means that the bytes represent another CBOR-encoded structure.
         </li>
       
         <li>
@@ -3974,7 +3982,7 @@
       45 (1A4170CB17)                   # bytes(5)     [Network Magic Value]
    00                                   # unsigned(0)  [Address Type]</code></pre></div>
     <p class='mb-3'>
-      An address type of <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>0</code> refers to a spending address for which the address root contains a hash of a public spending key. In addition, we can see that this address has 2 attributes identified by two tags <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>01</code> for the derivation path, and <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>02</code> for the network magic. The derivation path is an encrypted bytestring which holds two derivation indexes for the account and address paths.
+      An address type of <code class='py-0.5 px-0.5 bg-gray-100'>0</code> refers to a spending address for which the address root contains a hash of a public spending key. In addition, we can see that this address has 2 attributes identified by two tags <code class='py-0.5 px-0.5 bg-gray-100'>01</code> for the derivation path, and <code class='py-0.5 px-0.5 bg-gray-100'>02</code> for the network magic. The derivation path is an encrypted bytestring which holds two derivation indexes for the account and address paths.
     </p>
   
   <!-- What goes in this file will appear below the note body-->
@@ -4062,7 +4070,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.4.10.2'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.15.1'>
       <img class='w-6 h-6 hover:text-indigo-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

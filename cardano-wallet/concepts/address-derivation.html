@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang='en'>
 
 <head>
@@ -8,8 +9,9 @@
   </title>
   
     
-      <meta property='og:description' content />
+      <meta property='og:description' content='This scheme is an underspecified / ad-hoc scheme designed in the early eras of Cardano. It is intrinsically entangled to the address format and relies on the ability to embed extra pieces of information into addresses themselves in order to perform key derivation.' />
       <meta property='og:site_name' content='Adrestia Project Docs' />
+      <meta property='og:image' content />
       <meta property='og:type' content='website' />
       <meta property='og:title' content='Address Derivation' />
     
@@ -25,7 +27,7 @@
 
 
   
-  <link href='tailwind.css?instanceId=baf1969c-651a-423a-8752-ea0bf7ea773f' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=c9440fb1-256d-4fed-82e5-a2109f0567b2' rel='stylesheet' type='text/css' />
 
   <!-- Heist error element -->
   <style type='text/css'>
@@ -40,15 +42,21 @@
 <style>
   @font-face {
     font-family: 'MavenPro';
-    src: url('_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf') format("truetype");
+    /* FIXME: This ought to be: ${ema:emanoteStaticLayerUrl}/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf */
+    src: url(_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf) format("truetype");
     font-display: swap;
   }
 
   body {
     font-family: 'MavenPro', sans-serif;
+    /* font-variation-settings: 'wght'300; */
   }
 
   a.mavenLinkBold {
+    font-variation-settings: 'wght'500;
+  }
+
+  strong {
     font-variation-settings: 'wght'500;
   }
 
@@ -3073,8 +3081,8 @@
       </svg>
     
   
-    <a class='hover:underline truncate' title='Release Checklist' href='cardano-wallet/contributing/Release-Checklist'>
-      Release Checklist
+    <a class='hover:underline truncate' title='Release Process' href='cardano-wallet/contributing/Release-Process'>
+      Release Process
     </a>
     
       
@@ -3830,15 +3838,15 @@
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>m</code> refers to the root master key
+          <code class='py-0.5 px-0.5 bg-gray-100'>m</code> refers to the root master key
         </li>
       
         <li>
-          <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>/</code> symbolizes a new derivation step using a particular derivation index.
+          <code class='py-0.5 px-0.5 bg-gray-100'>/</code> symbolizes a new derivation step using a particular derivation index.
         </li>
       
         <li>
-          <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>'</code> indicates that keys at this step are considered hardened keys (private key is required to derive new keys). Indexes of hardened keys follows a particular convention and belongs to the interval <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>[2³¹, 2³²-1]</code>.
+          <code class='py-0.5 px-0.5 bg-gray-100'>'</code> indicates that keys at this step are considered hardened keys (private key is required to derive new keys). Indexes of hardened keys follows a particular convention and belongs to the interval <code class='py-0.5 px-0.5 bg-gray-100'>[2³¹, 2³²-1]</code>.
         </li>
       
     </ul>
@@ -3927,7 +3935,7 @@
 +--------------------------+    +-----------------------+</code></pre></div><div xmlhtmlRaw><p align="center"><small>Fig 2. BIP-44 Wallets Key Hierarchy</small></p>
 </div>
     <p class='mb-3'>
-      Paths with a tilde <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>'</code> refer to BIP-0032 hardened derivation path (meaning that the private key is required to derive children). This leads to a couple of interesting properties:
+      Paths with a tilde <code class='py-0.5 px-0.5 bg-gray-100'>'</code> refer to BIP-0032 hardened derivation path (meaning that the private key is required to derive children). This leads to a couple of interesting properties:
     </p>
   
     <ul class='my-3 ml-6 space-y-1 list-decimal list-inside'>
@@ -3963,7 +3971,7 @@
     </p>
   
     <p class='mb-3'>
-      Also, we use <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>purpose = 1852'</code> to clearly distinguish these formats from the original BIP-44 specification. Note however that Yoroi/Icarus in the Byron era are using <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>purpose = 44'</code>.
+      Also, we use <code class='py-0.5 px-0.5 bg-gray-100'>purpose = 1852'</code> to clearly distinguish these formats from the original BIP-44 specification. Note however that Yoroi/Icarus in the Byron era are using <code class='py-0.5 px-0.5 bg-gray-100'>purpose = 44'</code>.
     </p>
   <h2 id='differences-between-hd-random-and-hd-sequential-wallets' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Differences between <em>HD Random</em> and <em>HD Sequential</em> Wallets</h2>
     <p class='mb-3'>
@@ -4084,7 +4092,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.4.10.2'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.15.1'>
       <img class='w-6 h-6 hover:text-indigo-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

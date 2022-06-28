@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang='en'>
 
 <head>
@@ -8,8 +9,9 @@
   </title>
   
     
-      <meta property='og:description' content />
+      <meta property='og:description' content='Accepted - ADP-983' />
       <meta property='og:site_name' content='Adrestia Project Docs' />
+      <meta property='og:image' content />
       <meta property='og:type' content='website' />
       <meta property='og:title' content='Nix Flake' />
     
@@ -25,7 +27,7 @@
 
 
   
-  <link href='tailwind.css?instanceId=baf1969c-651a-423a-8752-ea0bf7ea773f' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=c9440fb1-256d-4fed-82e5-a2109f0567b2' rel='stylesheet' type='text/css' />
 
   <!-- Heist error element -->
   <style type='text/css'>
@@ -40,15 +42,21 @@
 <style>
   @font-face {
     font-family: 'MavenPro';
-    src: url('_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf') format("truetype");
+    /* FIXME: This ought to be: ${ema:emanoteStaticLayerUrl}/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf */
+    src: url(_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf) format("truetype");
     font-display: swap;
   }
 
   body {
     font-family: 'MavenPro', sans-serif;
+    /* font-variation-settings: 'wght'300; */
   }
 
   a.mavenLinkBold {
+    font-variation-settings: 'wght'500;
+  }
+
+  strong {
     font-variation-settings: 'wght'500;
   }
 
@@ -3086,8 +3094,8 @@
       </svg>
     
   
-    <a class='hover:underline truncate' title='Release Checklist' href='cardano-wallet/contributing/Release-Checklist'>
-      Release Checklist
+    <a class='hover:underline truncate' title='Release Process' href='cardano-wallet/contributing/Release-Process'>
+      Release Process
     </a>
     
       
@@ -3837,7 +3845,7 @@
     </p>
   
     <p class='mb-3'>
-      The <em>tl;dr</em> for flakes is that <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>default.nix</code> and <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>shell.nix</code> are deprecated in favour of <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>flake.nix</code>. You type <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>nix build .#cardano-wallet</code> instead of <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>nix-build -A cardano-wallet</code> and you type <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>nix develop</code> instead of <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>nix-shell</code>.
+      The <em>tl;dr</em> for flakes is that <code class='py-0.5 px-0.5 bg-gray-100'>default.nix</code> and <code class='py-0.5 px-0.5 bg-gray-100'>shell.nix</code> are deprecated in favour of <code class='py-0.5 px-0.5 bg-gray-100'>flake.nix</code>. You type <code class='py-0.5 px-0.5 bg-gray-100'>nix build .#cardano-wallet</code> instead of <code class='py-0.5 px-0.5 bg-gray-100'>nix-build -A cardano-wallet</code> and you type <code class='py-0.5 px-0.5 bg-gray-100'>nix develop</code> instead of <code class='py-0.5 px-0.5 bg-gray-100'>nix-shell</code>.
     </p>
   <h2 id='decision' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Decision</h2>
     <p class='mb-3'>
@@ -3845,7 +3853,7 @@
     </p>
   
     <p class='mb-3'>
-      This will add a <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>flake.nix</code> file, and replace <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>default.nix</code>, <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>shell.nix</code>, and <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>release.nix</code> with backwards compatibility shims.
+      This will add a <code class='py-0.5 px-0.5 bg-gray-100'>flake.nix</code> file, and replace <code class='py-0.5 px-0.5 bg-gray-100'>default.nix</code>, <code class='py-0.5 px-0.5 bg-gray-100'>shell.nix</code>, and <code class='py-0.5 px-0.5 bg-gray-100'>release.nix</code> with backwards compatibility shims.
     </p>
   
     <ul class='my-3 ml-6 space-y-1 list-disc'>
@@ -3863,7 +3871,7 @@
         </li>
       
         <li>
-          After a while, remove <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>default.nix</code> and <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>shell.nix</code> and associated compatibility code.
+          After a while, remove <code class='py-0.5 px-0.5 bg-gray-100'>default.nix</code> and <code class='py-0.5 px-0.5 bg-gray-100'>shell.nix</code> and associated compatibility code.
         </li>
       
     </ul>
@@ -3875,19 +3883,19 @@
         </li>
       
         <li>
-          The <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>nix build</code> CLI for building with flakes seems nicer than the old <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>nix-build</code>.
+          The <code class='py-0.5 px-0.5 bg-gray-100'>nix build</code> CLI for building with flakes seems nicer than the old <code class='py-0.5 px-0.5 bg-gray-100'>nix-build</code>.
         </li>
       
         <li>
-          Apparently, <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>nix develop</code> has better caching than <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>nix-shell</code>, and so it will be faster to start the dev environment.
+          Apparently, <code class='py-0.5 px-0.5 bg-gray-100'>nix develop</code> has better caching than <code class='py-0.5 px-0.5 bg-gray-100'>nix-shell</code>, and so it will be faster to start the dev environment.
         </li>
       
         <li>
-          The process for updating Nix dependencies (e.g. Haskell.nix) is easier and more sane - <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>nix flake lock</code>.
+          The process for updating Nix dependencies (e.g. Haskell.nix) is easier and more sane - <code class='py-0.5 px-0.5 bg-gray-100'>nix flake lock</code>.
         </li>
       
         <li>
-          Other PRs which are open may need to be rebased on latest <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>master</code> for their CI to pass.
+          Other PRs which are open may need to be rebased on latest <code class='py-0.5 px-0.5 bg-gray-100'>master</code> for their CI to pass.
         </li>
       
     </ul>
@@ -3925,7 +3933,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.4.10.2'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.15.1'>
       <img class='w-6 h-6 hover:text-indigo-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

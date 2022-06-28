@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang='en'>
 
 <head>
@@ -8,8 +9,9 @@
   </title>
   
     
-      <meta property='og:description' content />
+      <meta property='og:description' content='Document history:' />
       <meta property='og:site_name' content='Adrestia Project Docs' />
+      <meta property='og:image' content />
       <meta property='og:type' content='website' />
       <meta property='og:title' content='QA Approach' />
     
@@ -25,7 +27,7 @@
 
 
   
-  <link href='tailwind.css?instanceId=baf1969c-651a-423a-8752-ea0bf7ea773f' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=c9440fb1-256d-4fed-82e5-a2109f0567b2' rel='stylesheet' type='text/css' />
 
   <!-- Heist error element -->
   <style type='text/css'>
@@ -40,15 +42,21 @@
 <style>
   @font-face {
     font-family: 'MavenPro';
-    src: url('_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf') format("truetype");
+    /* FIXME: This ought to be: ${ema:emanoteStaticLayerUrl}/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf */
+    src: url(_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf) format("truetype");
     font-display: swap;
   }
 
   body {
     font-family: 'MavenPro', sans-serif;
+    /* font-variation-settings: 'wght'300; */
   }
 
   a.mavenLinkBold {
+    font-variation-settings: 'wght'500;
+  }
+
+  strong {
     font-variation-settings: 'wght'500;
   }
 
@@ -3064,8 +3072,8 @@
       </svg>
     
   
-    <a class='hover:underline truncate' title='Release Checklist' href='cardano-wallet/contributing/Release-Checklist'>
-      Release Checklist
+    <a class='hover:underline truncate' title='Release Process' href='cardano-wallet/contributing/Release-Process'>
+      Release Process
     </a>
     
       
@@ -3803,8 +3811,20 @@
   <!-- What goes in this file will appear on top of note body-->
   <div class='px-3 py-1 mb-3 rounded bg-indigo-100 hover:border-indigo-400 hover:shadow border-t-8 border-indigo-200 max-w-xs'>
     <p class='mb-3'>
-      This is a blog entry draft.
+      Document history:
     </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          2nd October 2020 - Created
+        </li>
+      
+        <li>
+          13th May 2022 - Small refinements
+        </li>
+      
+    </ul>
   </div>
     <p class='mb-3'>
       “Can you write a blog post about the QA process that Adrestia has?”. When I saw this question on my slack I thought something is not right there. It took me several minutes but I finally got it. That’s right, there is no such thing as “QA process” in Adrestia, because QA (i.e. Quality Assurance) is there on every level of the Process we follow. Top to bottom. What derives from this fact is also a simple, yet powerful, principle: QA is responsibility of everyone.
@@ -3815,7 +3835,7 @@
     </p>
   
     <p class='mb-3'>
-      How does it play in real life? Let me try to present QA aspects of work in Adrestia team.
+      How does it play in real life? Let me try to present QA aspects of work in Adrestia Haskell team.
     </p>
   <h2 id='the-team' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>The Team</h2>
     <p class='mb-3'>
@@ -3871,7 +3891,7 @@
     </p>
   
     <p class='mb-3'>
-      Ideally tests, whether they are <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>property</code>, <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>unit</code> or <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>integration</code>, are created before (or along with) production code. That gives us opportunity to see the test fail first and passes after the implementation. It is a common <a href='https://en.wikipedia.org/wiki/Test-driven_development' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>TDD</a> practice that we also try to follow.
+      Ideally tests, whether they are <code class='py-0.5 px-0.5 bg-gray-100'>property</code>, <code class='py-0.5 px-0.5 bg-gray-100'>unit</code> or <code class='py-0.5 px-0.5 bg-gray-100'>integration</code>, are created before (or along with) production code. That gives us opportunity to see the test fail first and passes after the implementation. It is a common <a href='https://en.wikipedia.org/wiki/Test-driven_development' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>TDD</a> practice that we also try to follow.
     </p>
   
     <p class='mb-3'>
@@ -3879,7 +3899,7 @@
     </p>
   
     <p class='mb-3'>
-      The presence and accuracy of tests is verified initially already during code review. No need to mention that PR before gets merged into <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>master</code>, needs to pass all existing and new tests in CI environment, and believe me, there are a lot of <a href='#tests' class='text-indigo-600 mavenLinkBold hover:underline'>tests</a> there on different levels of the system.
+      The presence and accuracy of tests is verified initially already during code review. No need to mention that PR before gets merged into <code class='py-0.5 px-0.5 bg-gray-100'>master</code>, needs to pass all existing and new tests in CI environment, and believe me, there are a lot of <a href='#tests' class='text-indigo-600 mavenLinkBold hover:underline'>tests</a> there on different levels of the system.
     </p>
   
     <p class='mb-3'>
@@ -3919,7 +3939,7 @@
     </p>
   
     <p class='mb-3'>
-      At this stage it is also final opportunity to actually explore the given feature end-to-end on sets of environments other than CI. In case of <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> we might want to take it on journey to <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>testnet</code> or <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>mainnet</code> to see how new feature plays there.
+      At this stage it is also final opportunity to actually explore the given feature end-to-end on sets of environments other than CI. In case of <code class='py-0.5 px-0.5 bg-gray-100'>cardano-wallet</code> we might want to take it on journey to <code class='py-0.5 px-0.5 bg-gray-100'>testnet</code> or <code class='py-0.5 px-0.5 bg-gray-100'>mainnet</code> to see how new feature plays there.
     </p>
   <h3 id='bugs' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Bugs</h3>
     <p class='mb-3'>
@@ -3927,7 +3947,7 @@
     </p>
   
     <p class='mb-3'>
-      Every bug becomes a ticket in GitHub. It is described with clear reproduction path, actual and expected outcome with any additional information that may be useful (logs, screenshots etc.) and classified according to our <a href='process/Bug-Classification' class='text-indigo-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>classification guidelines</a>. We use <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>severity</code> for defining impact on the system and <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>priority</code> for indicating the importance from product standpoint.
+      Every bug becomes a ticket in GitHub. It is described with clear reproduction path, actual and expected outcome with any additional information that may be useful (logs, screenshots etc.) and classified according to our <a href='process/Bug-Classification' class='text-indigo-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>classification guidelines</a>. We use <code class='py-0.5 px-0.5 bg-gray-100'>severity</code> for defining impact on the system and <code class='py-0.5 px-0.5 bg-gray-100'>priority</code> for indicating the importance from product standpoint.
     </p>
   
     <p class='mb-3'>
@@ -3943,7 +3963,7 @@
     </p>
   
     <p class='mb-3'>
-      Technical debts are first often pinpointed in the source code with <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>TODO</code> and <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>FIXME</code> keywords, and then they end up as actual user stories in our backlog. From that point they undergo the same process as <em>normal</em> user stories from estimation all the way down to QA review.
+      Technical debts are first often pinpointed in the source code with <code class='py-0.5 px-0.5 bg-gray-100'>TODO</code> and <code class='py-0.5 px-0.5 bg-gray-100'>FIXME</code> keywords, and then they end up as actual user stories in our backlog. From that point they undergo the same process as <em>normal</em> user stories from estimation all the way down to QA review.
     </p>
   <h3 id='process-refinement' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Process refinement</h3>
     <p class='mb-3'>
@@ -3959,7 +3979,7 @@
     </p>
   <h3 id='types-and-levels-of-tests' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Types and levels of tests</h3>
     <p class='mb-3'>
-      Obviously we value automated tests over manual. Actually, when it comes to <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> we only have 6 manual scenarios that are executed as part of every <a href='cardano-wallet/contributing/Release-Checklist' class='text-indigo-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>Release Checklist</a>.
+      Obviously we value automated tests over manual. Actually, when it comes to <code class='py-0.5 px-0.5 bg-gray-100'>cardano-wallet</code> we only have 6 manual scenarios that are executed as part of every Release Checklist.
     </p>
   
     <p class='mb-3'>
@@ -3989,11 +4009,11 @@
         </li>
       
         <li>
-          integration level tests verifying a few components being integrated.
+          integration tests that test <code class='py-0.5 px-0.5 bg-gray-100'>cardano-wallet</code> with <a href='https://github.com/input-output-hk/cardano-node' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-node</a> in in a full-blown private blockchain with very similar settings <code class='py-0.5 px-0.5 bg-gray-100'>mainnet</code> has.
         </li>
       
         <li>
-          system level tests (which we actually also call integration tests) that test against fully integrated system along with it’s <em>third party</em> integrated backends, which in case of <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> is either <a href='https://github.com/input-output-hk/cardano-node' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-node</a> or <a href='https://github.com/input-output-hk/jormungandr' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>jormungandr</a>. We run tests for both of them.
+          <a href='https://github.com/input-output-hk/cardano-wallet/tree/master/test/e2e' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>end-to-end tests</a> that run against public Cardano testnet. Those tests allow to exercise cardano-wallet on environment close to production utilizing and integrating maximally all components of the Cardano ecosystem like Stake pools, SMASH, metadata token server etc. Worth to note that light-mode that is being introduced to <code class='py-0.5 px-0.5 bg-gray-100'>cardano-wallet</code> is also tested there.
         </li>
       
     </ul>
@@ -4005,7 +4025,7 @@
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          restoration benchmarks - measuring restoration along with a few wallet API operations on real <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>testnet</code> and <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>mainnet</code> environments
+          restoration benchmarks - measuring restoration along with a few wallet API operations on real <code class='py-0.5 px-0.5 bg-gray-100'>testnet</code> and <code class='py-0.5 px-0.5 bg-gray-100'>mainnet</code> environments
         </li>
       
         <li>
@@ -4016,18 +4036,14 @@
           database benchmarks - measuring performance of operations on database level.
         </li>
       
-        <li>
-          database migration tests - verifying that recent changes made to the system survive upgrade from the last 3 wallet versions.
-        </li>
-      
     </ul>
   
     <p class='mb-3'>
-      Important to note that the whole functional suite is executed against all 3 operating systems <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> supports: Linux, Windows and MacOS. Also integration tests are executed in a full-blown private blockchain with very similar settings <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>mainnet</code> has.
+      Important to note that the whole functional suite is executed against all 3 operating systems <code class='py-0.5 px-0.5 bg-gray-100'>cardano-wallet</code> supports: Linux, Windows and MacOS. Cardano-wallet docker image is tested the same way as well.
     </p>
   <h3 id='code-smart-test-smart' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Code smart, test smart</h3>
     <p class='mb-3'>
-      The number of tests there is in <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> is quite substantial. If one would consider counting in the examples from the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>property based</code> tests I wouldn’t be surprised if we were actually talking millions. The number of integration tests alone varies between 600-700 which is quite a lot.
+      The number of tests there is in <code class='py-0.5 px-0.5 bg-gray-100'>cardano-wallet</code> is quite substantial. If one would consider counting in the examples from the <code class='py-0.5 px-0.5 bg-gray-100'>property based</code> tests I wouldn’t be surprised if we were actually talking millions. The number of integration tests alone varies between 600-700 which is quite a lot.
     </p>
   
     <p class='mb-3'>
@@ -4057,17 +4073,9 @@
     <p class='mb-3'>
       <img class='inline mb-3' src='images/badges.png' alt='[[badges.png]]' style='width: inherit;' /><br />Badges on cardano-wallet repository.
     </p>
-  </div><h4 id='code-coverage' class='mt-6 mb-2 text-2xl font-bold text-gray-700'>Code coverage</h4>
+  </div><h4 id='visualize' class='mt-6 mb-2 text-2xl font-bold text-gray-700'>Visualize</h4>
     <p class='mb-3'>
-      May be a bit controversial to some. Off course, you can have 100% coverage and have really lousy tests. But still it is a good indicator of the areas in the code base that need more attention.
-    </p>
-  
-    <p class='mb-3'>
-      As for <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code>, code coverage will be back soon.
-    </p>
-  <h4 id='visualize' class='mt-6 mb-2 text-2xl font-bold text-gray-700'>Visualize</h4>
-    <p class='mb-3'>
-      If there is an opportunity to visualize results of our tests we’ll go for it. Good example in <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> are benchmarks. Raw numbers gathered by benchmarking scripts are not very convenient to analyze.
+      If there is an opportunity to visualize results of our tests we’ll go for it. Good example in <code class='py-0.5 px-0.5 bg-gray-100'>cardano-wallet</code> are benchmarks. Raw numbers gathered by benchmarking scripts are not very convenient to analyze.
     </p>
   
     <p class='mb-3'>
@@ -4129,9 +4137,12 @@
             
   <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
     
-      <a title='Tag' class='px-1 bg-gray-100 rounded hover:bg-gray-50 hover:text-indigo-500' href='-/tags/needs/cleanup'>
+      <!-- FIXME: The use of -/tags is wrong, because we should use routeUrl using Ema's encoder 
+        Perhaps Emanote should inject tagMetas with urls.
+      -->
+      <a title='Tag' class='px-1 bg-gray-100 rounded hover:bg-gray-50 hover:text-indigo-500' href='-/tags/needs/review'>
         <!-- DoNotFormat -->
-        #needs/cleanup
+        #needs/review
         <!-- DoNotFormat -->
       </a>
     
@@ -4159,7 +4170,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.4.10.2'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.15.1'>
       <img class='w-6 h-6 hover:text-indigo-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

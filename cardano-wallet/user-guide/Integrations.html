@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang='en'>
 
 <head>
@@ -8,8 +9,9 @@
   </title>
   
     
-      <meta property='og:description' content />
+      <meta property='og:description' content='A non-exhaustive list of applications and libraries which use the cardano-wallet backend.' />
       <meta property='og:site_name' content='Adrestia Project Docs' />
+      <meta property='og:image' content />
       <meta property='og:type' content='website' />
       <meta property='og:title' content='Integrations' />
     
@@ -25,7 +27,7 @@
 
 
   
-  <link href='tailwind.css?instanceId=baf1969c-651a-423a-8752-ea0bf7ea773f' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=c9440fb1-256d-4fed-82e5-a2109f0567b2' rel='stylesheet' type='text/css' />
 
   <!-- Heist error element -->
   <style type='text/css'>
@@ -40,15 +42,21 @@
 <style>
   @font-face {
     font-family: 'MavenPro';
-    src: url('_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf') format("truetype");
+    /* FIXME: This ought to be: ${ema:emanoteStaticLayerUrl}/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf */
+    src: url(_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf) format("truetype");
     font-display: swap;
   }
 
   body {
     font-family: 'MavenPro', sans-serif;
+    /* font-variation-settings: 'wght'300; */
   }
 
   a.mavenLinkBold {
+    font-variation-settings: 'wght'500;
+  }
+
+  strong {
     font-variation-settings: 'wght'500;
   }
 
@@ -3073,8 +3081,8 @@
       </svg>
     
   
-    <a class='hover:underline truncate' title='Release Checklist' href='cardano-wallet/contributing/Release-Checklist'>
-      Release Checklist
+    <a class='hover:underline truncate' title='Release Process' href='cardano-wallet/contributing/Release-Process'>
+      Release Process
     </a>
     
       
@@ -3812,13 +3820,13 @@
   <!-- What goes in this file will appear on top of note body-->
   
     <p class='mb-3'>
-      A non-exhaustive list of applications and libraries which use the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> backend.
+      A non-exhaustive list of applications and libraries which use the <code class='py-0.5 px-0.5 bg-gray-100'>cardano-wallet</code> backend.
     </p>
   <h2 id='elixir' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Elixir</h2>
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          <a href='https://github.com/ricn/cardanoex' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>ricn/cardanoex</code></a> - an Elixir library for accessing the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> REST <a href='https://input-output-hk.github.io/cardano-wallet/api/edge/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>API</a>.
+          <a href='https://github.com/ricn/cardanoex' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>ricn/cardanoex</code></a> - an Elixir library for accessing the <code class='py-0.5 px-0.5 bg-gray-100'>cardano-wallet</code> REST <a href='https://input-output-hk.github.io/cardano-wallet/api/edge/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>API</a>.
         </li>
       
     </ul>
@@ -3826,11 +3834,11 @@
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          <a href='https://github.com/echovl/cardano-go' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>echovl/cardano-go</code></a> - a Go library for creating go applicactions that interact with the Cardano Blockchain as well as a CLI to manage Cardano Wallets.
+          <a href='https://github.com/echovl/cardano-go' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>echovl/cardano-go</code></a> - a Go library for creating go applicactions that interact with the Cardano Blockchain as well as a CLI to manage Cardano Wallets.
         </li>
       
         <li>
-          <a href='https://github.com/godano/cardano-wallet-client' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>godano/cardano-wallet-client</code></a> - a Go library for accessing the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> REST <a href='https://input-output-hk.github.io/cardano-wallet/api/edge/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>API</a>.
+          <a href='https://github.com/godano/cardano-wallet-client' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>godano/cardano-wallet-client</code></a> - a Go library for accessing the <code class='py-0.5 px-0.5 bg-gray-100'>cardano-wallet</code> REST <a href='https://input-output-hk.github.io/cardano-wallet/api/edge/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>API</a>.
         </li>
       
     </ul>
@@ -3838,11 +3846,11 @@
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          <a href='https://github.com/piotr-iohk/cardano-wallet-rb' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>piotr-iohk/cardano-wallet-rb</code></a> - a Ruby Gem for accessing the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> REST <a href='https://input-output-hk.github.io/cardano-wallet/api/edge/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>API</a>.
+          <a href='https://github.com/piotr-iohk/cardano-wallet-rb' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>piotr-iohk/cardano-wallet-rb</code></a> - a Ruby Gem for accessing the <code class='py-0.5 px-0.5 bg-gray-100'>cardano-wallet</code> REST <a href='https://input-output-hk.github.io/cardano-wallet/api/edge/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>API</a>.
         </li>
       
         <li>
-          <a href='https://github.com/piotr-iohk/ikar' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>piotr-iohk/ikar</code></a> - a helper web app to interact with <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code>.
+          <a href='https://github.com/piotr-iohk/ikar' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>piotr-iohk/ikar</code></a> - a helper web app to interact with <code class='py-0.5 px-0.5 bg-gray-100'>cardano-wallet</code>.
         </li>
       
     </ul>
@@ -3850,15 +3858,15 @@
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          <a href='https://github.com/input-output-hk/psg-cardano-wallet-api' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>input-output-hk/psg-cardano-wallet-api</code></a> - a Scala and Java client for the Cardano Wallet <a href='https://input-output-hk.github.io/cardano-wallet/api/edge/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>API</a>.
+          <a href='https://github.com/input-output-hk/psg-cardano-wallet-api' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>input-output-hk/psg-cardano-wallet-api</code></a> - a Scala and Java client for the Cardano Wallet <a href='https://input-output-hk.github.io/cardano-wallet/api/edge/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>API</a>.
         </li>
       
         <li>
-          <a href='https://github.com/uniVocity/envlp-cardano-wallet' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>uniVocity/envlp-cardano-wallet</code></a> - a Java client for accessing the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> REST <a href='https://input-output-hk.github.io/cardano-wallet/api/edge/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>API</a>.
+          <a href='https://github.com/uniVocity/envlp-cardano-wallet' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>uniVocity/envlp-cardano-wallet</code></a> - a Java client for accessing the <code class='py-0.5 px-0.5 bg-gray-100'>cardano-wallet</code> REST <a href='https://input-output-hk.github.io/cardano-wallet/api/edge/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>API</a>.
         </li>
       
         <li>
-          ( <a href='https://github.com/bloxbean/cardano-client-lib' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>bloxbean/cardano-client-lib</code></a> - a client library for Cardano in Java, currently integrated through Blockfrost, but planning on to integrate with cardano-wallet )
+          ( <a href='https://github.com/bloxbean/cardano-client-lib' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>bloxbean/cardano-client-lib</code></a> - a client library for Cardano in Java, currently integrated through Blockfrost, but planning on to integrate with cardano-wallet )
         </li>
       
     </ul>
@@ -3866,15 +3874,15 @@
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          <a href='https://github.com/input-output-hk/daedalus' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>input-output-hk/daedalus</code></a> - a graphical Cardano Wallet user interface using Electron and the <a href='https://github.com/input-output-hk/react-polymorph' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>React Polymorph</a> framework.
+          <a href='https://github.com/input-output-hk/daedalus' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>input-output-hk/daedalus</code></a> - a graphical Cardano Wallet user interface using Electron and the <a href='https://github.com/input-output-hk/react-polymorph' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>React Polymorph</a> framework.
         </li>
       
         <li>
-          <a href='https://github.com/input-output-hk/cardano-launcher' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>input-output-hk/cardano-launcher</code></a> - a library for configuring, starting and stopping <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> and <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-node</code>.
+          <a href='https://github.com/input-output-hk/cardano-launcher' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>input-output-hk/cardano-launcher</code></a> - a library for configuring, starting and stopping <code class='py-0.5 px-0.5 bg-gray-100'>cardano-wallet</code> and <code class='py-0.5 px-0.5 bg-gray-100'>cardano-node</code>.
         </li>
       
         <li>
-          <a href='https://github.com/tango-crypto/cardano-wallet-js' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>tango-crypto/cardano-wallet-js</code></a> - a Typescript/Javascript module for accessing the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> REST <a href='https://input-output-hk.github.io/cardano-wallet/api/edge/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>API</a>.
+          <a href='https://github.com/tango-crypto/cardano-wallet-js' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>tango-crypto/cardano-wallet-js</code></a> - a Typescript/Javascript module for accessing the <code class='py-0.5 px-0.5 bg-gray-100'>cardano-wallet</code> REST <a href='https://input-output-hk.github.io/cardano-wallet/api/edge/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>API</a>.
         </li>
       
     </ul>
@@ -3882,7 +3890,7 @@
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          <a href='https://adawallet.io/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Medusa AdaWallet</code></a> - a web-based Cardano Wallet
+          <a href='https://adawallet.io/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>Medusa AdaWallet</code></a> - a web-based Cardano Wallet
         </li>
       
     </ul>
@@ -3920,7 +3928,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.4.10.2'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.15.1'>
       <img class='w-6 h-6 hover:text-indigo-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang='en'>
 
 <head>
@@ -8,8 +9,9 @@
   </title>
   
     
-      <meta property='og:description' content />
+      <meta property='og:description' content='GitHub Quickstart Guide' />
       <meta property='og:site_name' content='Adrestia Project Docs' />
+      <meta property='og:image' content />
       <meta property='og:type' content='website' />
       <meta property='og:title' content='Git' />
     
@@ -25,7 +27,7 @@
 
 
   
-  <link href='tailwind.css?instanceId=baf1969c-651a-423a-8752-ea0bf7ea773f' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=c9440fb1-256d-4fed-82e5-a2109f0567b2' rel='stylesheet' type='text/css' />
 
   <!-- Heist error element -->
   <style type='text/css'>
@@ -40,15 +42,21 @@
 <style>
   @font-face {
     font-family: 'MavenPro';
-    src: url('_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf') format("truetype");
+    /* FIXME: This ought to be: ${ema:emanoteStaticLayerUrl}/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf */
+    src: url(_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf) format("truetype");
     font-display: swap;
   }
 
   body {
     font-family: 'MavenPro', sans-serif;
+    /* font-variation-settings: 'wght'300; */
   }
 
   a.mavenLinkBold {
+    font-variation-settings: 'wght'500;
+  }
+
+  strong {
     font-variation-settings: 'wght'500;
   }
 
@@ -3064,8 +3072,8 @@
       </svg>
     
   
-    <a class='hover:underline truncate' title='Release Checklist' href='cardano-wallet/contributing/Release-Checklist'>
-      Release Checklist
+    <a class='hover:underline truncate' title='Release Process' href='cardano-wallet/contributing/Release-Process'>
+      Release Process
     </a>
     
       
@@ -3807,25 +3815,25 @@
     </p>
   <h2 id='how-to-more-easily-split-up-a-prs-into-smaller-pieces' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>How to more easily split up a PRs into smaller pieces</h2>
     <p class='mb-3'>
-      <a href='https://stacked-git.github.io/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Stacked Git</a> provides an easier workflow than standard <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>git rebase</code> alone.
+      <a href='https://stacked-git.github.io/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Stacked Git</a> provides an easier workflow than standard <code class='py-0.5 px-0.5 bg-gray-100'>git rebase</code> alone.
     </p>
   <h2 id='how-to-configure-your-github-for-iohk' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>How to configure your GitHub for IOHK</h2>
     <p class='mb-3'>
-      If you already have a personal GitHub account, you don’t need to make a new account just for IOHK. It’s possible to achieve a satisfactory arrangement by tweaking a few settings in GitHub and <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>git</code>.
+      If you already have a personal GitHub account, you don’t need to make a new account just for IOHK. It’s possible to achieve a satisfactory arrangement by tweaking a few settings in GitHub and <code class='py-0.5 px-0.5 bg-gray-100'>git</code>.
     </p>
   
     <ul class='my-3 ml-6 space-y-1 list-decimal list-inside'>
       
         <li>
-          Ensure that you have added <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>your.name@iohk.io</code> as an additional <a href='https://github.com/settings/emails' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>e-mail address of your GitHub account</a>.
+          Ensure that you have added <code class='py-0.5 px-0.5 bg-gray-100'>your.name@iohk.io</code> as an additional <a href='https://github.com/settings/emails' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>e-mail address of your GitHub account</a>.
         </li>
       
         <li>
-          In your <a href='https://github.com/settings/notifications' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>GitHub Notifications Settings</a>, scroll down to the <strong>Custom routing</strong> section, and ensure that the <a href='https://github.com/input-output-hk' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>input-output-hk</a> org directs to <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>your.name@iohk.io</code>. This will also have the effect of attributing GitHub-authored commits in IOHK repos to your IOHK e-mail address, rather than your personal e-mail address.
+          In your <a href='https://github.com/settings/notifications' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>GitHub Notifications Settings</a>, scroll down to the <strong>Custom routing</strong> section, and ensure that the <a href='https://github.com/input-output-hk' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>input-output-hk</a> org directs to <code class='py-0.5 px-0.5 bg-gray-100'>your.name@iohk.io</code>. This will also have the effect of attributing GitHub-authored commits in IOHK repos to your IOHK e-mail address, rather than your personal e-mail address.
         </li>
       
         <li>
-          The GPG key which you use for signing commits as <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>your.name@iohk.io</code> should be added to your <a href='https://github.com/settings/keys' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>GitHub GPG Keys</a> list.
+          The GPG key which you use for signing commits as <code class='py-0.5 px-0.5 bg-gray-100'>your.name@iohk.io</code> should be added to your <a href='https://github.com/settings/keys' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>GitHub GPG Keys</a> list.
         </li>
       
         <li>
@@ -3839,7 +3847,7 @@
     </p>
   <h3 id='make-a-separate-config-file-for-iohk' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Make a separate config file for IOHK</h3>
     <p class='mb-3'>
-      Your global git config is in <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>~/.config/git/config</code> and looks something like this:
+      Your global git config is in <code class='py-0.5 px-0.5 bg-gray-100'>~/.config/git/config</code> and looks something like this:
     </p>
   <div class='py-0.5 mb-3 text-sm'><pre><code class='conf language-conf'>[user]
 	email = "myname_72@hotmail.com"
@@ -3848,7 +3856,7 @@
 [includeIf "gitdir:~/iohk/"]
 	path = "~/.config/git/iohk.config"</code></pre></div>
     <p class='mb-3'>
-      And then the IOHK-specific settings you put into <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>~/.config/git/iohk.config</code>, like this:
+      And then the IOHK-specific settings you put into <code class='py-0.5 px-0.5 bg-gray-100'>~/.config/git/iohk.config</code>, like this:
     </p>
   <div class='py-0.5 mb-3 text-sm'><pre><code class='conf language-conf'>[commit]
     gpgSign = true
@@ -3857,12 +3865,12 @@
     email = "my.name@iohk.io"
     signingKey = "763208E1F43EDBDA1D87A632CFD319FB4C00B5C2"</code></pre></div>
     <p class='mb-3'>
-      Then any git repo you have cloned under <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>~/iohk</code> will receive IOHK-specific settings.
+      Then any git repo you have cloned under <code class='py-0.5 px-0.5 bg-gray-100'>~/iohk</code> will receive IOHK-specific settings.
     </p>
   <h3 id='more-useful-merge-conflict-cookies' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>More useful merge conflict cookies</h3><div class='py-0.5 mb-3 text-sm'><pre><code class='conf language-conf'>[merge]
-	conflictstyle = "diff3"</code></pre></div><h3 id='prevent-accidental-pushes-to-master' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Prevent accidental pushes to <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>master</code></h3>
+	conflictstyle = "diff3"</code></pre></div><h3 id='prevent-accidental-pushes-to-master' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Prevent accidental pushes to <code class='py-0.5 px-0.5 bg-gray-100'>master</code></h3>
     <p class='mb-3'>
-      Put the following into <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>~/iohk/git-hook-pre-push.sh</code>:
+      Put the following into <code class='py-0.5 px-0.5 bg-gray-100'>~/iohk/git-hook-pre-push.sh</code>:
     </p>
   <div class='py-0.5 mb-3 text-sm'><pre><code class='bash language-bash'>#!/usr/bin/env bash
 
@@ -3926,6 +3934,9 @@ $ ln -vsf !$ ~/iohk/cw/cardano-wallet.git/hooks/pre-push.sh</code></pre></div>
             
   <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
     
+      <!-- FIXME: The use of -/tags is wrong, because we should use routeUrl using Ema's encoder 
+        Perhaps Emanote should inject tagMetas with urls.
+      -->
       <a title='Tag' class='px-1 bg-gray-100 rounded hover:bg-gray-50 hover:text-indigo-500' href='-/tags/tools'>
         <!-- DoNotFormat -->
         #tools
@@ -3956,7 +3967,7 @@ $ ln -vsf !$ ~/iohk/cw/cardano-wallet.git/hooks/pre-push.sh</code></pre></div>
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.4.10.2'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.15.1'>
       <img class='w-6 h-6 hover:text-indigo-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

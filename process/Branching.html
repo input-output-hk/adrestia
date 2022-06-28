@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang='en'>
 
 <head>
@@ -8,8 +9,9 @@
   </title>
   
     
-      <meta property='og:description' content />
+      <meta property='og:description' content='Use these names for your Git branches.' />
       <meta property='og:site_name' content='Adrestia Project Docs' />
+      <meta property='og:image' content />
       <meta property='og:type' content='website' />
       <meta property='og:title' content='Git Branching Scheme' />
     
@@ -25,7 +27,7 @@
 
 
   
-  <link href='tailwind.css?instanceId=baf1969c-651a-423a-8752-ea0bf7ea773f' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=c9440fb1-256d-4fed-82e5-a2109f0567b2' rel='stylesheet' type='text/css' />
 
   <!-- Heist error element -->
   <style type='text/css'>
@@ -40,15 +42,21 @@
 <style>
   @font-face {
     font-family: 'MavenPro';
-    src: url('_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf') format("truetype");
+    /* FIXME: This ought to be: ${ema:emanoteStaticLayerUrl}/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf */
+    src: url(_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf) format("truetype");
     font-display: swap;
   }
 
   body {
     font-family: 'MavenPro', sans-serif;
+    /* font-variation-settings: 'wght'300; */
   }
 
   a.mavenLinkBold {
+    font-variation-settings: 'wght'500;
+  }
+
+  strong {
     font-variation-settings: 'wght'500;
   }
 
@@ -3064,8 +3072,8 @@
       </svg>
     
   
-    <a class='hover:underline truncate' title='Release Checklist' href='cardano-wallet/contributing/Release-Checklist'>
-      Release Checklist
+    <a class='hover:underline truncate' title='Release Process' href='cardano-wallet/contributing/Release-Process'>
+      Release Process
     </a>
     
       
@@ -3807,23 +3815,23 @@
     </p>
   <h2 id='topic-branches' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Topic branches</h2>
     <p class='mb-3'>
-      Use the format <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>user/issue/topic</code>.
+      Use the format <code class='py-0.5 px-0.5 bg-gray-100'>user/issue/topic</code>.
     </p>
-  <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Part</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Meaning</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Example</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Optional</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><em>user</em></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Your GitHub username</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>rvl</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>If branch is a shared effort and <em>issue</em> is provided.</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><em>issue</em></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Jira issue key or GitHub issue number</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>ADP-123</code>, <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>1234</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>If <em>username</em> and/or <em>issue</em> are provided.</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><em>topic</em></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Some description of the branch</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>add-foo</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>If <em>issue</em> is provided.</td></tr></tbody></table><h2 id='release-branches' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Release branches</h2>
+  <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Part</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Meaning</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Example</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Optional</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><em>user</em></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Your GitHub username</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>rvl</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>If branch is a shared effort and <em>issue</em> is provided.</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><em>issue</em></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Jira issue key or GitHub issue number</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>ADP-123</code>, <code class='py-0.5 px-0.5 bg-gray-100'>1234</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>If <em>username</em> and/or <em>issue</em> are provided.</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><em>topic</em></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Some description of the branch</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>add-foo</code></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>If <em>issue</em> is provided.</td></tr></tbody></table><h2 id='release-branches' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Release branches</h2>
     <p class='mb-3'>
       We release from the mainline branch, and therefore don’t use release branches.
     </p>
   
     <p class='mb-3'>
-      This lowers maintenance overheads, but requires that we always keep <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>master</code> in a releaseable state.
+      This lowers maintenance overheads, but requires that we always keep <code class='py-0.5 px-0.5 bg-gray-100'>master</code> in a releaseable state.
     </p>
   <h3 id='release-preparation-branches' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Release preparation branches</h3>
     <p class='mb-3'>
-      According to the <a href='cardano-wallet/contributing/Release-Checklist' class='text-indigo-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>Release Checklist</a>, these are of the form <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>your-name/bump-release/YYYY-MM-DD</code>.
+      According to the Release Checklist, these are of the form <code class='py-0.5 px-0.5 bg-gray-100'>your-name/bump-release/YYYY-MM-DD</code>.
     </p>
   <h2 id='mainline-branch' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Mainline branch</h2>
     <p class='mb-3'>
-      Mainline branch is <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>master</code> - for consistency.
+      Mainline branch is <code class='py-0.5 px-0.5 bg-gray-100'>master</code> - for consistency.
     </p>
   
   <!-- What goes in this file will appear below the note body-->
@@ -3859,7 +3867,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.4.10.2'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.15.1'>
       <img class='w-6 h-6 hover:text-indigo-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

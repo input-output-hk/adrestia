@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang='en'>
 
 <head>
@@ -8,8 +9,9 @@
   </title>
   
     
-      <meta property='og:description' content />
+      <meta property='og:description' content='This file contains agreed-upon coding standards and best practices, as well as proposals for changes or new standards. Proposals are prefixed with [PROPOSAL] and are voted on by the Adrestia team through polls on Slack. To be accepted, a practice should be voted with majority + 1, with neutral votes counting as positive votes.' />
       <meta property='og:site_name' content='Adrestia Project Docs' />
+      <meta property='og:image' content />
       <meta property='og:type' content='website' />
       <meta property='og:title' content='Coding Standards' />
     
@@ -25,7 +27,7 @@
 
 
   
-  <link href='tailwind.css?instanceId=baf1969c-651a-423a-8752-ea0bf7ea773f' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=c9440fb1-256d-4fed-82e5-a2109f0567b2' rel='stylesheet' type='text/css' />
 
   <!-- Heist error element -->
   <style type='text/css'>
@@ -40,15 +42,21 @@
 <style>
   @font-face {
     font-family: 'MavenPro';
-    src: url('_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf') format("truetype");
+    /* FIXME: This ought to be: ${ema:emanoteStaticLayerUrl}/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf */
+    src: url(_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf) format("truetype");
     font-display: swap;
   }
 
   body {
     font-family: 'MavenPro', sans-serif;
+    /* font-variation-settings: 'wght'300; */
   }
 
   a.mavenLinkBold {
+    font-variation-settings: 'wght'500;
+  }
+
+  strong {
     font-variation-settings: 'wght'500;
   }
 
@@ -3064,8 +3072,8 @@
       </svg>
     
   
-    <a class='hover:underline truncate' title='Release Checklist' href='cardano-wallet/contributing/Release-Checklist'>
-      Release Checklist
+    <a class='hover:underline truncate' title='Release Process' href='cardano-wallet/contributing/Release-Process'>
+      Release Process
     </a>
     
       
@@ -3803,7 +3811,7 @@
   <!-- What goes in this file will appear on top of note body-->
   <h2 id='foreword' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Foreword</h2>
     <p class='mb-3'>
-      This file contains agreed-upon coding standards and best practices, as well as proposals for changes or new standards. Proposals are prefixed with <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>[PROPOSAL]</code> and are voted on by the Adrestia team through polls on Slack. To be accepted, a practice should be voted with majority + 1, with neutral votes counting as positive votes.
+      This file contains agreed-upon coding standards and best practices, as well as proposals for changes or new standards. Proposals are prefixed with <code class='py-0.5 px-0.5 bg-gray-100'>[PROPOSAL]</code> and are voted on by the Adrestia team through polls on Slack. To be accepted, a practice should be voted with majority + 1, with neutral votes counting as positive votes.
     </p>
   
     <p class='mb-3'>
@@ -3821,7 +3829,7 @@
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          <a href='#editor-configuration-via-editorconfig' class='text-indigo-600 mavenLinkBold hover:underline'>Editor configuration via <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>.editorconfig</code></a>
+          <a href='#editor-configuration-via-editorconfig' class='text-indigo-600 mavenLinkBold hover:underline'>Editor configuration via <code class='py-0.5 px-0.5 bg-gray-100'>.editorconfig</code></a>
         </li>
       
         <li>
@@ -3853,7 +3861,7 @@
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          <a href='#favor-newtype-and-tagged-type-over-type-aliases' class='text-indigo-600 mavenLinkBold hover:underline'>Favor <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>newtype</code> and tagged type over type-aliases</a>
+          <a href='#favor-newtype-and-tagged-type-over-type-aliases' class='text-indigo-600 mavenLinkBold hover:underline'>Favor <code class='py-0.5 px-0.5 bg-gray-100'>newtype</code> and tagged type over type-aliases</a>
         </li>
       
         <li>
@@ -3921,11 +3929,11 @@
         </li>
       
         <li>
-          <a href='#use-checkcoverage-to-measure-coverage-requirements' class='text-indigo-600 mavenLinkBold hover:underline'>Use <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>checkCoverage</code> to measure coverage requirements</a>
+          <a href='#use-checkcoverage-to-measure-coverage-requirements' class='text-indigo-600 mavenLinkBold hover:underline'>Use <code class='py-0.5 px-0.5 bg-gray-100'>checkCoverage</code> to measure coverage requirements</a>
         </li>
       
         <li>
-          <span title='Link is broken'><s>[Avoid liftIO in monadic properties](avoid-liftio-in-monadic-properties)</s>❌</span>
+          <a href='#avoid-liftio-in-monadic-properties' class='text-indigo-600 mavenLinkBold hover:underline'>Avoid <code class='py-0.5 px-0.5 bg-gray-100'>liftIO</code> in monadic properties</a>
         </li>
       
     </ul>
@@ -3953,9 +3961,9 @@
         </li>
       
     </ul>
-  <h2 id='code-formatting' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Code Formatting</h2><h3 id='editor-configuration-via-editorconfig' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Editor Configuration via <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>.editorconfig</code></h3>
+  <h2 id='code-formatting' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Code Formatting</h2><h3 id='editor-configuration-via-editorconfig' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Editor Configuration via <code class='py-0.5 px-0.5 bg-gray-100'>.editorconfig</code></h3>
     <p class='mb-3'>
-      A <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>.editorconfig</code> (see <a href='https://editorconfig.org/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>https://editorconfig.org/</a>) at the root of the project specifies for various filetype:
+      A <code class='py-0.5 px-0.5 bg-gray-100'>.editorconfig</code> (see <a href='https://editorconfig.org/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>https://editorconfig.org/</a>) at the root of the project specifies for various filetype:
     </p>
   
     <ul class='my-3 ml-6 space-y-1 list-disc'>
@@ -3985,7 +3993,7 @@
     </p>
   
     <p class='mb-3'>
-      This is the kind of details we don’t want to be fighting over constantly. The <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>.editorconfig</code> are widely used, easily written and supported by any decent editor out there. Agreeing on such rules prevent our version control system to go crazy because people use different encoding or indentation style. It makes the overall code more consistent.
+      This is the kind of details we don’t want to be fighting over constantly. The <code class='py-0.5 px-0.5 bg-gray-100'>.editorconfig</code> are widely used, easily written and supported by any decent editor out there. Agreeing on such rules prevent our version control system to go crazy because people use different encoding or indentation style. It makes the overall code more consistent.
     </p>
   
     </blockquote>
@@ -4028,58 +4036,57 @@
     </p>
   <div class='py-0.5 mb-3 text-sm'><pre><code class='Haskell language-Haskell'>-- BAD
 instance Bi Block where
-  encode block = encodeListLen 3 &lt;&gt; encode (blockHeader block) &lt;&gt; encode (blockBody block) &lt;&gt; encode (blockExtraData block)</code></pre></div><div class='py-0.5 mb-3 text-sm'><pre><code class='Haskell language-Haskell'>-- GOOD
+    encode block = encodeListLen 3 &lt;&gt; encode (blockHeader block) &lt;&gt; encode (blockBody block) &lt;&gt; encode (blockExtraData block)</code></pre></div><div class='py-0.5 mb-3 text-sm'><pre><code class='Haskell language-Haskell'>-- GOOD
 instance Bi Block where
-  encode block =
-    encodeListLen 3
-      &lt;&gt; encode (blockHeader block)
-      &lt;&gt; encode (blockBody block)
-      &lt;&gt; encode (blockExtraData block)</code></pre></div>
+    encode block = encodeListLen 3
+        &lt;&gt; encode (blockHeader block)
+        &lt;&gt; encode (blockBody block)
+        &lt;&gt; encode (blockExtraData block)</code></pre></div>
     <p class='mb-3'>
       Another example of wrapping:
     </p>
   <div class='py-0.5 mb-3 text-sm'><pre><code class='hs language-hs'>-- BAD:
-    describe "Lemma 2.6 - Properties of balance" $ do
-        it "2.6.1) dom u ⋂ dom v ==&gt; balance (u ⋃ v) = balance u + balance v" (checkCoverage prop_2_6_1)
-        it "2.6.2) balance (ins⋪ u) = balance u - balance (ins⊲ u)" (checkCoverage prop_2_6_2)</code></pre></div><div class='py-0.5 mb-3 text-sm'><pre><code class='hs language-hs'>-- GOOD:
-    describe "Lemma 2.6 - Properties of balance" $ do
-        it "2.6.1) dom u ⋂ dom v ==&gt; balance (u ⋃ v) = balance u + balance v"
-            (checkCoverage prop_2_6_1)
-        it "2.6.2) balance (ins⋪ u) = balance u - balance (ins⊲ u)"
-            (checkCoverage prop_2_6_2)</code></pre></div><h5 id='strategy-2-place-comments-on-their-own-line-instead-of-attempting-to-align-them-vertically' class='mt-6 mb-2 text-xl font-bold text-gray-700'>Strategy 2: Place comments on their own line instead of attempting to align them vertically</h5><div class='py-0.5 mb-3 text-sm'><pre><code class='Haskell language-Haskell'>-- BAD
+describe "Lemma 2.6 - Properties of balance" $ do
+    it "2.6.1) dom u ⋂ dom v ==&gt; balance (u ⋃ v) = balance u + balance v" (checkCoverage prop_2_6_1)
+    it "2.6.2) balance (ins⋪ u) = balance u - balance (ins⊲ u)" (checkCoverage prop_2_6_2)</code></pre></div><div class='py-0.5 mb-3 text-sm'><pre><code class='hs language-hs'>-- GOOD:
+describe "Lemma 2.6 - Properties of balance" $ do
+    it "2.6.1) dom u ⋂ dom v ==&gt; balance (u ⋃ v) = balance u + balance v"
+        (checkCoverage prop_2_6_1)
+    it "2.6.2) balance (ins⋪ u) = balance u - balance (ins⊲ u)"
+        (checkCoverage prop_2_6_2)</code></pre></div><h5 id='strategy-2-place-comments-on-their-own-line-instead-of-attempting-to-align-them-vertically' class='mt-6 mb-2 text-xl font-bold text-gray-700'>Strategy 2: Place comments on their own line instead of attempting to align them vertically</h5><div class='py-0.5 mb-3 text-sm'><pre><code class='Haskell language-Haskell'>-- BAD
 mkMagicalBlock
-  :: MagicProtocolId                     -- A unique key specifying a magic protocol.
-  -&gt; MagicType                           -- The type of magic used in this block signing.
-  -&gt; MagicalKey                          -- The magical key used in this block signing.
-  -&gt; Maybe Delegation.MagicalCertificate -- A magical certificate of delegation, in case the specified 'MagicalKey' does not have the right to sign this block.
-  -&gt; Block</code></pre></div><div class='py-0.5 mb-3 text-sm'><pre><code class='Haskell language-Haskell'>-- GOOD
+    :: MagicProtocolId                     -- A unique key specifying a magic protocol.
+    -&gt; MagicType                           -- The type of magic used in this block signing.
+    -&gt; MagicalKey                          -- The magical key used in this block signing.
+    -&gt; Maybe Delegation.MagicalCertificate -- A magical certificate of delegation, in case the specified 'MagicalKey' does not have the right to sign this block.
+    -&gt; Block</code></pre></div><div class='py-0.5 mb-3 text-sm'><pre><code class='Haskell language-Haskell'>-- GOOD
 mkMagicalBlock
-  :: MagicProtocolId
-     -- ^ A unique key specifying a magic protocol.
-  -&gt; MagicType
-     -- ^ The type of magic used in this block signing.
-  -&gt; MagicalKey
-     -- ^ The magical key used in this block signing.
-  -&gt; Maybe Delegation.MagicalCertificate
-     -- ^ A magical certificate of delegation, in case the specified
-     -- 'MagicalKey' does not have the right to sign this block.
-  -&gt; Block</code></pre></div><h5 id='strategy-3-break-up-long-string-literals' class='mt-6 mb-2 text-xl font-bold text-gray-700'>Strategy 3: Break up long string literals</h5>
+    :: MagicProtocolId
+    -- ^ A unique key specifying a magic protocol.
+    -&gt; MagicType
+    -- ^ The type of magic used in this block signing.
+    -&gt; MagicalKey
+    -- ^ The magical key used in this block signing.
+    -&gt; Maybe Delegation.MagicalCertificate
+    -- ^ A magical certificate of delegation, in case the specified
+    -- 'MagicalKey' does not have the right to sign this block.
+    -&gt; Block</code></pre></div><h5 id='strategy-3-break-up-long-string-literals' class='mt-6 mb-2 text-xl font-bold text-gray-700'>Strategy 3: Break up long string literals</h5>
     <p class='mb-3'>
       Haskell provides convenient support for multi-line string literals:
     </p>
   <div class='py-0.5 mb-3 text-sm'><pre><code class='Haskell language-Haskell'>-- BAD
 errorAccountFundsCompletelyExhausted = "The funds in this account have been completely spent, and its balance is now zero. Either add more funds to this account or use a different account for this transaction."</code></pre></div><div class='py-0.5 mb-3 text-sm'><pre><code class='Haskell language-Haskell'>-- GOOD
 errorAccountFundsCompletelyExhausted =
-  "The funds in this account have been completely spent, and its balance \
-  \is now zero. Either add more funds to this account or use a different \
-  \account for this transaction."</code></pre></div><div class='py-0.5 mb-3 text-sm'><pre><code class='Haskell language-Haskell'>-- BAD:
+    "The funds in this account have been completely spent, and its balance \
+    \is now zero. Either add more funds to this account or use a different \
+    \account for this transaction."</code></pre></div><div class='py-0.5 mb-3 text-sm'><pre><code class='Haskell language-Haskell'>-- BAD:
 spec = do
-  scenario "only this account's balance can be retrieved while standing on one leg on the side of an extremely tall mountain, and breathing thin air with only very limited amounts of oxygen." $ do</code></pre></div><div class='py-0.5 mb-3 text-sm'><pre><code class='Haskell language-Haskell'>-- GOOD:
+    scenario "Only this account's balance can be retrieved while standing on one leg on the side of an extremely tall mountain, and breathing thin air with only very limited amounts of oxygen." $ do</code></pre></div><div class='py-0.5 mb-3 text-sm'><pre><code class='Haskell language-Haskell'>-- GOOD:
 spec = do
-  scenario
-    "only this account's balance can be retrieved while standing on one leg \
-    \on the side of an extremely tall mountain, and breathing thin air with \
-    \only very limited amounts of oxygen." $ do</code></pre></div><h5 id='strategy-4-reduce-nesting' class='mt-6 mb-2 text-xl font-bold text-gray-700'>Strategy 4: Reduce nesting</h5>
+    scenario
+        "Only this account's balance can be retrieved while standing on one \
+        \leg on the side of an extremely tall mountain, and breathing thin \
+        \air with only very limited amounts of oxygen." $ do</code></pre></div><h5 id='strategy-4-reduce-nesting' class='mt-6 mb-2 text-xl font-bold text-gray-700'>Strategy 4: Reduce nesting</h5>
     <p class='mb-3'>
       If your function contains so many levels of nesting that it’s hard to keep things within 80 characters (even with careful use of wrapping), consider breaking your function up into smaller parts.
     </p>
@@ -4167,13 +4174,15 @@ instance FromCBOR Block where
 
 newtype BlockHeader = BlockHeader
     { getBlockHeader :: Primitive.BlockHeader
-    } deriving Eq</code></pre></div><div class='py-0.5 mb-3 text-sm'><pre><code class='hs language-hs'>-- GOOD
+    }
+    deriving Eq</code></pre></div><div class='py-0.5 mb-3 text-sm'><pre><code class='hs language-hs'>-- GOOD
 instance FromCBOR Block where
     fromCBOR = Block &lt;$&gt; decodeBlock
 
 newtype BlockHeader = BlockHeader
     { getBlockHeader :: Primitive.BlockHeader
-    } deriving Eq</code></pre></div><div xmlhtmlRaw></details>
+    }
+    deriving Eq</code></pre></div><div xmlhtmlRaw></details>
 </div><h3 id='avoid-variable-length-indentation' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Avoid Variable-Length Indentation</h3>
     <p class='mb-3'>
       Variables, arguments, fields and tokens in general shouldn’t be aligned based on the length of a previous token. Rather, tokens should go over a new line and be indented one-level extra when it makes sense, or not be aligned at all.
@@ -4235,7 +4244,7 @@ data MyRecord = MyRecord
     }</code></pre></div><div xmlhtmlRaw></details>
 </div><h3 id='stylish-haskell-is-used-to-format-grouped-imports--language-pragmas' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Stylish-Haskell is used to format grouped imports & language pragmas</h3>
     <p class='mb-3'>
-      Contributors’ editors should pick up and enforce the rules defined by the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>.stylish-haskell.yaml</code> configuration file at the root of the project. Also, in order to maximize readability, imports should be grouped into three groups, separated by a blank newline.
+      Contributors’ editors should pick up and enforce the rules defined by the <code class='py-0.5 px-0.5 bg-gray-100'>.stylish-haskell.yaml</code> configuration file at the root of the project. Also, in order to maximize readability, imports should be grouped into three groups, separated by a blank newline.
     </p>
   
     <ul class='my-3 ml-6 space-y-1 list-disc'>
@@ -4364,7 +4373,7 @@ import qualified Codec.CBOR.Encoding as CBOR
 import qualified Codec.CBOR.Read as CBOR
 import qualified Codec.CBOR.Write as CBOR
 import qualified Crypto.Cipher.ChaChaPoly1305 as Poly</code></pre></div><div xmlhtmlRaw></details>
-</div><h2 id='haskell-practices' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Haskell Practices</h2><h3 id='favor-newtype-and-tagged-type-over-type-aliases' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Favor <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>newtype</code> and tagged type over type-aliases</h3>
+</div><h2 id='haskell-practices' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Haskell Practices</h2><h3 id='favor-newtype-and-tagged-type-over-type-aliases' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Favor <code class='py-0.5 px-0.5 bg-gray-100'>newtype</code> and tagged type over type-aliases</h3>
     <p class='mb-3'>
       Instead of writing type aliases, one should favor wrapping up values in newtype when it makes sense, or, have them wrapped into a tagged type with a phantom type to convey some extra meaning while still preserving type safeness. By using newtypes, we actually extend our program vocabulary and increase its robustness.
     </p>
@@ -4454,7 +4463,7 @@ default-extensions:
     </p>
   <div class='py-0.5 mb-3 text-sm'><pre><code class='hs language-hs'>{-# ANN decodeBlock ("HLint: ignore Use &lt;$&gt;" :: String) #-}</code></pre></div>
     <p class='mb-3'>
-      As a start, we’ll use the following built-in rules from <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>hlint</code> with the following configuration, and refine this as we move forward:
+      As a start, we’ll use the following built-in rules from <code class='py-0.5 px-0.5 bg-gray-100'>hlint</code> with the following configuration, and refine this as we move forward:
     </p>
   <div class='py-0.5 mb-3 text-sm'><pre><code class='yaml language-yaml'>- modules:
   # Enforce some common qualified imports aliases across the codebase
@@ -4478,7 +4487,7 @@ default-extensions:
 - ignore: {name: "Redundant bracket"} # Not everyone knows precedences of every operators in Haskell. Brackets help readability.
 - ignore: {name: "Redundant do"} # Just an annoying hlint built-in, GHC may remove redundant do if he wants</code></pre></div><h3 id='we-use-explicit-imports-by-default-and-favor-qualified-imports-for-ambiguous-functions' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>We use explicit imports by default, and favor qualified imports for ambiguous functions</h3>
     <p class='mb-3'>
-      Apart from the chosen prelude, there should be no implicit imports. Instead, every function or class used from a given module should be listed explicitly. In case where a function name is ambiguous or requires context, a qualified import should be used instead (this is mainly the case for modules coming from <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>containers</code>, <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>bytestring</code> and <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>aeson</code>).
+      Apart from the chosen prelude, there should be no implicit imports. Instead, every function or class used from a given module should be listed explicitly. In case where a function name is ambiguous or requires context, a qualified import should be used instead (this is mainly the case for modules coming from <code class='py-0.5 px-0.5 bg-gray-100'>containers</code>, <code class='py-0.5 px-0.5 bg-gray-100'>bytestring</code> and <code class='py-0.5 px-0.5 bg-gray-100'>aeson</code>).
     </p>
   
     <blockquote class='py-0.5 px-4 mb-3 italic border-l-4 bg-gray-50 text-gray-600 border-gray-400 quote'>
@@ -4534,9 +4543,9 @@ instance Aeson.FromJSON MyType where
 
 -- BAD
 import Data.Map.Strict
-  ( filter )
+    ( filter )
 import Data.Set
-  ( member )
+    ( member )
 
 restrictedTo :: UTxO -&gt; Set TxOut -&gt;  UTxO
 restrictedTo (UTxO utxo) outs =
@@ -4577,7 +4586,7 @@ restrictedTo (UTxO utxo) outs =
     </p>
   
     <p class='mb-3'>
-      In the legacy code-base, it was common to have multiple functions with the same or similar names, in different modules. Try seaching for <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>applyBlocks</code> or <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>switchToFork</code>. What is the difference between <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>DB.Spec.Update.switchToFork</code> and <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>DB.AcidState.switchToFork</code>?
+      In the legacy code-base, it was common to have multiple functions with the same or similar names, in different modules. Try seaching for <code class='py-0.5 px-0.5 bg-gray-100'>applyBlocks</code> or <code class='py-0.5 px-0.5 bg-gray-100'>switchToFork</code>. What is the difference between <code class='py-0.5 px-0.5 bg-gray-100'>DB.Spec.Update.switchToFork</code> and <code class='py-0.5 px-0.5 bg-gray-100'>DB.AcidState.switchToFork</code>?
     </p>
   
     <p class='mb-3'>
@@ -4685,7 +4694,7 @@ instance Arbitrary HumanReadableChar where
         choose (humanReadableCharMinBound, humanReadableCharMaxBound)</code></pre></div><div xmlhtmlRaw></details>
 </div><h3 id='avoid-wildcards-when-pattern-matching-on-sum-types' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Avoid wildcards when pattern-matching on sum types</h3>
     <p class='mb-3'>
-      When pattern-matching on sum types or finite structures, we should avoid the use of the wildcard <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>_</code> as much as possible, and instead favor explicit handling of all branches. This way, we get compiler errors when extending the underlying ADT and avoid silently handling (probably incorretly) some of the new branches.
+      When pattern-matching on sum types or finite structures, we should avoid the use of the wildcard <code class='py-0.5 px-0.5 bg-gray-100'>_</code> as much as possible, and instead favor explicit handling of all branches. This way, we get compiler errors when extending the underlying ADT and avoid silently handling (probably incorretly) some of the new branches.
     </p>
   
     <blockquote class='py-0.5 px-4 mb-3 italic border-l-4 bg-gray-50 text-gray-600 border-gray-400 quote'>
@@ -4695,7 +4704,7 @@ instance Arbitrary HumanReadableChar where
     </p>
   
     <p class='mb-3'>
-      When pattern-matching on sum types it is tempting to handle a few similar cases using a wildcard <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>_</code>. However, this often leads to undesirable behavior when adding new branches to an ADT. Compilers won’t trigger any warnings and, as developers, we might miss some necessary logic updates in existing pattern matches.
+      When pattern-matching on sum types it is tempting to handle a few similar cases using a wildcard <code class='py-0.5 px-0.5 bg-gray-100'>_</code>. However, this often leads to undesirable behavior when adding new branches to an ADT. Compilers won’t trigger any warnings and, as developers, we might miss some necessary logic updates in existing pattern matches.
     </p>
   
     </blockquote>
@@ -4703,19 +4712,19 @@ instance Arbitrary HumanReadableChar where
   <summary>See examples</summary>
 </div><div class='py-0.5 mb-3 text-sm'><pre><code class='hs language-hs'>-- GOOD
 isPositive = \case
-  InLedger -&gt; True
-  Pending -&gt; False
-  Invalidated -&gt; False
+    InLedger -&gt; True
+    Pending -&gt; False
+    Invalidated -&gt; False
 
 -- BAD
 isPositive = \case
-  InLedger -&gt; True
-  _ -&gt; False
+    InLedger -&gt; True
+    _ -&gt; False
 
 -- BAD
 handleErr = \case
-  ErrWalletNotFound -&gt; {- ... -}
-  _ -&gt; ErrUnknown</code></pre></div><div xmlhtmlRaw></details>
+    ErrWalletNotFound -&gt; {- ... -}
+    _ -&gt; ErrUnknown</code></pre></div><div xmlhtmlRaw></details>
 </div><h3 id='prefer-pattern-matching-to-equality-testing-on-sum-types' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Prefer pattern-matching to equality testing on sum types.</h3>
     <p class='mb-3'>
       For expressions that evaluate differently depending on a value of a sum type, prefer pattern matching over equality testing for values of that type.
@@ -4760,7 +4769,7 @@ sortWithOrder order = f . sort
         Descending -&gt; reverse</code></pre></div><div xmlhtmlRaw></details>
 </div><h3 id='proposed-dont-spit-back-malformed-values-in-errors-from-user-inputs' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>[PROPOSED] Don’t spit back malformed values in errors from user inputs.</h3>
     <p class='mb-3'>
-      When failing to parse user inputs, error message should not contain the malformed input. Instead, the error message should contain hints or examples of well-formed values expected by the parser. It is acceptable to show a raw input value if it is known to be within acceptable boundaries (e.g. parsing a <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Word32</code> into a more refined type, there is little chance that the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Word32</code> will be inadequate to display).
+      When failing to parse user inputs, error message should not contain the malformed input. Instead, the error message should contain hints or examples of well-formed values expected by the parser. It is acceptable to show a raw input value if it is known to be within acceptable boundaries (e.g. parsing a <code class='py-0.5 px-0.5 bg-gray-100'>Word32</code> into a more refined type, there is little chance that the <code class='py-0.5 px-0.5 bg-gray-100'>Word32</code> will be inadequate to display).
     </p>
   
     <blockquote class='py-0.5 px-4 mb-3 italic border-l-4 bg-gray-50 text-gray-600 border-gray-400 quote'>
@@ -4811,7 +4820,7 @@ err =
     </blockquote>
   <h3 id='define-properties-as-separate-functions' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Define properties as separate functions</h3>
     <p class='mb-3'>
-      It is often tempting to write properties inlined with <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>hspec</code> other combinators instead of having them as separate functions. However, we recommend writing properties as separate functions, prefixed with a <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>prop_</code> prefix to clearly identify them.
+      It is often tempting to write properties inlined with <code class='py-0.5 px-0.5 bg-gray-100'>hspec</code> other combinators instead of having them as separate functions. However, we recommend writing properties as separate functions, prefixed with a <code class='py-0.5 px-0.5 bg-gray-100'>prop_</code> prefix to clearly identify them.
     </p>
   
     <blockquote class='py-0.5 px-4 mb-3 italic border-l-4 bg-gray-50 text-gray-600 border-gray-400 quote'>
@@ -4865,7 +4874,7 @@ it "Eventually converge for decreasing functions" $ do
         label (show batchSize) True</code></pre></div><div xmlhtmlRaw></details>
 </div><h3 id='provide-readable-counter-examples-on-failures' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Provide readable counter-examples on failures</h3>
     <p class='mb-3'>
-      Use <a href='https://hackage.haskell.org/package/QuickCheck-2.13.2/docs/Test-QuickCheck.html#v:counterexample' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>counterexample</a> to display human-readable counter examples when a test fails; in particular, for data-types which have a <a href='https://hackage.haskell.org/package/fmt-0.6.1.2/docs/Fmt.html#t:Buildable' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Buildable</a> instances that are typically hard to read through their standard <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Show</code> instance. For monadic properties, this can be used via <a href='https://hackage.haskell.org/package/QuickCheck-2.13.2/docs/Test-QuickCheck-Monadic.html#v:monitor' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>monitor</a>.
+      Use <a href='https://hackage.haskell.org/package/QuickCheck-2.13.2/docs/Test-QuickCheck.html#v:counterexample' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>counterexample</a> to display human-readable counter examples when a test fails; in particular, for data-types which have a <a href='https://hackage.haskell.org/package/fmt-0.6.1.2/docs/Fmt.html#t:Buildable' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Buildable</a> instances that are typically hard to read through their standard <code class='py-0.5 px-0.5 bg-gray-100'>Show</code> instance. For monadic properties, this can be used via <a href='https://hackage.haskell.org/package/QuickCheck-2.13.2/docs/Test-QuickCheck-Monadic.html#v:monitor' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>monitor</a>.
     </p>
   
     <blockquote class='py-0.5 px-4 mb-3 italic border-l-4 bg-gray-50 text-gray-600 border-gray-400 quote'>
@@ -4875,7 +4884,7 @@ it "Eventually converge for decreasing functions" $ do
     </p>
   
     <p class='mb-3'>
-      Some property-based tests can use complex combinations of inputs that can be hard to decipher when printed out to the console using only the stock <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Show</code> instance. On the other hand, we want to keep using the stock <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Show</code> instance in order to be able to easily copy-paste failing cases and turn them into regression tests. QuickCheck however provides a good set of tools to display counter examples on failures to ease debbugging.
+      Some property-based tests can use complex combinations of inputs that can be hard to decipher when printed out to the console using only the stock <code class='py-0.5 px-0.5 bg-gray-100'>Show</code> instance. On the other hand, we want to keep using the stock <code class='py-0.5 px-0.5 bg-gray-100'>Show</code> instance in order to be able to easily copy-paste failing cases and turn them into regression tests. QuickCheck however provides a good set of tools to display counter examples on failures to ease debbugging.
     </p>
   
     </blockquote>
@@ -4959,7 +4968,6 @@ prop_rollbackPools db pairs = monadicIO $ do
 --   57% nothing to roll back
 --   43% something to roll back
 
-
 prop_accuracy r = withMaxSuccess 1000 $ monadicIO $ do
     {- ... -}
     monitor $ label $ accuracy dust balance balance'
@@ -5032,7 +5040,7 @@ prop_nonSingletonRangeGenerator = property $ \(nsr :: NonSingletonRange Int) -&g
   where
     isValidNonSingleton (NonSingletonRange r) =
         rangeIsValid r && not (rangeIsSingleton r) in</code></pre></div><div xmlhtmlRaw></details>
-</div><h3 id='use-checkcoverage-to-measure-coverage-requirements' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Use <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>checkCoverage</code> to measure coverage requirements</h3>
+</div><h3 id='use-checkcoverage-to-measure-coverage-requirements' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Use <code class='py-0.5 px-0.5 bg-gray-100'>checkCoverage</code> to measure coverage requirements</h3>
     <p class='mb-3'>
       Using <a href='https://hackage.haskell.org/package/QuickCheck-2.13.2/docs/Test-QuickCheck.html#v:label' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>label</a> or <a href='https://hackage.haskell.org/package/QuickCheck-2.13.2/docs/Test-QuickCheck.html#v:classify' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>classify</a> instruments QuickCheck to gather some metrics about a particular properties and print out results in the console. However, it also possible to <em>enforce</em> that some collected values stay above a certain threshold using <a href='https://hackage.haskell.org/package/QuickCheck-2.13.2/docs/Test-QuickCheck.html#v:checkCoverage' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>checkCoverage</a>. When used, QuickCheck will run the property as many times as necessary until a particular coverage requirement is satisfied, with a certain confidence.
     </p>
@@ -5044,7 +5052,7 @@ prop_nonSingletonRangeGenerator = property $ \(nsr :: NonSingletonRange Int) -&g
     </p>
   
     <p class='mb-3'>
-      Labelling and classifying is good but, in an evolving code-base where generators are sometimes shared between multiple properties, it is possible for someone to accidentally make a generator worse for an existing property without noticing it. Therefore, by enforcing clear coverage requirements with <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>checkCoverage</code>, one can make a property fail if the coverage drops below an acceptable threshold. For example, a property can measure the proportion of empty lists its generator yield and require that at least 50% of all generated list are not empty.
+      Labelling and classifying is good but, in an evolving code-base where generators are sometimes shared between multiple properties, it is possible for someone to accidentally make a generator worse for an existing property without noticing it. Therefore, by enforcing clear coverage requirements with <code class='py-0.5 px-0.5 bg-gray-100'>checkCoverage</code>, one can make a property fail if the coverage drops below an acceptable threshold. For example, a property can measure the proportion of empty lists its generator yield and require that at least 50% of all generated list are not empty.
     </p>
   
     </blockquote>
@@ -5068,9 +5076,9 @@ spec = do
   where
     lowerConfidence :: Confidence
     lowerConfidence = Confidence (10^(6 :: Integer)) 0.75</code></pre></div><div xmlhtmlRaw></details>
-</div><h3 id='avoid-liftio-in-monadic-properties' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Avoid <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>liftIO</code> in monadic properties</h3>
+</div><h3 id='avoid-liftio-in-monadic-properties' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Avoid <code class='py-0.5 px-0.5 bg-gray-100'>liftIO</code> in monadic properties</h3>
     <p class='mb-3'>
-      When running monadic properties in IO, it is often required to lift a particular IO action. Unfortunately, the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>PropertyM</code> monad in which the monadic properties are defined have a <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>MonadIO</code> instance so using <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>liftIO</code> is tempting. However, one should use <a href='https://hackage.haskell.org/package/QuickCheck-2.13.2/docs/Test-QuickCheck-Monadic.html#v:run' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>run</a> in order to lift operation in the property monad.
+      When running monadic properties in IO, it is often required to lift a particular IO action. Unfortunately, the <code class='py-0.5 px-0.5 bg-gray-100'>PropertyM</code> monad in which the monadic properties are defined have a <code class='py-0.5 px-0.5 bg-gray-100'>MonadIO</code> instance so using <code class='py-0.5 px-0.5 bg-gray-100'>liftIO</code> is tempting. However, one should use <a href='https://hackage.haskell.org/package/QuickCheck-2.13.2/docs/Test-QuickCheck-Monadic.html#v:run' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>run</a> in order to lift operation in the property monad.
     </p>
   
     <blockquote class='py-0.5 px-4 mb-3 italic border-l-4 bg-gray-50 text-gray-600 border-gray-400 quote'>
@@ -5080,7 +5088,7 @@ spec = do
     </p>
   
     <p class='mb-3'>
-      This is very important if the property also contains calls to <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>monitor</code>, <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>label</code>, <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>counterexample</code> and so forth… Using <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>liftIO</code> actually breaks the abstraction boundary of the property monad which then makes the reporting with these combinator ineffective. Using <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>run</code> however correctly inserts monadic operations and preserve reporting and measures done during the property.
+      This is very important if the property also contains calls to <code class='py-0.5 px-0.5 bg-gray-100'>monitor</code>, <code class='py-0.5 px-0.5 bg-gray-100'>label</code>, <code class='py-0.5 px-0.5 bg-gray-100'>counterexample</code> and so forth… Using <code class='py-0.5 px-0.5 bg-gray-100'>liftIO</code> actually breaks the abstraction boundary of the property monad which then makes the reporting with these combinator ineffective. Using <code class='py-0.5 px-0.5 bg-gray-100'>run</code> however correctly inserts monadic operations and preserve reporting and measures done during the property.
     </p>
   
     </blockquote>
@@ -5281,7 +5289,7 @@ test/unit/
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.4.10.2'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.15.1'>
       <img class='w-6 h-6 hover:text-indigo-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

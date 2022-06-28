@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang='en'>
 
 <head>
@@ -8,8 +9,9 @@
   </title>
   
     
-      <meta property='og:description' content />
+      <meta property='og:description' content='In cardano-wallet, we currently use the following conventions for dealing with exceptions.' />
       <meta property='og:site_name' content='Adrestia Project Docs' />
+      <meta property='og:image' content />
       <meta property='og:type' content='website' />
       <meta property='og:title' content='Exceptions in Haskell' />
     
@@ -25,7 +27,7 @@
 
 
   
-  <link href='tailwind.css?instanceId=baf1969c-651a-423a-8752-ea0bf7ea773f' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=c9440fb1-256d-4fed-82e5-a2109f0567b2' rel='stylesheet' type='text/css' />
 
   <!-- Heist error element -->
   <style type='text/css'>
@@ -40,15 +42,21 @@
 <style>
   @font-face {
     font-family: 'MavenPro';
-    src: url('_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf') format("truetype");
+    /* FIXME: This ought to be: ${ema:emanoteStaticLayerUrl}/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf */
+    src: url(_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf) format("truetype");
     font-display: swap;
   }
 
   body {
     font-family: 'MavenPro', sans-serif;
+    /* font-variation-settings: 'wght'300; */
   }
 
   a.mavenLinkBold {
+    font-variation-settings: 'wght'500;
+  }
+
+  strong {
     font-variation-settings: 'wght'500;
   }
 
@@ -3064,8 +3072,8 @@
       </svg>
     
   
-    <a class='hover:underline truncate' title='Release Checklist' href='cardano-wallet/contributing/Release-Checklist'>
-      Release Checklist
+    <a class='hover:underline truncate' title='Release Process' href='cardano-wallet/contributing/Release-Process'>
+      Release Process
     </a>
     
       
@@ -3803,7 +3811,7 @@
   <!-- What goes in this file will appear on top of note body-->
   
     <p class='mb-3'>
-      In <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code>, we currently use the following conventions for dealing with exceptions.
+      In <code class='py-0.5 px-0.5 bg-gray-100'>cardano-wallet</code>, we currently use the following conventions for dealing with exceptions.
     </p>
   <h2 id='avoid-partial-functions' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Avoid partial functions.</h2>
     <p class='mb-3'>
@@ -3811,19 +3819,19 @@
     </p>
   
     <p class='mb-3'>
-      <strong>Example</strong>: Do not use <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>head</code>, but use a pattern match, or consider using functions from <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Safe</code> module, such as <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>headMay</code>.
+      <strong>Example</strong>: Do not use <code class='py-0.5 px-0.5 bg-gray-100'>head</code>, but use a pattern match, or consider using functions from <code class='py-0.5 px-0.5 bg-gray-100'>Safe</code> module, such as <code class='py-0.5 px-0.5 bg-gray-100'>headMay</code>.
     </p>
   
     <p class='mb-3'>
-      <strong>Example</strong>: From the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Data.Text.Encoding</code> module, Use <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>decodeUtf8'</code> rather than <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>decodeUtf8</code> when handling user-supplied data. The latter function is partial and will crash your program if it receives non-UTF-8 input.
+      <strong>Example</strong>: From the <code class='py-0.5 px-0.5 bg-gray-100'>Data.Text.Encoding</code> module, Use <code class='py-0.5 px-0.5 bg-gray-100'>decodeUtf8'</code> rather than <code class='py-0.5 px-0.5 bg-gray-100'>decodeUtf8</code> when handling user-supplied data. The latter function is partial and will crash your program if it receives non-UTF-8 input.
     </p>
-  <h2 id='pure-code-vs-io-actions' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Pure code vs <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>IO</code> actions</h2>
+  <h2 id='pure-code-vs-io-actions' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Pure code vs <code class='py-0.5 px-0.5 bg-gray-100'>IO</code> actions</h2>
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
           
     <p class='mb-3'>
-      In pure code, use <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>error</code> instead of <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>undefined</code> if really necessary. In this case, please also add a <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>HasCallStack</code> constraint so that a backtrace can be shown when the impossible happens.
+      In pure code, use <code class='py-0.5 px-0.5 bg-gray-100'>error</code> instead of <code class='py-0.5 px-0.5 bg-gray-100'>undefined</code> if really necessary. In this case, please also add a <code class='py-0.5 px-0.5 bg-gray-100'>HasCallStack</code> constraint so that a backtrace can be shown when the impossible happens.
     </p>
   
         </li>
@@ -3831,7 +3839,7 @@
         <li>
           
     <p class='mb-3'>
-      In <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>IO</code>, use <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>throwIO</code> to throw a regular exception.
+      In <code class='py-0.5 px-0.5 bg-gray-100'>IO</code>, use <code class='py-0.5 px-0.5 bg-gray-100'>throwIO</code> to throw a regular exception.
     </p>
   
         </li>
@@ -3839,15 +3847,15 @@
     </ul>
   <h2 id='asynchronous-exceptions--never-catch-them' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Asynchronous exceptions — never catch them</h2>
     <p class='mb-3'>
-      The purpose of asynchronous exceptions is to terminate the current thread. Use <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>bracket</code> or <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>finally</code> to quickly release resources if necessary.
+      The purpose of asynchronous exceptions is to terminate the current thread. Use <code class='py-0.5 px-0.5 bg-gray-100'>bracket</code> or <code class='py-0.5 px-0.5 bg-gray-100'>finally</code> to quickly release resources if necessary.
     </p>
   
     <p class='mb-3'>
-      Exception catching functions from <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>UnliftIO</code> are typically designed to only catch synchronous exceptions, which is what you want most of the time.
+      Exception catching functions from <code class='py-0.5 px-0.5 bg-gray-100'>UnliftIO</code> are typically designed to only catch synchronous exceptions, which is what you want most of the time.
     </p>
   
     <p class='mb-3'>
-      Therefore, import exception utilities from <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>UnliftIO.Exception</code> module rather than <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Control.Exception</code>; these utilities have better default behavior for asynchronous exceptions.
+      Therefore, import exception utilities from <code class='py-0.5 px-0.5 bg-gray-100'>UnliftIO.Exception</code> module rather than <code class='py-0.5 px-0.5 bg-gray-100'>Control.Exception</code>; these utilities have better default behavior for asynchronous exceptions.
     </p>
   <h2 id='use-the-tracing-framework' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Use the tracing framework</h2>
     <p class='mb-3'>
@@ -3855,11 +3863,11 @@
     </p>
   <h2 id='be-specific-when-catching-exceptions' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Be specific when catching exceptions</h2>
     <p class='mb-3'>
-      For example, if you only want to catch errors when reading a file which doesn’t exist use <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>tryJust</code>, <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>ioeGetErrorType</code>, <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>isDoesNotExistErrorType</code>, etc.
+      For example, if you only want to catch errors when reading a file which doesn’t exist use <code class='py-0.5 px-0.5 bg-gray-100'>tryJust</code>, <code class='py-0.5 px-0.5 bg-gray-100'>ioeGetErrorType</code>, <code class='py-0.5 px-0.5 bg-gray-100'>isDoesNotExistErrorType</code>, etc.
     </p>
   <h2 id='portability' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Portability</h2>
     <p class='mb-3'>
-      Be aware that <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>IOException</code>s can have different forms on different platforms, especially with Windows and networking code. You need to test your exception handling on Windows.
+      Be aware that <code class='py-0.5 px-0.5 bg-gray-100'>IOException</code>s can have different forms on different platforms, especially with Windows and networking code. You need to test your exception handling on Windows.
     </p>
   <h2 id='checked-vs-unchecked-exceptions' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Checked vs. unchecked exceptions</h2>
     <ul class='my-3 ml-6 space-y-1 list-disc'>
@@ -3867,7 +3875,7 @@
         <li>
           
     <p class='mb-3'>
-      Please do not mix <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>IO (Either e a)</code> or <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>ExceptT e IO a</code> with unchecked exceptions.
+      Please do not mix <code class='py-0.5 px-0.5 bg-gray-100'>IO (Either e a)</code> or <code class='py-0.5 px-0.5 bg-gray-100'>ExceptT e IO a</code> with unchecked exceptions.
     </p>
   
         </li>
@@ -3875,7 +3883,7 @@
         <li>
           
     <p class='mb-3'>
-      If using checked exceptions, do not add an <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Exception</code> instance to your error type, because this will ensure that it cannot be thrown as an unchecked exception.
+      If using checked exceptions, do not add an <code class='py-0.5 px-0.5 bg-gray-100'>Exception</code> instance to your error type, because this will ensure that it cannot be thrown as an unchecked exception.
     </p>
   
         </li>
@@ -3887,7 +3895,7 @@
     </p>
   <h2 id='callbacks' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Callbacks</h2>
     <p class='mb-3'>
-      When using callbacks that involve monad transformers over <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>IO</code>, consider <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>MonadUnliftIO</code>.
+      When using callbacks that involve monad transformers over <code class='py-0.5 px-0.5 bg-gray-100'>IO</code>, consider <code class='py-0.5 px-0.5 bg-gray-100'>MonadUnliftIO</code>.
     </p>
   <h2 id='references' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>References</h2>
     <ul class='my-3 ml-6 space-y-1 list-disc'>
@@ -3915,12 +3923,18 @@
             
   <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
     
+      <!-- FIXME: The use of -/tags is wrong, because we should use routeUrl using Ema's encoder 
+        Perhaps Emanote should inject tagMetas with urls.
+      -->
       <a title='Tag' class='px-1 bg-gray-100 rounded hover:bg-gray-50 hover:text-indigo-500' href='-/tags/needs/review'>
         <!-- DoNotFormat -->
         #needs/review
         <!-- DoNotFormat -->
       </a>
     
+      <!-- FIXME: The use of -/tags is wrong, because we should use routeUrl using Ema's encoder 
+        Perhaps Emanote should inject tagMetas with urls.
+      -->
       <a title='Tag' class='px-1 bg-gray-100 rounded hover:bg-gray-50 hover:text-indigo-500' href='-/tags/needs/writing'>
         <!-- DoNotFormat -->
         #needs/writing
@@ -3951,7 +3965,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.4.10.2'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.15.1'>
       <img class='w-6 h-6 hover:text-indigo-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

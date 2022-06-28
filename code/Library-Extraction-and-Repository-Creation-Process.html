@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang='en'>
 
 <head>
@@ -8,8 +9,9 @@
   </title>
   
     
-      <meta property='og:description' content />
+      <meta property='og:description' content='This article documents the process that we used to create the cardano-coin-selection repository.' />
       <meta property='og:site_name' content='Adrestia Project Docs' />
+      <meta property='og:image' content />
       <meta property='og:type' content='website' />
       <meta property='og:title' content='Extracting New Libraries From Existing Repositories' />
     
@@ -25,7 +27,7 @@
 
 
   
-  <link href='tailwind.css?instanceId=baf1969c-651a-423a-8752-ea0bf7ea773f' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=c9440fb1-256d-4fed-82e5-a2109f0567b2' rel='stylesheet' type='text/css' />
 
   <!-- Heist error element -->
   <style type='text/css'>
@@ -40,15 +42,21 @@
 <style>
   @font-face {
     font-family: 'MavenPro';
-    src: url('_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf') format("truetype");
+    /* FIXME: This ought to be: ${ema:emanoteStaticLayerUrl}/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf */
+    src: url(_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf) format("truetype");
     font-display: swap;
   }
 
   body {
     font-family: 'MavenPro', sans-serif;
+    /* font-variation-settings: 'wght'300; */
   }
 
   a.mavenLinkBold {
+    font-variation-settings: 'wght'500;
+  }
+
+  strong {
     font-variation-settings: 'wght'500;
   }
 
@@ -3064,8 +3072,8 @@
       </svg>
     
   
-    <a class='hover:underline truncate' title='Release Checklist' href='cardano-wallet/contributing/Release-Checklist'>
-      Release Checklist
+    <a class='hover:underline truncate' title='Release Process' href='cardano-wallet/contributing/Release-Process'>
+      Release Process
     </a>
     
       
@@ -3803,7 +3811,7 @@
   <!-- What goes in this file will appear on top of note body-->
   <h2 id='introduction' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Introduction</h2>
     <p class='mb-3'>
-      This article documents the process that we used to create the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-coin-selection</code> repository.
+      This article documents the process that we used to create the <code class='py-0.5 px-0.5 bg-gray-100'>cardano-coin-selection</code> repository.
     </p>
   <h2 id='contents' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Contents</h2>
     <ul class='my-3 ml-6 space-y-1 list-disc'>
@@ -3851,7 +3859,7 @@
     </ul>
   <h2 id='overview' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Overview</h2>
     <p class='mb-3'>
-      The <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-coin-selection</code> repository was created by taking a clone of the pre-existing <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> repository and <em>filtering out</em> a <em>relevant subset</em> of the version control history.
+      The <code class='py-0.5 px-0.5 bg-gray-100'>cardano-coin-selection</code> repository was created by taking a clone of the pre-existing <code class='py-0.5 px-0.5 bg-gray-100'>cardano-wallet</code> repository and <em>filtering out</em> a <em>relevant subset</em> of the version control history.
     </p>
   
     <p class='mb-3'>
@@ -3891,25 +3899,25 @@
     </ul>
   <h3 id='example' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Example</h3>
     <p class='mb-3'>
-      For example, suppose that the module <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Cardano.Wallet.Primitive.Types</code> includes content from files that once existed at the following paths:
+      For example, suppose that the module <code class='py-0.5 px-0.5 bg-gray-100'>Cardano.Wallet.Primitive.Types</code> includes content from files that once existed at the following paths:
     </p>
   
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>lib/core/src/Cardano/Wallet/Types.hs</code>
+          <code class='py-0.5 px-0.5 bg-gray-100'>lib/core/src/Cardano/Wallet/Types.hs</code>
         </li>
       
         <li>
-          <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>lib/core/src/Cardano/Wallet/Primitive/Types.hs</code>
+          <code class='py-0.5 px-0.5 bg-gray-100'>lib/core/src/Cardano/Wallet/Primitive/Types.hs</code>
         </li>
       
         <li>
-          <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>src/Cardano/Wallet/Primitive.hs</code>
+          <code class='py-0.5 px-0.5 bg-gray-100'>src/Cardano/Wallet/Primitive.hs</code>
         </li>
       
         <li>
-          <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>src/Cardano/Wallet/Primitive/Types.hs</code>
+          <code class='py-0.5 px-0.5 bg-gray-100'>src/Cardano/Wallet/Primitive/Types.hs</code>
         </li>
       
     </ul>
@@ -3919,11 +3927,11 @@
     </p>
   <h2 id='process' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Process</h2>
     <p class='mb-3'>
-      Here is a record of the steps we used to create the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-coin-selection</code> repository.
+      Here is a record of the steps we used to create the <code class='py-0.5 px-0.5 bg-gray-100'>cardano-coin-selection</code> repository.
     </p>
   <h3 id='step-1-clone-source-repository' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Step 1: Clone Source Repository</h3>
     <p class='mb-3'>
-      We start with a fresh clone of the source repository (in our case, the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>cardano-wallet</code> repository).
+      We start with a fresh clone of the source repository (in our case, the <code class='py-0.5 px-0.5 bg-gray-100'>cardano-wallet</code> repository).
     </p>
   <h3 id='step-2-remove-irrelevant-files' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Step 2: Remove Irrelevant Files</h3>
     <p class='mb-3'>
@@ -3931,7 +3939,7 @@
     </p>
   
     <p class='mb-3'>
-      To achieve this, we make a <em>single commit</em> to the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>master</code> branch that removes all unwanted files from the repository. The result of applying this commit should be precisely the set of files we want to keep.
+      To achieve this, we make a <em>single commit</em> to the <code class='py-0.5 px-0.5 bg-gray-100'>master</code> branch that removes all unwanted files from the repository. The result of applying this commit should be precisely the set of files we want to keep.
     </p>
   
     <p class='mb-3'>
@@ -3943,57 +3951,57 @@
     </p>
   <h4 id='example-1' class='mt-6 mb-2 text-2xl font-bold text-gray-700'>Example</h4>
     <p class='mb-3'>
-      Suppose that we want to keep file <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>src/ImportantModule.hs</code>, but that it imports functions defined in the following modules:
+      Suppose that we want to keep file <code class='py-0.5 px-0.5 bg-gray-100'>src/ImportantModule.hs</code>, but that it imports functions defined in the following modules:
     </p>
   
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>src/Wibble.hs</code>
+          <code class='py-0.5 px-0.5 bg-gray-100'>src/Wibble.hs</code>
         </li>
       
         <li>
-          <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>src/Wobble.hs</code>
+          <code class='py-0.5 px-0.5 bg-gray-100'>src/Wobble.hs</code>
         </li>
       
     </ul>
   
     <p class='mb-3'>
-      Furthermore, suppose that <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>src/Wibble.hs</code> imports functions from the following modules:
+      Furthermore, suppose that <code class='py-0.5 px-0.5 bg-gray-100'>src/Wibble.hs</code> imports functions from the following modules:
     </p>
   
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>src/Foo.hs</code>
+          <code class='py-0.5 px-0.5 bg-gray-100'>src/Foo.hs</code>
         </li>
       
         <li>
-          <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>src/Bar.hs</code>
+          <code class='py-0.5 px-0.5 bg-gray-100'>src/Bar.hs</code>
         </li>
       
     </ul>
   
     <p class='mb-3'>
-      If we wish to keep <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>src/ImportantModule.hs</code>, we should therefore also keep:
+      If we wish to keep <code class='py-0.5 px-0.5 bg-gray-100'>src/ImportantModule.hs</code>, we should therefore also keep:
     </p>
   
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>src/Wibble.hs</code>
+          <code class='py-0.5 px-0.5 bg-gray-100'>src/Wibble.hs</code>
         </li>
       
         <li>
-          <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>src/Wobble.hs</code>
+          <code class='py-0.5 px-0.5 bg-gray-100'>src/Wobble.hs</code>
         </li>
       
         <li>
-          <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>src/Foo.hs</code>
+          <code class='py-0.5 px-0.5 bg-gray-100'>src/Foo.hs</code>
         </li>
       
         <li>
-          <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>src/Bar.hs</code>
+          <code class='py-0.5 px-0.5 bg-gray-100'>src/Bar.hs</code>
         </li>
       
     </ul>
@@ -4007,7 +4015,7 @@
     </p>
   
     <p class='mb-3'>
-      <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>find-paths.sh</code>:
+      <code class='py-0.5 px-0.5 bg-gray-100'>find-paths.sh</code>:
     </p>
   <div class='py-0.5 mb-3 text-sm'><pre><code class='shell language-shell'>#!/usr/bin/env bash
 git ls-tree -r master --name-only | while read -r file; do
@@ -4023,7 +4031,7 @@ done | sort -u</code></pre></div>
     </p>
   
     <p class='mb-3'>
-      Run the following command, using the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>git-filter-repo</code> tool:
+      Run the following command, using the <code class='py-0.5 px-0.5 bg-gray-100'>git-filter-repo</code> tool:
     </p>
   <div class='py-0.5 mb-3 text-sm'><pre><code class='shell-session language-shell-session'>$ git filter-repo --paths-from-file files-to-keep</code></pre></div><h3 id='step-5-verify-commit-history' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Step 5: Verify Commit History</h3>
     <p class='mb-3'>
@@ -4031,11 +4039,11 @@ done | sort -u</code></pre></div>
     </p>
   
     <p class='mb-3'>
-      Re-run the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>find-paths</code> script from the root of the repository, as follows:
+      Re-run the <code class='py-0.5 px-0.5 bg-gray-100'>find-paths</code> script from the root of the repository, as follows:
     </p>
   <div class='py-0.5 mb-3 text-sm'><pre><code class='shell-session language-shell-session'>$ find-paths.sh &gt; files-kept</code></pre></div>
     <p class='mb-3'>
-      The content of <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>files-kept</code> should be <strong>identical</strong> to <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>files-to-keep</code>.
+      The content of <code class='py-0.5 px-0.5 bg-gray-100'>files-kept</code> should be <strong>identical</strong> to <code class='py-0.5 px-0.5 bg-gray-100'>files-to-keep</code>.
     </p>
   <h3 id='step-6-push-to-github' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Step 6: Push to GitHub</h3>
     <p class='mb-3'>
@@ -4098,7 +4106,7 @@ $ git push --force -u origin master</code></pre></div>
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.4.10.2'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.15.1'>
       <img class='w-6 h-6 hover:text-indigo-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang='en'>
 
 <head>
@@ -8,8 +9,9 @@
   </title>
   
     
-      <meta property='og:description' content />
+      <meta property='og:description' content='Here are a list of Slack channels / ([[Matrix]],[]) chat rooms that we use.' />
       <meta property='og:site_name' content='Adrestia Project Docs' />
+      <meta property='og:image' content />
       <meta property='og:type' content='website' />
       <meta property='og:title' content='Chat Rooms' />
     
@@ -25,7 +27,7 @@
 
 
   
-  <link href='tailwind.css?instanceId=baf1969c-651a-423a-8752-ea0bf7ea773f' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=c9440fb1-256d-4fed-82e5-a2109f0567b2' rel='stylesheet' type='text/css' />
 
   <!-- Heist error element -->
   <style type='text/css'>
@@ -40,15 +42,21 @@
 <style>
   @font-face {
     font-family: 'MavenPro';
-    src: url('_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf') format("truetype");
+    /* FIXME: This ought to be: ${ema:emanoteStaticLayerUrl}/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf */
+    src: url(_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf) format("truetype");
     font-display: swap;
   }
 
   body {
     font-family: 'MavenPro', sans-serif;
+    /* font-variation-settings: 'wght'300; */
   }
 
   a.mavenLinkBold {
+    font-variation-settings: 'wght'500;
+  }
+
+  strong {
     font-variation-settings: 'wght'500;
   }
 
@@ -3064,8 +3072,8 @@
       </svg>
     
   
-    <a class='hover:underline truncate' title='Release Checklist' href='cardano-wallet/contributing/Release-Checklist'>
-      Release Checklist
+    <a class='hover:underline truncate' title='Release Process' href='cardano-wallet/contributing/Release-Process'>
+      Release Process
     </a>
     
       
@@ -3884,43 +3892,43 @@
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          ⛪ 👍 <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#adrestia-dev</code> - main channel for people across the company to ask questions of our team and discuss all things Adrestia.
+          ⛪ 👍 <code class='py-0.5 px-0.5 bg-gray-100'>#adrestia-dev</code> - main channel for people across the company to ask questions of our team and discuss all things Adrestia.
         </li>
       
         <li>
-          🔒 ❌ <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#adrestia-secret-fort</code> - decommissioned and replaced with Matrix.
+          🔒 ❌ <code class='py-0.5 px-0.5 bg-gray-100'>#adrestia-secret-fort</code> - decommissioned and replaced with Matrix.
         </li>
       
         <li>
-          🔒   <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#adrestia-polyglot</code> - compilation of wallet code to javascript/webassembly.
+          🔒   <code class='py-0.5 px-0.5 bg-gray-100'>#adrestia-polyglot</code> - compilation of wallet code to javascript/webassembly.
         </li>
       
         <li>
-          🔒   <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#adrestia-daily</code> - status updates.
+          🔒   <code class='py-0.5 px-0.5 bg-gray-100'>#adrestia-daily</code> - status updates.
         </li>
       
         <li>
-            👍 <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#adrestia-releases</code> - for co-ordinating releases.
+            👍 <code class='py-0.5 px-0.5 bg-gray-100'>#adrestia-releases</code> - for co-ordinating releases.
         </li>
       
         <li>
-            👍 <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#cardano-launcher-dev</code> - development of <a href='https://github.com/input-output-hk/cardano-launcher' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-launcher</a>.
+            👍 <code class='py-0.5 px-0.5 bg-gray-100'>#cardano-launcher-dev</code> - development of <a href='https://github.com/input-output-hk/cardano-launcher' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-launcher</a>.
         </li>
       
         <li>
-            👍 <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#daedalus-adrestia-node</code> - intersection of the three main components of Daedalus.
+            👍 <code class='py-0.5 px-0.5 bg-gray-100'>#daedalus-adrestia-node</code> - intersection of the three main components of Daedalus.
         </li>
       
         <li>
-            👍 <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#lightwallet</code> - light wallet project.
+            👍 <code class='py-0.5 px-0.5 bg-gray-100'>#lightwallet</code> - light wallet project.
         </li>
       
         <li>
-          🔒 ❌ <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#adrestia-leads</code> - not used much.
+          🔒 ❌ <code class='py-0.5 px-0.5 bg-gray-100'>#adrestia-leads</code> - not used much.
         </li>
       
         <li>
-          🔒   <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#recruiting_adrestia</code> - used with recruitment dept to discuss of roles, filter applications on workable, arrange interviews with candidates, etc.
+          🔒   <code class='py-0.5 px-0.5 bg-gray-100'>#recruiting_adrestia</code> - used with recruitment dept to discuss of roles, filter applications on workable, arrange interviews with candidates, etc.
         </li>
       
     </ul>
@@ -3928,47 +3936,47 @@
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-            👍 <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#cardano-dev</code> - main channel for Cardano development.
+            👍 <code class='py-0.5 px-0.5 bg-gray-100'>#cardano-dev</code> - main channel for Cardano development.
         </li>
       
         <li>
-            👍 <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#consensus</code> - consensus layer development.
+            👍 <code class='py-0.5 px-0.5 bg-gray-100'>#consensus</code> - consensus layer development.
         </li>
       
         <li>
-            👍 <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#ledger</code> - ledger layer development.
+            👍 <code class='py-0.5 px-0.5 bg-gray-100'>#ledger</code> - ledger layer development.
         </li>
       
         <li>
-            👍 <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#network</code> - network layer development.
+            👍 <code class='py-0.5 px-0.5 bg-gray-100'>#network</code> - network layer development.
         </li>
       
         <li>
-            👍 <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#node</code> - <a href='https://github.com/input-output-hk/cardano-node' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-node</a> development
+            👍 <code class='py-0.5 px-0.5 bg-gray-100'>#node</code> - <a href='https://github.com/input-output-hk/cardano-node' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-node</a> development
         </li>
       
         <li>
-            👍 <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#node-api-and-cli</code> - cardano-cli and cardano-api.
+            👍 <code class='py-0.5 px-0.5 bg-gray-100'>#node-api-and-cli</code> - cardano-cli and cardano-api.
         </li>
       
         <li>
-            👍 <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#node-logging</code> - benchmarking, logging and monitoring.
+            👍 <code class='py-0.5 px-0.5 bg-gray-100'>#node-logging</code> - benchmarking, logging and monitoring.
         </li>
       
         <li>
-            👍 <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#cardano-db-sync-dev</code> - <a href='https://github.com/input-output-hk/cardano-db-sync' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-db-sync</a> development
+            👍 <code class='py-0.5 px-0.5 bg-gray-100'>#cardano-db-sync-dev</code> - <a href='https://github.com/input-output-hk/cardano-db-sync' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>cardano-db-sync</a> development
         </li>
       
         <li>
-            👍 <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#cardano-explorer-app-dev</code> - cardano explorer frontend.
+            👍 <code class='py-0.5 px-0.5 bg-gray-100'>#cardano-explorer-app-dev</code> - cardano explorer frontend.
         </li>
       
         <li>
-            👍 <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#plutus</code> - Plutus development.
+            👍 <code class='py-0.5 px-0.5 bg-gray-100'>#plutus</code> - Plutus development.
         </li>
       
         <li>
-              <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#team-cardanodocs</code> - documentation writing.
+              <code class='py-0.5 px-0.5 bg-gray-100'>#team-cardanodocs</code> - documentation writing.
         </li>
       
     </ul>
@@ -3976,7 +3984,7 @@
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          ⛪ 👍 <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#daedalus</code> - main channel to discuss all things Daedalus.
+          ⛪ 👍 <code class='py-0.5 px-0.5 bg-gray-100'>#daedalus</code> - main channel to discuss all things Daedalus.
         </li>
       
     </ul>
@@ -3984,23 +3992,23 @@
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          ⛪ 👍 <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#crossteam-ci</code> - get help with your failing builds, discuss CI issues.
+          ⛪ 👍 <code class='py-0.5 px-0.5 bg-gray-100'>#crossteam-ci</code> - get help with your failing builds, discuss CI issues.
         </li>
       
         <li>
-          ⛪   <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#ops</code> - devops team public channel.
+          ⛪   <code class='py-0.5 px-0.5 bg-gray-100'>#ops</code> - devops team public channel.
         </li>
       
         <li>
-          ⛪ 👍 <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#haskell</code> - ask questions, discuss Haskell stuff.
+          ⛪ 👍 <code class='py-0.5 px-0.5 bg-gray-100'>#haskell</code> - ask questions, discuss Haskell stuff.
         </li>
       
         <li>
-          ⛪   <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#emacs-best-practices</code> - Emacs users.
+          ⛪   <code class='py-0.5 px-0.5 bg-gray-100'>#emacs-best-practices</code> - Emacs users.
         </li>
       
         <li>
-          ⛪ 👍 <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#nix-best-practices</code> - get help with Nix.
+          ⛪ 👍 <code class='py-0.5 px-0.5 bg-gray-100'>#nix-best-practices</code> - get help with Nix.
         </li>
       
     </ul>
@@ -4008,27 +4016,27 @@
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          ⛪ 👍 <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#engineering</code> - large channel for all engineering staff.
+          ⛪ 👍 <code class='py-0.5 px-0.5 bg-gray-100'>#engineering</code> - large channel for all engineering staff.
         </li>
       
         <li>
-          ⛪ 🔥 <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#public</code> - general IOHK-relevant content.
+          ⛪ 🔥 <code class='py-0.5 px-0.5 bg-gray-100'>#public</code> - general IOHK-relevant content.
         </li>
       
         <li>
-          ⛪ 🔥 <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#public-random</code> - share interesting links and stories.
+          ⛪ 🔥 <code class='py-0.5 px-0.5 bg-gray-100'>#public-random</code> - share interesting links and stories.
         </li>
       
         <li>
-          ⛪   <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#announcements</code> - not particularly interesting, messages are usually cross-posted anyway.
+          ⛪   <code class='py-0.5 px-0.5 bg-gray-100'>#announcements</code> - not particularly interesting, messages are usually cross-posted anyway.
         </li>
       
         <li>
-          🔒 🔥 <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#comms</code> - comms team discussion.
+          🔒 🔥 <code class='py-0.5 px-0.5 bg-gray-100'>#comms</code> - comms team discussion.
         </li>
       
         <li>
-          ⛪ 👍 <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#security-public</code> - computer and network security.
+          ⛪ 👍 <code class='py-0.5 px-0.5 bg-gray-100'>#security-public</code> - computer and network security.
         </li>
       
     </ul>
@@ -4036,15 +4044,15 @@
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          ⛪ <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#aus</code> - channel for (honourary) Australians and Kiwis.
+          ⛪ <code class='py-0.5 px-0.5 bg-gray-100'>#aus</code> - channel for (honourary) Australians and Kiwis.
         </li>
       
         <li>
-          ⛪ <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#keyboards</code> - input devices and related topic.
+          ⛪ <code class='py-0.5 px-0.5 bg-gray-100'>#keyboards</code> - input devices and related topic.
         </li>
       
         <li>
-          ⛪ <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#fitness</code> - health and well-being.
+          ⛪ <code class='py-0.5 px-0.5 bg-gray-100'>#fitness</code> - health and well-being.
         </li>
       
     </ul>
@@ -4052,11 +4060,11 @@
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          ⛪ <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#concur</code> - get help with SAP.
+          ⛪ <code class='py-0.5 px-0.5 bg-gray-100'>#concur</code> - get help with SAP.
         </li>
       
         <li>
-          🔒 <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>#udemy</code> - training platform.
+          🔒 <code class='py-0.5 px-0.5 bg-gray-100'>#udemy</code> - training platform.
         </li>
       
     </ul>
@@ -4165,7 +4173,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.4.10.2'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.15.1'>
       <img class='w-6 h-6 hover:text-indigo-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

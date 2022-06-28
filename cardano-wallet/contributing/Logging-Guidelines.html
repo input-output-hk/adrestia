@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang='en'>
 
 <head>
@@ -8,8 +9,9 @@
   </title>
   
     
-      <meta property='og:description' content />
+      <meta property='og:description' content='Logs are primarily for users of the cardano-wallet, not its developers. Such users could be:' />
       <meta property='og:site_name' content='Adrestia Project Docs' />
+      <meta property='og:image' content />
       <meta property='og:type' content='website' />
       <meta property='og:title' content='Logging guidelines' />
     
@@ -25,7 +27,7 @@
 
 
   
-  <link href='tailwind.css?instanceId=baf1969c-651a-423a-8752-ea0bf7ea773f' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=c9440fb1-256d-4fed-82e5-a2109f0567b2' rel='stylesheet' type='text/css' />
 
   <!-- Heist error element -->
   <style type='text/css'>
@@ -40,15 +42,21 @@
 <style>
   @font-face {
     font-family: 'MavenPro';
-    src: url('_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf') format("truetype");
+    /* FIXME: This ought to be: ${ema:emanoteStaticLayerUrl}/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf */
+    src: url(_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf) format("truetype");
     font-display: swap;
   }
 
   body {
     font-family: 'MavenPro', sans-serif;
+    /* font-variation-settings: 'wght'300; */
   }
 
   a.mavenLinkBold {
+    font-variation-settings: 'wght'500;
+  }
+
+  strong {
     font-variation-settings: 'wght'500;
   }
 
@@ -3073,8 +3081,8 @@
       </svg>
     
   
-    <a class='hover:underline truncate' title='Release Checklist' href='cardano-wallet/contributing/Release-Checklist'>
-      Release Checklist
+    <a class='hover:underline truncate' title='Release Process' href='cardano-wallet/contributing/Release-Process'>
+      Release Process
     </a>
     
       
@@ -3840,7 +3848,7 @@
     </p>
   <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><strong>Severity Level</strong></th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><strong>Meaning</strong></th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Debug</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>detailed information about values and decision flow</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Info</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>general information of events; progressing properly</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Notice</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>needs attention; something not progressing properly</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Warning</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>may continue into an error condition if continued</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Error</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>unexpected set of event or condition occurred</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Critical</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>error condition causing degrade of operation</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Alert</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>a subsystem is no longer operating correctly, likely requires manual intervention</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Emergency</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>at this point, the system can never progress without additional intervention</td></tr></tbody></table>
     <p class='mb-3'>
-      This design was influenced by the <a href='https://en.wikipedia.org/wiki/Syslog#Severity_level' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>syslog</code> severity level</a> taxonomy.
+      This design was influenced by the <a href='https://en.wikipedia.org/wiki/Syslog#Severity_level' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>syslog</code> severity level</a> taxonomy.
     </p>
   
     <p class='mb-3'>
@@ -4042,7 +4050,7 @@
     <p class='mb-3'>
       Logging from the CLI should not be cluttered with timestamps and other metadata. It should just look like a normal print statements in a program. Nonetheless, using the logging framework for CLI output helps because error messages can be automatically coloured.
     </p>
-  <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><strong>Severity</strong></th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><strong>Format</strong></th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Debug</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Hidden unless enabled by the user</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Info</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Printed normally on <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>stdout</code></td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Notice</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Printed in bold on <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>stdout</code></td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Warning</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Printed in bold colour on <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>stderr</code> prefixed by <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Warning: </code></td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Error</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Printed in bold red on <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>stderr</code> prefixed by <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>ERROR: </code></td></tr></tbody></table><h3 id='server' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Server</h3><table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><strong>Severity</strong></th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><strong>Format</strong></th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Debug</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Hidden unless enabled by the user</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>The rest</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>As per defaults for <a href='https://github.com/input-output-hk/iohk-monitoring-framework' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>iohk-monitoring-framework</a></td></tr></tbody></table>
+  <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><strong>Severity</strong></th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><strong>Format</strong></th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Debug</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Hidden unless enabled by the user</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Info</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Printed normally on <code class='py-0.5 px-0.5 bg-gray-100'>stdout</code></td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Notice</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Printed in bold on <code class='py-0.5 px-0.5 bg-gray-100'>stdout</code></td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Warning</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Printed in bold colour on <code class='py-0.5 px-0.5 bg-gray-100'>stderr</code> prefixed by <code class='py-0.5 px-0.5 bg-gray-100'>Warning: </code></td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Error</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Printed in bold red on <code class='py-0.5 px-0.5 bg-gray-100'>stderr</code> prefixed by <code class='py-0.5 px-0.5 bg-gray-100'>ERROR: </code></td></tr></tbody></table><h3 id='server' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Server</h3><table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><strong>Severity</strong></th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><strong>Format</strong></th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Debug</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Hidden unless enabled by the user</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>The rest</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>As per defaults for <a href='https://github.com/input-output-hk/iohk-monitoring-framework' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>iohk-monitoring-framework</a></td></tr></tbody></table>
     <p class='mb-3'>
       The server will support also support a log config file where the output location and format can be fully customised.
     </p>
@@ -4052,7 +4060,7 @@
     </p>
   <h3 id='json' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>JSON</h3>
     <p class='mb-3'>
-      JSON (one object per line) is an OK format for log files, but it’s pretty bad for printing the terminal. For example, consider how difficult it would be to read through JSON messages within <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>journalctl -u cardano-wallet.service</code>. Therefore, log messages to <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>stdout</code>/<code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>stderr</code> should be formatted as text, unless otherwise configured by the user.
+      JSON (one object per line) is an OK format for log files, but it’s pretty bad for printing the terminal. For example, consider how difficult it would be to read through JSON messages within <code class='py-0.5 px-0.5 bg-gray-100'>journalctl -u cardano-wallet.service</code>. Therefore, log messages to <code class='py-0.5 px-0.5 bg-gray-100'>stdout</code>/<code class='py-0.5 px-0.5 bg-gray-100'>stderr</code> should be formatted as text, unless otherwise configured by the user.
     </p>
   <h2 id='context' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Context</h2>
     <p class='mb-3'>
@@ -4076,11 +4084,11 @@
     </ul>
   <h3 id='logging-hierarchy' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Logging Hierarchy</h3>
     <p class='mb-3'>
-      Log <em>Traces</em> can have context added such as a new name. Different subsystems of the wallet (such as network, database, api) should use <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>appendName</code> to create subtraces.
+      Log <em>Traces</em> can have context added such as a new name. Different subsystems of the wallet (such as network, database, api) should use <code class='py-0.5 px-0.5 bg-gray-100'>appendName</code> to create subtraces.
     </p>
   <h2 id='observables' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Observables</h2>
     <p class='mb-3'>
-      The following are examples of things which should be easy and useful to log as micro-benchmarks (<code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>bracketObserveIO</code>).
+      The following are examples of things which should be easy and useful to log as micro-benchmarks (<code class='py-0.5 px-0.5 bg-gray-100'>bracketObserveIO</code>).
     </p>
   
     <ul class='my-3 ml-6 space-y-1 list-disc'>
@@ -4100,7 +4108,7 @@
     </ul>
   <h2 id='privacy' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Privacy</h2>
     <p class='mb-3'>
-      <a href='https://github.com/input-output-hk/iohk-monitoring-framework' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>iohk-monitoring-framework</a> provides “sensitive” variants of log functions (e.g. <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>logInfoS</code>). These allow sensitive information to be logged into separate files. Then users may send their logs to the technical support desk with a reasonable assurance of privacy.
+      <a href='https://github.com/input-output-hk/iohk-monitoring-framework' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>iohk-monitoring-framework</a> provides “sensitive” variants of log functions (e.g. <code class='py-0.5 px-0.5 bg-gray-100'>logInfoS</code>). These allow sensitive information to be logged into separate files. Then users may send their logs to the technical support desk with a reasonable assurance of privacy.
     </p>
   
     <p class='mb-3'>
@@ -4208,7 +4216,7 @@
     | LogFooIncomingEvent Int
     deriving (Show, Eq)</code></pre></div>
     <p class='mb-3'>
-      Then for human-readable logs use our <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>ToText</code> class.
+      Then for human-readable logs use our <code class='py-0.5 px-0.5 bg-gray-100'>ToText</code> class.
     </p>
   <div class='py-0.5 mb-3 text-sm'><pre><code class='haskell language-haskell'>import Data.Text.Class
     ( ToText (..) )
@@ -4237,7 +4245,7 @@ instance DefineSeverity FooMsg
         LogFooError _ -&gt; Error
         LogFooIncomingEvent -&gt; Info</code></pre></div>
     <p class='mb-3'>
-      To use the logging in the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>doFoo</code> function:
+      To use the logging in the <code class='py-0.5 px-0.5 bg-gray-100'>doFoo</code> function:
     </p>
   <div class='py-0.5 mb-3 text-sm'><pre><code class='haskell language-haskell'>import Cardano.BM.Trace
     ( Trace )
@@ -4251,7 +4259,7 @@ doFoo tr = do
        Right n -&gt; logTrace tr $ LogFooIncomingEvent n
        Left e -&gt; logTrace tr $ LogFooError e</code></pre></div>
     <p class='mb-3'>
-      To convert to <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Trace m FooMsg</code> to <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Trace m Text</code> (well actually - the other way around), use <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Cardano.Wallet.Logging.transformTextTrace</code>, like so:
+      To convert to <code class='py-0.5 px-0.5 bg-gray-100'>Trace m FooMsg</code> to <code class='py-0.5 px-0.5 bg-gray-100'>Trace m Text</code> (well actually - the other way around), use <code class='py-0.5 px-0.5 bg-gray-100'>Cardano.Wallet.Logging.transformTextTrace</code>, like so:
     </p>
   <div class='py-0.5 mb-3 text-sm'><pre><code class='haskell language-haskell'>import Control.Tracer
     ( contramap )
@@ -4262,7 +4270,7 @@ import Foo (doFoo)
 mainApp :: Trace IO Text -&gt; IO ()
 mainApp tr = doFoo (transformTextTrace tr)</code></pre></div>
     <p class='mb-3'>
-      To convert a <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>Trace m FooMsg</code> to anything else, use <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>contramap</code>.
+      To convert a <code class='py-0.5 px-0.5 bg-gray-100'>Trace m FooMsg</code> to anything else, use <code class='py-0.5 px-0.5 bg-gray-100'>contramap</code>.
     </p>
   <div class='py-0.5 mb-3 text-sm'><pre><code class='haskell language-haskell'>data AppMsg
     = FooMsg FooMsg
@@ -4326,7 +4334,7 @@ mainApp tr = doFoo (contramap (fmap FooMsg) tr)</code></pre></div>
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.4.10.2'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.15.1'>
       <img class='w-6 h-6 hover:text-indigo-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>

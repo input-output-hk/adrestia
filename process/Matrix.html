@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang='en'>
 
 <head>
@@ -8,8 +9,9 @@
   </title>
   
     
-      <meta property='og:description' content />
+      <meta property='og:description' content='Our team’s homeserver is adrestia.iohkdev.io.' />
       <meta property='og:site_name' content='Adrestia Project Docs' />
+      <meta property='og:image' content />
       <meta property='og:type' content='website' />
       <meta property='og:title' content='Matrix Team Chat' />
     
@@ -25,7 +27,7 @@
 
 
   
-  <link href='tailwind.css?instanceId=baf1969c-651a-423a-8752-ea0bf7ea773f' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=c9440fb1-256d-4fed-82e5-a2109f0567b2' rel='stylesheet' type='text/css' />
 
   <!-- Heist error element -->
   <style type='text/css'>
@@ -40,15 +42,21 @@
 <style>
   @font-face {
     font-family: 'MavenPro';
-    src: url('_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf') format("truetype");
+    /* FIXME: This ought to be: ${ema:emanoteStaticLayerUrl}/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf */
+    src: url(_emanote-static/fonts/Maven_Pro/MavenPro-VariableFont_wght.ttf) format("truetype");
     font-display: swap;
   }
 
   body {
     font-family: 'MavenPro', sans-serif;
+    /* font-variation-settings: 'wght'300; */
   }
 
   a.mavenLinkBold {
+    font-variation-settings: 'wght'500;
+  }
+
+  strong {
     font-variation-settings: 'wght'500;
   }
 
@@ -3064,8 +3072,8 @@
       </svg>
     
   
-    <a class='hover:underline truncate' title='Release Checklist' href='cardano-wallet/contributing/Release-Checklist'>
-      Release Checklist
+    <a class='hover:underline truncate' title='Release Process' href='cardano-wallet/contributing/Release-Process'>
+      Release Process
     </a>
     
       
@@ -3825,7 +3833,7 @@
     <p class='mb-3'>
       Some people have username/password accounts. These were created manually with the Matrix Synapse user admin API.
     </p>
-  <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Login Type</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Example username</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Auth method</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Who administers accounts</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>IOHK Google</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><a href='https://element.adrestia.iohkdev.io/#/user/@rodney.lorrimar:adrestia.iohkdev.io' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>@rodney.lorrimar:adrestia.iohkdev.io</a></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>SSO via <a href='https://account.google.com' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>account.google.com</a></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>GApps domain admin</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Homeserver account</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><a href='https://element.adrestia.iohkdev.io/#/user/@rvl:adrestia.iohkdev.io' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>@rvl:adrestia.iohkdev.io</a></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Username/Password</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>root@adrestia.iohkdev.io</code></td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Matrix Federated</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><a href='https://app.element.io/#/user/@rvl:matrix.org' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>@rvl:matrix.org</a></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Username/Password</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>User themself</td></tr></tbody></table><h3 id='federated-login' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Federated Login</h3>
+  <table class='mb-3'><thead><tr class='border-b-2 border-t-2 border-gray-300'><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Login Type</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Example username</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Auth method</th><th class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Who administers accounts</th></tr></thead><tbody><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>IOHK Google</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><a href='https://element.adrestia.iohkdev.io/#/user/@rodney.lorrimar:adrestia.iohkdev.io' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>@rodney.lorrimar:adrestia.iohkdev.io</a></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>SSO via <a href='https://account.google.com' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>account.google.com</a></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>GApps domain admin</td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Homeserver account</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><a href='https://element.adrestia.iohkdev.io/#/user/@rvl:adrestia.iohkdev.io' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>@rvl:adrestia.iohkdev.io</a></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Username/Password</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><code class='py-0.5 px-0.5 bg-gray-100'>root@adrestia.iohkdev.io</code></td></tr><tr class='border-b-2 border-t-2 border-gray-300'><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Matrix Federated</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'><a href='https://app.element.io/#/user/@rvl:matrix.org' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>@rvl:matrix.org</a></td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>Username/Password</td><td class='py-2 px-2 align-top border-r-2 border-l-2 border-gray-300'>User themself</td></tr></tbody></table><h3 id='federated-login' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Federated Login</h3>
     <p class='mb-3'>
       If you have a user on another Matrix homeserver (e.g. <a href='https://matrix.org' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>matrix.org</a>), then you can ask to be invited into rooms on our homeserver.
     </p>
@@ -3861,7 +3869,7 @@
         </li>
       
         <li>
-          Delete the <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>element-keys.txt</code> file from your downloads directory when finished.
+          Delete the <code class='py-0.5 px-0.5 bg-gray-100'>element-keys.txt</code> file from your downloads directory when finished.
         </li>
       
     </ul>
@@ -3961,7 +3969,7 @@
         </li>
       
         <li>
-          Run the command <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>/coverttodm</code> in this room.
+          Run the command <code class='py-0.5 px-0.5 bg-gray-100'>/coverttodm</code> in this room.
         </li>
       
     </ul>
@@ -3979,7 +3987,7 @@
     </p>
   
     <p class='mb-3'>
-      Keep in mind that unless you enable end-to-end encryption in your room, message content will be stored as plaintext in the PostgreSQL <code class='py-0.5 px-1 rounded bg-gray-700 text-sm text-white'>event_json</code> table.
+      Keep in mind that unless you enable end-to-end encryption in your room, message content will be stored as plaintext in the PostgreSQL <code class='py-0.5 px-0.5 bg-gray-100'>event_json</code> table.
     </p>
   <h2 id='room-settings' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Room Settings</h2>
     <p class='mb-3'>
@@ -4184,7 +4192,7 @@
     </a>
   </div>
   <div>
-    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.4.10.2'>
+    <a href='https://emanote.srid.ca' target='_blank' title='Generated by Emanote 0.6.15.1'>
       <img class='w-6 h-6 hover:text-indigo-700' src='_emanote-static/emanote-logo.svg' />
     </a>
   </div>
