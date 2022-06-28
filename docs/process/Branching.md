@@ -22,7 +22,7 @@ This lowers maintenance overheads, but requires that we always keep
 
 ### Release preparation branches
 
-According to the [[Release-Checklist]], these are of the form
+According to the Release Checklist, these are of the form
 `your-name/bump-release/YYYY-MM-DD`.
 
 ## Mainline branch
