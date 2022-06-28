@@ -9,10 +9,10 @@
       flake = false;
     };
     emanote = {
-      url = github:srid/emanote;
-      inputs.nixpkgs.url = github:NixOS/nixpkgs/d9e21f284317f85b3476c0043f4efea87a226c3a;
-      inputs.flake-utils.follows = "flake-utils";
-      inputs.flake-compat.follows = "flake-compat";
+      url = "github:srid/emanote";
+    };
+    ema = {
+      url = "github:srid/ema";
     };
   };
 
@@ -26,7 +26,7 @@
           default = pkgs.mkShell {
             name = "adp";
             nativeBuildInputs = [
-              emanote.defaultPackage.${system}
+              emanote.packages.${system}.default
               pkgs.yq
               (pkgs.callPackage ./nix/hedgedoc-cli/package.nix {
                 server = "https://md.adrestia.iohkdev.io";
