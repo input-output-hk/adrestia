@@ -5,15 +5,15 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Hydra CI – Adrestia Project Docs
+    Shared wallets – Adrestia Project Docs
   </title>
   
     
-      <meta property='og:description' content='The Nix build server - not to be confused with Ouroboros Hydra.' />
+      <meta property='og:description' content='This guide shows you how to create a shared wallet and make a shared transaction, providing witnesses from all required co-signers referenced in the payment_script_template and delegation_script_template fields. In this example, we’ll create two shared wallets using the same template for both payment and delegation operations. The template that we’ll use will indicate that we require signatures from all co-owners in order to make a transaction. In our case, the wallet will have two co-owners cosigner#0 and cosigner#1:' />
       <meta property='og:site_name' content='Adrestia Project Docs' />
       <meta property='og:image' content />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Hydra CI' />
+      <meta property='og:title' content='Shared wallets' />
     
     
       <base href='/adrestia/' />
@@ -27,7 +27,7 @@
 
 
   
-  <link href='tailwind.css?instanceId=c9440fb1-256d-4fed-82e5-a2109f0567b2' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=84c8c8c2-e825-47f1-a9d7-d8777aea8ee8' rel='stylesheet' type='text/css' />
 
   <!-- Heist error element -->
   <style type='text/css'>
@@ -117,8 +117,17 @@
             </li>
           
             <li class='inline-flex items-center'>
-              <a class='px-1 font-bold' href='cardano-wallet/contributing'>
-                Contributors' Guide
+              <a class='px-1 font-bold' href='cardano-wallet/user-guide'>
+                User Guide
+              </a>
+              <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
+                <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
+              </svg>
+            </li>
+          
+            <li class='inline-flex items-center'>
+              <a class='px-1 font-bold' href='cardano-wallet/user-guide/common-use-cases'>
+                Common Use-Cases
               </a>
               <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
                 <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
@@ -1700,6 +1709,84 @@
   
     
       
+    
+    
+
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-2 space-x-2 justify-left'>
+    
+    
+      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
+    <a class='hover:underline truncate' title='hardware-recommendations' href='cardano-wallet/user-guide/hardware-recommendations'>
+      hardware-recommendations
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+  
+    
+      
+    
+    
+
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-2 space-x-2 justify-left'>
+    
+    
+      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        </path>
+      </svg>
+    
+  
+    <a class='hover:underline truncate' title='security' href='cardano-wallet/user-guide/security'>
+      security
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+  
+    
+      
       
     
 
@@ -2265,6 +2352,41 @@
   
     <a class='hover:underline truncate' title='Using cardano-wallet with Plutus Application Backend' href='cardano-wallet/user-guide/common-use-cases/pab'>
       Using cardano-wallet with Plutus Application Backend
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+  
+</div>
+    
+      <!-- Variable bindings for this tree-->
+  
+  
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-2 space-x-2 justify-left'>
+    
+    
+      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'>
+        </path>
+      </svg>
+      
+  
+    <a class='font-bold text-indigo-600 hover:underline truncate' title='Shared wallets' href='cardano-wallet/user-guide/common-use-cases/shared-wallets'>
+      Shared wallets
     </a>
     
       
@@ -2943,41 +3065,6 @@
     TODO: Use <details> to toggle visibility?
   -->
   
-    
-      <!-- Variable bindings for this tree-->
-  
-  
-
-
-  
-
-
-<!-- Rendering of this tree -->
-<div class='pl-2'>
-  <!-- Node's rootLabel-->
-  <div class='flex items-center my-2 space-x-2 justify-left'>
-    
-    
-      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'>
-        </path>
-      </svg>
-      
-  
-    <a class='font-bold text-indigo-600 hover:underline truncate' title='Hydra CI' href='cardano-wallet/contributing/Hydra'>
-      Hydra CI
-    </a>
-    
-      
-  </div>
-
-  <!-- Node's children forest, displayed only on active trees
-    TODO: Use <details> to toggle visibility?
-  -->
-  
-    
-  
-</div>
     
       <!-- Variable bindings for this tree-->
   
@@ -3813,100 +3900,556 @@
           <main class='px-4 py-4'>
             <h1 class='flex items-end justify-center mb-4 p-3 bg-indigo-100 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    Hydra CI
+    Shared wallets
   </a>
 </h1>
             <article class='overflow-auto'>
   <!-- What goes in this file will appear on top of note body-->
-  
+  <h2 id='pre-requisites' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Pre-requisites</h2>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          <a href='cardano-wallet/user-guide/common-use-cases/how-to-start-wallet-server' class='text-indigo-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>How to start wallet server</a>
+        </li>
+      
+        <li>
+          In order to be able to send transactions, our wallet must have funds. In case of <code class='py-0.5 px-0.5 bg-gray-100'>preview</code> and <code class='py-0.5 px-0.5 bg-gray-100'>preprod</code> <a href='https://testnets.cardano.org/en/testnets/cardano/overview/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>testnets</a> we can request tADA from the <a href='https://testnets.cardano.org/en/testnets/cardano/tools/faucet/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>faucet</a>.
+        </li>
+      
+    </ul>
+  <h2 id='overview' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Overview</h2>
     <p class='mb-3'>
-      The <a href='https://github.com/NixOS/hydra' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Nix build server</a> - not to be confused with <a href='https://eprint.iacr.org/2020/299' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Ouroboros Hydra</a>.
+      This guide shows you how to create a shared wallet and make a shared transaction, providing witnesses from all required co-signers referenced in the <code class='py-0.5 px-0.5 bg-gray-100'>payment_script_template</code> and <code class='py-0.5 px-0.5 bg-gray-100'>delegation_script_template</code> fields. In this example, we’ll create two shared wallets using the same template for both payment and delegation operations. The template that we’ll use will indicate that we require signatures from <strong>all</strong> co-owners in order to make a transaction. In our case, the wallet will have two co-owners <code class='py-0.5 px-0.5 bg-gray-100'>cosigner#0</code> and <code class='py-0.5 px-0.5 bg-gray-100'>cosigner#1</code>:
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>"template":
+    { "all":
+       [ "cosigner#0", "cosigner#1"]
+    }</code></pre></div>
+    <blockquote class='py-0.5 px-4 mb-3 italic border-l-4 bg-gray-50 text-gray-600 border-gray-400 quote'>
+      
+    <p class='mb-3'>
+      <span class='emoji' data-emoji='information_source' style='font-family: emoji'>ℹ️</span> Note that the script templates use Cardano <a href='https://github.com/input-output-hk/cardano-node/blob/master/doc/reference/simple-scripts.md' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>simple scripts</a> therefore one can build more sophisticated templates to guard their shared wallet spending or delegation operations. Below are some examples of possible templates. You can also explore <a href='https://input-output-hk.github.io/cardano-wallet/api/edge/#operation/postSharedWallet' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>POST /shared-wallets</code></a> swagger specification for more details.
+    </p>
+  
+    </blockquote>
+  <h3 id='template-examples' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Template examples</h3>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          required signature from any cosigner from the list
+        </li>
+      
+    </ul>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>"template":
+    { "any":
+       [ "cosigner#0", "cosigner#1", "cosigner#2"]
+    }</code></pre></div>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          required signature from at least 2 cosigners from the list
+        </li>
+      
+    </ul>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>"template":
+    { "some":
+       { "at_least": 2,
+         "from": [ "cosigner#0", "cosigner#1", "cosigner#2"]
+       }
+    }</code></pre></div>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          required signature from at least 1 cosigners from the list but with additional nested constraints (at least <code class='py-0.5 px-0.5 bg-gray-100'>cosigner#0</code> or at least <code class='py-0.5 px-0.5 bg-gray-100'>cosigner#1</code> or at least both <code class='py-0.5 px-0.5 bg-gray-100'>cosigner#2</code> and <code class='py-0.5 px-0.5 bg-gray-100'>cosigner#3</code> and any of <code class='py-0.5 px-0.5 bg-gray-100'>cosigner#4</code> and <code class='py-0.5 px-0.5 bg-gray-100'>cosigner#5</code>)
+        </li>
+      
+    </ul>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>"template":{
+  "some":{
+      "at_least":1,
+      "from":[
+        "cosigner#0",
+        "cosigner#1",
+        {
+            "all":[
+              "cosigner#2",
+              "cosigner#3",
+              {
+                  "any":[
+                    "cosigner#4",
+                    "cosigner#5"
+                  ]
+              }
+            ]
+        }
+      ]
+  }
+}</code></pre></div>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          required signature from any cosigner but with additional time locking constraints (either <code class='py-0.5 px-0.5 bg-gray-100'>cosigner#0</code> or <code class='py-0.5 px-0.5 bg-gray-100'>cosigner#1</code> but only until slot 18447928 or <code class='py-0.5 px-0.5 bg-gray-100'>cosigner#2</code> but only from slot 18447928)
+        </li>
+      
+    </ul>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>"template":{
+  "any":[
+      "cosigner#0",
+      {
+        "all":[
+            "cosigner#1",
+            {
+              "active_until":18447928
+            }
+        ]
+      },
+      {
+        "all":[
+            "cosigner#2",
+            {
+              "active_from":18447928
+            }
+        ]
+      }
+  ]
+}</code></pre></div><h2 id='creating-wallets' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Creating wallets</h2>
+    <p class='mb-3'>
+      First let’s create two <code class='py-0.5 px-0.5 bg-gray-100'>incomplete</code> shared wallets using the <a href='https://input-output-hk.github.io/cardano-wallet/api/edge/#operation/postSharedWallet' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>POST /shared-wallets</code></a> endpoint. The wallets are marked as “incomplete” because they do not yet have public keys from all cosigners.
+    </p>
+  
+    <ul class='my-3 ml-6 space-y-1 list-decimal list-inside'>
+      
+        <li>
+          <code class='py-0.5 px-0.5 bg-gray-100'>Cosigner#0</code> wallet
+        </li>
+      
+    </ul>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>$ curl -X POST http://localhost:8090/v2/shared-wallets \
+-d '{
+   "mnemonic_sentence":[
+      "beach",
+      "want",
+      "fly",
+      "guess",
+      "cabbage",
+      "hybrid",
+      "profit",
+      "leaf",
+      "term",
+      "air",
+      "join",
+      "feel",
+      "sting",
+      "nurse",
+      "anchor",
+      "come",
+      "entire",
+      "oil",
+      "kidney",
+      "situate",
+      "fun",
+      "deal",
+      "palm",
+      "chimney"
+   ],
+   "passphrase":"Secure Passphrase",
+   "name":"`Cosigner#0` wallet",
+   "account_index":"0H",
+   "payment_script_template":{
+      "cosigners":{
+         "cosigner#0":"self"
+      },
+      "template":{
+         "all":[
+            "cosigner#0",
+            "cosigner#1"
+         ]
+      }
+   },
+   "delegation_script_template":{
+      "cosigners":{
+         "cosigner#0":"self"
+      },
+      "template":{
+         "all":[
+            "cosigner#0",
+            "cosigner#1"
+         ]
+      }
+   }
+}' \
+-H "Content-Type: application/json"</code></pre></div>
+    <ul class='my-3 ml-6 space-y-1 list-decimal list-inside'>
+      
+        <li>
+          <code class='py-0.5 px-0.5 bg-gray-100'>Cosigner#1</code> wallet
+        </li>
+      
+    </ul>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>$ curl -X POST http://localhost:8090/v2/shared-wallets \
+-d '{
+   "mnemonic_sentence":[
+      "slight",
+      "tool",
+      "pear",
+      "write",
+      "body",
+      "fruit",
+      "crucial",
+      "tomorrow",
+      "hunt",
+      "alley",
+      "object",
+      "tool",
+      "voyage",
+      "loud",
+      "loop",
+      "client",
+      "access",
+      "vocal",
+      "unable",
+      "brand",
+      "patch",
+      "remain",
+      "object",
+      "boat"
+   ],
+   "passphrase":"Secure Passphrase",
+   "name":"`Cosigner#1` wallet",
+   "account_index":"0H",
+   "payment_script_template":{
+      "cosigners":{
+         "cosigner#1":"self"
+      },
+      "template":{
+         "all":[
+            "cosigner#0",
+            "cosigner#1"
+         ]
+      }
+   },
+   "delegation_script_template":{
+      "cosigners":{
+         "cosigner#1":"self"
+      },
+      "template":{
+         "all":[
+            "cosigner#0",
+            "cosigner#1"
+         ]
+      }
+   }
+}' \
+-H "Content-Type: application/json"</code></pre></div>
+    <p class='mb-3'>
+      Notice that the templates <code class='py-0.5 px-0.5 bg-gray-100'>payment_script_template</code> and <code class='py-0.5 px-0.5 bg-gray-100'>delegation_script_template</code> are partially the same for both wallets:
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>  "template":{
+      "all":[
+        "cosigner#0",
+        "cosigner#1"
+      ]
+  }</code></pre></div>
+    <p class='mb-3'>
+      However the <code class='py-0.5 px-0.5 bg-gray-100'>"cosigners":</code> part differs slightly. “<code class='py-0.5 px-0.5 bg-gray-100'>Cosigner#0</code> wallet” has <code class='py-0.5 px-0.5 bg-gray-100'>"cosigner#0":"self"</code> and “<code class='py-0.5 px-0.5 bg-gray-100'>Cosigner#1</code> wallet” - <code class='py-0.5 px-0.5 bg-gray-100'>"cosigner#1":"self"</code>. Each wallet has partial information about cosigners. “<code class='py-0.5 px-0.5 bg-gray-100'>Cosigner#0</code> wallet” only knows about <code class='py-0.5 px-0.5 bg-gray-100'>cosigner#0</code> and “<code class='py-0.5 px-0.5 bg-gray-100'>Cosigner#1</code> wallet” only knows about <code class='py-0.5 px-0.5 bg-gray-100'>cosigner#1</code>.
     </p>
   
     <p class='mb-3'>
-      For general information about nix, see <a href='cardano-wallet/contributing/Nix' class='text-indigo-600 mavenLinkBold hover:underline' data-wikilink-type='WikiLinkNormal'>Nix</a>.
+      Now we can look up the wallets we’ve just created using the <a href='https://input-output-hk.github.io/cardano-wallet/api/edge/#operation/getSharedWallet' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>GET /shared-wallets/{walletId}</code></a> endpoint. From the response, we can tell that the wallet’s status is “incomplete”. For instance:
     </p>
-  <h2 id='jobset' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Jobset</h2>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>$ curl -X GET http://localhost:8090/v2/shared-wallets/5e46668c320bb4568dd25551e0c33b0539668aa8 | jq
+
+{
+  "account_index": "0H",
+  "address_pool_gap": 20,
+  "delegation_script_template": {
+    "cosigners": {
+      "cosigner#1": "acct_shared_xvk1mqrjad6aklkpwvhhktrzeef5yunla9pjs0jt9csp3gjcynxvumfjpk99hqxkyknn30ya6l5yjgeegs5ltmmsy70gm500sacvllvwt6qjztknp"
+    },
+    "template": {
+      "all": [
+        "cosigner#0",
+        "cosigner#1"
+      ]
+    }
+  },
+  "id": "5e46668c320bb4568dd25551e0c33b0539668aa8",
+  "name": "`Cosigner#1` wallet",
+  "payment_script_template": {
+    "cosigners": {
+      "cosigner#1": "acct_shared_xvk1mqrjad6aklkpwvhhktrzeef5yunla9pjs0jt9csp3gjcynxvumfjpk99hqxkyknn30ya6l5yjgeegs5ltmmsy70gm500sacvllvwt6qjztknp"
+    },
+    "template": {
+      "all": [
+        "cosigner#0",
+        "cosigner#1"
+      ]
+    }
+  },
+  "state": {
+    "status": "incomplete"
+  }
+}
+</code></pre></div><h3 id='patching-wallets' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Patching wallets</h3>
     <p class='mb-3'>
-      The Hydra jobsets are defined by the <code class='py-0.5 px-0.5 bg-gray-100'>hydraJobs</code>, <code class='py-0.5 px-0.5 bg-gray-100'>hydraJobsPr</code> and <code class='py-0.5 px-0.5 bg-gray-100'>hydraJobsBors</code> flake attributes (cf. <code class='py-0.5 px-0.5 bg-gray-100'>mkSystemHydraJobs</code> function <a href='https://github.com/input-output-hk/cardano-wallet/blob/master/flake.nix' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>flake.nix</code></a>). There are slight variations between them to avoid test results caching for bors builds and to disable integration tests for PRs.
+      In order to be able to spend from the wallets we need to <em>patch</em> their payment and delegation templates with missing cosigners. We already know that “<code class='py-0.5 px-0.5 bg-gray-100'>Cosigner#0</code> wallet” is missing the <code class='py-0.5 px-0.5 bg-gray-100'>cosigner#1</code> key and “<code class='py-0.5 px-0.5 bg-gray-100'>Cosigner#1</code> wallet” is missing the <code class='py-0.5 px-0.5 bg-gray-100'>cosigner#0</code> key.
     </p>
   
     <p class='mb-3'>
-      Here are the corresponding links to the jobsets for the different branches:
+      First, let’s get the <code class='py-0.5 px-0.5 bg-gray-100'>cosigner#1</code> key from the “<code class='py-0.5 px-0.5 bg-gray-100'>Cosigner#1</code> wallet”. We can use the <a href='https://input-output-hk.github.io/cardano-wallet/api/edge/#operation/getAccountKeyShared' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>GET /shared-wallets/{walletId}/keys</code></a> endpoint for this:
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>$ curl -X GET http://localhost:8090/v2/shared-wallets/5e46668c320bb4568dd25551e0c33b0539668aa8/keys?format=extended
+
+"acct_shared_xvk1mqrjad6aklkpwvhhktrzeef5yunla9pjs0jt9csp3gjcynxvumfjpk99hqxkyknn30ya6l5yjgeegs5ltmmsy70gm500sacvllvwt6qjztknp"
+</code></pre></div>
+    <p class='mb-3'>
+      Now we can <em>patch</em> the payment and delegation templates of the “<code class='py-0.5 px-0.5 bg-gray-100'>Cosigner#0</code> wallet” with the <code class='py-0.5 px-0.5 bg-gray-100'>cosigner#1</code> key using the <a href='https://input-output-hk.github.io/cardano-wallet/api/edge/#operation/patchSharedWalletInPayment' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>PATCH /shared-wallets/{walletId}/payment-script-template</code></a> and <a href='https://input-output-hk.github.io/cardano-wallet/api/edge/#operation/patchSharedWalletInDelegation' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>PATCH /shared-wallets/{walletId}/delegation-script-template</code></a> endpoints, respectively.
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>$ curl -X PATCH http://localhost:8090/v2/shared-wallets/2a0ebd0cceab2161765badf2e389b26e0961de2f/payment-script-template \
+-d '{"cosigner#1":"acct_shared_xvk1mqrjad6aklkpwvhhktrzeef5yunla9pjs0jt9csp3gjcynxvumfjpk99hqxkyknn30ya6l5yjgeegs5ltmmsy70gm500sacvllvwt6qjztknp"}' \
+-H "Content-Type: application/json"
+
+$ curl -X PATCH http://localhost:8090/v2/shared-wallets/2a0ebd0cceab2161765badf2e389b26e0961de2f/delegation-script-template \
+-d '{"cosigner#1":"acct_shared_xvk1mqrjad6aklkpwvhhktrzeef5yunla9pjs0jt9csp3gjcynxvumfjpk99hqxkyknn30ya6l5yjgeegs5ltmmsy70gm500sacvllvwt6qjztknp"}' \
+-H "Content-Type: application/json"</code></pre></div>
+    <p class='mb-3'>
+      We’ll repeat the same action or “<code class='py-0.5 px-0.5 bg-gray-100'>Cosigner#1</code> wallet”, i.e. first get <code class='py-0.5 px-0.5 bg-gray-100'>cosigner#0</code> key from “<code class='py-0.5 px-0.5 bg-gray-100'>Cosigner#0</code> wallet” and then patch the payment and delegation templates of “<code class='py-0.5 px-0.5 bg-gray-100'>Cosigner#1</code> wallet” with it.
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>$ curl -X GET http://localhost:8090/v2/shared-wallets/2a0ebd0cceab2161765badf2e389b26e0961de2f/keys?format=extended
+
+"acct_shared_xvk1lk5eg5unj4fg48vamr9pc40euump5qs084a7cdgvs9u6yn82nh9lr3s62asfv45r4s0fqa239j3dc5e4f7z24heug43zpg6qdy5kawq63hhzl"
+
+$ curl -X PATCH http://localhost:8090/v2/shared-wallets/5e46668c320bb4568dd25551e0c33b0539668aa8/payment-script-template \
+-d '{"cosigner#0":"acct_shared_xvk1lk5eg5unj4fg48vamr9pc40euump5qs084a7cdgvs9u6yn82nh9lr3s62asfv45r4s0fqa239j3dc5e4f7z24heug43zpg6qdy5kawq63hhzl"}' \
+-H "Content-Type: application/json"
+
+$ curl -X PATCH http://localhost:8090/v2/shared-wallets/5e46668c320bb4568dd25551e0c33b0539668aa8/delegation-script-template \
+-d '{"cosigner#0":"acct_shared_xvk1lk5eg5unj4fg48vamr9pc40euump5qs084a7cdgvs9u6yn82nh9lr3s62asfv45r4s0fqa239j3dc5e4f7z24heug43zpg6qdy5kawq63hhzl"}' \
+-H "Content-Type: application/json"</code></pre></div>
+    <p class='mb-3'>
+      Now, if we look up the wallet again with <a href='https://input-output-hk.github.io/cardano-wallet/api/edge/#operation/getSharedWallet' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>GET /shared-wallets/{walletId}</code></a>, we should notice that the wallet has started restoring, and after a while it is ready to use:
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>$ curl -X GET http://localhost:8090/v2/shared-wallets/2a0ebd0cceab2161765badf2e389b26e0961de2f | jq .state
+
+{
+  "status": "ready"
+}</code></pre></div>
+    <p class='mb-3'>
+      Furthermore, the wallets now have complete information about cosigners for delegation and payment templates:
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>$ curl -X GET http://localhost:8090/v2/shared-wallets/2a0ebd0cceab2161765badf2e389b26e0961de2f | jq .payment_script_template
+
+{
+  "cosigners": {
+    "cosigner#0": "acct_shared_xvk1lk5eg5unj4fg48vamr9pc40euump5qs084a7cdgvs9u6yn82nh9lr3s62asfv45r4s0fqa239j3dc5e4f7z24heug43zpg6qdy5kawq63hhzl",
+    "cosigner#1": "acct_shared_xvk1mqrjad6aklkpwvhhktrzeef5yunla9pjs0jt9csp3gjcynxvumfjpk99hqxkyknn30ya6l5yjgeegs5ltmmsy70gm500sacvllvwt6qjztknp"
+  },
+  "template": {
+    "all": [
+      "cosigner#0",
+      "cosigner#1"
+    ]
+  }
+}
+
+$ curl -X GET http://localhost:8090/v2/shared-wallets/2a0ebd0cceab2161765badf2e389b26e0961de2f | jq .delegation_script_template
+
+{
+  "cosigners": {
+    "cosigner#0": "acct_shared_xvk1lk5eg5unj4fg48vamr9pc40euump5qs084a7cdgvs9u6yn82nh9lr3s62asfv45r4s0fqa239j3dc5e4f7z24heug43zpg6qdy5kawq63hhzl",
+    "cosigner#1": "acct_shared_xvk1mqrjad6aklkpwvhhktrzeef5yunla9pjs0jt9csp3gjcynxvumfjpk99hqxkyknn30ya6l5yjgeegs5ltmmsy70gm500sacvllvwt6qjztknp"
+  },
+  "template": {
+    "all": [
+      "cosigner#0",
+      "cosigner#1"
+    ]
+  }
+}</code></pre></div><h3 id='spending-transactions' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Spending transactions</h3>
+    <p class='mb-3'>
+      Our shared wallets are now fully-operational. In particular, we can access the addresses of the wallets via the <a href='https://input-output-hk.github.io/cardano-wallet/api/edge/#operation/listSharedAddresses' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>GET /shared-wallets/{walletId}/addresses</code></a> endpoint. We can get the address and fund it from the <a href='https://testnets.cardano.org/en/testnets/cardano/tools/faucet/' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>faucet</a> so that we can spend from our wallet later on.
+    </p>
+  
+    <p class='mb-3'>
+      After we have funded the “<code class='py-0.5 px-0.5 bg-gray-100'>Cosigner#0</code> wallet”, we can see that the balance has changed on the “<code class='py-0.5 px-0.5 bg-gray-100'>Cosigner#1</code> wallet” as well. Both wallets have the same balance:
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>$ curl -X GET http://localhost:8090/v2/shared-wallets/2a0ebd0cceab2161765badf2e389b26e0961de2f | jq .balance
+
+{
+  "available": {
+    "quantity": 10000000000,
+    "unit": "lovelace"
+  },
+  "reward": {
+    "quantity": 0,
+    "unit": "lovelace"
+  },
+  "total": {
+    "quantity": 10000000000,
+    "unit": "lovelace"
+  }
+}
+
+$ curl -X GET http://localhost:8090/v2/shared-wallets/5e46668c320bb4568dd25551e0c33b0539668aa8 | jq .balance
+
+{
+  "available": {
+    "quantity": 10000000000,
+    "unit": "lovelace"
+  },
+  "reward": {
+    "quantity": 0,
+    "unit": "lovelace"
+  },
+  "total": {
+    "quantity": 10000000000,
+    "unit": "lovelace"
+  }
+}</code></pre></div>
+    <p class='mb-3'>
+      Of course, this is expected. Both co-owners have full knowledge of the balance, however they cannot spend from the balance on their own. As required by the payment template, the wallet needs signatures from both co-owners before funds can be spent.
+    </p>
+  
+    <p class='mb-3'>
+      Let’s make a simple transaction. The owner of “<code class='py-0.5 px-0.5 bg-gray-100'>Cosigner#0</code> wallet” will construct and sign a transaction on their end, and then provide a CBOR blob of this transaction to the owner of “<code class='py-0.5 px-0.5 bg-gray-100'>Cosigner#1</code> wallet”. Then <code class='py-0.5 px-0.5 bg-gray-100'>Cosigner#1</code> can sign it on their own, and submit it to the network.
+    </p>
+  
+    <p class='mb-3'>
+      We will be using the following shared wallet transaction endpoints:
     </p>
   
     <ul class='my-3 ml-6 space-y-1 list-disc'>
       
         <li>
-          Master branch - <a href='https://hydra.iohk.io/jobset/Cardano/cardano-wallet#tabs-jobs' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>https://hydra.iohk.io/jobset/Cardano/cardano-wallet#tabs-jobs</a>
+          <a href='https://input-output-hk.github.io/cardano-wallet/api/edge/#operation/constructSharedTransaction' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>POST /shared-wallets/{walletId}/transactions-construct</code></a>
         </li>
       
         <li>
-          GitHub PR builds - <a href='https://hydra.iohk.io/jobset/Cardano/cardano-wallet-pr-NNNN' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>https://hydra.iohk.io/jobset/Cardano/cardano-wallet-pr-NNNN</a> - replace <em>NNNN</em> with the PR number.
+          <a href='https://input-output-hk.github.io/cardano-wallet/api/edge/#operation/signSharedTransaction' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>POST /shared-wallets/{walletId}/transactions-sign</code></a>
         </li>
       
         <li>
-          bors/staging - <a href='https://hydra.iohk.io/jobset/Cardano/cardano-wallet-bors-staging' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>https://hydra.iohk.io/jobset/Cardano/cardano-wallet-bors-staging</a>
+          <a href='https://input-output-hk.github.io/cardano-wallet/api/edge/#operation/submitSharedTransaction' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>POST /shared-wallets/{walletId}/transactions-submit</code></a>
         </li>
       
     </ul>
-  <h2 id='required-job' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Required job</h2>
+  
+    <blockquote class='py-0.5 px-4 mb-3 italic border-l-4 bg-gray-50 text-gray-600 border-gray-400 quote'>
+      
     <p class='mb-3'>
-      Within the jobset, one job is special. This determines whether the build is reporting to GitHub as a success or failure.
+      <span class='emoji' data-emoji='information_source' style='font-family: emoji'>ℹ️</span> Note that at any point during the process of constructing and signing a transaction, both “<code class='py-0.5 px-0.5 bg-gray-100'>Cosigner#0</code>” and “<code class='py-0.5 px-0.5 bg-gray-100'>Cosigner#1</code>” may decode the transaction from its CBOR representation using the <a href='https://input-output-hk.github.io/cardano-wallet/api/edge/#operation/decodeSharedTransaction' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>POST /shared-wallets/{walletId}/transactions-decode</code></a> endpoint. Decoding the transaction makes it possible to see all details associated with the transaction, such as its <code class='py-0.5 px-0.5 bg-gray-100'>inputs</code>, <code class='py-0.5 px-0.5 bg-gray-100'>outputs</code>, <code class='py-0.5 px-0.5 bg-gray-100'>fees</code>, <code class='py-0.5 px-0.5 bg-gray-100'>deposits</code>, <code class='py-0.5 px-0.5 bg-gray-100'>metadata</code>, or <code class='py-0.5 px-0.5 bg-gray-100'>witness_count</code>.
+    </p>
+  
+    </blockquote>
+  <h4 id='cosigner0' class='mt-6 mb-2 text-2xl font-bold text-gray-700'><code class='py-0.5 px-0.5 bg-gray-100'>Cosigner#0</code></h4><h5 id='constructing' class='mt-6 mb-2 text-xl font-bold text-gray-700'>Constructing</h5>
+    <p class='mb-3'>
+      “<code class='py-0.5 px-0.5 bg-gray-100'>Cosigner#0</code>” constructs a transaction sending 10₳ to an external address using the <a href='https://input-output-hk.github.io/cardano-wallet/api/edge/#operation/constructSharedTransaction' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>POST /shared-wallets/{walletId}/transactions-construct</code></a> endpoint. In response, they receive a CBOR representation of the unsigned transaction.
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>$ curl -X POST http://localhost:8090/v2/shared-wallets/2a0ebd0cceab2161765badf2e389b26e0961de2f/transactions-construct \
+-d '{
+   "payments":[
+      {
+         "address":"addr_test1qq86pgrf7yyzp3gysxgqwt4ahegzslygvzh77eq2qwg66pedkztnw78s6gkt3eux35sllasu0x6grejewlrzaus8kekq7cp9ck",
+         "amount":{
+            "quantity":10000000,
+            "unit":"lovelace"
+         }
+      }
+   ]
+}' \
+-H "Content-Type: application/json" | jq .transaction
+
+"hKUAgYJYIP8Fwso5i5ovF8bJJuqZ4xOdvXC3mXJCN2O2vDIxQQOYAAGCogBYOQAPoKBp8QggxQSBkAcuvb5QKHyIYK/vZAoDka0HLbCXN3jw0iy454aNIf/2HHm0geZZd8Yu8ge2bAEaAJiWgKIAWDkwZ/CRYzhreLBgWdOZFReuuejo5RIhvNwLOk51lWQGg+0Ii6yF8VB/6jOUJdwEhwqE3Od9sHl14eQBGwAAAAJTcJsvAhoAArJRAxoBDHtNCAChAYGCAYKCAFgciTss5ZpPDifzTTlpVVbNSaZGERzre1z05XYVWYIAWBzHmpkAwWCRnUTfcTy0aZK2LLLM36Y/4gZMlJhm9fY="</code></pre></div><h5 id='signing' class='mt-6 mb-2 text-xl font-bold text-gray-700'>Signing</h5>
+    <p class='mb-3'>
+      “<code class='py-0.5 px-0.5 bg-gray-100'>Cosigner#0</code>” signs the transaction with the <a href='https://input-output-hk.github.io/cardano-wallet/api/edge/#operation/signSharedTransaction' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>POST /shared-wallets/{walletId}/transactions-sign</code></a> endpoint:
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>$ curl -X POST http://localhost:8090/v2/shared-wallets/2a0ebd0cceab2161765badf2e389b26e0961de2f/transactions-sign \
+-d '{
+   "passphrase":"Secure Passphrase",
+   "transaction":"hKUAgYJYIP8Fwso5i5ovF8bJJuqZ4xOdvXC3mXJCN2O2vDIxQQOYAAGCogBYOQAPoKBp8QggxQSBkAcuvb5QKHyIYK/vZAoDka0HLbCXN3jw0iy454aNIf/2HHm0geZZd8Yu8ge2bAEaAJiWgKIAWDkwZ/CRYzhreLBgWdOZFReuuejo5RIhvNwLOk51lWQGg+0Ii6yF8VB/6jOUJdwEhwqE3Od9sHl14eQBGwAAAAJTcJsvAhoAArJRAxoBDHzCCAChAYGCAYKCAFgciTss5ZpPDifzTTlpVVbNSaZGERzre1z05XYVWYIAWBzHmpkAwWCRnUTfcTy0aZK2LLLM36Y/4gZMlJhm9fY="
+}' \
+-H "Content-Type: application/json" | jq .transaction
+
+"hKUAgYJYIP8Fwso5i5ovF8bJJuqZ4xOdvXC3mXJCN2O2vDIxQQOYAAGCogBYOQAPoKBp8QggxQSBkAcuvb5QKHyIYK/vZAoDka0HLbCXN3jw0iy454aNIf/2HHm0geZZd8Yu8ge2bAEaAJiWgKIAWDkwZ/CRYzhreLBgWdOZFReuuejo5RIhvNwLOk51lWQGg+0Ii6yF8VB/6jOUJdwEhwqE3Od9sHl14eQBGwAAAAJTcJsvAhoAArJRAxoBDHzCCACiAIGCWCBOK9nJ9IxJt2gddyZ2fUHC4nre84+EbPQdL60OP0m4ZlhA11gVIBWSlDZl8NQyzV4v9U8AuX8n2UqJK9+Wt1sqnM7jAeYtbuyAN5weTaVV+NDVlpKVg3piowyC1eqZBeWWAQGBggGCggBYHIk7LOWaTw4n8005aVVWzUmmRhEc63tc9OV2FVmCAFgcx5qZAMFgkZ1E33E8tGmStiyyzN+mP+IGTJSYZvX2"</code></pre></div>
+    <p class='mb-3'>
+      and in response, receives a CBOR representation of the partially-signed transaction.
+    </p>
+  <h4 id='cosigner1' class='mt-6 mb-2 text-2xl font-bold text-gray-700'><code class='py-0.5 px-0.5 bg-gray-100'>Cosigner#1</code></h4>
+    <p class='mb-3'>
+      Now “<code class='py-0.5 px-0.5 bg-gray-100'>Cosigner#0</code>” can hand over the CBOR of the partially-signed transaction to “<code class='py-0.5 px-0.5 bg-gray-100'>Cosigner#1</code>”, who can then sign it on their own.
+    </p>
+  <h5 id='signing-1' class='mt-6 mb-2 text-xl font-bold text-gray-700'>Signing</h5>
+    <p class='mb-3'>
+      “<code class='py-0.5 px-0.5 bg-gray-100'>Cosigner#1</code>” signs the transaction with <a href='https://input-output-hk.github.io/cardano-wallet/api/edge/#operation/signSharedTransaction' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>POST /shared-wallets/{walletId}/transactions-sign</code></a> and gets a CBOR representation of the fully-signed transaction in response.
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>$ curl -X POST http://localhost:8090/v2/shared-wallets/5e46668c320bb4568dd25551e0c33b0539668aa8/transactions-sign \
+-d '{
+   "passphrase":"Secure Passphrase",
+   "transaction":"hKUAgYJYIP8Fwso5i5ovF8bJJuqZ4xOdvXC3mXJCN2O2vDIxQQOYAAGCogBYOQAPoKBp8QggxQSBkAcuvb5QKHyIYK/vZAoDka0HLbCXN3jw0iy454aNIf/2HHm0geZZd8Yu8ge2bAEaAJiWgKIAWDkwZ/CRYzhreLBgWdOZFReuuejo5RIhvNwLOk51lWQGg+0Ii6yF8VB/6jOUJdwEhwqE3Od9sHl14eQBGwAAAAJTcJsvAhoAArJRAxoBDHzCCACiAIGCWCBOK9nJ9IxJt2gddyZ2fUHC4nre84+EbPQdL60OP0m4ZlhA11gVIBWSlDZl8NQyzV4v9U8AuX8n2UqJK9+Wt1sqnM7jAeYtbuyAN5weTaVV+NDVlpKVg3piowyC1eqZBeWWAQGBggGCggBYHIk7LOWaTw4n8005aVVWzUmmRhEc63tc9OV2FVmCAFgcx5qZAMFgkZ1E33E8tGmStiyyzN+mP+IGTJSYZvX2"
+}' \
+-H "Content-Type: application/json" | jq .transaction
+
+"hKUAgYJYIP8Fwso5i5ovF8bJJuqZ4xOdvXC3mXJCN2O2vDIxQQOYAAGCogBYOQAPoKBp8QggxQSBkAcuvb5QKHyIYK/vZAoDka0HLbCXN3jw0iy454aNIf/2HHm0geZZd8Yu8ge2bAEaAJiWgKIAWDkwZ/CRYzhreLBgWdOZFReuuejo5RIhvNwLOk51lWQGg+0Ii6yF8VB/6jOUJdwEhwqE3Od9sHl14eQBGwAAAAJTcJsvAhoAArJRAxoBDHzCCACiAIKCWCBOK9nJ9IxJt2gddyZ2fUHC4nre84+EbPQdL60OP0m4ZlhA11gVIBWSlDZl8NQyzV4v9U8AuX8n2UqJK9+Wt1sqnM7jAeYtbuyAN5weTaVV+NDVlpKVg3piowyC1eqZBeWWAYJYIKRn9pUgwcx7GBoIBVJd+9Gh8I/YOwFFK7KyXUXSfrWnWEAqOkD9ljkgYwqwPpuxV+4iJw0hf4PPXA7o9XVxZ4wqT6vSnu1hvsyM4ezuCP/ahTMQ7RzZHTLa1BDx6YawGHQHAYGCAYKCAFgciTss5ZpPDifzTTlpVVbNSaZGERzre1z05XYVWYIAWBzHmpkAwWCRnUTfcTy0aZK2LLLM36Y/4gZMlJhm9fY="</code></pre></div><h5 id='submission' class='mt-6 mb-2 text-xl font-bold text-gray-700'>Submission</h5>
+    <p class='mb-3'>
+      The transaction is now fully-signed by both co-owners: “<code class='py-0.5 px-0.5 bg-gray-100'>Cosigner#0</code>” and “<code class='py-0.5 px-0.5 bg-gray-100'>Cosigner#1</code>”. At this point, either of them can submit it to the network using their respective wallets via the <a href='https://input-output-hk.github.io/cardano-wallet/api/edge/#operation/submitSharedTransaction' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>POST /shared-wallets/{walletId}/transactions-submit</code></a> endpoint.
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>$ curl -X POST http://localhost:8090/v2/shared-wallets/5e46668c320bb4568dd25551e0c33b0539668aa8/transactions-submit \
+-d '{
+   "transaction":"hKUAgYJYIP8Fwso5i5ovF8bJJuqZ4xOdvXC3mXJCN2O2vDIxQQOYAAGCogBYOQAPoKBp8QggxQSBkAcuvb5QKHyIYK/vZAoDka0HLbCXN3jw0iy454aNIf/2HHm0geZZd8Yu8ge2bAEaAJiWgKIAWDkwZ/CRYzhreLBgWdOZFReuuejo5RIhvNwLOk51lWQGg+0Ii6yF8VB/6jOUJdwEhwqE3Od9sHl14eQBGwAAAAJTcJsvAhoAArJRAxoBDHzCCACiAIKCWCBOK9nJ9IxJt2gddyZ2fUHC4nre84+EbPQdL60OP0m4ZlhA11gVIBWSlDZl8NQyzV4v9U8AuX8n2UqJK9+Wt1sqnM7jAeYtbuyAN5weTaVV+NDVlpKVg3piowyC1eqZBeWWAYJYIKRn9pUgwcx7GBoIBVJd+9Gh8I/YOwFFK7KyXUXSfrWnWEAqOkD9ljkgYwqwPpuxV+4iJw0hf4PPXA7o9XVxZ4wqT6vSnu1hvsyM4ezuCP/ahTMQ7RzZHTLa1BDx6YawGHQHAYGCAYKCAFgciTss5ZpPDifzTTlpVVbNSaZGERzre1z05XYVWYIAWBzHmpkAwWCRnUTfcTy0aZK2LLLM36Y/4gZMlJhm9fY="
+}' \
+-H "Content-Type: application/json" | jq
+
+{
+  "id": "d443719bbd3e4301aa34791823b2b7821757e843509d29918006e5ca26ca368c"
+}</code></pre></div>
+    <p class='mb-3'>
+      The transaction has been submitted successfully. The <a href='https://input-output-hk.github.io/cardano-wallet/api/edge/#operation/submitSharedTransaction' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>POST /shared-wallets/{walletId}/transactions-submit</code></a> endpoint provides a transaction identifier in its response.
     </p>
   
     <p class='mb-3'>
-      It is an aggregate job containing the following constituents:
+      We can use this transaction identifier to look up the transaction from either shared wallet using the <a href='https://input-output-hk.github.io/cardano-wallet/api/edge/#operation/listSharedTransactions' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>GET /shared-wallets/{walletId}/transactions</code></a> or <a href='https://input-output-hk.github.io/cardano-wallet/api/edge/#operation/getSharedTransaction' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>GET /shared-wallets/{walletId}/transactions/{transactionId}</code></a> endpoints.
     </p>
   
     <p class='mb-3'>
-      <a href='https://hydra.iohk.io/job/Cardano/cardano-wallet/required/latest-finished#tabs-constituents' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>https://hydra.iohk.io/job/Cardano/cardano-wallet/required/latest-finished#tabs-constituents</a>
+      “<code class='py-0.5 px-0.5 bg-gray-100'>Cosigner#0</code> wallet”:
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>$ curl -X GET http://localhost:8090/v2/shared-wallets/2a0ebd0cceab2161765badf2e389b26e0961de2f/transactions/d443719bbd3e4301aa34791823b2b7821757e843509d29918006e5ca26ca368c | jq
+
+{
+  "amount": {
+    "quantity": 10176721,
+    "unit": "lovelace"
+  },
+  ...
+  "direction": "outgoing",
+  ...
+  "fee": {
+    "quantity": 176721,
+    "unit": "lovelace"
+  },
+...</code></pre></div>
+    <p class='mb-3'>
+      “<code class='py-0.5 px-0.5 bg-gray-100'>Cosigner#1</code> wallet”:
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='language-none'>$ curl -X GET http://localhost:8090/v2/shared-wallets/5e46668c320bb4568dd25551e0c33b0539668aa8/transactions/d443719bbd3e4301aa34791823b2b7821757e843509d29918006e5ca26ca368c | jq
+
+{
+  "amount": {
+    "quantity": 10176721,
+    "unit": "lovelace"
+  },
+  ...
+  "direction": "outgoing",
+  ...
+  "fee": {
+    "quantity": 176721,
+    "unit": "lovelace"
+  },
+...</code></pre></div><h3 id='delegation' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Delegation</h3>
+    <p class='mb-3'>
+      Delegation of shared wallets will be supported <em>soon</em>.
     </p>
   
-    <p class='mb-3'>
-      This job is set up with the <code class='py-0.5 px-0.5 bg-gray-100'>mkRequiredJob</code> function in <code class='py-0.5 px-0.5 bg-gray-100'>flake.nix</code>.
-    </p>
-  <h2 id='build-products' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Build Products</h2>
-    <p class='mb-3'>
-      Some build jobs have build products which can be downloaded from the Hydra web interface. Other build systems sometimes call these “artefacts”.
-    </p>
-  
-    <p class='mb-3'>
-      When you click the “latest successful build” link for a job, it redirects (HTTP 302 Moved Temporarily) to the location of the <em>current latest successful build</em>. To make a download link which is always the latest, click the <code class='py-0.5 px-0.5 bg-gray-100'>Details</code> button next a build product, and copy the links.
-    </p>
-  
-    <p class='mb-3'>
-      A nix derivation builder script can register build products by adding lines to the file <code class='py-0.5 px-0.5 bg-gray-100'>$out/nix-support/hydra-build-products</code>.
-    </p>
-  <h2 id='evaluation' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Evaluation</h2>
-    <p class='mb-3'>
-      Hydra evaluates the <code class='py-0.5 px-0.5 bg-gray-100'>hydraJobs</code> attribute of <a href='https://github.com/input-output-hk/cardano-wallet/blob/master/flake.nix' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'><code class='py-0.5 px-0.5 bg-gray-100'>flake.nix</code></a> file on the Hydra master host (<a href='https://hydra.iohk.io' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>hydra.iohk.io</a>). It then sends the jobs out to the build farm to be built.
-    </p>
-  
-    <p class='mb-3'>
-      Evaluation fails if there are syntax errors in the Nix files, type errors, etc. Sometimes evaluation can fail due to memory exhaustion on Hydra master.
-    </p>
-  
-    <p class='mb-3'>
-      <strong>Note</strong>: If evaluation fails, the Hydra eval runner will retry until it succeeds. The <code class='py-0.5 px-0.5 bg-gray-100'>ci/hydra-eval</code> status will change from pending to failed, until the evaluation succeeds.
-    </p>
-  <h2 id='restarting-builds' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700 border-b-2'>Restarting builds</h2><div class='flex justify-center items-center mx-auto px-8'>
-    <p class='mb-3'>
-      <img class='inline mb-3' src='cardano-wallet/contributing/hydra-restarting-builds.png' alt='[[hydra-restarting-builds.png]]' style='width: inherit;' />
-    </p>
-  </div>
-    <p class='mb-3'>
-      After signing in with the <a href='https://hydra.iohk.io/dashboard/adrestia' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>adrestia</a> user, you should be able to see the Actions→Restart button on the build job page.
-    </p>
-  
-    <p class='mb-3'>
-      The password for this user is in <a href='https://input-output-hk.github.io/adrestia/resources/Passwords' class='text-indigo-600 hover:underline' target='_blank' rel='noopener'>Vaultwarden</a>.
-    </p>
-  <div class='gotcha'><h4 id='note-about-bors' class='mt-6 mb-2 text-2xl font-bold text-gray-700'>Note about bors</h4>
-    <p class='mb-3'>
-      If the bors batch has already failed, restarting the failed build in Hydra will have no effect. You will need to submit a new merge job to bors.
-    </p>
-  </div>
   <!-- What goes in this file will appear below the note body-->
 </article>
             <div class='flex flex-col lg:flex-row lg:space-x-2'>
@@ -3917,48 +4460,14 @@
     <ul class='space-y-1'>
       
         <li>
-          <a class='text-indigo-600 mavenLinkBold hover:bg-indigo-50' href='cardano-wallet/contributing/Nix'>
-            Nix
+          <a class='text-indigo-600 mavenLinkBold hover:bg-indigo-50' href='cardano-wallet/user-guide/common-use-cases/how-to-create-a-wallet'>
+            How to create a wallet
           </a>
           
             <div class='mb-4 overflow-auto text-sm text-gray-500'>
   
     <div class='pl-2 mt-2 border-l-2 border-indigo-200 hover:border-indigo-500'>
-      <div><a href='cardano-wallet/contributing/Hydra' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Hydra CI</a></div>
-    </div>
-  
-</div>
-          
-        </li>
-      
-        <li>
-          <a class='text-indigo-600 mavenLinkBold hover:bg-indigo-50' href='cardano-wallet/developers'>
-            Developer Information
-          </a>
-          
-            <div class='mb-4 overflow-auto text-sm text-gray-500'>
-  
-    <div class='pl-2 mt-2 border-l-2 border-indigo-200 hover:border-indigo-500'>
-      <div><a href='cardano-wallet/contributing/Hydra' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Hydra CI</a></div>
-    </div>
-  
-</div>
-          
-        </li>
-      
-        <li>
-          <a class='text-indigo-600 mavenLinkBold hover:bg-indigo-50' href='cardano-wallet/developers/Building'>
-            Building
-          </a>
-          
-            <div class='mb-4 overflow-auto text-sm text-gray-500'>
-  
-    <div class='pl-2 mt-2 border-l-2 border-indigo-200 hover:border-indigo-500'>
-      <div><p>See <a href='cardano-wallet/contributing/Hydra' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Hydra CI</a> for more information.</p></div>
-    </div>
-  
-    <div class='pl-2 mt-2 border-l-2 border-indigo-200 hover:border-indigo-500'>
-      <div><p>The following command will build the <code>master</code> branch, with the resulting executable appearing at <code>./result/bin/cardano-wallet</code>. To build another branch, add <code>/&lt;branch name, tag, or commit hash&gt;</code> (see <a href='https://nixos.org/manual/nix/stable/command-ref/new-cli/nix3-flake.html#flake-references' class='text-gray-600 hover:underline' target='_blank' rel='noopener'>Nix Manual: Flake References</a> for syntax). As before, if the target ref has already been built by <a href='cardano-wallet/contributing/Hydra' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Hydra CI</a>, then it will be fetched from cache rather than built locally.</p></div>
+      <div><p>See more elaborate example on <a href='cardano-wallet/user-guide/common-use-cases/shared-wallets' class='text-gray-600 font-bold hover:bg-gray-50' data-wikilink-type='WikiLinkNormal'>Shared wallets</a>.</p></div>
     </div>
   
 </div>
